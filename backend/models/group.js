@@ -10,6 +10,20 @@ const groupSchema = new Schema(
         type: String,
         required: true,
       },
+      password: {
+        type: String,
+        required: false,
+      },
+      members: [{
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+      }],
+      admins: [{
+        type: Schema.Types.ObjectId,
+        red: 'User',
+        required: true, 
+      }]
 
     }
   );

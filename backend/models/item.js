@@ -19,6 +19,17 @@ const itemSchema = new Schema(
         ref: 'Category',
         required: true,
       },
+      seller: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: true,
+      },
+      /*buyer: {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+        required: false,
+      }*/
+
     },
     {
       timestamps: {
