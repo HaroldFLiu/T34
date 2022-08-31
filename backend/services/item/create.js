@@ -15,7 +15,7 @@ const create = async ({
     phone_number,
     seller,
   });
-  return patient;
+  return item;
 };
 
 module.exports = { item };
