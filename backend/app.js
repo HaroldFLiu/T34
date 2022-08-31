@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const indexRoutes = require('./routes/index');
 const loginRoutes = require('./routes/login');
 const groupRoutes = require('./routes/groups');
+const mon = require('nodemon');
 
 const app = express();
 
