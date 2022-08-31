@@ -1,5 +1,7 @@
 require('dotenv').config();
 
+process.env['MONGO_URI'] = 'mongodb://localhost:27017/myapp'
+
 const express = require('express');
 const mongoose = require('mongoose');
 const indexRoutes = require('./routes/index');
