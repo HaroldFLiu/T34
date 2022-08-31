@@ -4,18 +4,17 @@ const create = async ({
   name,
   description,
   price,
-  category,
-  seller,
+  //category,
+  //seller,
 }) => {
   const item = await Item.create({
     name,
     description,
     price,
-    category,
-    phone_number,
-    seller,
+    //category,
+    //seller,
   });
   return item;
 };
 
-module.exports = { item };
+module.exports = { create };

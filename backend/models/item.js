@@ -14,6 +14,7 @@ const itemSchema = new Schema(
         type: Number,
         required: true,
       },
+      /*
       category: {
         type: Schema.Types.ObjectId,
         ref: 'Category',
@@ -24,7 +25,7 @@ const itemSchema = new Schema(
         ref: 'User',
         required: true,
       },
-      /*buyer: {
+      buyer: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: false,
