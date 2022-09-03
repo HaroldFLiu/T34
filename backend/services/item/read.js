@@ -10,7 +10,7 @@ const readById = async (itemId) => {
   const item = await Item.findById(itemId);
 
   if (isNilOrEmpty(item)) {
-    console.log(`Cannot find patient with id: ${patientId}`);
+    console.log(`Cannot find item with id: ${itemId}`);
   }
 
   return item;
