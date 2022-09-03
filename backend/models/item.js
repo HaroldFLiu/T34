@@ -14,13 +14,9 @@ const itemSchema = new Schema(
         type: Number,
         required: true,
       },
+      category_ids: {type: [Schema.Types.ObjectId], ref: 'Category'},
       /*
-      category: {
-        type: Schema.Types.ObjectId,
-        ref: 'Category',
-        required: true,
-      },
-      seller: {
+      seller_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: true,

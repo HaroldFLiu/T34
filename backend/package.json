@@ -28,6 +28,9 @@
         "mongo": "^0.1.0",
         "mongoose": "^6.5.3",
         "nodemon": "^2.0.19",
-        "prettier": "^2.7.1"
+        "prettier": "^2.7.1",
+        "ramda": "^0.28.0",
+        "ramda-adjunct": "^3.2.0",
+        "validator": "^13.7.0"
     }
 }
