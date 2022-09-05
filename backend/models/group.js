@@ -21,7 +21,7 @@ const groupSchema = new Schema(
       }],
       admins: [{
         type: Schema.Types.ObjectId,
-        red: 'User',
+        ref: 'User',
         required: true, 
       }]
 
