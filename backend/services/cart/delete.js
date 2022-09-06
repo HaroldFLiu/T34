@@ -24,4 +24,4 @@ const removeAll = async(cartID) => {
     return cart;
 }
 
-module.exports = { deleteItem, removeAll}
+module.exports = { deleteItem, removeAll};

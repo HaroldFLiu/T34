@@ -1,7 +1,7 @@
 const { Cart } = require('../../models/cart')
 const { Item } = require('../../models/item');
 
-const additem = async(cartId, itemId, quantity) => {
+const addItem = async(cartId, itemId, quantity) => {
       const item = await Item.findById(itemId);
       const cart = await Cart.findById(cartId)
       for (let i = 0; i < quantity; i++) {
@@ -20,7 +20,7 @@ const checkout = async(cartId) => {
   return cart;
 }
 
-module.exports = {additem, checkout};
+module.exports = {addItem, checkout};
 
 
 
