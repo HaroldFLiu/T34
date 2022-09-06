@@ -5,6 +5,8 @@ const create = async ({
   description,
   price,
   category_ids,
+  group_ids,
+  public_visibility,
   //seller,
 }) => {
   const item = await Item.create({
@@ -12,6 +14,8 @@ const create = async ({
     description,
     price,
     category_ids,
+    group_ids,
+    public_visibility,
     //seller,
   });
   return item;

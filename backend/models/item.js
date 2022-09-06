@@ -14,7 +14,18 @@ const itemSchema = new Schema(
         type: Number,
         required: true,
       },
-      category_ids: {type: [Schema.Types.ObjectId], ref: 'Category'},
+      category_ids: {
+        type: [Schema.Types.ObjectId], 
+        ref: 'Category',
+      },
+      group_ids: {
+        type: [Schema.Types.ObjectId], 
+        ref: 'Group'
+      },
+      public_visibility: {
+        type: Boolean,
+        required: true,
+      }
       /*
       seller_id: {
         type: Schema.Types.ObjectId,

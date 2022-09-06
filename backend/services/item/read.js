@@ -39,5 +39,13 @@ const readAll = async () => {
   return Item.find();
 };
 
+const readPublicItems = async() => {
+  const items = await Item.find();
+  const filtered = items.filter((x) => x.public_visibility == true);
 
-module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, readAll };
+  return filtered;
+}
+
+
+module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
+  readAll, readPublicItems};

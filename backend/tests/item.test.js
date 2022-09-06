@@ -43,6 +43,8 @@ describe('ItemService', () => {
       description: 'This is a good chair.',
       price: 100,
       category_ids: [category1._id],
+      group_ids: [],
+      public_visibility: true,
       // seller: ,
     }
 
@@ -54,7 +56,9 @@ describe('ItemService', () => {
     expect(item1db.name).toBe(item1Info.name);
     expect(item1db.description).toBe(item1Info.description);
     expect(item1db.price).toBe(item1Info.price);
-    expect(item1db.category).toBe(item1Info.category);
+    expect(item1db.category_ids).toStrictEqual(item1Info.category_ids);
+    expect(item1db.group_ids).toStrictEqual(item1Info.group_ids);
+    expect(item1db.public_visibility).toBe(item1Info.public_visibility);
   });
 
   test('Delete Item', async () => {
@@ -72,6 +76,7 @@ describe('ItemService', () => {
       price: 150,
       // category: ,
       // seller: ,
+      public_visibility: false,
     }
 
     const updatedItem1 = await itemService.updateById(item1._id, item1UpdateInfo);
@@ -83,7 +88,9 @@ describe('ItemService', () => {
     expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
     expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
     expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
-    expect(updatedItem1db.category).toBe(item1Info.category);
+    expect(updatedItem1db.category_ids).toStrictEqual(item1Info.category_ids);
+    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
+    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo.public_visibility);
   });
 
   
@@ -107,6 +114,8 @@ describe('ItemService', () => {
     expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
     expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
     expect(updatedItem1db.category_ids).toStrictEqual(category_ids);
+    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
+    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo.public_visibility);
   });
 
 
@@ -124,14 +133,15 @@ describe('ItemService', () => {
     expect(itemdb.price).toBe(item1UpdateInfo.price);
     expect(itemdb.category).toBe(item1Info.category);
     expect(itemdb.category_ids).toStrictEqual(category_ids);
+    expect(itemdb.group_ids).toStrictEqual(item1Info.group_ids);
+    expect(itemdb.public_visibility).toBe(item1UpdateInfo.public_visibility);
 
   });
 
   test('Read All Items', async () => {
     const items = await itemService.readAll();
 
-    console.log('READ ALL ITEMS');
-    console.log(items);
+    expect(items.length).toBe(1);
   });
   
   test('Read By Price Ascending', async () => {
@@ -139,7 +149,10 @@ describe('ItemService', () => {
       name: 'Apple',
       description: 'Crunchy',
       price: 5,
-      category_ids: [category2._id]
+      category_ids: [category2._id],
+      group_ids: [],
+      public_visibility: true,
+      
       // seller: ,
     }
 
@@ -147,7 +160,9 @@ describe('ItemService', () => {
       name: 'Banana',
       description: 'Slippery',
       price: 50,
-      category_ids: [category2._id]
+      category_ids: [category2._id],
+      group_ids: [],
+      public_visibility: false,
       // category: ,
       // seller: ,
     }
@@ -168,7 +183,13 @@ describe('ItemService', () => {
 
   test('Read By Category', async () => {
     const items = await itemService.readByCategory(category1._id);
-    console.log('READ BY CATEGORY\n');
-    console.log(items);
+
+    expect(items.length).toBe(1);
+  });
+
+  test('Read Public Items', async () => {
+    const items = await itemService.readPublicItems();
+
+    expect(items.length).toBe(1);
   });
 })
