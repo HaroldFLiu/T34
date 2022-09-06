@@ -3,17 +3,17 @@
   box-sizing: border-box;
 }
 body {
-  background: #86dfa8 !important;
+  background: linear-gradient(to bottom right, #86dfa8, green) !important;
   min-height: 100vh;
   display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
 }
 
-.website-name {
+.sign {
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
   padding-left: 100px;
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
@@ -30,6 +30,7 @@ body {
 h1,h2,h3,h4,h5,h6,label,span {
   font-weight: 500;
   font-family: 'Fira Sans', sans-serif;
+  text-align: center;
 }
 body, html, .App, #root, .auth-wrapper {
   width: 100%;

@@ -3,7 +3,7 @@ export default class Login extends Component {
   render() {
     return (
       <form>
-        <label className="website-name">
+        <label className="sign">
           Sign In
         </label>
         <label className="slogan">
