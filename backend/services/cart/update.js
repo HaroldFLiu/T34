@@ -8,6 +8,7 @@ const addItem = async(cartId, itemId, quantity) => {
         cart.items.append(itemId);
         cart.subtotal += item.price;
       }
+      await cart.save();
       
       return cart;
 
@@ -17,6 +18,7 @@ const checkout = async(cartId) => {
   const cart = await Cart.findById(cartID);
   cart.items = [];
   cart.subtotal = 0.00;
+  await cart.save();
   return cart;
 }
 

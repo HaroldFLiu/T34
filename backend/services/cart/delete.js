@@ -14,6 +14,7 @@ const deleteItem = async(cartId, itemId) => {
         }
     }
     cart.items = tempItems;
+    await cart.save();
     return cart;
 }
 
@@ -21,6 +22,7 @@ const removeAll = async(cartID) => {
     const cart = await Cart.findById(cartId);
     cart.items = [];
     cart.subtotal = 0.00;
+    await cart.save();
     return cart;
 }
 

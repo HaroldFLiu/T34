@@ -13,6 +13,7 @@ const deleteItem = async (favId, itemID) => {
         }
     }
     favourite.items = tempItems;
+    await favourite.save();
     return favourite;
 
 }
@@ -21,6 +22,7 @@ const removeAll = async (favId) => {
     const favourite = await Favourites.findById(favId);
 
     favourite.items = [];
+    await favourite.save();
     return favourite; 
 }
 

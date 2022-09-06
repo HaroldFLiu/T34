@@ -7,7 +7,7 @@ const addItem = async (favId, itemId) => {
     const item = await Item.findById(item);
 
     favourite.items.append(itemId);
-    
+    await favourite.save();
     return favourite;
 };
 
