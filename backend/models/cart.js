@@ -12,6 +12,10 @@ const cartSchema = new Schema(
         ref: 'Item',
         required: false,
       }],
+      subtotal: {
+        type: Number,
+        default: 0.00,
+      },
     }
   );
   
