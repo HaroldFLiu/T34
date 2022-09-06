@@ -1,4 +1,6 @@
 const { Schema, model } = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
+const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema(
   {
@@ -6,10 +8,12 @@ const userSchema = new Schema(
       first: {
         type: String,
         required: true,
+        trim: true,
       },
       last: {
         type: String,
         required: true,
+        trim: true,
       },
     },
     email: {
@@ -17,6 +21,7 @@ const userSchema = new Schema(
       index: true,
       required: true,
       unique: true,
+      trim: true,
     },
     password: {
       type: String,
@@ -40,6 +45,26 @@ const userSchema = new Schema(
     },
   }
 );
+
+userSchema.plugin(uniqueValidator);
+
+userSchema.pre('save', function(next){
+  let user = this;
+  if (!user.isModified('password')) {
+    return next();
+  }
+  bcrypt
+  .genSalt(12)
+  .then((salt) => {
+    return bcrypt.hash(user.password, salt);
+  })
+  .then((hash) => {
+    user.password = hash;
+    next();
+  })
+  .catch((err)=> next(err));
+});
+
 
 const User = model('User', userSchema);
 module.exports = { User };
