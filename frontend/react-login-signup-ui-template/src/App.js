@@ -1,10 +1,14 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/login.component'
 import SignUp from './components/signup.component'
-function App() {
+const App = () => {
+  useEffect(() => {
+    document.title = 'Team 34 Frontend';
+  });
+
   return (
     <Router>
       <div className="App">
