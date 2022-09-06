@@ -3,7 +3,12 @@ export default class Login extends Component {
   render() {
     return (
       <form>
-        <h3>Sign In</h3>
+        <label className="website-name">
+          Sign In
+        </label>
+        <label className="slogan">
+          Sign in and start scrolling through the marketplace!
+        </label>
         <div className="mb-3">
           <label>Email address</label>
           <input
@@ -33,12 +38,12 @@ export default class Login extends Component {
           </div>
         </div>
         <div className="d-grid">
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-success">
             Submit
           </button>
         </div>
         <p className="forgot-password text-right">
-          Forgot <a href="google">password?</a>
+          Forgot <a href="#">password?</a>
         </p>
       </form>
     )
