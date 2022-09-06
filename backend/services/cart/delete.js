@@ -19,7 +19,7 @@ const deleteItem = async(cartId, itemId) => {
 
 const removeAll = async(cartID) => {
     const cart = await Cart.findById(cartId);
-    cart.items = []
+    cart.items = [];
     cart.subtotal = 0.00;
     return cart;
 }

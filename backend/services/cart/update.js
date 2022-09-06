@@ -3,7 +3,7 @@ const { Item } = require('../../models/item');
 
 const addItem = async(cartId, itemId, quantity) => {
       const item = await Item.findById(itemId);
-      const cart = await Cart.findById(cartId)
+      const cart = await Cart.findById(cartId);
       for (let i = 0; i < quantity; i++) {
         cart.items.append(itemId);
         cart.subtotal += item.price;
