@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const indexRoutes = require('./routes/index');
 const loginRoutes = require('./routes/login');
 const groupRoutes = require('./routes/groups');
+const itemRoutes = require('./routes/items');
 
 const app = express();
 
@@ -19,7 +20,8 @@ app.use((req, res, next) => {
 // routes
 app.use('', indexRoutes);
 app.use('', loginRoutes);
-app.use('', groupRoutes);
+app.use('/groups', groupRoutes);
+app.use('/public', itemRoutes);
 
 // connect to database
 mongoose.connect(process.env.MONGO_URI)

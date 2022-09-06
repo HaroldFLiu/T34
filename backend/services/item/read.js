@@ -46,6 +46,13 @@ const readPublicItems = async() => {
   return filtered;
 }
 
+const readByGroup = async (groupId) => {
+  const items = await Item.find();
+  const filtered = items.filter((x) => x.group_ids.includes(groupId));
+  
+  return filtered;
+};
+
 
 module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems};
+  readAll, readPublicItems, readByGroup};

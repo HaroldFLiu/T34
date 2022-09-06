@@ -23,3 +23,5 @@ router.delete('/:item_id', deleteItem);
 
 // UPDATE an item
 router.patch('/:item_id', updateItem);
+
+module.exports = router;

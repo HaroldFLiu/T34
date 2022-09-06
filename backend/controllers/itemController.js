@@ -1,5 +1,5 @@
 const { default: mongoose } = require('mongoose');
-const { itemService } = require('../../../../services/item');
+const itemService = require('../services/item');
 
 const createItem = async (req, res) => {
     const {name, description, price, category_ids, group_ids, 
@@ -16,7 +16,11 @@ const createItem = async (req, res) => {
 const getPublicItems = async (req, res) => {
     const items = await itemService.readPublicItems();
 
-    res.status(200).jason(items);
+    if (!items) {
+        return res.status(404).json({error: 'No items'});
+    }
+
+    res.status(200).json(items);
 }
 
 const getItem = async (req, res) => {
