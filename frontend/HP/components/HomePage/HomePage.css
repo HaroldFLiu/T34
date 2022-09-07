@@ -1,0 +1,586 @@
+.home-page {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  overflow: hidden;
+  padding: 21px 0;
+  width: 1440px;
+}
+
+.top-bar {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  margin-right: 9.62px;
+  min-width: 1381px;
+}
+
+.rectangle-22 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 77px;
+  width: 227px;
+}
+
+.overlap-group6 {
+  height: 54px;
+  margin-bottom: 3.0px;
+  margin-left: 70px;
+  position: relative;
+  width: 950px;
+}
+
+.top-bar-1 {
+  align-items: center;
+  display: flex;
+  height: 54px;
+  left: 0;
+  min-width: 844px;
+  position: absolute;
+  top: 0;
+}
+
+.search-container {
+  background-color: var(--white);
+  border: 1px solid;
+  border-color: var(--black);
+  height: 54px;
+  position: relative;
+  width: 621px;
+}
+
+.search-bar-backing-1 {
+  background-color: var(--white);
+  border: 0.5px solid;
+  border-color: var(--black);
+  cursor: pointer;
+  height: 33px;
+  left: 486px;
+  position: absolute;
+  top: 9px;
+  width: 125px;
+}
+
+.search {
+  left: 484px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  width: 129px;
+}
+
+.overlap-group-1 {
+  height: 23px;
+  margin-left: 20px;
+  margin-top: 1.0px;
+  position: relative;
+  width: 197px;
+}
+
+.sell {
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.shop {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.search-1 {
+  background-color: transparent;
+  border: 0;
+  height: 27px;
+  left: 30px;
+  letter-spacing: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 12px;
+  width: 71px;
+}
+
+.search-1::placeholder,
+.search-here::placeholder {
+  color: #00000099;
+}
+
+.login {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  height: 33px;
+  left: 819px;
+  min-width: 131px;
+  position: absolute;
+  top: 10px;
+}
+
+.overlap-group {
+  height: 33px;
+  position: relative;
+  width: 129px;
+}
+
+.search-bar-backing {
+  background-color: var(--white);
+  border: 0.5px solid;
+  border-color: var(--black);
+  height: 33px;
+  left: 2px;
+  position: absolute;
+  top: 0;
+  width: 125px;
+}
+
+.login-1,
+.sign-up {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 129px;
+}
+
+.signup {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  margin-bottom: 4.0px;
+  margin-left: 3px;
+  min-width: 131px;
+}
+
+.divider-bar {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: -15px;
+  margin-top: 22px;
+  min-height: 60px;
+  padding: 0 15px;
+  width: 1482px;
+}
+
+.line-1 {
+  height: 1px;
+  margin-top: -1px;
+  width: 1440px;
+}
+
+.flex-row {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  height: 24px;
+  margin-right: 42.27px;
+  margin-top: 16px;
+  min-width: 1204px;
+}
+
+.place {
+  letter-spacing: 0;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.shop-1 {
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.sell-1 {
+  align-self: flex-end;
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.groups {
+  align-self: flex-end;
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-left: 33px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.wishlist {
+  align-self: flex-end;
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 169px;
+}
+
+.overlap-group5 {
+  height: 23px;
+  margin-left: 34px;
+  position: relative;
+  width: 350px;
+}
+
+.polygon-1 {
+  height: 12px;
+  left: 333px;
+  position: absolute;
+  top: 11px;
+  width: 16px;
+}
+
+.browse-by-category {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 336px;
+}
+
+.line-2 {
+  height: 1px;
+  margin-top: 19px;
+  width: 1440px;
+}
+
+.middle-bar {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-top: 22px;
+  min-height: 121px;
+  width: 1410px;
+}
+
+.place-1 {
+  align-self: flex-start;
+  letter-spacing: 0;
+  min-height: 52px;
+  text-align: center;
+  width: 227px;
+}
+
+.line-3 {
+  height: 1px;
+  margin-right: 4px;
+  margin-top: 14px;
+  width: 1372px;
+}
+
+.flex-row-1 {
+  align-items: flex-end;
+  align-self: center;
+  display: flex;
+  margin-right: 12.0px;
+  margin-top: 10px;
+  min-width: 1322px;
+}
+
+.x2174913-listings {
+  letter-spacing: 0;
+  margin-bottom: 1px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.overlap-group4 {
+  height: 32px;
+  margin-left: 959px;
+  position: relative;
+  width: 203px;
+}
+
+.widget-wrapper {
+  align-items: flex-start;
+  display: flex;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 203px;
+}
+
+.rectangle-1 {
+  width: 100%;
+}
+
+.sort-button {
+  align-items: center;
+  display: flex;
+  height: 26px;
+  left: 4px;
+  min-width: 188px;
+  position: absolute;
+  top: 3px;
+}
+
+.sort-by-default {
+  letter-spacing: 0;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.polygon-2 {
+  height: 8px;
+  margin-left: 13px;
+  margin-top: 3.75px;
+  width: 12px;
+}
+
+.line-4 {
+  height: 1px;
+  margin-right: 4px;
+  margin-top: 10px;
+  width: 1372px;
+}
+
+.flex-row-2 {
+  align-items: flex-start;
+  display: flex;
+  height: 649px;
+  margin-left: 4px;
+  margin-top: 31px;
+  min-width: 617px;
+}
+
+.flex-col {
+  align-items: center;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  min-height: 643px;
+  width: 283px;
+}
+
+.overlap-group3 {
+  height: 37px;
+  margin-right: 2.0px;
+  position: relative;
+  width: 281px;
+}
+
+.rectangle-2-1 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 37px;
+  left: 20px;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.search-here {
+  background-color: transparent;
+  border: 0;
+  height: 20px;
+  left: 0;
+  letter-spacing: 0;
+  padding: 0;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 242px;
+}
+
+.icon-search {
+  height: 26px;
+  left: 29px;
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 28px;
+}
+
+.category-bar {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 9.0px;
+  margin-top: 7px;
+  min-height: 490px;
+  width: 274px;
+}
+
+.categories {
+  align-self: flex-start;
+  letter-spacing: 0;
+  min-height: 41px;
+  text-align: center;
+  width: 196px;
+}
+
+.vechicles {
+  letter-spacing: 0;
+  margin-left: 16.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item {
+  letter-spacing: 0;
+  margin-left: 6.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item-1 {
+  letter-spacing: 0;
+  margin-left: 6.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.home-improvement-supplies {
+  letter-spacing: 0;
+  margin-left: 16.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 178px;
+}
+
+.musical-instruments {
+  letter-spacing: 0;
+  margin-left: 24.0px;
+  margin-top: 32px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.category-bar-item-2 {
+  letter-spacing: 0;
+  margin-left: 24.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.create-new-listing {
+  align-items: flex-start;
+  cursor: pointer;
+  display: flex;
+  margin-right: 1.0px;
+  margin-top: 22px;
+  min-width: 266px;
+}
+
+.overlap-group1 {
+  height: 37px;
+  position: relative;
+  width: 264px;
+}
+
+.rectangle-2 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 37px;
+  left: 3px;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.create-new-listing-1,
+.filter {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  width: 242px;
+}
+
+.overlap-group2 {
+  height: 37px;
+  margin-right: 3.0px;
+  margin-top: 13px;
+  position: relative;
+  width: 264px;
+}
+
+.middle-area {
+  display: flex;
+  flex-direction: column;
+  height: 427px;
+  margin-left: 17px;
+  width: 317px;
+}
+
+.todays-listings {
+  height: 43px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 287px;
+}
+
+.rectangle-3 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 250px;
+  margin-left: 65px;
+  margin-top: 60px;
+  width: 250px;
+}
+
+.prodct-descrip-price {
+  align-items: flex-start;
+  display: flex;
+  margin-left: 65px;
+  margin-top: 8px;
+  min-width: 252px;
+}
+
+.overlap-group-2 {
+  height: 66px;
+  position: relative;
+  width: 250px;
+}
+
+.x1595-sanrio-kurumi-plush {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 8px;
+  width: 250px;
+}
+
+.icon-star {
+  height: 21px;
+  left: 223px;
+  position: absolute;
+  top: 0;
+  width: 22px;
+}
+
