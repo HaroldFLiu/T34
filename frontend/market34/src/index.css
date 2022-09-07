@@ -1,0 +1,180 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import url("https://fonts.googleapis.com/css?family=Tienne:400,700|Montserrat:500|Lexend+Deca:400");
+:root {
+  --black-2: 
+rgba(0, 0, 0, 0.502);
+  --black: 
+rgba(0, 0, 0, 1);
+  --tuatara: 
+rgba(51, 54, 52, 0.522);
+  --feijoa: 
+rgba(155, 215, 140, 1);
+  --alto: 
+rgba(217, 217, 217, 1);
+  --white-2: 
+rgba(255, 255, 255, 0.502);
+  --white: 
+rgba(255, 255, 255, 1);
+
+  --font-size-xxxxl: 25px;
+  --font-size-xxxxxl: 30px;
+  --font-size-xxxxxl: 39px;
+  --font-size-m2: 15px;
+  --font-size-l2: 16px;
+  --font-size-xl2: 17px;
+  --font-size-xxl2: 20px;
+  --font-size-xxxl2: 24px;
+
+  --font-family-lexend_deca: "Lexend Deca";
+  --font-family-montserrat: "Montserrat";
+  --font-family-tienne: "Tienne";
+}
+
+
+
+.tienne-bold-black-24px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxxl2);
+  font-weight: 700;
+  font-style: normal;
+}
+.border-1px-black {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--black);
+}
+.montserrat-medium-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-montserrat);
+  font-size: var(--font-size-l2);
+  font-weight: 500;
+  font-style: normal;
+}
+.tienne-bold-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxl2);
+  font-weight: 700;
+  font-style: normal;
+}
+.tienne-normal-black-48px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-normal-black-12px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-normal-black-15px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-m2);
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-bold-black-39px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 39px;
+  font-weight: 700;
+  font-style: normal;
+}
+.tienne-normal-black-30px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxxxxl);
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-bold-black-15px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-m2);
+  font-weight: 700;
+  font-style: normal;
+}
+.tienne-bold-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-l2);
+  font-weight: 700;
+  font-style: normal;
+}
+.tienne-normal-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-normal-black-25px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxxxl);
+  font-weight: 400;
+  font-style: normal;
+}
+.tienne-bold-black-32px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 32px;
+  font-weight: 700;
+  font-style: normal;
+}
+.border-0-5px-black-2 {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: var(--black-2);
+}
+.tienne-normal-black-17px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xl2);
+  font-weight: 400;
+  font-style: normal;
+}
+.border-0-5px-black {
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: var(--black);
+}
+.tienne-normal-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 18px;
+  font-weight: 400;
+  font-style: normal;
+}
+.screen a {
+  display: contents;
+  text-decoration: none;
+}
+
+.container-center-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
+
+.container-center-horizontal > * {
+  flex-shrink: 0;
+  pointer-events: auto;
+}
+
+.align-self-flex-end {
+  align-self: flex-end;
+}
+
+input:focus {
+  outline: none;
+}
+
