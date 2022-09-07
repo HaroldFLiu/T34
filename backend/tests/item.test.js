@@ -101,9 +101,14 @@ describe('ItemService', () => {
 
     category2 = await categoryService.create(category2Info);
 
+    item1UpdateInfo2 = {
+      category_ids: [category1._id, category2._id],
+      public_visibility: false,
+    }
+
     category_ids = [category1._id, category2._id];
 
-    updateditem1 = await itemService.addCategory(item1._id, category2._id);
+    updateditem1 = await itemService.updateById(item1._id, item1UpdateInfo2);
 
     const updatedItem1db = await Item.findById(item1._id);
 
@@ -113,11 +118,28 @@ describe('ItemService', () => {
     expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
     expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
     expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
-    expect(updatedItem1db.category_ids).toStrictEqual(category_ids);
+    expect(updatedItem1db.category_ids).toStrictEqual(item1UpdateInfo2.category_ids);
     expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo.public_visibility);
+    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo2.public_visibility);
   });
 
+  test('Add A Category 2', async () => {
+    category_ids = [category1._id, category2._id];
+
+    updateditem1 = await itemService.updateById(item1._id, item1UpdateInfo2);
+
+    const updatedItem1db = await Item.findById(item1._id);
+    
+    expect(updateditem1).not.toBeNull();
+    expect(updatedItem1db).not.toBeNull();
+    expect(updatedItem1db).not.toBeNull();
+    expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
+    expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
+    expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
+    expect(updatedItem1db.category_ids).toStrictEqual(item1UpdateInfo2.category_ids);
+    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
+    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo2.public_visibility);
+  });
 
   test('Read One Item', async () => {
     const item = await itemService.readById(item1._id);

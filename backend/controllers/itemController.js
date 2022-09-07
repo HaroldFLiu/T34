@@ -47,12 +47,6 @@ const deleteItem = async (req, res) => {
     }
 
     const item = await itemService.deleteItem(item_id);
-
-    if (!item) {
-        return res.status(404).json({error: 'Item does not exist'});
-    }
-
-    res.status(200).json(item);
 }
 
 const updateItem = async (req, res) => {
