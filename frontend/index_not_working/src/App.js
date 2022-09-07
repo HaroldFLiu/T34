@@ -1,18 +1,18 @@
 import "./App.css";
 import React from "react";
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
-import HomePage from "./components/HomePage";
-import './index.css';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import HomePage from "./components/HomePage/HomePage.jsx";
+//import { Routes ,Route,BrowserRouter} from 'react-router-dom';
 
 function App() {
   return (
     <Router>
-      <Switch>
-        <Route path="/:path(|home-page)">
-          <HomePage {...homePageData} />
-        </Route>
-      </Switch>
+      <Routes>
+      <Route exact path="/" element= {<HomePage {...homePageData} />} />
+      </Routes>
+
     </Router>
+    
   );
 }
 
