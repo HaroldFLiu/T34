@@ -4,11 +4,31 @@ import './App.css'
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Login from './components/login.component'
 import SignUp from './components/signup.component'
+// adding sell page 8/09
+import SellPage from './components/sellpage.component'
 const App = () => {
   useEffect(() => {
     document.title = 'Team 34 Frontend';
   });
-
+  return (
+    <Router>
+      <div className="App">
+        <div className="auth-wrapper">
+          <div className="auth-inner">
+            <Routes>
+              <Route exact path="/" element={<Login />} />
+              <Route path="/sign-in" element={<Login />} />
+              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/sell-page" element={<SellPage />} />
+            </Routes>
+          </div>
+        </div>
+      </div>
+    </Router>
+  )
+}
+export default App;
+/*
   return (
     <Router>
       <div className="App">
@@ -39,6 +59,7 @@ const App = () => {
               <Route exact path="/" element={<Login />} />
               <Route path="/sign-in" element={<Login />} />
               <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/sell-page" element={<SellPage />} />
             </Routes>
           </div>
         </div>
@@ -47,3 +68,4 @@ const App = () => {
   )
 }
 export default App;
+*/

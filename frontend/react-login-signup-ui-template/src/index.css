@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 body {
-  background: linear-gradient(to bottom right, #86dfa8, green) !important;
+  background: linear-gradient(to bottom right, #86dfa8, green);
   min-height: 100vh;
   display: flex;
   font-weight: 400;
@@ -79,4 +79,23 @@ body, html, .App, #root, .auth-wrapper {
 .forgot-password a {
   color: #42997f;
 }
+
+
+.sign-up,
+.sign-up a {
+  text-align: right;
+  font-size: 13px;
+  padding-top: 10px;
+  color: #7f7d7d;
+  margin: 0;
+}
+.sign-up a {
+  color: #42997f;
+}
+
+.d-grid a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
 

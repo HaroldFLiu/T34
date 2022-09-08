@@ -38,12 +38,15 @@ export default class Login extends Component {
           </div>
         </div>
         <div className="d-grid">
-          <button type="submit" className="btn btn-success">
-            Submit
-          </button>
+            <button type="submit" className="btn btn-success">
+              <a href="/sell-page">Submit</a>
+            </button>
         </div>
         <p className="forgot-password text-right">
           Forgot <a href="#">password?</a>
+        </p>
+        <p className="sign-up text-right">
+          Don't have an account? <a href="/sign-up">Sign up!</a>
         </p>
       </form>
     )
