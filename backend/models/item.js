@@ -25,7 +25,7 @@ const itemSchema = new Schema(
       public_visibility: {
         type: Boolean,
         required: true,
-      }
+      },
       /*
       seller_id: {
         type: Schema.Types.ObjectId,
@@ -37,7 +37,11 @@ const itemSchema = new Schema(
         ref: 'User',
         required: false,
       }*/
-
+      comments: {
+        type: [Schema.Types.ObjectId], 
+        ref: 'Comment',
+        default: [],
+      }
     },
     {
       timestamps: {

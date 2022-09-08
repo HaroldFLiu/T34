@@ -55,4 +55,4 @@ const readByGroup = async (groupId) => {
 
 
 module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems, readByGroup};
+  readAll, readPublicItems, readByGroup };

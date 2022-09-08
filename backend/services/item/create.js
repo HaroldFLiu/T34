@@ -8,6 +8,7 @@ const create = async ({
   group_ids,
   public_visibility,
   //seller,
+  comments,
 }) => {
   const item = await Item.create({
     name,
@@ -17,6 +18,7 @@ const create = async ({
     group_ids,
     public_visibility,
     //seller,
+    comments,
   });
   return item;
 };
