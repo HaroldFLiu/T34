@@ -77,19 +77,19 @@ function SellPage(props) {
                   <div className="search-bar-backing-1"></div>
                 </a>
                 <div className="search tienne-bold-black-16px">
-                  <button type="search"> 
+                  <button type="button" className="button-block"> 
                     {search}
                   </button>
                 </div>
               </div>
               <div className="overlap-group-1 tienne-bold-black-16px">
                 <div className="sell">
-                < button type="sell" >
+                < button type="sell" className="button-block" >
                   {sell1}
                 </button>
                 </div>
                 <div className="shop">
-                < button type="shop" >
+                < button type="shop" className="button-block"  >
                   {shop1}
                 </button>
               </div>
@@ -106,7 +106,7 @@ function SellPage(props) {
                 <div className="overlap-group">
                   <div className="search-bar-backing"></div>
                   <div className="login-1 tienne-bold-black-16px">
-                  < button type="shop" >
+                  < button type="shop" className="button-block" >
                     {login}
                 </button>
                 </div>
@@ -119,7 +119,7 @@ function SellPage(props) {
               <div className="overlap-group">
                 <div className="search-bar-backing"></div>
                 <div className="sign-up tienne-bold-black-16px">
-                < button type="shop" >
+                < button type="shop" className="button-block"  >
                   {signUp}
                 </button>
                 </div>
@@ -131,32 +131,32 @@ function SellPage(props) {
           <img className="line-1" src={line1} />
           <div className="flex-row tienne-bold-black-24px">
             <div className="place">
-            < button type="shop" >
+            < button type="shop" className="button-block" >
                   {place1}
                 </button>
             </div>
             <div className="shop-1">
-            < button type="shop" >
+            < button type="shop" className="button-block"  >
                   {shop2}
                 </button>
               </div>
             <a href="javascript:SubmitForm('form6')" className="align-self-flex-end">
               <div className="sell-1 tienne-bold-black-24px">
-              < button type="shop" >
+              < button type="shop" className="button-block" >
                   {sell2}
                 </button>
               </div>
             </a>
             <a href="javascript:SubmitForm('form6')" className="align-self-flex-end">
               <div className="groups tienne-bold-black-24px">
-              < button type="shop" >
+              < button type="shop" className="button-block">
                   {groups}
                 </button>
               </div>
             </a>
             <a href="javascript:SubmitForm('form6')" className="align-self-flex-end">
               <div className="wishlist tienne-bold-black-24px">
-              < button type="shop" >
+              < button type="shop" className="button-block" >
                   {wishlist}
                 </button>
               </div>
@@ -164,7 +164,7 @@ function SellPage(props) {
             <div className="overlap-group5">
               <img className="polygon-1" src={polygon1} />
               <div className="browse-by-category tienne-bold-black-24px">
-              < button type="shop" >
+              < button type="shop" className="button-block">
                   {browseByCategory}
                 </button>
               </div>
@@ -187,7 +187,7 @@ function SellPage(props) {
               </div>
               <div className="sort-button">
                 <div className="sort-by-default tienne-normal-black-18px">
-                < button type="shop" >
+                < button type="shop" className="button-block" >
                   {sortByDefault}
                 </button>
                 </div>
@@ -262,7 +262,7 @@ function SellPage(props) {
                 <div className="overlap-group1">
                   <div className="rectangle-2"></div>
                   <div className="create-new-listing-1 tienne-normal-black-20px">
-                    <button type="create-new"> 
+                    <button type="create-new" className="button-block"> 
                       {createNewListing}
                       </button>
                     </div>
@@ -272,7 +272,7 @@ function SellPage(props) {
             <div className="overlap-group2">
               <div className="rectangle-2"></div>
               <div className="filter tienne-normal-black-20px">
-                <button type="filter-btn">
+                <button type="filter-btn" className="button-block">
                   {filter}
                 </button>
               </div>

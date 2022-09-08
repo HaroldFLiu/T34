@@ -205,8 +205,18 @@ input:focus {
   text-align: center;
   width: 129px;
   position: absolute;
-  top: 15px;
+  top: 13px;
   left: 484px;
+}
+
+.button-block {
+  width: 100%;
+  background-color: #0000;
+  border: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 100%;
+  display: block;
 }
 
 .overlap-group-1 {
@@ -340,23 +350,12 @@ input:focus {
   margin-left: 34px;
 }
 
-.sell-1 {
+.sell-1, .groups {
   cursor: pointer;
   letter-spacing: 0;
   min-height: 23px;
   text-align: center;
   width: 129px;
-  align-self: flex-end;
-  margin-left: 34px;
-}
-
-.groups {
-  cursor: pointer;
-  letter-spacing: 0;
-  min-height: 23px;
-  text-align: center;
-  width: 129px;
-  align-self: flex-end;
   margin-left: 33px;
 }
 
@@ -366,7 +365,6 @@ input:focus {
   min-height: 23px;
   text-align: center;
   width: 169px;
-  align-self: flex-end;
   margin-left: 34px;
 }
 
@@ -535,6 +533,7 @@ input:focus {
   width: 242px;
   background-color: #0000;
   border: 0;
+  margin-top: 3px;
   padding: 0;
   position: absolute;
   top: 5px;
@@ -566,49 +565,51 @@ input:focus {
   text-align: center;
   width: 196px;
   align-self: flex-start;
+  margin-right: 20px;
 }
 
-.vechicles {
+.vechicles, .vechicles a {
   letter-spacing: 0;
   min-height: 26px;
   text-align: center;
   width: 160px;
+  color: #000;
   margin-top: 3px;
   margin-left: 16px;
+  text-decoration: none;
 }
 
-.category-bar-item {
+.category-bar-item, .category-bar-item a, .category-bar-item-1, .category-bar-item-1 a {
   letter-spacing: 0;
   min-height: 26px;
   text-align: center;
   width: 160px;
-  margin-left: 6px;
-}
-
-.category-bar-item-1 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 160px;
+  color: #000;
   margin-top: 3px;
   margin-left: 6px;
+  text-decoration: none;
 }
 
-.home-improvement-supplies {
+.home-improvement-supplies, .home-improvement-supplies a {
   letter-spacing: 0;
   min-height: 26px;
   text-align: center;
   width: 178px;
+  color: #000;
+  margin-top: 3px;
   margin-left: 16px;
+  text-decoration: none;
 }
 
-.musical-instruments {
+.musical-instruments, .musical-instruments a {
   letter-spacing: 0;
   min-height: 26px;
   text-align: center;
   width: 186px;
-  margin-top: 32px;
+  color: #000;
+  margin-top: 12px;
   margin-left: 24px;
+  text-decoration: none;
 }
 
 .category-bar-item-2 {

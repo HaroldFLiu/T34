@@ -30270,7 +30270,8 @@ function SellPage(props) {
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                                     className: "search tienne-bold-black-16px",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                        type: "search",
+                                                        type: "button",
+                                                        className: "button-block",
                                                         children: search
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -30295,6 +30296,7 @@ function SellPage(props) {
                                                     className: "sell",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                         type: "sell",
+                                                        className: "button-block",
                                                         children: sell1
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -30310,6 +30312,7 @@ function SellPage(props) {
                                                     className: "shop",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                         type: "shop",
+                                                        className: "button-block",
                                                         children: shop1
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -30361,6 +30364,7 @@ function SellPage(props) {
                                                     className: "login-1 tienne-bold-black-16px",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                         type: "shop",
+                                                        className: "button-block",
                                                         children: login
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -30412,6 +30416,7 @@ function SellPage(props) {
                                             className: "sign-up tienne-bold-black-16px",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                 type: "shop",
+                                                className: "button-block",
                                                 children: signUp
                                             }, void 0, false, {
                                                 fileName: "components/HomePage/index.jsx",
@@ -30463,6 +30468,7 @@ function SellPage(props) {
                                     className: "place",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                         type: "shop",
+                                        className: "button-block",
                                         children: place1
                                     }, void 0, false, {
                                         fileName: "components/HomePage/index.jsx",
@@ -30478,6 +30484,7 @@ function SellPage(props) {
                                     className: "shop-1",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                         type: "shop",
+                                        className: "button-block",
                                         children: shop2
                                     }, void 0, false, {
                                         fileName: "components/HomePage/index.jsx",
@@ -30496,6 +30503,7 @@ function SellPage(props) {
                                         className: "sell-1 tienne-bold-black-24px",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             type: "shop",
+                                            className: "button-block",
                                             children: sell2
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
@@ -30519,6 +30527,7 @@ function SellPage(props) {
                                         className: "groups tienne-bold-black-24px",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             type: "shop",
+                                            className: "button-block",
                                             children: groups
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
@@ -30542,6 +30551,7 @@ function SellPage(props) {
                                         className: "wishlist tienne-bold-black-24px",
                                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             type: "shop",
+                                            className: "button-block",
                                             children: wishlist
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
@@ -30573,6 +30583,7 @@ function SellPage(props) {
                                             className: "browse-by-category tienne-bold-black-24px",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                 type: "shop",
+                                                className: "button-block",
                                                 children: browseByCategory
                                             }, void 0, false, {
                                                 fileName: "components/HomePage/index.jsx",
@@ -30665,6 +30676,7 @@ function SellPage(props) {
                                                     className: "sort-by-default tienne-normal-black-18px",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                         type: "shop",
+                                                        className: "button-block",
                                                         children: sortByDefault
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -31016,6 +31028,7 @@ function SellPage(props) {
                                                     className: "create-new-listing-1 tienne-normal-black-20px",
                                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                         type: "create-new",
+                                                        className: "button-block",
                                                         children: createNewListing
                                                     }, void 0, false, {
                                                         fileName: "components/HomePage/index.jsx",
@@ -31057,6 +31070,7 @@ function SellPage(props) {
                                             className: "filter tienne-normal-black-20px",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                                 type: "filter-btn",
+                                                className: "button-block",
                                                 children: filter
                                             }, void 0, false, {
                                                 fileName: "components/HomePage/index.jsx",

@@ -69,9 +69,23 @@
   letter-spacing: 0;
   position: absolute;
   text-align: center;
-  top: 15px;
+  top: 13px;
   width: 129px;
 }
+
+/* add display block to stretch button to size 
+PROBLEM: clickable area seems reduced after doing this? */
+.button-block{
+  display: block;
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  
+}
+
 
 .overlap-group-1 {
   height: 23px;
@@ -206,18 +220,17 @@
   width: 129px;
 }
 
+/*removed align self to flex end */
 .sell-1 {
-  align-self: flex-end;
   cursor: pointer;
   letter-spacing: 0;
-  margin-left: 34px;
+  margin-left: 33px;
   min-height: 23px;
   text-align: center;
   width: 129px;
 }
 
 .groups {
-  align-self: flex-end;
   cursor: pointer;
   letter-spacing: 0;
   margin-left: 33px;
@@ -227,7 +240,6 @@
 }
 
 .wishlist {
-  align-self: flex-end;
   cursor: pointer;
   letter-spacing: 0;
   margin-left: 34px;
@@ -377,6 +389,7 @@
   width: 283px;
 }
 
+/* search bar whole grouped item 8 */
 .overlap-group3 {
   height: 37px;
   margin-right: 2.0px;
@@ -384,6 +397,7 @@
   width: 281px;
 }
 
+/* search bar bg box */
 .rectangle-2-1 {
   background-color: var(--alto);
   border: 1px none;
@@ -394,6 +408,7 @@
   width: 261px;
 }
 
+/* search bar here w text */
 .search-here {
   background-color: transparent;
   border: 0;
@@ -403,6 +418,7 @@
   padding: 0;
   position: absolute;
   text-align: center;
+  margin-top: 3px;
   top: 5px;
   width: 242px;
 }
@@ -430,51 +446,72 @@
   align-self: flex-start;
   letter-spacing: 0;
   min-height: 41px;
+  margin-right: 20px;
   text-align: center;
   width: 196px;
 }
 
-.vechicles {
+.vechicles,
+.vechicles a {
   letter-spacing: 0;
   margin-left: 16.0px;
   margin-top: 3px;
   min-height: 26px;
   text-align: center;
   width: 160px;
+  color: black;
+  text-decoration: none;
 }
 
-.category-bar-item {
+/* hobbies, enter, elec + apparel added 3px top-margin*/
+.category-bar-item,
+.category-bar-item a {
   letter-spacing: 0;
   margin-left: 6.0px;
   min-height: 26px;
+  margin-top: 3px;
   text-align: center;
   width: 160px;
+  color: black;
+  text-decoration: none; 
 }
-
-.category-bar-item-1 {
+/* home goods */
+.category-bar-item-1, 
+.category-bar-item-1 a {
   letter-spacing: 0;
   margin-left: 6.0px;
   margin-top: 3px;
   min-height: 26px;
   text-align: center;
   width: 160px;
+  color: black;
+  text-decoration: none;
 }
 
-.home-improvement-supplies {
+/* changed margin-top to 3px*/
+.home-improvement-supplies, 
+.home-improvement-supplies a {
   letter-spacing: 0;
   margin-left: 16.0px;
   min-height: 26px;
+  margin-top: 3px;
   text-align: center;
   width: 178px;
+  color: black;
+  text-decoration: none;
 }
 
-.musical-instruments {
+/* changed this to margin-top 12px DUE TO DOUBLE LINE */
+.musical-instruments, 
+.musical-instruments a {
   letter-spacing: 0;
   margin-left: 24.0px;
-  margin-top: 32px;
+  margin-top: 12px;
   min-height: 26px;
   text-align: center;
   width: 186px;
+  color: black;
+  text-decoration: none;
 }
 
 /* Text: Office - Toys  CHANGE MARGIN TO SAME SIZE FOR EVEN SPACING */
@@ -586,7 +623,7 @@
   top: 8px;
   width: 250px;
 }
-
+/* need to css later for button to fit img size */
 .icon-star {
   height: 21px;
   left: 223px;
