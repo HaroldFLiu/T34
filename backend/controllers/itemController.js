@@ -46,7 +46,9 @@ const deleteItem = async (req, res) => {
         return res.status(404).json({error: 'Item does not exist'});
     }
 
-    const item = await itemService.deleteItem(item_id);
+    const item = await itemService.deleteById(item_id);
+
+    res.status(200).json({mssg: 'Item deleted successfully'});
 }
 
 const updateItem = async (req, res) => {
@@ -56,7 +58,7 @@ const updateItem = async (req, res) => {
         return res.status(404).json({error: 'Item does not exist'});
     }
 
-    const item = await itemService.updateItem(item_id, req.body);
+    const item = await itemService.updateById(item_id, req.body);
 
     if (!item) {
         return res.status(404).json({error: 'Item does not exist'});

@@ -6,7 +6,10 @@ const indexRoutes = require('./routes/index');
 const loginRoutes = require('./routes/login');
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
+//const uploadRoute = require('./routes/upload');
+//const Grid = require('gridfs-stream');
 
+let gfs;
 const app = express();
 
 // middleware
@@ -22,9 +25,13 @@ app.use('', indexRoutes);
 app.use('', loginRoutes);
 app.use('/groups', groupRoutes);
 app.use('/public', itemRoutes);
+//app.use('/file', uploadRoute);
 
 // connect to database
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
@@ -35,6 +42,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((error) => {
     console.log(error);
 });
+
 
 
 

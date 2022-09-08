@@ -41,6 +41,12 @@ const itemSchema = new Schema(
         type: [Schema.Types.ObjectId], 
         ref: 'Comment',
         default: [],
+      },
+      images : {
+        type: [{ 
+          data: Buffer,
+          contentType: String,
+        }],
       }
     },
     {
