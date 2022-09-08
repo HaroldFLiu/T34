@@ -8,6 +8,8 @@ const createItem = async (req, res) => {
     try {
         const item = await itemService.create({name, description, price, 
             category_ids, group_ids, public_visibility});
+
+        res.status(200).json(item);
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -27,7 +29,7 @@ const getItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Item does not exist'});
+        return res.status(404).json({error: 'Invalid id'});
     }
 
     const item = await itemService.readById(item_id);
@@ -43,7 +45,7 @@ const deleteItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Item does not exist'});
+        return res.status(404).json({error: 'Invalid id'});
     }
 
     const item = await itemService.deleteById(item_id);
@@ -55,7 +57,7 @@ const updateItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Item does not exist'});
+        return res.status(404).json({error: 'Invalid id'});
     }
 
     const item = await itemService.updateById(item_id, req.body);

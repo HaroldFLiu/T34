@@ -1,10 +1,10 @@
-const { Item } = require('../../models/item');
+const { Group } = require('../../models/group');
 
 const updateById = async (groupId, props) => {
-  const group = await Item.findById(groupId);
+  const group = await Group.findById(groupId);
 
   for (const property in props) {
-    group[property] = group[property];
+    group[property] = props[property];
   }
 
   await group.save();

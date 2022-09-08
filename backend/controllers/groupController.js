@@ -6,6 +6,7 @@ const createGroup = async (req, res) => {
 
     try {
         const group = await groupService.create({name, description, members, admins });
+        res.status(200).json(group);
     } catch (error) {
         res.status(400).json({error: error.message})
     }
@@ -25,7 +26,7 @@ const getGroup = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Group does not exist'});
+        return res.status(404).json({error: 'Invalid id'});
     }
 
     const group = await groupService.readById(group_id);
@@ -46,19 +47,21 @@ const deleteGroup = async (req, res) => {
 
     const group = await groupService.deleteById(group_id);
 
+    res.status(200).json({mssg: 'Group deleted successfully'});
+
 }
 
 const updateGroup = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Group does not exist'});
+        return res.status(404).json({error: 'Invalid id'});
     }
 
-    const group = await groupService.updateItem(group_id, req.body);
+    const group = await groupService.updateById(group_id, req.body);
 
     if (!group) {
-        return res.status(404).json({error: 'ItGroupem does not exist'});
+        return res.status(404).json({error: 'Group does not exist'});
     }
 
     res.status(200).json(group);

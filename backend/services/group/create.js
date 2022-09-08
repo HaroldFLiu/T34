@@ -6,13 +6,13 @@ const create = async ({
   members,
   admins,
 }) => {
-  const grouup = await Group.create({
+  const group = await Group.create({
     name,
     description,
     members,
     admins,
   });
-  return item;
+  return group;
 };
 
 module.exports = { create };

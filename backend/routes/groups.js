@@ -13,15 +13,15 @@ const router = express.Router();
 router.get('/', getGroups);
 
 // GET a group
-router.get('/:item_id', getGroup);
+router.get('/:group_id', getGroup);
 
 // POST a group
 router.post('/', createGroup);
 
 // DELETE a group
-router.delete('/:item_id', deleteGroup);
+router.delete('/:group_id', deleteGroup);
 
 // UPDATE a group
-router.patch('/:item_id', updateGroup);
+router.patch('/:group_id', updateGroup);
 
 module.exports = router;
