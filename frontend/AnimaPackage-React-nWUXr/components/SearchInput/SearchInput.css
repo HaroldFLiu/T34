@@ -1,0 +1,18 @@
+.search-input,
+.search-input-1,
+.search-input-2,
+.search-input-3,
+.search-input-4,
+.search-input-5,
+.search-input-6,
+.search-input-7 {
+  border: 1px none;
+  height: 32px;
+  margin-bottom: 5.0px;
+  margin-left: 70px;
+}
+
+.search-input {
+  font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+

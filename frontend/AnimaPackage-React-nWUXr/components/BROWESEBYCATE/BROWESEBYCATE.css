@@ -1,0 +1,17 @@
+.browese-by-cate,
+.browese-by-cate-1,
+.browese-by-cate-2,
+.browese-by-cate-3,
+.browese-by-cate-4,
+.browese-by-cate-5,
+.browese-by-cate-6,
+.browese-by-cate-7 {
+  border: 1px none;
+  height: 51px;
+  margin-left: 33px;
+}
+
+.browese-by-cate a {
+  display: inherit;
+}
+

@@ -1,0 +1,280 @@
+.selling-page {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.top-bar-5 {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  margin-left: 19.0px;
+  margin-top: 21px;
+  min-width: 1361px;
+  position: relative;
+}
+
+.rectangle-22-5 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 77px;
+  width: 227px;
+}
+
+.overlap-group1-6 {
+  height: 23px;
+  margin-bottom: 2.0px;
+  margin-left: 64px;
+  position: relative;
+  width: 197px;
+}
+
+.shop-10 {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.sell-10 {
+  cursor: pointer;
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.bar-container-3 {
+  height: 203px;
+  margin-left: -15px;
+  margin-top: 22px;
+  position: relative;
+  width: 1480px;
+}
+
+.divider-bar-5 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 190px;
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  width: 1480px;
+}
+
+.line-1-5 {
+  height: 1px;
+  margin-top: -1px;
+  width: 1440px;
+}
+
+.flex-row-5 {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  height: 51px;
+  margin-right: 153.0px;
+  margin-top: 5px;
+  min-width: 1091px;
+  position: relative;
+}
+
+.place-5 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 6.0px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.shop-11 {
+  letter-spacing: 0;
+  margin-bottom: 6.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.sell-11 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.groups-5 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 33px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.wishlist-5 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 169px;
+}
+
+.line-2-5 {
+  height: 1px;
+  margin-top: 3px;
+  width: 1440px;
+}
+
+.overlap-group2-6 {
+  height: 719px;
+  margin-left: 4px;
+  margin-top: 31px;
+  position: relative;
+  width: 1287px;
+}
+
+.category-bar-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 646px;
+  position: absolute;
+  top: 3px;
+  width: 304px;
+}
+
+.search-container-3 {
+  align-items: flex-start;
+  display: flex;
+  height: 30px;
+  margin-right: 20.0px;
+  min-width: 224px;
+  position: relative;
+}
+
+.categories-3 {
+  align-self: flex-start;
+  letter-spacing: 0;
+  margin-top: 17px;
+  min-height: 41px;
+  text-align: center;
+  width: 196px;
+}
+
+.vechicles-3 {
+  letter-spacing: 0;
+  margin-right: 14.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item-9 {
+  letter-spacing: 0;
+  margin-right: 24.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item-10 {
+  letter-spacing: 0;
+  margin-right: 24.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.home-improvement-supplies-3 {
+  letter-spacing: 0;
+  margin-right: 14.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 178px;
+}
+
+.musical-instruments-3 {
+  letter-spacing: 0;
+  margin-right: 6.0px;
+  margin-top: 32px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.category-bar-item-11 {
+  letter-spacing: 0;
+  margin-right: 6.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.create-new-listing-6 {
+  align-items: flex-start;
+  align-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  margin-left: 8px;
+  margin-top: 22px;
+  min-width: 266px;
+}
+
+.overlap-group1-7 {
+  height: 37px;
+  position: relative;
+  width: 264px;
+}
+
+.rectangle-2-3 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 37px;
+  left: 3px;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.create-new-listing-7,
+.filter-3 {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  width: 242px;
+}
+
+.overlap-group-16 {
+  align-self: flex-start;
+  height: 37px;
+  margin-left: 8px;
+  margin-top: 13px;
+  position: relative;
+  width: 264px;
+}
+

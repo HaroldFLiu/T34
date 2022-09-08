@@ -1,0 +1,326 @@
+.view-item-page {
+  align-items: flex-end;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  overflow: hidden;
+  padding: 21px 0;
+  width: 1440px;
+}
+
+.top-bar-8 {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  margin-left: 19.0px;
+  min-width: 1361px;
+  position: relative;
+}
+
+.rectangle-22-6 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 77px;
+  width: 227px;
+}
+
+.overlap-group2-7 {
+  height: 23px;
+  margin-bottom: 2.0px;
+  margin-left: 64px;
+  position: relative;
+  width: 197px;
+}
+
+.shop-12 {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.sell-12 {
+  cursor: pointer;
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.overlap-group3-2 {
+  height: 751px;
+  margin-right: -25px;
+  margin-top: 22px;
+  position: relative;
+  width: 1480px;
+}
+
+.product-dispay {
+  display: flex;
+  flex-direction: column;
+  height: 596px;
+  left: 89px;
+  position: absolute;
+  top: 110px;
+  width: 484px;
+}
+
+.image-add-3 {
+  background-position: 50% 50%;
+  background-size: cover;
+  display: flex;
+  height: 459px;
+  width: 483.77px;
+}
+
+.expand-images {
+  height: 18.84px;
+  margin-left: 454.0px;
+  margin-top: 428.7px;
+  width: 16.64px;
+}
+
+.image-add-4 {
+  display: flex;
+  height: 116.91px;
+  margin-top: 20px;
+  width: 484px;
+}
+
+.rectangle-16-2 {
+  height: 116.91px;
+  margin-top: 0;
+  object-fit: cover;
+  width: 120.24px;
+}
+
+.rectangle-16-3 {
+  height: 116.91px;
+  margin-left: 56.6px;
+  margin-top: 0;
+  object-fit: cover;
+  width: 120.24px;
+}
+
+.rectangle-16-4 {
+  height: 116.91px;
+  margin-left: 66.7px;
+  margin-top: 0;
+  object-fit: cover;
+  width: 120.24px;
+}
+
+.prouct-information {
+  display: flex;
+  flex-direction: column;
+  height: 620px;
+  left: 613px;
+  position: absolute;
+  top: 131px;
+  width: 748px;
+}
+
+.name {
+  height: 92px;
+  letter-spacing: 0;
+  margin-left: 22px;
+  margin-top: 0;
+  text-align: center;
+  width: 724px;
+}
+
+.prouct-information-1 {
+  display: flex;
+  flex-direction: column;
+  height: 461.83px;
+  margin-top: 66.0px;
+  width: 750px;
+}
+
+.orignal-necklace-wit {
+  height: 83.05px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 724px;
+}
+
+.price-1 {
+  height: 46px;
+  letter-spacing: 0;
+  margin-left: 291px;
+  margin-top: 20.0px;
+  text-align: center;
+  width: 185px;
+}
+
+.purchase-button {
+  align-items: flex-start;
+  display: flex;
+  height: 75.83px;
+  margin-left: 40px;
+  margin-top: 119px;
+  min-width: 708px;
+}
+
+.overlap-group1-8 {
+  align-items: flex-start;
+  background-color: var(--black);
+  display: flex;
+  height: 76px;
+  min-width: 706px;
+  padding: 14.5px 208.5px;
+}
+
+.place-6 {
+  -webkit-text-stroke: 0.5px var(--black);
+  color: var(--white);
+  font-family: var(--font-family-tienne);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 0;
+  min-height: 46px;
+  text-align: center;
+  width: 288px;
+}
+
+.message-button {
+  align-items: flex-start;
+  display: flex;
+  height: 75.83px;
+  margin-left: 40px;
+  margin-top: 42.2px;
+  min-width: 708px;
+}
+
+.overlap-group-18 {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px solid;
+  border-color: var(--black);
+  display: flex;
+  height: 76px;
+  min-width: 706px;
+  padding: 14px 181px;
+}
+
+.contact-seller {
+  letter-spacing: 0;
+  min-height: 46px;
+  text-align: center;
+  width: 341px;
+}
+
+.line-5 {
+  height: 1px;
+  left: 610px;
+  position: absolute;
+  top: 222px;
+  width: 783px;
+}
+
+.line-6 {
+  height: 1px;
+  left: 596px;
+  position: absolute;
+  top: 494px;
+  width: 783px;
+}
+
+.divider-bar-6 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+  min-height: 190px;
+  padding: 0 15px;
+  position: absolute;
+  top: 0;
+  width: 1480px;
+}
+
+.line-1-6 {
+  height: 1px;
+  margin-top: -1px;
+  width: 1440px;
+}
+
+.flex-row-6 {
+  align-items: center;
+  align-self: center;
+  display: flex;
+  height: 51px;
+  margin-right: 153.0px;
+  margin-top: 5px;
+  min-width: 1091px;
+  position: relative;
+}
+
+.place-7 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 6.0px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.shop-13 {
+  letter-spacing: 0;
+  margin-bottom: 6.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.sell-13 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.groups-6 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 33px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.wishlist-6 {
+  cursor: pointer;
+  letter-spacing: 0;
+  margin-bottom: 4.0px;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 169px;
+}
+
+.line-2-6 {
+  height: 1px;
+  margin-top: 3px;
+  width: 1440px;
+}
+
+.seller-i-am-a-nice-guy {
+  letter-spacing: 0;
+  margin-right: 13px;
+  margin-top: 56px;
+  min-height: 32px;
+  text-align: center;
+  width: 429px;
+}
+

@@ -1,0 +1,22 @@
+.image-add {
+  background-color: var(--alto);
+  display: flex;
+  height: 278px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 293px;
+}
+
+.icon-gallery-1 {
+  height: 64px;
+  margin-left: 222px;
+  margin-top: 214px;
+  object-fit: cover;
+  width: 68px;
+}
+
+.image-add.image-add-2 {
+  top: 330px;
+}
+
