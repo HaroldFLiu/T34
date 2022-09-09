@@ -9,6 +9,8 @@ import GroupPrivacy from "../GroupPrivacy";
 import ImageAdd from "../ImageAdd";
 import "./NewItemListingPage.css";
 
+/* <div contentEditable="true" className="rectangle-13-1"></div> CHANGE THESE LATER !! */
+
 function NewItemListingPage(props) {
   const {
     shop1,
@@ -97,16 +99,17 @@ function NewItemListingPage(props) {
         <div className="overlap-group10">
           <div className="group-create-area-1">
             <div className="overlap-group6">
-              <div className="rectangle-13-1"></div>
+              
+              <div contentEditable="true" className="rectangle-13-1"></div>
               <div className="item-name tienne-normal-black-25px">{itemName}</div>
             </div>
             <div className="overlap-group5-1">
               <div className="price tienne-normal-black-25px">{price}</div>
-              <div className="rectangle-15"></div>
+              <div contentEditable="true" className="rectangle-15"></div>
             </div>
             <div className="overlap-group7">
               <div className="item-description tienne-normal-black-25px">{itemDescription}</div>
-              <div className="rectangle-14-1"></div>
+              <div contentEditable="true" className="rectangle-14-1"></div>
             </div>
             <div className="overlap-group3-1">
               <div className="select-one tienne-normal-black-20px">{selectOne}</div>
