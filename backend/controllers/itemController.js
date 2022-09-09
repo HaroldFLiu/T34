@@ -1,6 +1,7 @@
 const { default: mongoose } = require('mongoose');
 const itemService = require('../services/item');
 
+/*
 const createItem = async (req, res) => {
     const {name, description, price, category_ids, group_ids, 
         public_visibility} = req.body;
@@ -13,7 +14,7 @@ const createItem = async (req, res) => {
     } catch (error) {
         res.status(400).json({error: error.message})
     }
-}
+} */
 
 const getPublicItems = async (req, res) => {
     const items = await itemService.readPublicItems();
@@ -70,7 +71,6 @@ const updateItem = async (req, res) => {
 }
 
 module.exports = {
-    createItem,
     getPublicItems,
     getItem,
     deleteItem,

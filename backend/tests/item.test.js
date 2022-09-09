@@ -24,6 +24,7 @@ describe('ItemService', () => {
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
+    await Item.deleteMany({});
   });
 
   afterAll(async () => {

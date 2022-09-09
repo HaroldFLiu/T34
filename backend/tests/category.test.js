@@ -12,6 +12,7 @@ describe('ItemService', () => {
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
+    await Category.deleteMany({});
   });
 
   afterAll(async () => {

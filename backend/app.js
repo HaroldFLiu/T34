@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+
 const indexRoutes = require('./routes/index');
 const loginRoutes = require('./routes/login');
 const groupRoutes = require('./routes/groups');
@@ -19,7 +20,6 @@ app.use((req, res, next) => {
     console.log(req.path, req.method);
     next();
 })
-
 // routes
 app.use('', indexRoutes);
 app.use('', loginRoutes);

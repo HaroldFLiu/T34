@@ -15,6 +15,7 @@ describe('GroupService', () => {
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
     console.log('Connected.');
+    await Group.deleteMany({});
   });
 
   afterAll(async () => {
