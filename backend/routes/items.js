@@ -22,14 +22,14 @@ router.get('/:item_id', getItem);
 
 // POST an item
 router.post('/', upload.array('images', 12), async (req, res) => {
-    const urls = [];
-    const ids = [];
+    const image_urls = [];
+    const cloudinary_ids = [];
     const files = req.files;
     for (const file of files) {
         try {
             const result = await cloudinary.uploader.upload(file.path);
-            urls.push(result.secure_url);
-            ids.push(result.public_id);
+            image_urls.push(result.secure_url);
+            cloudinary_ids.push(result.public_id);
         } catch (err) {
             console.log(err);
         }
@@ -41,17 +41,8 @@ router.post('/', upload.array('images', 12), async (req, res) => {
 
     try {
         // why can't i assign off the bat
-        const item = await itemService.create({name, description, price, category_ids, group_ids, public_visibility, comments, urls, ids});
-
-        for (const url of urls) {
-            item.image_urls.push(url);
-        }
-
-        for (const id of ids) {
-            item.cloudinary_ids.push(id);
-        }
-
-        await item.save();
+        const item = await itemService.create({name, description, price, category_ids, 
+            group_ids, public_visibility, comments, image_urls, cloudinary_ids});
 
         res.status(200).json(item);
     } catch (error) {
@@ -65,14 +56,14 @@ router.delete('/:item_id', deleteItem);
 // UPDATE an item
 router.patch('/:item_id', upload.array('images', 12), async (req, res) => {
     const { item_id } = req.params;
-    const urls = [];
-    const ids = [];
+    const image_urls = [];
+    const cloudinary_ids = [];
     const files = req.files;
     for (const file of files) {
         try {
             const result = await cloudinary.uploader.upload(file.path);
-            urls.push(result.secure_url);
-            ids.push(result.public_id);
+            image_urls.push(result.secure_url);
+            cloudinary_ids.push(result.public_id);
         } catch (err) {
             console.log(err);
         }
@@ -89,25 +80,12 @@ router.patch('/:item_id', upload.array('images', 12), async (req, res) => {
         await cloudinary.uploader.destroy(image);
     }
 
-    while (item.image_urls.length > 0) {
-        item.image_urls.pop();
-    }
-
-    while (item.cloudinary_ids.length > 0) {
-        item.cloudinary_ids.pop();
-    }
-
     for (const property in req.body) {
         item[property] = req.body[property];
     }
 
-    for (const url of urls) {
-        item.image_urls.push(url);
-    }
-
-    for (const id of ids) {
-        item.cloudinary_ids.push(id);
-    }
+    item.image_urls = image_urls;
+    item.cloudinary_ids = cloudinary_ids;
     
     await item.save();
 

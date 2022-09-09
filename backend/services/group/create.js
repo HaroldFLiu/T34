@@ -5,12 +5,16 @@ const create = async ({
   description,
   members,
   admins,
+  icon_url,
+  cloudinary_id,
 }) => {
   const group = await Group.create({
     name,
     description,
     members,
     admins,
+    icon_url,
+    cloudinary_id,
   });
   return group;
 };

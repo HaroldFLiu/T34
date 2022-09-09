@@ -19,7 +19,13 @@ const groupSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'User',
         //required: true, 
-      }]
+      }],
+      icon_url: {
+        type: String,
+      },
+      cloudinary_id: {
+        type: String,
+      }
     }
   );
   
