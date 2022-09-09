@@ -5,10 +5,15 @@ const cloudinary = require('../middleware/cloudinary');
 
 const {
     getPublicItems,
+    getCategoryItems,
     getItem,
     deleteItem,
     updateItem,
 } = require('../controllers/itemController');
+
+const {
+    getCatergories,
+} = require('../controllers/categoryController');
 
 const itemService = require('../services/item');
 
@@ -16,6 +21,11 @@ const router = express.Router();
 
 // GET all public items
 router.get('/', getPublicItems);
+
+// GET all public items in a category
+router.get('/category/:category_id', getCategoryItems);
+
+router.get('/category/', getCatergories);
 
 // GET a single item
 router.get('/:item_id', getItem);
@@ -25,16 +35,20 @@ router.post('/', upload.array('images', 12), async (req, res) => {
     const image_urls = [];
     const cloudinary_ids = [];
     const files = req.files;
-    for (const file of files) {
-        try {
-            const result = await cloudinary.uploader.upload(file.path);
-            image_urls.push(result.secure_url);
-            cloudinary_ids.push(result.public_id);
-        } catch (err) {
-            console.log(err);
+    console.log(req.files.length);
+    if (files) {
+        for (const file of files) {
+            try {
+                const result = await cloudinary.uploader.upload(file.path);
+                image_urls.push(result.secure_url);
+                cloudinary_ids.push(result.public_id);
+            } catch (err) {
+                console.log(err);
+            }
+    
         }
-
     }
+
     
     const {name, description, price, category_ids, group_ids, 
         public_visibility, comments} = req.body;
@@ -59,15 +73,16 @@ router.patch('/:item_id', upload.array('images', 12), async (req, res) => {
     const image_urls = [];
     const cloudinary_ids = [];
     const files = req.files;
-    for (const file of files) {
-        try {
-            const result = await cloudinary.uploader.upload(file.path);
-            image_urls.push(result.secure_url);
-            cloudinary_ids.push(result.public_id);
-        } catch (err) {
-            console.log(err);
+    if (files){
+        for (const file of files) {
+            try {
+                const result = await cloudinary.uploader.upload(file.path);
+                image_urls.push(result.secure_url);
+                cloudinary_ids.push(result.public_id);
+            } catch (err) {
+                console.log(err);
+            }
         }
-
     }
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {

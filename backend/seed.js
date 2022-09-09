@@ -3,15 +3,24 @@ require('dotenv').config();
 
 const { Item } = require('./models/item');
 const { Group } = require('./models/group');
+const { Category } = require('./models/category');
 const itemService = require('./services/item');
+const categoryService = require('./services/category');
 const groupService = require('./services/group');
 const { decodeBase64 } = require('bcryptjs');
+
+const categories = [
+    {
+        name: "Fruit"
+    }
+]
 
 const items = [
     {
         name: "Chair",
         description: "Sturdy",
         price: 300,
+        //category_ids: ["6284982aaa4c48b5c461cbd1"],
         public_visibility: true,
     },
     {
@@ -40,6 +49,8 @@ const groups = [
 ]
 
 
+
+
 async function seed() {
     mongoose.connect(process.env.MONGO_URI, {
         useNewUrlParser: true,
@@ -55,6 +66,7 @@ async function seed() {
     let tmp;
 
     await Item.deleteMany({});
+    await Category.deleteMany({});
     await Group.deleteMany({});
 
     for (const item of items) {
@@ -68,6 +80,13 @@ async function seed() {
         tmp = await groupService.readById(group._id);
         if (!tmp) {
             await groupService.create(group);
+        }
+    }
+
+    for (const category of categories) {
+        tmp = await categoryService.readById(category._id);
+        if (!tmp) {
+            await categoryService.create(category);
         }
     }
 

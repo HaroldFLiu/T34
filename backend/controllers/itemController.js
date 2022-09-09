@@ -42,6 +42,22 @@ const getItem = async (req, res) => {
     res.status(200).json(item);
 }
 
+const getCategoryItems = async (req, res) => {
+    const { category_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(category_id)) {
+        return res.status(404).json({error: 'Invalid id'});
+    }
+
+    const items = await itemService.readByCategory(category_id);
+
+    if (!items) {
+        return res.status(404).json({error: 'Items do not exist'});
+    }
+
+    res.status(200).json(items);
+}
+
 const deleteItem = async (req, res) => {
     const { item_id } = req.params;
 
@@ -75,4 +91,5 @@ module.exports = {
     getItem,
     deleteItem,
     updateItem,
+    getCategoryItems,
 }
