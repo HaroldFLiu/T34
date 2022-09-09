@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
-import LoginButton from "../LoginButton";
+import LoginButton2 from "../LoginButton2";
 import SignUpButton from "../SignUpButton";
 import MiddleBar from "../MiddleBar";
 import BROWESEBYCATE from "../BROWESEBYCATE";
@@ -12,6 +12,7 @@ import SearchButton2 from "../SearchButton2";
 import Button from "../Button";
 import "./GroupPage.css";
 
+/* needs a loop function to loop through displaying products*/
 function GroupPage(props) {
   const {
     shop1,
@@ -72,7 +73,7 @@ function GroupPage(props) {
               <div className="sell-8 tienne-bold-black-16px">{sell1}</div>
             </Link>
           </div>
-          <LoginButton />
+          <LoginButton2 />
           <SignUpButton />
         </div>
         <div className="bar-container-2">
@@ -116,7 +117,11 @@ function GroupPage(props) {
               </div>
               <div className="overlap-group-13">
                 <div className="overlap-group-14">
-                  <div className="join-group-2 tienne-normal-black-12px">{joinGroup1}</div>
+                  <div className="join-group-2 tienne-normal-black-12px">
+                  <button type="join-group-btn">
+                    {joinGroup1}
+                    </button> 
+                  </div>
                 </div>
                 <div className="marketplace-sellers-31-k-members-2 tienne-bold-black-15px">
                   <span className="tienne-bold-black-15px">{spanText1}</span>
@@ -129,7 +134,11 @@ function GroupPage(props) {
               <img className="rectangle-11" src={rectangle4} />
               <div className="overlap-group-13">
                 <div className="overlap-group-14">
-                  <div className="join-group-2 tienne-normal-black-12px">{joinGroup2}</div>
+                  <div className="join-group-2 tienne-normal-black-12px">
+                  <button type="join-group-btn">
+                    {joinGroup2}
+                    </button> 
+                  </div>
                 </div>
                 <div className="marketplace-sellers-31-k-members-2 tienne-bold-black-15px">
                   <span className="tienne-bold-black-15px">{spanText3}</span>

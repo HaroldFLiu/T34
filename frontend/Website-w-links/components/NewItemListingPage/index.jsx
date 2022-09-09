@@ -62,14 +62,16 @@ function NewItemListingPage(props) {
             <Link to="/home-page">
               <div className="place-1 tienne-bold-black-24px">{place}</div>
             </Link>
-            <div className="shop-3 tienne-bold-black-24px">{shop2}</div>
-            <a href="javascript:SubmitForm('form6')">
+            < a href="/test-page">
+              <div className="shop-3 tienne-bold-black-24px">{shop2}</div>
+            </a>
+            <a href="/selling-page">
               <div className="sell-3 tienne-bold-black-24px">{sell2}</div>
             </a>
-            <a href="javascript:SubmitForm('form6')">
+            <a href="/group-page">
               <div className="groups-1 tienne-bold-black-24px">{groups}</div>
             </a>
-            <a href="javascript:SubmitForm('form6')">
+            <a href="wishlisted-items-page">
               <div className="wishlist-1 tienne-bold-black-24px">{wishlist}</div>
             </a>
             <BROWESEBYCATE />

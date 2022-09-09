@@ -11,7 +11,7 @@ import LoginPage from "./components/LoginPage";
 import ViewItemPage from "./components/ViewItemPage";
 import HomePage from "./components/HomePage";
 import InspectGroupDetailPage from "./components/InspectGroupDetailPage";
-import ShopPage from "./components/ShopPage";
+import TestPage from "./components/TestPage";
 
 function App() {
   return (
@@ -35,8 +35,8 @@ function App() {
         <Route path="/selling-page">
           <SellingPage {...sellingPageData} />
         </Route>
-        <Route path="/shop-page">
-          <SellingPage {...shopPageData} />
+        <Route path="/test-page">
+          <TestPage {...homePageData} />
         </Route>
         <Route path="/login-page">
           <LoginPage title="Sign In" signInAndStartSc="Sign in and start scrolling through <Logo Here> !" />

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
-import LoginButton from "../LoginButton";
+import LoginButton2 from "../LoginButton2";
 import SignUpButton from "../SignUpButton";
 import BROWESEBYCATE from "../BROWESEBYCATE";
 import GroupPrivacy from "../GroupPrivacy";
@@ -45,7 +45,7 @@ function GroupCreation(props) {
               <div className="sell tienne-bold-black-16px">{sell1}</div>
             </Link>
           </div>
-          <LoginButton />
+          <LoginButton2 />
           <SignUpButton />
         </div>
         <div className="divider-bar">
@@ -55,13 +55,13 @@ function GroupCreation(props) {
               <div className="place tienne-bold-black-24px">{place}</div>
             </Link>
             <div className="shop-1 tienne-bold-black-24px">{shop2}</div>
-            <a href="javascript:SubmitForm('form3')">
+            <a href="/selling-page">
               <div className="sell-1 tienne-bold-black-24px">{sell2}</div>
             </a>
-            <a href="javascript:SubmitForm('form3')">
+            <a href="/group-page">
               <div className="groups tienne-bold-black-24px">{groups}</div>
             </a>
-            <a href="javascript:SubmitForm('form3')">
+            <a href="/wishlisted-items-page">
               <div className="wishlist tienne-bold-black-24px">{wishlist}</div>
             </a>
             <BROWESEBYCATE />

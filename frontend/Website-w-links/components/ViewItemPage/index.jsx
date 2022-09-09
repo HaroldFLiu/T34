@@ -99,7 +99,6 @@ function ViewItemPage(props) {
               <BROWESEBYCATE />
             </div>
             <img className="line-2-6" src={line2} />
-            <SortByDropsown />
           </div>
         </div>
         <div className="seller-i-am-a-nice-guy tienne-bold-black-24px">{sellerIamaniceguy}</div>

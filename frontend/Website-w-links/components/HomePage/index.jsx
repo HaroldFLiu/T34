@@ -57,7 +57,7 @@ function HomePage(props) {
         <SearchInput />
         <SearchButton />
         <div className="overlap-group2-8">
-          <Link to="/shop-page">
+          <Link to="/test-page">
             <div className="shop-top tienne-bold-black-16px">SHOP</div>
           </Link>
           <Link to="/selling-page">
@@ -79,7 +79,7 @@ function HomePage(props) {
           <Link to="/home-page">
             <div className="place-8">HOME</div>
           </Link> 
-          <Link to="/home-page">
+          <Link to="/test-page">
             <div className="shop-15">SHOP</div>
           </Link>
             <a href="/selling-page">
@@ -101,7 +101,9 @@ function HomePage(props) {
         <div className="overlap-group4-5">
           <div className="middle-area-5">
             <div className="todays-listings tienne-normal-black-30px">Today's Listings:</div>
-            <div className="rectangle-3-1"></div>
+            <Link to="/view-item-page">
+              <div className="rectangle-3-1"></div>
+            </Link>
             <div className="prodct-descrip-price-2">
               <div className="overlap-group-19">
                 <div className="x1595-sanrio-kurumi-plush-2 tienne-bold-black-15px">

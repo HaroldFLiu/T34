@@ -74,14 +74,16 @@ function MyGroupsPage(props) {
               <Link to="/home-page">
                 <div className="place-3 tienne-bold-black-24px">{place}</div>
               </Link>
-              <div className="shop-7 tienne-bold-black-24px">{shop2}</div>
-              <a href="javascript:SubmitForm('form14')">
+              < a href="/test-page">
+                <div className="shop-7 tienne-bold-black-24px">{shop2}</div>
+              </a>
+              < a href="/selling-page">
                 <div className="sell-7 tienne-bold-black-24px">{sell2}</div>
               </a>
-              <a href="javascript:SubmitForm('form14')">
+              <a href="/group-page">
                 <div className="groups-3 tienne-bold-black-24px">{groups}</div>
               </a>
-              <a href="javascript:SubmitForm('form14')">
+              <a href="/wishlisted-items-page">
                 <div className="wishlist-3 tienne-bold-black-24px">{wishlist}</div>
               </a>
               <BROWESEBYCATE />

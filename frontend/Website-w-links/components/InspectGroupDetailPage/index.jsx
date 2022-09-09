@@ -174,8 +174,12 @@ function InspectGroupDetailPage(props) {
               </div>
             </div>
             <img className="line-7" src={line7} />
-            <img className="ellipse-4" src={ellipse4} />
-          </div>
+            <div className="container-btn">   
+            </div>
+            <Link to="/group-page">
+              <img className="ellipse-4" src={ellipse4} />
+            </Link>
+            </div>
           <div className="overlap-group6-2">
             <div className="rectangle-2-5"></div>
             <div className="filter-5 tienne-normal-black-20px">{filter}</div>
@@ -187,3 +191,9 @@ function InspectGroupDetailPage(props) {
 }
 
 export default InspectGroupDetailPage;
+
+/* potential button type
+            <button type="close-btn">
+             <img className="ellipse-4" src={ellipse4} />
+            </button>
+            */

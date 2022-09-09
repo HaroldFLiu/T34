@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
-import LoginButton from "../LoginButton";
+import LoginButton2 from "../LoginButton2";
 import SignUpButton from "../SignUpButton";
 import MiddleBar from "../MiddleBar";
 import BROWESEBYCATE from "../BROWESEBYCATE";
@@ -60,7 +60,7 @@ function WishlistedItemsPage(props) {
               <div className="sell-4 tienne-bold-black-16px">{sell1}</div>
             </Link>
           </div>
-          <LoginButton />
+          <LoginButton2 />
           <SignUpButton />
         </div>
         <div className="bar-container">
@@ -74,11 +74,13 @@ function WishlistedItemsPage(props) {
               <Link to="/home-page">
                 <div className="place-2 tienne-bold-black-24px">{place}</div>
               </Link>
-              <div className="shop-5 tienne-bold-black-24px">{shop2}</div>
-              <a href="javascript:SubmitForm('form10')">
+              <Link to="/home-page">
+                <div className="shop-5 tienne-bold-black-24px">{shop2}</div>
+              </Link>
+              <a href="/selling-page">
                 <div className="sell-5 tienne-bold-black-24px">{sell2}</div>
               </a>
-              <a href="javascript:SubmitForm('form10')">
+              <a href="/group-page">
                 <div className="groups-2 tienne-bold-black-24px">{groups}</div>
               </a>
               <a href="javascript:SubmitForm('form10')">
@@ -103,32 +105,68 @@ function WishlistedItemsPage(props) {
               <SearchButton2 />
             </div>
             <div className="categories tienne-normal-black-25px">{categories}</div>
-            <div className="vechicles tienne-normal-black-17px">{vechicles}</div>
-            <div className="category-bar-item tienne-normal-black-17px">{apparel}</div>
-            <div className="category-bar-item-1 tienne-normal-black-17px">{classified}</div>
-            <div className="category-bar-item tienne-normal-black-17px">{eletronics}</div>
-            <div className="category-bar-item tienne-normal-black-17px">{entertainment}</div>
-            <div className="category-bar-item-1 tienne-normal-black-17px">{family}</div>
-            <div className="category-bar-item-1 tienne-normal-black-17px">{gardenOutdoor}</div>
-            <div className="category-bar-item tienne-normal-black-17px">{hobbies}</div>
-            <div className="category-bar-item-1 tienne-normal-black-17px">{homeGoods}</div>
-            <div className="home-improvement-supplies tienne-normal-black-17px">{homeImprovementSupplies}</div>
-            <div className="musical-instruments tienne-normal-black-17px">{musicalInstruments}</div>
-            <div className="category-bar-item-2 tienne-normal-black-17px">{officeSupplies}</div>
-            <div className="category-bar-item-2 tienne-normal-black-17px">{petSupplies}</div>
-            <div className="category-bar-item-2 tienne-normal-black-17px">{sportingGoods}</div>
-            <div className="category-bar-item-2 tienne-normal-black-17px">{toysGames}</div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{vechicles}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+            <a href="#">{apparel}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{classified}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{eletronics}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{entertainment}</a>  
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{family}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{gardenOutdoor}</a> 
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{hobbies}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{homeGoods}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{homeImprovementSupplies}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{musicalInstruments}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{officeSupplies}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{petSupplies}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{sportingGoods}</a>
+            </div>
+            <div className="category-bar-items tienne-normal-black-17px">
+              <a href="#">{toysGames}</a>
+            </div>
             <a href="javascript:SubmitForm('form10')" className="align-self-flex-start">
               <div className="create-new-listing">
                 <div className="overlap-group1-3">
                   <div className="rectangle-2"></div>
-                  <div className="create-new-listing-1 tienne-normal-black-20px">{createNewListing}</div>
+                  <div className="create-new-listing-1 tienne-normal-black-20px">
+                  <a href="/new-item-listing-page"> {createNewListing} </a> 
+                  </div>
                 </div>
               </div>
             </a>
             <div className="overlap-group-5">
               <div className="rectangle-2"></div>
-              <div className="filter tienne-normal-black-20px">{filter}</div>
+              <div className="filter tienne-normal-black-20px">
+                <button className="btn-block" type="filter-btn">
+                  {filter}
+              </button> 
+              </div>
             </div>
           </div>
         </div>

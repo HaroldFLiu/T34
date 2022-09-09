@@ -11,7 +11,7 @@ function Button() {
     <Link to="/my-groups-page">
       <div className="button">
         <Antd.Button size="large" type="default" shape="default" disabled={false}>
-          My Group
+          My Groups
         </Antd.Button>
       </div>
     </Link>

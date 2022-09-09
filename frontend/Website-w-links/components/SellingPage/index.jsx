@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
-import LoginButton from "../LoginButton";
+import LoginButton2 from "../LoginButton2";
 import SignUpButton from "../SignUpButton";
 import MiddleBar from "../MiddleBar";
 import BROWESEBYCATE from "../BROWESEBYCATE";
@@ -53,12 +53,14 @@ function SellingPage(props) {
           <SearchInput />
           <SearchButton />
           <div className="overlap-group1-6">
-            <div className="shop-top tienne-bold-black-16px">{shop1}</div>
+            <Link to="/test-page">
+              <div className="shop-top tienne-bold-black-16px">{shop1}</div>
+            </Link>
             <Link to="/new-item-listing-page">
-              <div className="sell-top tienne-bold-black-16px">{sell1}123</div>
+              <div className="sell-top tienne-bold-black-16px">{sell1}</div>
             </Link>
           </div>
-          <LoginButton />
+          <LoginButton2 />
           <SignUpButton />
         </div>
         <div className="bar-container-3">
@@ -73,8 +75,10 @@ function SellingPage(props) {
               <Link to="/home-page">
                 <div className="place-5 tienne-bold-black-24px">{place}</div>
               </Link>
-              <div className="shop-11 tienne-bold-black-24px">{shop2}</div>
-              <a href="javascript:SubmitForm('form22')">
+              < a href="/test-page">
+                <div className="shop-11 tienne-bold-black-24px">{shop2}</div>
+              </a>
+              <a href="/selling-page">
                 <div className="sell-11 tienne-bold-black-24px">{sell2}</div>
               </a>
               <a href="/group-page">

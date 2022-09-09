@@ -60547,17 +60547,6 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
-.login-button, .login-button-1, .login-button-2, .login-button-3, .login-button-4, .login-button-5, .login-button-6 {
-  height: 40px;
-  border: 1px;
-  margin-bottom: 11px;
-  margin-left: 25px;
-}
-
-.login-button {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-}
-
 .sign-up-button, .sign-up-button-1, .sign-up-button-2, .sign-up-button-3, .sign-up-button-4, .sign-up-button-5, .sign-up-button-6, .sign-up-button-7 {
   height: 40px;
   border: 1px;
@@ -72465,6 +72454,26 @@ textarea.form-control-lg {
   margin-top: 32px;
 }
 
+.login-button {
+  cursor: pointer;
+  height: 40px;
+  border: 1px;
+  margin-bottom: 11px;
+  margin-left: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
+.login-button, .login-button-1, .login-button-2, .login-button-3, .login-button-4, .login-button-5, .login-button-6 {
+  height: 40px;
+  border: 1px;
+  margin-bottom: 11px;
+  margin-left: 25px;
+}
+
+.login-button {
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
 .new-item-listing-page {
   background-color: var(--white);
   height: 1024px;
@@ -74795,15 +74804,6 @@ textarea.form-control-lg {
   margin-right: 13px;
 }
 
-.login-button {
-  cursor: pointer;
-  height: 40px;
-  border: 1px;
-  margin-bottom: 11px;
-  margin-left: 25px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
-}
-
 .pagination {
   height: 32px;
   border: 1px;
@@ -75720,35 +75720,36 @@ textarea.form-control-lg {
   left: 12px;
 }
 
-.selling-page {
+.home-page {
   background-color: var(--white);
   height: 1024px;
   width: 1440px;
   border: 1px;
   flex-direction: column;
   align-items: flex-start;
+  padding: 18px 0;
   display: flex;
   overflow: hidden;
 }
 
-.top-bar-5 {
+.top-bar-9 {
   min-width: 1361px;
   align-self: center;
   align-items: center;
-  margin-top: 21px;
+  margin-top: 3px;
   margin-left: 19px;
   display: flex;
   position: relative;
 }
 
-.rectangle-22-5 {
+.rectangle-22-7 {
   background-color: var(--alto);
   height: 77px;
   width: 227px;
   border: 1px;
 }
 
-.overlap-group1-6 {
+.overlap-group2-8 {
   height: 23px;
   width: 197px;
   margin-bottom: 2px;
@@ -75756,26 +75757,26 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.shop-10 {
+.shop-top {
   letter-spacing: 0;
   text-align: center;
-  width: 129px;
+  width: 50px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50px;
 }
 
-.sell-10 {
+.sell-top {
   cursor: pointer;
   letter-spacing: 0;
   text-align: center;
-  width: 129px;
+  width: 50px;
   position: absolute;
   top: 0;
-  left: 68px;
+  left: 120px;
 }
 
-.bar-container-3 {
+.bar-container-4 {
   height: 203px;
   width: 1480px;
   margin-top: 22px;
@@ -75783,7 +75784,7 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.divider-bar-5 {
+.divider-bar-7 {
   min-height: 190px;
   width: 1480px;
   flex-direction: column;
@@ -75795,13 +75796,13 @@ textarea.form-control-lg {
   left: 0;
 }
 
-.line-1-5 {
+.line-1-7 {
   height: 1px;
   width: 1440px;
   margin-top: -1px;
 }
 
-.flex-row-5 {
+.flex-row-7 {
   height: 51px;
   min-width: 1091px;
   align-self: center;
@@ -75812,25 +75813,17 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.place-5 {
-  cursor: pointer;
+.place-8, .shop-15 {
   letter-spacing: 0;
   min-height: 23px;
   text-align: center;
   width: 129px;
-  margin-bottom: 6px;
-}
-
-.shop-11 {
-  letter-spacing: 0;
-  min-height: 23px;
-  text-align: center;
-  width: 129px;
-  margin-bottom: 6px;
+  color: #000;
+  margin-bottom: 4px;
   margin-left: 34px;
 }
 
-.sell-11 {
+.sell-15, .groups-7 {
   cursor: pointer;
   letter-spacing: 0;
   min-height: 23px;
@@ -75840,52 +75833,106 @@ textarea.form-control-lg {
   margin-left: 34px;
 }
 
-.groups-5 {
+.wishlist-7 {
   cursor: pointer;
   letter-spacing: 0;
   min-height: 23px;
   text-align: center;
   width: 129px;
   margin-bottom: 4px;
-  margin-left: 33px;
+  margin-left: 54px;
 }
 
-.wishlist-5 {
-  cursor: pointer;
-  letter-spacing: 0;
-  min-height: 23px;
-  text-align: center;
-  width: 169px;
-  margin-bottom: 4px;
-  margin-left: 34px;
-}
-
-.line-2-5 {
+.line-2-7 {
   height: 1px;
   width: 1440px;
   margin-top: 3px;
 }
 
-.overlap-group2-6 {
-  height: 719px;
-  width: 1287px;
+.flex-row-8 {
+  height: 652px;
+  min-width: 1061px;
+  align-items: flex-start;
   margin-top: 31px;
   margin-left: 4px;
+  display: flex;
   position: relative;
 }
 
-.category-bar-3 {
+.overlap-group4-5 {
+  height: 649px;
+  width: 617px;
+  position: relative;
+}
+
+.middle-area-5 {
+  height: 427px;
+  width: 317px;
+  flex-direction: column;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 300px;
+}
+
+.todays-listings {
+  height: 43px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 287px;
+}
+
+.rectangle-3-1 {
+  background-color: var(--alto);
+  height: 250px;
+  width: 250px;
+  border: 1px;
+  margin-top: 60px;
+  margin-left: 65px;
+}
+
+.prodct-descrip-price-2 {
+  min-width: 252px;
+  align-items: flex-start;
+  margin-top: 8px;
+  margin-left: 65px;
+  display: flex;
+}
+
+.overlap-group-19 {
+  height: 66px;
+  width: 250px;
+  position: relative;
+}
+
+.x1595-sanrio-kurumi-plush-2 {
+  letter-spacing: 0;
+  text-align: center;
+  width: 250px;
+  position: absolute;
+  top: 8px;
+  left: 0;
+}
+
+.icon-star-3 {
+  height: 21px;
+  width: 22px;
+  position: absolute;
+  top: 0;
+  left: 223px;
+}
+
+.category-bar-4 {
   min-height: 646px;
   width: 304px;
   flex-direction: column;
   align-items: center;
   display: flex;
   position: absolute;
-  top: 3px;
   left: 0;
 }
 
-.search-container-3 {
+.search-container-4 {
   height: 30px;
   min-width: 224px;
   align-items: flex-start;
@@ -75894,7 +75941,7 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.categories-3 {
+.categories-4 {
   letter-spacing: 0;
   min-height: 41px;
   text-align: center;
@@ -75903,59 +75950,16 @@ textarea.form-control-lg {
   margin-top: 17px;
 }
 
-.vechicles-3 {
+.category-bar-items, .category-bar-items a {
   letter-spacing: 0;
-  min-height: 26px;
+  min-height: 30px;
   text-align: center;
-  width: 160px;
-  margin-top: 3px;
+  width: 180px;
+  color: #000;
   margin-right: 14px;
 }
 
-.category-bar-item-9 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 160px;
-  margin-right: 24px;
-}
-
-.category-bar-item-10 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 160px;
-  margin-top: 3px;
-  margin-right: 24px;
-}
-
-.home-improvement-supplies-3 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 178px;
-  margin-right: 14px;
-}
-
-.musical-instruments-3 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 186px;
-  margin-top: 32px;
-  margin-right: 6px;
-}
-
-.category-bar-item-11 {
-  letter-spacing: 0;
-  min-height: 26px;
-  text-align: center;
-  width: 186px;
-  margin-top: 3px;
-  margin-right: 6px;
-}
-
-.create-new-listing-6 {
+.create-new-listing-8 {
   cursor: pointer;
   min-width: 266px;
   align-self: flex-start;
@@ -75965,13 +75969,13 @@ textarea.form-control-lg {
   display: flex;
 }
 
-.overlap-group1-7 {
+.overlap-group1-9 {
   height: 37px;
   width: 264px;
   position: relative;
 }
 
-.rectangle-2-3 {
+.rectangle-2-4 {
   background-color: var(--alto);
   height: 37px;
   width: 261px;
@@ -75981,22 +75985,30 @@ textarea.form-control-lg {
   left: 3px;
 }
 
-.create-new-listing-7, .filter-3 {
+.create-new-listing-9, .create-new-listing-9 a, .filter-4, .filter-4 a {
   letter-spacing: 0;
   text-align: center;
   width: 242px;
+  color: #000;
+  text-decoration: none;
   position: absolute;
   top: 4px;
   left: 0;
 }
 
-.overlap-group-16 {
+.overlap-group-20 {
   height: 37px;
   width: 264px;
   align-self: flex-start;
   margin-top: 13px;
   margin-left: 8px;
   position: relative;
+}
+
+.btn-block {
+  background-color: #0000;
+  border: none;
+  padding: 0 100px;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
