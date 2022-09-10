@@ -18,7 +18,7 @@ router.get('/:cartId', getCart);
 router.post('/:userId', createCart);
 
 // ADD item
-router.patch('/', addToCart);
+router.patch('/:cartId', addToCart);
 
 // CHECKOUT cart
 router.patch('/:cartId', checkoutCart);
@@ -30,6 +30,7 @@ router.patch('/:cartId', deleteFromCart);
 router.patch('/:cartId', deleteAllFromCart);
 
 // DELETE a cart
-router.patch('/:cartId', deleteCart);
+router.delete('/:cartId', deleteCart);
 
+module.exports = router;
 

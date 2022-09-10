@@ -25,7 +25,8 @@ const getCart = async (req, res) => {
 //const getCartFromUser
 
 const addToCart = async (req, res) => {
-    const { cartId, itemId, quantity} = req.body;
+    const { cartId } = req.params;
+    const { itemId, quantity} = req.body;
     if (!mongoose.Types.ObjectId.isValid(cartId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
@@ -52,7 +53,8 @@ const checkoutCart = async (req, res) => {
     
 }
 const deleteFromCart = async (req, res) => {
-    const { cartId, itemId } = req.body;
+    const { cartId } = req.params;
+    const { itemId } = req.body;
     if (!mongoose.Types.ObjectId.isValid(cartId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
