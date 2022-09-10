@@ -7,7 +7,7 @@ const createGroup = async (req, res) => {
     try {
         const group = await groupService.create({name, description, members, admins });
     } catch (error) {
-        res.status(400).json({error: error.message})
+        res.status(400).json({error: error.message});
     }
 }
 

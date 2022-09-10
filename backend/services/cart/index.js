@@ -1,11 +1,14 @@
-const { deleteItem, removeAll } = require('./delete');
+const { deleteById } = require('./delete');
 const { readById } = require('./read');
-const { addItem, checkout } = require('./update');
+const { addItem, checkout, deleteItem, removeAllItems } = require('./update');
+const { create } = require('./create');
 
 module.exports = {
+    deleteById,
     deleteItem,
-    removeAll,
+    removeAllItems,
     readById,
     addItem,
     checkout,
+    create,
 };
