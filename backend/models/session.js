@@ -25,6 +25,7 @@ const SessionSchema = new mongoose.Schema({
 
 SessionSchema.plugin(uniqueValidator);
 
+/*
 SessionSchema.statics.generateToken = function() {
   return new Promise((resolve, reject) => {
     crypto.randomBytes(16, (err, buf) => {
@@ -36,6 +37,7 @@ SessionSchema.statics.generateToken = function() {
     });
   });
 };
+*/
 
 SessionSchema.statics.expireAllTokensForUser = function(userId) {
   return this.updateMany({ userId }, { $set: { status: 'expired' } });
