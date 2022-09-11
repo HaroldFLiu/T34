@@ -3,6 +3,7 @@ const express = require('express');
 const {
     createComment,
     getComment,
+    getComments,
     deleteComment,
     updateComment,
 } = require ('../controllers/commentController')
@@ -12,8 +13,11 @@ const router = express.Router();
 // GET a comment
 router.get('/', getComment);
 
+// GET a comment from itemid
+router.get('/:itemId', getComments)
+
 // POST a comment
-router.post('/', createComment);
+router.post('/:itemId', createComment);
 
 // DELETE a comment
 router.delete('/', deleteComment);

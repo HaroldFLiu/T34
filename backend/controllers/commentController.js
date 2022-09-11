@@ -3,10 +3,11 @@ const commentService = require('../services/comment');
 const itemService = require('../services/item');
 
 const createComment = async (req, res) => {
+    const { itemId } = req.params;
     const { userId, string } = req.body;
 
     try {
-        const comment = await commentService.create({userId, string});
+        const comment = await commentService.create({itemId, userId, string});
     } catch (error) {
         res.status(400).json({error: error.message});
     }
@@ -29,7 +30,11 @@ const getComments = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(itemId)) {
         return res.status(404).json({error: 'Item does not exist'});
     }
-    //idk how to do this
+    const comments = await commentService.readByItem(itemId);
+    if (!comments) {
+        return res.status(404).json({error: 'No comments'});
+    }
+    res.status(200).json(comments);
     
 }
 
@@ -64,6 +69,7 @@ const updateComment = async (req, res) => {
 module.exports = {
     createComment,
     getComment,
+    getComments,
     deleteComment,
     updateComment,
 }
