@@ -1,20 +1,18 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new Schema(
   {
-    name: {
-      first: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-      last: {
-        type: String,
-        required: true,
-        trim: true,
-      },
+    first_name: {
+      type: String,
+      required: true,
+      trim: true,
+    },
+    last_name: {
+      type: String,
+      required: true,
+      trim: true,
     },
     email: {
       type: String,
@@ -66,5 +64,4 @@ userSchema.pre('save', function(next){
 });
 
 
-const User = model('User', userSchema);
-module.exports = { User };
+module.exports = mongoose.model('User', userSchema);
