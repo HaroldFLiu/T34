@@ -17,40 +17,15 @@ function SortByDropsown() {
         placement="bottomLeft"
         options={[
           {
-            value: "zhejiang",
-            label: "Zhejiang",
+            value: "Price low-to-high",
+            label: "Price low-to-high",
 
-            children: [
-              {
-                value: "hangzhou",
-                label: "Hangzhou",
-
-                children: [
-                  {
-                    value: "xihu",
-                    label: "West Lake",
-                  },
-                ],
-              },
-            ],
           },
           {
-            value: "jiangsu",
-            label: "Jiangsu",
+            value: "Price high-to-low",
+            label: "Price high-to-low",
 
-            children: [
-              {
-                value: "nanjing",
-                label: "Nanjing",
-
-                children: [
-                  {
-                    value: "zhonghuamen",
-                    label: "Zhong Hua Men",
-                  },
-                ],
-              },
-            ],
+            
           },
         ]}
       />
