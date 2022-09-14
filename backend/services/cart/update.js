@@ -27,12 +27,20 @@ const deleteItem = async(cartId, itemId) => {
   const cart = await Cart.findById(cartId);
   const item = await Item.findById(itemId);
   const tempItems = [];
+  const count = 0
   for (let i = 0; i < cart.items.length(); i++) {
       if (cart.items[i] != itemId) {
           temp.append(cart.items[i]);
       }
       else {
+        if (count == 0) {
           cart.subtotal -= item.price;
+          count ++;
+        }
+        else {
+          temp.append(cart.items[i]);
+        }
+          
       }
   }
   cart.items = tempItems;
