@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 const { Item } = require('../models/item');
-const { Cart } = require('../models/cart');
-const { User } = require('../models/user');
+const cart = require('../models/cart');
+const user = require('../models/user');
 
 const itemService = require('../services/item');
 const cartService = require('../services/cart');
@@ -37,12 +37,12 @@ describe('CartService', () => {
           password: 'password1234',
           groups: [],
         }
-        user1 = await new User(user1Info);
+        user1 = await user.findOne({email:'micxie@student.unimelb.edu.au'});
         cart1Info = {
-          user: user1._id,
+          user: user1,
         }
         await cartService.create(cart1Info)
-        const cart1db = await Cart.findById(cart1._id);
+        const cart1db = await cart.findById(cart1._id);
 
         expect(cart1).not.toBeNull();
         expect(cart1db).not.toBeNull();
