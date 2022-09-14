@@ -37,11 +37,11 @@ describe('CartService', () => {
           password: 'password1234',
           groups: [],
         }
-        user1 = await User.create(user1Info);
+        user1 = await new User(user1Info);
         cart1Info = {
           user: user1._id,
         }
-        cart1 = await cartService.create(cart1Info)
+        await cartService.create(cart1Info)
         const cart1db = await Cart.findById(cart1._id);
 
         expect(cart1).not.toBeNull();
@@ -51,10 +51,13 @@ describe('CartService', () => {
       
       });
 
+
       test('Delete Cart', async () => {
+        cart1 = await cartService.create(cart1Info);
         const deletedCart1 = await cartService.deleteById(cart1._id);
         expect(await Item.findById(cart1._id).toBeNull);
       });
+
 
       test('Add item to cart', async () => {
         cart1 = await cartService.create(cart1Info);
@@ -64,7 +67,6 @@ describe('CartService', () => {
           name: 'Chair',
           description: 'This is a good chair.',
           price: 100,
-          category_ids: [category1._id],
           group_ids: [],
           public_visibility: true,
           // seller: ,
@@ -72,7 +74,7 @@ describe('CartService', () => {
     
         item1 = await itemService.create(item1Info);
         item_ids.append(item1._id);
-        cart1 = await cartService.addItem(cart1._id, item1._id, 1);
+        await cartService.addItem(cart1._id, item1._id, 1);
         cart1db = await Cart.findById(cart1._id);
 
         expect(cart1db).not.toBeNull();
@@ -82,18 +84,19 @@ describe('CartService', () => {
       });
 
       test('Delete an item from cart', async () => {
+        cart1 = await cartService.create(cart1Info);
         item2Info = {
           name: 'Apple',
           description: 'Crunchy',
           price: 5,
-          category_ids: [category2._id],
           group_ids: [],
           public_visibility: true,
 
         }
         item2 = await itemService.create(item2Info);
-        cart1 = await cartService.addItem(cart1._id, item2._id, 1);
-        const updatedCart1 = await cartService.deleteItem(cart1._id, item1._id);
+        await cartService.addItem(cart1._id, item2._id, 1);
+        await cartService.addItem(cart1._id, item1._id, 1);
+        await cartService.deleteItem(cart1._id, item1._id);
         const cart1db = await Cart.findById(cart1._id);
         item_ids.append(item2._id);
         item_ids.shift();
@@ -106,9 +109,11 @@ describe('CartService', () => {
       });
 
       test('Delete all items from cart', async () => {
-        cart1 = await cartService.addItem(cart1._id, item1._id, 1);
+        cart1 = await cartService.create(cart1Info);
+        await cartService.addItem(cart1._id, item1._id, 1);
+        await cartService.addItem(cart1._id, item2._id, 1);
         item_ids.append(item1._id);
-        const updatedCart1 = await cartService.removeAllItems(cart1._id);
+        await cartService.removeAllItems(cart1._id);
         const cart1db = await Cart.findById(cart1._id);
         item_ids = [];
         expect(cart1db).not.toBeNull();
@@ -117,10 +122,11 @@ describe('CartService', () => {
       })
 
       test('Checkout items from cart', async () => {
-        cart1 = await cartService.addItem(cart1._id, item1._id, 1);
-        cart1 = await cartService.addItem(cart1._id, item2._id, 1);
+        cart1 = await cartService.create(cart1Info);
+        await cartService.addItem(cart1._id, item1._id, 1);
+        await cartService.addItem(cart1._id, item2._id, 1);
         item_ids = [];
-        const updatedCart1 = await cartService.checkout(cart1._id);
+        await cartService.checkout(cart1._id);
         const cart1db = await Cart.findById(cart1._id);
         expect(cart1db).not.toBeNull;
         expect(cart1db.items).tobe(item_ids);
