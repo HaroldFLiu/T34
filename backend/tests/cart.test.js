@@ -33,7 +33,7 @@ describe('CartService', () => {
       test('Create Cart', async () => {
         user1 = await user.findOne({email:'micxie@student.unimelb.edu.au'});
         cart1Info = {
-          user: user1,
+          user: user1._id,
         }
         cart1 = await cartService.create(cart1Info)
         const cart1db = await Cart.findById(cart1._id);
@@ -80,7 +80,7 @@ describe('CartService', () => {
       test('Delete Cart', async () => {
         
         const deletedCart1 = await cartService.deleteById(cart1._id);
-        expect(await Item.findById(cart1._id).toBeNull);
+        expect(await Cart.findById(cart1._id).toBeNull);
       });
 
 
@@ -116,8 +116,8 @@ describe('CartService', () => {
         expect(cart1db).not.toBeNull();
         expect(cart1db.items).toStrictEqual(item_ids);
         expect(cart1db.subtotal).toBe(0);
-      })
-
+      });
+      /*
       test('Checkout items from cart', async () => {
         await cartService.addItem(cart1._id, item1._id, 1);
         await cartService.addItem(cart1._id, item2._id, 1);
@@ -128,6 +128,7 @@ describe('CartService', () => {
         expect(cart1db.items).toStrictEqual(item_ids);
         expect(cart1db.subtotal).toBe(0);
       });
+      */
 
       
 
