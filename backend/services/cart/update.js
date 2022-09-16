@@ -5,7 +5,7 @@ const addItem = async(cartId, itemId, quantity) => {
       const item = await Item.findById(itemId);
       const cart = await Cart.findById(cartId);
       for (let i = 0; i < quantity; i++) {
-        cart.items.append(itemId);
+        cart.items.push(itemId);
         cart.subtotal += item.price;
       }
       await cart.save();
@@ -15,7 +15,7 @@ const addItem = async(cartId, itemId, quantity) => {
 };
 
 const checkout = async(cartId) => {
-  const cart = await Cart.findById(cartID);
+  const cart = await Cart.findById(cartId);
   cart.items = [];
   cart.subtotal = 0.00;
   await cart.save();
@@ -27,10 +27,10 @@ const deleteItem = async(cartId, itemId) => {
   const cart = await Cart.findById(cartId);
   const item = await Item.findById(itemId);
   const tempItems = [];
-  const count = 0
-  for (let i = 0; i < cart.items.length(); i++) {
-      if (cart.items[i] != itemId) {
-          temp.append(cart.items[i]);
+  let count = 0;
+  for (let i = 0; i < cart.items.length; i++) {
+      if (!cart.items[i].equals(itemId)) {
+          tempItems.push(cart.items[i]);
       }
       else {
         if (count == 0) {
@@ -38,17 +38,17 @@ const deleteItem = async(cartId, itemId) => {
           count ++;
         }
         else {
-          temp.append(cart.items[i]);
+          tempItems.push(cart.items[i]);
         }
-          
       }
   }
   cart.items = tempItems;
+  
   await cart.save();
   return cart;
 }
 
-const removeAllItems = async(cartID) => {
+const removeAllItems = async(cartId) => {
   const cart = await Cart.findById(cartId);
   cart.items = [];
   cart.subtotal = 0.00;

@@ -1,13 +1,14 @@
-const { Comment, Item } = require('../../models/item');
+const { Item } = require('../../models/item');
+const { Comment } = require('../../models/comment');
 
 const create = async ({
   itemId,
   userId,
-  string,
+  content,
 }) => {
   const comment = await Comment.create({
     userId,
-    string,
+    content,
   });
   
   const item = await Item.findById(itemId);
