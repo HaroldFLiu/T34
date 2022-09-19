@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1663561303054" clover="3.2.0">
-  <project timestamp="1663561303054" name="All files">
-    <metrics statements="252" coveredstatements="221" conditionals="24" coveredconditionals="9" methods="36" coveredmethods="26" elements="312" coveredelements="256" complexity="0" loc="252" ncloc="252" packages="6" files="28" classes="28"/>
+<coverage generated="1663561634863" clover="3.2.0">
+  <project timestamp="1663561634863" name="All files">
+    <metrics statements="252" coveredstatements="226" conditionals="24" coveredconditionals="9" methods="36" coveredmethods="29" elements="312" coveredelements="264" complexity="0" loc="252" ncloc="252" packages="6" files="28" classes="28"/>
     <package name="models">
       <metrics statements="35" coveredstatements="27" conditionals="2" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="cart.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\models\cart.js">
@@ -59,7 +59,7 @@
       </file>
     </package>
     <package name="services.cart">
-      <metrics statements="59" coveredstatements="52" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="6"/>
+      <metrics statements="59" coveredstatements="57" conditionals="4" coveredconditionals="2" methods="7" coveredmethods="7"/>
       <file name="create.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\services\cart\create.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
@@ -94,23 +94,23 @@
         <line num="10" count="1" type="stmt"/>
       </file>
       <file name="update.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\services\cart\update.js">
-        <metrics statements="38" coveredstatements="31" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="3"/>
+        <metrics statements="38" coveredstatements="36" conditionals="4" coveredconditionals="2" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="5" count="5" type="stmt"/>
-        <line num="6" count="5" type="stmt"/>
-        <line num="7" count="5" type="stmt"/>
-        <line num="8" count="5" type="stmt"/>
-        <line num="9" count="5" type="stmt"/>
-        <line num="11" count="5" type="stmt"/>
-        <line num="13" count="5" type="stmt"/>
+        <line num="5" count="7" type="stmt"/>
+        <line num="6" count="7" type="stmt"/>
+        <line num="7" count="7" type="stmt"/>
+        <line num="8" count="7" type="stmt"/>
+        <line num="9" count="7" type="stmt"/>
+        <line num="11" count="7" type="stmt"/>
+        <line num="13" count="7" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
-        <line num="18" count="0" type="stmt"/>
-        <line num="19" count="0" type="stmt"/>
-        <line num="20" count="0" type="stmt"/>
-        <line num="21" count="0" type="stmt"/>
-        <line num="22" count="0" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="1" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
         <line num="26" count="1" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
         <line num="28" count="1" type="stmt"/>
@@ -285,13 +285,13 @@
       </file>
     </package>
     <package name="services.item">
-      <metrics statements="54" coveredstatements="49" conditionals="4" coveredconditionals="2" methods="13" coveredmethods="9"/>
+      <metrics statements="54" coveredstatements="49" conditionals="4" coveredconditionals="2" methods="13" coveredmethods="11"/>
       <file name="create.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\services\item\create.js">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="1" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
-        <line num="13" count="10" type="stmt"/>
-        <line num="23" count="10" type="stmt"/>
+        <line num="13" count="14" type="stmt"/>
+        <line num="23" count="14" type="stmt"/>
         <line num="26" count="4" type="stmt"/>
       </file>
       <file name="delete.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\services\item\delete.js">
@@ -311,7 +311,7 @@
         <line num="7" count="4" type="stmt"/>
       </file>
       <file name="read.js" path="C:\Users\Admin\Documents\GitHub\T34\backend\services\item\read.js">
-        <metrics statements="31" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="10" coveredmethods="6"/>
+        <metrics statements="31" coveredstatements="26" conditionals="4" coveredconditionals="2" methods="10" coveredmethods="8"/>
         <line num="1" count="4" type="stmt"/>
         <line num="3" count="4" type="stmt"/>
         <line num="4" count="4" type="stmt"/>
@@ -324,7 +324,7 @@
         <line num="16" count="1" type="stmt"/>
         <line num="19" count="4" type="stmt"/>
         <line num="20" count="1" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="26" count="4" type="stmt"/>
         <line num="27" count="1" type="stmt"/>
@@ -336,7 +336,7 @@
         <line num="39" count="1" type="stmt"/>
         <line num="42" count="4" type="stmt"/>
         <line num="43" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
+        <line num="44" count="4" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
         <line num="49" count="4" type="stmt"/>
         <line num="50" count="0" type="stmt"/>

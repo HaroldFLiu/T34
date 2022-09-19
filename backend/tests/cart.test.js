@@ -107,7 +107,27 @@ describe('CartService', () => {
       });
 
       test('Delete all items from cart', async () => {
+        item1Info = {
+          name: 'Chair',
+          description: 'This is a good chair.',
+          price: 100,
+          category_ids: [],
+          group_ids: [],
+          public_visibility: true,
 
+        }
+        item1 = await itemService.create(item1Info);
+
+        item2Info = {
+          name: 'Apple',
+          description: 'Crunchy',
+          price: 5,
+          category_ids: [],
+          group_ids: [],
+          public_visibility: true,
+
+        }
+        item2 = await itemService.create(item2Info);
         await cartService.addItem(cart1._id, item1._id, 1);
         await cartService.addItem(cart1._id, item2._id, 1);
         await cartService.removeAllItems(cart1._id);
@@ -117,8 +137,29 @@ describe('CartService', () => {
         expect(cart1db.items).toStrictEqual(item_ids);
         expect(cart1db.subtotal).toBe(0);
       });
-      /*
+      
       test('Checkout items from cart', async () => {
+        item1Info = {
+          name: 'Chair',
+          description: 'This is a good chair.',
+          price: 100,
+          category_ids: [],
+          group_ids: [],
+          public_visibility: true,
+
+        }
+        item1 = await itemService.create(item1Info);
+
+        item2Info = {
+          name: 'Apple',
+          description: 'Crunchy',
+          price: 5,
+          category_ids: [],
+          group_ids: [],
+          public_visibility: true,
+
+        }
+        item2 = await itemService.create(item2Info);
         await cartService.addItem(cart1._id, item1._id, 1);
         await cartService.addItem(cart1._id, item2._id, 1);
         item_ids = [];
@@ -128,7 +169,7 @@ describe('CartService', () => {
         expect(cart1db.items).toStrictEqual(item_ids);
         expect(cart1db.subtotal).toBe(0);
       });
-      */
+      
 
       
 
