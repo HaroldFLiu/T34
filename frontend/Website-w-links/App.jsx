@@ -12,7 +12,6 @@ import ViewItemPage from "./components/ViewItemPage";
 import HomePage from "./components/HomePage";
 import InspectGroupDetailPage from "./components/InspectGroupDetailPage";
 import TestPage from "./components/TestPage";
-import MembersListPage from "./components/MembersListPage";
 
 function App() {
   return (
@@ -50,9 +49,6 @@ function App() {
         </Route>
         <Route path="/inspect-group-detail-page">
           <InspectGroupDetailPage {...inspectGroupDetailPageData} />
-        </Route>
-        <Route path="/members-list-page">
-          <MembersListPage {...membersListPageData} />
         </Route>
       </Switch>
     </Router>
@@ -470,99 +466,5 @@ const inspectGroupDetailPageData = {
     filter: "Filter",
     middleArea2Props: middleArea22Data,
     middleBar3Props: middleBar32Data,
-};
-
-const member11Data = {
-  ellipse5: "/img/ellipse-5@2x.png",
-};
-
-const manageDropdownButton2Data = {
-  className: "manage-dropdown-button-2",
-};
-
-const member12Data = {
-  ellipse5: "/img/ellipse-5-8@2x.png",
-  className: "member1-7",
-};
-
-const manageDropdownButton4Data = {
-  className: "manage-dropdown-button-3",
-};
-
-const manageDropdownButton5Data = {
-  className: "manage-dropdown-button-4",
-};
-
-const manageDropdownButton6Data = {
-  className: "manage-dropdown-button-5",
-};
-
-const manageDropdownButton7Data = {
-  className: "manage-dropdown-button-1",
-};
-
-const member122Data = {
-  ellipse5: "/img/ellipse-5-4@2x.png",
-  manageDropdownButtonProps: manageDropdownButton7Data,
-};
-
-const manageDropdownButton8Data = {
-  className: "manage-dropdown-button-6",
-};
-
-const manageDropdownButton9Data = {
-  className: "manage-dropdown-button-1",
-};
-
-const member123Data = {
-  ellipse5: "/img/ellipse-5-3@2x.png",
-  className: "member1-9",
-  manageDropdownButtonProps: manageDropdownButton9Data,
-};
-
-const manageDropdownButton10Data = {
-  className: "manage-dropdown-button-7",
-};
-
-const membersListPageData = {
-  shop1: "SHOP",
-  sell1: "SELL",
-  line1: "/img/line-1@1x.png",
-  place: "HOME",
-  shop2: "SHOP",
-  sell2: "SELL",
-  groups: "GROUPS",
-  wishlist: "WISHLIST",
-  line2: "/img/line-1@1x.png",
-  groupIcon: "/img/group-icon@2x.png",
-  marketplaceSellers1: "Marketplace Sellers",
-  line3: "/img/line-3-7@2x.png",
-  x2174913Groups: "69, 420 members",
-  line4: "/img/line-3-7@2x.png",
-  marketplaceSellers2: "Marketplace Sellers",
-  membersList: "Members List:",
-  rizwhales1: "rizwhales",
-  ellipse51: "/img/ellipse-5-9@2x.png",
-  rizwhales2: "rizwhales",
-  ellipse52: "/img/ellipse-5-7@2x.png",
-  rizwhales3: "rizwhales",
-  ellipse53: "/img/ellipse-5-6@2x.png",
-  rizwhales4: "rizwhales",
-  ellipse54: "/img/ellipse-5-5@2x.png",
-  rizwhales5: "rizwhales",
-  ellipse55: "/img/ellipse-5-1@2x.png",
-  rizwhales6: "rizwhales",
-  ellipse56: "/img/ellipse-5-2@2x.png",
-  line8: "/img/line-8@1x.png",
-  member11Props: member11Data,
-  manageDropdownButton1Props: manageDropdownButton2Data,
-  member12Props: member12Data,
-  manageDropdownButton2Props: manageDropdownButton4Data,
-  manageDropdownButton3Props: manageDropdownButton5Data,
-  manageDropdownButton4Props: manageDropdownButton6Data,
-  member121Props: member122Data,
-  manageDropdownButton5Props: manageDropdownButton8Data,
-  member122Props: member123Data,
-  manageDropdownButton6Props: manageDropdownButton10Data,
 };
 
