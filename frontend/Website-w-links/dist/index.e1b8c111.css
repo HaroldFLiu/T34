@@ -76026,9 +76026,9 @@ textarea.form-control-lg {
 body {
   background: var(--white);
   min-height: 100vh;
+  height: 100%;
   font-family: Fira Sans, sans-serif;
   font-weight: 400;
-  display: flex;
 }
 
 .sign {
@@ -76140,7 +76140,6 @@ body, html, .App, #root, .auth-wrapper {
 
 .form {
   padding-top: 200px;
-  padding-left: 650px;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

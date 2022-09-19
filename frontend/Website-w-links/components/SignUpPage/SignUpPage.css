@@ -5,10 +5,11 @@
 body {
   background: var(--white);
   min-height: 100vh;
-  display: flex;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
+  height: 100%;
 }
+
 
 .sign {
   text-align: center;
@@ -109,6 +110,5 @@ body, html, .App, #root, .auth-wrapper {
     text-align: left;
 }
 .form{
-  padding-left: 650px;
   padding-top: 200px;
 }
