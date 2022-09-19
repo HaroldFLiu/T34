@@ -41,32 +41,39 @@ describe('CommentsService', () => {
           }
           item1 = await itemService.create(item1Info);
           comment1Info = {
+            user: user1._id,
+            content: 'This is a test comment',
             itemId: item1._id,
-            userId: user1._id,
-            string: 'This is a test comment',
           }
         comment1 = await commentService.create(comment1Info);
         const comment1db = await Comment.findById(comment1._id);
+        const item1db = await Item.findById(item1._id);
         expect(comment1db).not.toBeNull();
         expect(comment1).not.toBeNull();
-        expect(item1.comments).toBe(comment1._id);
+        expect(item1db.comments).toStrictEqual([comment1._id]);
         expect(comment1db.user).toStrictEqual(user1._id);
         expect(comment1db.content).toStrictEqual(comment1Info.content);
       });
 
       test('Delete Comment', async () => {
         const deletedcomment1 = await commentService.deleteById(comment1._id);
-        expect(Comment.findById(comment1._id)).toBeNull();
-        expect(item1.comments).toBe([]);
+        expect(await Comment.findById(comment1._id)).toBeNull;
+        expect(item1.comments).toStrictEqual([]);
       });
 
 
       test('Read Comment by Item', async () => {
+        item1 = await itemService.create(item1Info);
+        comment1Info = {
+          user: user1._id,
+          content: 'This is a test comment',
+          itemId: item1._id,
+        }
         comment1 = await commentService.create(comment1Info);
         comment2Info = {
+            user: user1._id,
+            content: 'This is 2nd comment',
             itemId: item1._id,
-            userId: user1._id,
-            string: 'This is 2nd comment',
         }
         comment2 = await commentService.create(comment2Info);
         const comment2db = await Comment.findById(comment2._id);
@@ -74,8 +81,9 @@ describe('CommentsService', () => {
 
         expect(comment1db).not.toBeNull();
         expect(comment2db).not.toBeNull();
+
         const commentsdb = await commentService.readByItem(item1._id);
-        expect(comentsdb).toStrictEqual([comment1, comment2]);
+        expect(commentsdb).toStrictEqual([comment1._id, comment2._id]);
       });
 
       test('Update comment', async () => {

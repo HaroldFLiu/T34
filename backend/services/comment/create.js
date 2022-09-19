@@ -2,17 +2,19 @@ const { Item } = require('../../models/item');
 const { Comment } = require('../../models/comment');
 
 const create = async ({
-  itemId,
-  userId,
+  user,
   content,
+  itemId,
 }) => {
   const comment = await Comment.create({
-    userId,
+    user,
     content,
   });
   
   const item = await Item.findById(itemId);
-  item.comments.push(comment);
+  item.comments.push(comment._id);
+  await item.save()
+  //console.log(item);
   return comment;
 
 };
