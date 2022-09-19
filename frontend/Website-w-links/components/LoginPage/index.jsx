@@ -8,7 +8,7 @@ function LoginPage(props) {
   return (
     <div className="container-center-horizontal">
       <div className="login-page screen">
-        <div className="rectangle-21"></div>
+        <div className="rectangle-21"> Marketplace</div>
         <div className="top-bar-6">
           <h1 className="title">{title}</h1>
         </div>

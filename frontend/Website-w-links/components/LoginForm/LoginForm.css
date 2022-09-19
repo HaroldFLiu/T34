@@ -1,9 +1,14 @@
 .login-form {
   border: 1px none;
   height: 445px;
-  left: 117px;
+  left: 85px;
   position: absolute;
-  top: 64px;
+  top: 30px;
+  text-align: center;
+  width: 70%;
+  margin: auto;
+  position: absolute;
+  padding: 10px;
 }
 
 .login-form {

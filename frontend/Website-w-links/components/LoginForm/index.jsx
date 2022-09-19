@@ -59,7 +59,7 @@ function LoginForm() {
           <Antd.Button type="primary" htmlType="submit" style={{ width: "100%" }} className="login-form-button">
             Log in
           </Antd.Button>
-          Or <a href="javascript:void(0)">register now!</a>
+          Or <a href="/sign-up-page">register now!</a>
         </Antd.Form.Item>
       </Antd.Form>
     </div>

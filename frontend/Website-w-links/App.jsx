@@ -12,7 +12,7 @@ import ViewItemPage from "./components/ViewItemPage";
 import HomePage from "./components/HomePage";
 import InspectGroupDetailPage from "./components/InspectGroupDetailPage";
 import TestPage from "./components/TestPage";
-
+import SignUpPage from "./components/SignUpPage"
 function App() {
   return (
     <Router>
@@ -49,6 +49,9 @@ function App() {
         </Route>
         <Route path="/inspect-group-detail-page">
           <InspectGroupDetailPage {...inspectGroupDetailPageData} />
+        </Route>
+        <Route path="/sign-up-page">
+          <SignUpPage />
         </Route>
       </Switch>
     </Router>
