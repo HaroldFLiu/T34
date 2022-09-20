@@ -24,6 +24,7 @@ const LoginForm = () => {
     });
   }
 
+  async function PostLogin(){
   axios.post('/login', {
     email: values.email,
     password: values.password,
@@ -34,6 +35,7 @@ const LoginForm = () => {
   .catch(function (error) {
     console.log(error);
   });
+}
 
   return (
     <div className="login-form">
@@ -92,7 +94,7 @@ const LoginForm = () => {
           </a>
         </Antd.Form.Item>
         <Antd.Form.Item>
-          <Antd.Button type="primary" htmlType="submit" style={{ width: "100%" }} className="login-form-button">
+          <Antd.Button type="primary" htmlType="submit" onClick={PostLogin} style={{ width: "100%" }} className="login-form-button">
             Log in
           </Antd.Button>
           Or <a href="/sign-up-page">register now!</a>
