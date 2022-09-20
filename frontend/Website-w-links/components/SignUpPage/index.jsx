@@ -12,11 +12,11 @@ const SignUpPage = () => {
 
       });
 
-
-    async function PostSignUp(){
+    const PostSignUp =  event =>{
+    event.preventDefault();
     axios.post('/register', {
-        firstName: "",
-        lastName: "",
+        first_name: values.firstName,
+        last_name: values.lastName,
         email: values.email,
         password: values.password,
     })
@@ -27,11 +27,11 @@ const SignUpPage = () => {
         console.log(error);
     });
     }
-    
+    console.log(values);
     return (
 
     <div className="form">
-    <form className="signpage">
+    <form onSubmit={PostSignUp} className="signpage" >
         <label className="sign">
             Sign Up
         </label>
@@ -75,7 +75,7 @@ const SignUpPage = () => {
             />
         </div>
         <div className="d-grid">
-            <button type="submit" className="btn btn-success" onClick={PostSignUp()}>
+            <button type="submit" className="btn btn-success">
                 Sign Up
             </button>
         </div>
