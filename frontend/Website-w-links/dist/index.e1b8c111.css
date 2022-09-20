@@ -74821,9 +74821,9 @@ textarea.form-control-lg {
 }
 
 .home-page {
-  background-color: var(--white);
   height: 1024px;
   width: 1440px;
+  background-color: #fff;
   border: 1px;
   flex-direction: column;
   align-items: flex-start;

@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import GroupCreation from "./components/GroupCreation";
 import NewItemListingPage from "./components/NewItemListingPage";
@@ -13,7 +13,12 @@ import HomePage from "./components/HomePage";
 import InspectGroupDetailPage from "./components/InspectGroupDetailPage";
 import TestPage from "./components/TestPage";
 import SignUpPage from "./components/SignUpPage"
+
+// adding merge 
+import React, {useState, useEffect } from 'react'
+
 function App() {
+  
   return (
     <Router>
       <Switch>
