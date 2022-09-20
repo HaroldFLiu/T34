@@ -149,11 +149,7 @@ function InspectGroupDetailPage(props) {
                   </div>
                 </div>
                 <div className="overlap-group1-11">
-                  <Link to="/members-list-page">
-
-               
-                  <div className="join-group-3 tienne-normal-black-20px"> Members List </div>
-                  </Link>
+                  <div className="join-group-3 tienne-normal-black-20px">{joinGroup1}</div>
                 </div>
                 <div className="owner-yen-fug tienne-normal-black-20px">{ownerYenfug}</div>
               </div>
