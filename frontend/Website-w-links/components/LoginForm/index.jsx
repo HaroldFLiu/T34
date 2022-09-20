@@ -5,6 +5,8 @@ import * as AntDesignIcons from "@ant-design/icons";
 import * as Antd from "antd";
 import "./LoginForm.css";
 
+import axios from "../../api/axios";
+
 // to collect the input data 
 const LoginForm = () => {
   const [values, setValues] = useState({
@@ -21,6 +23,17 @@ const LoginForm = () => {
       showPass: !values.showPass,
     });
   }
+
+  axios.post('/login', {
+    email: values.email,
+    password: values.password,
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
   return (
     <div className="login-form">
