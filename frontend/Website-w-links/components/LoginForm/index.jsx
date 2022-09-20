@@ -4,6 +4,8 @@ import "antd/dist/antd.variable.css";
 import * as AntDesignIcons from "@ant-design/icons";
 import * as Antd from "antd";
 import "./LoginForm.css";
+import { useHistory } from "react-router-dom";
+
 
 import axios from "../../api/axios";
 
@@ -25,18 +27,23 @@ const LoginForm = () => {
   }
 
   async function PostLogin(){
-  axios.post('/login', {
+    axios.post('/login', {
     email: values.email,
     password: values.password,
   })
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
+    if (response.status=="200") {
+      location.pathname='home-page';
+    }
+    else {
+      console.log("oops");
+    }
   })
   .catch(function (error) {
     console.log(error);
   });
 }
-
   return (
     <div className="login-form">
       <Antd.Form
