@@ -60548,6 +60548,15 @@ html {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
+.login-button {
+  cursor: pointer;
+  height: 40px;
+  border: 1px;
+  margin-bottom: 11px;
+  margin-left: 25px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+}
+
 .sign-up-button, .sign-up-button-1, .sign-up-button-2, .sign-up-button-3, .sign-up-button-4, .sign-up-button-5, .sign-up-button-6, .sign-up-button-7 {
   height: 40px;
   border: 1px;
@@ -72453,15 +72462,6 @@ textarea.form-control-lg {
   text-align: center;
   width: 306px;
   margin-top: 32px;
-}
-
-.login-button {
-  cursor: pointer;
-  height: 40px;
-  border: 1px;
-  margin-bottom: 11px;
-  margin-left: 25px;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, "sans-serif", Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 }
 
 .login-button, .login-button-1, .login-button-2, .login-button-3, .login-button-4, .login-button-5, .login-button-6 {
