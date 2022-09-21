@@ -20,12 +20,23 @@
   position: relative;
 }
 
-/* logo here */ 
+/* logo here  changed the bg color to white from  var(--alto) to hide the box*/ 
 .rectangle-22-7 {
-  background-color: var(--alto);
+  background-color: white !important;
   border: 1px none;
   height: 77px;
   width: 227px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* logo img here */
+.logo-position{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scale: 70%;
 }
 
 .overlap-group2-8 {

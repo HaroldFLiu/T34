@@ -412,6 +412,7 @@ const homePageData = {
     createNewListing: "+ Create New Listing",
     filter: "Filter",
     middleBarProps: middleBar5Data,
+    logo: "/img/t34-logo.jpg",
 };
 
 const middleArea22Data = {

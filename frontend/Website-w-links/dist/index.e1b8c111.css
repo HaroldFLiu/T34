@@ -74843,10 +74843,20 @@ textarea.form-control-lg {
 }
 
 .rectangle-22-7 {
-  background-color: var(--alto);
   height: 77px;
   width: 227px;
   border: 1px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  background-color: #fff !important;
+}
+
+.logo-position {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  scale: 70%;
 }
 
 .overlap-group2-8 {

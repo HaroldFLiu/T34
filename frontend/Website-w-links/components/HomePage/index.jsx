@@ -13,6 +13,9 @@ import SearchButton2 from "../SearchButton2";
 import Pagination from "../Pagination";
 import "./HomePage.css";
 
+
+// added logo to home page line60
+
 function HomePage(props) {
   const {
     shop1,
@@ -47,13 +50,14 @@ function HomePage(props) {
     createNewListing,
     filter,
     middleBarProps,
+    logo,
   } = props;
 
   return (
-    <div className="container-center-horizontal">
-    <form className="home-page screen" name="form29" action="form29" method="post">
+    <div className="container-center-horizontal" >
+    <form className="home-page screen" name="form29" action="form29" method="post" >
       <div className="top-bar-9">
-        <div className="rectangle-22-7"></div>
+        <div className="rectangle-22-7"> <img src={logo} className="logo-position"></img> </div>
         <SearchInput />
         <SearchButton />
         <div className="overlap-group2-8">
