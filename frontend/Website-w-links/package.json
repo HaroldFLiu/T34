@@ -9,6 +9,7 @@
     "antd": "^4.19.1",
     "axios": "^0.27.2",
     "bootstrap": "5.1",
+    "postcss": "^8.4.16",
     "react": "^18.1.0",
     "react-bootstrap": "2.4.0",
     "react-dom": "^18.1.0",
