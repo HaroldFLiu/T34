@@ -5,7 +5,7 @@
     "main": "index.js",
     "scripts": {
         "test": "jest --watchAll --config=jestconfig.json",
-        "start": "node backend/app.js",
+        "start": "parcel build frontend/Website-w-links/index.html",
         "dev": "nodemon backend/app.js",
 	"front": "parcel frontend/Website-w-links/index.html"
     },
