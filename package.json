@@ -6,7 +6,8 @@
     "scripts": {
         "test": "jest --watchAll --config=jestconfig.json",
         "start": "node backend/app.js",
-        "dev": "nodemon backend/app.js"
+        "dev": "nodemon backend/app.js",
+	"front": "parcel frontend/Website-w-links/index.html"
     },
     "repository": {
         "type": "git",
