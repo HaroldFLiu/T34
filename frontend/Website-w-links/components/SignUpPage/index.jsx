@@ -1,4 +1,3 @@
-import React from "react";
 import React, { useState } from "react";
 import "./SignUpPage.css";
 import axios from "../../api/axios";
