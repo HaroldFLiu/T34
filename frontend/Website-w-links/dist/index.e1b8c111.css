@@ -74820,7 +74820,7 @@ textarea.form-control-lg {
 }
 
 .home-page {
-  height: 1024px;
+  height: 100%;
   width: 1440px;
   background-color: #fff;
   border: 1px;
@@ -74974,11 +74974,9 @@ textarea.form-control-lg {
   position: relative;
 }
 
-.middle-area-5 {
+.products-loop {
   height: 427px;
   width: 317px;
-  flex-direction: column;
-  display: flex;
   position: absolute;
   top: 0;
   left: 300px;
@@ -74990,6 +74988,24 @@ textarea.form-control-lg {
   text-align: center;
   width: 287px;
   margin-left: 350px;
+}
+
+.icon-star-3 {
+  height: 121px;
+  width: 22px;
+  margin-top: -310px;
+  position: absolute;
+  top: 0;
+  left: 223px;
+}
+
+.wishlist-btn {
+  height: 20px;
+  width: 20px;
+  margin-top: -610px;
+  position: absolute;
+  top: 0;
+  left: 223px;
 }
 
 .prodct-descrip-price-2 {
@@ -75016,20 +75032,55 @@ textarea.form-control-lg {
   display: flex;
 }
 
+.product-box1 {
+  background-color: var(--alto);
+  height: 250px;
+  width: 250px;
+  border: 1px;
+  margin-top: 60px;
+  margin-left: 450px;
+  display: flex;
+  position: relative;
+  bottom: 310px;
+}
+
+.product-box2 {
+  background-color: var(--alto);
+  height: 250px;
+  width: 250px;
+  border: 1px;
+  margin-top: 60px;
+  margin-left: 850px;
+  display: flex;
+  position: relative;
+  bottom: 620px;
+}
+
 .items-information {
   letter-spacing: 0;
   text-align: center;
   width: 250px;
   position: absolute;
+  top: -610px;
   left: 0;
 }
 
-.icon-star-3 {
-  height: 21px;
-  width: 22px;
+.items-information1 {
+  letter-spacing: 0;
+  text-align: center;
+  width: 250px;
   position: absolute;
-  top: 0;
-  left: 223px;
+  top: -610px;
+  left: 390px;
+}
+
+.items-information2 {
+  letter-spacing: 0;
+  text-align: center;
+  width: 250px;
+  position: absolute;
+  top: -610px;
+  left: 790px;
 }
 
 .category-bar-4 {
@@ -76039,7 +76090,6 @@ body {
   height: 100%;
   font-family: Fira Sans, sans-serif;
   font-weight: 400;
-  display: flex;
 }
 
 .sign {

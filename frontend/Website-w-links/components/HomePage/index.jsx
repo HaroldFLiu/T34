@@ -14,7 +14,6 @@ import Pagination from "../Pagination";
 import "./HomePage.css";
 
 
-
 function HomePage(props) {
   const {
     shop1,
@@ -77,7 +76,7 @@ function HomePage(props) {
           className={middleBarProps.className}
         />
         <div className="divider-bar-7">
-          <img className="line-1-7" src={line1} />
+        <img className="line-1-7" src={line1} />
           <div className="flex-row-7 tienne-bold-black-24px"> 
           <Link to="/home-page">
             <div className="place-8">HOME</div>
@@ -103,17 +102,35 @@ function HomePage(props) {
       <div className="flex-row-8">
         <div className="overlap-group4-5">
           <div className="todays-listings tienne-normal-black-30px">Today's Listings:</div>
-          <div className="middle-area-5">
+          <div className="products-loop">
             <Link to="/view-item-page">
               <div className="product-box"> </div>
             </Link>
+            {/* this is the 2nd product in display*/}
+            <div className="product-box1"> </div>
+            {/* this is the 3rd product in display*/}
+            <div className="product-box2"> </div>
+            {/* this is the 1st product in display 2nd row*/}
+            <div className="product-box1-2"> </div>
             <div className="prodct-descrip-price-2">
               <div className="overlap-group-19">
                 <div className="items-information">
                   <span className="tienne-bold-black-15px"><React.Fragment>price <br /></React.Fragment> </span>
                   <span className="tienne-normal-black-15px">Item Name</span>
                 </div>
-                <img className="icon-star-3" src={iconStar} />
+                {/* item info 1*/}
+                <div className="items-information1">
+                  <span className="tienne-bold-black-15px"><React.Fragment>price <br /></React.Fragment> </span>
+                  <span className="tienne-normal-black-15px">Item Name</span>
+                </div>
+                {/* item info 2*/}
+                <div className="items-information2">
+                  <span className="tienne-bold-black-15px"><React.Fragment>price <br /></React.Fragment> </span>
+                  <span className="tienne-normal-black-15px">Item Name</span>
+                </div>
+               {/* <img className="icon-star-3" src={iconStar} />*/}
+                <button className="wishlist-btn"> 
+                </button>
               </div>
             </div>
           </div>

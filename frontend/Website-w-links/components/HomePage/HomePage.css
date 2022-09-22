@@ -4,7 +4,7 @@
   border: 1px none;
   display: flex;
   flex-direction: column;
-  height: 1024px;
+  height: 100%;
   overflow: hidden;
   padding: 18px 0;
   width: 1440px;
@@ -179,9 +179,7 @@
   width: 617px;
 }
 
-.middle-area-5 {
-  display: flex;
-  flex-direction: column;
+.products-loop {
   height: 427px;
   left: 300px;
   position: absolute;
@@ -195,6 +193,26 @@
   text-align: center;
   width: 287px;
   margin-left: 350px;
+}
+
+/* resize this and change to button later THIS IS FAV STAR   */
+.icon-star-3 {
+  height: 121px;
+  left: 223px;
+  position: absolute;
+  top: 0;
+  width: 22px;
+  margin-top: -310px;
+  
+}
+
+.wishlist-btn {
+  height: 20px;
+  left: 223px;
+  position: absolute;
+  top: 0;
+  width: 20px;
+  margin-top: -610px;
 }
 
 .prodct-descrip-price-2 {
@@ -223,33 +241,63 @@
   width: 250px;
 }
 
+.product-box1{
+  background-color: var(--alto);
+  display: flex;
+  position: relative;
+  bottom: 310px;
+  border: 1px none;
+  height: 250px;
+  margin-left: 450px;
+  margin-top: 60px;
+  width: 250px;
+} 
+
+.product-box2{
+  background-color: var(--alto);
+  display: flex;
+  position: relative;
+  bottom: 620px;
+  border: 1px none;
+  height: 250px;
+  margin-left: 850px;
+  margin-top: 60px;
+  width: 250px;
+} 
+
+
+/* TOP = -XYZ = PLACEMENT */ 
 .items-information{
   letter-spacing: 0;
   position: absolute;
   text-align: center;
   left:0;
+  top: -610px;
   width: 250px;
 }
 
-/* dont need this anymore replaced by: items-information
-.x1595-sanrio-kurumi-plush-2 {
-  left: 0;
+
+/* TOP = -XYZ = PLACEMENT */ 
+.items-information1{
   letter-spacing: 0;
   position: absolute;
   text-align: center;
-  top: 8px;
+  left:390px;
+  top: -610px;
   width: 250px;
 }
-*/
 
-/* resize this and change to button later */
-.icon-star-3 {
-  height: 21px;
-  left: 223px;
+
+/* TOP = -XYZ = PLACEMENT */ 
+.items-information2{
+  letter-spacing: 0;
   position: absolute;
-  top: 0;
-  width: 22px;
+  text-align: center;
+  left:790px;
+  top: -610px;
+  width: 250px;
 }
+
 
 /* category size bar whole group */
 .category-bar-4 {
