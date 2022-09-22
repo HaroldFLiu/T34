@@ -2,12 +2,15 @@
 * {
   box-sizing: border-box;
 }
+/* set display to flex to fit all areas to each screen */
+
 body {
   background: var(--white);
   min-height: 100vh;
   font-weight: 400;
   font-family: 'Fira Sans', sans-serif;
   height: 100%;
+  display: flex;
 }
 
 

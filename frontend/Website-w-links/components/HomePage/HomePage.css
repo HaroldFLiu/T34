@@ -194,15 +194,7 @@
   letter-spacing: 0;
   text-align: center;
   width: 287px;
-}
-
-.rectangle-3-1 {
-  background-color: var(--alto);
-  border: 1px none;
-  height: 250px;
-  margin-left: 65px;
-  margin-top: 60px;
-  width: 250px;
+  margin-left: 350px;
 }
 
 .prodct-descrip-price-2 {
@@ -220,6 +212,26 @@
   width: 250px;
 }
 
+/* size of this box is 250 px width product size box*/ 
+.product-box{
+  background-color: var(--alto);
+  display: flex;
+  border: 1px none;
+  height: 250px;
+  margin-left: 65px;
+  margin-top: 60px;
+  width: 250px;
+}
+
+.items-information{
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  left:0;
+  width: 250px;
+}
+
+/* dont need this anymore replaced by: items-information
 .x1595-sanrio-kurumi-plush-2 {
   left: 0;
   letter-spacing: 0;
@@ -228,6 +240,7 @@
   top: 8px;
   width: 250px;
 }
+*/
 
 /* resize this and change to button later */
 .icon-star-3 {

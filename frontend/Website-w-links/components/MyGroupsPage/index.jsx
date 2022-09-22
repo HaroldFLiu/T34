@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
-import LoginButton from "../LoginButton";
+import LoginButton from "../LoginButton2";
 import SignUpButton from "../SignUpButton";
 import MiddleBar from "../MiddleBar";
 import BROWESEBYCATE from "../BROWESEBYCATE";

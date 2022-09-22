@@ -15,7 +15,7 @@ import TestPage from "./components/TestPage";
 import SignUpPage from "./components/SignUpPage"
 
 // adding merge 
-import React, {useState, useEffect } from 'react'
+import React from 'react'
 
 function App() {
   
@@ -412,7 +412,7 @@ const homePageData = {
     createNewListing: "+ Create New Listing",
     filter: "Filter",
     middleBarProps: middleBar5Data,
-    logo: "/img/t34-logo.jpg",
+    logo: "/img/t34-logo.jpg"
 };
 
 const middleArea22Data = {
