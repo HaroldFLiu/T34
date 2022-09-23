@@ -11,11 +11,11 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:path(|login-page)">
+        <Route path="/:path(|home-page)">
         <HomePage/>
         </Route>
-        <Route path="/home-page">
-          <HomePage/>
+        <Route path="/login-page">
+          <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
           <SignUp/>

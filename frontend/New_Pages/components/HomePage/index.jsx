@@ -25,7 +25,7 @@ const HomePage = () => {
         <a href="#home">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="#home">Log Out</a>
+      <a href="/login-page">Log In</a>
       <a href="#home">UserName</a>
       <input type="text" placeholder="Search.."> 
       </input>
@@ -60,6 +60,20 @@ const HomePage = () => {
     <div class="main">
       <div className="home-title"> Today's Listings:</div>
       <hr />
+      <div className="number-listings"> 1234 listings 
+      
+          {/* sort by button drop down*/} 
+    <div className="move-drop-btn">
+      <div class="dropdown">
+                <button class="dropbtn">Sort by:</button>
+                <div class="dropdown-content">
+                    <a href="#">Price: High-Low</a>
+                    <a href="#">Price: Low-High</a>       
+                </div>
+        </div>
+      </div> 
+      </div> 
+      <hr />
     <div className="products-wrapper">  
     {/* products display 1st row*/} 
     <div className="wrapper" >
@@ -67,35 +81,54 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">price here</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
+      <div class="column">
+      <div class="card">
+        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
+        <p><button>Add to Cart</button></p>
+        </div>
+      </div>
+      </div>
+      
     </div>
     </div>
 
@@ -105,33 +138,51 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <p class="price">PRICE HERE</p>
-        <h1>Item Name</h1>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
+        </div>
+      </div>
+      </div>
+      <div class="column">
+      <div class="card">
+        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
+        <p><button>Add to Cart</button></p>
+        </div>
       </div>
       </div>
     </div>

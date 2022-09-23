@@ -29,8 +29,8 @@
 
 /* Main content */
 .main {
-  margin-top: 100px; /* Add a top margin to avoid content overlay */
-  margin-left: 360px; /* Same as the width of the sidebar */
+  margin-top: 40px; /* Add a top margin to avoid content overlay */
+  margin-left: 340px; /* Same as the width of the sidebar */
 
 }
 
@@ -105,7 +105,7 @@
 /* HOME PAGE TITLE */
 .home-title{
   font-family: 'Tienne', sans-serif;
-  font-size: 50px;
+  font-size: 40px;
 }
 
 
@@ -131,7 +131,7 @@
 /* wrappers to move products */
 
 .products-wrapper{
-  margin-top: 90px;
+  margin-top: -10px;
 }
 
 .wrapper{
@@ -142,7 +142,7 @@
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
+  max-width: 250px;
   margin: auto;
   text-align: center;
   font-family: arial;
@@ -167,4 +167,19 @@
 
 .card button:hover {
   opacity: 0.7;
+}
+
+/* moves the img in the product card down abit */
+.img-wrap{
+  margin-top: 10px;
+}
+
+/* moves item name + cart up abit */
+.item-cart{
+  margin-top: -10px;
+}
+
+.move-drop-btn{
+  float: right;
+  margin-right: 100px;
 }
