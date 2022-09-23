@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 
 // GET all public items
-router.get('/', getPublicItems);
+router.get('/', getPublicItems);    
 
 // GET a single item
 router.get('/:item_id', getItem);

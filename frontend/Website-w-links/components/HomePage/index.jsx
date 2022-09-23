@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import SearchInput from "../SearchInput";
 import SearchButton from "../SearchButton";
@@ -51,6 +51,16 @@ function HomePage(props) {
     logo,
   } = props;
 
+
+  const getProducts = () => {
+    const [values, setValues] = useState({
+      email: "",
+      password: "",
+      showPass: false,
+    });
+  
+
+  }
   return (
     <div className="container-center-horizontal" >
     <form className="home-page screen" name="form29" action="form29" method="post" >
