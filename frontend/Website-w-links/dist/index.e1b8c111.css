@@ -72893,6 +72893,70 @@ textarea.form-control-lg {
   left: 0;
 }
 
+.dropbtn {
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.dropdown {
+  margin-left: 200px;
+  display: inline-block;
+  position: relative;
+}
+
+.dropdown-content {
+  min-width: 160px;
+  z-index: 1;
+  background-color: #f1f1f1;
+  display: none;
+  position: absolute;
+  box-shadow: 0 8px 16px #0003;
+}
+
+.dropdown-content a {
+  color: #000;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.group-select {
+  margin-left: 380px;
+}
+
+.public {
+  text-align: right;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 450px;
+  margin-left: 100px;
+  padding: 50px 200px 60px;
+}
+
+.private {
+  text-align: right;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 450px;
+  margin-left: 650px;
+  padding: 50px 200px 60px;
+}
+
 .middle-bar-2 {
   min-height: 121px;
   width: 1410px;

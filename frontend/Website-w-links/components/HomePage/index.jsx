@@ -12,8 +12,9 @@ import SideSearch from "../SideSearch";
 import SearchButton2 from "../SearchButton2";
 import Pagination from "../Pagination";
 import "./HomePage.css";
-
-
+import axios from "../../api/axios";
+import { useEffect } from "react";
+  
 function HomePage(props) {
   const {
     shop1,
@@ -52,6 +53,7 @@ function HomePage(props) {
   } = props;
 
 
+<<<<<<< Updated upstream
   const getProducts = () => {
     const [values, setValues] = useState({
       email: "",
@@ -61,6 +63,21 @@ function HomePage(props) {
   
 
   }
+=======
+  const [value, setValues] = useState([]);
+
+  const getValues = () => {
+    axios.get('/items').then((response) => {
+      console.log(response);
+      const myValues = response.data;
+      setValues(myValues);
+    });
+  };
+
+  useEffect(() => getValues(), []);
+
+ 
+>>>>>>> Stashed changes
   return (
     <div className="container-center-horizontal" >
     <form className="home-page screen" name="form29" action="form29" method="post" >
@@ -113,6 +130,7 @@ function HomePage(props) {
         <div className="overlap-group4-5">
           <div className="todays-listings tienne-normal-black-30px">Today's Listings:</div>
           <div className="products-loop">
+            {/*1st product in display*/}
             <Link to="/view-item-page">
               <div className="product-box"> </div>
             </Link>
