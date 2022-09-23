@@ -180,7 +180,7 @@ input:focus {
 
 .navbar a.active {
   color: #fff;
-  background-color: #8467c9;
+  background-color: #505050;
 }
 
 .navbar input[type="text"] {
@@ -195,7 +195,7 @@ input:focus {
 .sidenav {
   width: 260px;
   z-index: 1;
-  background-color: #111;
+  background-color: #fff;
   margin-top: 150px;
   padding-top: 20px;
   position: fixed;
@@ -205,13 +205,13 @@ input:focus {
 }
 
 .header {
-  color: #818181;
+  color: #000;
   font-family: Tienne, sans-serif;
   font-size: 45px;
 }
 
 .sidenav a {
-  color: #818181;
+  color: #000;
   padding: 6px 8px 6px 16px;
   font-family: Tienne, sans-serif;
   font-size: 20px;
@@ -220,7 +220,7 @@ input:focus {
 }
 
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: green;
 }
 
 .home-title {
@@ -12507,7 +12507,7 @@ body, html, .App, #root, .auth-wrapper {
   background-color: #f2f2f2;
   border-radius: 5px;
   margin-right: 5%;
-  padding: 50px 50px 40%;
+  padding: 50px;
   font-family: Tienne, sans-serif;
 }
 
@@ -12538,6 +12538,18 @@ input[type="listing-text"] {
   margin-top: 2px;
   margin-bottom: 6px;
   padding: 6px;
+}
+
+input[type="asd"] {
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  padding: 50px;
 }
 
 .publish-form {

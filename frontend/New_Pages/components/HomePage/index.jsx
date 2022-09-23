@@ -52,7 +52,7 @@ const HomePage = () => {
     <a href="#">Sporting Goods</a>
     <a href="#">Toys & Games</a>
     <a href="/new-listings-page" >
-      <button > Create New Listing</button>
+      <button class="btn btn-success"> Create New Listing</button>
     </a>
   </div>
   

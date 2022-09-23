@@ -47,7 +47,7 @@ const NewListingPage = () => {
             <input type="listing-text">  
             </input>
             <label for="enter-desc"> Item Description:</label>
-            <input type="listing-text">  
+            <input type="asd">  
             </input>
         
             <div class="dropdown">

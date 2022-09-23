@@ -30399,6 +30399,7 @@ const HomePage = ()=>{
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/new-listings-page",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            class: "btn btn-success",
                             children: " Create New Listing"
                         }, void 0, false, {
                             fileName: "components/HomePage/index.jsx",
@@ -35299,7 +35300,7 @@ const NewListingPage = ()=>{
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            type: "listing-text"
+                            type: "asd"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
                             lineNumber: 50,
