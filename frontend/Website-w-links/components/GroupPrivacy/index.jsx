@@ -10,7 +10,7 @@ function GroupPrivacy(props) {
         <div className="group-container-1">
           <div className="overlap-group1">
             <div className="public tienne-bold-black-20px">Public</div>
-           
+            <div className="ellipse-2"></div>
           </div>
           <p className="anyone-can-join-this-group tienne-normal-black-15px">{anyoneCanJoinThisGroup}</p>
         </div>
