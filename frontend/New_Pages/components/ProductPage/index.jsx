@@ -16,7 +16,25 @@ const ProductPage = () => {
 
 
   return (
-    <div> product here</div>
+    <div className="parent">
+    <div class="navbar">
+    <h1 className="website-title"> Market34</h1>
+      <a class="active" href="/home-page">Home</a>
+      <a href="/sell-page">Sell</a>
+      <a href="#home">Groups</a>
+      <a href="/wishlist-page">Wishlist</a>
+    <div class="nav-login">
+    {/* search bar*/}
+    <a href="/login-page">Log In</a>
+    <a href="/sign-up-page">Register</a>
+    <input type="text" placeholder="Search.."> 
+    </input>
+    </div>
+  </div>
+  <div class="main-product-wrap">
+    1321312    
+    </div>
+    </div>
 
   );
 }

@@ -38293,8 +38293,101 @@ const ProductPage = ()=>{
         });
     }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: " product here"
-    }, void 0, false, {
+        className: "parent",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "navbar",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "website-title",
+                        children: " Market34"
+                    }, void 0, false, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 21,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        class: "active",
+                        href: "/home-page",
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 22,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/sell-page",
+                        children: "Sell"
+                    }, void 0, false, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 23,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#home",
+                        children: "Groups"
+                    }, void 0, false, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 24,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/wishlist-page",
+                        children: "Wishlist"
+                    }, void 0, false, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "nav-login",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/login-page",
+                                children: "Log In"
+                            }, void 0, false, {
+                                fileName: "components/ProductPage/index.jsx",
+                                lineNumber: 28,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/sign-up-page",
+                                children: "Register"
+                            }, void 0, false, {
+                                fileName: "components/ProductPage/index.jsx",
+                                lineNumber: 29,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                placeholder: "Search.."
+                            }, void 0, false, {
+                                fileName: "components/ProductPage/index.jsx",
+                                lineNumber: 30,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/ProductPage/index.jsx",
+                        lineNumber: 26,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/ProductPage/index.jsx",
+                lineNumber: 20,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "main-product-wrap",
+                children: "1321312"
+            }, void 0, false, {
+                fileName: "components/ProductPage/index.jsx",
+                lineNumber: 34,
+                columnNumber: 3
+            }, undefined)
+        ]
+    }, void 0, true, {
         fileName: "components/ProductPage/index.jsx",
         lineNumber: 19,
         columnNumber: 5
