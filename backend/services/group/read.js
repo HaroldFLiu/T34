@@ -2,6 +2,7 @@ const { Group } = require('../../models/group');
 
 const { isNilOrEmpty } = require('ramda-adjunct');
 const { isMongoId } = require('validator');
+const cloudinary = require('../../middleware/cloudinary');
 
 const readById = async (groupId) => {
   if (!isMongoId(`${groupId}`)) {
