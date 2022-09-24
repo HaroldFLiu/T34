@@ -1,19 +1,32 @@
-import React from "react";
+import React, {useEffect, useState}from "react";
 import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 
 
 const HomePage = () => {
-
-  const [post, setPost] = React.useState(null);
+/*
+  const [posts, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get("/").then((response) => {
+    axios.get("/public").then((response) => {
       setPost(response.data);
     });
   }, []);
+*/
 
+const [posts, setPosts] = useState([]);
+
+  // Define the function that fetches the data from API
+  const fetchData = async () => {
+    const { data } = await axios.get("/public");
+    setPosts(data);
+  };
+
+  // Trigger the fetchData after the initial render by using the useEffect hook
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   return (
   <div className="parent" >
@@ -91,7 +104,12 @@ const HomePage = () => {
          <div class="wishlist">
           <button> wishlist </button>
         </div>
-        <p class="price">$19.95</p>
+      <div className="content-posts">
+      {posts.map((post) => (
+        <p class="price"> ${post.price}</p>
+      ))}
+      </div>
+
         <div className="item-cart">
         <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
