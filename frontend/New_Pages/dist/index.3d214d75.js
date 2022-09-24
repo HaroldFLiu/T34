@@ -35896,7 +35896,7 @@ const SellPage = ()=>{
     _s();
     const [post, setPost] = (0, _reactDefault.default).useState(null);
     (0, _reactDefault.default).useEffect(()=>{
-        (0, _axiosDefault.default).get("/item").then((response)=>{
+        (0, _axiosDefault.default).get("/").then((response)=>{
             setPost(response.data);
         });
     }, []);
