@@ -9,6 +9,8 @@ import NewListings from "./components/NewListingPage";
 import SellPage from "./components/SellPage";
 import WishlistPage from "./components/WishlistPage";
 import ProductPage from "./components/ProductPage";
+import GroupPage from "./components/GroupPage";
+
 
 function App() {
   return (
@@ -34,6 +36,9 @@ function App() {
         </Route>
         <Route path="/product-page">
           <ProductPage/>
+        </Route>
+        <Route path="/group-page">
+          <GroupPage/>
         </Route>
       </Switch>
     </Router>

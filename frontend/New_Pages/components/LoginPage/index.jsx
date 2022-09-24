@@ -1,7 +1,5 @@
 import React, {useState}from "react";
 import "./Login.css";
-import logo from "../../dist/img/t34-logo.jpg";
-import axios from "../../api/axios"
 
 const LoginPage = () => {
   const [values, setValues] = useState({
@@ -12,8 +10,7 @@ const LoginPage = () => {
 
   console.log(values);
 
-  const PostLogin = event => {
-    event.preventDefault();
+  async function PostLogin(){
     axios.post('/login', {
     email: values.email,
     password: values.password,
