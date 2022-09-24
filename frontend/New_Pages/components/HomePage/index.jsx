@@ -9,7 +9,7 @@ const HomePage = () => {
   const [post, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get("/item").then((response) => {
+    axios.get("/").then((response) => {
       setPost(response.data);
     });
   }, []);
