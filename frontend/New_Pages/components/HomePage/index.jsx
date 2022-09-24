@@ -23,7 +23,7 @@ const HomePage = () => {
         <a class="active" href="/home-page">Home</a>
         <a href="/sell-page">Sell</a>
         <a href="#home">Groups</a>
-        <a href="#home">Wishlist</a>
+        <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
       <a href="/login-page">Log In</a>
@@ -81,21 +81,12 @@ const HomePage = () => {
     <div class="row2">
       <div class="column">
       <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* wishlist button */}
-        <div class="wishlist">
-          <button> wishlist </button>
+        {/*  add href to product page*/}
+        <a href="/product-page" >
+        <div className="img-wrap"> 
+          <img src={logo} className="logo-position">
+          </img> 
         </div>
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
          {/* wishlist button */}
          <div class="wishlist">
           <button> wishlist </button>
@@ -105,11 +96,17 @@ const HomePage = () => {
         <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
         </div>
+        </a>
       </div>
       </div>
       <div class="column">
       <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        {/*  add href to product page*/}
+       <a href="/product-page" >
+        <div className="img-wrap"> 
+          <img src={logo} className="logo-position">
+          </img> 
+        </div>
          {/* wishlist button */}
          <div class="wishlist">
           <button> wishlist </button>
@@ -119,6 +116,27 @@ const HomePage = () => {
         <h3>Item Name</h3>
         <p><button>Add to Cart</button></p>
         </div>
+        </a>
+      </div>
+      </div>
+      <div class="column">
+      <div class="card">
+        {/*  add href to product page*/}
+        <a href="/product-page" >
+        <div className="img-wrap"> 
+          <img src={logo} className="logo-position">
+          </img> 
+        </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
+        <p class="price">$19.95</p>
+        <div className="item-cart">
+        <h3>Item Name</h3>
+        <p><button>Add to Cart</button></p>
+        </div>
+        </a>
       </div>
       </div>
       <div class="column">

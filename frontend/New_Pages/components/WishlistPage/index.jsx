@@ -3,7 +3,7 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 
 
-const SellPage = () => {
+const WishlistPage = () => {
 
   const [post, setPost] = React.useState(null);
 
@@ -20,9 +20,9 @@ const SellPage = () => {
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
         <a href="/home-page">Home</a>
-        <a class="active" href="/sell-page">Sell</a>
+        <a href="/sell-page">Sell</a>
         <a href="#home">Groups</a>
-        <a href="/wishlist-page">Wishlist</a>
+        <a class="active" href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
       <a href="/login-page">Log In</a>
@@ -58,7 +58,7 @@ const SellPage = () => {
   
     {/* products display*/} 
     <div class="main">
-      <div className="home-title"> My Listings:</div>
+      <div className="home-title"> My Wishlist:</div>
       <hr />
       <div className="number-listings"> 1234 listings 
       
@@ -86,7 +86,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -98,7 +98,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -110,7 +110,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -122,7 +122,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -134,7 +134,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -153,7 +153,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -165,7 +165,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -177,7 +177,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -189,7 +189,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -201,7 +201,7 @@ const SellPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Remove</button></p>
+        <p><button>Add to Cart</button></p>
         </div>
       </div>
       </div>
@@ -230,4 +230,4 @@ const SellPage = () => {
   );
 }
 
-export default SellPage;
+export default WishlistPage;

@@ -226,8 +226,21 @@
   margin: 0 4px;
 }
 
+/* can be used later to see active page not in use now
 .pagination a.active {
   background-color: #4CAF50;
   color: white;
   border: 1px solid #4CAF50;
+}
+*/ 
+
+/* add a hoverable thingy */
+.pagination a:hover:not(.active) {background-color:#4CAF50;;}
+
+
+/* ADD HREF TO PRODUCTS */
+.card a,
+.card a:hover{
+  text-decoration: none;
+  color: #000;
 }

@@ -335,10 +335,13 @@ input:focus {
   transition: background-color .3s;
 }
 
-.pagination a.active {
-  color: #fff;
+.pagination a:hover:not(.active) {
   background-color: #4caf50;
-  border: 1px solid #4caf50;
+}
+
+.card a, .card a:hover {
+  color: #000;
+  text-decoration: none;
 }
 
 .App {
@@ -12656,5 +12659,7 @@ input[type="asd"] {
   background-color: #ccc;
   padding-top: 100%;
 }
+
+
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

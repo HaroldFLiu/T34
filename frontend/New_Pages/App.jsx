@@ -7,6 +7,8 @@ import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUpPage";
 import NewListings from "./components/NewListingPage";
 import SellPage from "./components/SellPage";
+import WishlistPage from "./components/WishlistPage";
+import ProductPage from "./components/ProductPage";
 
 function App() {
   return (
@@ -19,13 +21,19 @@ function App() {
           <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
-          <SignUp/>
+          <SignUp/> 
         </Route>
         <Route path="/new-listings-page">
           <NewListings/>
         </Route>
         <Route path="/sell-page">
           <SellPage/>
+        </Route>
+        <Route path="/wishlist-page">
+          <WishlistPage/>
+        </Route>
+        <Route path="/product-page">
+          <ProductPage/>
         </Route>
       </Switch>
     </Router>
