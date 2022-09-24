@@ -9,6 +9,8 @@ const create = async ({
   public_visibility,
   //seller,
   comments,
+  image_urls,
+  cloudinary_ids
 }) => {
   const item = await Item.create({
     name,
@@ -19,6 +21,8 @@ const create = async ({
     public_visibility,
     //seller,
     comments,
+    image_urls,
+    cloudinary_ids
   });
   return item;
 };

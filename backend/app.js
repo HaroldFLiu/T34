@@ -2,12 +2,15 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+
 const indexRoutes = require('./routes/index');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
+//const uploadRoute = require('./routes/upload');
+//const Grid = require('gridfs-stream');
 
 const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
@@ -32,7 +35,6 @@ app.use((req, res, next) => {
     next();
 })
 
-
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -44,9 +46,13 @@ app.use('', del_userRoutes)
 app.use('', loginRoutes);
 app.use('/groups', groupRoutes);
 app.use('/public', itemRoutes);
+//app.use('/file', uploadRoute);
 
 // connect to database
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
 .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
@@ -57,6 +63,7 @@ mongoose.connect(process.env.MONGO_URI)
 .catch((error) => {
     console.log(error);
 });
+
 
 
 

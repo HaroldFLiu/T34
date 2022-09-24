@@ -13,14 +13,19 @@ const groupSchema = new Schema(
       members: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        //required: true,
       }],
       admins: [{
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true, 
-      }]
-
+        //required: true, 
+      }],
+      icon_url: {
+        type: String,
+      },
+      cloudinary_id: {
+        type: String,
+      }
     }
   );
   

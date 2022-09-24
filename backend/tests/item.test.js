@@ -24,6 +24,7 @@ describe('ItemService', () => {
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
+    await Item.deleteMany({});
   });
 
   afterAll(async () => {
@@ -157,7 +158,6 @@ describe('ItemService', () => {
     expect(itemdb.category_ids).toStrictEqual(category_ids);
     expect(itemdb.group_ids).toStrictEqual(item1Info.group_ids);
     expect(itemdb.public_visibility).toBe(item1UpdateInfo.public_visibility);
-
   });
 
   test('Read All Items', async () => {
