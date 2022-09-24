@@ -257,12 +257,13 @@ input:focus {
   max-width: 250px;
   text-align: center;
   margin: auto;
-  font-family: arial;
+  font-family: Tienne, sans-serif;
   box-shadow: 0 4px 8px #0003;
 }
 
 .price {
   color: gray;
+  margin-top: -5%;
   font-size: 22px;
 }
 
@@ -276,6 +277,18 @@ input:focus {
   outline: 0;
   padding: 12px;
   font-size: 18px;
+}
+
+.wishlist button {
+  color: #fff;
+  text-align: center;
+  width: 18%;
+  background-color: green;
+  border-color: #000;
+  outline: 0;
+  margin-left: 70%;
+  padding: 1px;
+  font-size: 10px;
 }
 
 .card button:hover {
@@ -293,6 +306,39 @@ input:focus {
 .move-drop-btn {
   float: right;
   margin-right: 100px;
+}
+
+.website-title {
+  color: #fff;
+  padding-left: 3%;
+  font-family: Tienne, sans-serif;
+}
+
+.center-next {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-left: 30%;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: #000;
+  float: left;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+}
+
+.pagination a.active {
+  color: #fff;
+  background-color: #4caf50;
+  border: 1px solid #4caf50;
 }
 
 .App {

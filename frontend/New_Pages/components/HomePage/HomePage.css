@@ -137,19 +137,20 @@
   margin-top: 40px;
 }
 
-/* Product Card CSS*/
+/* Product Card CSS FONT WAS PREVIOUSLY ARIEL*/
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   max-width: 250px;
   margin: auto;
   text-align: center;
-  font-family: arial;
+  font-family: 'Tienne', sans-serif;
 }
 
 .price {
   color: grey;
   font-size: 22px;
+  margin-top: -5%;
 }
 
 .card button {
@@ -162,6 +163,19 @@
   cursor: pointer;
   width: 100%;
   font-size: 18px;
+}
+
+.wishlist button{
+  outline: 0;
+  padding: 1px;
+  color: white;
+  border-color: #000;
+  background-color: green;
+  text-align: center;
+  width: 18%;
+  font-size: 10px;
+  margin-left: 70%;
+  
 }
 
 .card button:hover {
@@ -178,7 +192,42 @@
   margin-top: -10px;
 }
 
+/* drop down button */
 .move-drop-btn{
   float: right;
   margin-right: 100px;
+}
+
+.website-title{
+  color: white;
+  font-family: 'Tienne', sans-serif; 
+  padding-left: 3%; 
+}
+
+/* PAGANATION CSS */
+.center-next {
+  text-align: center;
+  padding-top: 1%;
+  padding-bottom: 2%;
+  padding-left: 30%;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
 }

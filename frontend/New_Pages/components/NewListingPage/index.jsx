@@ -9,6 +9,7 @@ const NewListingPage = () => {
     <div className="parent" >
      {/* top nav bar*/}
     <div class="navbar">
+    <h1 className="website-title"> Market34</h1>
         <a class="active" href="/home-page">Home</a>
         <a href="#home">Sell</a>
         <a href="#home">Groups</a>
@@ -31,13 +32,13 @@ const NewListingPage = () => {
     <button className="publish-btn"> Publish Item</button>
     </div>
     <hr />
-
+       {/*Upload Image box and button*/}    
     <div class="left-box">
         <div className="square-pic"></div>
         <button> Upload Image</button>
     </div>
     
-      
+    {/* form to input new listing data*/}
     <div class="container">
         <form className="publish-form">
             <label for="item-name"> Item Name:</label>

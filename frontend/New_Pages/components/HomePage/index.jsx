@@ -19,8 +19,9 @@ const HomePage = () => {
   <div className="parent" >
      {/* top nav bar*/}
     <div class="navbar">
+      <h1 className="website-title"> Market34</h1>
         <a class="active" href="#home">Home</a>
-        <a href="#home">Sell</a>
+        <a href="/sell-page">Sell</a>
         <a href="#home">Groups</a>
         <a href="#home">Wishlist</a>
       <div class="nav-login">
@@ -81,6 +82,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        {/* wishlist button */}
+        <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -91,6 +96,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -101,6 +110,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -111,6 +124,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -121,6 +138,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -138,6 +159,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -148,6 +173,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -158,6 +187,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -168,6 +201,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -178,6 +215,10 @@ const HomePage = () => {
       <div class="column">
       <div class="card">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+         {/* wishlist button */}
+         <div class="wishlist">
+          <button> wishlist </button>
+        </div>
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
@@ -186,8 +227,22 @@ const HomePage = () => {
       </div>
       </div>
     </div>
+   
     </div>
     </div>
+    {/* next page bar here*/}
+    <div class="center-next">
+      <div class="pagination">
+      <a href="#">&laquo;</a>
+      <a href="#">1</a>
+      <a href="#" class="active">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+      <a href="#">&raquo;</a>
+    </div>
+  </div>
     </div> 
 
 
