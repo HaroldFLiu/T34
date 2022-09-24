@@ -10,10 +10,10 @@ const NewListingPage = () => {
      {/* top nav bar*/}
     <div class="navbar">
     <h1 className="website-title"> Market34</h1>
-        <a class="active" href="/home-page">Home</a>
-        <a href="#home">Sell</a>
+        <a href="/home-page">Home</a>
+        <a class="active" href="/sell-page">Sell</a>
         <a href="#home">Groups</a>
-        <a href="#home">Wishlist</a>
+        <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
       <a href="#home">Log In</a>

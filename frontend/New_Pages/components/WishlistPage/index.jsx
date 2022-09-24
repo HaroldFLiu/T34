@@ -58,14 +58,14 @@ const WishlistPage = () => {
   
     {/* products display*/} 
     <div class="main">
-      <div className="home-title"> My Wishlist:</div>
+      <div className="home-title"> Wishlisted Items:</div>
       <hr />
       <div className="number-listings"> 1234 listings 
       
           {/* sort by button drop down*/} 
     <div className="move-drop-btn">
       <div class="dropdown">
-                <button class="dropbtn">Sort by:</button>
+                <button class="dropbtn">Sort by: Default</button>
                 <div class="dropdown-content">
                     <a href="#">Price: High-Low</a>
                     <a href="#">Price: Low-High</a>       

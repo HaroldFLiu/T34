@@ -27081,6 +27081,8 @@ var _wishlistPage = require("./components/WishlistPage");
 var _wishlistPageDefault = parcelHelpers.interopDefault(_wishlistPage);
 var _productPage = require("./components/ProductPage");
 var _productPageDefault = parcelHelpers.interopDefault(_productPage);
+var _groupPage = require("./components/GroupPage");
+var _groupPageDefault = parcelHelpers.interopDefault(_groupPage);
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Switch), {
@@ -27089,95 +27091,107 @@ function App() {
                     path: "/:path(|home-page)",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homePageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 18,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 17,
+                    lineNumber: 19,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/login-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 21,
+                        lineNumber: 23,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 20,
+                    lineNumber: 22,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/sign-up-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 24,
+                        lineNumber: 26,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 23,
+                    lineNumber: 25,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/new-listings-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _newListingPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 27,
+                        lineNumber: 29,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 26,
+                    lineNumber: 28,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/sell-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sellPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 30,
+                        lineNumber: 32,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 29,
+                    lineNumber: 31,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/wishlist-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _wishlistPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 33,
+                        lineNumber: 35,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 32,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/product-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 36,
+                        lineNumber: 38,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 35,
+                    lineNumber: 37,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                    path: "/group-page",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _groupPageDefault.default), {}, void 0, false, {
+                        fileName: "App.jsx",
+                        lineNumber: 41,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "App.jsx",
+                    lineNumber: 40,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "App.jsx",
-            lineNumber: 16,
+            lineNumber: 18,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "App.jsx",
-        lineNumber: 15,
+        lineNumber: 17,
         columnNumber: 5
     }, this);
 }
@@ -27191,7 +27205,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J","./components/SellPage":"04OVA","./components/WishlistPage":"7BKPl","./components/ProductPage":"ivjsm"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J","./components/SellPage":"04OVA","./components/WishlistPage":"7BKPl","./components/ProductPage":"ivjsm","./components/GroupPage":"jzaU1"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>(0, _reactRouter.MemoryRouter));
@@ -30277,7 +30291,7 @@ const HomePage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        href: "/group-page",
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
@@ -30494,7 +30508,7 @@ const HomePage = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             class: "dropbtn",
-                                            children: "Sort by:"
+                                            children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
                                             lineNumber: 69,
@@ -34951,8 +34965,6 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _loginCss = require("./Login.css");
-var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
-var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _s = $RefreshSig$();
 const LoginPage = ()=>{
     _s();
@@ -34987,7 +34999,7 @@ const LoginPage = ()=>{
                             children: " Market34"
                         }, void 0, false, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 39,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -34995,7 +35007,7 @@ const LoginPage = ()=>{
                             children: "Sign In"
                         }, void 0, false, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 40,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
@@ -35003,7 +35015,7 @@ const LoginPage = ()=>{
                             children: "and start scrolling through the marketplace!"
                         }, void 0, false, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 41,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35013,7 +35025,7 @@ const LoginPage = ()=>{
                                     children: "Email address"
                                 }, void 0, false, {
                                     fileName: "components/LoginPage/index.jsx",
-                                    lineNumber: 43,
+                                    lineNumber: 42,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35026,13 +35038,13 @@ const LoginPage = ()=>{
                                         })
                                 }, void 0, false, {
                                     fileName: "components/LoginPage/index.jsx",
-                                    lineNumber: 44,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 42,
+                            lineNumber: 41,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35042,7 +35054,7 @@ const LoginPage = ()=>{
                                     children: "Password"
                                 }, void 0, false, {
                                     fileName: "components/LoginPage/index.jsx",
-                                    lineNumber: 52,
+                                    lineNumber: 51,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35055,13 +35067,13 @@ const LoginPage = ()=>{
                                         })
                                 }, void 0, false, {
                                     fileName: "components/LoginPage/index.jsx",
-                                    lineNumber: 53,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 51,
+                            lineNumber: 50,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35073,12 +35085,12 @@ const LoginPage = ()=>{
                                 children: "Submit"
                             }, void 0, false, {
                                 fileName: "components/LoginPage/index.jsx",
-                                lineNumber: 61,
+                                lineNumber: 60,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 60,
+                            lineNumber: 59,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35090,34 +35102,34 @@ const LoginPage = ()=>{
                                     children: "Register now!"
                                 }, void 0, false, {
                                     fileName: "components/LoginPage/index.jsx",
-                                    lineNumber: 66,
+                                    lineNumber: 65,
                                     columnNumber: 35
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/LoginPage/index.jsx",
-                            lineNumber: 65,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/LoginPage/index.jsx",
-                    lineNumber: 38,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/LoginPage/index.jsx",
-                lineNumber: 37,
+                lineNumber: 36,
                 columnNumber: 7
             }, undefined)
         }, void 0, false, {
             fileName: "components/LoginPage/index.jsx",
-            lineNumber: 36,
+            lineNumber: 35,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "components/LoginPage/index.jsx",
-        lineNumber: 35,
+        lineNumber: 34,
         columnNumber: 7
     }, undefined);
 };
@@ -35132,7 +35144,7 @@ $RefreshReg$(_c, "LoginPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Login.css":"dNQh3","../../dist/img/t34-logo.jpg":"6DD8a","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dNQh3":[function() {},{}],"i5LP7":[function() {},{}],"bege1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Login.css":"dNQh3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dNQh3":[function() {},{}],"i5LP7":[function() {},{}],"bege1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$6f40 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35398,7 +35410,6 @@ const NewListingPage = ()=>{
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        class: "active",
                         href: "/home-page",
                         children: "Home"
                     }, void 0, false, {
@@ -35407,7 +35418,8 @@ const NewListingPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        class: "active",
+                        href: "/sell-page",
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
@@ -35423,7 +35435,7 @@ const NewListingPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        href: "/wishlist-page",
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
@@ -35917,7 +35929,7 @@ const SellPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        href: "/group-page",
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
@@ -36134,7 +36146,7 @@ const SellPage = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             class: "dropbtn",
-                                            children: "Sort by:"
+                                            children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
                                             lineNumber: 68,
@@ -37315,7 +37327,7 @@ const WishlistPage = ()=>{
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: "home-title",
-                        children: " My Wishlist:"
+                        children: " Wishlisted Items:"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
                         lineNumber: 61,
@@ -37337,7 +37349,7 @@ const WishlistPage = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             class: "dropbtn",
-                                            children: "Sort by:"
+                                            children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
                                             lineNumber: 68,
@@ -38404,6 +38416,143 @@ $RefreshReg$(_c, "ProductPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ProductPage.css":"zWKuf","../../dist/img/t34-logo.jpg":"6DD8a","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"zWKuf":[function() {},{}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ProductPage.css":"zWKuf","../../dist/img/t34-logo.jpg":"6DD8a","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"zWKuf":[function() {},{}],"jzaU1":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ca81 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ca81.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
+var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
+var _axios = require("../../api/axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const GroupPage = ()=>{
+    _s();
+    const [post, setPost] = (0, _reactDefault.default).useState(null);
+    (0, _reactDefault.default).useEffect(()=>{
+        (0, _axiosDefault.default).get("/item").then((response)=>{
+            setPost(response.data);
+        });
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "parent",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "navbar",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "website-title",
+                        children: " Market34"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 20,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/home-page",
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 21,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/sell-page",
+                        children: "Sell"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 22,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        class: "active",
+                        href: "/group-page",
+                        children: "Groups"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 23,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/wishlist-page",
+                        children: "Wishlist"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 24,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "nav-login",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/login-page",
+                                children: "Log In"
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 27,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/sign-up-page",
+                                children: "Register"
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 28,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                placeholder: "Search.."
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 29,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/GroupPage/index.jsx",
+                lineNumber: 19,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "main-product-wrap",
+                children: "1321312"
+            }, void 0, false, {
+                fileName: "components/GroupPage/index.jsx",
+                lineNumber: 33,
+                columnNumber: 3
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/GroupPage/index.jsx",
+        lineNumber: 18,
+        columnNumber: 5
+    }, undefined);
+};
+_s(GroupPage, "VAK5tdJEk0cqnRsmbvM4YDyoQLs=");
+_c = GroupPage;
+exports.default = GroupPage;
+var _c;
+$RefreshReg$(_c, "GroupPage");
+
+  $parcel$ReactRefreshHelpers$ca81.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../dist/img/t34-logo.jpg":"6DD8a","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
 
 //# sourceMappingURL=index.3d214d75.js.map

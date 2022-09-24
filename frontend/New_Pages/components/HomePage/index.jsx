@@ -22,7 +22,7 @@ const HomePage = () => {
       <h1 className="website-title"> Market34</h1>
         <a class="active" href="/home-page">Home</a>
         <a href="/sell-page">Sell</a>
-        <a href="#home">Groups</a>
+        <a href="/group-page">Groups</a>
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
@@ -66,7 +66,7 @@ const HomePage = () => {
           {/* sort by button drop down*/} 
     <div className="move-drop-btn">
       <div class="dropdown">
-                <button class="dropbtn">Sort by:</button>
+                <button class="dropbtn">Sort by: Default</button>
                 <div class="dropdown-content">
                     <a href="#">Price: High-Low</a>
                     <a href="#">Price: Low-High</a>       
