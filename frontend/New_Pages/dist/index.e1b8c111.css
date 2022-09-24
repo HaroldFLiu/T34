@@ -197,7 +197,7 @@ input:focus {
   z-index: 1;
   background-color: #fff;
   margin-top: 150px;
-  padding-top: 20px;
+  padding-top: 40px;
   position: fixed;
   top: 0;
   left: 0;
@@ -207,7 +207,7 @@ input:focus {
 .header {
   color: #000;
   font-family: Tienne, sans-serif;
-  font-size: 45px;
+  font-size: 35px;
 }
 
 .sidenav a {

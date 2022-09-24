@@ -27075,6 +27075,8 @@ var _signUpPage = require("./components/SignUpPage");
 var _signUpPageDefault = parcelHelpers.interopDefault(_signUpPage);
 var _newListingPage = require("./components/NewListingPage");
 var _newListingPageDefault = parcelHelpers.interopDefault(_newListingPage);
+var _sellPage = require("./components/SellPage");
+var _sellPageDefault = parcelHelpers.interopDefault(_sellPage);
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Switch), {
@@ -27083,59 +27085,71 @@ function App() {
                     path: "/:path(|home-page)",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homePageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 15,
+                        lineNumber: 16,
                         columnNumber: 9
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 14,
+                    lineNumber: 15,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/login-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 18,
+                        lineNumber: 19,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 17,
+                    lineNumber: 18,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/sign-up-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUpPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 21,
+                        lineNumber: 22,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 20,
+                    lineNumber: 21,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
                     path: "/new-listings-page",
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _newListingPageDefault.default), {}, void 0, false, {
                         fileName: "App.jsx",
-                        lineNumber: 24,
+                        lineNumber: 25,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "App.jsx",
-                    lineNumber: 23,
+                    lineNumber: 24,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                    path: "/sell-page",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _sellPageDefault.default), {}, void 0, false, {
+                        fileName: "App.jsx",
+                        lineNumber: 28,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "App.jsx",
+                    lineNumber: 27,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "App.jsx",
-            lineNumber: 13,
+            lineNumber: 14,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "App.jsx",
-        lineNumber: 12,
+        lineNumber: 13,
         columnNumber: 5
     }, this);
 }
@@ -27149,7 +27163,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J","./components/SellPage":"04OVA"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>(0, _reactRouter.MemoryRouter));
@@ -30219,7 +30233,7 @@ const HomePage = ()=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         class: "active",
-                        href: "#home",
+                        href: "/home-page",
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
@@ -30262,8 +30276,8 @@ const HomePage = ()=>{
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                href: "#home",
-                                children: "UserName"
+                                href: "/sign-up-page",
+                                children: "Register"
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
                                 lineNumber: 30,
@@ -35809,6 +35823,1339 @@ $RefreshReg$(_c, "NewListingPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NewListings.css":"gFAH7","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"gFAH7":[function() {},{}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NewListings.css":"gFAH7","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"gFAH7":[function() {},{}],"04OVA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e7ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e7ed.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
+var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
+var _axios = require("../../api/axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _s = $RefreshSig$();
+const SellPage = ()=>{
+    _s();
+    const [post, setPost] = (0, _reactDefault.default).useState(null);
+    (0, _reactDefault.default).useEffect(()=>{
+        (0, _axiosDefault.default).get("/item").then((response)=>{
+            setPost(response.data);
+        });
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "parent",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "navbar",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "website-title",
+                        children: " Market34"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 21,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        class: "active",
+                        href: "/home-page",
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 22,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/sell-page",
+                        children: "Sell"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#home",
+                        children: "Groups"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#home",
+                        children: "Wishlist"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "nav-login",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/login-page",
+                                children: "Log In"
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 28,
+                                columnNumber: 7
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/sign-up-page",
+                                children: "Register"
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 29,
+                                columnNumber: 7
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                placeholder: "Search.."
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 30,
+                                columnNumber: 7
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 26,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/SellPage/index.jsx",
+                lineNumber: 20,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "sidenav",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "header",
+                        children: "Categories"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 38,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Vechicles"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 41,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Apparel"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 42,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Electronics"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 43,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Family"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 44,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Garden & Outdoor"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 45,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Hobbies"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 46,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Home Goods"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 47,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Home Improvement Supplies"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 48,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Musical Instruments"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 49,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Office Supplies"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 50,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Pet Supplies"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 51,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Sporting Goods"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 52,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Toys & Games"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 53,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/new-listings-page",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            class: "btn btn-success",
+                            children: " Create New Listing"
+                        }, void 0, false, {
+                            fileName: "components/SellPage/index.jsx",
+                            lineNumber: 55,
+                            columnNumber: 7
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 54,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/SellPage/index.jsx",
+                lineNumber: 37,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "main",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "home-title",
+                        children: " My Listings:"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 61,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 62,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "number-listings",
+                        children: [
+                            " 1234 listings",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "move-drop-btn",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "dropdown",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            class: "dropbtn",
+                                            children: "Sort by:"
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 68,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "dropdown-content",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    children: "Price: High-Low"
+                                                }, void 0, false, {
+                                                    fileName: "components/SellPage/index.jsx",
+                                                    lineNumber: 70,
+                                                    columnNumber: 21
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    children: "Price: Low-High"
+                                                }, void 0, false, {
+                                                    fileName: "components/SellPage/index.jsx",
+                                                    lineNumber: 71,
+                                                    columnNumber: 21
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 69,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 67,
+                                    columnNumber: 7
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 66,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 63,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 76,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "products-wrapper",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "wrapper",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "row2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 83,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 83,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 86,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 85,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 90,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 91,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 91,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 89,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 82,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 81,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 97,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 97,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 100,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 99,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 102,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 104,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 105,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 105,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 103,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 96,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 95,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 111,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 111,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 114,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 113,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 116,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 118,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 119,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 119,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 117,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 110,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 109,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 125,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 125,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 128,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 127,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 130,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 132,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 133,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 133,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 131,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 124,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 123,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 139,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 139,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 142,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 141,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 144,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 146,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 147,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 147,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 145,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 138,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 137,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 80,
+                                    columnNumber: 5
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 79,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "wrapper",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "row2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 160,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 160,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 163,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 162,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 165,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 167,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 168,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 168,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 166,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 159,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 158,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 174,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 174,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 177,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 176,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 179,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 181,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 182,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 182,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 180,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 173,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 172,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 188,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 188,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 191,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 190,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 193,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 195,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 196,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 196,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 194,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 187,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 186,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 202,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 202,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 205,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 204,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 207,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 209,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 210,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 210,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 208,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 201,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 200,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 216,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 216,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        class: "wishlist",
+                                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                            children: " wishlist "
+                                                        }, void 0, false, {
+                                                            fileName: "components/SellPage/index.jsx",
+                                                            lineNumber: 219,
+                                                            columnNumber: 11
+                                                        }, undefined)
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 218,
+                                                        columnNumber: 10
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                        class: "price",
+                                                        children: "$19.95"
+                                                    }, void 0, false, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 221,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                                children: "Item Name"
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 223,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 224,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 224,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/SellPage/index.jsx",
+                                                        lineNumber: 222,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/SellPage/index.jsx",
+                                                lineNumber: 215,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/SellPage/index.jsx",
+                                            lineNumber: 214,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 157,
+                                    columnNumber: 5
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/SellPage/index.jsx",
+                                lineNumber: 156,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 77,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "center-next",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "pagination",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "\xab"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 235,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "1"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 236,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    class: "active",
+                                    children: "2"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 237,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "3"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 238,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "4"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 239,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "5"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 240,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "6"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 241,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "\xbb"
+                                }, void 0, false, {
+                                    fileName: "components/SellPage/index.jsx",
+                                    lineNumber: 242,
+                                    columnNumber: 7
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/SellPage/index.jsx",
+                            lineNumber: 234,
+                            columnNumber: 7
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 233,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/SellPage/index.jsx",
+                lineNumber: 60,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/SellPage/index.jsx",
+        lineNumber: 18,
+        columnNumber: 3
+    }, undefined);
+};
+_s(SellPage, "VAK5tdJEk0cqnRsmbvM4YDyoQLs=");
+_c = SellPage;
+exports.default = SellPage;
+var _c;
+$RefreshReg$(_c, "SellPage");
+
+  $parcel$ReactRefreshHelpers$e7ed.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../dist/img/t34-logo.jpg":"6DD8a","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
 
 //# sourceMappingURL=index.3d214d75.js.map

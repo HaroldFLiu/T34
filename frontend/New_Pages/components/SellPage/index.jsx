@@ -1,10 +1,9 @@
 import React from "react";
-import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 
 
-const HomePage = () => {
+const SellPage = () => {
 
   const [post, setPost] = React.useState(null);
 
@@ -59,7 +58,7 @@ const HomePage = () => {
   
     {/* products display*/} 
     <div class="main">
-      <div className="home-title"> Today's Listings:</div>
+      <div className="home-title"> My Listings:</div>
       <hr />
       <div className="number-listings"> 1234 listings 
       
@@ -251,4 +250,4 @@ const HomePage = () => {
   );
 }
 
-export default HomePage;
+export default SellPage;

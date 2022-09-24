@@ -74,14 +74,14 @@
   background-color: white;
   overflow-x: hidden; /* Disable horizontal scroll */
   /* remove this */
-  padding-top: 20px;
+  padding-top: 40px;
   margin-top: 150px; 
 
 }
 
 /* header of side nav menu */
 .header{
-  font-size: 45px;
+  font-size: 35px;
   color: black;
   font-family: 'Tienne', sans-serif;
 }

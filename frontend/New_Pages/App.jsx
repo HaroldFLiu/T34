@@ -6,6 +6,7 @@ import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUpPage";
 import NewListings from "./components/NewListingPage";
+import SellPage from "./components/SellPage";
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
         </Route>
         <Route path="/new-listings-page">
           <NewListings/>
+        </Route>
+        <Route path="/sell-page">
+          <SellPage/>
         </Route>
       </Switch>
     </Router>
