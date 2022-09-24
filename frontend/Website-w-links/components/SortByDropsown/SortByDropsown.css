@@ -1,0 +1,17 @@
+.sort-by-dropsown,
+.sort-by-dropsown-1,
+.sort-by-dropsown-2,
+.sort-by-dropsown-3,
+.sort-by-dropsown-4,
+.sort-by-dropsown-5 {
+  align-self: flex-end;
+  border: 1px none;
+  height: 32px;
+  margin-right: 164px;
+  margin-top: 98px;
+}
+
+.sort-by-dropsown {
+  font-family: "-apple-system","BlinkMacSystemFont","Segoe UI","Roboto","Helvetica Neue","Arial","sans-serif","Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+

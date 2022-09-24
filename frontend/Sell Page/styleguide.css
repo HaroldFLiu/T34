@@ -1,0 +1,102 @@
+:root { 
+  --alto: #d9d9d9;
+  --black: #000000;
+  --white: #ffffff;
+ 
+  --font-size-l: 18px;
+  --font-size-l2: 16px;
+  --font-size-m2: 15px;
+  --font-size-xl2: 17px;
+  --font-size-xxl2: 20px;
+  --font-size-xxxl2: 24px;
+  --font-size-xxxxxl: 30px;
+ 
+  --font-family-tienne: "Tienne", Helvetica;
+}
+.tienne-normal-black-17px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xl2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tienne-bold-black-24px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxxl2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tienne-bold-black-16px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-l2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tienne-normal-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxl2);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tienne-bold-black-15px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-m2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tienne-bold-black-20px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxl2);
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tienne-bold-black-39px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 39px;
+  font-style: normal;
+  font-weight: 700;
+}
+
+.tienne-normal-black-18px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-l);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tienne-normal-black-25px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tienne-normal-black-30px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-xxxxxl);
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tienne-normal-black-15px {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: var(--font-size-m2);
+  font-style: normal;
+  font-weight: 400;
+}

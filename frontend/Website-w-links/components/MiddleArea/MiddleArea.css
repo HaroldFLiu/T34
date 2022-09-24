@@ -1,0 +1,96 @@
+.middle-area,
+.middle-area-1 {
+  align-items: flex-end;
+  display: flex;
+  height: 719px;
+  left: 300px;
+  min-width: 987px;
+  position: absolute;
+  top: 0;
+}
+
+.flex-col-2,
+.flex-col-3 {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  min-height: 719px;
+  width: 317px;
+}
+
+.my-wishlist,
+.my-listings {
+  align-self: flex-start;
+  letter-spacing: 0;
+  min-height: 43px;
+  text-align: center;
+  width: 287px;
+}
+
+.overlap-group-6,
+.overlap-group-7 {
+  background-color: var(--white);
+  background-image: url(/static/img/rectangle-6@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  height: 250px;
+  margin-right: 2px;
+  margin-top: 60px;
+  width: 250px;
+}
+
+.prodct-descrip-price,
+.prodct-descrip-price-1 {
+  display: flex;
+  margin-top: 16px;
+  width: 252px;
+}
+
+.x1595-sanrio-kurumi-plush,
+.x1095-brown-cat-plush,
+.x1849-samsung-galaxy,
+.x1595-sanrio-kurumi-plush-1,
+.x1095-brown-cat-plush-1,
+.x1849-samsung-galaxy-1 {
+  height: 58px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 250px;
+}
+
+.rectangle-7,
+.rectangle-7-1 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 250px;
+  margin-right: 2px;
+  margin-top: 42px;
+  width: 250px;
+}
+
+.flex-col,
+.flex-col-1 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: 83px;
+  min-height: 616px;
+  width: 252px;
+}
+
+.rectangle,
+.rectangle-3 {
+  height: 250px;
+  object-fit: cover;
+  width: 250px;
+}
+
+.rectangle-1,
+.rectangle-4 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 250px;
+  margin-top: 42px;
+  width: 250px;
+}
+

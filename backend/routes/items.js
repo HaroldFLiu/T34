@@ -20,7 +20,7 @@ const itemService = require('../services/item');
 const router = express.Router();
 
 // GET all public items
-router.get('/', getPublicItems);
+router.get('/', getPublicItems);    
 
 // GET all public items in a category
 router.get('/category/:category_id', getCategoryItems);

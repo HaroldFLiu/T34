@@ -1,0 +1,537 @@
+.inspect-group-detail-page {
+  align-items: flex-start;
+  background-color: var(--white);
+  border: 1px none;
+  display: flex;
+  flex-direction: column;
+  height: 1024px;
+  overflow: hidden;
+  width: 1440px;
+}
+
+.overlap-group-container {
+  align-items: flex-start;
+  display: flex;
+  margin-top: 31px;
+  min-width: 1430px;
+}
+
+.overlap-group14 {
+  height: 82px;
+  position: relative;
+  width: 1296px;
+}
+
+.top-bar-10 {
+  display: flex;
+  height: 82px;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  top: 0;
+  width: 1186px;
+}
+
+.logo-here {
+  height: 82px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 323px;
+}
+
+.top-bar-11 {
+  align-items: center;
+  display: flex;
+  margin-left: 23px;
+  min-width: 844.38px;
+}
+
+.search-container-5 {
+  background-color: var(--white);
+  border: 1px solid;
+  border-color: var(--black);
+  height: 54px;
+  position: relative;
+  width: 621px;
+}
+
+.search-bar-backing-1 {
+  background-color: var(--white);
+  border: 0.5px solid;
+  border-color: var(--black);
+  height: 33px;
+  left: 486px;
+  position: absolute;
+  top: 9px;
+  width: 125px;
+}
+
+.search {
+  left: 484px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 15px;
+  width: 129px;
+}
+
+.overlap-group1-10 {
+  height: 23px;
+  margin-left: 20px;
+  margin-top: 1.0px;
+  position: relative;
+  width: 197px;
+}
+
+.sell-16 {
+  left: 68px;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.shop-16 {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 129px;
+}
+
+.overlap-group11 {
+  height: 33px;
+  left: 1165px;
+  position: absolute;
+  top: 10px;
+  width: 129px;
+}
+
+.search-bar-backing {
+  background-color: var(--white);
+  border: 0.5px solid;
+  border-color: var(--black);
+  height: 33px;
+  left: 2px;
+  position: absolute;
+  top: 0;
+  width: 125px;
+}
+
+.lizwhales,
+.log-out {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 129px;
+}
+
+.overlap-group10-1 {
+  height: 33px;
+  margin-left: 3px;
+  margin-top: 10px;
+  position: relative;
+  width: 129px;
+}
+
+.divider-bar-8 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-left: -15px;
+  margin-top: 7px;
+  min-height: 60px;
+  opacity: 0.4;
+  padding: 0 15px;
+  width: 1482px;
+}
+
+.line-1-8 {
+  height: 1px;
+  margin-top: -1px;
+  width: 1440px;
+}
+
+.flex-row-9 {
+  align-items: flex-start;
+  align-self: center;
+  display: flex;
+  height: 24px;
+  margin-right: 42.27px;
+  margin-top: 16px;
+  min-width: 1204px;
+}
+
+.place-9 {
+  cursor: pointer;
+  letter-spacing: 0;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.shop-17 {
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.sell-17 {
+  align-self: flex-end;
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.groups-8 {
+  align-self: flex-end;
+  letter-spacing: 0;
+  margin-left: 33px;
+  min-height: 23px;
+  text-align: center;
+  width: 129px;
+}
+
+.wishlist-8 {
+  align-self: flex-end;
+  letter-spacing: 0;
+  margin-left: 34px;
+  min-height: 23px;
+  text-align: center;
+  width: 169px;
+}
+
+.overlap-group9-1 {
+  height: 23px;
+  margin-left: 34px;
+  position: relative;
+  width: 350px;
+}
+
+.polygon-1 {
+  height: 12px;
+  left: 333px;
+  position: absolute;
+  top: 11px;
+  width: 16px;
+}
+
+.browse-by-category {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 336px;
+}
+
+.line-2-8 {
+  height: 1px;
+  margin-top: 19px;
+  width: 1440px;
+}
+
+.overlap-group-container-1 {
+  height: 888px;
+  margin-top: 5px;
+  position: relative;
+  width: 1410px;
+}
+
+.overlap-group13 {
+  height: 888px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 1410px;
+}
+
+.overlap-group5-4 {
+  height: 37px;
+  left: 12px;
+  position: absolute;
+  top: 731px;
+  width: 264px;
+}
+
+.rectangle-2-5 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 37px;
+  left: 3px;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.create-new-group,
+.filter-5 {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 4px;
+  width: 242px;
+}
+
+.overlap-group7-2 {
+  height: 37px;
+  left: 4px;
+  position: absolute;
+  top: 175px;
+  width: 281px;
+}
+
+.rectangle-2-6 {
+  background-color: var(--alto);
+  border: 1px none;
+  height: 37px;
+  left: 20px;
+  position: absolute;
+  top: 0;
+  width: 261px;
+}
+
+.search-here {
+  left: 0;
+  letter-spacing: 0;
+  position: absolute;
+  text-align: center;
+  top: 5px;
+  width: 242px;
+}
+
+.ellipse-1 {
+  height: 26px;
+  left: 29px;
+  object-fit: cover;
+  position: absolute;
+  top: 7px;
+  width: 28px;
+}
+
+.category-bar-5 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 4px;
+  min-height: 490px;
+  opacity: 0.4;
+  position: absolute;
+  top: 219px;
+  width: 274px;
+}
+
+.categories-5 {
+  align-self: flex-start;
+  letter-spacing: 0;
+  min-height: 41px;
+  text-align: center;
+  width: 196px;
+}
+
+.vechicles-5 {
+  letter-spacing: 0;
+  margin-left: 16.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item-15 {
+  letter-spacing: 0;
+  margin-left: 6.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.category-bar-item-16 {
+  letter-spacing: 0;
+  margin-left: 6.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 160px;
+}
+
+.home-improvement-supplies-5 {
+  letter-spacing: 0;
+  margin-left: 16.0px;
+  min-height: 26px;
+  text-align: center;
+  width: 178px;
+}
+
+.musical-instruments-5 {
+  letter-spacing: 0;
+  margin-left: 24.0px;
+  margin-top: 32px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.category-bar-item-17 {
+  letter-spacing: 0;
+  margin-left: 24.0px;
+  margin-top: 3px;
+  min-height: 26px;
+  text-align: center;
+  width: 186px;
+}
+
+.flex-row-10 {
+  align-items: flex-start;
+  background-color: var(--alto);
+  display: flex;
+  height: 740px;
+  justify-content: flex-end;
+  left: 161px;
+  min-width: 1205px;
+  padding: 30px 26px;
+  position: absolute;
+  top: 0;
+}
+
+.flex-col-10 {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  min-height: 429px;
+  width: 252px;
+}
+
+.rectangle-6-2 {
+  height: 250px;
+  object-fit: cover;
+  width: 250px;
+}
+
+.group-description-1 {
+  display: flex;
+  margin-top: 16px;
+  width: 252px;
+}
+
+.marketplace-sellers-31-k-members-3 {
+  height: 58px;
+  letter-spacing: 0;
+  text-align: center;
+  width: 250px;
+}
+
+.overlap-group1-11 {
+  align-items: center;
+  background-color: var(--white);
+  border-radius: 30px;
+  display: flex;
+  height: 55px;
+  justify-content: flex-end;
+  margin-left: 3px;
+  margin-top: 7px;
+  min-width: 229px;
+  padding: 0 21px;
+}
+
+.join-group-3 {
+  letter-spacing: 0;
+  min-height: 27px;
+  text-align: center;
+  width: 184px;
+}
+
+.owner-yen-fug {
+  align-self: center;
+  letter-spacing: 0;
+  margin-right: 13.0px;
+  margin-top: 15px;
+  min-height: 28px;
+  text-align: center;
+  width: 203px;
+}
+
+.flex-col-11 {
+  align-items: flex-start;
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 6px;
+  margin-left: 34px;
+  min-height: 636px;
+  width: 857px;
+}
+
+.marketplace-sellers {
+  letter-spacing: 0;
+  min-height: 82px;
+  text-align: center;
+  width: 542px;
+}
+
+.lorem-ipsum-dolor-si {
+  letter-spacing: 0;
+  margin-left: 11px;
+  margin-top: 27px;
+  min-height: 374px;
+  text-align: center;
+  width: 799px;
+}
+
+.overlap-group-21 {
+  align-items: flex-end;
+  align-self: flex-end;
+  background-color: var(--white);
+  border-radius: 30px;
+  display: flex;
+  height: 62px;
+  margin-top: 91px;
+  min-width: 275px;
+  padding: 5px 28px;
+}
+
+.join-group-4 {
+  color: var(--black);
+  font-family: var(--font-family-tienne);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0;
+  min-height: 51px;
+  text-align: center;
+  width: 219px;
+}
+
+.line-7 {
+  height: 1px;
+  left: 488px;
+  position: absolute;
+  top: 136px;
+  width: 833px;
+}
+
+.ellipse-4 {
+  height: 37px;
+  left: 1310px;
+  object-fit: cover;
+  position: absolute;
+  top: 13px;
+  width: 37px;
+}
+
+.overlap-group6-2 {
+  height: 37px;
+  left: 12px;
+  position: absolute;
+  top: 781px;
+  width: 264px;
+}
+
