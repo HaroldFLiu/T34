@@ -1,6 +1,6 @@
 import React from "react";
 import "./ProductPage.css";
-import logo from "../../dist/t34-logo.jpg";
+import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 
 

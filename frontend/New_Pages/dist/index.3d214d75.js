@@ -30246,7 +30246,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _homePageCss = require("./HomePage.css");
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -31576,7 +31576,7 @@ $RefreshReg$(_c, "HomePage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./HomePage.css":"dkE6O","../../api/axios":"2txuX","../../dist/t34-logo.jpg":"3AKXz"}],"km3Ru":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./HomePage.css":"dkE6O","../../api/axios":"2txuX","../../dist/img/t34-logo.jpg":"6DD8a"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("react-refresh/runtime");
 function debounce(func, delay) {
@@ -34915,8 +34915,8 @@ var utils = require("./../utils");
     return utils.isObject(payload) && payload.isAxiosError === true;
 };
 
-},{"./../utils":"5By4s"}],"3AKXz":[function(require,module,exports) {
-module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "t34-logo.e8ba593f.jpg" + "?" + Date.now();
+},{"./../utils":"5By4s"}],"6DD8a":[function(require,module,exports) {
+module.exports = require("./helpers/bundle-url").getBundleURL("UckoE") + "t34-logo.bcaa5312.jpg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
@@ -35395,7 +35395,7 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _newListingsCss = require("./NewListings.css");
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 const NewListingPage = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35875,7 +35875,7 @@ $RefreshReg$(_c, "NewListingPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NewListings.css":"gFAH7","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/t34-logo.jpg":"3AKXz"}],"gFAH7":[function() {},{}],"04OVA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./NewListings.css":"gFAH7","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"gFAH7":[function() {},{}],"04OVA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e7ed = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35887,7 +35887,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -37078,7 +37078,7 @@ $RefreshReg$(_c, "SellPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/t34-logo.jpg":"3AKXz"}],"7BKPl":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"7BKPl":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$07f3 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37090,7 +37090,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -38281,7 +38281,7 @@ $RefreshReg$(_c, "WishlistPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/t34-logo.jpg":"3AKXz"}],"ivjsm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"ivjsm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$53b9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -38294,7 +38294,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _productPageCss = require("./ProductPage.css");
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -38419,7 +38419,7 @@ $RefreshReg$(_c, "ProductPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ProductPage.css":"zWKuf","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/t34-logo.jpg":"3AKXz"}],"zWKuf":[function() {},{}],"jzaU1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ProductPage.css":"zWKuf","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}],"zWKuf":[function() {},{}],"jzaU1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ca81 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -38431,7 +38431,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _t34LogoJpg = require("../../dist/t34-logo.jpg");
+var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
@@ -38556,6 +38556,6 @@ $RefreshReg$(_c, "GroupPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/t34-logo.jpg":"3AKXz"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
 
 //# sourceMappingURL=index.3d214d75.js.map
