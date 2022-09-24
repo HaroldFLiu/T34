@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
-import logo from "../../dist/img/t34-logo.jpg";
+import logo from "../../dist/t34-logo.jpg";
 
 const NewListingPage = () => {
 
