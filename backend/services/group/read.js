@@ -7,7 +7,7 @@ const readById = async (groupId) => {
   if (!isMongoId(`${groupId}`)) {
     return undefined;
   }
-  const group = await Group.findById(group);
+  const group = await Group.findById(groupId);
 
   if (isNilOrEmpty(group)) {
     console.log(`Cannot find group with id: ${groupId}`);

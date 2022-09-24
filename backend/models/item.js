@@ -41,6 +41,18 @@ const itemSchema = new Schema(
         type: [Schema.Types.ObjectId], 
         ref: 'Comment',
         default: [],
+      },
+      image_urls : {
+        type: [{ 
+          type: String
+        }],
+        default: []
+      },
+      cloudinary_ids : {
+        type: [{ 
+          type: String
+        }],
+        default: []
       }
     },
     {
