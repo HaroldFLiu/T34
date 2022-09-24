@@ -6,13 +6,23 @@ import axios from "../../api/axios";
 
 const HomePage = () => {
 
-  const [post, setPost] = React.useState(null);
+
+
+  const [Post, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get("/").then((response) => {
+    axios.get("/public").then((response) => {
       setPost(response.data);
     });
   }, []);
+
+  if (!Post) return null;
+ 
+  function getPrice(Post){
+    return [Post.price];
+  }
+  console.log(Post.map(getPrice));
+
 
 
   return (
@@ -91,9 +101,9 @@ const HomePage = () => {
          <div class="wishlist">
           <button> wishlist </button>
         </div>
-        <p class="price">$19.95</p>
+        <p class="price"> 123</p>
         <div className="item-cart">
-        <h3>Item Name</h3>
+        <h3>123</h3>
         <p><button>Add to Cart</button></p>
         </div>
         </a>
