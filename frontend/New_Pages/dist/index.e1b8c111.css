@@ -345,6 +345,10 @@ input:focus {
   text-decoration: none;
 }
 
+.products-wrapper {
+  display: flex;
+}
+
 .App {
   background-color: #fff;
 }

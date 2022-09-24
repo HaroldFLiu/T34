@@ -245,3 +245,8 @@
   text-decoration: none;
   color: #000;
 }
+
+/* need to css to display products wrapped nicely */
+.products-wrapper{
+  display: flex;
+}
