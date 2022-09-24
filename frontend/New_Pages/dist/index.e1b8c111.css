@@ -345,8 +345,10 @@ input:focus {
   text-decoration: none;
 }
 
-.products-wrapper {
-  display: flex;
+.products-wrapper-test {
+  width: 20%;
+  border-width: 2px;
+  display: inline-block;
 }
 
 .App {

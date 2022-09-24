@@ -90,44 +90,16 @@ const [posts, setPosts] = useState([]);
       </div> 
       <hr />
 
-    {/* product components here*/}
-    {posts.map((post) => {
-      return(
-        <div className="products-wrapper">  
-        {/* products display 1st row*/} 
-        <div className="wrapper" >
+    {/* calls on product components here trying to rewrap here*/}
+    <div className="wrapper" >
         <div class="row2">
           <div class="column">
-          <div class="card">
-            {/*  add href to product page*/}
-            <a href="/product-page" >
-            <div className="img-wrap"> 
-              <img src={logo} className="logo-position">
-              </img> 
-            </div>
-             {/* wishlist button */}
-             <div class="wishlist">
-              <button> wishlist </button>
-            </div>
-            <div className="content-posts">
-            <p class="price"> {post.price}</p>
+          <ProductComponents/>
           </div>
-            <div className="item-cart">
-            <h3>{post.name}</h3>
-            <p><button>Add to Cart</button></p>
-            </div>
-            </a>
-          </div>
-          </div>   
-          
         </div>
-        </div>
-    
-    
-        </div>  
-      )
-    })}
- 
+    </div>
+
+
     {/* next page bar here*/}
     <div class="center-next">
       <div class="pagination">

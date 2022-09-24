@@ -246,7 +246,10 @@
   color: #000;
 }
 
-/* need to css to display products wrapped nicely */
-.products-wrapper{
-  display: flex;
+/* need to css to display products wrapped nicely CHANGED TO FIT*/
+.products-wrapper-test{
+  border-width:2px;
+  display: inline-block;
+  width: 20%;
+
 }
