@@ -31739,7 +31739,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
 exports.default = (0, _axiosDefault.default).create({
-    baseURL: "http://localhost:3000"
+    baseURL: "https://market34-back.onrender.com"
 });
 
 },{"axios":"jo6P5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jo6P5":[function(require,module,exports) {
