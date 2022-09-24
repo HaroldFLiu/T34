@@ -1,6 +1,6 @@
 const { create } = require('./create');
 const { deleteById } = require('./delete');
-const { readById} = require('./read');
+const { readById, readByItem } = require('./read');
 const { updateById } = require('./update');
 
 module.exports = {
@@ -8,4 +8,5 @@ module.exports = {
   deleteById,
   readById,
   updateById,
+  readByItem,
 };

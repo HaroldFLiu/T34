@@ -2,9 +2,9 @@ This is the to do list for backend
 
 Harold :
 
-[ ] Need to make session schema
+[x] Need to make session schema
 
-[ ] Need to write auth function
+[x] Need to write auth function
 
 [x] Need to optimize user schema
 
