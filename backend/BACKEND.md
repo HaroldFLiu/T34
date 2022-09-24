@@ -8,3 +8,5 @@ npm run dev
 to run tests -
 npm run test
 
+to get data into database (run this before running any tests) -
+npm run seed
