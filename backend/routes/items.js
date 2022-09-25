@@ -8,7 +8,6 @@ const {
     getCategoryItems,
     getItem,
     deleteItem,
-    updateItem,
 } = require('../controllers/itemController');
 
 const {
@@ -20,18 +19,18 @@ const itemService = require('../services/item');
 const router = express.Router();
 
 // GET all public items
-router.get('/', getPublicItems);    
+router.get('/public', getPublicItems);    
 
 // GET all public items in a category
-router.get('/category/:category_id', getCategoryItems);
+router.get('/public/category/:category_id', getCategoryItems);
 
-router.get('/category/', getCatergories);
+router.get('/public/category/', getCatergories);
 
 // GET a single item
-router.get('/:item_id', getItem);
+router.get('/public/:item_id', getItem);
 
 // POST an item
-router.post('/', upload.array('images', 12), async (req, res) => {
+router.post('/public/', upload.array('images', 12), async (req, res) => {
     const image_urls = [];
     const cloudinary_ids = [];
     const files = req.files;
@@ -65,10 +64,10 @@ router.post('/', upload.array('images', 12), async (req, res) => {
 });
 
 // DELETE an item
-router.delete('/:item_id', deleteItem);
+router.delete('/public/:item_id', deleteItem);
 
 // UPDATE an item
-router.patch('/:item_id', upload.array('images', 12), async (req, res) => {
+router.patch('/public/:item_id', upload.array('images', 12), async (req, res) => {
     const { item_id } = req.params;
     const image_urls = [];
     const cloudinary_ids = [];

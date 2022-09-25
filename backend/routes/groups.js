@@ -3,11 +3,9 @@ const { default: mongoose } = require('mongoose');
 const upload = require('../middleware/multer');
 const cloudinary = require('../middleware/cloudinary');
 const {
-    createGroup,
     getGroups,
     getGroup,
     deleteGroup,
-    updateGroup,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -15,13 +13,13 @@ const groupService = require('../services/group');
 const router = express.Router();
 
 // GET all groups
-router.get('/', getGroups);
+router.get('/groups', getGroups);
 
 // GET a group
-router.get('/:group_id', getGroup);
+router.get('/groups/:group_id', getGroup);
 
 // POST a group
-router.post('/', upload.single('image'), async (req, res) => {
+router.post('/groups', upload.single('image'), async (req, res) => {
     const file = req.file;
     let icon_url, cloudinary_id;
 
@@ -46,10 +44,10 @@ router.post('/', upload.single('image'), async (req, res) => {
 });
 
 // DELETE a group
-router.delete('/:group_id', deleteGroup);
+router.delete('/groups/:group_id', deleteGroup);
 
 // UPDATE a group
-router.patch('/:group_id', upload.single('image'), async (req, res) => {
+router.patch('/groups/:group_id', upload.single('image'), async (req, res) => {
     const { group_id } = req.params;
     let icon_url, cloudinary_id;
     const file = req.file;
