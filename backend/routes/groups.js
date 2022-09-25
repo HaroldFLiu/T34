@@ -24,6 +24,7 @@ router.post('/groups', upload.single('image'), async (req, res) => {
     let icon_url, cloudinary_id;
 
     try {
+        // handle images
         const result = await cloudinary.uploader.upload(file.path);
         icon_url = result.secure_url;
         cloudinary_id = result.public_id;
@@ -52,6 +53,7 @@ router.patch('/groups/:group_id', upload.single('image'), async (req, res) => {
     let icon_url, cloudinary_id;
     const file = req.file;
 
+    // handle images
     try {
         const result = await cloudinary.uploader.upload(file.path);
         icon_url = result.secure_url
