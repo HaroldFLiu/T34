@@ -54,7 +54,7 @@ const readByGroup = async (groupId) => {
 
 const readItemsBySeller = async (sellerId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.seller_id == sellerId);
+  const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
 
   return filtered;
 }

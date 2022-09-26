@@ -1,25 +1,38 @@
+
 const mongoose = require('mongoose');
 require('dotenv').config();
 
 const { Group } = require('../models/group');
+const { User } = require('../models/user');
 
 const groupService = require('../services/group');
+const userService = require('../services/user');
 
 describe('GroupService', () => {
-  let connection = null;
+  let user = null;
+  let userInfo = {
+    first_name: "Sue",
+    last_name: "Green",
+    email: "suegreen@spacewax.com",
+    password: "magna",
+  }
+
   let group1 = null;
   let group1Info = null;
+
   let group2 = null;
   let group2Info = null;
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
-    console.log('Connected.');
     await Group.deleteMany({});
+    await User.deleteMany({});
+
+    user = await userService.create(userInfo);
   });
 
   afterAll(async () => {
-    await Group.deleteMany({});
+
     await mongoose.disconnect();
   });
 
@@ -27,6 +40,7 @@ describe('GroupService', () => {
     group1Info = {
       name: 'Cars',
       description: 'Cars go fast',
+      members: [user._id]
     }
 
     group1 = await groupService.create(group1Info);
@@ -85,5 +99,11 @@ describe('GroupService', () => {
     const groups = await groupService.readAll();
 
     expect(groups.length).toBe(2);
+  });
+
+  test('Read By User', async () => {
+    const groups = await groupService.readByUser(user._id);
+
+    expect(groups.length).toBe(1);
   });
 })

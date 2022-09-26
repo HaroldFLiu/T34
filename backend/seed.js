@@ -18,7 +18,7 @@ const users = [
         last_name: "Green",
         email: "suegreen@spacewax.com",
         password: "magna",
-      }
+    }
 ]
 const categories = [
     {

@@ -1,6 +1,7 @@
 const { Item } = require('../../models/item');
 const cloudinary = require('../../middleware/cloudinary');
-const itemService = require('../item');
+const { readByGroup } = require('./read');
+const { Comment } = require('../../models/comment');
 
 const deleteById = async (itemId) => {
   const item = await Item.findById(itemId);
@@ -14,18 +15,34 @@ const deleteById = async (itemId) => {
 };
 
 const deleteGroup = async (groupId) => {
-  const items = await itemService.readByGroup(groupId);
+  const items = await readByGroup(groupId);
 
-  for (const item in items) {
-    const index = item.group_ids.indexOf(groupId);
+  for (const item of items) {
+    if (item.group_ids) {
+      const index = item.group_ids.indexOf(groupId);
 
-    if (index > -1) {
-      item.group_ids.splice(index, 1);
-
-      await item.save();
+      if (index > -1) {
+        item.group_ids.splice(index, 1);
+  
+        await item.save();
+      }
     }
   }
- 
 }
 
-module.exports = { deleteById, deleteGroup };
+const deleteComment = async (commentId) => {
+  const comment = await Comment.findById(commentId);
+  const item = await Item.findById(comment.item_id);
+
+  if (item.comments) {
+    const index = item.comments.indexOf(commentId);
+
+    if (index > -1) {
+      item.comments.splice(index, 1);
+    }
+
+    await item.save();
+  }
+}
+
+module.exports = { deleteById, deleteGroup, deleteComment };

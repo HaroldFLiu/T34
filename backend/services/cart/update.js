@@ -1,16 +1,19 @@
 const { Cart } = require('../../models/cart')
 const { Item } = require('../../models/item');
+const itemService = require('../item');
 
 const addItem = async(cartId, itemId, quantity) => {
-      const item = await Item.findById(itemId);
-      const cart = await Cart.findById(cartId);
-      for (let i = 0; i < quantity; i++) {
-        cart.items.push(itemId);
-        cart.subtotal += item.price;
-      }
-      await cart.save();
-      
-      return cart;
+  const item = await itemService.readById(itemId);
+  
+  const cart = await Cart.findById(cartId);
+  for (let i = 0; i < quantity; i++) {
+    cart.items.push(itemId);
+    cart.subtotal += item.price;
+  }
+  await cart.save();
+  console.log(cart.subtotal);
+  
+  return cart;
 
 };
 

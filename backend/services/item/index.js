@@ -1,5 +1,5 @@
 const { create } = require('./create');
-const { deleteById, deleteGroup} = require('./delete');
+const { deleteById, deleteGroup, deleteComment } = require('./delete');
 const { readAll, readById, readByCategory, readByPriceAsc, readByPriceDesc, 
   readPublicItems, readItemsBySeller, readByGroup } = require('./read');
 const { updateById } = require('./update');
@@ -16,5 +16,6 @@ module.exports = {
   readPublicItems,
   readItemsBySeller,
   readByGroup,
-  deleteGroup
+  deleteGroup,
+  deleteComment
 };

@@ -7,7 +7,7 @@ const deleteById = async (groupId) => {
   // await cloudinary.uploader.destroy(group.cloudinary_id);
 
   // delete group id in all items that have the group
-  await itemService.deletedGroup(groupId);
+  await itemService.deleteGroup(groupId);
 
   const deletedGroup = await Group.findByIdAndDelete(groupId);
   return deletedGroup;
