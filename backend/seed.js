@@ -5,10 +5,18 @@ const { Item } = require('./models/item');
 const { Group } = require('./models/group');
 const { Category } = require('./models/category');
 const { User } = require('./models/user');
+const { Cart } = require('./models/cart');
+const { Favourites } = require('./models/favourites');
+const { Comment } = require('./models/comment');
+
 const itemService = require('./services/item');
 const categoryService = require('./services/category');
 const groupService = require('./services/group');
 const userService = require('./services/user');
+const commentService = require('./services/comment');
+const cartService = require('./services/cart');
+const favouritesService = require('./services/favourites');
+
 const { decodeBase64 } = require('bcryptjs');
 
 const users = [
@@ -85,6 +93,12 @@ async function seed() {
     let tmp;
 
     await Item.deleteMany({});
+    await User.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await Favourites.deleteMany({});
+    await Cart.deleteMany({});
+    await Comment.deleteMany({});
 
     for (const user of users) {
         tmp = await userService.readById(user._id);
