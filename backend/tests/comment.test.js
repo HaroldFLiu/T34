@@ -57,7 +57,10 @@ describe('CommentsService', () => {
   });
 
   afterAll(async () => {
-      await mongoose.disconnect();
+    await Item.deleteMany({});
+    await Comment.deleteMany({});
+    await User.deleteMany({});
+    await mongoose.disconnect();
   });
 
   test('Create Comment', async () => {

@@ -16,7 +16,7 @@ describe('ItemService', () => {
   });
 
   afterAll(async () => {
-
+    await Category.deleteMany({});
     await mongoose.disconnect();
   });
 

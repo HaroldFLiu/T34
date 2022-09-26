@@ -53,7 +53,10 @@ describe('ItemService', () => {
   });
 
   afterAll(async () => {
-
+    await Item.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
     await mongoose.disconnect();
   });
 

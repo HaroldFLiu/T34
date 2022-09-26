@@ -70,7 +70,10 @@ describe('CartService', () => {
   });
 
   afterAll(async () => {
-      await mongoose.disconnect();
+    await Cart.deleteMany({});
+    await Item.deleteMany({});
+    await User.deleteMany({});
+    await mongoose.disconnect();
   });
 
   test('Create Cart', async () => {

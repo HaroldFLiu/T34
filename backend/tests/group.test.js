@@ -32,7 +32,8 @@ describe('GroupService', () => {
   });
 
   afterAll(async () => {
-
+    await Group.deleteMany({});
+    await User.deleteMany({});
     await mongoose.disconnect();
   });
 

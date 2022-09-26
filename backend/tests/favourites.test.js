@@ -66,6 +66,9 @@ describe('FavouritesService', () => {
   });
 
   afterAll(async () => {
+    await Favourites.deleteMany({});
+    await Item.deleteMany({});
+    await User.deleteMany({});
     await mongoose.disconnect();
   });
 
