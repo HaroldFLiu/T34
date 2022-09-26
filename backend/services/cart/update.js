@@ -11,7 +11,6 @@ const addItem = async(cartId, itemId, quantity) => {
     cart.subtotal += item.price;
   }
   await cart.save();
-  console.log(cart.subtotal);
   
   return cart;
 

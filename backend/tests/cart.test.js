@@ -140,13 +140,16 @@ describe('CartService', () => {
     await cartService.addItem(cart._id, item1._id, 1);
     await cartService.addItem(cart._id, item2._id, 1);
 
-    expect(cart.subtotal).toBe(item1Info.price + item2Info.price);
+    const cartdb1 = await Cart.findById(cart._id);
+
+    expect(cartdb1.subtotal).toBe(item1Info.price + item2Info.price);
 
     await cartService.checkout(cart._id);
 
-    const cartdb = await Cart.findById(cart._id);
-    expect(cartdb).not.toBeNull;
-    expect(cartdb.items.length).toBe(0);
-    expect(cartdb.subtotal).toBe(0);
+    const cartdb2 = await Cart.findById(cart._id);
+
+    expect(cartdb2).not.toBeNull;
+    expect(cartdb2.items.length).toBe(0);
+    expect(cartdb2.subtotal).toBe(0);
   });
 });
