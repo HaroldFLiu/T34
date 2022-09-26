@@ -26,17 +26,16 @@ const itemSchema = new Schema(
         type: Boolean,
         required: true,
       },
-      /*
       seller_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        required: false,
       },
-      buyer: {
+      buyer_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: false,
-      }*/
+      },
       comments: {
         type: [Schema.Types.ObjectId], 
         ref: 'Comment',
@@ -53,7 +52,12 @@ const itemSchema = new Schema(
           type: String
         }],
         default: []
-      }
+      },
+      sold:  {
+        type: Boolean,
+        required: true,
+        default: false,
+      },
     },
     {
       timestamps: {

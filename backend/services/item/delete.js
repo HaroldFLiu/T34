@@ -1,5 +1,6 @@
 const { Item } = require('../../models/item');
 const cloudinary = require('../../middleware/cloudinary');
+const itemService = require('../item');
 
 const deleteById = async (itemId) => {
   const item = await Item.findById(itemId);
@@ -12,4 +13,19 @@ const deleteById = async (itemId) => {
   return deletedItem;
 };
 
-module.exports = { deleteById };
+const deleteGroup = async (groupId) => {
+  const items = await itemService.readByGroup(groupId);
+
+  for (const item in items) {
+    const index = item.group_ids.indexOf(groupId);
+
+    if (index > -1) {
+      item.group_ids.splice(index, 1);
+
+      await item.save();
+    }
+  }
+ 
+}
+
+module.exports = { deleteById, deleteGroup };

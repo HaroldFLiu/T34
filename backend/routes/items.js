@@ -22,9 +22,7 @@ const router = express.Router();
 router.get('/public', getPublicItems);    
 
 // GET all public items in a category
-router.get('/public/category/:category_id', getCategoryItems);
-
-router.get('/public/category/', getCatergories);
+router.get('/public/:category_id', getCategoryItems);
 
 // GET a single item
 router.get('/public/:item_id', getItem);
