@@ -40,7 +40,7 @@ return(
               <button> wishlist </button>
             </div>
             <div className="content-posts">
-            <p class="price"> {post.price}</p>
+            <p class="price"> ${post.price}</p>
           </div>
             <div className="item-cart">
             <h3>{post.name}</h3>

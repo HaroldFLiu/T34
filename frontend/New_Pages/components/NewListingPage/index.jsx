@@ -5,6 +5,35 @@ import logo from "../../dist/img/t34-logo.jpg";
 
 const NewListingPage = () => {
 
+    const [values, setValues] = useState({
+        itemName: "",
+        itemDescription: "",
+        itemPrice: "",
+        itemCategory: "",
+        itemGroup: "",
+        itemVisbility: "",
+
+      });
+
+    const PostNewListing =  event =>{
+    event.preventDefault();
+    axios.post('/public', {
+        name: values.itemName,
+        description: values.itemDescription,
+        price: values.itemPrice,
+        category_ids: values.itemCategory,
+        group_ids: values.itemGroup,
+        public_visibility: values.itemVisbility,
+    })
+    .then(function (response){
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(error);
+    });
+    }
+    console.log(values);
+
     return (
     <div className="parent" >
      {/* top nav bar*/}
@@ -16,8 +45,8 @@ const NewListingPage = () => {
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="#home">Log In</a>
-      <a href="#home">UserName</a>
+      <a href="/login-page">Log In</a>
+      <a href="/sign-up-page">Register</a>
       <input type="text" placeholder="Search.."> 
       </input>
       </div>
@@ -29,7 +58,10 @@ const NewListingPage = () => {
     </div>
     <hr />
     <div className="number-listings"> 1234 items sold in the last 24 hours!
-    <button className="publish-btn"> Publish Item</button>
+    
+    {/* on click to submit new listing here*/}
+
+    <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
     <hr />
        {/*Upload Image box and button*/}    
@@ -41,16 +73,21 @@ const NewListingPage = () => {
     {/* form to input new listing data*/}
     <div class="container">
         <form className="publish-form">
+            
+            {/* onChange event here to get data */}
+            
             <label for="item-name"> Item Name:</label>
-            <input type="listing-text">  
-            </input>
+            <input type="listing-text"
+                onChange={(e)=> setValues({...values, itemName:e.target.value})} 
+             />
             <label for="enter-price"> Price:</label>
-            <input type="listing-text">  
-            </input>
+            <input type="listing-text"
+              onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
+            />
             <label for="enter-desc"> Item Description:</label>
-            <input type="asd">  
-            </input>
-        
+            <input type="asd" 
+                onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
+            />
             <div class="dropdown">
                 <button class="dropbtn">Category</button>
                 <div class="dropdown-content">
