@@ -17,7 +17,7 @@ const NewListingPage = () => {
 
     const PostNewListing =  event =>{
     event.preventDefault();
-    axios.post('/public', {
+    axios.post('/public/', {
         name: values.itemName,
         description: values.itemDescription,
         price: values.itemPrice,

@@ -30298,7 +30298,7 @@ const HomePage = ()=>{
                         children: " Market34"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 36,
+                        lineNumber: 35,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30307,7 +30307,7 @@ const HomePage = ()=>{
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 37,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30315,7 +30315,7 @@ const HomePage = ()=>{
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 38,
+                        lineNumber: 37,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30323,7 +30323,7 @@ const HomePage = ()=>{
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 39,
+                        lineNumber: 38,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30331,7 +30331,7 @@ const HomePage = ()=>{
                         children: " My Groups"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 40,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30339,7 +30339,7 @@ const HomePage = ()=>{
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 40,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30350,7 +30350,7 @@ const HomePage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 44,
+                                lineNumber: 43,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30358,7 +30358,7 @@ const HomePage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 45,
+                                lineNumber: 44,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -30366,19 +30366,19 @@ const HomePage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 46,
+                                lineNumber: 45,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 42,
+                        lineNumber: 41,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/HomePage/index.jsx",
-                lineNumber: 35,
+                lineNumber: 34,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30389,7 +30389,7 @@ const HomePage = ()=>{
                         children: "Categories"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 54,
+                        lineNumber: 53,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30397,7 +30397,7 @@ const HomePage = ()=>{
                         children: "Vechicles"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 57,
+                        lineNumber: 56,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30405,7 +30405,7 @@ const HomePage = ()=>{
                         children: "Apparel"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 58,
+                        lineNumber: 57,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30413,7 +30413,7 @@ const HomePage = ()=>{
                         children: "Electronics"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 59,
+                        lineNumber: 58,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30421,7 +30421,7 @@ const HomePage = ()=>{
                         children: "Family"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 60,
+                        lineNumber: 59,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30429,7 +30429,7 @@ const HomePage = ()=>{
                         children: "Garden & Outdoor"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 61,
+                        lineNumber: 60,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30437,7 +30437,7 @@ const HomePage = ()=>{
                         children: "Hobbies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 62,
+                        lineNumber: 61,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30445,7 +30445,7 @@ const HomePage = ()=>{
                         children: "Home Goods"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 63,
+                        lineNumber: 62,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30453,7 +30453,7 @@ const HomePage = ()=>{
                         children: "Home Improvement Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 64,
+                        lineNumber: 63,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30461,7 +30461,7 @@ const HomePage = ()=>{
                         children: "Musical Instruments"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 65,
+                        lineNumber: 64,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30469,7 +30469,7 @@ const HomePage = ()=>{
                         children: "Office Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 66,
+                        lineNumber: 65,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30477,7 +30477,7 @@ const HomePage = ()=>{
                         children: "Pet Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 67,
+                        lineNumber: 66,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30485,7 +30485,7 @@ const HomePage = ()=>{
                         children: "Sporting Goods"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 68,
+                        lineNumber: 67,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30493,7 +30493,7 @@ const HomePage = ()=>{
                         children: "Toys & Games"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 69,
+                        lineNumber: 68,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30503,18 +30503,18 @@ const HomePage = ()=>{
                             children: " Create New Listing"
                         }, void 0, false, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 71,
+                            lineNumber: 70,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 70,
+                        lineNumber: 69,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/HomePage/index.jsx",
-                lineNumber: 53,
+                lineNumber: 52,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30525,12 +30525,12 @@ const HomePage = ()=>{
                         children: " Today's Listings:"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 77,
+                        lineNumber: 76,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 78,
+                        lineNumber: 77,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30547,7 +30547,7 @@ const HomePage = ()=>{
                                             children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
-                                            lineNumber: 84,
+                                            lineNumber: 83,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30558,7 +30558,7 @@ const HomePage = ()=>{
                                                     children: "Price: High-Low"
                                                 }, void 0, false, {
                                                     fileName: "components/HomePage/index.jsx",
-                                                    lineNumber: 86,
+                                                    lineNumber: 85,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30566,35 +30566,35 @@ const HomePage = ()=>{
                                                     children: "Price: Low-High"
                                                 }, void 0, false, {
                                                     fileName: "components/HomePage/index.jsx",
-                                                    lineNumber: 87,
+                                                    lineNumber: 86,
                                                     columnNumber: 21
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "components/HomePage/index.jsx",
-                                            lineNumber: 85,
+                                            lineNumber: 84,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 83,
+                                    lineNumber: 82,
                                     columnNumber: 7
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 82,
+                                lineNumber: 81,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 79,
+                        lineNumber: 78,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 92,
+                        lineNumber: 91,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30605,22 +30605,22 @@ const HomePage = ()=>{
                                 class: "column",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productComponentsDefault.default), {}, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 98,
+                                    lineNumber: 97,
                                     columnNumber: 11
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 97,
+                                lineNumber: 96,
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 96,
+                            lineNumber: 95,
                             columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 95,
+                        lineNumber: 94,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30633,7 +30633,7 @@ const HomePage = ()=>{
                                     children: "\xab"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 107,
+                                    lineNumber: 106,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30641,7 +30641,7 @@ const HomePage = ()=>{
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 108,
+                                    lineNumber: 107,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30649,7 +30649,7 @@ const HomePage = ()=>{
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 109,
+                                    lineNumber: 108,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30657,7 +30657,7 @@ const HomePage = ()=>{
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 110,
+                                    lineNumber: 109,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30665,7 +30665,7 @@ const HomePage = ()=>{
                                     children: "4"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 111,
+                                    lineNumber: 110,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30673,7 +30673,7 @@ const HomePage = ()=>{
                                     children: "5"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 112,
+                                    lineNumber: 111,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30681,7 +30681,7 @@ const HomePage = ()=>{
                                     children: "6"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 112,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30689,30 +30689,30 @@ const HomePage = ()=>{
                                     children: "\xbb"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 113,
                                     columnNumber: 7
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 106,
+                            lineNumber: 105,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 105,
+                        lineNumber: 104,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/HomePage/index.jsx",
-                lineNumber: 76,
+                lineNumber: 75,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/HomePage/index.jsx",
-        lineNumber: 33,
+        lineNumber: 32,
         columnNumber: 3
     }, undefined);
 };
@@ -34732,7 +34732,7 @@ const NewListingPage = ()=>{
     });
     const PostNewListing = (event)=>{
         event.preventDefault();
-        (0, _axiosDefault.default).post("/public", {
+        (0, _axiosDefault.default).post("/public/", {
             name: values.itemName,
             description: values.itemDescription,
             price: values.itemPrice,

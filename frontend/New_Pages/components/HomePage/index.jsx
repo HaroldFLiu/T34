@@ -4,7 +4,6 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
 
-
 const HomePage = () => {
 /*
   const [posts, setPost] = React.useState(null);

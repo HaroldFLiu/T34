@@ -35,7 +35,7 @@ router.post('/public/', upload.array('images', 12), async (req, res) => {
     const image_urls = [];
     const cloudinary_ids = [];
     const files = req.files;
-    console.log(req.files.length);
+    //console.log(req.files.length);
     if (files) {
         for (const file of files) {
             try {
