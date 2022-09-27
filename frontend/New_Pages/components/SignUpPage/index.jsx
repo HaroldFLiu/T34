@@ -20,7 +20,13 @@ const SignUpPage = () => {
         password: values.password,
     })
     .then(function (response){
-        console.log(response);
+        if (response.status=="200") {
+            location.pathname='/login-page';
+          }
+          else {
+            console.log("oops");
+          }
+          
     })
     .catch(function (error) {
         console.log(error);
