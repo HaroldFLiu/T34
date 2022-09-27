@@ -255,3 +255,9 @@
   width: 20%;
 
 }
+
+/* icon display */
+.icon{
+  position: relative;
+  bottom: 5px
+}

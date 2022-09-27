@@ -353,6 +353,11 @@ input:focus {
   display: inline-block;
 }
 
+.icon {
+  position: relative;
+  bottom: 5px;
+}
+
 .App {
   background-color: #fff;
 }

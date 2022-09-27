@@ -3,6 +3,13 @@ import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
+/* icon imports */
+import {AiOutlineHome} from 'react-icons/ai';
+import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {MdOutlineGroups} from 'react-icons/md';
+import {AiOutlineUsergroupAdd} from 'react-icons/ai';
+import {TbStar} from 'react-icons/tb';
+
 
 const HomePage = () => {
 /*
@@ -33,11 +40,11 @@ const [posts, setPosts] = useState([]);
      {/* top nav bar*/}
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
-        <a class="active" href="/home-page">Home</a>
-        <a href="/sell-page">Sell</a>
-        <a href="/group-page">Groups</a>
-        <a href="#"> My Groups</a>
-        <a href="/wishlist-page">Wishlist</a>
+      <a class="active" href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
+        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
+        <a href="#"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
       <a href="/login-page">Log In</a>
