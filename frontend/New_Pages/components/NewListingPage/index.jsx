@@ -24,6 +24,7 @@ const NewListingPage = () => {
         category_ids: categoryOptions.value,
         group_ids: groupOptions.value,
         public_visibility: visibilityOptions.value,
+       // comments: "",
     })
     .then(function (response){
         console.log(response);
@@ -60,8 +61,8 @@ const NewListingPage = () => {
       {/* options for visibility*/}
       const visibilityOptions = [
         {value: '', text: '---Select sell visbility---'},
-        {value: 'public', text: 'Public'},
-        {value: 'private', text: 'Private'},
+        {value: true, text: 'Public'},
+        {value: false, text: 'Private'},
 
       ];
 
@@ -114,7 +115,7 @@ const NewListingPage = () => {
        try {
         const response = await axios({
           method: "post",
-          url: "/api/upload/file",
+          url: "/public/",
           data: formData,
           headers: { "Content-Type": "multipart/form-data" },
         });
@@ -132,6 +133,7 @@ const NewListingPage = () => {
         <a href="/home-page">Home</a>
         <a class="active" href="/sell-page">Sell</a>
         <a href="/group-page">Groups</a>
+        <a href="#"> My Groups</a>
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

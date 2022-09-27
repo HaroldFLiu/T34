@@ -42,7 +42,8 @@ const [posts, setPosts] = useState([]);
       {/* search bar*/}
       <a href="/login-page">Log In</a>
       <a href="/sign-up-page">Register</a>
-      <input type="text" placeholder="Search.."> 
+   
+      <input type="text"placeholder="Search.."> 
       </input>
       </div>
     </div>
