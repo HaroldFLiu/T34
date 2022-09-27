@@ -106,14 +106,17 @@ const NewListingPage = () => {
        e.preventDefault();
        const formData = new FormData();
        formData.append("image", image.raw);
-   
-       await fetch("YOUR_URL", {
-         method: "POST",
-         headers: {
-           "Content-Type": "multipart/form-data"
-         },
-         body: formData
-       });
+       try {
+        const response = await axios({
+          method: "post",
+          url: "/api/upload/file",
+          data: formData,
+          headers: { "Content-Type": "multipart/form-data" },
+        });
+      } catch(error) {
+        console.log(error)
+      }
+
      };
     
     return (
@@ -150,7 +153,15 @@ const NewListingPage = () => {
     <div class="left-box">
         <div className="square-pic">  
         <label htmlFor="upload-button">
-            <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+
+             {/* image preview conditionals for user to see*/} 
+            {image.preview ? (
+          <img src={image.preview} alt="dummy" width="100%" height="100%" />
+        ) : (
+          <>
+     <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+          </>
+        )}
         </label>  
         <input
         type="file"
@@ -160,7 +171,7 @@ const NewListingPage = () => {
       />  
         </div>
 
-    <button> Upload Image</button>    
+    <button onClick={handleUpload}>Upload Image</button>   
     </div>
     
     {/* form to input new listing data*/}
