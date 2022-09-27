@@ -24,7 +24,8 @@ const itemSchema = new Schema(
       },
       public_visibility: {
         type: Boolean,
-        required: true,
+        //required: true,
+	default: true
       },
       /*
       seller_id: {
