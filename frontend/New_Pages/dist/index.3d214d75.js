@@ -34501,7 +34501,8 @@ const SignUpPage = ()=>{
             email: values.email,
             password: values.password
         }).then(function(response) {
-            console.log(response);
+            if (response.status == "200") location.pathname = "/login-page";
+            else console.log("oops");
         }).catch(function(error) {
             console.log(error);
         });
@@ -34518,7 +34519,7 @@ const SignUpPage = ()=>{
                     children: "Sign Up"
                 }, void 0, false, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 34,
+                    lineNumber: 40,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -34526,7 +34527,7 @@ const SignUpPage = ()=>{
                     children: "and start scrolling through the marketplace!"
                 }, void 0, false, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 37,
+                    lineNumber: 43,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34536,7 +34537,7 @@ const SignUpPage = ()=>{
                             children: " First Name"
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 41,
+                            lineNumber: 47,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34549,13 +34550,13 @@ const SignUpPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 42,
+                            lineNumber: 48,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 40,
+                    lineNumber: 46,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34565,7 +34566,7 @@ const SignUpPage = ()=>{
                             children: " Last Name"
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 50,
+                            lineNumber: 56,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34578,13 +34579,13 @@ const SignUpPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 51,
+                            lineNumber: 57,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 49,
+                    lineNumber: 55,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34594,7 +34595,7 @@ const SignUpPage = ()=>{
                             children: " Email Address"
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 59,
+                            lineNumber: 65,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34607,13 +34608,13 @@ const SignUpPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 60,
+                            lineNumber: 66,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 58,
+                    lineNumber: 64,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34623,7 +34624,7 @@ const SignUpPage = ()=>{
                             children: " Password"
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 68,
+                            lineNumber: 74,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34636,13 +34637,13 @@ const SignUpPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 69,
+                            lineNumber: 75,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 67,
+                    lineNumber: 73,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34653,12 +34654,12 @@ const SignUpPage = ()=>{
                         children: "Sign Up"
                     }, void 0, false, {
                         fileName: "components/SignUpPage/index.jsx",
-                        lineNumber: 77,
+                        lineNumber: 83,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 76,
+                    lineNumber: 82,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34670,24 +34671,24 @@ const SignUpPage = ()=>{
                             children: " sign in?"
                         }, void 0, false, {
                             fileName: "components/SignUpPage/index.jsx",
-                            lineNumber: 82,
+                            lineNumber: 88,
                             columnNumber: 32
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/SignUpPage/index.jsx",
-                    lineNumber: 81,
+                    lineNumber: 87,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "components/SignUpPage/index.jsx",
-            lineNumber: 33,
+            lineNumber: 39,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "components/SignUpPage/index.jsx",
-        lineNumber: 32,
+        lineNumber: 38,
         columnNumber: 5
     }, undefined);
 };
