@@ -27083,6 +27083,8 @@ var _productPage = require("./components/ProductPage");
 var _productPageDefault = parcelHelpers.interopDefault(_productPage);
 var _groupPage = require("./components/GroupPage");
 var _groupPageDefault = parcelHelpers.interopDefault(_groupPage);
+var _createGroupPage = require("./components/CreateGroupPage");
+var _createGroupPageDefault = parcelHelpers.interopDefault(_createGroupPage);
 function App() {
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.BrowserRouter), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Switch), {
@@ -27182,6 +27184,18 @@ function App() {
                     fileName: "App.jsx",
                     lineNumber: 40,
                     columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
+                    path: "/create-group-page",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createGroupPageDefault.default), {}, void 0, false, {
+                        fileName: "App.jsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "App.jsx",
+                    lineNumber: 43,
+                    columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
@@ -27205,7 +27219,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J","./components/SellPage":"04OVA","./components/WishlistPage":"7BKPl","./components/ProductPage":"ivjsm","./components/GroupPage":"jzaU1"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./App.css":"7g3a6","react":"21dqq","react-router-dom":"cHIiW","./components/HomePage":"iDhAv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/LoginPage":"6INLr","bootstrap/dist/css/bootstrap.min.css":"i5LP7","./components/SignUpPage":"bege1","./components/NewListingPage":"bMg3J","./components/SellPage":"04OVA","./components/WishlistPage":"7BKPl","./components/ProductPage":"ivjsm","./components/GroupPage":"jzaU1","./components/CreateGroupPage":"cutXN"}],"7g3a6":[function() {},{}],"cHIiW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MemoryRouter", ()=>(0, _reactRouter.MemoryRouter));
@@ -34719,6 +34733,8 @@ const NewListingPage = ()=>{
             public_visibility: visibilityOptions.value
         }).then(function(response) {
             console.log(response);
+            if (response.status == "200") location.pathname = "/home-page";
+            else console.log("oops");
         }).catch(function(error) {
             console.log(error);
         });
@@ -34862,7 +34878,7 @@ const NewListingPage = ()=>{
                         children: " Market34"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 126,
+                        lineNumber: 131,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34870,7 +34886,7 @@ const NewListingPage = ()=>{
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 127,
+                        lineNumber: 132,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34879,15 +34895,15 @@ const NewListingPage = ()=>{
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 128,
+                        lineNumber: 133,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        href: "/group-page",
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 129,
+                        lineNumber: 134,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34895,7 +34911,7 @@ const NewListingPage = ()=>{
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 130,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34906,7 +34922,7 @@ const NewListingPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 133,
+                                lineNumber: 138,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34914,7 +34930,7 @@ const NewListingPage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 134,
+                                lineNumber: 139,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34922,19 +34938,19 @@ const NewListingPage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 135,
+                                lineNumber: 140,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 131,
+                        lineNumber: 136,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 125,
+                lineNumber: 130,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34947,23 +34963,23 @@ const NewListingPage = ()=>{
                             children: " and start selling right away!"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 141,
+                            lineNumber: 146,
                             columnNumber: 49
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 141,
+                    lineNumber: 146,
                     columnNumber: 7
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 140,
+                lineNumber: 145,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 144,
+                lineNumber: 149,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34976,18 +34992,18 @@ const NewListingPage = ()=>{
                         children: " Publish Item"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 149,
+                        lineNumber: 154,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 145,
+                lineNumber: 150,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 151,
+                lineNumber: 156,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35005,7 +35021,7 @@ const NewListingPage = ()=>{
                                     height: "100%"
                                 }, void 0, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 159,
+                                    lineNumber: 164,
                                     columnNumber: 11
                                 }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -35013,13 +35029,13 @@ const NewListingPage = ()=>{
                                         className: "upload-placeholder"
                                     }, void 0, false, {
                                         fileName: "components/NewListingPage/index.jsx",
-                                        lineNumber: 162,
+                                        lineNumber: 167,
                                         columnNumber: 6
                                     }, undefined)
                                 }, void 0, false)
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 155,
+                                lineNumber: 160,
                                 columnNumber: 9
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35031,13 +35047,13 @@ const NewListingPage = ()=>{
                                 onChange: handleChange
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 166,
+                                lineNumber: 171,
                                 columnNumber: 9
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 154,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35045,13 +35061,13 @@ const NewListingPage = ()=>{
                         children: "Upload Image"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 174,
+                        lineNumber: 179,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 153,
+                lineNumber: 158,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35064,7 +35080,7 @@ const NewListingPage = ()=>{
                             children: " Item Name:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 183,
+                            lineNumber: 188,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35075,7 +35091,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 184,
+                            lineNumber: 189,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35083,7 +35099,7 @@ const NewListingPage = ()=>{
                             children: " Price:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 187,
+                            lineNumber: 192,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35094,7 +35110,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 188,
+                            lineNumber: 193,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35102,7 +35118,7 @@ const NewListingPage = ()=>{
                             children: " Item Description:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 191,
+                            lineNumber: 196,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35113,7 +35129,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 192,
+                            lineNumber: 197,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35121,7 +35137,7 @@ const NewListingPage = ()=>{
                             children: " Item Category:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 198,
+                            lineNumber: 203,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35133,12 +35149,12 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 201,
+                                    lineNumber: 206,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 199,
+                            lineNumber: 204,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35146,7 +35162,7 @@ const NewListingPage = ()=>{
                             children: " Item Visibility:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 210,
+                            lineNumber: 215,
                             columnNumber: 10
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35158,12 +35174,12 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 213,
+                                    lineNumber: 218,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 211,
+                            lineNumber: 216,
                             columnNumber: 10
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35171,7 +35187,7 @@ const NewListingPage = ()=>{
                             children: " Group Select:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 221,
+                            lineNumber: 226,
                             columnNumber: 8
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35183,29 +35199,29 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 224,
+                                    lineNumber: 229,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 222,
+                            lineNumber: 227,
                             columnNumber: 10
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 179,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 178,
+                lineNumber: 183,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/NewListingPage/index.jsx",
-        lineNumber: 123,
+        lineNumber: 128,
         columnNumber: 5
     }, undefined);
 };
@@ -36482,7 +36498,7 @@ const WishlistPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                        href: "#home",
+                        href: "/group-page",
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
@@ -37783,12 +37799,13 @@ var _t34LogoJpg = require("../../dist/img/t34-logo.jpg");
 var _t34LogoJpgDefault = parcelHelpers.interopDefault(_t34LogoJpg);
 var _axios = require("../../api/axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _groupPageCss = require("./GroupPage.css");
 var _s = $RefreshSig$();
 const GroupPage = ()=>{
     _s();
     const [post, setPost] = (0, _reactDefault.default).useState(null);
     (0, _reactDefault.default).useEffect(()=>{
-        (0, _axiosDefault.default).get("/item").then((response)=>{
+        (0, _axiosDefault.default).get("/public").then((response)=>{
             setPost(response.data);
         });
     }, []);
@@ -37803,24 +37820,24 @@ const GroupPage = ()=>{
                         children: " Market34"
                     }, void 0, false, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 20,
-                        columnNumber: 5
+                        lineNumber: 21,
+                        columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/home-page",
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 21,
-                        columnNumber: 7
+                        lineNumber: 22,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/sell-page",
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 22,
-                        columnNumber: 7
+                        lineNumber: 23,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         class: "active",
@@ -37828,16 +37845,24 @@ const GroupPage = ()=>{
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 23,
-                        columnNumber: 7
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: " My Groups"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/wishlist-page",
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 24,
-                        columnNumber: 7
+                        lineNumber: 26,
+                        columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         class: "nav-login",
@@ -37847,50 +37872,1115 @@ const GroupPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/GroupPage/index.jsx",
-                                lineNumber: 27,
-                                columnNumber: 5
+                                lineNumber: 29,
+                                columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                                 href: "/sign-up-page",
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/GroupPage/index.jsx",
-                                lineNumber: 28,
-                                columnNumber: 5
+                                lineNumber: 30,
+                                columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
                                 type: "text",
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/GroupPage/index.jsx",
-                                lineNumber: 29,
-                                columnNumber: 5
+                                lineNumber: 31,
+                                columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/GroupPage/index.jsx",
-                        lineNumber: 25,
+                        lineNumber: 27,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/GroupPage/index.jsx",
+                lineNumber: 20,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "sidenav",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "header",
+                        children: "Categories"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 39,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Vechicles"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 42,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Apparel"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 43,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Electronics"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 44,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Family"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 45,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Garden & Outdoor"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 46,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Hobbies"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 47,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Home Goods"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 48,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Home Improvement Supplies"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 49,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Musical Instruments"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 50,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Office Supplies"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 51,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Pet Supplies"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 52,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Sporting Goods"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 53,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: "Toys & Games"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 54,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/create-group-page",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            class: "btn btn-success",
+                            children: " Create New Group"
+                        }, void 0, false, {
+                            fileName: "components/GroupPage/index.jsx",
+                            lineNumber: 57,
+                            columnNumber: 7
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 56,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/GroupPage/index.jsx",
-                lineNumber: 19,
+                lineNumber: 38,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                class: "main-product-wrap",
-                children: "1321312"
-            }, void 0, false, {
+                class: "main",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "home-title",
+                        children: " Suggested Groups:"
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 63,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 64,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "number-listings",
+                        children: [
+                            " 1234, 5678 groups",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "move-drop-btn",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "dropdown",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            class: "dropbtn",
+                                            children: "Sort by: Default"
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 70,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "dropdown-content",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    children: "Members: High-Low"
+                                                }, void 0, false, {
+                                                    fileName: "components/GroupPage/index.jsx",
+                                                    lineNumber: 72,
+                                                    columnNumber: 21
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "#",
+                                                    children: "Members: Low-High"
+                                                }, void 0, false, {
+                                                    fileName: "components/GroupPage/index.jsx",
+                                                    lineNumber: 73,
+                                                    columnNumber: 21
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 71,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 69,
+                                    columnNumber: 7
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 68,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 65,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 78,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "products-wrapper",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "wrapper",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "row2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 85,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 85,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 89,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 90,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 91,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 91,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 84,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 83,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 97,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 97,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 101,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 102,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 103,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 103,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 100,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 96,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 95,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 109,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 109,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 113,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 114,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 115,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 115,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 112,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 108,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 107,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 121,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 121,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 125,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 126,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 127,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 127,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 124,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 120,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 119,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 133,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 133,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 137,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 138,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 139,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 139,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 136,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 132,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 131,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 82,
+                                    columnNumber: 5
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 81,
+                                columnNumber: 5
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "wrapper",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "row2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 152,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 152,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 156,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 157,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 158,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 158,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 155,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 151,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 150,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 164,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 164,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 168,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 169,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 170,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 170,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 167,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 163,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 162,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 176,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 176,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 180,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 181,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 182,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 182,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 179,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 175,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 174,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 188,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 188,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 192,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 193,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 194,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 194,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 191,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 187,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 186,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            class: "column",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                class: "card",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "img-wrap",
+                                                        children: [
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                                                src: (0, _t34LogoJpgDefault.default),
+                                                                className: "logo-position"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 200,
+                                                                columnNumber: 36
+                                                            }, undefined),
+                                                            " "
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 200,
+                                                        columnNumber: 9
+                                                    }, undefined),
+                                                    "\xa0",
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                        className: "item-cart",
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                                children: "Marketplace Sellers"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 204,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                class: "members-text",
+                                                                children: "31k Members"
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 205,
+                                                                columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Join Group"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/GroupPage/index.jsx",
+                                                                    lineNumber: 206,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/GroupPage/index.jsx",
+                                                                lineNumber: 206,
+                                                                columnNumber: 9
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/GroupPage/index.jsx",
+                                                        lineNumber: 203,
+                                                        columnNumber: 9
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/GroupPage/index.jsx",
+                                                lineNumber: 199,
+                                                columnNumber: 7
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "components/GroupPage/index.jsx",
+                                            lineNumber: 198,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 149,
+                                    columnNumber: 5
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/GroupPage/index.jsx",
+                                lineNumber: 148,
+                                columnNumber: 5
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 79,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "center-next",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            class: "pagination",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "\xab"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 217,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "1"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 218,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "2"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 219,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "3"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 220,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "4"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 221,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "5"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 222,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "6"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 223,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                    href: "#",
+                                    children: "\xbb"
+                                }, void 0, false, {
+                                    fileName: "components/GroupPage/index.jsx",
+                                    lineNumber: 224,
+                                    columnNumber: 7
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/GroupPage/index.jsx",
+                            lineNumber: 216,
+                            columnNumber: 7
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/GroupPage/index.jsx",
+                        lineNumber: 215,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "components/GroupPage/index.jsx",
-                lineNumber: 33,
-                columnNumber: 3
+                lineNumber: 62,
+                columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/GroupPage/index.jsx",
         lineNumber: 18,
-        columnNumber: 5
+        columnNumber: 1
     }, undefined);
 };
 _s(GroupPage, "VAK5tdJEk0cqnRsmbvM4YDyoQLs=");
@@ -37904,6 +38994,470 @@ $RefreshReg$(_c, "GroupPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../dist/img/t34-logo.jpg":"6DD8a","./GroupPage.css":"gWFjw"}],"gWFjw":[function() {},{}],"cutXN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$481b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$481b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _axios = require("../../api/axios");
+var _axiosDefault = parcelHelpers.interopDefault(_axios);
+var _uploadPictureJpg = require("../../dist/img/upload-picture.jpg");
+var _uploadPictureJpgDefault = parcelHelpers.interopDefault(_uploadPictureJpg);
+var _createGroupPageCss = require("./CreateGroupPage.css");
+var _radioButton = require("./RadioButton");
+var _s = $RefreshSig$();
+const CreateGroupPage = ()=>{
+    _s();
+    const [visbility, setVisbility] = (0, _react.useState)("");
+    const radioChangeHandler = (e)=>{
+        setVisbility(e.target.value);
+    };
+    const [image, setImage] = (0, _react.useState)({
+        preview: "",
+        raw: ""
+    });
+    const handleChange = (e)=>{
+        if (e.target.files.length) setImage({
+            preview: URL.createObjectURL(e.target.files[0]),
+            raw: e.target.files[0]
+        });
+    };
+    const handleUpload = async (e)=>{
+        e.preventDefault();
+        const formData = new FormData();
+        formData.append("image", image.raw);
+        try {
+            const response = await (0, _axiosDefault.default)({
+                method: "post",
+                url: "/api/upload/file",
+                data: formData,
+                headers: {
+                    "Content-Type": "multipart/form-data"
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "parent",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "navbar",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "website-title",
+                        children: " Market34"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 51,
+                        columnNumber: 5
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/home-page",
+                        children: "Home"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 52,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/sell-page",
+                        children: "Sell"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 53,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        class: "active",
+                        href: "#home",
+                        children: "Groups"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 54,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "/wishlist-page",
+                        children: "Wishlist"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 55,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        class: "nav-login",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/login-page",
+                                children: "Log In"
+                            }, void 0, false, {
+                                fileName: "components/CreateGroupPage/index.jsx",
+                                lineNumber: 58,
+                                columnNumber: 7
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                href: "/sign-up-page",
+                                children: "Register"
+                            }, void 0, false, {
+                                fileName: "components/CreateGroupPage/index.jsx",
+                                lineNumber: 59,
+                                columnNumber: 7
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "text",
+                                placeholder: "Search.."
+                            }, void 0, false, {
+                                fileName: "components/CreateGroupPage/index.jsx",
+                                lineNumber: 60,
+                                columnNumber: 7
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 56,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 50,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "listings-main",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "home-title",
+                    children: [
+                        " Create a Group now,",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            children: " and start lisitng privately right away!"
+                        }, void 0, false, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 66,
+                            columnNumber: 55
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/CreateGroupPage/index.jsx",
+                    lineNumber: 66,
+                    columnNumber: 7
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 65,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 69,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "number-listings",
+                children: [
+                    " 1234, 5678 groups online",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "publish-btn",
+                        children: " Create Group"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 74,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 70,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 76,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "left-box",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "square-pic",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                htmlFor: "upload-button",
+                                children: image.preview ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                    src: image.preview,
+                                    alt: "dummy",
+                                    width: "100%",
+                                    height: "100%"
+                                }, void 0, false, {
+                                    fileName: "components/CreateGroupPage/index.jsx",
+                                    lineNumber: 84,
+                                    columnNumber: 11
+                                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _uploadPictureJpgDefault.default),
+                                        className: "upload-placeholder"
+                                    }, void 0, false, {
+                                        fileName: "components/CreateGroupPage/index.jsx",
+                                        lineNumber: 87,
+                                        columnNumber: 6
+                                    }, undefined)
+                                }, void 0, false)
+                            }, void 0, false, {
+                                fileName: "components/CreateGroupPage/index.jsx",
+                                lineNumber: 80,
+                                columnNumber: 9
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "file",
+                                id: "upload-button",
+                                style: {
+                                    display: "none"
+                                },
+                                onChange: handleChange
+                            }, void 0, false, {
+                                fileName: "components/CreateGroupPage/index.jsx",
+                                lineNumber: 91,
+                                columnNumber: 9
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 79,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        onClick: handleUpload,
+                        children: "Upload Image"
+                    }, void 0, false, {
+                        fileName: "components/CreateGroupPage/index.jsx",
+                        lineNumber: 99,
+                        columnNumber: 5
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 78,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                class: "container",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                    className: "publish-form",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            for: "item-name",
+                            children: " Group Name:"
+                        }, void 0, false, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 108,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "listing-text"
+                        }, void 0, false, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 109,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            for: "enter-desc",
+                            children: " Group Description:"
+                        }, void 0, false, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 111,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                            type: "asd"
+                        }, void 0, false, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 112,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "vis-container",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "flex-child",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "visbility-header",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    className: "radio-public",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _radioButton.RadioButton), {
+                                                        changed: radioChangeHandler,
+                                                        id: "1",
+                                                        value: "public"
+                                                    }, void 0, false, {
+                                                        fileName: "components/CreateGroupPage/index.jsx",
+                                                        lineNumber: 121,
+                                                        columnNumber: 7
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "components/CreateGroupPage/index.jsx",
+                                                    lineNumber: 120,
+                                                    columnNumber: 7
+                                                }, undefined),
+                                                "Public"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/CreateGroupPage/index.jsx",
+                                            lineNumber: 119,
+                                            columnNumber: 7
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "visbility-text",
+                                            children: "Anyone can join this group."
+                                        }, void 0, false, {
+                                            fileName: "components/CreateGroupPage/index.jsx",
+                                            lineNumber: 129,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/CreateGroupPage/index.jsx",
+                                    lineNumber: 118,
+                                    columnNumber: 7
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    class: "flex-child",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "visbility-header",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    className: "radio-public",
+                                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _radioButton.RadioButton), {
+                                                        changed: radioChangeHandler,
+                                                        id: "2",
+                                                        value: "private"
+                                                    }, void 0, false, {
+                                                        fileName: "components/CreateGroupPage/index.jsx",
+                                                        lineNumber: 137,
+                                                        columnNumber: 7
+                                                    }, undefined)
+                                                }, void 0, false, {
+                                                    fileName: "components/CreateGroupPage/index.jsx",
+                                                    lineNumber: 136,
+                                                    columnNumber: 5
+                                                }, undefined),
+                                                "Private"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/CreateGroupPage/index.jsx",
+                                            lineNumber: 135,
+                                            columnNumber: 5
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "visbility-text-1",
+                                            children: "Only people given access can join this group."
+                                        }, void 0, false, {
+                                            fileName: "components/CreateGroupPage/index.jsx",
+                                            lineNumber: 145,
+                                            columnNumber: 7
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/CreateGroupPage/index.jsx",
+                                    lineNumber: 134,
+                                    columnNumber: 5
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/CreateGroupPage/index.jsx",
+                            lineNumber: 117,
+                            columnNumber: 5
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/CreateGroupPage/index.jsx",
+                    lineNumber: 104,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/CreateGroupPage/index.jsx",
+                lineNumber: 103,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/CreateGroupPage/index.jsx",
+        lineNumber: 48,
+        columnNumber: 5
+    }, undefined);
+};
+_s(CreateGroupPage, "841TbocR1Gkt9NDWnzjYMZKb5kE=");
+_c = CreateGroupPage;
+exports.default = CreateGroupPage;
+var _c;
+$RefreshReg$(_c, "CreateGroupPage");
+
+  $parcel$ReactRefreshHelpers$481b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../../api/axios":"2txuX","../../dist/img/upload-picture.jpg":"fkZxD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./CreateGroupPage.css":"4gDSN","./RadioButton":"czdF5"}],"4gDSN":[function() {},{}],"czdF5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b963 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b963.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RadioButton", ()=>RadioButton);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const RadioButton = (props)=>{
+    const { changed , id , isSelected , label , value  } = props;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "RadioButton",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                id: id,
+                onChange: changed,
+                value: value,
+                type: "radio",
+                checked: isSelected
+            }, void 0, false, {
+                fileName: "components/CreateGroupPage/RadioButton.js",
+                lineNumber: 5,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                htmlFor: id,
+                children: label
+            }, void 0, false, {
+                fileName: "components/CreateGroupPage/RadioButton.js",
+                lineNumber: 12,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "components/CreateGroupPage/RadioButton.js",
+        lineNumber: 4,
+        columnNumber: 7
+    }, undefined);
+};
+_c = RadioButton;
+var _c;
+$RefreshReg$(_c, "RadioButton");
+
+  $parcel$ReactRefreshHelpers$b963.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","awEvQ","bB7Pu"], "bB7Pu", "parcelRequire3745")
 
 //# sourceMappingURL=index.3d214d75.js.map

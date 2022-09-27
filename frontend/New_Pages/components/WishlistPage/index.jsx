@@ -21,7 +21,7 @@ const WishlistPage = () => {
       <h1 className="website-title"> Market34</h1>
         <a href="/home-page">Home</a>
         <a href="/sell-page">Sell</a>
-        <a href="#home">Groups</a>
+        <a href="/group-page">Groups</a>
         <a class="active" href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

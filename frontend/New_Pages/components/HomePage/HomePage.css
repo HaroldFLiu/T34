@@ -193,10 +193,12 @@
   margin-top: -10px;
 }
 
-/* drop down button */
+/* drop down button Sort By: */
 .move-drop-btn{
   float: right;
   margin-right: 100px;
+  margin-top: -10px;
+  
 }
 
 .website-title{

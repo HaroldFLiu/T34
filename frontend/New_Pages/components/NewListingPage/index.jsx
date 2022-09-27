@@ -27,6 +27,11 @@ const NewListingPage = () => {
     })
     .then(function (response){
         console.log(response);
+        if (response.status=="200") {
+          location.pathname='/home-page';
+        }else {
+          console.log("oops");
+        }
     })
     .catch(function (error) {
         console.log(error);
@@ -126,7 +131,7 @@ const NewListingPage = () => {
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page">Home</a>
         <a class="active" href="/sell-page">Sell</a>
-        <a href="#home">Groups</a>
+        <a href="/group-page">Groups</a>
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

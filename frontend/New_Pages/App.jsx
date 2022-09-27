@@ -10,7 +10,7 @@ import SellPage from "./components/SellPage";
 import WishlistPage from "./components/WishlistPage";
 import ProductPage from "./components/ProductPage";
 import GroupPage from "./components/GroupPage";
-
+import CreateGroupPage from "./components/CreateGroupPage"
 
 function App() {
   return (
@@ -40,6 +40,10 @@ function App() {
         <Route path="/group-page">
           <GroupPage/>
         </Route>
+        <Route path="/create-group-page">
+          <CreateGroupPage/>
+        </Route>
+
       </Switch>
     </Router>
   );
