@@ -3,6 +3,30 @@ import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 
+/* icon imports */
+import {AiOutlineHome} from 'react-icons/ai';
+import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {MdOutlineGroups} from 'react-icons/md';
+import {AiOutlineUsergroupAdd} from 'react-icons/ai';
+import {TbStar} from 'react-icons/tb';
+import {AiOutlineLock} from 'react-icons/ai';
+import {RiBookOpenLine} from 'react-icons/ri';
+
+/* category icons */
+import {FaCar} from 'react-icons/fa';
+import {FaTshirt} from 'react-icons/fa';
+import {BsPlugFill} from 'react-icons/bs';
+import {MdFamilyRestroom} from 'react-icons/md';
+import {IoIosLeaf} from 'react-icons/io';
+import {FaChessKnight} from 'react-icons/fa';
+import {GiSofa} from 'react-icons/gi';
+import {FaHammer} from 'react-icons/fa';
+import {FaGuitar} from 'react-icons/fa';
+import {FaPenFancy} from 'react-icons/fa';
+import {FaDog} from 'react-icons/fa';
+import {MdSportsFootball} from 'react-icons/md';
+import {MdSmartToy} from 'react-icons/md';
+
 const NewListingPage = () => {
 
     const [values, setValues] = useState({
@@ -130,16 +154,17 @@ const NewListingPage = () => {
      {/* top nav bar*/}
     <div class="navbar">
     <h1 className="website-title"> Market34</h1>
-        <a href="/home-page">Home</a>
-        <a class="active" href="/sell-page">Sell</a>
-        <a href="/group-page">Groups</a>
-        <a href="#"> My Groups</a>
-        <a href="/wishlist-page">Wishlist</a>
+        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
+        <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
+        <a href="#"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page">Log In</a>
-      <a href="/sign-up-page">Register</a>
-      <input type="text" placeholder="Search.."> 
+      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
+      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+   
+      <input type="text"placeholder="Search.."> 
       </input>
       </div>
     </div>

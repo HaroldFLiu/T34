@@ -24,7 +24,6 @@ import {FaHammer} from 'react-icons/fa';
 import {FaGuitar} from 'react-icons/fa';
 import {FaPenFancy} from 'react-icons/fa';
 import {FaDog} from 'react-icons/fa';
-
 import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
 
