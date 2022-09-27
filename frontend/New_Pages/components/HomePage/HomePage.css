@@ -66,7 +66,7 @@
 /* The sidebar menu */
 .sidenav {
 
-  width: 260px; /* Set the width of the sidebar */
+  width: 280px; /* Set the width of the sidebar */
   position: fixed; /* Fixed Sidebar (stay in place on scroll) */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
@@ -256,8 +256,14 @@
 
 }
 
-/* icon display */
+/* icon display and positionals */
 .icon{
   position: relative;
   bottom: 5px
+}
+
+.icon-flipped{
+  transform: scaleX(-1);
+  position: relative;
+  bottom: 6px;
 }

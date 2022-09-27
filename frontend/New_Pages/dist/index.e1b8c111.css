@@ -194,7 +194,7 @@ input:focus {
 }
 
 .sidenav {
-  width: 260px;
+  width: 280px;
   z-index: 1;
   background-color: #fff;
   margin-top: 150px;
@@ -356,6 +356,12 @@ input:focus {
 .icon {
   position: relative;
   bottom: 5px;
+}
+
+.icon-flipped {
+  position: relative;
+  bottom: 6px;
+  transform: scaleX(-1);
 }
 
 .App {
