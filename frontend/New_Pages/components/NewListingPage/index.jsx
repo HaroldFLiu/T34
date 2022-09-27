@@ -32,8 +32,33 @@ const NewListingPage = () => {
         console.log(error);
     });
     }
-    console.log(values);
 
+    {/* options to select for category drop down*/}
+    const categoryOptions = [
+        {value: '', text: '---Select a category---'},
+        {value: 'category-1', text: 'Vechicles'},
+        {value: 'category-2', text: 'Apparel'},
+        {value: 'category-3', text: 'Electronics'},
+        {value: 'category-4', text: 'Family'},
+        {value: 'category-5', text: 'Garden & Outdoor'},
+        {value: 'category-6', text: 'Hobbies'},
+        {value: 'category-7', text: 'Home Goods'},
+        {value: 'category-8', text: 'Home Improvement Supplies'},
+        {value: 'category-9', text: 'Musical Instruments'},
+        {value: 'category-10', text: 'Office Supplies'},
+        {value: 'category-11', text: 'Pet Supplies'},
+        {value: 'category-12', text: 'Sporting Goods'},
+        {value: 'category-13', text: 'Toys & Games'},
+
+      ];
+    
+      const [selected, setSelected] = useState(categoryOptions[0].value);
+    
+      const handleChange = event => {
+        console.log(event.target.value);
+        setSelected(event.target.value);
+      };
+    
     return (
     <div className="parent" >
      {/* top nav bar*/}
@@ -88,26 +113,17 @@ const NewListingPage = () => {
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
-            <div class="dropdown">
-                <button class="dropbtn">Category</button>
-                <div class="dropdown-content">
-                    <a href="#">Vechicles</a>
-                    <a href="#">Apparel</a>
-                    <a href="#">Electronics</a>
-                    <a href="#">Family</a>
-                    <a href="#">Garden & Outdoor</a>
-                    <a href="#">Hobbies</a>
-                    <a href="#">Home Goods</a>
-                    <a href="#">Electronics</a>
-                    <a href="#">Electronics</a>
-                    <a href="#">Home Improvement Supplies</a>
-                    <a href="#">Musical Instruments</a>
-                    <a href="#">Office Supplies</a>
-                    <a href="#">Pet Supplies</a>
-                    <a href="#">Sporting Goods</a>
-                    <a href="#">Toys & Games</a>
-                </div>
-        </div>
+
+             {/* select on change for dropdown button*/}
+
+            <label for="category-name"> Item Category:</label>
+            <select type="category-listing" value={selected} onChange={handleChange}>
+                {categoryOptions.map(option => (
+                <option key={option.value} value={option.value}>
+                    {option.text}
+                </option>
+                ))}
+      </select>
 
         <div class="dropdown">
                 <button class="dropbtn">Privacy</button>

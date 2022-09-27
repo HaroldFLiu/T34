@@ -12667,6 +12667,18 @@ input[type="asd"] {
   padding-top: 100%;
 }
 
+select[type="category-listing"] {
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 2px;
+  margin-bottom: 6px;
+  padding: 6px;
+}
+
 
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

@@ -30624,7 +30624,6 @@ const HomePage = ()=>{
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                                     href: "#",
-                                    class: "active",
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
@@ -34724,7 +34723,69 @@ const NewListingPage = ()=>{
             console.log(error);
         });
     };
-    console.log(values);
+    const categoryOptions = [
+        {
+            value: "",
+            text: "---Select a category---"
+        },
+        {
+            value: "category-1",
+            text: "Vechicles"
+        },
+        {
+            value: "category-2",
+            text: "Apparel"
+        },
+        {
+            value: "category-3",
+            text: "Electronics"
+        },
+        {
+            value: "category-4",
+            text: "Family"
+        },
+        {
+            value: "category-5",
+            text: "Garden & Outdoor"
+        },
+        {
+            value: "category-6",
+            text: "Hobbies"
+        },
+        {
+            value: "category-7",
+            text: "Home Goods"
+        },
+        {
+            value: "category-8",
+            text: "Home Improvement Supplies"
+        },
+        {
+            value: "category-9",
+            text: "Musical Instruments"
+        },
+        {
+            value: "category-10",
+            text: "Office Supplies"
+        },
+        {
+            value: "category-11",
+            text: "Pet Supplies"
+        },
+        {
+            value: "category-12",
+            text: "Sporting Goods"
+        },
+        {
+            value: "category-13",
+            text: "Toys & Games"
+        }, 
+    ];
+    const [selected, setSelected] = (0, _react.useState)(categoryOptions[0].value);
+    const handleChange = (event)=>{
+        console.log(event.target.value);
+        setSelected(event.target.value);
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "parent",
         children: [
@@ -34736,7 +34797,7 @@ const NewListingPage = ()=>{
                         children: " Market34"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 66,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34744,7 +34805,7 @@ const NewListingPage = ()=>{
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 42,
+                        lineNumber: 67,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34753,7 +34814,7 @@ const NewListingPage = ()=>{
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 43,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34761,7 +34822,7 @@ const NewListingPage = ()=>{
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 44,
+                        lineNumber: 69,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34769,7 +34830,7 @@ const NewListingPage = ()=>{
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 45,
+                        lineNumber: 70,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34780,7 +34841,7 @@ const NewListingPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 48,
+                                lineNumber: 73,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34788,7 +34849,7 @@ const NewListingPage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 49,
+                                lineNumber: 74,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34796,19 +34857,19 @@ const NewListingPage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 50,
+                                lineNumber: 75,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 46,
+                        lineNumber: 71,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 40,
+                lineNumber: 65,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34821,23 +34882,23 @@ const NewListingPage = ()=>{
                             children: " and start selling right away!"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 56,
+                            lineNumber: 81,
                             columnNumber: 49
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 56,
+                    lineNumber: 81,
                     columnNumber: 7
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 55,
+                lineNumber: 80,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 59,
+                lineNumber: 84,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34850,18 +34911,18 @@ const NewListingPage = ()=>{
                         children: " Publish Item"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 64,
+                        lineNumber: 89,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 60,
+                lineNumber: 85,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 66,
+                lineNumber: 91,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34871,20 +34932,20 @@ const NewListingPage = ()=>{
                         className: "square-pic"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 69,
+                        lineNumber: 94,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         children: " Upload Image"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 70,
+                        lineNumber: 95,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 68,
+                lineNumber: 93,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34897,7 +34958,7 @@ const NewListingPage = ()=>{
                             children: " Item Name:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 79,
+                            lineNumber: 104,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34908,7 +34969,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 80,
+                            lineNumber: 105,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -34916,7 +34977,7 @@ const NewListingPage = ()=>{
                             children: " Price:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 83,
+                            lineNumber: 108,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34927,7 +34988,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 84,
+                            lineNumber: 109,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -34935,7 +34996,7 @@ const NewListingPage = ()=>{
                             children: " Item Description:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 87,
+                            lineNumber: 112,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34946,153 +35007,32 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 88,
+                            lineNumber: 113,
                             columnNumber: 13
                         }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            class: "dropdown",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    class: "dropbtn",
-                                    children: "Category"
-                                }, void 0, false, {
-                                    fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 92,
-                                    columnNumber: 17
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    class: "dropdown-content",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Vechicles"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 94,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Apparel"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 95,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Electronics"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 96,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Family"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 97,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Garden & Outdoor"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 98,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Hobbies"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 99,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Home Goods"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 100,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Electronics"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 101,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Electronics"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 102,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Home Improvement Supplies"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 103,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Musical Instruments"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 104,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Office Supplies"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 105,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Pet Supplies"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 106,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Sporting Goods"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 107,
-                                            columnNumber: 21
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            href: "#",
-                                            children: "Toys & Games"
-                                        }, void 0, false, {
-                                            fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 108,
-                                            columnNumber: 21
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 93,
-                                    columnNumber: 17
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                            for: "category-name",
+                            children: " Item Category:"
+                        }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 91,
+                            lineNumber: 119,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
+                            type: "category-listing",
+                            value: selected,
+                            onChange: handleChange,
+                            children: categoryOptions.map((option)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("option", {
+                                    value: option.value,
+                                    children: option.text
+                                }, option.value, false, {
+                                    fileName: "components/NewListingPage/index.jsx",
+                                    lineNumber: 122,
+                                    columnNumber: 17
+                                }, undefined))
+                        }, void 0, false, {
+                            fileName: "components/NewListingPage/index.jsx",
+                            lineNumber: 120,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35103,7 +35043,7 @@ const NewListingPage = ()=>{
                                     children: "Privacy"
                                 }, void 0, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 129,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35114,7 +35054,7 @@ const NewListingPage = ()=>{
                                             children: "Public"
                                         }, void 0, false, {
                                             fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 115,
+                                            lineNumber: 131,
                                             columnNumber: 21
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35122,19 +35062,19 @@ const NewListingPage = ()=>{
                                             children: "Private"
                                         }, void 0, false, {
                                             fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 116,
+                                            lineNumber: 132,
                                             columnNumber: 21
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 114,
+                                    lineNumber: 130,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 112,
+                            lineNumber: 128,
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35145,7 +35085,7 @@ const NewListingPage = ()=>{
                                     children: "Group Select (if applicable)"
                                 }, void 0, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 121,
+                                    lineNumber: 137,
                                     columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35156,7 +35096,7 @@ const NewListingPage = ()=>{
                                             children: "Display Groups you are in"
                                         }, void 0, false, {
                                             fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 123,
+                                            lineNumber: 139,
                                             columnNumber: 21
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35164,7 +35104,7 @@ const NewListingPage = ()=>{
                                             children: "Display Groups you are in"
                                         }, void 0, false, {
                                             fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 124,
+                                            lineNumber: 140,
                                             columnNumber: 21
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35172,40 +35112,40 @@ const NewListingPage = ()=>{
                                             children: "Display Groups you are in"
                                         }, void 0, false, {
                                             fileName: "components/NewListingPage/index.jsx",
-                                            lineNumber: 125,
+                                            lineNumber: 141,
                                             columnNumber: 21
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 122,
+                                    lineNumber: 138,
                                     columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 120,
+                            lineNumber: 136,
                             columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 75,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 74,
+                lineNumber: 99,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/NewListingPage/index.jsx",
-        lineNumber: 38,
+        lineNumber: 63,
         columnNumber: 5
     }, undefined);
 };
-_s(NewListingPage, "DfmVx6bVLHCDlGID+28xzM/KuBY=");
+_s(NewListingPage, "EnnQLA9Nm4xlY3A6Vl2ny+CEkk4=");
 _c = NewListingPage;
 exports.default = NewListingPage;
 var _c;
