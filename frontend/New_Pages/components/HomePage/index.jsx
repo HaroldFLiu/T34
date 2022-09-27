@@ -37,6 +37,7 @@ const [posts, setPosts] = useState([]);
         <a class="active" href="/home-page">Home</a>
         <a href="/sell-page">Sell</a>
         <a href="/group-page">Groups</a>
+        <a href="#"> My Groups</a>
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

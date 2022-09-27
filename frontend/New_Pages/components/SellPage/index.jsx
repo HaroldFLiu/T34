@@ -22,6 +22,7 @@ const SellPage = () => {
         <a href="/home-page">Home</a>
         <a class="active" href="/sell-page">Sell</a>
         <a href="/group-page">Groups</a>
+        <a href="#"> My Groups</a>
         <a href="/wishlist-page">Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

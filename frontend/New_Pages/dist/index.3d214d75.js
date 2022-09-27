@@ -30327,11 +30327,19 @@ const HomePage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: " My Groups"
+                    }, void 0, false, {
+                        fileName: "components/HomePage/index.jsx",
+                        lineNumber: 40,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/wishlist-page",
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 40,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30342,7 +30350,7 @@ const HomePage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 43,
+                                lineNumber: 44,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30350,7 +30358,7 @@ const HomePage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 44,
+                                lineNumber: 45,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -30358,13 +30366,13 @@ const HomePage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 45,
+                                lineNumber: 46,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 7
                     }, undefined)
                 ]
@@ -30381,7 +30389,7 @@ const HomePage = ()=>{
                         children: "Categories"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30389,7 +30397,7 @@ const HomePage = ()=>{
                         children: "Vechicles"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 56,
+                        lineNumber: 57,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30397,7 +30405,7 @@ const HomePage = ()=>{
                         children: "Apparel"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 57,
+                        lineNumber: 58,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30405,7 +30413,7 @@ const HomePage = ()=>{
                         children: "Electronics"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 58,
+                        lineNumber: 59,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30413,7 +30421,7 @@ const HomePage = ()=>{
                         children: "Family"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30421,7 +30429,7 @@ const HomePage = ()=>{
                         children: "Garden & Outdoor"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30429,7 +30437,7 @@ const HomePage = ()=>{
                         children: "Hobbies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30437,7 +30445,7 @@ const HomePage = ()=>{
                         children: "Home Goods"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 62,
+                        lineNumber: 63,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30445,7 +30453,7 @@ const HomePage = ()=>{
                         children: "Home Improvement Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30453,7 +30461,7 @@ const HomePage = ()=>{
                         children: "Musical Instruments"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30461,7 +30469,7 @@ const HomePage = ()=>{
                         children: "Office Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 65,
+                        lineNumber: 66,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30469,7 +30477,7 @@ const HomePage = ()=>{
                         children: "Pet Supplies"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 66,
+                        lineNumber: 67,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30477,7 +30485,7 @@ const HomePage = ()=>{
                         children: "Sporting Goods"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 67,
+                        lineNumber: 68,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30485,7 +30493,7 @@ const HomePage = ()=>{
                         children: "Toys & Games"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 68,
+                        lineNumber: 69,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30495,18 +30503,18 @@ const HomePage = ()=>{
                             children: " Create New Listing"
                         }, void 0, false, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 70,
+                            lineNumber: 71,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 69,
+                        lineNumber: 70,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/HomePage/index.jsx",
-                lineNumber: 52,
+                lineNumber: 53,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30517,12 +30525,12 @@ const HomePage = ()=>{
                         children: " Today's Listings:"
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30539,7 +30547,7 @@ const HomePage = ()=>{
                                             children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/HomePage/index.jsx",
-                                            lineNumber: 83,
+                                            lineNumber: 84,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30550,7 +30558,7 @@ const HomePage = ()=>{
                                                     children: "Price: High-Low"
                                                 }, void 0, false, {
                                                     fileName: "components/HomePage/index.jsx",
-                                                    lineNumber: 85,
+                                                    lineNumber: 86,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30558,35 +30566,35 @@ const HomePage = ()=>{
                                                     children: "Price: Low-High"
                                                 }, void 0, false, {
                                                     fileName: "components/HomePage/index.jsx",
-                                                    lineNumber: 86,
+                                                    lineNumber: 87,
                                                     columnNumber: 21
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "components/HomePage/index.jsx",
-                                            lineNumber: 84,
+                                            lineNumber: 85,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 82,
+                                    lineNumber: 83,
                                     columnNumber: 7
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 81,
+                                lineNumber: 82,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 78,
+                        lineNumber: 79,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 91,
+                        lineNumber: 92,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30597,22 +30605,22 @@ const HomePage = ()=>{
                                 class: "column",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _productComponentsDefault.default), {}, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 97,
+                                    lineNumber: 98,
                                     columnNumber: 11
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/HomePage/index.jsx",
-                                lineNumber: 96,
+                                lineNumber: 97,
                                 columnNumber: 11
                             }, undefined)
                         }, void 0, false, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 95,
+                            lineNumber: 96,
                             columnNumber: 9
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 94,
+                        lineNumber: 95,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -30625,7 +30633,7 @@ const HomePage = ()=>{
                                     children: "\xab"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 106,
+                                    lineNumber: 107,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30633,7 +30641,7 @@ const HomePage = ()=>{
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 107,
+                                    lineNumber: 108,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30641,7 +30649,7 @@ const HomePage = ()=>{
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 108,
+                                    lineNumber: 109,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30649,7 +30657,7 @@ const HomePage = ()=>{
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 109,
+                                    lineNumber: 110,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30657,7 +30665,7 @@ const HomePage = ()=>{
                                     children: "4"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 110,
+                                    lineNumber: 111,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30665,7 +30673,7 @@ const HomePage = ()=>{
                                     children: "5"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 111,
+                                    lineNumber: 112,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30673,7 +30681,7 @@ const HomePage = ()=>{
                                     children: "6"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 112,
+                                    lineNumber: 113,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -30681,24 +30689,24 @@ const HomePage = ()=>{
                                     children: "\xbb"
                                 }, void 0, false, {
                                     fileName: "components/HomePage/index.jsx",
-                                    lineNumber: 113,
+                                    lineNumber: 114,
                                     columnNumber: 7
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/HomePage/index.jsx",
-                            lineNumber: 105,
+                            lineNumber: 106,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/HomePage/index.jsx",
-                        lineNumber: 104,
+                        lineNumber: 105,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/HomePage/index.jsx",
-                lineNumber: 75,
+                lineNumber: 76,
                 columnNumber: 5
             }, undefined)
         ]
@@ -35304,11 +35312,19 @@ const SellPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: " My Groups"
+                    }, void 0, false, {
+                        fileName: "components/SellPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         href: "/wishlist-page",
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 25,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35319,7 +35335,7 @@ const SellPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 28,
+                                lineNumber: 29,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35327,7 +35343,7 @@ const SellPage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 29,
+                                lineNumber: 30,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35335,13 +35351,13 @@ const SellPage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 30,
+                                lineNumber: 31,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 7
                     }, undefined)
                 ]
@@ -35358,7 +35374,7 @@ const SellPage = ()=>{
                         children: "Categories"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35366,7 +35382,7 @@ const SellPage = ()=>{
                         children: "Vechicles"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35374,7 +35390,7 @@ const SellPage = ()=>{
                         children: "Apparel"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 42,
+                        lineNumber: 43,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35382,7 +35398,7 @@ const SellPage = ()=>{
                         children: "Electronics"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35390,7 +35406,7 @@ const SellPage = ()=>{
                         children: "Family"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35398,7 +35414,7 @@ const SellPage = ()=>{
                         children: "Garden & Outdoor"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35406,7 +35422,7 @@ const SellPage = ()=>{
                         children: "Hobbies"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35414,7 +35430,7 @@ const SellPage = ()=>{
                         children: "Home Goods"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 47,
+                        lineNumber: 48,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35422,7 +35438,7 @@ const SellPage = ()=>{
                         children: "Home Improvement Supplies"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35430,7 +35446,7 @@ const SellPage = ()=>{
                         children: "Musical Instruments"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35438,7 +35454,7 @@ const SellPage = ()=>{
                         children: "Office Supplies"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 50,
+                        lineNumber: 51,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35446,7 +35462,7 @@ const SellPage = ()=>{
                         children: "Pet Supplies"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35454,7 +35470,7 @@ const SellPage = ()=>{
                         children: "Sporting Goods"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35462,7 +35478,7 @@ const SellPage = ()=>{
                         children: "Toys & Games"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35472,18 +35488,18 @@ const SellPage = ()=>{
                             children: " Create New Listing"
                         }, void 0, false, {
                             fileName: "components/SellPage/index.jsx",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/SellPage/index.jsx",
-                lineNumber: 37,
+                lineNumber: 38,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35494,12 +35510,12 @@ const SellPage = ()=>{
                         children: " My Listings:"
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 62,
+                        lineNumber: 63,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35516,7 +35532,7 @@ const SellPage = ()=>{
                                             children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 68,
+                                            lineNumber: 69,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35527,7 +35543,7 @@ const SellPage = ()=>{
                                                     children: "Price: High-Low"
                                                 }, void 0, false, {
                                                     fileName: "components/SellPage/index.jsx",
-                                                    lineNumber: 70,
+                                                    lineNumber: 71,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -35535,35 +35551,35 @@ const SellPage = ()=>{
                                                     children: "Price: Low-High"
                                                 }, void 0, false, {
                                                     fileName: "components/SellPage/index.jsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 72,
                                                     columnNumber: 21
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 69,
+                                            lineNumber: 70,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 7
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 66,
+                                lineNumber: 67,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35588,14 +35604,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 83,
+                                                                lineNumber: 84,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 83,
+                                                        lineNumber: 84,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35604,7 +35620,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 87,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35612,39 +35628,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 88,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 89,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 89,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 90,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 90,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 87,
+                                                        lineNumber: 88,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 82,
+                                                lineNumber: 83,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 81,
+                                            lineNumber: 82,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35661,14 +35677,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 95,
+                                                                lineNumber: 96,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 95,
+                                                        lineNumber: 96,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35677,7 +35693,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 98,
+                                                        lineNumber: 99,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35685,39 +35701,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 100,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 101,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 101,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 102,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 102,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 99,
+                                                        lineNumber: 100,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 94,
+                                                lineNumber: 95,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 93,
+                                            lineNumber: 94,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35734,14 +35750,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 107,
+                                                                lineNumber: 108,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 108,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35750,7 +35766,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 111,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35758,39 +35774,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 112,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 113,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 113,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 114,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 114,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 111,
+                                                        lineNumber: 112,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 106,
+                                                lineNumber: 107,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35807,14 +35823,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 120,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 120,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35823,7 +35839,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 123,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35831,39 +35847,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 124,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 125,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 125,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 126,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 126,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 124,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 118,
+                                                lineNumber: 119,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 117,
+                                            lineNumber: 118,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35880,14 +35896,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 131,
+                                                                lineNumber: 132,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 131,
+                                                        lineNumber: 132,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35896,7 +35912,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 135,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35906,7 +35922,7 @@ const SellPage = ()=>{
                                                                 children: "Item Name"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 136,
+                                                                lineNumber: 137,
                                                                 columnNumber: 9
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35914,40 +35930,40 @@ const SellPage = ()=>{
                                                                     children: "Remove"
                                                                 }, void 0, false, {
                                                                     fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 137,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 12
                                                                 }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 137,
+                                                                lineNumber: 138,
                                                                 columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 136,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 130,
+                                                lineNumber: 131,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 129,
+                                            lineNumber: 130,
                                             columnNumber: 7
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 81,
                                     columnNumber: 5
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 79,
+                                lineNumber: 80,
                                 columnNumber: 5
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35969,14 +35985,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 151,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 151,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -35985,7 +36001,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 153,
+                                                        lineNumber: 154,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35993,39 +36009,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 155,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 156,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 156,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 157,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 157,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 154,
+                                                        lineNumber: 155,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 149,
+                                                lineNumber: 150,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 148,
+                                            lineNumber: 149,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36042,14 +36058,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 162,
+                                                                lineNumber: 163,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 163,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36058,7 +36074,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 166,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36066,39 +36082,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 167,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 168,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 168,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 169,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 169,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 167,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 161,
+                                                lineNumber: 162,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 160,
+                                            lineNumber: 161,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36115,14 +36131,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 174,
+                                                                lineNumber: 175,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 175,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36131,7 +36147,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 178,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36139,39 +36155,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 179,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 180,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 180,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 181,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 181,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 179,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 173,
+                                                lineNumber: 174,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 172,
+                                            lineNumber: 173,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36188,14 +36204,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 186,
+                                                                lineNumber: 187,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 187,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36204,7 +36220,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 190,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36212,39 +36228,39 @@ const SellPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 191,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Remove"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 192,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
                                                                 lineNumber: 192,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Remove"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/SellPage/index.jsx",
+                                                                    lineNumber: 193,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/SellPage/index.jsx",
+                                                                lineNumber: 193,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 191,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 185,
+                                                lineNumber: 186,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 184,
+                                            lineNumber: 185,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36261,14 +36277,14 @@ const SellPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 199,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 198,
+                                                        lineNumber: 199,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36277,7 +36293,7 @@ const SellPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 201,
+                                                        lineNumber: 202,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36287,7 +36303,7 @@ const SellPage = ()=>{
                                                                 children: "Item Name"
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 203,
+                                                                lineNumber: 204,
                                                                 columnNumber: 9
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -36295,46 +36311,46 @@ const SellPage = ()=>{
                                                                     children: "Remove"
                                                                 }, void 0, false, {
                                                                     fileName: "components/SellPage/index.jsx",
-                                                                    lineNumber: 204,
+                                                                    lineNumber: 205,
                                                                     columnNumber: 12
                                                                 }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/SellPage/index.jsx",
-                                                                lineNumber: 204,
+                                                                lineNumber: 205,
                                                                 columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/SellPage/index.jsx",
-                                                        lineNumber: 202,
+                                                        lineNumber: 203,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/SellPage/index.jsx",
-                                                lineNumber: 197,
+                                                lineNumber: 198,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/SellPage/index.jsx",
-                                            lineNumber: 196,
+                                            lineNumber: 197,
                                             columnNumber: 7
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 147,
+                                    lineNumber: 148,
                                     columnNumber: 5
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/SellPage/index.jsx",
-                                lineNumber: 146,
+                                lineNumber: 147,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36347,7 +36363,7 @@ const SellPage = ()=>{
                                     children: "\xab"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 215,
+                                    lineNumber: 216,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36355,7 +36371,7 @@ const SellPage = ()=>{
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 216,
+                                    lineNumber: 217,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36364,7 +36380,7 @@ const SellPage = ()=>{
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 217,
+                                    lineNumber: 218,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36372,7 +36388,7 @@ const SellPage = ()=>{
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 218,
+                                    lineNumber: 219,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36380,7 +36396,7 @@ const SellPage = ()=>{
                                     children: "4"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 219,
+                                    lineNumber: 220,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36388,7 +36404,7 @@ const SellPage = ()=>{
                                     children: "5"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 220,
+                                    lineNumber: 221,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36396,7 +36412,7 @@ const SellPage = ()=>{
                                     children: "6"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 221,
+                                    lineNumber: 222,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36404,24 +36420,24 @@ const SellPage = ()=>{
                                     children: "\xbb"
                                 }, void 0, false, {
                                     fileName: "components/SellPage/index.jsx",
-                                    lineNumber: 222,
+                                    lineNumber: 223,
                                     columnNumber: 7
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/SellPage/index.jsx",
-                            lineNumber: 214,
+                            lineNumber: 215,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/SellPage/index.jsx",
-                        lineNumber: 213,
+                        lineNumber: 214,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/SellPage/index.jsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 5
             }, undefined)
         ]
@@ -36506,12 +36522,20 @@ const WishlistPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                        href: "#",
+                        children: " My Groups"
+                    }, void 0, false, {
+                        fileName: "components/WishlistPage/index.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
                         class: "active",
                         href: "/wishlist-page",
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 25,
+                        lineNumber: 26,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36522,7 +36546,7 @@ const WishlistPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 28,
+                                lineNumber: 29,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36530,7 +36554,7 @@ const WishlistPage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 29,
+                                lineNumber: 30,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -36538,13 +36562,13 @@ const WishlistPage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 30,
+                                lineNumber: 31,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 26,
+                        lineNumber: 27,
                         columnNumber: 7
                     }, undefined)
                 ]
@@ -36561,7 +36585,7 @@ const WishlistPage = ()=>{
                         children: "Categories"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 38,
+                        lineNumber: 39,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36569,7 +36593,7 @@ const WishlistPage = ()=>{
                         children: "Vechicles"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 41,
+                        lineNumber: 42,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36577,7 +36601,7 @@ const WishlistPage = ()=>{
                         children: "Apparel"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 42,
+                        lineNumber: 43,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36585,7 +36609,7 @@ const WishlistPage = ()=>{
                         children: "Electronics"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 43,
+                        lineNumber: 44,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36593,7 +36617,7 @@ const WishlistPage = ()=>{
                         children: "Family"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 44,
+                        lineNumber: 45,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36601,7 +36625,7 @@ const WishlistPage = ()=>{
                         children: "Garden & Outdoor"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 45,
+                        lineNumber: 46,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36609,7 +36633,7 @@ const WishlistPage = ()=>{
                         children: "Hobbies"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 46,
+                        lineNumber: 47,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36617,7 +36641,7 @@ const WishlistPage = ()=>{
                         children: "Home Goods"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 47,
+                        lineNumber: 48,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36625,7 +36649,7 @@ const WishlistPage = ()=>{
                         children: "Home Improvement Supplies"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 48,
+                        lineNumber: 49,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36633,7 +36657,7 @@ const WishlistPage = ()=>{
                         children: "Musical Instruments"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 49,
+                        lineNumber: 50,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36641,7 +36665,7 @@ const WishlistPage = ()=>{
                         children: "Office Supplies"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 50,
+                        lineNumber: 51,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36649,7 +36673,7 @@ const WishlistPage = ()=>{
                         children: "Pet Supplies"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 51,
+                        lineNumber: 52,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36657,7 +36681,7 @@ const WishlistPage = ()=>{
                         children: "Sporting Goods"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 52,
+                        lineNumber: 53,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36665,7 +36689,7 @@ const WishlistPage = ()=>{
                         children: "Toys & Games"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 53,
+                        lineNumber: 54,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36675,18 +36699,18 @@ const WishlistPage = ()=>{
                             children: " Create New Listing"
                         }, void 0, false, {
                             fileName: "components/WishlistPage/index.jsx",
-                            lineNumber: 55,
+                            lineNumber: 56,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 54,
+                        lineNumber: 55,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/WishlistPage/index.jsx",
-                lineNumber: 37,
+                lineNumber: 38,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36697,12 +36721,12 @@ const WishlistPage = ()=>{
                         children: " Wishlisted Items:"
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 61,
+                        lineNumber: 62,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 62,
+                        lineNumber: 63,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36719,7 +36743,7 @@ const WishlistPage = ()=>{
                                             children: "Sort by: Default"
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 68,
+                                            lineNumber: 69,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36730,7 +36754,7 @@ const WishlistPage = ()=>{
                                                     children: "Price: High-Low"
                                                 }, void 0, false, {
                                                     fileName: "components/WishlistPage/index.jsx",
-                                                    lineNumber: 70,
+                                                    lineNumber: 71,
                                                     columnNumber: 21
                                                 }, undefined),
                                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -36738,35 +36762,35 @@ const WishlistPage = ()=>{
                                                     children: "Price: Low-High"
                                                 }, void 0, false, {
                                                     fileName: "components/WishlistPage/index.jsx",
-                                                    lineNumber: 71,
+                                                    lineNumber: 72,
                                                     columnNumber: 21
                                                 }, undefined)
                                             ]
                                         }, void 0, true, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 69,
+                                            lineNumber: 70,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 7
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 66,
+                                lineNumber: 67,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 63,
+                        lineNumber: 64,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 76,
+                        lineNumber: 77,
                         columnNumber: 7
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36791,14 +36815,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 83,
+                                                                lineNumber: 84,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 83,
+                                                        lineNumber: 84,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36807,7 +36831,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 86,
+                                                        lineNumber: 87,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36815,39 +36839,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 88,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 89,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 89,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 90,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 90,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 87,
+                                                        lineNumber: 88,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 82,
+                                                lineNumber: 83,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 81,
+                                            lineNumber: 82,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36864,14 +36888,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 95,
+                                                                lineNumber: 96,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 95,
+                                                        lineNumber: 96,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36880,7 +36904,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 98,
+                                                        lineNumber: 99,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36888,39 +36912,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 100,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 101,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 101,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 102,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 102,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 99,
+                                                        lineNumber: 100,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 94,
+                                                lineNumber: 95,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 93,
+                                            lineNumber: 94,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36937,14 +36961,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 107,
+                                                                lineNumber: 108,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 107,
+                                                        lineNumber: 108,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -36953,7 +36977,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 110,
+                                                        lineNumber: 111,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36961,39 +36985,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 112,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 113,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 113,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 114,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 114,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 111,
+                                                        lineNumber: 112,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 106,
+                                                lineNumber: 107,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 105,
+                                            lineNumber: 106,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37010,14 +37034,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 120,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 119,
+                                                        lineNumber: 120,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37026,7 +37050,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 122,
+                                                        lineNumber: 123,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37034,39 +37058,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 124,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 125,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 125,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 126,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 126,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 123,
+                                                        lineNumber: 124,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 118,
+                                                lineNumber: 119,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 117,
+                                            lineNumber: 118,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37083,14 +37107,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 131,
+                                                                lineNumber: 132,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 131,
+                                                        lineNumber: 132,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37099,7 +37123,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 134,
+                                                        lineNumber: 135,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37109,7 +37133,7 @@ const WishlistPage = ()=>{
                                                                 children: "Item Name"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 136,
+                                                                lineNumber: 137,
                                                                 columnNumber: 9
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -37117,40 +37141,40 @@ const WishlistPage = ()=>{
                                                                     children: "Add to Cart"
                                                                 }, void 0, false, {
                                                                     fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 137,
+                                                                    lineNumber: 138,
                                                                     columnNumber: 12
                                                                 }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 137,
+                                                                lineNumber: 138,
                                                                 columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 135,
+                                                        lineNumber: 136,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 130,
+                                                lineNumber: 131,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 129,
+                                            lineNumber: 130,
                                             columnNumber: 7
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 80,
+                                    lineNumber: 81,
                                     columnNumber: 5
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 79,
+                                lineNumber: 80,
                                 columnNumber: 5
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37172,14 +37196,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 150,
+                                                                lineNumber: 151,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 150,
+                                                        lineNumber: 151,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37188,7 +37212,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 153,
+                                                        lineNumber: 154,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37196,39 +37220,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 155,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 156,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 156,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 157,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 157,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 154,
+                                                        lineNumber: 155,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 149,
+                                                lineNumber: 150,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 148,
+                                            lineNumber: 149,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37245,14 +37269,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 162,
+                                                                lineNumber: 163,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 162,
+                                                        lineNumber: 163,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37261,7 +37285,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 165,
+                                                        lineNumber: 166,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37269,39 +37293,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 167,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 168,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 168,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 169,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 169,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 166,
+                                                        lineNumber: 167,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 161,
+                                                lineNumber: 162,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 160,
+                                            lineNumber: 161,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37318,14 +37342,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 174,
+                                                                lineNumber: 175,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 174,
+                                                        lineNumber: 175,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37334,7 +37358,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 177,
+                                                        lineNumber: 178,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37342,39 +37366,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 179,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 180,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 180,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 181,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 181,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 178,
+                                                        lineNumber: 179,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 173,
+                                                lineNumber: 174,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 172,
+                                            lineNumber: 173,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37391,14 +37415,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 186,
+                                                                lineNumber: 187,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 186,
+                                                        lineNumber: 187,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37407,7 +37431,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 189,
+                                                        lineNumber: 190,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37415,39 +37439,39 @@ const WishlistPage = ()=>{
                                                         children: [
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
                                                                 children: "Item Name"
-                                                            }, void 0, false, {
-                                                                fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 191,
-                                                                columnNumber: 9
-                                                            }, undefined),
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                                    children: "Add to Cart"
-                                                                }, void 0, false, {
-                                                                    fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 192,
-                                                                    columnNumber: 12
-                                                                }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
                                                                 lineNumber: 192,
                                                                 columnNumber: 9
+                                                            }, undefined),
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                                    children: "Add to Cart"
+                                                                }, void 0, false, {
+                                                                    fileName: "components/WishlistPage/index.jsx",
+                                                                    lineNumber: 193,
+                                                                    columnNumber: 12
+                                                                }, undefined)
+                                                            }, void 0, false, {
+                                                                fileName: "components/WishlistPage/index.jsx",
+                                                                lineNumber: 193,
+                                                                columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 190,
+                                                        lineNumber: 191,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 185,
+                                                lineNumber: 186,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 184,
+                                            lineNumber: 185,
                                             columnNumber: 7
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37464,14 +37488,14 @@ const WishlistPage = ()=>{
                                                                 className: "logo-position"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 198,
+                                                                lineNumber: 199,
                                                                 columnNumber: 36
                                                             }, undefined),
                                                             " "
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 198,
+                                                        lineNumber: 199,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     "\xa0",
@@ -37480,7 +37504,7 @@ const WishlistPage = ()=>{
                                                         children: "$19.95"
                                                     }, void 0, false, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 201,
+                                                        lineNumber: 202,
                                                         columnNumber: 9
                                                     }, undefined),
                                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37490,7 +37514,7 @@ const WishlistPage = ()=>{
                                                                 children: "Item Name"
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 203,
+                                                                lineNumber: 204,
                                                                 columnNumber: 9
                                                             }, undefined),
                                                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -37498,46 +37522,46 @@ const WishlistPage = ()=>{
                                                                     children: "Add to Cart"
                                                                 }, void 0, false, {
                                                                     fileName: "components/WishlistPage/index.jsx",
-                                                                    lineNumber: 204,
+                                                                    lineNumber: 205,
                                                                     columnNumber: 12
                                                                 }, undefined)
                                                             }, void 0, false, {
                                                                 fileName: "components/WishlistPage/index.jsx",
-                                                                lineNumber: 204,
+                                                                lineNumber: 205,
                                                                 columnNumber: 9
                                                             }, undefined)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "components/WishlistPage/index.jsx",
-                                                        lineNumber: 202,
+                                                        lineNumber: 203,
                                                         columnNumber: 9
                                                     }, undefined)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "components/WishlistPage/index.jsx",
-                                                lineNumber: 197,
+                                                lineNumber: 198,
                                                 columnNumber: 7
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "components/WishlistPage/index.jsx",
-                                            lineNumber: 196,
+                                            lineNumber: 197,
                                             columnNumber: 7
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 147,
+                                    lineNumber: 148,
                                     columnNumber: 5
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "components/WishlistPage/index.jsx",
-                                lineNumber: 146,
+                                lineNumber: 147,
                                 columnNumber: 5
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 77,
+                        lineNumber: 78,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37550,7 +37574,7 @@ const WishlistPage = ()=>{
                                     children: "\xab"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 215,
+                                    lineNumber: 216,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37558,7 +37582,7 @@ const WishlistPage = ()=>{
                                     children: "1"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 216,
+                                    lineNumber: 217,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37567,7 +37591,7 @@ const WishlistPage = ()=>{
                                     children: "2"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 217,
+                                    lineNumber: 218,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37575,7 +37599,7 @@ const WishlistPage = ()=>{
                                     children: "3"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 218,
+                                    lineNumber: 219,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37583,7 +37607,7 @@ const WishlistPage = ()=>{
                                     children: "4"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 219,
+                                    lineNumber: 220,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37591,7 +37615,7 @@ const WishlistPage = ()=>{
                                     children: "5"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 220,
+                                    lineNumber: 221,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37599,7 +37623,7 @@ const WishlistPage = ()=>{
                                     children: "6"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 221,
+                                    lineNumber: 222,
                                     columnNumber: 7
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -37607,24 +37631,24 @@ const WishlistPage = ()=>{
                                     children: "\xbb"
                                 }, void 0, false, {
                                     fileName: "components/WishlistPage/index.jsx",
-                                    lineNumber: 222,
+                                    lineNumber: 223,
                                     columnNumber: 7
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "components/WishlistPage/index.jsx",
-                            lineNumber: 214,
+                            lineNumber: 215,
                             columnNumber: 7
                         }, undefined)
                     }, void 0, false, {
                         fileName: "components/WishlistPage/index.jsx",
-                        lineNumber: 213,
+                        lineNumber: 214,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/WishlistPage/index.jsx",
-                lineNumber: 60,
+                lineNumber: 61,
                 columnNumber: 5
             }, undefined)
         ]
