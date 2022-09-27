@@ -21,9 +21,9 @@ const NewListingPage = () => {
         name: values.itemName,
         description: values.itemDescription,
         price: values.itemPrice,
-        category_ids: values.itemCategory,
-        group_ids: values.itemGroup,
-        public_visibility: values.itemVisbility,
+        category_ids: categoryOptions.value,
+        group_ids: groupOptions.value,
+        public_visibility: visibilityOptions.value,
     })
     .then(function (response){
         console.log(response);
@@ -87,6 +87,9 @@ const NewListingPage = () => {
         console.log(event.target.value);
         setSelectedGroup(event.target.value);
       };
+
+
+     {/* stuff for image upload*/} 
     
     return (
     <div className="parent" >
@@ -152,6 +155,7 @@ const NewListingPage = () => {
                     {option.text}
                 </option>
                 ))}
+                
       </select>
 
          {/* select on change for dropdown button*/}

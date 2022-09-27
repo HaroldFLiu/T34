@@ -34714,9 +34714,9 @@ const NewListingPage = ()=>{
             name: values.itemName,
             description: values.itemDescription,
             price: values.itemPrice,
-            category_ids: values.itemCategory,
-            group_ids: values.itemGroup,
-            public_visibility: values.itemVisbility
+            category_ids: categoryOptions.value,
+            group_ids: groupOptions.value,
+            public_visibility: visibilityOptions.value
         }).then(function(response) {
             console.log(response);
         }).catch(function(error) {
@@ -34835,7 +34835,7 @@ const NewListingPage = ()=>{
                         children: " Market34"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 95,
+                        lineNumber: 98,
                         columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34843,7 +34843,7 @@ const NewListingPage = ()=>{
                         children: "Home"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 96,
+                        lineNumber: 99,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34852,7 +34852,7 @@ const NewListingPage = ()=>{
                         children: "Sell"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 97,
+                        lineNumber: 100,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34860,7 +34860,7 @@ const NewListingPage = ()=>{
                         children: "Groups"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 98,
+                        lineNumber: 101,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34868,7 +34868,7 @@ const NewListingPage = ()=>{
                         children: "Wishlist"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 99,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34879,7 +34879,7 @@ const NewListingPage = ()=>{
                                 children: "Log In"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 102,
+                                lineNumber: 105,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
@@ -34887,7 +34887,7 @@ const NewListingPage = ()=>{
                                 children: "Register"
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 103,
+                                lineNumber: 106,
                                 columnNumber: 7
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34895,19 +34895,19 @@ const NewListingPage = ()=>{
                                 placeholder: "Search.."
                             }, void 0, false, {
                                 fileName: "components/NewListingPage/index.jsx",
-                                lineNumber: 104,
+                                lineNumber: 107,
                                 columnNumber: 7
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 100,
+                        lineNumber: 103,
                         columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 94,
+                lineNumber: 97,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34920,23 +34920,23 @@ const NewListingPage = ()=>{
                             children: " and start selling right away!"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 110,
+                            lineNumber: 113,
                             columnNumber: 49
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 110,
+                    lineNumber: 113,
                     columnNumber: 7
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 109,
+                lineNumber: 112,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 113,
+                lineNumber: 116,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34949,18 +34949,18 @@ const NewListingPage = ()=>{
                         children: " Publish Item"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 118,
+                        lineNumber: 121,
                         columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 114,
+                lineNumber: 117,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 120,
+                lineNumber: 123,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34970,20 +34970,20 @@ const NewListingPage = ()=>{
                         className: "square-pic"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 123,
+                        lineNumber: 126,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         children: " Upload Image"
                     }, void 0, false, {
                         fileName: "components/NewListingPage/index.jsx",
-                        lineNumber: 124,
+                        lineNumber: 127,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 122,
+                lineNumber: 125,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34996,7 +34996,7 @@ const NewListingPage = ()=>{
                             children: " Item Name:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 133,
+                            lineNumber: 136,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35007,7 +35007,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 134,
+                            lineNumber: 137,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35015,7 +35015,7 @@ const NewListingPage = ()=>{
                             children: " Price:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 137,
+                            lineNumber: 140,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35026,7 +35026,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 138,
+                            lineNumber: 141,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35034,7 +35034,7 @@ const NewListingPage = ()=>{
                             children: " Item Description:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 141,
+                            lineNumber: 144,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -35045,7 +35045,7 @@ const NewListingPage = ()=>{
                                 })
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 142,
+                            lineNumber: 145,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35053,7 +35053,7 @@ const NewListingPage = ()=>{
                             children: " Item Category:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 148,
+                            lineNumber: 151,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35065,12 +35065,12 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 151,
+                                    lineNumber: 154,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 149,
+                            lineNumber: 152,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35078,7 +35078,7 @@ const NewListingPage = ()=>{
                             children: " Item Visibility:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 159,
+                            lineNumber: 163,
                             columnNumber: 10
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35090,12 +35090,12 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 162,
+                                    lineNumber: 166,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 160,
+                            lineNumber: 164,
                             columnNumber: 10
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -35103,7 +35103,7 @@ const NewListingPage = ()=>{
                             children: " Group Select:"
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 170,
+                            lineNumber: 174,
                             columnNumber: 8
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("select", {
@@ -35115,29 +35115,29 @@ const NewListingPage = ()=>{
                                     children: option.text
                                 }, option.value, false, {
                                     fileName: "components/NewListingPage/index.jsx",
-                                    lineNumber: 173,
+                                    lineNumber: 177,
                                     columnNumber: 17
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "components/NewListingPage/index.jsx",
-                            lineNumber: 171,
+                            lineNumber: 175,
                             columnNumber: 10
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "components/NewListingPage/index.jsx",
-                    lineNumber: 129,
+                    lineNumber: 132,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "components/NewListingPage/index.jsx",
-                lineNumber: 128,
+                lineNumber: 131,
                 columnNumber: 5
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "components/NewListingPage/index.jsx",
-        lineNumber: 92,
+        lineNumber: 95,
         columnNumber: 5
     }, undefined);
 };
