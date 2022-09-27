@@ -146,12 +146,20 @@ const NewListingPage = () => {
     <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
     <hr />
-       {/*Upload Image box and button*/}    
+       {/*Upload Image box and button handle uploading img*/}    
     <div class="left-box">
         <div className="square-pic">  
+        <label htmlFor="upload-button">
             <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+        </label>  
+        <input
+        type="file"
+        id="upload-button"
+        style={{ display: "none" }}
+        onChange={handleChange}
+      />  
         </div>
-        
+
     <button> Upload Image</button>    
     </div>
     
