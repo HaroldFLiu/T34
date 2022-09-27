@@ -141,7 +141,7 @@ input:focus {
 
 .navbar {
   width: 100%;
-  background-color: #333;
+  background-color: #5a896a;
   position: fixed;
   top: 0;
   overflow: hidden;
@@ -160,7 +160,7 @@ input:focus {
 
 .navbar a:hover {
   color: #000;
-  background: #ddd;
+  background: #a4df9a;
 }
 
 .main {
@@ -181,7 +181,7 @@ input:focus {
 
 .navbar a.active {
   color: #fff;
-  background-color: #505050;
+  background-color: #33532c;
 }
 
 .navbar input[type="text"] {
@@ -274,7 +274,7 @@ input:focus {
   text-align: center;
   cursor: pointer;
   width: 100%;
-  background-color: #000;
+  background-color: #5a896a;
   border: none;
   outline: 0;
   padding: 12px;
@@ -294,7 +294,9 @@ input:focus {
 }
 
 .card button:hover {
-  opacity: .7;
+  opacity: 1;
+  color: #000;
+  background: #a4df9a;
 }
 
 .img-wrap {
