@@ -12662,9 +12662,7 @@ input[type="asd"] {
 
 .square-pic {
   width: 100%;
-  height: 0;
-  background-color: #ccc;
-  padding-top: 100%;
+  height: 100%;
 }
 
 select[type="category-listing"] {
@@ -12677,6 +12675,12 @@ select[type="category-listing"] {
   margin-top: 2px;
   margin-bottom: 6px;
   padding: 6px;
+}
+
+.upload-placeholder {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
 }
 
 

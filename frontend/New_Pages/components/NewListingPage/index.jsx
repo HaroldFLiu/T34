@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
-import logo from "../../dist/img/t34-logo.jpg";
+import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 
 const NewListingPage = () => {
 
@@ -90,6 +90,31 @@ const NewListingPage = () => {
 
 
      {/* stuff for image upload*/} 
+
+     const [image, setImage] = useState({ preview: "", raw: "" });
+
+     const handleChange = e => {
+       if (e.target.files.length) {
+         setImage({
+           preview: URL.createObjectURL(e.target.files[0]),
+           raw: e.target.files[0]
+         });
+       }
+     };
+   
+     const handleUpload = async e => {
+       e.preventDefault();
+       const formData = new FormData();
+       formData.append("image", image.raw);
+   
+       await fetch("YOUR_URL", {
+         method: "POST",
+         headers: {
+           "Content-Type": "multipart/form-data"
+         },
+         body: formData
+       });
+     };
     
     return (
     <div className="parent" >
@@ -123,8 +148,11 @@ const NewListingPage = () => {
     <hr />
        {/*Upload Image box and button*/}    
     <div class="left-box">
-        <div className="square-pic"></div>
-        <button> Upload Image</button>
+        <div className="square-pic">  
+            <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+        </div>
+        
+    <button> Upload Image</button>    
     </div>
     
     {/* form to input new listing data*/}
