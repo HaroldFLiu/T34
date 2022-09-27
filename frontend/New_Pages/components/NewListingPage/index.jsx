@@ -52,11 +52,40 @@ const NewListingPage = () => {
 
       ];
     
-      const [selected, setSelected] = useState(categoryOptions[0].value);
-    
-      const handleChange = event => {
+      {/* options for visibility*/}
+      const visibilityOptions = [
+        {value: '', text: '---Select sell visbility---'},
+        {value: 'public', text: 'Public'},
+        {value: 'private', text: 'Private'},
+
+      ];
+
+      const groupOptions = [
+        {value: '', text: '---Select group if applicable---'},
+        {value: 'group1', text: 'Test Group 1'},
+        {value: 'group2', text: 'Test Group 2'},
+
+      ];
+
+     {/* set selected for each drop down*/}
+      const [selectedVis, setSelectedVis] = useState(visibilityOptions[0].value);
+      const [selectedCat, setSelectedCat] = useState(categoryOptions[0].value);
+      const [selectedGroup, setSelectedGroup] = useState(groupOptions[0].value);
+
+      {/* handle onchange for each drop down state*/}
+      const handleChangeCat = event => {
         console.log(event.target.value);
-        setSelected(event.target.value);
+        setSelectedCat(event.target.value);
+      };
+    
+      const handleChangeVis = event => {
+        console.log(event.target.value);
+        setSelectedVis(event.target.value);
+      };
+
+      const handleChangeGroup = event => {
+        console.log(event.target.value);
+        setSelectedGroup(event.target.value);
       };
     
     return (
@@ -117,7 +146,7 @@ const NewListingPage = () => {
              {/* select on change for dropdown button*/}
 
             <label for="category-name"> Item Category:</label>
-            <select type="category-listing" value={selected} onChange={handleChange}>
+            <select type="category-listing" value={selectedCat} onChange={handleChangeCat}>
                 {categoryOptions.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.text}
@@ -125,22 +154,29 @@ const NewListingPage = () => {
                 ))}
       </select>
 
-        <div class="dropdown">
-                <button class="dropbtn">Privacy</button>
-                <div class="dropdown-content">
-                    <a href="#">Public</a>
-                    <a href="#">Private</a>       
-                </div>
-        </div>
+         {/* select on change for dropdown button*/}
 
-        <div class="dropdown">
-                <button class="dropbtn">Group Select (if applicable)</button>
-                <div class="dropdown-content">
-                    <a href="#">Display Groups you are in</a>
-                    <a href="#">Display Groups you are in</a>
-                    <a href="#">Display Groups you are in</a>
-                </div>
-        </div>
+         <label for="visbility-list"> Item Visibility:</label>
+         <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
+                {visibilityOptions.map(option => (
+                <option key={option.value} value={option.value}>
+                    {option.text}
+                </option>   
+                ))}
+      </select>
+
+       {/* select on change for dropdown button*/}
+
+       <label for="groups-list"> Group Select:</label>
+         <select type="category-listing" value={selectedGroup} onChange={handleChangeGroup}>
+                {groupOptions.map(option => (
+                <option key={option.value} value={option.value}>
+                    {option.text}
+                </option>   
+                ))}
+      </select>
+
+        
     </form> 
     </div>
        
