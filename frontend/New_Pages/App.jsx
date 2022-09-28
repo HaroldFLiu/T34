@@ -11,6 +11,7 @@ import WishlistPage from "./components/WishlistPage";
 import GroupPage from "./components/GroupPage";
 import CreateGroupPage from "./components/CreateGroupPage";
 import MyGroupPage from "./components/MyGroupPage";
+import MemberListPage from "./components/MemberListPage";
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
         </Route>
         <Route path="/my-group-page">
           <MyGroupPage/>
+        </Route>
+        <Route path="/member-list-page">
+          <MemberListPage/>
         </Route>
 
       </Switch>
