@@ -12,21 +12,6 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
-/* category icons */
-import {FaCar} from 'react-icons/fa';
-import {FaTshirt} from 'react-icons/fa';
-import {BsPlugFill} from 'react-icons/bs';
-import {MdFamilyRestroom} from 'react-icons/md';
-import {IoIosLeaf} from 'react-icons/io';
-import {FaChessKnight} from 'react-icons/fa';
-import {GiSofa} from 'react-icons/gi';
-import {FaHammer} from 'react-icons/fa';
-import {FaGuitar} from 'react-icons/fa';
-import {FaPenFancy} from 'react-icons/fa';
-import {FaDog} from 'react-icons/fa';
-import {MdSportsFootball} from 'react-icons/md';
-import {MdSmartToy} from 'react-icons/md';
-
 const NewListingPage = () => {
 
     const [values, setValues] = useState({
@@ -103,20 +88,26 @@ const NewListingPage = () => {
       const [selectedGroup, setSelectedGroup] = useState(groupOptions[0].value);
 
       {/* handle onchange for each drop down state*/}
-      const handleChangeCat = event => {
-        console.log(event.target.value);
-        setSelectedCat(event.target.value);
+      const handleChangeCat = e => {
+        console.log(e.target.value);
+        setSelectedCat(e.target.value);
+        setValues({...values, itemCategory:e.target.value})
       };
     
-      const handleChangeVis = event => {
-        console.log(event.target.value);
-        setSelectedVis(event.target.value);
+      const handleChangeVis = e => {
+        setValues({...values, itemVisbility:e.target.value})
+        console.log(e.target.value);
+        setSelectedVis(e.target.value);
+      };
+     
+      const handleChangeGroup = e => {
+        setValues({...values, itemGroup:e.target.value})
+        console.log(e.target.value);
+        setSelectedGroup(e.target.value);
       };
 
-      const handleChangeGroup = event => {
-        console.log(event.target.value);
-        setSelectedGroup(event.target.value);
-      };
+      console.log(values);
+      console.log(categoryOptions.value);
 
 
      {/* stuff for image upload*/} 

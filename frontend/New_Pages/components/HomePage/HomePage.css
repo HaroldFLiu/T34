@@ -8,6 +8,9 @@
   left:0;
   right: 0;
   width: 100%; /* Full width */
+  /* UNCOMMENT IF YOU WANT A FOLLOWING NAV BAR
+  position: fixed;
+  z-index: 1; */
 }
 
 /* Links inside the navbar */
@@ -140,10 +143,6 @@
   margin-top: 40px;
 }
 
-.wrapper-new{
-  margin-top: 5px;
-}
-
 /* Product Card CSS FONT WAS PREVIOUSLY ARIEL*/
 
 .card {
@@ -269,7 +268,7 @@
 }
 
 .icon-flipped{
-  transform: scaleX(-1);
+  transform: scaleX(-1); 
   position: relative;
   bottom: 6px;
 }
