@@ -8,7 +8,6 @@ import SignUp from "./components/SignUpPage";
 import NewListings from "./components/NewListingPage";
 import SellPage from "./components/SellPage";
 import WishlistPage from "./components/WishlistPage";
-import ProductPage from "./components/ProductPage";
 import GroupPage from "./components/GroupPage";
 import CreateGroupPage from "./components/CreateGroupPage"
 
@@ -33,9 +32,6 @@ function App() {
         </Route>
         <Route path="/wishlist-page">
           <WishlistPage/>
-        </Route>
-        <Route path="/product-page">
-          <ProductPage/>
         </Route>
         <Route path="/group-page">
           <GroupPage/>

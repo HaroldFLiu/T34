@@ -1,12 +1,16 @@
 @import url('http://fonts.cdnfonts.com/css/tienne');
 
-/* The navigation bar */
+/* The navigation bar old color: 333 REMOVED  position: fixed; */
 .navbar {
   overflow: hidden;
-  background-color: #333;
-  position: fixed; /* Set the navbar to fixed position */
+  background-color: #5A896A;
   top: 0; /* Position the navbar at the top of the page */
+  left:0;
+  right: 0;
   width: 100%; /* Full width */
+  /* UNCOMMENT IF YOU WANT A FOLLOWING NAV BAR
+  position: fixed;
+  z-index: 1; */
 }
 
 /* Links inside the navbar */
@@ -23,7 +27,7 @@
 
 /* Change background on mouse-over */
 .navbar a:hover {
-  background: #ddd;
+  background: #A4DF9A;
   color: black;
 }
 
@@ -46,9 +50,9 @@
   font-size: larger;
 }
 
-/* Add a color to the active/current link */
+/* Add a color to the active/current link old: 505050 */
 .navbar a.active {
-  background-color: #505050;
+  background-color: #33532C;
   color: white;
 }
 
@@ -134,6 +138,7 @@
   margin-top: -10px;
 }
 
+/* wrapper to move products display up change to 20px later! */ 
 .wrapper{
   margin-top: 40px;
 }
@@ -159,7 +164,7 @@
   outline: 0;
   padding: 12px;
   color: white;
-  background-color: #000;
+  background-color: #5A896A;
   text-align: center;
   cursor: pointer;
   width: 100%;
@@ -180,7 +185,9 @@
 }
 
 .card button:hover {
-  opacity: 0.7;
+  opacity: 1;
+  background: #A4DF9A;
+  color: black;
 }
 
 /* moves the img in the product card down abit */
@@ -210,9 +217,8 @@
 /* PAGANATION CSS */
 .center-next {
   text-align: center;
-  padding-top: 1%;
+  padding-top: 2%;
   padding-bottom: 2%;
-  padding-left: 30%;
 }
 
 .pagination {
@@ -245,7 +251,7 @@
 .card a,
 .card a:hover{
   text-decoration: none;
-  color: #000;
+  color: black;
 }
 
 /* need to css to display products wrapped nicely CHANGED TO FIT*/
@@ -253,7 +259,6 @@
   border-width:2px;
   display: inline-block;
   width: 20%;
-
 }
 
 /* icon display and positionals */
@@ -263,7 +268,7 @@
 }
 
 .icon-flipped{
-  transform: scaleX(-1);
+  transform: scaleX(-1); 
   position: relative;
   bottom: 6px;
 }

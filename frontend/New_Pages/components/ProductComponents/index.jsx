@@ -45,6 +45,10 @@ return(
             <div className="item-cart">
             <h3>{post.name}</h3>
             <p><button>Add to Cart</button></p>
+            {/*added this line to test */}
+            description: {post.description}
+            &nbsp;
+            category: {post.category_ids}
             </div>
             </a>
           </div>
