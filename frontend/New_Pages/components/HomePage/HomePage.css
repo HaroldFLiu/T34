@@ -1,11 +1,12 @@
 @import url('http://fonts.cdnfonts.com/css/tienne');
 
-/* The navigation bar old color: 333*/
+/* The navigation bar old color: 333 REMOVED  position: fixed; */
 .navbar {
   overflow: hidden;
   background-color: #5A896A;
-  position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
+  left:0;
+  right: 0;
   width: 100%; /* Full width */
 }
 
@@ -263,9 +264,10 @@
   position: relative;
   bottom: 5px
 }
-
+/*
 .icon-flipped{
-  transform: scaleX(-1);
+  /*transform: scaleX(-1);
   position: relative;
   bottom: 6px;
 }
+*/
