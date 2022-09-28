@@ -4,17 +4,28 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
 /* icon imports */
-import {AiOutlineHome, AiOutlineUsergroupAdd, AiOutlineLock} from 'react-icons/ai';
+import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups, MdFamilyRestroom, MdSportsFootball, MdSmartToy} from 'react-icons/md';
+import {MdOutlineGroups} from 'react-icons/md';
+import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
+import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 /* category icons */
-import {FaCar, FaTshirt, FaChessKnight, FaGuitar, FaHammer, FaPenFancy, FaDog} from 'react-icons/fa';
+import {FaCar} from 'react-icons/fa';
+import {FaTshirt} from 'react-icons/fa';
 import {BsPlugFill} from 'react-icons/bs';
+import {MdFamilyRestroom} from 'react-icons/md';
 import {IoIosLeaf} from 'react-icons/io';
+import {FaChessKnight} from 'react-icons/fa';
 import {GiSofa} from 'react-icons/gi';
+import {FaHammer} from 'react-icons/fa';
+import {FaGuitar} from 'react-icons/fa';
+import {FaPenFancy} from 'react-icons/fa';
+import {FaDog} from 'react-icons/fa';
+import {MdSportsFootball} from 'react-icons/md';
+import {MdSmartToy} from 'react-icons/md';
 
 const HomePage = () => {
 /*
