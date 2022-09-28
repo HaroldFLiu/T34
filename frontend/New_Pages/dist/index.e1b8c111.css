@@ -5,6 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800";
 @import "http://fonts.cdnfonts.com/css/tienne";
 @import "http://fonts.cdnfonts.com/css/tienne";
+@import "http://fonts.cdnfonts.com/css/tienne";
 .screen a {
   text-decoration: none;
   display: contents;
@@ -12165,9 +12166,10 @@ textarea.form-control-lg {
 
 .navbar {
   width: 100%;
-  background-color: #333;
-  position: fixed;
+  background-color: #5a896a;
   top: 0;
+  left: 0;
+  right: 0;
   overflow: hidden;
 }
 
@@ -12184,7 +12186,7 @@ textarea.form-control-lg {
 
 .navbar a:hover {
   color: #000;
-  background: #ddd;
+  background: #a4df9a;
 }
 
 .main {
@@ -12205,7 +12207,7 @@ textarea.form-control-lg {
 
 .navbar a.active {
   color: #fff;
-  background-color: #505050;
+  background-color: #33532c;
 }
 
 .navbar input[type="text"] {
@@ -12298,7 +12300,7 @@ textarea.form-control-lg {
   text-align: center;
   cursor: pointer;
   width: 100%;
-  background-color: #000;
+  background-color: #5a896a;
   border: none;
   outline: 0;
   padding: 12px;
@@ -12318,7 +12320,9 @@ textarea.form-control-lg {
 }
 
 .card button:hover {
-  opacity: .7;
+  opacity: 1;
+  color: #000;
+  background: #a4df9a;
 }
 
 .img-wrap {
@@ -12343,9 +12347,8 @@ textarea.form-control-lg {
 
 .center-next {
   text-align: center;
-  padding-top: 1%;
+  padding-top: 2%;
   padding-bottom: 2%;
-  padding-left: 30%;
 }
 
 .pagination {
@@ -12696,8 +12699,6 @@ select[type="category-listing"] {
   display: block;
 }
 
-
-
 h4, h3, h5 {
   font-family: Tienne, sans-serif;
 }
@@ -12738,6 +12739,10 @@ h4, h3, h5 {
 .radio-public {
   float: left;
   padding-left: 100px;
+}
+
+h4, h3, h5 {
+  font-family: Tienne, sans-serif;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

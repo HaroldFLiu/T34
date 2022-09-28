@@ -62,7 +62,7 @@ const CreateGroupPage = () => {
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="#"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

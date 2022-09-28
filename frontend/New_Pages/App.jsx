@@ -9,7 +9,8 @@ import NewListings from "./components/NewListingPage";
 import SellPage from "./components/SellPage";
 import WishlistPage from "./components/WishlistPage";
 import GroupPage from "./components/GroupPage";
-import CreateGroupPage from "./components/CreateGroupPage"
+import CreateGroupPage from "./components/CreateGroupPage";
+import MyGroupPage from "./components/MyGroupPage";
 
 function App() {
   return (
@@ -38,6 +39,9 @@ function App() {
         </Route>
         <Route path="/create-group-page">
           <CreateGroupPage/>
+        </Route>
+        <Route path="/my-group-page">
+          <MyGroupPage/>
         </Route>
 
       </Switch>
