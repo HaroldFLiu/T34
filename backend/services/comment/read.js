@@ -10,7 +10,7 @@ const readById = async (commentId) => {
   }
   const comment = await Comment.findById(commentId);
 
-  if (isNilOrEmpty(Comment)) {
+  if (isNilOrEmpty(comment)) {
     console.log(`Cannot find Comment with id: ${commentId}`);
   }
 
@@ -22,11 +22,11 @@ const readByItem = async (itemId) => {
     return undefined;
   }
   const item = await Item.findById(itemId);
+
   if (isNilOrEmpty(item.comments)) {
     console.log('Item has no comments');
   }
   return item.comments;
-
-
 }
+
 module.exports = { readById, readByItem };

@@ -5,6 +5,7 @@ const cloudinary = require('../middleware/cloudinary');
 const {
     getGroups,
     getGroup,
+    getGroupItems,
     deleteGroup,
 } = require('../controllers/groupController')
 
@@ -16,7 +17,7 @@ const router = express.Router();
 router.get('/groups', getGroups);
 
 // GET a group
-router.get('/groups/:group_id', getGroup);
+router.get('/groups/:group_id', getGroup, getGroupItems);
 
 // POST a group
 router.post('/groups', upload.single('image'), async (req, res) => {

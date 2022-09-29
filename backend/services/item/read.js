@@ -16,23 +16,22 @@ const readById = async (itemId) => {
   return item;
 };
 
-const readByCategory = async (categoryId) => {
-  const items = await Item.find();
+const readByCategory = async (categoryId, items) => {
   const filtered = items.filter((x) => x.category_ids.includes(categoryId));
   
   return filtered;
 };
 
-const readByPriceAsc = async () => {
-  const items = await Item.find().sort({ price: 'asc' });
+const readByPriceAsc = async (items) => {
+  const filtered = items.sort({ price: 'asc' });
 
-  return items;
+  return filtered;
 }
 
-const readByPriceDesc = async () => {
-  const items = await Item.find().sort({ price: 'desc' });
+const readByPriceDesc = async (items) => {
+  const filtered = items.sort({ price: 'desc' });
 
-  return items;
+  return filtered;
 }
 
 const readAll = async () => {
@@ -53,6 +52,12 @@ const readByGroup = async (groupId) => {
   return filtered;
 };
 
+const readItemsBySeller = async (sellerId) => {
+  const items = await Item.find();
+  const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
+
+  return filtered;
+}
 
 module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems, readByGroup };
+  readAll, readPublicItems, readByGroup, readItemsBySeller };

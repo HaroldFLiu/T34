@@ -3,208 +3,173 @@ require('dotenv').config();
 
 const { Item } = require('../models/item');
 const { Category } = require('../models/category');
+const { Group } = require('../models/group');
+const { User } = require('../models/user');
 
 const itemService = require('../services/item');
 const categoryService = require('../services/category');
+const groupService = require('../services/group');
+const userService = require('../services/user');
 
 describe('ItemService', () => {
   let connection = null;
-  let item1 = null;
-  let item1Info = null;
-  let item1UpdateInfo = null
-  let item2 = null;
-  let item2Info = null;
-  let item3 = null;
-  let item3Info = null;
-  let category1 = null;
-  let category2 = null;
-  let category1Info = null;
-  let category2Info = null;
-  let category_ids = null;
+  let item = null;
+  let itemInfo = null;
+  let itemUpdateInfo1 = null
+  let itemUpdateInfo2 = null;
+  let category = null;
+  let categoryInfo = {
+    name: "Fruit",
+  }
+
+  let user = null;
+  let userInfo = {
+    first_name: "Sue",
+    last_name: "Green",
+    email: "sfwfwef3@spacewax.com",
+    password: "magna",
+  }
+
+  let group = null;
+  let groupInfo = null;
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI);
     await Item.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
+
+    user = await userService.create(userInfo);
+
+    groupInfo = {
+      name: 'Cars',
+      description: 'Cars go fast',
+      members: [user._id]
+    }
+
+    group = await groupService.create(groupInfo);
+    category = await categoryService.create(categoryInfo);
   });
 
   afterAll(async () => {
     await Item.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
     await mongoose.disconnect();
   });
 
   test('Create Item', async () => {
-    category1Info = {
-      name : 'Furniture'
-    }
-
-    category1 = await categoryService.create(category1Info);
-
-    item1Info = {
-      name: 'Chair',
-      description: 'This is a good chair.',
-      price: 100,
-      category_ids: [category1._id],
-      group_ids: [],
+    itemInfo = {
+      name: "Chair",
+      description: "Sturdy",
+      price: 300,
+      group_ids: [group._id],
+      category_ids: [],
       public_visibility: true,
-      // seller: ,
+      seller_id: user._id,
     }
 
-    item1 = await itemService.create(item1Info);
-    const item1db = await Item.findById(item1._id);
-
-    expect(item1).not.toBeNull();
-    expect(item1db).not.toBeNull();
-    expect(item1db.name).toBe(item1Info.name);
-    expect(item1db.description).toBe(item1Info.description);
-    expect(item1db.price).toBe(item1Info.price);
-    expect(item1db.category_ids).toStrictEqual(item1Info.category_ids);
-    expect(item1db.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(item1db.public_visibility).toBe(item1Info.public_visibility);
-  });
-
-  test('Delete Item', async () => {
-    const deletedItem1 = await itemService.deleteById(item1._id);
-
-    expect(await Item.findById(item1._id)).toBeNull();
-  });
-
-  test('Update Item Information', async () => {
-    item1 = await itemService.create(item1Info);
-
-    item1UpdateInfo = {
-      name: 'Table',
-      description: 'This is a good table.',
-      price: 150,
-      // category: ,
-      // seller: ,
-      public_visibility: false,
-    }
-
-    const updatedItem1 = await itemService.updateById(item1._id, item1UpdateInfo);
-    const updatedItem1db = await Item.findById(item1._id);
-
-    expect(item1).not.toBeNull();
-    expect(updatedItem1).not.toBeNull();
-    expect(updatedItem1db).not.toBeNull();
-    expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
-    expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
-    expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
-    expect(updatedItem1db.category_ids).toStrictEqual(item1Info.category_ids);
-    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo.public_visibility);
-  });
-
-  
-  test('Add A Category', async () => {
-    category2Info = {
-      name : 'Fruit'
-    }
-
-    category2 = await categoryService.create(category2Info);
-
-    item1UpdateInfo2 = {
-      category_ids: [category1._id, category2._id],
-      public_visibility: false,
-    }
-
-    category_ids = [category1._id, category2._id];
-
-    updateditem1 = await itemService.updateById(item1._id, item1UpdateInfo2);
-
-    const updatedItem1db = await Item.findById(item1._id);
-
-    expect(updateditem1).not.toBeNull();
-    expect(updatedItem1db).not.toBeNull();
-    expect(updatedItem1db).not.toBeNull();
-    expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
-    expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
-    expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
-    expect(updatedItem1db.category_ids).toStrictEqual(item1UpdateInfo2.category_ids);
-    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo2.public_visibility);
-  });
-
-  test('Add A Category 2', async () => {
-    category_ids = [category1._id, category2._id];
-
-    updateditem1 = await itemService.updateById(item1._id, item1UpdateInfo2);
-
-    const updatedItem1db = await Item.findById(item1._id);
-    
-    expect(updateditem1).not.toBeNull();
-    expect(updatedItem1db).not.toBeNull();
-    expect(updatedItem1db).not.toBeNull();
-    expect(updatedItem1db.name).toBe(item1UpdateInfo.name);
-    expect(updatedItem1db.description).toBe(item1UpdateInfo.description);
-    expect(updatedItem1db.price).toBe(item1UpdateInfo.price);
-    expect(updatedItem1db.category_ids).toStrictEqual(item1UpdateInfo2.category_ids);
-    expect(updatedItem1db.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(updatedItem1db.public_visibility).toBe(item1UpdateInfo2.public_visibility);
-  });
-
-  test('Read One Item', async () => {
-    const item = await itemService.readById(item1._id);
-
-    const itemdb = await Item.findById(item1._id);
+    item = await itemService.create(itemInfo);
+    const itemdb = await Item.findById(item._id);
 
     expect(item).not.toBeNull();
     expect(itemdb).not.toBeNull();
+    expect(itemdb.name).toBe(itemInfo.name);
+    expect(itemdb.description).toBe(itemInfo.description);
+    expect(itemdb.price).toBe(itemInfo.price);
+    expect(itemdb.category_ids.length).toBe(itemInfo.category_ids.length);
+    expect(itemdb.group_ids.length).toBe(itemInfo.group_ids.length);
+    expect(itemdb.public_visibility).toBe(itemInfo.public_visibility);
+    expect(itemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+  });
 
-    expect(itemdb._id).toStrictEqual(item1._id);
-    expect(itemdb.name).toBe(item1UpdateInfo.name);
-    expect(itemdb.description).toBe(item1UpdateInfo.description);
-    expect(itemdb.price).toBe(item1UpdateInfo.price);
-    expect(itemdb.category).toBe(item1Info.category);
-    expect(itemdb.category_ids).toStrictEqual(category_ids);
-    expect(itemdb.group_ids).toStrictEqual(item1Info.group_ids);
-    expect(itemdb.public_visibility).toBe(item1UpdateInfo.public_visibility);
+  test('Delete Item', async () => {
+    const deletedItem1 = await itemService.deleteById(item._id);
+
+    expect(await Item.findById(item._id)).toBeNull();
+  });
+
+  test('Update Item Information', async () => {
+    item = await itemService.create(itemInfo);
+
+    itemUpdateInfo1 = {
+      name: 'Table',
+      description: 'This is a good table.',
+      price: 150,
+    }
+
+    const updatedItem = await itemService.updateById(item._id, itemUpdateInfo1);
+    const updatedItemdb = await Item.findById(item._id);
+
+    expect(item).not.toBeNull();
+    expect(updatedItem).not.toBeNull();
+    expect(updatedItemdb).not.toBeNull();
+    expect(updatedItemdb.name).toBe(itemUpdateInfo1.name);
+    expect(updatedItemdb.description).toBe(itemUpdateInfo1.description);
+    expect(updatedItemdb.price).toBe(itemUpdateInfo1.price);
+    expect(updatedItemdb.category_ids.length).toBe(itemInfo.category_ids.length);
+    expect(updatedItemdb.group_ids.length).toStrictEqual(itemInfo.group_ids.length);
+    expect(updatedItemdb.public_visibility).toBe(itemInfo.public_visibility);
+    expect(updatedItemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+  });
+
+  test('Add A Category', async () => {
+    itemUpdateInfo2 = {
+      category_ids: [category._id],
+    }
+
+    updatedItem = await itemService.updateById(item._id, itemUpdateInfo2);
+
+    const updatedItemdb = await Item.findById(item._id);
+
+    expect(updatedItem).not.toBeNull();
+    expect(updatedItemdb).not.toBeNull();
+    expect(updatedItemdb.name).toBe(itemUpdateInfo1.name);
+    expect(updatedItemdb.description).toBe(itemUpdateInfo1.description);
+    expect(updatedItemdb.price).toBe(itemUpdateInfo1.price);
+    expect(updatedItemdb.category_ids.length).toBe(itemUpdateInfo2.category_ids.length);
+    expect(updatedItemdb.group_ids.length).toBe(itemInfo.group_ids.length);
+    expect(updatedItemdb.public_visibility).toBe(itemInfo.public_visibility);
+    expect(updatedItemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+  });
+
+  test('Add A Category 2', async () => {
+    updatedItem = await itemService.updateById(item._id, itemUpdateInfo2);
+
+    const updatedItemdb = await Item.findById(item._id);
+  
+    expect(updatedItem).not.toBeNull();
+    expect(updatedItemdb).not.toBeNull();
+    expect(updatedItemdb.name).toBe(itemUpdateInfo1.name);
+    expect(updatedItemdb.description).toBe(itemUpdateInfo1.description);
+    expect(updatedItemdb.price).toBe(itemUpdateInfo1.price);
+    expect(updatedItemdb.category_ids.length).toBe(itemUpdateInfo2.category_ids.length);
+    expect(updatedItemdb.group_ids.length).toBe(itemInfo.group_ids.length);
+    expect(updatedItemdb.public_visibility).toBe(itemInfo.public_visibility);
+    expect(updatedItemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+  });
+
+  test('Read One Item', async () => {
+    const itemRead = await itemService.readById(item._id);
+
+    const itemdb = await Item.findById(item._id);
+
+    expect(itemRead).not.toBeNull();
+    expect(itemdb).not.toBeNull();
+
+    expect(itemdb.name).toBe(itemUpdateInfo1.name);
+    expect(itemdb.description).toBe(itemUpdateInfo1.description);
+    expect(itemdb.price).toBe(itemUpdateInfo1.price);
+    expect(itemdb.category_ids.length).toBe(itemUpdateInfo2.category_ids.length);
+    expect(itemdb.group_ids.length).toBe(itemInfo.group_ids.length);
+    expect(itemdb.public_visibility).toBe(itemInfo.public_visibility);
+    expect(itemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
   });
 
   test('Read All Items', async () => {
     const items = await itemService.readAll();
-
-    expect(items.length).toBe(1);
-  });
-  
-  test('Read By Price Ascending', async () => {
-    item2Info = {
-      name: 'Apple',
-      description: 'Crunchy',
-      price: 5,
-      category_ids: [category2._id],
-      group_ids: [],
-      public_visibility: true,
-      
-      // seller: ,
-    }
-
-    item3Info = {
-      name: 'Banana',
-      description: 'Slippery',
-      price: 50,
-      category_ids: [category2._id],
-      group_ids: [],
-      public_visibility: false,
-      // category: ,
-      // seller: ,
-    }
-
-    item2 = await itemService.create(item2Info);
-    item3 = await itemService.create(item3Info);
-
-    const items = await itemService.readByPriceAsc();
-    console.log('READ ASC\n');
-    console.log(items);
-  });
-
-  test('Read By Price Descending', async () => {
-    const items = await itemService.readByPriceDesc();
-    console.log('READ DESC\n');
-    console.log(items);
-  });
-
-  test('Read By Category', async () => {
-    const items = await itemService.readByCategory(category1._id);
 
     expect(items.length).toBe(1);
   });
@@ -213,5 +178,35 @@ describe('ItemService', () => {
     const items = await itemService.readPublicItems();
 
     expect(items.length).toBe(1);
+  });
+  
+  test('Read By Category', async () => {
+    const items = await itemService.readPublicItems();
+    const categoryItems = await itemService.readByCategory(category._id, items);
+
+    expect(categoryItems.length).toBe(1);
+  });
+
+  test('Read By Group', async () => {
+    const items = await itemService.readByGroup(group._id);
+
+    expect(items.length).toBe(1);
+  });
+
+  test('Read Items By Seller', async () => {
+    const items = await itemService.readItemsBySeller(user._id);
+
+    expect(items.length).toBe(1);
+  });
+
+  test('Delete Group From Item', async () => {
+    await itemService.deleteGroup(group._id);
+    const itemRead = await itemService.readById(item._id);
+
+    const itemdb = await Item.findById(item._id);
+   
+    expect(itemRead).not.toBeNull();
+    expect(itemdb).not.toBeNull();
+    expect(itemdb.group_ids.length).toBe(0);
   });
 })

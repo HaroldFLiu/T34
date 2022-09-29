@@ -7,10 +7,12 @@ const create = async ({
   category_ids,
   group_ids,
   public_visibility,
-  //seller,
+  seller_id,
+  buyer_id,
   comments,
   image_urls,
-  cloudinary_ids
+  cloudinary_ids,
+  sold
 }) => {
   const item = await Item.create({
     name,
@@ -19,10 +21,12 @@ const create = async ({
     category_ids,
     group_ids,
     public_visibility,
-    //seller,
+    seller_id,
+    buyer_id,
     comments,
     image_urls,
-    cloudinary_ids
+    cloudinary_ids,
+    sold
   });
   return item;
 };

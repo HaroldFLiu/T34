@@ -1,8 +1,11 @@
 const { Comment } = require('../../models/comment');
+const itemService = require('../item');
 
 const deleteById = async (commentId) => {
+  await itemService.deleteComment(commentId);
+
   const deletedComment = await Comment.findByIdAndDelete(commentId);
-  //add method to delete from item 
+
   return deletedComment;
 };
 
