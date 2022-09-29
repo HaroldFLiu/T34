@@ -1,0 +1,44 @@
+/* inherits css from newlistings but more can be added here to change */
+
+/* group visbility container div here */
+.vis-container{
+    display: flex;
+    padding-top: 3%;
+}
+
+/* group vis box here */
+.flex-child {
+    flex: 1;
+    border-radius: 10px; /* Rounded borders */
+    background-color: white;
+    border: 1px solid #ccc; /* Gray border */
+    padding-bottom: 5%;
+}  
+
+.flex-child:first-child {
+    margin-right: 50px;
+} 
+
+/* header inside vis box */
+.visbility-header{
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10%;
+    margin-right: 30%;
+}
+
+.visbility-text{
+    text-align: center;
+
+}
+
+.visbility-text-1{
+    text-align: center;
+    margin-left: 22%;
+}
+
+.radio-public{
+    float: left;
+    padding-left: 100px;
+
+}
