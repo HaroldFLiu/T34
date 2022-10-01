@@ -59,7 +59,7 @@ const [posts, setPosts] = useState([]);
       <a class="active" href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="#"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
@@ -118,7 +118,8 @@ const [posts, setPosts] = useState([]);
     <div className="wrapper" >
         <div class="row2">
           <div class="column">
-          <ProductComponents/>
+
+          <ProductComponents/> 
           </div>
         </div>
     </div>

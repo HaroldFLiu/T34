@@ -5,6 +5,7 @@
 @import "https://fonts.googleapis.com/css?family=Fira+Sans:400,500,600,700,800";
 @import "http://fonts.cdnfonts.com/css/tienne";
 @import "http://fonts.cdnfonts.com/css/tienne";
+@import "http://fonts.cdnfonts.com/css/tienne";
 .screen a {
   text-decoration: none;
   display: contents;
@@ -12739,5 +12740,11 @@ h4, h3, h5 {
   float: left;
   padding-left: 100px;
 }
+
+h4, h3, h5 {
+  font-family: Tienne, sans-serif;
+}
+
+
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
