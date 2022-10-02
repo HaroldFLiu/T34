@@ -220,7 +220,7 @@ const WishlistPage = () => {
       </div>
       </div>
       <div class="column">
-      <div class="card">
+      <div class="card"> 
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
          {/* spacer instead of wishlist btn*/}
          &nbsp;
