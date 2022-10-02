@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./MemberListPage.css";
-import MemberList from './components/MemberList'
+import MemberList from '../MemberList'
 
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
