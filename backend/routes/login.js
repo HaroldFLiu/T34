@@ -9,7 +9,6 @@ const { initSession, isEmail } = require('../utils/utils');
 
 const router = express.Router();
 
-
 router.post('/login', async (req, res) => {
     try {
       const { email, password } = req.body;
