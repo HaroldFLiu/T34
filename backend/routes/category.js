@@ -10,4 +10,4 @@ const categoryService = require('../services/category');
 const router = express.Router();
 
 // GET all categories
-router.get('/', getCatergories);    
+router.get('/category', getCatergories);    

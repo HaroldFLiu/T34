@@ -5,8 +5,10 @@ const { isMongoId } = require('validator');
 
 const readById = async (itemId) => {
   if (!isMongoId(`${itemId}`)) {
+    console.log(`Item ID: ${itemId} is not a valid MongoID`);
     return undefined;
   }
+
   const item = await Item.findById(itemId);
 
   if (isNilOrEmpty(item)) {
@@ -40,7 +42,12 @@ const readAll = async () => {
 
 const readPublicItems = async() => {
   const items = await Item.find();
+
   const filtered = items.filter((x) => x.public_visibility == true);
+
+  if (!filtered) {
+    console.log(`No public items`);
+  }
 
   return filtered;
 }
@@ -48,6 +55,10 @@ const readPublicItems = async() => {
 const readByGroup = async (groupId) => {
   const items = await Item.find();
   const filtered = items.filter((x) => x.group_ids.includes(groupId));
+
+  if (!filtered) {
+    console.log(`No items belonging to group with ID: ${groupId}`);
+  }
   
   return filtered;
 };
@@ -55,6 +66,10 @@ const readByGroup = async (groupId) => {
 const readItemsBySeller = async (sellerId) => {
   const items = await Item.find();
   const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
+
+  if (!filtered) {
+    console.log(`No items belonging to seller with ID: ${sellerId}`);
+  }
 
   return filtered;
 }

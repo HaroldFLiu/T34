@@ -15,7 +15,7 @@ const getItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.readById(item_id);
@@ -31,7 +31,7 @@ const getCategoryItems = async (req, res) => {
     const { category_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(category_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const items = await itemService.readPublicItems();
@@ -48,7 +48,7 @@ const deleteItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.deleteById(item_id);
@@ -60,7 +60,7 @@ const updateItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.updateById(item_id, req.body);
