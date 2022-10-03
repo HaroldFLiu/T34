@@ -18,6 +18,7 @@ router.get('/getuser', authenticate, async (req, res) => {
       title: 'Authentication successful',
       detail: 'Successfully authenticated user',
       user,
+      user_id: userId,
     });
   } catch (err) {
     res.status(401).json({
