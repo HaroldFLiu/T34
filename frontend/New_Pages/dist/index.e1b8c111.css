@@ -12752,20 +12752,4 @@ h4, h3, h5 {
   font-size: 20px;
 }
 
-.album {
-  min-height: 50rem;
-  background-color: #f7f7f7;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-.card > img {
-  border-radius: 100px;
-  margin-bottom: .75rem;
-}
-
-.card-text {
-  font-size: 85%;
-}
-
 /*# sourceMappingURL=index.e1b8c111.css.map */
