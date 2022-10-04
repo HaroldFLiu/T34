@@ -65,6 +65,7 @@ const [posts, setPosts] = useState([]);
       {/* search bar*/}
       <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
       <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      <a href="/checkout-page"> Cart</a>
    
       <input type="text"placeholder="Search.."> 
       </input>

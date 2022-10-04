@@ -10,7 +10,24 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
+import axios from "../../api/axios";
+
 const ProductInformationPage = () => {
+
+  const [posts, setPosts] = useState([]);
+
+  // Define the function that fetches the data from API
+  const fetchData = async () => {
+    const { data } = await axios.get("/public/:category_id");
+    setPosts(data);
+  };
+
+  // Trigger the fetchData after the initial render by using the useEffect hook
+  useEffect(() => {
+    fetchData();
+  }, []);
+  
+
 
   return (
 <div className="parent" >
