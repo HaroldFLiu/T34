@@ -26,8 +26,9 @@ const ProductInformationPage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  
 
+  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
+  console.log(posts);
 
   return (
 <div className="parent" >
@@ -52,7 +53,7 @@ const ProductInformationPage = () => {
     {/* product info display*/} 
     <div class="product-info-wrap">
 
-
+    
       <div className="more-info-wrap">
       <div className="item-name-label"> Item Name Here </div>
       <div className="info-text"> <b>Seller:</b> Seller Name Here</div> 
