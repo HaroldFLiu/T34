@@ -1,7 +1,7 @@
 import React, {useEffect, useState}from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
-
+import "./CheckoutPage.css";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -40,11 +40,22 @@ const CheckoutPage = () => {
     {/* products display*/} 
     <div class="checkout-main">
 
-        YOUR BAG
+        <div className="check-header"> YOUR BAG</div> 
         <br/>
-        TOTAL(NUM ITEMS) $PRICE
+        <div className="total-items"> TOTAL (2 items) <b> $69.96 </b> </div>
         <br/>
-        Items inside your bag are not reserved - check out now to make them yours!
+        <div className="total-items"> Items inside your bag are not reserved - check out now to make them yours! </div>
+        <hr/>
+
+        {/* items showcase here*/}
+
+        <div className="checkout-items-card">
+            <div className="check-square">
+                <div className="check-square-in">
+                    
+                </div>
+            </div>
+        </div>
     </div> 
 
 

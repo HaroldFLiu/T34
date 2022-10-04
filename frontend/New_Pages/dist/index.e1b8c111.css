@@ -7,6 +7,7 @@
 @import "http://fonts.cdnfonts.com/css/tienne";
 @import "http://fonts.cdnfonts.com/css/tienne";
 @import "http://fonts.cdnfonts.com/css/tienne";
+@import "http://fonts.cdnfonts.com/css/tienne";
 .screen a {
   text-decoration: none;
   display: contents;
@@ -12851,6 +12852,40 @@ body {
 .purchase-btn:hover {
   color: #000;
   background: #a4df9a;
+}
+
+.check-header {
+  text-align: left;
+  margin-top: 2%;
+  margin-left: 20%;
+  font-family: Tienne, sans-serif;
+  font-size: 35px;
+  font-weight: 700;
+}
+
+.total-items {
+  text-align: left;
+  margin-top: -1%;
+  margin-left: 20%;
+  font-family: Tienne, sans-serif;
+}
+
+.checkout-items-card {
+  border: thin solid #000;
+  margin-left: 5%;
+  padding-bottom: 50%;
+}
+
+.check-square {
+  width: 40%;
+  height: 0;
+  float: left;
+  background-color: green;
+  margin-top: 1%;
+  margin-left: 5%;
+  padding-top: 15%;
+  display: flex;
+  position: fixed;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
