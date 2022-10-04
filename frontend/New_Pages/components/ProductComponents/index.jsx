@@ -2,6 +2,13 @@
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
+
+ /* HOW TO GET ITEM SERVICE 
+const itemService = require('../../../../backend/services/category');
+itemService.readById(post.catergoryId)
+
+*/
+
 function ProductComponents() {
 
 

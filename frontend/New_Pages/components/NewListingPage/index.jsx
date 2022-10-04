@@ -203,22 +203,22 @@ const NewListingPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> Item Name:</label>
+            <label for="item-name"> <div className="item-name"> Item Name: </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
              />
-            <label for="enter-price"> Price:</label>
+            <label for="enter-price"><div className="item-name"> Price: </div></label>
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
             />
-            <label for="enter-desc"> Item Description:</label>
+            <label for="enter-desc"> <div className="item-name">Item Description:</div></label>
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
 
              {/* select on change for dropdown button*/}
 
-            <label for="category-name"> Item Category:</label>
+            <label for="category-name"><div className="item-name"> Item Category:</div></label>
             <select type="category-listing" value={selectedCat} onChange={handleChangeCat}>
                 {categoryOptions.map(option => (
                 <option key={option.value} value={option.value}>
@@ -230,7 +230,7 @@ const NewListingPage = () => {
 
          {/* select on change for dropdown button*/}
 
-         <label for="visbility-list"> Item Visibility:</label>
+         <label for="visbility-list"> <div className="item-name">Item Visibility:</div></label>
          <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>
@@ -241,7 +241,7 @@ const NewListingPage = () => {
 
        {/* select on change for dropdown button*/}
 
-       <label for="groups-list"> Group Select:</label>
+       <label for="groups-list"> <div className="item-name">Group Select:</div></label>
          <select type="category-listing" value={selectedGroup} onChange={handleChangeGroup}>
                 {groupOptions.map(option => (
                 <option key={option.value} value={option.value}>

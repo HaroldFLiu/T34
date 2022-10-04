@@ -1,0 +1,70 @@
+@import url('http://fonts.cdnfonts.com/css/tienne');
+
+body {
+    font-family: 'Tienne', sans-serif;
+   }
+
+
+/* wrap for the whole product info page*/
+.product-info-wrap{
+    border: thin solid;
+    border-color: black;
+    padding-bottom: 5px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+}
+
+/* wrap for the product images on item info */
+.product-img-wrap{
+    width: 45%;
+    border: thin solid;
+    border-color: black;
+
+}
+
+
+/* main item img wrapper */ 
+.square {
+    border: thin solid;
+    width: 65%;
+    height: 0;
+    padding-top: 65%;
+    display: flex;
+    margin-top: 1%;
+    margin-left: 15%;
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/-Insert_image_here-.svg/640px--Insert_image_here-.svg.png");
+  }
+
+  /* imgs below square item img */
+  .img-gallery{
+    border: thin solid;
+    border-color: black;
+    margin-top: 2%;
+    width: 30%;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+  }
+
+  /* wrap for the writing part of item description */
+  .more-info-wrap{
+    border: thin solid;
+    border-color: black;
+    float: right;
+    width: 55%;
+    height: auto;
+}
+
+  /* item name label */
+.item-name-label{
+    padding-top: 2%;
+    font-family: 'Tienne', sans-serif;
+    font-size: 35px;
+    text-align: center;
+}
+
+/* text inside the infomation wrapper */
+.info-text{
+  font-size: 20px;
+  margin-left: 2%;
+}

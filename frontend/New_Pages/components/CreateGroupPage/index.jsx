@@ -117,10 +117,10 @@ const CreateGroupPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> Group Name:</label>
+            <label for="item-name"> <div className="item-name">Group Name: </div></label>
             <input type="listing-text"
              />
-            <label for="enter-desc"> Group Description:</label>
+            <label for="enter-desc"> <div className="item-name">Group Description:</div></label>
             <input type="asd" 
             />
              {/* select on change for dropdown button*/}
