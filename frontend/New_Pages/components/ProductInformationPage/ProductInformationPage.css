@@ -1,5 +1,6 @@
 @import url('http://fonts.cdnfonts.com/css/tienne');
 
+/* MAY NEED TO ADD HEIGHT 100% FOR ITEM DECRIP TEXT, NOW USING OVERFLOW FOR QUICK FIX */
 body {
     font-family: 'Tienne', sans-serif;
    }
@@ -7,22 +8,22 @@ body {
 
 /* wrap for the whole product info page*/
 .product-info-wrap{
+  /*
     border: thin solid;
-    border-color: black;
+    border-color: black; added for visualisation*/
     padding-bottom: 5px;
     margin-left: 5%;
     margin-right: 5%;
-    margin-top: 1%;
+    margin-top: 3%;
 }
 
 /* wrap for the product images on item info */
 .product-img-wrap{
     width: 45%;
+    /*
     border: thin solid;
-    border-color: black;
-
+    border-color: black;  added for visualisation*/
 }
-
 
 /* main item img wrapper */ 
 .square {
@@ -48,8 +49,9 @@ body {
 
   /* wrap for the writing part of item description */
   .more-info-wrap{
+    /*
     border: thin solid;
-    border-color: black;
+    border-color: black; added for visualisation*/
     float: right;
     width: 55%;
     height: auto;
@@ -57,7 +59,7 @@ body {
 
   /* item name label */
 .item-name-label{
-    padding-top: 2%;
+    padding-top: 6%;
     font-family: 'Tienne', sans-serif;
     font-size: 35px;
     text-align: center;
@@ -67,4 +69,59 @@ body {
 .info-text{
   font-size: 20px;
   margin-left: 2%;
+}
+
+/* item description text*/
+.info-text-centered{
+  font-size: 20px;
+  text-align: center;
+  white-space: normal;
+  overflow: hidden;
+}
+
+/* price text */
+.info-text-centered-price{
+  font-size: 35px;
+  text-align: center;
+}
+
+/* purchase button */
+.purchase-btn{
+  text-align: center;
+  width: 60%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 25px;
+  margin-left: 20%;
+  margin-top: 10%;
+  font-weight: bolder;
+  background-color: black;
+  color: white;
+}
+
+/* contact button */
+.contact-btn{
+  text-align: center;
+  width: 60%;
+  font-size: 25px;
+  margin-left: 20%;
+  margin-top: 2%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-weight: 700;
+  background-color:#5A896A;
+  border-color: #5A896A;;
+  color: white;
+}
+
+/* Change background on mouse-over */
+.contact-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* Change background on mouse-over */
+.purchase-btn:hover {
+  background: #A4DF9A;
+  color: black;
 }

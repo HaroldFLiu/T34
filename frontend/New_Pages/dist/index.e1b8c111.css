@@ -12757,8 +12757,7 @@ body {
 }
 
 .product-info-wrap {
-  border: thin solid #000;
-  margin-top: 1%;
+  margin-top: 3%;
   margin-left: 5%;
   margin-right: 5%;
   padding-bottom: 5px;
@@ -12766,7 +12765,6 @@ body {
 
 .product-img-wrap {
   width: 45%;
-  border: thin solid #000;
 }
 
 .square {
@@ -12792,12 +12790,11 @@ body {
   float: right;
   width: 55%;
   height: auto;
-  border: thin solid #000;
 }
 
 .item-name-label {
   text-align: center;
-  padding-top: 2%;
+  padding-top: 6%;
   font-family: Tienne, sans-serif;
   font-size: 35px;
 }
@@ -12805,6 +12802,55 @@ body {
 .info-text {
   margin-left: 2%;
   font-size: 20px;
+}
+
+.info-text-centered {
+  text-align: center;
+  white-space: normal;
+  font-size: 20px;
+  overflow: hidden;
+}
+
+.info-text-centered-price {
+  text-align: center;
+  font-size: 35px;
+}
+
+.purchase-btn {
+  text-align: center;
+  width: 60%;
+  color: #fff;
+  background-color: #000;
+  margin-top: 10%;
+  margin-left: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.contact-btn {
+  text-align: center;
+  width: 60%;
+  color: #fff;
+  background-color: #5a896a;
+  border-color: #5a896a;
+  margin-top: 2%;
+  margin-left: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.contact-btn:hover {
+  color: #000;
+  background: #fff;
+}
+
+.purchase-btn:hover {
+  color: #000;
+  background: #a4df9a;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
