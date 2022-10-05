@@ -1,0 +1,40 @@
+@import url('http://fonts.cdnfonts.com/css/tienne');
+
+/* header for checkout */
+.check-header{
+    font-family: 'Tienne', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+/* text under the checkout header */
+.total-items{
+    margin-top: -1%;
+    font-family: 'Tienne', sans-serif;
+    text-align: left;
+    margin-left: 20%;
+}
+
+.checkout-items-card{
+    border: thin solid;
+    border-color: black;
+    margin-left: 5%;
+    padding-bottom: 50%;
+}
+
+/* item card for checkout */
+.check-square{
+    width: 40%;
+    height: 0;
+    padding-top: 15%;
+    display: flex;
+    margin-top: 1%;
+    float: left;
+    background-color: green;
+    position: fixed;
+    margin-left: 5%;
+}
+

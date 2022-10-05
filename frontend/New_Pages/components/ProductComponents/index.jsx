@@ -2,6 +2,13 @@
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
+
+ /* HOW TO GET ITEM SERVICE 
+const itemService = require('../../../../backend/services/category');
+itemService.readById(post.catergoryId)
+
+*/
+
 function ProductComponents() {
 
 
@@ -44,11 +51,12 @@ return(
           </div>
             <div className="item-cart">
             <h3>{post.name}</h3>
-            <p><button>Add to Cart</button></p>
-            {/*added this line to test */}
+            <a href="#"> <p><button>Add to Cart</button></p></a>
+            {/*added this line to test 
             description: {post.description}
             &nbsp;
             category: {post.category_ids}
+          */}
             </div>
             </a>
           </div>
