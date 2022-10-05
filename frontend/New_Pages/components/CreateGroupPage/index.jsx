@@ -62,7 +62,7 @@ const CreateGroupPage = () => {
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="#"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
@@ -117,10 +117,10 @@ const CreateGroupPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> Group Name:</label>
+            <label for="item-name"> <div className="item-name">Group Name: </div></label>
             <input type="listing-text"
              />
-            <label for="enter-desc"> Group Description:</label>
+            <label for="enter-desc"> <div className="item-name">Group Description:</div></label>
             <input type="asd" 
             />
              {/* select on change for dropdown button*/}

@@ -35,6 +35,38 @@ const deleteFavourite = async (req, res) => {
     //res.status(200).json(cart);
 }
 
+const updateFavourite = async (req, res) => {
+    const { favId } = req.params;
+    const { itemId, quantity } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(favId)) {
+        return res.status(404).json({error: 'Favourite does not exist'});
+    }
+
+    if (itemId == -1 && quantity == -1) {
+        const favourite = await favouritesService.removeAllItems(favId);
+        if (!favourite) {
+            return res.status(404).json({error: 'Failed to remove all items'});
+        }
+    }
+    else {
+        if (!mongoose.Types.ObjectId.isValid(itemId)) {
+            return res.status(404).json({error: 'Item does not exist'});
+        }
+        if (quantity > 0) {
+            const favourite = await favouritesService.addItem(favId, itemId);
+            if (!favourite) {
+                return res.status(404).json({error: 'Failed to add item'});
+            }
+        }
+        else if (quantity < 0) {
+            const favourite = await favouritesService.deleteItem(favId, itemId);
+            if (!favourite) {
+                return res.status(404).json({error: 'Failed to delete item'});
+            }
+        }
+    }
+}
+
 const addtoFavourite = async (req, res) => {
     const { favId } = req.params;
     const { itemId } = req.body;
@@ -83,6 +115,7 @@ module.exports = {
     createFavourite,
     getFavourite,
     deleteFavourite,
+    updateFavourite,
     addtoFavourite,
     deleteFromFavourite,
     deleteAllFromFavourite,

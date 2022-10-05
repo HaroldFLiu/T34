@@ -3,9 +3,7 @@ const {
     createFavourite,
     getFavourite,
     deleteFavourite,
-    addtoFavourite,
-    deleteFromFavourite,
-    deleteAllFromFavourite,
+    updateFavourite,
 } = require ('../controllers/favouritesController')
 
 const router = express.Router();
@@ -19,13 +17,9 @@ router.post('/:userId', createFavourite);
 // DELETE a favourite
 router.delete('/:favId', deleteFavourite);
 
-// ADD an item to favourite
-router.patch('/:favId', addtoFavourite);
+//  UPDATE a favourite
+router.patch('/:favId', updateFavourite);
 
-// REMOVE an item from favourite
-router.patch('/:favId', deleteFromFavourite);
 
-// REMOVE all items from favourite
-router.patch('/:favId', deleteAllFromFavourite);
 
 module.exports = router;
