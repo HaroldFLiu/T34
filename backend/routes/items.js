@@ -29,6 +29,8 @@ router.get('/public/:item_id', getItem);
 
 // POST an item
 router.post('/public/', upload.array('images', 12), async (req, res) => {
+    console.log("Request Body: " + req.body);
+    res.json("Data has been received");
     // handle images
     const image_urls = [];
     const cloudinary_ids = [];
@@ -43,7 +45,6 @@ router.post('/public/', upload.array('images', 12), async (req, res) => {
             } catch (err) {
                 console.log(err);
             }
-    
         }
     }
 

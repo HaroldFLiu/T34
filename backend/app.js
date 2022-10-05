@@ -9,6 +9,7 @@ const cookieParser = require('cookie-parser');
 
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
+const categoryRoutes = require('./routes/category');
 //const uploadRoute = require('./routes/upload');
 //const Grid = require('gridfs-stream');
 

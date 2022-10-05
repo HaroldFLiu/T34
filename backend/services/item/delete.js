@@ -2,15 +2,23 @@ const { Item } = require('../../models/item');
 const cloudinary = require('../../middleware/cloudinary');
 const { readByGroup } = require('./read');
 const { Comment } = require('../../models/comment');
+const { isNotEmpty } = require('ramda-adjunct');
 
 const deleteById = async (itemId) => {
   const item = await Item.findById(itemId);
 
+  if (!item) {
+    console.log(`Cannot find item with ID: ${itemId}`);
+    return undefined;
+  }
+
+  // delete images from service
   for (const image of item.cloudinary_ids) {
     await cloudinary.uploader.destroy(image);
   }
   
   const deletedItem = await Item.findByIdAndDelete(itemId);
+  console.log(`Deleted item by ID: ${itemId}, Item: ${JSON.stringify(deletedItem)}`);
   return deletedItem;
 };
 
@@ -26,6 +34,8 @@ const deleteGroup = async (groupId) => {
   
         await item.save();
       }
+    } else {
+      console.log(`No group IDs on item with ID: ${item._id}`);
     }
   }
 }
@@ -42,6 +52,8 @@ const deleteComment = async (commentId) => {
     }
 
     await item.save();
+  } else {
+    console.log(`No comments on item with ID: ${item._id}`);
   }
 }
 
