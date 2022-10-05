@@ -2,8 +2,14 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const { Item } = require('../models/item');
+const { Category } = require('../models/category');
 const { Group } = require('../models/group');
 const { User } = require('../models/user');
+const { Comment } = require('../models/comment');
+const { Favourites } = require('../models/favourites');
+const { Cart } = require('../models/cart');
+
 
 const groupService = require('../services/group');
 const userService = require('../services/user');
@@ -24,7 +30,12 @@ describe('GroupService', () => {
   let group2Info = null;
 
   beforeAll(async () => {
-    connection = mongoose.connect(process.env.MONGO_URI);
+    connection = mongoose.connect(process.env.MONGO_URI_TEST);
+    await Item.deleteMany({});
+    await Cart.deleteMany({});
+    await Comment.deleteMany({});
+    await Favourites.deleteMany({});
+    await Category.deleteMany({});
     await Group.deleteMany({});
     await User.deleteMany({});
 

@@ -4,7 +4,7 @@
     "description": "marketplace web server for IT Project",
     "main": "index.js",
     "scripts": {
-        "test": "jest --watchAll --config=jestconfig.json",
+        "test": "jest --watchAll --config=jestconfig.json --runInBand",
         "start": "node app.js",
         "dev": "nodemon app.js",
         "seed": "node seed.js"

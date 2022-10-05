@@ -1,8 +1,13 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 const { Item } = require('../models/item');
-const { Comment } = require('../models/comment');
+const { Category } = require('../models/category');
+const { Group } = require('../models/group');
 const { User } = require('../models/user');
+const { Comment } = require('../models/comment');
+const { Favourites } = require('../models/favourites');
+const { Cart } = require('../models/cart');
 
 const itemService = require('../services/item');
 const commentService = require('../services/comment');
@@ -37,9 +42,13 @@ describe('CommentsService', () => {
   }
 
   beforeAll(async () => {
-    connection = mongoose.connect(process.env.MONGO_URI);
+    connection = mongoose.connect(process.env.MONGO_URI_TEST);
     await Item.deleteMany({});
+    await Cart.deleteMany({});
     await Comment.deleteMany({});
+    await Favourites.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
     await User.deleteMany({});
 
     user1 = await userService.create(user1Info);
@@ -57,9 +66,6 @@ describe('CommentsService', () => {
   });
 
   afterAll(async () => {
-    await Item.deleteMany({});
-    await Comment.deleteMany({});
-    await User.deleteMany({});
     await mongoose.disconnect();
   });
 
