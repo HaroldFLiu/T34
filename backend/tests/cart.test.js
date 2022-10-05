@@ -150,7 +150,11 @@ describe('CartService', () => {
     await cartService.checkout(cart._id);
 
     const cartdb2 = await Cart.findById(cart._id);
-
+    const item1db = await Item.findById(item1._id);
+    const item2db = await Item.findById(item2._id);
+  
+    expect(item1db.sold).toBe(true);
+    expect(item2db.sold).toBe(true);
     expect(cartdb2).not.toBeNull;
     expect(cartdb2.items.length).toBe(0);
     expect(cartdb2.subtotal).toBe(0);
