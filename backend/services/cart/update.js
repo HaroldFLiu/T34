@@ -20,8 +20,8 @@ const addItem = async(cartId, itemId, quantity) => {
 const checkout = async(cartId) => {
   const cart = await Cart.findById(cartId);
   for (let i = 0; i < cart.items.length; i++) {
-    const item = await Item.findbnyId(cart.items[i]);
-    item.sold == true;
+    const item = await Item.findById(cart.items[i]);
+    item.sold = true;
     await item.save();
   }
   cart.items = [];
