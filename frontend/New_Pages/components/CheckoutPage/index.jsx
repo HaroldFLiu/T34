@@ -56,6 +56,12 @@ const CheckoutPage = () => {
       <div class="column">
       <div class="card-check">
         <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        <div className="check-texts">
+          Item Name
+          Price
+          <button> Remove</button>
+        </div>
+      
      
         
       
