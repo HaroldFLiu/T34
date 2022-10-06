@@ -107,14 +107,15 @@ const groups = [
 
 const carts = [
     {
+        _id: "633eea0d7d3172b98415e773",
         user: "633e7c16434369b2dc9d2dab",
-        items: ["633e80d0fa8680e916c52070", "633e80d0fa8680e916c52072"]
+        items: ["633eec982a25d4851e300c38", "633eec982a25d4851e300c3b"]
     }
 ]
 
 const items = [
     {
-        _id: "633e80d0fa8680e916c52070",
+        _id: "633eec982a25d4851e300c38",
         name: "Toyota Car",
         description: "In good condition",
         price: 30000,
@@ -124,7 +125,7 @@ const items = [
         seller_id: "633e7c16434369b2dc9d2dab",
     },
     {
-        _id: "633e80d0fa8680e916c52072",
+        _id: "633eec982a25d4851e300c3b",
         name: "Couch",
         description: "Soft but sturdy",
         price: 500,
@@ -134,7 +135,7 @@ const items = [
         seller_id: "633e7c16434369b2dc9d2dab",
     },
     {
-        _id: "633e80d0fa8680e916c52074",
+        _id: "633eec982a25d4851e300c3e",
         name: "Violin",
         description: "Plays well",
         price: 100,
@@ -196,7 +197,6 @@ async function seed() {
         }
     }
 
-
     for (const cart of carts) {
         tmp = await cartService.readById(cart._id);
         if (!tmp) {
@@ -204,9 +204,20 @@ async function seed() {
         } else {
             await cartService.updateById(cart._id, cart);
         }
-        //console.log(user);
     }
 
+    // delete other items
+    const allItems = await itemService.readAll();
+    const seededItems = items.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const item of allItems) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededItems.includes(JSON.stringify(item._id))) {
+            console.log("should not be in DB");
+            await itemService.deleteById(item._id);
+        }
+    }
 
     mongoose.disconnect();
 
