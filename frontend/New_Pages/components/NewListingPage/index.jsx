@@ -106,7 +106,7 @@ const NewListingPage = () => {
   const [categories, setCategories] = useState('');
   
   const getCatergories = () => {
-    axios.get('http://localhost:3000/category')
+    axios.get('/category')
     .then(res => {
       setCategories(res.data);
     }).catch(err => {
@@ -132,7 +132,7 @@ const NewListingPage = () => {
   {/* options for group dropdown menu */}
   const [groups, setGroups] = useState('');
   const getGroups = () => {
-    axios.get('http://localhost:3000/groups')
+    axios.get('/groups')
     .then(res => {
       setGroups(res.data);
     }).catch(err => {
