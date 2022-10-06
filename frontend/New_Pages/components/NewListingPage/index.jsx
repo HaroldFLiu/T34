@@ -13,6 +13,8 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 const NewListingPage = () => {
+  const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
+  const CLOUDINARY_UPLOAD_PRESET = 'T34ITProject';
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -47,81 +49,78 @@ const NewListingPage = () => {
 
     /* image details */
     const formData = new FormData();
-    formData.append("image", image.raw);
-
-    let itemId;
+    formData.append('file', image.raw);
+    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+    //console.log(formData);
 
     /* posting */
-    axios.post('/public/', props)
-    .then(function (res) {
-        console.log(res);
-        if (res.status=="200" && !formData) {
-          location.pathname='/home-page';
-        } else if (res.status=="200" && formData) {
-          console.log(res.data._id);
-          console.log('item details successful');
-          console.log(res.data._id);
+    
+    axios.post('/public', props)
+    .then(function (res1) {
+      if (res1.status=="200" && !image.preview) {
+        location.pathname='/home-page';
+      } else if (res1.status=="200" && image.preview) {
+        console.log(res1.data._id);
+        console.log(image.preview);
+        console.log('item details successful');
 
+        // image upload
+        axios.post(CLOUDINARY_URL, formData)
+        .then(function (res2) {
+          console.log('RES 2');
+          console.log(res2);
+          if (res2.status=="200") {
+            const imageProp = {image_urls: [res2.data.secure_url], cloudinary_ids: [res2.data.public_id]};
+            console.log(imageProp);
 
-          /*
-          axios.post('/public/' + itemId + '/image', formData)
-          .then(function (res) {
-            console.log(res);
-            if (res.status=="200") {
-              location.pathname='/home-page';
-            }else {
-              console.log("image went wrong");
-            }
-          })
-          .catch(function (error) {
-            console.log(error);
-          });*/
-        } else {
-          console.log("item went wrong");
-        }
+            axios.patch('/public/' + res1.data._id, imageProp)
+            .then(function (res3) {
+              console.log('RES 3');
+              console.log(res3);
+              if (res1.status=="200") {
+                location.pathname='/home-page';
+              } else {
+                console.log("item updating went wrong");
+              }
+            })
+            .catch(function (error) {
+              console.log("image went wrong 2");
+            });
+          } else {
+            console.log("image went wrong");
+          }
+        })
+        .catch(function (error) {
+          console.log("image went wrong 3");
+        });
+      } else {
+        console.log("item went wrong");
+      }
     })
     .catch(function (error) {
         console.log(error);
     });
-
-   console.log(itemId);
-    /*
-    if (formData) {
-      axios.post('/public/' + response._id + '/image', formData)
-      .then(function (res) {
-        console.log(res);
-        if (res.status=="200") {
-          location.pathname='/home-page';
-        }else {
-          console.log("image went wrong");
-        }
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-    }*/
   }
 
   {/* options to select for category drop down*/}
   const [categories, setCategories] = useState('');
-  /*
+  
   const getCatergories = () => {
     axios.get('http://localhost:3000/category')
     .then(res => {
-      console.log(res.data);
       setCategories(res.data);
     }).catch(err => {
       console.log(err);
     })
   }
-  getCatergories();*/
+
   const categoryOptions = [
     {value: '', text: '---Select a category---'},
   ];
-  /*
+  
   for (const category of categories) {
     categoryOptions.push({value: category._id, text: category.name});
-  }*/
+  }
 
   {/* options for visibility*/}
   const visibilityOptions = [
@@ -133,9 +132,8 @@ const NewListingPage = () => {
   {/* options for group dropdown menu */}
   const [groups, setGroups] = useState('');
   const getGroups = () => {
-    axios.get('https://market34-back.onrender.com/groups')
+    axios.get('http://localhost:3000/groups')
     .then(res => {
-      console.log(res.data);
       setGroups(res.data);
     }).catch(err => {
       console.log(err);
@@ -145,7 +143,7 @@ const NewListingPage = () => {
   useEffect(() => {
     if (!firstRender) {
       getGroups();
-      //getCatergories();
+      getCatergories();
       setFirstRender(true);
     }
   }, [firstRender]);
@@ -182,8 +180,6 @@ const NewListingPage = () => {
     setSelectedGroup(e.target.value);
   };
 
-  console.log(values);
-
 
   {/* stuff for image upload*/} 
 
@@ -191,6 +187,7 @@ const NewListingPage = () => {
 
   const handleChange = e => {
     if (e.target.files.length) {
+      console.log(e.target.files[0])
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0]
