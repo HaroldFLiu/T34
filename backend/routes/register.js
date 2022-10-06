@@ -1,11 +1,11 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 
-const User = require('../models/user');
 const Session = require('../models/session');
 const { authenticate } = require('../middleware/authenticate');
 //const { csrfCheck } = require('../middleware/csrfCheck');
 const { initSession, isEmail } = require('../utils/utils');
+const User = require('../models/user');
 
 const router = express.Router();
 

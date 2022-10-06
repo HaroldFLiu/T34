@@ -1,4 +1,5 @@
-const { Schema, model, default: mongoose } = require('mongoose');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcryptjs');
 
@@ -64,5 +65,5 @@ userSchema.pre('save', function(next){
 });
 
 
-const User = model('User', userSchema);
+var User = mongoose.model('User', userSchema);
 module.exports = User;
