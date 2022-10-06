@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require("cors");
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -65,6 +66,8 @@ mongoose.connect(process.env.MONGO_URI, {
 .catch((error) => {
     console.log(error);
 });
+
+app.use(cors());
 
 
 
