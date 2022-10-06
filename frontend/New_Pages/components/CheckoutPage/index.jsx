@@ -11,6 +11,7 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
+import CartComponents from "../CartComponents"
 
 const CheckoutPage = () => {
 
@@ -60,8 +61,10 @@ const CheckoutPage = () => {
                 <br/>
                 <button className="checkout-btn"> <b> CHECKOUT</b></button>
             </div>
-
-         {/* items showcase here for checkout*/}
+            <CartComponents/>
+          {/* Cart components to be put here SEE ABOVE}
+         
+         {/* items showcase here for checkout
         <div className="checkout-items-card">
           
           <div className="wrapper-check" >
@@ -80,7 +83,6 @@ const CheckoutPage = () => {
               
             </div>
 
-            {/* ITEM 2 */}
             <div class="row-check">
               <div class="column-check">
                 <div class="card-check">
@@ -94,7 +96,7 @@ const CheckoutPage = () => {
                 <button className="check-remove-btn"> Remove</button>
                 </div>
               </div>
-                {/* ITEM 3 */}
+         
             </div>
             <div class="row-check">
               <div class="column-check">
@@ -112,7 +114,7 @@ const CheckoutPage = () => {
               
             </div>
         </div>
-        </div>
+        </div>*/}
 
 
     </div> 

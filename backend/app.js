@@ -16,6 +16,7 @@ const loginRoutes = require('./routes/login');
 const logoutRoutes = require('./routes/logout');
 const registerRoutes = require('./routes/register');
 const del_userRoutes = require('./routes/del_user');
+const cartRoutes = require('./routes/cart');
 const { applySpec } = require('ramda');
 
 const app = express();
@@ -46,6 +47,7 @@ app.use('', del_userRoutes)
 app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
+app.use('', cartRoutes);
 //app.use('/file', uploadRoute);
 
 // connect to database
