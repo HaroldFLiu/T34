@@ -28,7 +28,7 @@ function ProductComponents() {
 
 return(
     <div className="products-wrapper">  
-    {posts.map((post) => {
+    {posts.slice(0,10).map((post) => {
       return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
@@ -69,8 +69,6 @@ return(
         </div>  
       )
     })}
-
-
     </div>  
       
 );

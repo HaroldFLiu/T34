@@ -126,7 +126,7 @@ const [posts, setPosts] = useState([]);
     </div>
 
 
-    {/* next page bar here*/}
+    {/* next page bar here */}
     <div class="center-next">
       <div class="pagination">
       <a href="#">&laquo;</a>

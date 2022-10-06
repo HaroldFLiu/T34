@@ -47,7 +47,7 @@ app.use('', del_userRoutes)
 app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
-app.use('', cartRoutes);
+app.use('/cart', cartRoutes);
 //app.use('/file', uploadRoute);
 
 // connect to database
