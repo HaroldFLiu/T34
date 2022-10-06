@@ -47,33 +47,58 @@ const CheckoutPage = () => {
         <div className="total-items"> Items inside your bag are not reserved - check out now to make them yours! </div>
         <hr/>
 
-        {/* items showcase here*/}
+          {/* payment method here*/}
+            <div className="payment-detail">
+                <h1>ORDER SUMMARY </h1>
+                <br/>
+                2 items:
+                <div className="payment-detail-text"> $28.40</div> 
+                <hr/>
+             
+                <b>TOTAL</b>
+                <div className="payment-detail-text"> $28.40</div> 
+                <br/>
+                <button className="checkout-btn"> CHECKOUT</button>
+            </div>
 
+         {/* items showcase here for checkout*/}
         <div className="checkout-items-card">
           
           <div className="wrapper-check" >
-    <div class="row2">
-      <div class="column">
-      <div class="card-check">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        <div className="check-texts">
-          Item Name
-          Price
-          <button> Remove</button>
+            <div class="row-check">
+              <div class="column-check">
+                <div class="card-check">
+                  <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                  <div className="check-texts">
+                    A COOL ITEM HERE
+                    <br/>
+                    <b> $14.20 </b>
+                </div>  
+           
+                <button className="check-remove-btn"> Remove</button>
+                </div>
+              </div>
+              
+            </div>
+            <div class="row-check">
+              <div class="column-check">
+                <div class="card-check">
+                  <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                  <div className="check-texts">
+                    A COOL ITEM HERE
+                    <br/>
+                    <b> $14.20 </b>
+                </div>  
+           
+                <button className="check-remove-btn"> Remove</button>
+                </div>
+              </div>
+              
+            </div>
         </div>
-      
-     
-        
-      
-      </div>
-    
-      </div>
-      </div>
-      </div>{/*
-            <div className="check-square">
-                <div className="check-square-in"></div>
-            </div>*/}
         </div>
+
+
     </div> 
 
 

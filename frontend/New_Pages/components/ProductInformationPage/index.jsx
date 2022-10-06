@@ -52,6 +52,20 @@ const ProductInformationPage = () => {
   
     {/* product info display*/} 
     <div class="product-info-wrap">
+    <div className="product-img-wrap">
+        <div class="square">
+          {/* put img src here later*/} 
+        </div>
+        {/* other pictures display gallery*/} 
+          <div class="row">
+            <div class="column">
+            <img src={uploadPlaceholder} className="img-gallery"></img> 
+            <img src={uploadPlaceholder} className="img-gallery"></img> 
+            <img src={uploadPlaceholder} className="img-gallery"></img> 
+            </div>
+           </div>
+
+      </div>
 
     
       <div className="more-info-wrap">
@@ -72,20 +86,7 @@ const ProductInformationPage = () => {
       <button className="contact-btn"> CONTACT SELLER </button>
 
       </div>
-      <div className="product-img-wrap">
-        <div class="square">
-          {/* put img src here later*/} 
-        </div>
-        {/* other pictures display gallery*/} 
-          <div class="row">
-            <div class="column">
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            </div>
-           </div>
 
-      </div>
 
 
     </div> 

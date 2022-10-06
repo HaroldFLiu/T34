@@ -12762,6 +12762,7 @@ body {
   margin-left: 5%;
   margin-right: 5%;
   padding-bottom: 5px;
+  display: flex;
 }
 
 .product-img-wrap {
@@ -12769,20 +12770,20 @@ body {
 }
 
 .square {
-  width: 65%;
+  width: 60%;
   height: 0;
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/-Insert_image_here-.svg/640px--Insert_image_here-.svg.png");
   border: thin solid;
-  margin-top: 1%;
+  margin-top: -1%;
   margin-left: 15%;
-  padding-top: 65%;
+  padding-top: 60%;
   display: flex;
 }
 
 .img-gallery {
-  width: 30%;
+  width: 28%;
   border: thin solid #000;
-  margin-top: 2%;
+  margin-top: 3%;
   margin-left: 1.5%;
   margin-right: 1.5%;
 }
@@ -12882,7 +12883,7 @@ body {
   float: left;
   background-color: green;
   margin-top: 1%;
-  margin-left: 5%;
+  margin-left: 15%;
   padding-top: 15%;
   display: flex;
   position: fixed;
@@ -12891,25 +12892,71 @@ body {
 .wrapper-check {
   float: left;
   margin-top: 40px;
-  margin-left: 20%;
+  margin-left: 13%;
 }
 
 .card-check {
-  max-width: 250px;
+  width: max-content;
+  width: 150%;
   text-align: center;
+  white-space: initial;
   border: thin solid #000;
   margin: auto;
   font-family: Tienne, sans-serif;
+  display: inline-block;
+  overflow: hidden;
   box-shadow: 0 4px 8px #0003;
 }
 
-.row {
+.row-check {
   display: flex;
 }
 
-.column {
+.column-check {
   flex: 33.33%;
-  padding: 5px;
+  padding: 5%;
+}
+
+.check-texts {
+  float: left;
+  margin-top: 3%;
+  margin-left: 5%;
+  font-size: larger;
+}
+
+.img-wrap-check {
+  float: left;
+}
+
+.check-remove-btn {
+  float: right;
+  margin-top: 25%;
+  margin-right: 3%;
+}
+
+.check-price {
+  float: right;
+  margin-top: 10%;
+}
+
+.payment-detail {
+  float: right;
+  border: thin solid #000;
+  margin-top: 5%;
+  margin-right: 15%;
+  padding: 2% 2% 1%;
+  position: relative;
+}
+
+.payment-detail-text {
+  float: right;
+}
+
+.checkout-btn {
+  vertical-align: center;
+  text-align: center;
+  margin-top: 10%;
+  margin-left: 30%;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

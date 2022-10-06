@@ -18,11 +18,12 @@
     margin-left: 20%;
 }
 
+/* space within checkout page that can be used */
 .checkout-items-card{
-    border: thin solid;
-    border-color: black;
     margin-left: 5%;
     padding-bottom: 50%;
+    border: thin solid;
+    border-color: black;
 }
 
 /* item card for checkout */
@@ -35,7 +36,7 @@
     float: left;
     background-color: green;
     position: fixed;
-    margin-left: 5%;
+    margin-left: 15%;
 }
 
 
@@ -43,32 +44,88 @@
 .wrapper-check{
     margin-top: 40px;
     float: left;
-    margin-left: 20%;
+    margin-left: 13%;
   }
   
-  /* Product Card CSS FONT WAS PREVIOUSLY ARIEL*/
+  /* Product Card CSS FONT WAS PREVIOUSLY ARIEL wdith can be changed to add more padding*/
   
   .card-check {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    max-width: 250px;
+    width: max-content;
+    width: 150%;
     margin: auto;
     text-align: center;
     font-family: 'Tienne', sans-serif;
     border: solid thin;
     border-color: black;
+    display: inline-block;
+    overflow: hidden;
+    white-space: initial;
+
   }
   
   
 /* Row and Col for the Product gallery view */
-.row {
+.row-check {
     display: flex;
   }
   
-  .column {
+  .column-check {
     flex: 33.33%;
-    padding: 5px;
+    padding: 5%;
   }
   
+  /* text inside the checkout box display product */
   .check-texts{
-    
+    float: left;
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: larger;
+
+  }
+
+  /* img wrap for checkout display card */
+  .img-wrap-check{
+    float: left;
+  }
+
+  /* remove item button */
+  .check-remove-btn{
+    margin-top: 25%;
+    margin-right: 3%;
+    float: right;
+
+  }
+
+  /* price inside display card */
+  .check-price{
+    float: right;
+    margin-top: 10%;
+  }
+
+  /*order summary box */
+  .payment-detail{
+    float: right;
+    position: relative;
+    border: thin solid;
+    border-color: black;
+    margin-right: 15%;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+  
+  }
+
+  /* floated right text prices inside order summary */
+  .payment-detail-text{
+    float: right;
+  }
+
+  .checkout-btn{
+    vertical-align: center;
+    text-align: center;
+    margin-top: 10%;
+    margin-left: 30%;
   }
