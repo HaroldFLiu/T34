@@ -38,3 +38,34 @@
     margin-left: 5%;
 }
 
+
+/* wrapper to move products display up change to 20px later! */ 
+.wrapper-check{
+    margin-top: 40px;
+    float: left;
+    margin-left: 20%;
+  }
+  
+  /* Product Card CSS FONT WAS PREVIOUSLY ARIEL*/
+  
+  .card-check {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    margin: auto;
+    text-align: center;
+    font-family: 'Tienne', sans-serif;
+    border: solid thin;
+    border-color: black;
+  }
+  
+  
+/* Row and Col for the Product gallery view */
+.row {
+    display: flex;
+  }
+  
+  .column {
+    flex: 33.33%;
+    padding: 5px;
+  }
+  

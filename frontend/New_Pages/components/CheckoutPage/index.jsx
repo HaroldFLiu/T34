@@ -50,11 +50,23 @@ const CheckoutPage = () => {
         {/* items showcase here*/}
 
         <div className="checkout-items-card">
+          
+          <div className="wrapper-check" >
+    <div class="row2">
+      <div class="column">
+      <div class="card-check">
+        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+     
+        
+      
+      </div>
+    
+      </div>
+      </div>
+      </div>{/*
             <div className="check-square">
-                <div className="check-square-in">
-                    
-                </div>
-            </div>
+                <div className="check-square-in"></div>
+            </div>*/}
         </div>
     </div> 
 

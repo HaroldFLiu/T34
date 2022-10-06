@@ -12888,4 +12888,28 @@ body {
   position: fixed;
 }
 
+.wrapper-check {
+  float: left;
+  margin-top: 40px;
+  margin-left: 20%;
+}
+
+.card-check {
+  max-width: 250px;
+  text-align: center;
+  border: thin solid #000;
+  margin: auto;
+  font-family: Tienne, sans-serif;
+  box-shadow: 0 4px 8px #0003;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
 /*# sourceMappingURL=index.e1b8c111.css.map */
