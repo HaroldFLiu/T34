@@ -52,8 +52,6 @@ router.patch('/public/:item_id', async (req, res) => {
     console.log(item_id);
     console.log(req.body);
 
-    /*
-
     // ensure id is valid
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
         return res.status(404).json({error: 'Invalid id'});
@@ -73,7 +71,7 @@ router.patch('/public/:item_id', async (req, res) => {
     
     await item.save();
 
-    res.status(200).json(item);*/
+    res.status(200).json(item);
 });
 
 

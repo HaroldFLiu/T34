@@ -21,6 +21,7 @@ const del_userRoutes = require('./routes/del_user');
 const { applySpec } = require('ramda');
 
 const app = express();
+app.use(cors());
 
 // middleware
 app.use(function(req, res, next) {
@@ -67,8 +68,12 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(error);
 });
 
-app.use(cors());
-
+// fix CORS error
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
+});
 
 
 
