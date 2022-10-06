@@ -24,6 +24,7 @@ const NewListingPage = () => {
   });
 
   const PostNewListing =  event => {
+    /* item details */
     event.preventDefault();
     const props = {
       name: values.itemName,
@@ -44,18 +45,61 @@ const NewListingPage = () => {
 
     console.log(props);
 
+    /* image details */
+    const formData = new FormData();
+    formData.append("image", image.raw);
+
+    let itemId;
+
+    /* posting */
     axios.post('/public/', props)
-    .then(function (response){
-        console.log(response);
-        if (response.status=="200") {
+    .then(function (res) {
+        console.log(res);
+        if (res.status=="200" && !formData) {
           location.pathname='/home-page';
-        }else {
-          console.log("oops");
+        } else if (res.status=="200" && formData) {
+          console.log(res.data._id);
+          console.log('item details successful');
+          console.log(res.data._id);
+
+
+          /*
+          axios.post('/public/' + itemId + '/image', formData)
+          .then(function (res) {
+            console.log(res);
+            if (res.status=="200") {
+              location.pathname='/home-page';
+            }else {
+              console.log("image went wrong");
+            }
+          })
+          .catch(function (error) {
+            console.log(error);
+          });*/
+        } else {
+          console.log("item went wrong");
         }
     })
     .catch(function (error) {
         console.log(error);
     });
+
+   console.log(itemId);
+    /*
+    if (formData) {
+      axios.post('/public/' + response._id + '/image', formData)
+      .then(function (res) {
+        console.log(res);
+        if (res.status=="200") {
+          location.pathname='/home-page';
+        }else {
+          console.log("image went wrong");
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }*/
   }
 
   {/* options to select for category drop down*/}
@@ -154,6 +198,7 @@ const NewListingPage = () => {
     }
   };
    
+  /*
   const handleUpload = async e => {
     e.preventDefault();
     const formData = new FormData();
@@ -168,7 +213,7 @@ const NewListingPage = () => {
     } catch(error) {
       console.log(error)
     }
-  };
+  };*/
     
   return (
     <div className="parent" >
@@ -223,7 +268,7 @@ const NewListingPage = () => {
       />  
         </div>
 
-    <button onClick={handleUpload}>Upload Image</button>   
+    {/*<button onClick={handleUpload}>Upload Image</button>   */}
     </div>
     
     {/* form to input new listing data*/}
