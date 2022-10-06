@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
@@ -13,28 +13,38 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 const NewListingPage = () => {
+  const [firstRender, setFirstRender] = useState(false);
+  const [values, setValues] = useState({
+    itemName: "",
+    itemDescription: "",
+    itemPrice: "",
+    itemCategory: "",
+    itemGroup: "",
+    itemVisbility: "",
+  });
 
-    const [values, setValues] = useState({
-        itemName: "",
-        itemDescription: "",
-        itemPrice: "",
-        itemCategory: "",
-        itemGroup: "",
-        itemVisbility: "",
-
-      });
-
-    const PostNewListing =  event =>{
+  const PostNewListing =  event => {
     event.preventDefault();
-    axios.post('/public/', {
-        name: values.itemName,
-        description: values.itemDescription,
-        price: values.itemPrice,
-        category_ids: categoryOptions.value,
-        group_ids: groupOptions.value,
-        public_visibility: visibilityOptions.value,
-       // comments: "",
-    })
+    const props = {
+      name: values.itemName,
+      description: values.itemDescription,
+      price: values.itemPrice,
+      public_visibility: values.itemVisbility,
+      category_ids: [],
+      group_ids: []
+    }
+
+    if (values.itemCategory) {
+      props.category_ids = [values.itemCategory];
+    }
+
+    if (values.itemGroup) {
+      props.group_ids = [values.itemGroup];
+    }
+
+    console.log(props);
+
+    axios.post('/public/', props)
     .then(function (response){
         console.log(response);
         if (response.status=="200") {
@@ -46,143 +56,162 @@ const NewListingPage = () => {
     .catch(function (error) {
         console.log(error);
     });
+  }
+
+  {/* options to select for category drop down*/}
+  const [categories, setCategories] = useState('');
+  /*
+  const getCatergories = () => {
+    axios.get('http://localhost:3000/category')
+    .then(res => {
+      console.log(res.data);
+      setCategories(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+  getCatergories();*/
+  const categoryOptions = [
+    {value: '', text: '---Select a category---'},
+  ];
+  /*
+  for (const category of categories) {
+    categoryOptions.push({value: category._id, text: category.name});
+  }*/
+
+  {/* options for visibility*/}
+  const visibilityOptions = [
+    {value: '', text: '---Select sell visbility---'},
+    {value: true, text: 'Public'},
+    {value: false, text: 'Private'},
+  ];
+
+  {/* options for group dropdown menu */}
+  const [groups, setGroups] = useState('');
+  const getGroups = () => {
+    axios.get('https://market34-back.onrender.com/groups')
+    .then(res => {
+      console.log(res.data);
+      setGroups(res.data);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  useEffect(() => {
+    if (!firstRender) {
+      getGroups();
+      //getCatergories();
+      setFirstRender(true);
     }
-
-    {/* options to select for category drop down*/}
-    const categoryOptions = [
-        {value: '', text: '---Select a category---'},
-        {value: 'category-1', text: 'Vechicles'},
-        {value: 'category-2', text: 'Apparel'},
-        {value: 'category-3', text: 'Electronics'},
-        {value: 'category-4', text: 'Family'},
-        {value: 'category-5', text: 'Garden & Outdoor'},
-        {value: 'category-6', text: 'Hobbies'},
-        {value: 'category-7', text: 'Home Goods'},
-        {value: 'category-8', text: 'Home Improvement Supplies'},
-        {value: 'category-9', text: 'Musical Instruments'},
-        {value: 'category-10', text: 'Office Supplies'},
-        {value: 'category-11', text: 'Pet Supplies'},
-        {value: 'category-12', text: 'Sporting Goods'},
-        {value: 'category-13', text: 'Toys & Games'},
-
-      ];
+  }, [firstRender]);
     
-      {/* options for visibility*/}
-      const visibilityOptions = [
-        {value: '', text: '---Select sell visbility---'},
-        {value: true, text: 'Public'},
-        {value: false, text: 'Private'},
+  const groupOptions = [
+    {value: '', text: '---Select group if applicable---'}
+  ];
+  
+  for (const group of groups) {
+    groupOptions.push({value: group._id, text: group.name});
+  }
 
-      ];
+  {/* set selected for each drop down*/}
+  const [selectedVis, setSelectedVis] = useState(visibilityOptions[0].value);
+  const [selectedCat, setSelectedCat] = useState(categoryOptions[0].value);
+  const [selectedGroup, setSelectedGroup] = useState(groupOptions[0].value);
 
-      const groupOptions = [
-        {value: '', text: '---Select group if applicable---'},
-        {value: 'group1', text: 'Test Group 1'},
-        {value: 'group2', text: 'Test Group 2'},
+  {/* handle onchange for each drop down state*/}
+  const handleChangeCat = e => {
+    console.log(e.target.value);
+    setSelectedCat(e.target.value);
+    setValues({...values, itemCategory:e.target.value})
+  };
 
-      ];
+  const handleChangeVis = e => {
+    setValues({...values, itemVisbility:e.target.value})
+    console.log(e.target.value);
+    setSelectedVis(e.target.value);
+  };
+  
+  const handleChangeGroup = e => {
+    setValues({...values, itemGroup:e.target.value})
+    console.log(e.target.value);
+    setSelectedGroup(e.target.value);
+  };
 
-     {/* set selected for each drop down*/}
-      const [selectedVis, setSelectedVis] = useState(visibilityOptions[0].value);
-      const [selectedCat, setSelectedCat] = useState(categoryOptions[0].value);
-      const [selectedGroup, setSelectedGroup] = useState(groupOptions[0].value);
-
-      {/* handle onchange for each drop down state*/}
-      const handleChangeCat = e => {
-        console.log(e.target.value);
-        setSelectedCat(e.target.value);
-        setValues({...values, itemCategory:e.target.value})
-      };
-    
-      const handleChangeVis = e => {
-        setValues({...values, itemVisbility:e.target.value})
-        console.log(e.target.value);
-        setSelectedVis(e.target.value);
-      };
-     
-      const handleChangeGroup = e => {
-        setValues({...values, itemGroup:e.target.value})
-        console.log(e.target.value);
-        setSelectedGroup(e.target.value);
-      };
-
-      console.log(values);
-      console.log(categoryOptions.value);
+  console.log(values);
 
 
-     {/* stuff for image upload*/} 
+  {/* stuff for image upload*/} 
 
-     const [image, setImage] = useState({ preview: "", raw: "" });
+  const [image, setImage] = useState({ preview: "", raw: "" });
 
-     const handleChange = e => {
-       if (e.target.files.length) {
-         setImage({
-           preview: URL.createObjectURL(e.target.files[0]),
-           raw: e.target.files[0]
-         });
-       }
-     };
+  const handleChange = e => {
+    if (e.target.files.length) {
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0]
+      });
+    }
+  };
    
-     const handleUpload = async e => {
-       e.preventDefault();
-       const formData = new FormData();
-       formData.append("image", image.raw);
-       try {
-        const response = await axios({
-          method: "post",
-          url: "/public/",
-          data: formData,
-          headers: { "Content-Type": "multipart/form-data" },
-        });
-      } catch(error) {
-        console.log(error)
-      }
-
-     };
+  const handleUpload = async e => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("image", image.raw);
+    try {
+    const response = await axios({
+      method: "post",
+      url: "/public/",
+      data: formData,
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    } catch(error) {
+      console.log(error)
+    }
+  };
     
-    return (
+  return (
     <div className="parent" >
-     {/* top nav bar*/}
+      {/* top nav bar*/}
     <div class="navbar">
-    <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
+      <h1 className="website-title"> Market34</h1>
+          <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
+          <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+          <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
+          <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+          <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
+        <div class="nav-login">
+          {/* search bar*/}
+          <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
+          <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+        
+          <input type="text"placeholder="Search.."> 
+          </input>
+        </div>
     </div>
         
     <div class="listings-main">
       <div className="home-title"> List an item,<a> and start selling right away!</a></div>
-      
     </div>
     <hr />
     <div className="number-listings"> 1234 items sold in the last 24 hours!
     
-    {/* on click to submit new listing here*/}
+      {/* on click to submit new listing here*/}
 
-    <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
+      <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
     <hr />
-       {/*Upload Image box and button handle uploading img*/}    
+      {/*Upload Image box and button handle uploading img*/}    
     <div class="left-box">
         <div className="square-pic">  
         <label htmlFor="upload-button">
 
-             {/* image preview conditionals for user to see*/} 
+              {/* image preview conditionals for user to see*/} 
             {image.preview ? (
           <img src={image.preview} alt="dummy" width="100%" height="100%" />
         ) : (
           <>
-     <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+      <img src={uploadPlaceholder} className="upload-placeholder"></img> 
           </>
         )}
         </label>  
@@ -206,7 +235,7 @@ const NewListingPage = () => {
             <label for="item-name"> <div className="item-name"> Item Name: </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
-             />
+              />
             <label for="enter-price"><div className="item-name"> Price: </div></label>
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
@@ -216,7 +245,7 @@ const NewListingPage = () => {
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
 
-             {/* select on change for dropdown button*/}
+              {/* select on change for dropdown button*/}
 
             <label for="category-name"><div className="item-name"> Item Category:</div></label>
             <select type="category-listing" value={selectedCat} onChange={handleChangeCat}>
@@ -228,10 +257,10 @@ const NewListingPage = () => {
                 
       </select>
 
-         {/* select on change for dropdown button*/}
+          {/* select on change for dropdown button*/}
 
-         <label for="visbility-list"> <div className="item-name">Item Visibility:</div></label>
-         <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
+          <label for="visbility-list"> <div className="item-name">Item Visibility:</div></label>
+          <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.text}
@@ -239,10 +268,10 @@ const NewListingPage = () => {
                 ))}
       </select>
 
-       {/* select on change for dropdown button*/}
+        {/* select on change for dropdown button*/}
 
-       <label for="groups-list"> <div className="item-name">Group Select:</div></label>
-         <select type="category-listing" value={selectedGroup} onChange={handleChangeGroup}>
+        <label for="groups-list"> <div className="item-name">Group Select:</div></label>
+          <select type="category-listing" value={selectedGroup} onChange={handleChangeGroup}>
                 {groupOptions.map(option => (
                 <option key={option.value} value={option.value}>
                     {option.text}
@@ -253,10 +282,8 @@ const NewListingPage = () => {
         
     </form> 
     </div>
-       
-</div>
-    
-   
+        
+    </div>
   );
 }
 
