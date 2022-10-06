@@ -42,7 +42,7 @@ const CheckoutPage = () => {
 
         <div className="check-header"> YOUR BAG</div> 
         <br/>
-        <div className="total-items"> TOTAL (2 items) <b> $69.96 </b> </div>
+        <div className="total-items"> TOTAL (3 items) <b> $42.60 </b> </div>
         <br/>
         <div className="total-items"> Items inside your bag are not reserved - check out now to make them yours! </div>
         <hr/>
@@ -52,13 +52,13 @@ const CheckoutPage = () => {
                 <h1>ORDER SUMMARY </h1>
                 <br/>
                 2 items:
-                <div className="payment-detail-text"> $28.40</div> 
+                <div className="payment-detail-text"> $42.60</div> 
                 <hr/>
              
                 <b>TOTAL</b>
-                <div className="payment-detail-text"> $28.40</div> 
+                <div className="payment-detail-text"> $42.60</div> 
                 <br/>
-                <button className="checkout-btn"> CHECKOUT</button>
+                <button className="checkout-btn"> <b> CHECKOUT</b></button>
             </div>
 
          {/* items showcase here for checkout*/}
@@ -74,11 +74,27 @@ const CheckoutPage = () => {
                     <br/>
                     <b> $14.20 </b>
                 </div>  
-           
                 <button className="check-remove-btn"> Remove</button>
                 </div>
               </div>
               
+            </div>
+
+            {/* ITEM 2 */}
+            <div class="row-check">
+              <div class="column-check">
+                <div class="card-check">
+                  <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                  <div className="check-texts">
+                    A COOL ITEM HERE
+                    <br/>
+                    <b> $14.20 </b>
+                </div>  
+           
+                <button className="check-remove-btn"> Remove</button>
+                </div>
+              </div>
+                {/* ITEM 3 */}
             </div>
             <div class="row-check">
               <div class="column-check">

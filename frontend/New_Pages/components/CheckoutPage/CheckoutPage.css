@@ -18,12 +18,9 @@
     margin-left: 20%;
 }
 
-/* space within checkout page that can be used */
+/* space within checkout page that can be used (6/10 SHLD DELETE THIS) */
 .checkout-items-card{
     margin-left: 5%;
-    padding-bottom: 50%;
-    border: thin solid;
-    border-color: black;
 }
 
 /* item card for checkout */
@@ -42,7 +39,7 @@
 
 /* wrapper to move products display up change to 20px later! */ 
 .wrapper-check{
-    margin-top: 40px;
+    margin-top: 10px;
     float: left;
     margin-left: 13%;
   }
@@ -94,6 +91,8 @@
     margin-top: 25%;
     margin-right: 3%;
     float: right;
+    width: 20%;
+
 
   }
 
@@ -123,9 +122,26 @@
     float: right;
   }
 
+  /* Checkout button */ 
   .checkout-btn{
     vertical-align: center;
     text-align: center;
     margin-top: 10%;
-    margin-left: 30%;
+    width: 100%;
+    font-size: 20px;
+    background: black;
+    color: white;
   }
+
+  /* Change background on mouse-over */
+.checkout-btn:hover {
+  background: #A4DF9A;
+  color: black;
+}
+
+  /* Change background on mouse-over */
+  .check-remove-btn:hover {
+    background: #A4DF9A;
+    color: black;
+  }
+  

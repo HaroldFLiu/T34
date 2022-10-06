@@ -12872,9 +12872,7 @@ body {
 }
 
 .checkout-items-card {
-  border: thin solid #000;
   margin-left: 5%;
-  padding-bottom: 50%;
 }
 
 .check-square {
@@ -12891,7 +12889,7 @@ body {
 
 .wrapper-check {
   float: left;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-left: 13%;
 }
 
@@ -12930,6 +12928,7 @@ body {
 
 .check-remove-btn {
   float: right;
+  width: 20%;
   margin-top: 25%;
   margin-right: 3%;
 }
@@ -12955,8 +12954,16 @@ body {
 .checkout-btn {
   vertical-align: center;
   text-align: center;
+  width: 100%;
+  color: #fff;
+  background: #000;
   margin-top: 10%;
-  margin-left: 30%;
+  font-size: 20px;
+}
+
+.checkout-btn:hover, .check-remove-btn:hover {
+  color: #000;
+  background: #a4df9a;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
