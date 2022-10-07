@@ -11,27 +11,50 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
-
+import { useParams } from "react-router-dom";
 const ProductInformationPage = () => {
+
+  const [values, setValues] = useState({
+    itemName: "",
+    itemDescription: "",
+    itemPrice: "",
+
+  });
+
+  const props = {
+    name: values.itemName,
+    description: values.itemDescription,
+    price: values.itemPrice,
+  }
 
   const [posts, setPosts] = useState([]);
 
-  // Define the function that fetches the data from API
+
   const fetchData = async () => {
-    const { data } = await axios.get("/public/:category_id");
+    const { data } = await axios.get("/public");
     setPosts(data);
   };
 
-  // Trigger the fetchData after the initial render by using the useEffect hook
+ 
   useEffect(() => {
     fetchData();
   }, []);
+  
 
   {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-  console.log(posts);
-
+  let {productId} = useParams()
+  const thisProduct = posts.find(prod => prod.id == productId)
+  {/*degub log here */}
+  console.log(thisProduct);
+ 
   return (
 <div className="parent" >
+  {/*
+{thisProduct.map((item) => {
+      return(  
+      <>123 </> )
+      
+    })}*/}
      {/* top nav bar*/}
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
@@ -51,44 +74,48 @@ const ProductInformationPage = () => {
     </div>
   
     {/* product info display*/} 
-    <div class="product-info-wrap">
 
-    
-      <div className="more-info-wrap">
-      <div className="item-name-label"> Item Name Here </div>
-      <div className="info-text"> <b>Seller:</b> Seller Name Here</div> 
-      
-      <hr />
-      <br/>
-      <div className="item-descip-wrap">
-      <div className="info-text-centered"> Item Description: <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
-        </div> 
-        
-      <br/>
-      <div className="info-text-centered-price"> <b>$123</b></div>
-      <hr />
-
-      <button className="purchase-btn"> PURCHASE </button>
-      <button className="contact-btn"> CONTACT SELLER </button>
-
-      </div>
-      <div className="product-img-wrap">
+<div class="product-info-wrap">     
+    <div className="product-img-wrap">
         <div class="square">
           {/* put img src here later*/} 
         </div>
-        {/* other pictures display gallery*/} 
+        {/* other pictures display gallery
           <div class="row">
             <div class="column">
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             </div>
-           </div>
+           </div>*/} 
 
       </div>
 
+      <div className="more-info-wrap">
+      <div className="item-name-label"> {thisProduct?.name}</div>
+      <div className="info-text"> <b>Seller:</b> {thisProduct?.seller_id}</div> 
+      
+      <hr />
+      <br/>
+      <div className="item-descip-wrap">
+      <div className="info-text-centered"> Item Description: <p> {thisProduct?.description}</p></div>
+        </div> 
+        
+      <br/>
+      <div className="info-text-centered-price"> <b>${thisProduct?.price}</b></div>
+      <hr />
 
-    </div> 
+      <button className="purchase-btn"> PURCHASE </button>
+      <button className="contact-btn"> CONTACT SELLER </button>
+
+      </div>
+
+      </div>  
+      
+      
+      
+      
+  
 
 
   </div>

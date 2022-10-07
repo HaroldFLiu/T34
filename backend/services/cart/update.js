@@ -65,7 +65,24 @@ const removeAllItems = async(cartId) => {
   return cart;
 }
 
-module.exports = {addItem, checkout, deleteItem, removeAllItems};
+const updateById = async (cartId, props) => {
+  const cart = await Cart.findById(cartId);
+
+  if (!cart) {
+    console.log(`Cannot find cart with ID: ${cartId}`);
+    return undefined;
+  }
+
+  for (const property in props) {
+    cart[property] = props[property];
+  }
+
+  await cart.save();
+
+  return cart;
+};
+
+module.exports = {addItem, checkout, deleteItem, removeAllItems, updateById};
 
 
 

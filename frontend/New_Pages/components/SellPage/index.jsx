@@ -33,6 +33,7 @@ const SellPage = () => {
   React.useEffect(() => {
     axios.get("/").then((response) => {
       setPost(response.data);
+      
     });
   }, []);
 

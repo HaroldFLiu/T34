@@ -39,6 +39,7 @@ const GroupPage = () => {
   }, []);
 
 
+
   return (
 <div className="parent" >
      {/* top nav bar*/}

@@ -12,12 +12,12 @@ const createCart = async (req, res) => {
 
 const getCart = async (req, res) => {
     const { cartId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
-        return res.status(404).json({error: 'Cart does not exist'});
+    if (!mongoose.isValidObjectId(cartId.toString())) {
+        return res.status(404).json({error: 'Cart does not exist1'});
     }
     const cart = await cartService.readById(cartId);
     if (!cart) {
-        return res.status(404).json({error: 'Cart does not exist'});
+        return res.status(404).json({error: 'Cart does not exist2'});
     }
     res.status(200).json(cart)
 }

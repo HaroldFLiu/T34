@@ -8,6 +8,7 @@ const { User } = require('./models/user');
 const { Cart } = require('./models/cart');
 const { Favourites } = require('./models/favourites');
 const { Comment } = require('./models/comment');
+const { Session } = require('./models/session');
 
 const itemService = require('./services/item');
 const categoryService = require('./services/category');
@@ -21,116 +22,127 @@ const { decodeBase64 } = require('bcryptjs');
 
 const users = [
     {
-        _id: "633188efb8e95a5d3679d555",
+        _id: "633e7c16434369b2dc9d2dab",
         first_name: "Sue",
         last_name: "Green",
-        email: "suegreen@spacewax.com",
-        password: "magna",
+        email: "test1@email.com",
+        password: "test1",
     }
 ]
 const categories = [
     {
-        _id: "633a9b8d839c0bc5fe5ed317",
+        _id: "633e7be0b5c1407aa35db518",
         name: "Vechicles",
     },
     {
-        _id: "633a9a9445a6ddf458e9600b",
+        _id: "633e7be1b5c1407aa35db51b",
         name: "Apparel",
     },
     {
-        _id: "633a9a9445a6ddf458e9600e",
+        _id: "633e7be1b5c1407aa35db51e",
         name: "Classified",
     },
     {
-        _id: "633a9a9445a6ddf458e96011",
+        _id: "633e7be1b5c1407aa35db521",
         name: "Electronics",
     },
     {
-        _id: "633a9a9445a6ddf458e96014",
+        _id: "633e7be1b5c1407aa35db524",
         name: "Entertainment",
     },
     {
-        _id: "633a9a9445a6ddf458e96017",
+        _id: "633e7be1b5c1407aa35db527",
         name: "Family",
     },
     {
-        _id: "633a9a9445a6ddf458e9601a",
+        _id: "633e7be1b5c1407aa35db52a",
         name: "Garden & Outdoor",
     },
     {
-        _id: "633a9a9545a6ddf458e9601d",
+        _id: "633e7be1b5c1407aa35db52d",
         name: "Hobbies",
     },
     {
-        _id: "633a9a9545a6ddf458e96020",
+        _id: "633e7be1b5c1407aa35db530",
         name: "Home Goods",
     },
     {
-        _id: "633a9a9545a6ddf458e96023",
+        _id: "633e7be1b5c1407aa35db533",
         name: "Home Improvement Supplies",
     },
     {
-        _id: "633a9a9545a6ddf458e96026",
+        _id: "633e7be1b5c1407aa35db536",
         name: "Musical Instruments",
     },
     {
-        _id: "633a9a9545a6ddf458e96029",
+        _id: "633e7be1b5c1407aa35db539",
         name: "Office Supplies",
     },
     {
-        _id: "633a9a9545a6ddf458e9602c",
+        _id: "633e7be1b5c1407aa35db53c",
         name: "Pet Supplies",
     },
     {
-        _id: "633a9a9545a6ddf458e9602f",
+        _id: "633e7be1b5c1407aa35db53f",
         name: "Sporting Goods",
     },
     {
-        _id: "633a9a9545a6ddf458e96032",
+        _id: "633e7be1b5c1407aa35db542",
         name: "Toys & Games",
     }
 ]
 
 const groups = [
     {
-        _id: "633188efb8e95a5d3679d55d",
+        _id: "633e7be1b5c1407aa35db545",
         name: "Car Sellers Melbourne",
         description: "Good cars only",
     },
     {
-        _id: "633188efb8e95a5d3679d560",
+        _id: "633e7be1b5c1407aa35db548",
         name: "Fantastic Furniture",
         description: "Furniture finds in Melbourne",
     }
 ]
 
+const carts = [
+    {
+        _id: "633eea0d7d3172b98415e773",
+        user: "633e7c16434369b2dc9d2dab",
+        items: ["633eec982a25d4851e300c38", "633eec982a25d4851e300c3b"]
+    }
+]
+
 const items = [
     {
+        _id: "633eec982a25d4851e300c38",
         name: "Toyota Car",
         description: "In good condition",
         price: 30000,
-        group_ids: ["633188efb8e95a5d3679d55d"],
-        category_ids: ["633a9b8d839c0bc5fe5ed317"],
+        group_ids: ["633e7be1b5c1407aa35db545"],
+        category_ids: ["633e7be0b5c1407aa35db518"],
         public_visibility: true,
-        seller_id: "633188efb8e95a5d3679d555",
+        seller_id: "633e7c16434369b2dc9d2dab",
     },
     {
+        _id: "633eec982a25d4851e300c3b",
         name: "Couch",
         description: "Soft but sturdy",
         price: 500,
-        group_ids: ["633188efb8e95a5d3679d560"],
-        category_ids: ["633a9a9545a6ddf458e96020"],
+        group_ids: ["633e7be1b5c1407aa35db548"],
+        category_ids: ["633e7be1b5c1407aa35db530"],
         public_visibility: false,
-        seller_id: "633188efb8e95a5d3679d555",
+        seller_id: "633e7c16434369b2dc9d2dab",
     },
     {
+        _id: "633eec982a25d4851e300c3e",
         name: "Violin",
         description: "Plays well",
         price: 100,
         group_ids: [],
-        category_ids: ["633a9a9545a6ddf458e96026"],
+        category_ids: ["633e7be1b5c1407aa35db536"],
         public_visibility: true,
-        seller_id: "633188efb8e95a5d3679d555",
+        seller_id: "633e7c16434369b2dc9d2dab",
     }
 ]
 
@@ -152,11 +164,11 @@ async function seed() {
         tmp = await userService.readById(user._id);
         if (!tmp) {
             await userService.create(user);
-        } 
+        } else {
+            await userService.updateById(user._id, user);
+        }
         //console.log(user);
     }
-
-    await Item.deleteMany({});
 
     for (const category of categories) {
         tmp = await categoryService.readById(category._id);
@@ -185,6 +197,27 @@ async function seed() {
         }
     }
 
+    for (const cart of carts) {
+        tmp = await cartService.readById(cart._id);
+        if (!tmp) {
+            await cartService.create(cart);
+        } else {
+            await cartService.updateById(cart._id, cart);
+        }
+    }
+
+    // delete other items
+    const allItems = await itemService.readAll();
+    const seededItems = items.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const item of allItems) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededItems.includes(JSON.stringify(item._id))) {
+            console.log("should not be in DB");
+            await itemService.deleteById(item._id);
+        }
+    }
 
     mongoose.disconnect();
 

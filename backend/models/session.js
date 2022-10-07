@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 const crypto = require('crypto');
+const { Schema, model, default: mongoose } = require('mongoose');
 
 const SessionSchema = new mongoose.Schema({
   token: {
@@ -48,4 +48,5 @@ SessionSchema.methods.expireToken = function() {
   return session.update({ $set: { status: 'expired' } });
 };
 
-module.exports = mongoose.model('Session', SessionSchema);
+const Session = model('Session', SessionSchema);
+module.exports = { Session };
