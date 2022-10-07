@@ -1,6 +1,6 @@
 
 import logo from "../../dist/img/t34-logo.jpg";
-import React, {useEffect, useState}from "react";
+import React, {useEffect, useState, useMemo}from "react";
 import axios from "../../api/axios";
 
  /* HOW TO GET ITEM SERVICE 
@@ -8,7 +8,6 @@ const itemService = require('../../../../backend/services/category');
 itemService.readById(post.catergoryId)
 
 */
-
 function ProductComponents() {
 
 
@@ -24,6 +23,7 @@ function ProductComponents() {
     useEffect(() => {
       fetchData();
     }, []);
+
 
 
 return(
@@ -68,7 +68,9 @@ return(
     
         </div>  
       )
+      
     })}
+
     </div>  
       
 );

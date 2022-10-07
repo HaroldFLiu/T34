@@ -3,6 +3,8 @@ import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
+
+import PageNext from "../PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -28,15 +30,6 @@ import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
 
 const HomePage = () => {
-/*
-  const [posts, setPost] = React.useState(null);
-
-  React.useEffect(() => {
-    axios.get("/public").then((response) => {
-      setPost(response.data);
-    });
-  }, []);
-*/
 
 const [posts, setPosts] = useState([]);
 
@@ -50,6 +43,31 @@ const [posts, setPosts] = useState([]);
   useEffect(() => {
     fetchData();
   }, []);
+
+
+      // To hold the actual data
+      const [data, setData] = useState([])
+      const [loading, setLoading] = useState(true);
+  
+      const [currentPage, setCurrentPage] = useState(1);
+      const [recordsPerPage] = useState(10);
+  
+  
+      useEffect(() => {
+          axios.get('/public')
+              .then(res => {
+                      setData(res.data);
+                      setLoading(false);
+                  })
+                  .catch(() => {
+                      alert('There was an error while retrieving the data')
+                  })
+      }, [])
+  
+      const indexOfLastRecord = currentPage * recordsPerPage;
+      const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+      const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+      const nPages = Math.ceil(data.length / recordsPerPage)
 
   return (
   <div className="parent" >
@@ -121,6 +139,12 @@ const [posts, setPosts] = useState([]);
           <div class="column">
 
           <ProductComponents/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
+
           </div>
         </div>
     </div>
