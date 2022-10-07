@@ -11,14 +11,14 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
-
+import { useParams } from "react-router-dom";
 const ProductInformationPage = () => {
 
   const [posts, setPosts] = useState([]);
 
   // Define the function that fetches the data from API
   const fetchData = async () => {
-    const { data } = await axios.get("/public/:item_id");
+    const { data } = await axios.get("/public");
     setPosts(data);
   };
 
@@ -28,10 +28,19 @@ const ProductInformationPage = () => {
   }, []);
 
   {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-  console.log(posts);
-
+  const {productId} = useParams()
+  const thisProduct = posts.find(prod => prod.id === productId)
+  {/*degub log here */}
+  console.log(thisProduct);
+ 
   return (
 <div className="parent" >
+  {/*
+{thisProduct.map((item) => {
+      return(  
+      <>123 </> )
+      
+    })}*/}
      {/* top nav bar*/}
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
@@ -51,7 +60,8 @@ const ProductInformationPage = () => {
     </div>
   
     {/* product info display*/} 
-    <div class="product-info-wrap">
+
+<div class="product-info-wrap">     
     <div className="product-img-wrap">
         <div class="square">
           {/* put img src here later*/} 
@@ -67,9 +77,8 @@ const ProductInformationPage = () => {
 
       </div>
 
-    
       <div className="more-info-wrap">
-      <div className="item-name-label"> Item Name Here </div>
+      <div className="item-name-label"> Item Description</div>
       <div className="info-text"> <b>Seller:</b> Seller Name Here</div> 
       
       <hr />
@@ -87,9 +96,12 @@ const ProductInformationPage = () => {
 
       </div>
 
-
-
-    </div> 
+      </div>  
+      
+      
+      
+      
+  
 
 
   </div>
