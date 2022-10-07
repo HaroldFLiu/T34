@@ -27,7 +27,7 @@ const getGroup = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const group = await groupService.readById(group_id);
@@ -43,7 +43,7 @@ const getGroupItems = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const items = await itemService.readByGroup(group_id);
@@ -59,7 +59,7 @@ const getGroupItemsWithCategory = async (req, res) => {
     const { group_id, category_id} = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(category_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const items = await itemService.readByGroup(group_id);
@@ -76,7 +76,7 @@ const deleteGroup = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Group does not exist'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const group = await groupService.deleteById(group_id);
@@ -90,7 +90,7 @@ const updateGroup = async (req, res) => {
     const { group_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(group_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const group = await groupService.updateById(group_id, req.body);

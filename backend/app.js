@@ -1,4 +1,5 @@
 require('dotenv').config();
+const cors = require("cors");
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -9,6 +10,7 @@ const cookieParser = require('cookie-parser');
 
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
+const categoryRoutes = require('./routes/category');
 //const uploadRoute = require('./routes/upload');
 //const Grid = require('gridfs-stream');
 
@@ -20,6 +22,7 @@ const cartRoutes = require('./routes/cart');
 const { applySpec } = require('ramda');
 
 const app = express();
+app.use(cors());
 
 // middleware
 app.use(function(req, res, next) {
@@ -48,6 +51,7 @@ app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
 app.use('/cart', cartRoutes);
+app.use('/category', categoryRoutes);
 //app.use('/file', uploadRoute);
 
 // connect to database
@@ -66,6 +70,12 @@ mongoose.connect(process.env.MONGO_URI, {
     console.log(error);
 });
 
+// fix CORS error
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
+});
 
 
 

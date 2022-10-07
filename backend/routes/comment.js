@@ -13,14 +13,14 @@ const router = express.Router();
 // GET a comment
 router.get('/', getComment);
 
-// GET a comment from itemid
+// GET comments from itemid
 router.get('/:itemId', getComments)
 
 // POST a comment
 router.post('/:itemId', createComment);
 
 // DELETE a comment
-router.delete('/', deleteComment);
+router.delete('/:itemId', deleteComment);
 
 // UPDATE a comment
-router.patch('/', updateComment);
+router.patch('/:itemId', updateComment);
