@@ -25,6 +25,20 @@ const NewListingPage = () => {
     itemVisbility: "",
   });
 
+  {/* stuff for image upload*/} 
+
+  const [image, setImage] = useState({ preview: "", raw: "" });
+
+  const handleChange = e => {
+    if (e.target.files.length) {
+      console.log(e.target.files[0])
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0]
+      });
+    }
+  };
+
   const PostNewListing =  event => {
     /* item details */
     event.preventDefault();
@@ -34,7 +48,9 @@ const NewListingPage = () => {
       price: values.itemPrice,
       public_visibility: values.itemVisbility,
       category_ids: [],
-      group_ids: []
+      group_ids: [],
+      image_urls: [],
+      cloudinary_ids: [],
     }
 
     if (values.itemCategory) {
@@ -45,8 +61,6 @@ const NewListingPage = () => {
       props.group_ids = [values.itemGroup];
     }
 
-    console.log(props);
-
     /* image details */
     const formData = new FormData();
     formData.append('file', image.raw);
@@ -54,51 +68,36 @@ const NewListingPage = () => {
     //console.log(formData);
 
     /* posting */
-    
-    axios.post('/public', props)
+    // image upload
+    axios.post(CLOUDINARY_URL, formData)
     .then(function (res1) {
-      if (res1.status=="200" && !image.preview) {
-        location.pathname='/home-page';
-      } else if (res1.status=="200" && image.preview) {
-        console.log(res1.data._id);
-        console.log(image.preview);
-        console.log('item details successful');
+      console.log('RES 1');
+      console.log(res1);
 
-        // image upload
-        axios.post(CLOUDINARY_URL, formData)
+      if (res1.status=="200") {
+        console.log('image uploaded to cloudinary');
+        props.cloudinary_ids = [res2.data.public_id];
+        props.image_urls = [res2.data.secure_url];
+        console.log(props);
+
+        axios.post('/public', props)
         .then(function (res2) {
-          console.log('RES 2');
-          console.log(res2);
           if (res2.status=="200") {
-            const imageProp = {image_urls: [res2.data.secure_url], cloudinary_ids: [res2.data.public_id]};
-            console.log(imageProp);
-
-            axios.patch('/public/' + res1.data._id, imageProp)
-            .then(function (res3) {
-              console.log('RES 3');
-              console.log(res3);
-              if (res1.status=="200") {
-                location.pathname='/home-page';
-              } else {
-                console.log("item updating went wrong");
-              }
-            })
-            .catch(function (error) {
-              console.log("image went wrong 2");
-            });
+            console.log('item details successful');
+            location.pathname='/home-page';
           } else {
-            console.log("image went wrong");
+            console.log("item posting went wrong");
           }
         })
         .catch(function (error) {
-          console.log("image went wrong 3");
+            console.log(error);
         });
       } else {
-        console.log("item went wrong");
+        console.log("image posting to cloudinary went wrong");
       }
     })
     .catch(function (error) {
-        console.log(error);
+      console.log("Image Required");
     });
   }
 
@@ -179,22 +178,6 @@ const NewListingPage = () => {
     console.log(e.target.value);
     setSelectedGroup(e.target.value);
   };
-
-
-  {/* stuff for image upload*/} 
-
-  const [image, setImage] = useState({ preview: "", raw: "" });
-
-  const handleChange = e => {
-    if (e.target.files.length) {
-      console.log(e.target.files[0])
-      setImage({
-        preview: URL.createObjectURL(e.target.files[0]),
-        raw: e.target.files[0]
-      });
-    }
-  };
-  
     
   return (
     <div className="parent" >
@@ -249,7 +232,7 @@ const NewListingPage = () => {
       />  
         </div>
 
-    {/*<button onClick={handleUpload}>Upload Image</button>   */}
+    {/*<button onClick={handleUpload}>Upload Image</button> */}
     </div>
     
     {/* form to input new listing data*/}
