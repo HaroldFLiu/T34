@@ -36,7 +36,7 @@ return(
             <div className="item-cart">
             <h3>{item.name}</h3>
             <a href="#"> <p><button>Add to Cart</button></p></a>
-            obj id: {item._id} 
+        
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}

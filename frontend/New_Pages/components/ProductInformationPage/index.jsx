@@ -80,14 +80,14 @@ const ProductInformationPage = () => {
         <div class="square">
           {/* put img src here later*/} 
         </div>
-        {/* other pictures display gallery*/} 
+        {/* other pictures display gallery
           <div class="row">
             <div class="column">
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             <img src={uploadPlaceholder} className="img-gallery"></img> 
             </div>
-           </div>
+           </div>*/} 
 
       </div>
 
