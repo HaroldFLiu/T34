@@ -4,10 +4,10 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
 
-import PageNext from "../PageNext";
+import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {HiOutlineShoppingBag} from 'react-icons/hi' ;
 import {MdOutlineGroups} from 'react-icons/md';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
@@ -30,20 +30,6 @@ import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
 
 const HomePage = () => {
-
-const [posts, setPosts] = useState([]);
-
-  // Define the function that fetches the data from API
-  const fetchData = async () => {
-    const { data } = await axios.get("/public");
-    setPosts(data);
-  };
-
-  // Trigger the fetchData after the initial render by using the useEffect hook
-  useEffect(() => {
-    fetchData();
-  }, []);
-
 
       // To hold the actual data
       const [data, setData] = useState([])
@@ -138,7 +124,7 @@ const [posts, setPosts] = useState([]);
         <div class="row2">
           <div class="column">
 
-          <ProductComponents/> 
+          <ProductComponents data={currentRecords}/> 
           <PageNext
                 nPages={nPages}
                 currentPage={currentPage}
@@ -148,21 +134,6 @@ const [posts, setPosts] = useState([]);
           </div>
         </div>
     </div>
-
-
-    {/* next page bar here */}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
     </div> 
 
 

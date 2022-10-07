@@ -12393,6 +12393,10 @@ textarea.form-control-lg {
   transform: scaleX(-1);
 }
 
+.page-item {
+  float: left;
+}
+
 .App {
   background-color: #fff;
 }
