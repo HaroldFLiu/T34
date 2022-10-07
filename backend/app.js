@@ -19,6 +19,8 @@ const logoutRoutes = require('./routes/logout');
 const registerRoutes = require('./routes/register');
 const del_userRoutes = require('./routes/del_user');
 const cartRoutes = require('./routes/cart');
+const getuserRoutes = require('./routes/getuser');
+
 const { applySpec } = require('ramda');
 
 const app = express();
@@ -46,7 +48,8 @@ app.use(cookieParser());
 app.use('', indexRoutes);
 app.use('', logoutRoutes);
 app.use('', registerRoutes);
-app.use('', del_userRoutes)
+app.use('', getuserRoutes);
+app.use('', del_userRoutes);
 app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
