@@ -10,7 +10,7 @@ const CartComponents = () => {
     // Define the function that fetches the data from API 
     const fetchData = async () => {
       // NEED TO CHANGE OBJ ID 
-      const { data } = await axios.get("/cart/633eb90d41d00aa19b9e7954");
+      const { data } = await axios.get("/cart/633eea0d7d3172b98415e773");
       setPosts(data);
     };
   

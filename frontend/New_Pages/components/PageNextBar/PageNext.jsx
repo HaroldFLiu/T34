@@ -22,7 +22,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                     <a className="page-link" 
                         onClick={prevPage} 
                         href='#'>
-                        Back
+                        Back    
                         
                     </a>
                 </li>

@@ -18,7 +18,7 @@ const ProductInformationPage = () => {
 
   // Define the function that fetches the data from API
   const fetchData = async () => {
-    const { data } = await axios.get("/public/:category_id");
+    const { data } = await axios.get("/public/:item_id");
     setPosts(data);
   };
 

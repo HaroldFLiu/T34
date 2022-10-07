@@ -36,6 +36,7 @@ const HomePage = () => {
       const [loading, setLoading] = useState(true);
   
       const [currentPage, setCurrentPage] = useState(1);
+      // 10 items displayed per page
       const [recordsPerPage] = useState(10);
   
   
