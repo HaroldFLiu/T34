@@ -194,23 +194,7 @@ const NewListingPage = () => {
       });
     }
   };
-   
-  /*
-  const handleUpload = async e => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("image", image.raw);
-    try {
-    const response = await axios({
-      method: "post",
-      url: "/public/",
-      data: formData,
-      headers: { "Content-Type": "multipart/form-data" },
-    });
-    } catch(error) {
-      console.log(error)
-    }
-  };*/
+  
     
   return (
     <div className="parent" >
@@ -274,7 +258,7 @@ const NewListingPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> <div className="item-name"> Item Name: </div></label>
+            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name: </div> </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
               />
@@ -282,14 +266,14 @@ const NewListingPage = () => {
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
             />
-            <label for="enter-desc"> <div className="item-name">Item Description:</div></label>
+            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description:</div></div></label>
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
 
               {/* select on change for dropdown button*/}
 
-            <label for="category-name"><div className="item-name"> Item Category:</div></label>
+            <label for="category-name"><div className="item-name"><div className="item-name"> Item Category:</div></div></label>
             <select type="category-listing" value={selectedCat} onChange={handleChangeCat}>
                 {categoryOptions.map(option => (
                 <option key={option.value} value={option.value}>
@@ -301,7 +285,7 @@ const NewListingPage = () => {
 
           {/* select on change for dropdown button*/}
 
-          <label for="visbility-list"> <div className="item-name">Item Visibility:</div></label>
+          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility:</div></div></label>
           <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>

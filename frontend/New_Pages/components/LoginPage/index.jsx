@@ -1,6 +1,9 @@
 import React, {useState}from "react";
 import "./Login.css";
 import axios from "../../api/axios"
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 const LoginPage = () => {
   const [values, setValues] = useState({
@@ -20,7 +23,10 @@ const LoginPage = () => {
   .then(function (response) {
     console.log(response);
     if (response.status=="200") {
-      location.pathname='/home-page';
+      let token =response.data.token;
+      console.log(token);
+      cookies.set('token',token,{maxAge:response.data.maxAge, sameSite:response.data.sameSite,secure:response.data.secure});
+      //location.pathname='/home-page';
     }
     else {
       console.log("oops");
