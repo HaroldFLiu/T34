@@ -56,6 +56,8 @@ const HomePage = () => {
       const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
       const nPages = Math.ceil(data.length / recordsPerPage)
 
+      console.log(data);
+
   return (
   <div className="parent" >
      {/* top nav bar*/}
