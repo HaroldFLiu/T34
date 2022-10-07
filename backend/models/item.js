@@ -46,7 +46,7 @@ const itemSchema = new Schema(
         type: [{ 
           type: String
         }],
-        default: []
+        default: [],
       },
       cloudinary_ids : {
         type: [{ 
