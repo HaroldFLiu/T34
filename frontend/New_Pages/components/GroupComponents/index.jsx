@@ -2,7 +2,7 @@
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
-
+import GroupPopUp from "../GroupPopUp";
 function GroupComponents() {
 
 
@@ -20,6 +20,16 @@ function GroupComponents() {
     }, []);
 
 
+    {/*Group pop up stuff*/}
+
+    const [isOpen, setIsOpen] = useState(false);
+ 
+    const togglePopup = () => {
+      setIsOpen(!isOpen);
+    }
+  
+
+
 return(
     <div className="products-wrapper">  
     {posts.map((post) => {
@@ -31,7 +41,7 @@ return(
           <div class="column">
           <div class="card">
             {/*  add href to group info page*/}
-            <a href="#" >
+            <a href="#" onClick={togglePopup} >
             <div className="img-wrap"> 
               <img src={logo} className="logo-position">
               </img> 
@@ -44,13 +54,16 @@ return(
                     <p><button>Join Group</button></p>
                 </div>
             </a>
+            {isOpen && <GroupPopUp
+
+      handleClose={togglePopup}
+    />}
+            
           </div>
           </div>   
 
         </div>
         </div>
-    
-    
         </div>  
       )
     })}
