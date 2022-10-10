@@ -11,6 +11,7 @@ const LoginPage = () => {
     password: "",
     showPass: false,
   });
+  const [error,setError]=useState();
 
   console.log(values);
 
@@ -26,7 +27,11 @@ const LoginPage = () => {
       let token =response.data.token;
       console.log(token);
       cookies.set('token',token,{maxAge:response.data.maxAge, sameSite:response.data.sameSite,secure:response.data.secure});
-      //location.pathname='/home-page';
+      location.pathname='/home-page';
+    }
+    else if(response.status=="401") {
+      setError("Authentication failed. Please check username and password");
+      // do something
     }
     else {
       console.log("oops");
