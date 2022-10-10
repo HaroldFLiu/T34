@@ -96,9 +96,9 @@ const NewListingPage = () => {
         console.log("image posting to cloudinary went wrong");
       }
     })
-    .catch(function (error) {
-      console.log("Image Required");
-    });
+    .catch(() => {
+      alert('Image Required. Please fill in all fields.');
+      });
   }
 
   {/* options to select for category drop down*/}
