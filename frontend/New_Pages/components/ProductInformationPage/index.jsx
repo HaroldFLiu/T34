@@ -14,19 +14,6 @@ import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 const ProductInformationPage = () => {
 
-  const [values, setValues] = useState({
-    itemName: "",
-    itemDescription: "",
-    itemPrice: "",
-
-  });
-
-  const props = {
-    name: values.itemName,
-    description: values.itemDescription,
-    price: values.itemPrice,
-  }
-
   const [posts, setPosts] = useState([]);
 
 
@@ -42,10 +29,28 @@ const ProductInformationPage = () => {
   
 
   {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-  let {productId} = useParams()
-  const thisProduct = posts.find(prod => prod.id == productId)
+  const {productId} = useParams()
+  //const thisProduct = posts.find(prod => prod.id == productId)
   {/*degub log here */}
-  console.log(thisProduct);
+  console.log(productId);
+
+  {/*fetch item data*/}
+  
+  const [items, setItems] = useState([]);
+
+
+  const fetchItems = async () => {
+    const { data } = await axios.get(`/public/item/${productId}`);
+    setItems(data);
+  };
+
+ 
+  useEffect(() => {
+    fetchItems();
+  }, []);
+  
+  console.log(items);
+
  
   return (
 <div className="parent" >
@@ -92,17 +97,17 @@ const ProductInformationPage = () => {
       </div>
 
       <div className="more-info-wrap">
-      <div className="item-name-label"> {thisProduct?.name}</div>
-      <div className="info-text"> <b>Seller:</b> {thisProduct?.seller_id}</div> 
+      <div className="item-name-label"> {items.name}</div>
+      <div className="info-text"> <b>Seller:</b> {items.seller_id}</div> 
       
       <hr />
       <br/>
       <div className="item-descip-wrap">
-      <div className="info-text-centered"> Item Description: <p> {thisProduct?.description}</p></div>
+      <div className="info-text-centered"> Item Description: <p> {items.description}</p></div>
         </div> 
         
       <br/>
-      <div className="info-text-centered-price"> <b>${thisProduct?.price}</b></div>
+      <div className="info-text-centered-price"> <b>${items.price}</b></div>
       <hr />
 
       <button className="purchase-btn"> PURCHASE </button>
