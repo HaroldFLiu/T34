@@ -45,7 +45,7 @@ function App() {
         <Route path="/my-groups-page">
           <MyGroupsPage/>
         </Route>
-        <Route path="/product-page">
+        <Route path="/product-page/:productId">
           <ProductInformationPage/>
         </Route>
         <Route path="/checkout-page">
