@@ -2,7 +2,7 @@ const uniqueValidator = require('mongoose-unique-validator');
 const crypto = require('crypto');
 const { Schema, model, default: mongoose } = require('mongoose');
 
-const SessionSchema = new mongoose.Schema({
+const sessionSchema = new mongoose.Schema({
   token: {
     type: String,
     unique: true,
@@ -23,10 +23,10 @@ const SessionSchema = new mongoose.Schema({
   },
 });
 
-SessionSchema.plugin(uniqueValidator);
+sessionSchema.plugin(uniqueValidator);
 
 
-SessionSchema.statics.generateToken = function() {
+sessionSchema.statics.generateToken = function() {
   return new Promise((resolve, reject) => {
     crypto.randomBytes(16, (err, buf) => {
       if (err) {
@@ -39,14 +39,14 @@ SessionSchema.statics.generateToken = function() {
 };
 
 
-SessionSchema.statics.expireAllTokensForUser = function(userId) {
+sessionSchema.statics.expireAllTokensForUser = function(userId) {
   return this.updateMany({ userId }, { $set: { status: 'expired' } });
 };
 
-SessionSchema.methods.expireToken = function() {
+sessionSchema.methods.expireToken = function() {
   const session = this;
   return session.update({ $set: { status: 'expired' } });
 };
 
-const Session = model('Session', SessionSchema);
-module.exports = { Session };
+var Session = model('Session', sessionSchema);
+module.exports = Session
