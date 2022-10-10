@@ -5,6 +5,7 @@ const authenticate = async (req, res, next) => {
   try {
     const { token } = req.cookies;
     if (typeof token !== 'string') {
+      console.log(req);
       throw new Error('Request cookie is invalid.');
     }
     const session = await Session.findOne({ token, status: 'valid' });

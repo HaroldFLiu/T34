@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
   
       res
         .cookie('token', session.token, {
-          sameSite: true,
+          sameSite: false,
           maxAge: 1209600000,
           secure: process.env.NODE_ENV === 'production',
         })
@@ -55,7 +55,7 @@ router.post('/login', async (req, res) => {
           title: 'Login Successful',
           detail: 'Successfully validated user credentials',
           token: session.token,
-          sameSite: true,
+          sameSite: false,
           maxAge: 1209600000,
           secure: process.env.NODE_ENV === 'production',
           //csrfToken: session.csrfToken,
