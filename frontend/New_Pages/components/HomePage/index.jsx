@@ -56,8 +56,24 @@ const HomePage = () => {
       const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
       const nPages = Math.ceil(data.length / recordsPerPage)
 
-      console.log(data);
+      //console.log(data);
 
+      {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+      const [user, setUser] = useState([])
+
+      const fetchData = async () => {
+        const { user } = await axios.get("/getuser, {withCredentials: true}");
+        setUser(user);
+      };
+    
+     
+      useEffect(() => {
+        fetchData();
+      }, []);
+
+      console.log({user});
+      
+ 
   return (
   <div className="parent" >
      {/* top nav bar*/}
