@@ -37,8 +37,12 @@ const LoginPage = () => {
       console.log("oops");
     }
   })
-  .catch(function (error) {
-    console.log(error);
+  
+  //.catch(function (error) {
+    //console.log(error);
+ // });
+ .catch(() => {
+  alert('Authentication failed. Please check username and password');
   });
 }
 
