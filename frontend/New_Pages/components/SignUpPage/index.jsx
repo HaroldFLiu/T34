@@ -29,9 +29,13 @@ const SignUpPage = () => {
           }
           
     })
-    .catch(function (error) {
-        console.log(error);
-    });
+    //.catch(function (error) {
+       // console.log(error);
+    //});
+
+    .catch(() => {
+        alert('Oops, something went wrong.');
+        });
     }
     console.log(values);
     return (
