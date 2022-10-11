@@ -12721,6 +12721,7 @@ h4, h3, h5 {
   width: 100%;
   height: 100vh;
   margin-top: 8%;
+  display: flex;
   position: fixed;
   top: 0;
   left: 0;
@@ -12748,13 +12749,67 @@ h4, h3, h5 {
   background: #ededed;
   border: 1px solid #999;
   border-radius: 50%;
-  margin-top: 9%;
+  margin-top: 10%;
   margin-right: 3%;
   font-size: 20px;
   line-height: 20px;
   position: fixed;
   top: calc(15vh - 33px);
   right: calc(15% - 30px);
+}
+
+.square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+}
+
+.popup-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.popup-text {
+  float: left;
+  margin-left: 3%;
+}
+
+.popup-box button {
+  width: 100%;
+  border-radius: 32px;
+  margin-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.header-popup {
+  margin-top: -15%;
+  font-size: 40px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.test {
+  max-width: max-content;
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 5%;
+  overflow: hidden;
+}
+
+.popup-btn button {
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+  margin-top: 10%;
+  font-size: 27px;
 }
 
 .vis-container {
