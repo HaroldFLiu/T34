@@ -42,17 +42,11 @@ const itemSchema = new Schema(
         ref: 'Comment',
         default: [],
       },
-      image_urls : {
+      image_urls: {
         type: [{ 
           type: String
         }],
         default: [],
-      },
-      cloudinary_ids : {
-        type: [{ 
-          type: String
-        }],
-        default: []
       },
       sold:  {
         type: Boolean,

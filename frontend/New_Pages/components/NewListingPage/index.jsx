@@ -50,7 +50,6 @@ const NewListingPage = () => {
       category_ids: [],
       group_ids: [],
       image_urls: [],
-      cloudinary_ids: [],
     }
 
     if (values.itemCategory) {
@@ -64,20 +63,24 @@ const NewListingPage = () => {
     /* image details */
     const formData = new FormData();
     formData.append('file', image.raw);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+    //formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
     //console.log(formData);
 
     /* posting */
     // image upload
-    axios.post(CLOUDINARY_URL, formData)
+    axios({
+      method: 'post',
+      url: '/public/image',
+      data: formData,
+    })
     .then(function (res1) {
       console.log('RES 1');
       console.log(res1);
+      console.log(image.raw);
 
       if (res1.status=="200") {
-        console.log('image uploaded to cloudinary');
-        props.cloudinary_ids = [res2.data.public_id];
-        props.image_urls = [res2.data.secure_url];
+        console.log('image uploaded');
+        props.image_urls = [res1.data.image_path];
         console.log(props);
 
         axios.post('/public', props)
@@ -85,6 +88,7 @@ const NewListingPage = () => {
           if (res2.status=="200") {
             console.log('item details successful');
             location.pathname='/home-page';
+            console.log(res2.data);
           } else {
             console.log("item posting went wrong");
           }
@@ -93,12 +97,12 @@ const NewListingPage = () => {
             console.log(error);
         });
       } else {
-        console.log("image posting to cloudinary went wrong");
+        console.log("image posting  went wrong");
       }
     })
     .catch(() => {
       alert('Image Required. Please fill in all fields.');
-      });
+    });
   }
 
   {/* options to select for category drop down*/}
