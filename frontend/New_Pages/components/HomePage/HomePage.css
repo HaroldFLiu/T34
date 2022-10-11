@@ -1,0 +1,277 @@
+@import url('http://fonts.cdnfonts.com/css/tienne');
+
+/* The navigation bar old color: 333 REMOVED  position: fixed; */
+.navbar {
+  overflow: hidden;
+  background-color: #5A896A;
+  top: 0; /* Position the navbar at the top of the page */
+  left:0;
+  right: 0;
+  width: 100%; /* Full width */
+  /* UNCOMMENT IF YOU WANT A FOLLOWING NAV BAR
+  position: fixed;
+  z-index: 1; */
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Tienne', sans-serif;
+  font-size: larger;
+}
+
+/* Change background on mouse-over */
+.navbar a:hover {
+  background: #A4DF9A;
+  color: black;
+}
+
+/* Main content */
+.main {
+  margin-top: 40px; /* Add a top margin to avoid content overlay */
+  margin-left: 340px; /* Same as the width of the sidebar */
+
+}
+
+/* Links inside the navbar for login and user*/
+.nav-login a{
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-family: 'Tienne', sans-serif;
+  font-size: larger;
+}
+
+/* Add a color to the active/current link old: 505050 */
+.navbar a.active {
+  background-color: #33532C;
+  color: white;
+}
+
+/* Style the search box inside the navigation bar */
+.navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+
+/* The sidebar menu */
+.sidenav {
+
+  width: 280px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: white;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  /* remove this */
+  padding-top: 40px;
+  margin-top: 150px; 
+  padding-left: 1%;
+
+}
+
+/* header of side nav menu */
+.header{
+  font-size: 35px;
+  color: black;
+  font-family: 'Tienne', sans-serif;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: black;
+  display: block;
+  font-family: 'Tienne', sans-serif;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: green;
+}
+
+/* HOME PAGE TITLE */
+.home-title{
+  font-family: 'Tienne', sans-serif;
+  font-size: 40px;
+}
+
+
+/* Row and Col for the Product gallery view */
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+
+/* Row and Col for the Product gallery view */
+.row2 {
+  display: flex;
+}
+
+/* CAP IMG SRC SIZE - FIX LATER */
+.logo-position{
+  border: 3px solid #555;
+  max-height: 100%;
+  max-width: 100%;
+}
+
+/* wrappers to move products */
+
+.products-wrapper{
+  margin-top: -10px;
+}
+
+/* wrapper to move products display up change to 20px later! */ 
+.wrapper{
+  margin-top: 40px;
+}
+
+/* Product Card CSS FONT WAS PREVIOUSLY ARIEL*/
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 250px;
+  margin: auto;
+  text-align: center;
+  font-family: 'Tienne', sans-serif;
+}
+
+.price {
+  color: grey;
+  font-size: 22px;
+  margin-top: -5%;
+}
+
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #5A896A;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.wishlist button{
+  outline: 0;
+  padding: 1px;
+  color: white;
+  border-color: #000;
+  background-color: green;
+  text-align: center;
+  width: 18%;
+  font-size: 10px;
+  margin-left: 70%;
+  
+}
+
+.card button:hover {
+  opacity: 1;
+  background: #A4DF9A;
+  color: black;
+}
+
+/* moves the img in the product card down abit */
+.img-wrap{
+  margin-top: 10px;
+}
+
+/* moves item name + cart up abit */
+.item-cart{
+  margin-top: -10px;
+}
+
+/* drop down button Sort By: */
+.move-drop-btn{
+  float: right;
+  margin-right: 100px;
+  margin-top: -10px;
+  
+}
+
+.website-title{
+  color: white;
+  font-family: 'Tienne', sans-serif; 
+  padding-left: 3%; 
+}
+
+/* PAGANATION CSS */
+.center-next {
+  text-align: center;
+  padding-top: 2%;
+  padding-bottom: 2%;
+}
+
+.pagination {
+  display: inline-block;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+}
+
+/* can be used later to see active page not in use now
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+*/ 
+
+/* add a hoverable thingy */
+.pagination a:hover:not(.active) {background-color:#4CAF50;;}
+
+
+/* ADD HREF TO PRODUCTS */
+.card a,
+.card a:hover{
+  text-decoration: none;
+  color: black;
+}
+
+/* need to css to display products wrapped nicely CHANGED TO FIT*/
+.products-wrapper-test{
+  border-width:2px;
+  display: inline-block;
+  width: 20%;
+}
+
+/* icon display and positionals */
+.icon{
+  position: relative;
+  bottom: 5px
+}
+
+.icon-flipped{
+  transform: scaleX(-1); 
+  position: relative;
+  bottom: 6px;
+}

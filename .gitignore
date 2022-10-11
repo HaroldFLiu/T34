@@ -2,3 +2,10 @@
 .DS_Store
 **/node_modules/
 **/jspm_packages/
+.idea/
+.vscode/
+*/coverage/
+*.mdb
+frontend/New_Pages/dist/index.3d214d75.js
+frontend/New_Pages/dist/index.3d214d75.js.map
+frontend/New_Pages/dist/index.e1b8c111.css.map
