@@ -36,7 +36,7 @@ describe('ItemService', () => {
   let group = null;
   let groupInfo = null;
 
-  jest.setTimeout(7000);
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
