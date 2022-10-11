@@ -29,7 +29,7 @@ describe('ItemService', () => {
   let userInfo = {
     first_name: "Sue",
     last_name: "Green",
-    email: "sfwfwef3@spacewax.com",
+    email: "1@spacewax.com",
     password: "magna",
   }
 
