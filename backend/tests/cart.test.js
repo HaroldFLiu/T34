@@ -41,8 +41,9 @@ describe('CartService', () => {
     password: "magna",
   }
 
+  jest.setTimeout(7000);
+
   beforeAll(async () => {
-    jest.setTimeout(7000);
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
     await Item.deleteMany({});
     await Cart.deleteMany({});
