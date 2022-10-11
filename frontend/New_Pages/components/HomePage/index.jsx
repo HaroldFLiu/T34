@@ -28,6 +28,7 @@ import {FaPenFancy} from 'react-icons/fa';
 import {FaDog} from 'react-icons/fa';
 import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
+import Cookie from 'universal-cookie';
 
 const HomePage = () => {
 
@@ -59,10 +60,10 @@ const HomePage = () => {
       //console.log(data);
 
       {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-      const [user, setUser] = useState([])
-
+      var coookie = new Cookie();
+      const [user, setUser] = useState([]);
       const fetchData = async () => {
-        const { user } = await axios.get("/getuser, {withCredentials: true}");
+        const { user } = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
         setUser(user);
       };
     

@@ -50,6 +50,7 @@ router.post('/login', async (req, res) => {
           sameSite: false,
           maxAge: 1209600000,
           secure: process.env.NODE_ENV === 'production',
+          httpOnly:false,
         })
         .json({
           title: 'Login Successful',
@@ -58,6 +59,7 @@ router.post('/login', async (req, res) => {
           sameSite: false,
           maxAge: 1209600000,
           secure: process.env.NODE_ENV === 'production',
+          httpOnly:false,
           //csrfToken: session.csrfToken,
         });
     } catch (err) {

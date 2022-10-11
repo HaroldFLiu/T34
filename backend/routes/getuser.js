@@ -13,11 +13,11 @@ router.get('/getuser', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;
     const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
-
-    res.json({
+    const {email} = user;
+    res.status(200).json({
       title: 'Authentication successful',
       detail: 'Successfully authenticated user',
-      user,
+      user_email: email,
       user_id: userId,
     });
   } catch (err) {
