@@ -31,63 +31,63 @@ const users = [
 ]
 const categories = [
     {
-        _id: "633e7be0b5c1407aa35db518",
+        _id: "6344f49289f424dbbff47415",
         name: "Vechicles",
     },
     {
-        _id: "633e7be1b5c1407aa35db51b",
+        _id: "6344f49289f424dbbff47418",
         name: "Apparel",
     },
     {
-        _id: "633e7be1b5c1407aa35db51e",
+        _id: "6344f49289f424dbbff4741b",
         name: "Classified",
     },
     {
-        _id: "633e7be1b5c1407aa35db521",
+        _id: "6344f49289f424dbbff4741e",
         name: "Electronics",
     },
     {
-        _id: "633e7be1b5c1407aa35db524",
+        _id: "6344f49289f424dbbff47421",
         name: "Entertainment",
     },
     {
-        _id: "633e7be1b5c1407aa35db527",
+        _id: "6344f49289f424dbbff47424",
         name: "Family",
     },
     {
-        _id: "633e7be1b5c1407aa35db52a",
+        _id: "6344f49289f424dbbff47427",
         name: "Garden & Outdoor",
     },
     {
-        _id: "633e7be1b5c1407aa35db52d",
+        _id: "6344f49289f424dbbff4742a",
         name: "Hobbies",
     },
     {
-        _id: "633e7be1b5c1407aa35db530",
+        _id: "6344f49289f424dbbff4742d",
         name: "Home Goods",
     },
     {
-        _id: "633e7be1b5c1407aa35db533",
+        _id: "6344f49289f424dbbff47430",
         name: "Home Improvement Supplies",
     },
     {
-        _id: "633e7be1b5c1407aa35db536",
+        _id: "6344f49289f424dbbff47433",
         name: "Musical Instruments",
     },
     {
-        _id: "633e7be1b5c1407aa35db539",
+        _id: "6344f49289f424dbbff47436",
         name: "Office Supplies",
     },
     {
-        _id: "633e7be1b5c1407aa35db53c",
+        _id: "6344f49389f424dbbff47439",
         name: "Pet Supplies",
     },
     {
-        _id: "633e7be1b5c1407aa35db53f",
+        _id: "6344f49389f424dbbff4743c",
         name: "Sporting Goods",
     },
     {
-        _id: "633e7be1b5c1407aa35db542",
+        _id: "6344f49389f424dbbff4743f",
         name: "Toys & Games",
     }
 ]
@@ -216,6 +216,19 @@ async function seed() {
         if (!seededItems.includes(JSON.stringify(item._id))) {
             console.log("should not be in DB");
             await itemService.deleteById(item._id);
+        }
+    }
+
+    // delete other categories
+    const allCategories = await categoryService.readAll();
+    const seededCategories = categories.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const category of allCategories) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededCategories.includes(JSON.stringify(category._id))) {
+            console.log("should not be in DB");
+            await categoryService.deleteById(category._id);
         }
     }
 
