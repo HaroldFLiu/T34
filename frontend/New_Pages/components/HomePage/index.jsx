@@ -50,6 +50,7 @@ const HomePage = () => {
                   .catch(() => {
                       alert('There was an error while retrieving the data')
                   })
+                  .then(fetchData())
       }, [])
   
       const indexOfLastRecord = currentPage * recordsPerPage;
@@ -63,14 +64,17 @@ const HomePage = () => {
       var coookie = new Cookie();
       const [user, setUser] = useState([]);
       const fetchData = async () => {
-        const { user } = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+        const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+        console.log(server_res);
+        const user = server_res.data.user_email;
         setUser(user);
       };
-    
+    /*
      
       useEffect(() => {
         fetchData();
       }, []);
+    */
 
       console.log({user});
       
