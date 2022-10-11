@@ -233,7 +233,7 @@ async function seed() {
         //console.log(JSON.stringify(item._id));
         if (!seededCategories.includes(JSON.stringify(category._id))) {
             console.log("should not be in DB");
-            await itemService.deleteById(category._id);
+            await categoryService.deleteById(category._id);
         }
     }
 
