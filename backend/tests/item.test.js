@@ -37,6 +37,7 @@ describe('ItemService', () => {
   let groupInfo = null;
 
   beforeAll(async () => {
+    jest.setTimeout(7000);
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
     await Item.deleteMany({});
     await Cart.deleteMany({});
