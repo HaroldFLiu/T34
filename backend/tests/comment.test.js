@@ -29,7 +29,7 @@ describe('CommentsService', () => {
   let user1Info = {
     first_name: "Sue",
     last_name: "Green",
-    email: "fsfwwe@spacewax.com",
+    email: "4@spacewax.com",
     password: "magna",
   }
 
@@ -37,9 +37,11 @@ describe('CommentsService', () => {
   let user2Info = {
     first_name: "Joanna",
     last_name: "Xue",
-    email: "fsdfewef@spacewax.com",
+    email: "5@spacewax.com",
     password: "magna",
   }
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);

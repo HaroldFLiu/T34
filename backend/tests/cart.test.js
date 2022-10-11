@@ -29,7 +29,7 @@ describe('CartService', () => {
   let user1Info = {
     first_name: "Sue",
     last_name: "Green",
-    email: "fds@spacewax.com",
+    email: "2@spacewax.com",
     password: "magna",
   }
 
@@ -37,9 +37,11 @@ describe('CartService', () => {
   let user2Info = {
     first_name: "Joanna",
     last_name: "Xue",
-    email: "awef@spacewax.com",
+    email: "3@spacewax.com",
     password: "magna",
   }
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);

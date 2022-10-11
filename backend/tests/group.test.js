@@ -19,7 +19,7 @@ describe('GroupService', () => {
   let userInfo = {
     first_name: "Sue",
     last_name: "Green",
-    email: "suegreen@spacewax.com",
+    email: "8@spacewax.com",
     password: "magna",
   }
 
@@ -28,6 +28,8 @@ describe('GroupService', () => {
 
   let group2 = null;
   let group2Info = null;
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);

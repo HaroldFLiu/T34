@@ -1,7 +1,6 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const upload = require('../middleware/multer');
-const cloudinary = require('../middleware/cloudinary');
 
 const {
     getPublicItems,
@@ -49,12 +48,12 @@ router.delete('/public/:item_id', deleteItem);
 // UPDATE an item
 router.patch('/public/:item_id', async (req, res) => {
     const { item_id } = req.params;
-    console.log(item_id);
-    console.log(req.body);
+    //console.log(item_id);
+    //console.log(req.body);
 
     // ensure id is valid
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.readById(item_id);
@@ -68,7 +67,6 @@ router.patch('/public/:item_id', async (req, res) => {
         item[property] = req.body[property];
     }
 
-    
     await item.save();
 
     res.status(200).json(item);
