@@ -12717,6 +12717,46 @@ h4, h3, h5 {
   font-family: Tienne, sans-serif;
 }
 
+.popup-box {
+  width: 100%;
+  height: 100vh;
+  margin-top: 8%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 70%;
+  height: auto;
+  max-height: 70vh;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin: calc(15vh - 20px) auto 0;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background: #ededed;
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin-top: 9%;
+  margin-right: 3%;
+  font-size: 20px;
+  line-height: 20px;
+  position: fixed;
+  top: calc(15vh - 33px);
+  right: calc(15% - 30px);
+}
+
 .vis-container {
   padding-top: 3%;
   display: flex;

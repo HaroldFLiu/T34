@@ -2,7 +2,7 @@ import React, {useEffect, useState}from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 /* icon imports */
-
+// need to get -> userId -> cartId -> items (itemId) : then within can get details
 const CartComponents = () => {
 
     const [posts, setPosts] = useState([]);

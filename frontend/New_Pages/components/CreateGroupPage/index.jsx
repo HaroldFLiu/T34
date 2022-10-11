@@ -16,8 +16,8 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 const CreateGroupPage = () => {
 
-      {/* stuff for radio button*/} 
-      const [visbility, setVisbility] = useState("");
+    {/* stuff for radio button*/} 
+    const [visbility, setVisbility] = useState("");
 
     const radioChangeHandler = (e) => {
       setVisbility(e.target.value);
@@ -53,6 +53,15 @@ const CreateGroupPage = () => {
       }
 
      };
+
+     const [values, setValues] = useState({
+      groupName: "",
+      groupDescription: "",
+      groupVisibility: "",
+    });
+
+    console.log(values);
+  
     
     return (
     <div className="parent" >
@@ -101,7 +110,7 @@ const CreateGroupPage = () => {
         )}
         </label>  
         <input
-        type="file"
+        type="file" 
         id="upload-button"
         style={{ display: "none" }}
         onChange={handleChange}
@@ -119,9 +128,11 @@ const CreateGroupPage = () => {
             
             <label for="item-name"> <div className="item-name">Group Name: </div></label>
             <input type="listing-text"
+            onChange={(e)=> setValues({...values, groupName:e.target.value})} 
              />
             <label for="enter-desc"> <div className="item-name">Group Description:</div></label>
             <input type="asd" 
+            onChange={(e)=> setValues({...values, groupDescription:e.target.value})} 
             />
              {/* select on change for dropdown button*/}
     
