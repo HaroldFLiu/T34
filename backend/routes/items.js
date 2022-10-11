@@ -1,5 +1,6 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
+
 //const upload = require('../middleware/multer');
 //const cloudinary = require('../middleware/cloudinary');
 const upload = require('../middleware/multer')

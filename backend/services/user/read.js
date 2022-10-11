@@ -5,7 +5,7 @@ const { isMongoId } = require('validator');
 
 const readById = async (userId) => {
   if (!isMongoId(`${userId}`)) {
-    console.log(`Not MongoID`);
+    console.log(`User does not have valid MongoID`);
     return undefined;
   }
   const user = await User.findById(userId);

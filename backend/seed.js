@@ -102,6 +102,11 @@ const groups = [
         _id: "633e7be1b5c1407aa35db548",
         name: "Fantastic Furniture",
         description: "Furniture finds in Melbourne",
+    },
+    {
+        _id: "63450eea27e4ac5b133e4616",
+        name: "Clothes",
+        description: "Lovely clothes",
     }
 ]
 
@@ -219,6 +224,19 @@ async function seed() {
         if (!seededItems.includes(JSON.stringify(item._id))) {
             console.log("should not be in DB");
             await itemService.deleteById(item._id);
+        }
+    }
+
+    // delete other categories
+    const allCategories = await categoryService.readAll();
+    const seededCategories = categories.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const category of allCategories) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededCategories.includes(JSON.stringify(category._id))) {
+            console.log("should not be in DB");
+            await categoryService.deleteById(category._id);
         }
     }
 

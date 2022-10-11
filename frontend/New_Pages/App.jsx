@@ -13,6 +13,7 @@ import CreateGroupPage from "./components/CreateGroupPage"
 import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
+import CategoryPage from "./components/CategoryPages";
 
 function App() {
   return (
@@ -50,6 +51,9 @@ function App() {
         </Route>
         <Route path="/checkout-page">
           <CheckoutPage/>
+        </Route>
+        <Route path="/category-page/:categoryId">
+          <CategoryPage/>
         </Route>
 
       </Switch>

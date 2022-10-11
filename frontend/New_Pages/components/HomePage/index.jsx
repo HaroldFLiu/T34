@@ -3,7 +3,7 @@ import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
-
+import {Link} from "react-router-dom"
 import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
@@ -76,7 +76,23 @@ const HomePage = () => {
       }, []);
     */
 
-      console.log({user});
+      //console.log({user});
+
+      /* import category ids*/
+      const [cateId, setCateID] = useState([]);
+
+      // Define the function that fetches the data from API
+      const fetchCateId = async () => {
+        const { data } = await axios.get("/category");
+        setCateID(data);
+      };
+    
+      // Trigger the fetchData after the initial render by using the useEffect hook
+      useEffect(() => {
+        fetchCateId();
+      }, []);
+  
+      console.log(cateId);
       
  
   return (
@@ -106,7 +122,7 @@ const HomePage = () => {
     <div className="header">
     Categories
     </div>
-    <a href="#"> <FaCar className="icon"/> Vechicles</a>
+    <Link to={"/category-page/6344f49289f424dbbff4741"}> <FaCar className="icon"/> Vechicles </Link>
     <a href="#"> <FaTshirt className="icon"/> Apparel</a>
     <a href="#"> <BsPlugFill className="icon"/> Electronics</a>
     <a href="#"> <MdFamilyRestroom className="icon"/> Family</a>

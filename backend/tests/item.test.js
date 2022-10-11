@@ -29,12 +29,14 @@ describe('ItemService', () => {
   let userInfo = {
     first_name: "Sue",
     last_name: "Green",
-    email: "sfwfwef3@spacewax.com",
+    email: "1@spacewax.com",
     password: "magna",
   }
 
   let group = null;
   let groupInfo = null;
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);

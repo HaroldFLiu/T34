@@ -5,7 +5,8 @@
   height: 100vh;
   top: 0;
   left: 0;
-  margin-top: 8%;
+  margin-top: 7%;
+  display: flex;
 }
  
 .box {
@@ -36,6 +37,80 @@
   text-align: center;
   border: 1px solid #999;
   font-size: 20px;
-  margin-top: 9%;
+  margin-top: 10%;
   margin-right: 3%;
+}
+
+/* wrap for img sqaure*/
+.square-popup{
+  border: solid thin;
+  width: 200px;
+  height: 200px;
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-bottom: 1%;
+}
+
+/* img sizing inside square-popup*/
+.popup-img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.popup-text{
+  float: left;
+  margin-left: 3%;
+}
+
+/* members list btn */
+.popup-box button{
+  width: 100%;
+  border-radius: 32px;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 5%;
+ 
+}
+
+/* header for popup title */
+.header-popup{
+  margin-top: -15%;
+  font-size: 40px;
+}
+
+/* line tag for popup */
+.hr-line{
+  border: solid thin;
+  color: black;
+  margin-left: 20%;
+}
+
+/* group descripton text area */
+.test{
+  margin-left: 25%;
+  margin-right: 5%;
+  max-width: max-content;
+  margin-top: 2%;
+  overflow: hidden;
+}
+
+/* join group button OLD ONE
+.popup-btn button{
+  width: fit-content;
+  font-size: 27px;
+  margin-top: 10%;
+  float: right;
+
+}
+*/
+
+/* join group button NEW HAS BTN IN FIXED POSITON AT ALL TIMES*/
+.popup-btn button{
+  width: fit-content;
+  font-size: 27px;
+  float: right;
+  position: fixed;
+  top: 85%;
+  right: 20%
+
 }
