@@ -94,11 +94,23 @@
   overflow: hidden;
 }
 
-/* join group button */
+/* join group button OLD ONE
 .popup-btn button{
   width: fit-content;
   font-size: 27px;
   margin-top: 10%;
   float: right;
+
+}
+*/
+
+/* join group button NEW HAS BTN IN FIXED POSITON AT ALL TIMES*/
+.popup-btn button{
+  width: fit-content;
+  font-size: 27px;
+  float: right;
+  position: fixed;
+  top: 85%;
+  right: 20%
 
 }

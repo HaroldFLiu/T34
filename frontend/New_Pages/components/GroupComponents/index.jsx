@@ -19,6 +19,7 @@ function GroupComponents() {
       fetchData();
     }, []);
 
+    console.log(posts);
 
     {/*Group pop up stuff*/}
 
@@ -55,7 +56,10 @@ return(
                 </div>
             </a>
             {isOpen && <GroupPopUp
-
+        name={<>
+          {post.name}
+        </>}
+        other={<> {post.description} </>}
       handleClose={togglePopup}
     />}
             
