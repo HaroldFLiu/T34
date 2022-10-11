@@ -13,9 +13,10 @@ const deleteById = async (itemId) => {
   }
 
   // delete images from service
+  /*
   for (const image of item.cloudinary_ids) {
     await cloudinary.uploader.destroy(image);
-  }
+  }*/
   
   const deletedItem = await Item.findByIdAndDelete(itemId);
   console.log(`Deleted item by ID: ${itemId}, Item: ${JSON.stringify(deletedItem)}`);

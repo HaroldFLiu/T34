@@ -2,13 +2,9 @@ import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState, useMemo}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
- /* HOW TO GET ITEM SERVICE 
-const itemService = require('../../../../backend/services/category');
-itemService.readById(post.catergoryId)
-
-*/
 
 const ProductComponents = ({data}) => {
+
 
 return(
     <div className="products-wrapper">  
@@ -23,8 +19,10 @@ return(
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
             <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
-              <img src={item.image_urls[0]} className="logo-position">
+            {/*
+             <img src={require(`../../../../backend/images/${item.image_urls[0]}`)} className="logo-position">
               </img> 
+      */}
             </div>
              {/* wishlist button */}
              <div class="wishlist">

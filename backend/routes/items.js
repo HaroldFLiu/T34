@@ -1,6 +1,12 @@
 const express = require('express');
 const { default: mongoose } = require('mongoose');
-const upload = require('../middleware/multer');
+
+//const upload = require('../middleware/multer');
+//const cloudinary = require('../middleware/cloudinary');
+const upload = require('../middleware/multer')
+
+//const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
+//const CLOUDINARY_UPLOAD_PRESET = 'T34ITProject';
 
 const {
     getPublicItems,
@@ -30,17 +36,29 @@ router.get('/public/item/:item_id', getItem);
 router.post('/public', async (req, res) => {
     // get other descriptors
     const {name, description, price, category_ids, group_ids, 
-        public_visibility, comments} = req.body;
+        public_visibility, comments, image_urls} = req.body;
 
     try {
         // create item
         const item = await itemService.create({name, description, price, category_ids, 
-            group_ids, public_visibility, comments });
+            group_ids, public_visibility, comments, image_urls});
         res.status(200).json(item);
     } catch (error) {
         res.status(400).json({error: error.message})
     }
 });
+
+
+// POST an image 
+router.post('/public/image', upload.single('file'), async (req, res) => {
+    if (req.file) {
+        console.log(req.file);
+        res.status(200).json({image_path: req.file.originalname});
+    } else {
+        res.status(400).json({msg: 'failed to upload image'})
+    }
+});
+
 
 // DELETE an item
 router.delete('/public/:item_id', deleteItem);

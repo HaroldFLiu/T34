@@ -31,63 +31,63 @@ const users = [
 ]
 const categories = [
     {
-        _id: "6344f49289f424dbbff47415",
+        _id: "634527f37926a2b8c450db04",
         name: "Vechicles",
     },
     {
-        _id: "6344f49289f424dbbff47418",
+        _id: "634527f37926a2b8c450db07",
         name: "Apparel",
     },
     {
-        _id: "6344f49289f424dbbff4741b",
+        _id: "634527f37926a2b8c450db0a",
         name: "Classified",
     },
     {
-        _id: "6344f49289f424dbbff4741e",
+        _id: "634527f37926a2b8c450db0d",
         name: "Electronics",
     },
     {
-        _id: "6344f49289f424dbbff47421",
+        _id: "634527f37926a2b8c450db10",
         name: "Entertainment",
     },
     {
-        _id: "6344f49289f424dbbff47424",
+        _id: "634527f47926a2b8c450db13",
         name: "Family",
     },
     {
-        _id: "6344f49289f424dbbff47427",
+        _id: "634527f47926a2b8c450db16",
         name: "Garden & Outdoor",
     },
     {
-        _id: "6344f49289f424dbbff4742a",
+        _id: "634527f47926a2b8c450db19",
         name: "Hobbies",
     },
     {
-        _id: "6344f49289f424dbbff4742d",
+        _id: "634527f47926a2b8c450db1c",
         name: "Home Goods",
     },
     {
-        _id: "6344f49289f424dbbff47430",
+        _id: "634527f47926a2b8c450db1f",
         name: "Home Improvement Supplies",
     },
     {
-        _id: "6344f49289f424dbbff47433",
+        _id: "634527f47926a2b8c450db22",
         name: "Musical Instruments",
     },
     {
-        _id: "6344f49289f424dbbff47436",
+        _id: "634527f47926a2b8c450db25",
         name: "Office Supplies",
     },
     {
-        _id: "6344f49389f424dbbff47439",
+        _id: "634527f47926a2b8c450db28",
         name: "Pet Supplies",
     },
     {
-        _id: "6344f49389f424dbbff4743c",
+        _id: "634527f47926a2b8c450db2b",
         name: "Sporting Goods",
     },
     {
-        _id: "6344f49389f424dbbff4743f",
+        _id: "634527f47926a2b8c450db2e",
         name: "Toys & Games",
     }
 ]
@@ -120,27 +120,29 @@ const carts = [
 
 const items = [
     {
-        _id: "633eec982a25d4851e300c38",
-        name: "Toyota Car",
+        _id: "63452887966053d159c5512a",
+        name: "Chair",
         description: "In good condition",
         price: 30000,
         group_ids: ["633e7be1b5c1407aa35db545"],
         category_ids: ["633e7be0b5c1407aa35db518"],
         public_visibility: true,
         seller_id: "633e7c16434369b2dc9d2dab",
+        image_urls: ['image/download.png'],
     },
     {
-        _id: "633eec982a25d4851e300c3b",
-        name: "Couch",
+        _id: "63452887966053d159c5512d",
+        name: "Another Chair",
         description: "Soft but sturdy",
         price: 500,
         group_ids: ["633e7be1b5c1407aa35db548"],
         category_ids: ["633e7be1b5c1407aa35db530"],
         public_visibility: false,
         seller_id: "633e7c16434369b2dc9d2dab",
+        image_urls: ['image/download.jpeg'],
     },
     {
-        _id: "633eec982a25d4851e300c3e",
+        _id: "63452887966053d159c55130",
         name: "Violin",
         description: "Plays well",
         price: 100,
@@ -211,6 +213,7 @@ async function seed() {
         }
     }
 
+    
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
