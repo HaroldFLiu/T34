@@ -74,6 +74,18 @@ const CreateGroupPage = () => {
     formData.append('file', image.raw);
     //console.log(formData);
 
+    if (!image.raw) {
+      alert('Image Required. Please fill in all fields.');
+    }
+
+    if (!props.name) {
+      alert('Group Name Required. Please fill in all fields.');
+    }
+
+    if (!props.description) {
+      alert('Group Description Required. Please fill in all fields.');
+    }
+
     /* posting */
     // image upload
     axios({
@@ -103,8 +115,8 @@ const CreateGroupPage = () => {
         console.log("group image posting went wrong");
       }
     })
-    .catch(() => {
-      alert('Image Required. Please fill in all fields.');
+    .catch(function (error) {
+      console.log(error);
     });
   }
 
