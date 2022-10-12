@@ -5,6 +5,7 @@ import "./GroupPage.css";
 import GroupComponents from "../GroupComponents";
 import Cookie from 'universal-cookie';
 import PageNext from "../PageNextBar/PageNext";
+import {Link} from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -87,7 +88,7 @@ const GroupPage = () => {
      <div class="navbar">
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>

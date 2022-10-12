@@ -12323,6 +12323,10 @@ textarea.form-control-lg {
   font-size: 10px;
 }
 
+.space {
+  padding-top: 14%;
+}
+
 .card button:hover {
   opacity: 1;
   color: #000;

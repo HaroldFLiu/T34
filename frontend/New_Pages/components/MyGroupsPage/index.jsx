@@ -3,6 +3,7 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./MyGroupsPage.css";
 import Cookie from 'universal-cookie';
+import {Link} from "react-router-dom";
 
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
@@ -66,7 +67,7 @@ const GroupPage = () => {
      <div class="navbar">
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a class="active" href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>

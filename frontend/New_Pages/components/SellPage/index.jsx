@@ -4,6 +4,7 @@ import Cookie from 'universal-cookie';
 import { useParams } from "react-router-dom";
 import ProductComponents from "../ProductComponents";
 import PageNext from "../PageNextBar/PageNext";
+import {Link} from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -27,6 +28,7 @@ import {FaPenFancy} from 'react-icons/fa';
 import {FaDog} from 'react-icons/fa';
 import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
+import SellComponent from "../SellComponent";
 
 const SellPage = () => {
   
@@ -88,7 +90,7 @@ const SellPage = () => {
     <div class="navbar">
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`} class="active"> Sell </Link>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
@@ -151,7 +153,7 @@ const SellPage = () => {
     <div className="wrapper" >
     <div class="row2">
       <div class="column">
-      <ProductComponents data={currentRecords}/> 
+      <SellComponent data={currentRecords}/> 
           <PageNext
                 nPages={nPages}
                 currentPage={currentPage}

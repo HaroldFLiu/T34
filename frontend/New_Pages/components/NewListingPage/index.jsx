@@ -3,6 +3,7 @@ import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import Cookie from 'universal-cookie';
+import {Link} from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -211,7 +212,7 @@ const NewListingPage = () => {
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
           <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-          <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+          <Link to={`/sell-page/${user.user_id}`} class="active"> Sell </Link>
           <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
           <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
           <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>

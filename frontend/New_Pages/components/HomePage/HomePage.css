@@ -184,7 +184,11 @@
   width: 18%;
   font-size: 10px;
   margin-left: 70%;
-  
+}
+
+/* space to be used in place of wishlist btn for sell page */
+.space{
+  padding-top: 14%;
 }
 
 .card button:hover {
