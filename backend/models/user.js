@@ -65,5 +65,10 @@ userSchema.pre('save', function(next){
 });
 
 
+<<<<<<< HEAD
 const User = mongoose.model('User', userSchema);
 module.exports = { User };
+=======
+var User = mongoose.model('User', userSchema);
+module.exports = User;
+>>>>>>> parent of 71f5639 (fix user schema)
