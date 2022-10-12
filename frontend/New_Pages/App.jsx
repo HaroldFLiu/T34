@@ -19,10 +19,10 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:path(|home-page)">
+        <Route path="/home-page">
         <HomePage/>
         </Route>
-        <Route path="/login-page">
+        <Route path="/:path(|login-page)">
           <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
