@@ -102,7 +102,7 @@ const HomePage = () => {
   // log OUT HERE
 
   const handleLogOut = async () => {
-    await axios.put("/logout", {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(response => {
       if (response.status === 200) {
         location.pathname='/login-page';
