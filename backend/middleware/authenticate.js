@@ -3,8 +3,8 @@ const Session = require('../models/session');
 
 const authenticate = async (req, res, next) => {
   try {
-    var {token} = req.cookies;
-    //var token = req.headers.authorization;
+    //var {token} = req.cookies;
+    var token = req.headers.authorization;
     //console.log(token);
     
     if (typeof token !== 'string') {
