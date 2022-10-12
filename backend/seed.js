@@ -39,16 +39,8 @@ const categories = [
         name: "Apparel",
     },
     {
-        _id: "634527f37926a2b8c450db0a",
-        name: "Classified",
-    },
-    {
         _id: "634527f37926a2b8c450db0d",
         name: "Electronics",
-    },
-    {
-        _id: "634527f37926a2b8c450db10",
-        name: "Entertainment",
     },
     {
         _id: "634527f47926a2b8c450db13",
