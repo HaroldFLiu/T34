@@ -13,8 +13,9 @@ const router = express.Router();
 router.get('/getuser', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;
-    const user = userService.readById(userId);
+    const user = await userService.readById(userId);
     //const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
+    //console.log(user);
     const {email} = user.email;
     res.status(200).json({
       title: 'Authentication successful',
