@@ -5,6 +5,7 @@ const createCart = async (req, res) => {
     const { userId } = req.params;
     try {
         const cart = await cartService.create({userId});
+        res.status(200).json(cart);
     } catch (error) {
         res.status(400).json({error: error.message});
     }
