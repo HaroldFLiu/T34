@@ -15,11 +15,14 @@ const CartComponents = () => {
       // NEED TO CHANGE OBJ ID 
       const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
       const userId = server_res.data.user_id;
-      console.log(userId);
-      let { items,subtotal } = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+     //console.log(userId);
+      //console.log(await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}));
+      let res = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      let items = res.data.items;
+      let subtotal = res.data.items;
       setPosts(items);
       setTotal(subtotal);
-      //console.log(data);
+      //console.log(items);
     };
   
     // Trigger the fetchData after the initial render by using the useEffect hook
@@ -53,6 +56,10 @@ const CartComponents = () => {
             </div>
 
         </div>
+        <div>
+          {posts}
+        </div>
+
         </div>
 
 
