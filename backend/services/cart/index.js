@@ -1,5 +1,5 @@
 const { deleteById } = require('./delete');
-const { readAll, readByUserId } = require('./read');
+const { readAll, readByUserId, readById } = require('./read');
 const { addItem, checkout, deleteItem, removeAllItems, updateById } = require('./update');
 const { create } = require('./create');
 
@@ -13,4 +13,5 @@ module.exports = {
     checkout,
     create,
     updateById,
+    readById,
 };
