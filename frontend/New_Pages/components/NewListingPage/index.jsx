@@ -93,6 +93,8 @@ const NewListingPage = () => {
       method: 'post',
       url: '/public/image',
       data: formData,
+      withCredentials:true, 
+      headers: {'Authorization':coookie.get("token")},
     })
     .then(function (res1) {
       //console.log('RES 1');
@@ -104,7 +106,7 @@ const NewListingPage = () => {
         props.image_urls = res1.data.image_urls;
         console.log(props);
 
-        axios.post('/public', props)
+        axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(function (res2) {
           if (res2.status=="200") {
             console.log('item details successful');
