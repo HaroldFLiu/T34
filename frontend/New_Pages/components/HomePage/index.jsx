@@ -99,21 +99,20 @@ const HomePage = () => {
 
       //console.log(cateId);
 
+  // log OUT HERE
 
-      const [test, setTest] = useState([]);
-
-      // Define the function that fetches the data from API
-      const fetchTest = async () => {
-        const { data } = await axios.get("/public/634527f47926a2b8c450db22");
-        setTest(data);
-      };
-    
-      // Trigger the fetchData after the initial render by using the useEffect hook
-      useEffect(() => {
-        fetchTest();
-      }, []);
-
-      console.log(test);
+  const handleLogOut = async () => {
+    await axios.put("/logout", {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(response => {
+      if (response.status === 200) {
+        location.pathname='/login-page';
+      }
+      return response.data;
+    })
+    .catch(error => {
+      console.log("Error signing out", error);
+    });
+};
       
  
   return (
@@ -129,7 +128,8 @@ const HomePage = () => {
       <div class="nav-login">
       {/* search bar*/}
       {/* need to add logout btn, rn just redirects without sign out*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+     {/* <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>*/}
+     <a href="#"> <button onClick={handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
       <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    
