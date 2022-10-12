@@ -6,14 +6,16 @@ const Session = require('../models/session');
 const { authenticate } = require('../middleware/authenticate');
 //const { csrfCheck } = require('../middleware/csrfCheck');
 const { initSession, isEmail } = require('../utils/utils');
+const userService = require('../services/user');
 
 const router = express.Router();
 
 router.get('/getuser', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;
-    const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
-    const {email} = user;
+    const user = userService.readById(userId);
+    //const user = await User.findById({ _id: userId }, { email: 1, _id: 0 });
+    const {email} = user.email;
     res.status(200).json({
       title: 'Authentication successful',
       detail: 'Successfully authenticated user',

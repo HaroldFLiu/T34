@@ -1,7 +1,7 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 
-const User = require('../models/user');
+const userService = require('../services/user');
 const Session = require('../models/session');
 const { authenticate } = require('../middleware/authenticate');
 //const { csrfCheck } = require('../middleware/csrfCheck');
@@ -16,7 +16,7 @@ router.delete('/del_user', authenticate, async (req, res) => {
     if (typeof password !== 'string') {
       throw new Error();
     }
-    const user = await User.findById({ _id: userId });
+    const user = await userService.readById(userId);
 
     const passwordValidated = await bcrypt.compare(password, user.password);
     if (!passwordValidated) {
@@ -25,7 +25,7 @@ router.delete('/del_user', authenticate, async (req, res) => {
 
     await Session.expireAllTokensForUser(userId);
     res.clearCookie('token');
-    await User.findByIdAndDelete({ _id: userId });
+    await userService.deleteById(userId);
     res.json({
       title: 'Account Deleted',
       detail: 'Account with credentials provided has been successfuly deleted',
