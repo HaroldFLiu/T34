@@ -5,8 +5,9 @@
   height: 100vh;
   top: 0;
   left: 0;
-  margin-top: 7%;
+  margin-top: 4%;
   display: flex;
+  margin-left: 5%;
 }
  
 .box {
@@ -23,24 +24,6 @@
   overflow: auto;
 }
  
-.close-icon {
-  content: 'x';
-  cursor: pointer;
-  position: fixed;
-  right: calc(15% - 30px);
-  top: calc(100vh - 85vh - 33px);
-  background: #ededed;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  line-height: 20px;
-  text-align: center;
-  border: 1px solid #999;
-  font-size: 20px;
-  margin-top: 10%;
-  margin-right: 3%;
-}
-
 /* wrap for img sqaure*/
 .square-popup{
   border: solid thin;
@@ -60,6 +43,7 @@
 .popup-text{
   float: left;
   margin-left: 3%;
+  text-align: center;
 }
 
 /* members list btn */
@@ -76,6 +60,7 @@
 .header-popup{
   margin-top: -15%;
   font-size: 40px;
+  margin-left: 20%;
 }
 
 /* line tag for popup */
@@ -110,7 +95,7 @@
   font-size: 27px;
   float: right;
   position: fixed;
-  top: 85%;
-  right: 20%
+  top: 83%;
+  right: 12%
 
 }

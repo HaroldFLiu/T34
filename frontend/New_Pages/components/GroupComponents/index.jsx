@@ -1,4 +1,3 @@
-
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import {Link} from "react-router-dom";
@@ -16,9 +15,9 @@ return(
         <div class="row2">
           <div class="column">
           <div class="card">
-            {/*  add href to group info page LINK LATER*/}
+            {/*  add href to group info page LINK LATER groupId*/}
             
-            <a href="/group-info-page" >
+            <Link to={`/group-info-page/${group._id}`}>
             <div className="img-wrap"> 
               <img src={logo} className="logo-position">
               </img> 
@@ -30,7 +29,7 @@ return(
                     <p class="members-text">31k Members</p>
                     <p><button>Join Group</button></p>
                 </div>
-            </a>
+            </Link>
 
           </div>
           </div>   

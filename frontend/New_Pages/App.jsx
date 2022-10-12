@@ -38,7 +38,6 @@ function App() {
         <Route path="/wishlist-page">
           <WishlistPage/>
         </Route>
-        {/*add /group-page:groupId */}
         <Route path="/group-page">
           <GroupPage/>
         </Route>
@@ -57,7 +56,7 @@ function App() {
         <Route path="/category-page/:categoryId">
           <CategoryPage/>
         </Route>
-        <Route path="/group-info-page">
+        <Route path="/group-info-page/:groupId">
           <GroupInfoPage/>
         </Route>
 

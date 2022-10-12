@@ -2,7 +2,7 @@ import React, {useEffect, useState}from "react";
 import {Link} from "react-router-dom";
 import "./GroupPopUp.css";
 import axios from "../../api/axios";
-
+import { useParams } from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi' ;
@@ -49,6 +49,29 @@ const GroupInfoPage = () => {
    useEffect(() => {
      fetchData();
    }, []);
+
+
+    {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
+    const {groupId} = useParams()
+    //const thisProduct = posts.find(prod => prod.id == productId)
+    {/*degub log here */}
+    console.log(groupId);
+
+    {/*fetch item data*/}
+    
+    const [groups, setGroups] = useState([]);
+
+
+    const fetchGroups = async () => {
+      const { data } = await axios.get(`/groups/${groupId}`);
+      fetchGroups(data);
+    };
+
+  
+    useEffect(() => {
+      fetchGroups();
+    }, []);
+    
 
 
   return (
@@ -98,7 +121,6 @@ const GroupInfoPage = () => {
 
     <div className="popup-box">
       <div className="box">
-       {/* <span className="close-icon" onClick={props.handleClose}>x</span>*/}
         <div className="square-popup">
           <img src={logo} className="popup-img"></img> 
         </div>
@@ -109,7 +131,7 @@ const GroupInfoPage = () => {
        
         <br/>
         Owner: YenFug</div>
-        <div className="header-popup"> Marketplace seller</div> 
+        <div className="header-popup">{groups.name}</div> 
         <hr className="hr-line"/>
         <div className="test">grou pdescription here</div>
         

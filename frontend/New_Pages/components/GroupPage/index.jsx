@@ -40,10 +40,11 @@ const GroupPage = () => {
 
 
   useEffect(() => {
-      axios.get('/public')
+      axios.get('/groups')
           .then(res => {
                   setData(res.data);
                   setLoading(false);
+                  
               })
               .catch(() => {
                   alert('There was an error while retrieving the data')
@@ -55,6 +56,7 @@ const GroupPage = () => {
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage)
+
 
 
 
