@@ -1,6 +1,6 @@
 const express = require('express');
 const {
-    createCart,
+    //createCart,
     getCart,
     updateCart,
     deleteCart,
@@ -13,7 +13,7 @@ const router = express.Router();
 router.get('/:cartId', getCart);
 
 // POST a cart
-router.post('/:userId', createCart);
+//router.post('/:userId', createCart);
 
 // UPDATE a cart
 router.patch('/:cartId', updateCart);
