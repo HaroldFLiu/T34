@@ -14,6 +14,7 @@ import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
 import CategoryPage from "./components/CategoryPages";
+import GroupInfoPage from "./components/GroupPopUp";
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/wishlist-page">
           <WishlistPage/>
         </Route>
+        {/*add /group-page:groupId */}
         <Route path="/group-page">
           <GroupPage/>
         </Route>
@@ -54,6 +56,9 @@ function App() {
         </Route>
         <Route path="/category-page/:categoryId">
           <CategoryPage/>
+        </Route>
+        <Route path="/group-info-page">
+          <GroupInfoPage/>
         </Route>
 
       </Switch>

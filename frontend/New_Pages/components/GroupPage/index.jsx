@@ -4,7 +4,7 @@ import axios from "../../api/axios";
 import "./GroupPage.css";
 import GroupComponents from "../GroupComponents";
 import Cookie from 'universal-cookie';
-
+import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -31,13 +31,31 @@ import {MdSmartToy} from 'react-icons/md';
 
 const GroupPage = () => {
 
-  const [post, setPost] = React.useState(null);
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
-    axios.get("/public").then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
+
+
+  useEffect(() => {
+      axios.get('/public')
+          .then(res => {
+                  setData(res.data);
+                  setLoading(false);
+              })
+              .catch(() => {
+                  alert('There was an error while retrieving the data')
+              })
+              .then(fetchData())
+  }, [])
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(data.length / recordsPerPage)
+
 
 
     {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
@@ -132,25 +150,18 @@ const GroupPage = () => {
     <div class="row2">
       <div class="column">
         {/* insert groupscomponent here */}
-          <GroupComponents/>
+        <GroupComponents data={currentRecords}/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
       </div>
     </div>
     </div>
 
     </div>
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
+
     </div> 
 
 
