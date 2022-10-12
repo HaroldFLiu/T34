@@ -96,6 +96,29 @@
   float: right;
   position: fixed;
   top: 83%;
-  right: 12%
+  right: 12%;
 
+}
+
+.close-icon {
+  content: 'x';
+  cursor: pointer;
+  position: fixed;
+  right: calc(15% - 30px);
+  top: calc(100vh - 85vh - 33px);
+  background: #ededed;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  line-height: 20px;
+  text-align: center;
+  border: 1px solid #999;
+  font-size: 20px;
+  margin-top: 6%;
+}
+
+.popup-text button{
+  padding-left: 30px;
+  padding-right: 30px;
+  text-align: center;
 }

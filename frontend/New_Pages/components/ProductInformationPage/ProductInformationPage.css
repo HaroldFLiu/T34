@@ -126,3 +126,11 @@ body {
   background: #A4DF9A;
   color: black;
 }
+
+/* to reformt img size CHANGE LATER*/
+.imgtest img{
+  padding-left: 30%;
+  max-width: 600px;
+
+
+}

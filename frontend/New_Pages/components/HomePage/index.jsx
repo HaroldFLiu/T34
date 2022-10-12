@@ -96,8 +96,24 @@ const HomePage = () => {
       useEffect(() => {
         fetchCateId();
       }, []);
-      
+
       //console.log(cateId);
+
+
+      const [test, setTest] = useState([]);
+
+      // Define the function that fetches the data from API
+      const fetchTest = async () => {
+        const { data } = await axios.get("/public/634527f47926a2b8c450db22");
+        setTest(data);
+      };
+    
+      // Trigger the fetchData after the initial render by using the useEffect hook
+      useEffect(() => {
+        fetchTest();
+      }, []);
+
+      console.log(test);
       
  
   return (
@@ -126,9 +142,9 @@ const HomePage = () => {
    
     <div class="sidenav">
     <div className="header">
-    Categories
+    Categories 
     </div>
-    <Link to={"/category-page/6344f49289f424dbbff4741"}> <FaCar className="icon"/> Vechicles </Link>
+    <Link to={"/category-page/634527f47926a2b8c450db1c"}> <FaCar className="icon"/> Vechicles </Link>
     <a href="#"> <FaTshirt className="icon"/> Apparel</a>
     <a href="#"> <BsPlugFill className="icon"/> Electronics</a>
     <a href="#"> <MdFamilyRestroom className="icon"/> Family</a>

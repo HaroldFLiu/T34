@@ -64,7 +64,7 @@ const GroupInfoPage = () => {
 
     const fetchGroups = async () => {
       const { data } = await axios.get(`/groups/${groupId}`);
-      fetchGroups(data);
+      setGroups(data);
     };
 
   
@@ -121,11 +121,13 @@ const GroupInfoPage = () => {
 
     <div className="popup-box">
       <div className="box">
+      <a href="/group-page"> <span className="close-icon"> x</span> </a>
         <div className="square-popup">
-          <img src={logo} className="popup-img"></img> 
+          <img src={groups.image_urls} className="popup-img"></img> 
+          
         </div>
         <div className="popup-text"> 
-        Marketplace sellers <p> 31k Members</p>
+        {groups.name} <p> 31k Members</p>
        
         <button> Member's List</button>
        
@@ -133,7 +135,7 @@ const GroupInfoPage = () => {
         Owner: YenFug</div>
         <div className="header-popup">{groups.name}</div> 
         <hr className="hr-line"/>
-        <div className="test">grou pdescription here</div>
+        <div className="test">{groups.description}</div>
         
         <div className="popup-btn"> <button > Join Group</button> </div>
        

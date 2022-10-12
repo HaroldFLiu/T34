@@ -12860,6 +12860,11 @@ body {
   background: #a4df9a;
 }
 
+.imgtest img {
+  max-width: 600px;
+  padding-left: 30%;
+}
+
 .check-header {
   text-align: left;
   margin-top: 2%;
@@ -13051,6 +13056,29 @@ body {
   position: fixed;
   top: 83%;
   right: 12%;
+}
+
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background: #ededed;
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin-top: 6%;
+  font-size: 20px;
+  line-height: 20px;
+  position: fixed;
+  top: calc(15vh - 33px);
+  right: calc(15% - 30px);
+}
+
+.popup-text button {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
