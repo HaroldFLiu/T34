@@ -12882,6 +12882,15 @@ body {
   display: flex;
 }
 
+.imgtest img {
+  width: 400px;
+  height: 400px;
+  border: thin solid #000;
+  margin-top: 20%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
 .img-gallery {
   width: 28%;
   border: thin solid #000;

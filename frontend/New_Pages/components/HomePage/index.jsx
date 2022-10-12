@@ -66,17 +66,21 @@ const HomePage = () => {
       const fetchData = async () => {
         const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
         console.log(server_res);
-        const user = server_res.data.user_email;
+        //const user = server_res.data.user_email;
+        const user = server_res.data;
         setUser(user);
-        console.log(server_res.data.user_id);
-
+        //console.log(server_res.data.user_id);
+      
       };
-    /*
-     
+      
+    
+      {/*method to unpack the data and fetch effect*/ }
       useEffect(() => {
         fetchData();
       }, []);
-    */
+
+      console.log(user.first);
+    
 
     
       /* import category ids*/
@@ -92,8 +96,8 @@ const HomePage = () => {
       useEffect(() => {
         fetchCateId();
       }, []);
-  
-      console.log(cateId);
+      
+      //console.log(cateId);
       
  
   return (
