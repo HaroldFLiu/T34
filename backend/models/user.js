@@ -1,4 +1,5 @@
-const { Schema, model, default: mongoose } = require('mongoose');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 const bcrypt = require('bcryptjs');
 
@@ -28,7 +29,7 @@ const userSchema = new Schema(
     groups: [{
       type: Schema.Types.ObjectId,
       ref: 'Group',
-      required: true,
+      required: false,
     }],
     items: [{
       type: Schema.Types.ObjectId,
@@ -64,4 +65,5 @@ userSchema.pre('save', function(next){
 });
 
 
-module.exports = mongoose.model('User', userSchema);
+const User = mongoose.model('User', userSchema);
+module.exports = { User };

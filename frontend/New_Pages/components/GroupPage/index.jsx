@@ -2,6 +2,8 @@ import React from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./GroupPage.css";
+import GroupComponents from "../GroupComponents";
+
 
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
@@ -38,6 +40,7 @@ const GroupPage = () => {
   }, []);
 
 
+
   return (
 <div className="parent" >
      {/* top nav bar*/}
@@ -46,7 +49,7 @@ const GroupPage = () => {
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
@@ -106,135 +109,12 @@ const GroupPage = () => {
     <div className="wrapper" >
     <div class="row2">
       <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
+        {/* insert groupscomponent here */}
+          <GroupComponents/>
       </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      
     </div>
     </div>
 
-    {/* products display 2nd row*/} 
-    <div className="wrapper" >
-    <div class="row2">
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <div className="item-cart">
-        <h5>Marketplace Sellers</h5>
-        <p class="members-text">31k Members</p>
-        <p><button>Join Group</button></p>
-        </div>
-      </div>
-      </div>
-    </div>
-   
-    </div>
     </div>
     {/* next page bar here*/}
     <div class="center-next">

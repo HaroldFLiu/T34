@@ -1,24 +1,33 @@
+const { otherwise } = require('ramda');
 const { Cart } = require('../../models/cart')
 const { Item } = require('../../models/item');
+const itemService = require('../item');
 
 const addItem = async(cartId, itemId, quantity) => {
-      const item = await Item.findById(itemId);
-      const cart = await Cart.findById(cartId);
-      for (let i = 0; i < quantity; i++) {
-        cart.items.push(itemId);
-        cart.subtotal += item.price;
-      }
-      await cart.save();
-      
-      return cart;
+  const item = await itemService.readById(itemId);
+  
+  const cart = await Cart.findById(cartId);
+  for (let i = 0; i < quantity; i++) {
+    cart.items.push(itemId);
+    cart.subtotal += item.price;
+  }
+  await cart.save();
+  
+  return cart;
 
 };
 
 const checkout = async(cartId) => {
   const cart = await Cart.findById(cartId);
+  for (let i = 0; i < cart.items.length; i++) {
+    const item = await Item.findById(cart.items[i]);
+    item.sold = true;
+    await item.save();
+  }
   cart.items = [];
   cart.subtotal = 0.00;
   await cart.save();
+  
   return cart;
 
 }
@@ -56,7 +65,24 @@ const removeAllItems = async(cartId) => {
   return cart;
 }
 
-module.exports = {addItem, checkout, deleteItem, removeAllItems};
+const updateById = async (cartId, props) => {
+  const cart = await Cart.findById(cartId);
+
+  if (!cart) {
+    console.log(`Cannot find cart with ID: ${cartId}`);
+    return undefined;
+  }
+
+  for (const property in props) {
+    cart[property] = props[property];
+  }
+
+  await cart.save();
+
+  return cart;
+};
+
+module.exports = {addItem, checkout, deleteItem, removeAllItems, updateById};
 
 
 

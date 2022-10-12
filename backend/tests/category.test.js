@@ -1,7 +1,13 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
 
+const { Item } = require('../models/item');
 const { Category } = require('../models/category');
+const { Group } = require('../models/group');
+const { User } = require('../models/user');
+const { Comment } = require('../models/comment');
+const { Favourites } = require('../models/favourites');
+const { Cart } = require('../models/cart');
 
 const categoryService = require('../services/category');
 
@@ -10,13 +16,20 @@ describe('ItemService', () => {
   let category = null;
   let categoryInfo = null;
 
+  jest.setTimeout(15000);
+
   beforeAll(async () => {
-    connection = mongoose.connect(process.env.MONGO_URI);
+    connection = mongoose.connect(process.env.MONGO_URI_TEST);
+    await Item.deleteMany({});
+    await Cart.deleteMany({});
+    await Comment.deleteMany({});
+    await Favourites.deleteMany({});
     await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
   });
 
   afterAll(async () => {
-    await Category.deleteMany({});
     await mongoose.disconnect();
   });
 

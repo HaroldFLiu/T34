@@ -1,0 +1,147 @@
+@import url('http://fonts.cdnfonts.com/css/tienne');
+
+/* header for checkout */
+.check-header{
+    font-family: 'Tienne', sans-serif;
+    font-size: 35px;
+    font-weight: 700;
+    text-align: left;
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+/* text under the checkout header */
+.total-items{
+    margin-top: -1%;
+    font-family: 'Tienne', sans-serif;
+    text-align: left;
+    margin-left: 20%;
+}
+
+/* space within checkout page that can be used (6/10 SHLD DELETE THIS) */
+.checkout-items-card{
+    margin-left: 5%;
+}
+
+/* item card for checkout */
+.check-square{
+    width: 40%;
+    height: 0;
+    padding-top: 15%;
+    display: flex;
+    margin-top: 1%;
+    float: left;
+    background-color: green;
+    position: fixed;
+    margin-left: 15%;
+}
+
+
+/* wrapper to move products display up change to 20px later! */ 
+.wrapper-check{
+    margin-top: 10px;
+    float: left;
+    margin-left: 13%;
+  }
+  
+  /* Product Card CSS FONT WAS PREVIOUSLY ARIEL wdith can be changed to add more padding*/
+  
+  .card-check {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    width: max-content;
+    width: 150%;
+    margin: auto;
+    text-align: center;
+    font-family: 'Tienne', sans-serif;
+    border: solid thin;
+    border-color: black;
+    display: inline-block;
+    overflow: hidden;
+    white-space: initial;
+
+  }
+  
+  
+/* Row and Col for the Product gallery view */
+.row-check {
+    display: flex;
+  }
+  
+  .column-check {
+    flex: 33.33%;
+    padding: 5%;
+  }
+  
+  /* text inside the checkout box display product */
+  .check-texts{
+    float: left;
+    margin-left: 5%;
+    margin-top: 3%;
+    font-size: larger;
+
+  }
+
+  /* img wrap for checkout display card */
+  .img-wrap-check{
+    float: left;
+  }
+
+  /* remove item button */
+  .check-remove-btn{
+    margin-top: 25%;
+    margin-right: 3%;
+    float: right;
+    width: 20%;
+
+
+  }
+
+  /* price inside display card */
+  .check-price{
+    float: right;
+    margin-top: 10%;
+  }
+
+  /*order summary box */
+  .payment-detail{
+    float: right;
+    position: relative;
+    border: thin solid;
+    border-color: black;
+    margin-right: 15%;
+    margin-top: 5%;
+    padding-top: 2%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 1%;
+  
+  }
+
+  /* floated right text prices inside order summary */
+  .payment-detail-text{
+    float: right;
+  }
+
+  /* Checkout button */ 
+  .checkout-btn{
+    vertical-align: center;
+    text-align: center;
+    margin-top: 10%;
+    width: 100%;
+    font-size: 20px;
+    background: black;
+    color: white;
+  }
+
+  /* Change background on mouse-over */
+.checkout-btn:hover {
+  background: #A4DF9A;
+  color: black;
+}
+
+  /* Change background on mouse-over */
+  .check-remove-btn:hover {
+    background: #A4DF9A;
+    color: black;
+  }
+  

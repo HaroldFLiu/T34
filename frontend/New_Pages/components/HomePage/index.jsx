@@ -3,9 +3,11 @@ import "./HomePage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import ProductComponents from "../ProductComponents";
+import {Link} from "react-router-dom"
+import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {HiOutlineShoppingBag} from 'react-icons/hi' ;
 import {MdOutlineGroups} from 'react-icons/md';
 import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
@@ -26,31 +28,73 @@ import {FaPenFancy} from 'react-icons/fa';
 import {FaDog} from 'react-icons/fa';
 import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
+import Cookie from 'universal-cookie';
 
 const HomePage = () => {
-/*
-  const [posts, setPost] = React.useState(null);
 
-  React.useEffect(() => {
-    axios.get("/public").then((response) => {
-      setPost(response.data);
-    });
-  }, []);
-*/
+      // To hold the actual data
+      const [data, setData] = useState([])
+      const [loading, setLoading] = useState(true);
+  
+      const [currentPage, setCurrentPage] = useState(1);
+      // 10 items displayed per page
+      const [recordsPerPage] = useState(10);
+  
+  
+      useEffect(() => {
+          axios.get('/public')
+              .then(res => {
+                      setData(res.data);
+                      setLoading(false);
+                  })
+                  .catch(() => {
+                      alert('There was an error while retrieving the data')
+                  })
+                  .then(fetchData())
+      }, [])
+  
+      const indexOfLastRecord = currentPage * recordsPerPage;
+      const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+      const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+      const nPages = Math.ceil(data.length / recordsPerPage)
 
-const [posts, setPosts] = useState([]);
+      //console.log(data);
 
-  // Define the function that fetches the data from API
-  const fetchData = async () => {
-    const { data } = await axios.get("/public");
-    setPosts(data);
-  };
+      {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+      var coookie = new Cookie();
+      const [user, setUser] = useState([]);
+      const fetchData = async () => {
+        const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+        console.log(server_res);
+        const user = server_res.data.user_email;
+        setUser(user);
+      };
+    /*
+     
+      useEffect(() => {
+        fetchData();
+      }, []);
+    */
 
-  // Trigger the fetchData after the initial render by using the useEffect hook
-  useEffect(() => {
-    fetchData();
-  }, []);
+      //console.log({user});
 
+      /* import category ids*/
+      const [cateId, setCateID] = useState([]);
+
+      // Define the function that fetches the data from API
+      const fetchCateId = async () => {
+        const { data } = await axios.get("/category");
+        setCateID(data);
+      };
+    
+      // Trigger the fetchData after the initial render by using the useEffect hook
+      useEffect(() => {
+        fetchCateId();
+      }, []);
+  
+      console.log(cateId);
+      
+ 
   return (
   <div className="parent" >
      {/* top nav bar*/}
@@ -59,12 +103,13 @@ const [posts, setPosts] = useState([]);
       <a class="active" href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
       <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
       <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      <a href="/checkout-page"> Cart</a>
    
       <input type="text"placeholder="Search.."> 
       </input>
@@ -77,7 +122,7 @@ const [posts, setPosts] = useState([]);
     <div className="header">
     Categories
     </div>
-    <a href="#"> <FaCar className="icon"/> Vechicles</a>
+    <Link to={"/category-page/6344f49289f424dbbff4741"}> <FaCar className="icon"/> Vechicles </Link>
     <a href="#"> <FaTshirt className="icon"/> Apparel</a>
     <a href="#"> <BsPlugFill className="icon"/> Electronics</a>
     <a href="#"> <MdFamilyRestroom className="icon"/> Family</a>
@@ -118,25 +163,17 @@ const [posts, setPosts] = useState([]);
     <div className="wrapper" >
         <div class="row2">
           <div class="column">
-          <ProductComponents/>
+
+          <ProductComponents data={currentRecords}/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
+
           </div>
         </div>
     </div>
-
-
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
     </div> 
 
 

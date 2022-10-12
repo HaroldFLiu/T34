@@ -1,98 +1,128 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 const { Item } = require('../models/item');
+const { Category } = require('../models/category');
+const { Group } = require('../models/group');
+const { User } = require('../models/user');
 const { Comment } = require('../models/comment');
-const user = require('../models/user');
+const { Favourites } = require('../models/favourites');
+const { Cart } = require('../models/cart');
 
 const itemService = require('../services/item');
 const commentService = require('../services/comment');
-
+const userService = require('../services/user');
 
 describe('CommentsService', () => {
-    let connection = null;
-    let item1 = null;
-    let item1Info = null;
-    let comment1 = null;
-    let comment1Info = null;
-    let comment2 = null;
-    let comment2Info = null;
-    let user1 = null;
+  let connection = null;
 
-    beforeAll(async () => {
-        connection = mongoose.connect(process.env.MONGO_URI);
-    });
+  let item = null;
+  let itemInfo = null;
 
-    afterAll(async () => {
-        await Item.deleteMany({});
-        await Comment.deleteMany({});
-        await mongoose.disconnect();
-      });
+  let comment1 = null;
+  let comment1Info = null;
 
-      test('Create Comment', async () => {
-        user1 = await user.findOne({email:'micxie@student.unimelb.edu.au'});
-        item1Info = {
-            name: 'Chair',
-            description: 'This is a good chair.',
-            price: 100,
-            category_ids: [],
-            group_ids: [],
-            public_visibility: true,
-  
-          }
-          item1 = await itemService.create(item1Info);
-          comment1Info = {
-            user: user1._id,
-            content: 'This is a test comment',
-            itemId: item1._id,
-          }
-        comment1 = await commentService.create(comment1Info);
-        const comment1db = await Comment.findById(comment1._id);
-        const item1db = await Item.findById(item1._id);
-        expect(comment1db).not.toBeNull();
-        expect(comment1).not.toBeNull();
-        expect(item1db.comments).toStrictEqual([comment1._id]);
-        expect(comment1db.user).toStrictEqual(user1._id);
-        expect(comment1db.content).toStrictEqual(comment1Info.content);
-      });
+  let comment2 = null;
+  let comment2Info = null;
 
-      test('Delete Comment', async () => {
-        const deletedcomment1 = await commentService.deleteById(comment1._id);
-        expect(await Comment.findById(comment1._id)).toBeNull;
-        expect(item1.comments).toStrictEqual([]);
-      });
+  let user1 = null;
+  let user1Info = {
+    first_name: "Sue",
+    last_name: "Green",
+    email: "4@spacewax.com",
+    password: "magna",
+  }
 
+  let user2 = null;
+  let user2Info = {
+    first_name: "Joanna",
+    last_name: "Xue",
+    email: "5@spacewax.com",
+    password: "magna",
+  }
 
-      test('Read Comment by Item', async () => {
-        item1 = await itemService.create(item1Info);
-        comment1Info = {
-          user: user1._id,
-          content: 'This is a test comment',
-          itemId: item1._id,
-        }
-        comment1 = await commentService.create(comment1Info);
-        comment2Info = {
-            user: user1._id,
-            content: 'This is 2nd comment',
-            itemId: item1._id,
-        }
-        comment2 = await commentService.create(comment2Info);
-        const comment2db = await Comment.findById(comment2._id);
-        const comment1db = await Comment.findById(comment1._id);
+  jest.setTimeout(15000);
 
-        expect(comment1db).not.toBeNull();
-        expect(comment2db).not.toBeNull();
+  beforeAll(async () => {
+    connection = mongoose.connect(process.env.MONGO_URI_TEST);
+    await Item.deleteMany({});
+    await Cart.deleteMany({});
+    await Comment.deleteMany({});
+    await Favourites.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
 
-        const commentsdb = await commentService.readByItem(item1._id);
-        expect(commentsdb).toStrictEqual([comment1._id, comment2._id]);
-      });
+    user1 = await userService.create(user1Info);
+    user2 = await userService.create(user2Info);
 
-      test('Update comment', async () => {
-        const updatedString = 'This is the updated test string';
-        await commentService.updateById(comment1._id, updatedString);
-        const comment1db = await Comment.findById(comment1._id);
+    itemInfo = {
+      name: "Chair",
+      description: "Sturdy",
+      price: 300,
+      public_visibility: true,
+      seller_id: user2._id,
+    }
 
-        expect(comment1db).not.toBeNull();
-        expect(comment1db.content).toStrictEqual(updatedString);
-      });
+    item = await itemService.create(itemInfo);
+  });
 
+  afterAll(async () => {
+    await mongoose.disconnect();
+  });
+
+  test('Create Comment', async () => {
+    comment1Info = {
+      user: user1._id,
+      content: 'This is a test comment',
+      item_id: item._id,
+    }
+
+    comment1 = await commentService.create(comment1Info);
+    const comment1db = await Comment.findById(comment1._id);
+
+    const itemdb = await Item.findById(item._id);
+
+    expect(comment1db).not.toBeNull();
+    expect(comment1).not.toBeNull();
+    expect(itemdb.comments.length).toBe(1);
+    expect(comment1db.user).toStrictEqual(user1._id);
+    expect(comment1db.content).toStrictEqual(comment1Info.content);
+  });
+
+  test('Delete Comment', async () => {
+    const deletedcomment1 = await commentService.deleteById(comment1._id);
+    expect(await Comment.findById(comment1._id)).toBeNull;
+
+    const itemdb = await Item.findById(item._id);
+    expect(itemdb.comments.length).toBe(0);
+  });
+
+  test('Read Comment by Item', async () => {
+    comment1 = await commentService.create(comment1Info);
+    const comment1db = await Comment.findById(comment1._id);
+
+    comment2Info = {
+        user: user1._id,
+        content: 'This is 2nd comment',
+        item_id: item._id,
+    }
+    comment2 = await commentService.create(comment2Info);
+    const comment2db = await Comment.findById(comment2._id);
+
+    expect(comment1db).not.toBeNull();
+    expect(comment2db).not.toBeNull();
+
+    const commentsdb = await commentService.readByItem(item._id);
+    expect(commentsdb.length).toBe(2);
+  });
+
+  test('Update comment', async () => {
+    const updatedString = 'This is the updated test string';
+    await commentService.updateById(comment1._id, updatedString);
+    const comment1db = await Comment.findById(comment1._id);
+
+    expect(comment1db).not.toBeNull();
+    expect(comment1db.content).toStrictEqual(updatedString);
+  });
 });

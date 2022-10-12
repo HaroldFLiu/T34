@@ -33,6 +33,7 @@ const SellPage = () => {
   React.useEffect(() => {
     axios.get("/").then((response) => {
       setPost(response.data);
+      
     });
   }, []);
 
@@ -45,7 +46,7 @@ const SellPage = () => {
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}

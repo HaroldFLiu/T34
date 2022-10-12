@@ -11,6 +11,11 @@ const commentSchema = new Schema(
         type: String,
         required: true,
       },
+      item_id: {
+        type: Schema.Types.ObjectId,
+        ref: 'Item',
+        required: true,
+      }
     },
     {
         timestamps: {

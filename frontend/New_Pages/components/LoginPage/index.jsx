@@ -1,6 +1,9 @@
 import React, {useState}from "react";
 import "./Login.css";
 import axios from "../../api/axios"
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
 
 const LoginPage = () => {
   const [values, setValues] = useState({
@@ -8,6 +11,7 @@ const LoginPage = () => {
     password: "",
     showPass: false,
   });
+  const [error,setError]=useState();
 
   console.log(values);
 
@@ -20,14 +24,25 @@ const LoginPage = () => {
   .then(function (response) {
     console.log(response);
     if (response.status=="200") {
+      let token =response.data.token;
+      console.log(token);
+      cookies.set('token',token,{maxAge:response.data.maxAge, sameSite:response.data.sameSite,secure:response.data.secure, httpOnly: response.data.httpOnly});
       location.pathname='/home-page';
+    }
+    else if(response.status=="401") {
+      setError("Authentication failed. Please check username and password");
+      // do something
     }
     else {
       console.log("oops");
     }
   })
-  .catch(function (error) {
-    console.log(error);
+  
+  //.catch(function (error) {
+    //console.log(error);
+ // });
+ .catch(() => {
+  alert('Authentication failed. Please check username and password');
   });
 }
 

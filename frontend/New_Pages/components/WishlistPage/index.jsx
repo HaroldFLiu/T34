@@ -45,7 +45,7 @@ const WishlistPage = () => {
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
         <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a class="active" href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
@@ -112,7 +112,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -124,7 +124,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -136,7 +136,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -148,7 +148,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -160,7 +160,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -179,7 +179,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -191,7 +191,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -203,7 +203,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -215,7 +215,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>
@@ -227,7 +227,7 @@ const WishlistPage = () => {
         <p class="price">$19.95</p>
         <div className="item-cart">
         <h3>Item Name</h3>
-        <p><button>Add to Cart</button></p>
+        <p><button>Remove</button></p>
         </div>
       </div>
       </div>

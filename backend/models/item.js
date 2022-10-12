@@ -27,34 +27,32 @@ const itemSchema = new Schema(
         //required: true,
 	default: true
       },
-      /*
       seller_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
-        required: true,
+        required: false,
       },
-      buyer: {
+      buyer_id: {
         type: Schema.Types.ObjectId,
         ref: 'User',
         required: false,
-      }*/
+      },
       comments: {
         type: [Schema.Types.ObjectId], 
         ref: 'Comment',
         default: [],
       },
-      image_urls : {
+      image_urls: {
         type: [{ 
           type: String
         }],
-        default: []
+        default: [],
       },
-      cloudinary_ids : {
-        type: [{ 
-          type: String
-        }],
-        default: []
-      }
+      sold:  {
+        type: Boolean,
+        required: true,
+        default: false,
+      },
     },
     {
       timestamps: {

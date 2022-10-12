@@ -10,8 +10,11 @@ import SellPage from "./components/SellPage";
 import WishlistPage from "./components/WishlistPage";
 import GroupPage from "./components/GroupPage";
 import CreateGroupPage from "./components/CreateGroupPage";
-import MyGroupPage from "./components/MyGroupPage";
 import MemberListPage from "./components/MemberListPage";
+import MyGroupsPage from "./components/MyGroupsPage"
+import ProductInformationPage from "./components/ProductInformationPage" 
+import CheckoutPage from "./components/CheckoutPage";
+import CategoryPage from "./components/CategoryPages";
 
 function App() {
   return (
@@ -41,8 +44,17 @@ function App() {
         <Route path="/create-group-page">
           <CreateGroupPage/>
         </Route>
-        <Route path="/my-group-page">
-          <MyGroupPage/>
+        <Route path="/my-groups-page">
+          <MyGroupsPage/>
+        </Route>
+        <Route path="/product-page/:productId">
+          <ProductInformationPage/>
+        </Route>
+        <Route path="/checkout-page">
+          <CheckoutPage/>
+        </Route>
+        <Route path="/category-page/:categoryId">
+          <CategoryPage/>
         </Route>
         <Route path="/member-list-page">
           <MemberListPage/>

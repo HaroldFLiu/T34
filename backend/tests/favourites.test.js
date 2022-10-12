@@ -1,113 +1,138 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+
 const { Item } = require('../models/item');
+const { Category } = require('../models/category');
+const { Group } = require('../models/group');
+const { User } = require('../models/user');
+const { Comment } = require('../models/comment');
 const { Favourites } = require('../models/favourites');
-const user = require('../models/user');
+const { Cart } = require('../models/cart');
 
 const itemService = require('../services/item');
 const favouritesService = require('../services/favourites');
+const userService = require('../services/user');
 
 describe('FavouritesService', () => {
-    let connection = null;
-    let item_ids = null;
-    let item1 = null;
-    let item1Info = null;
-    let item2 = null;
-    let item2Info = null;
-    let fav1 = null;
-    let fav1Info = null;
-    let user1 = null;
+  let connection = null;
 
-    beforeAll(async () => {
-        connection = mongoose.connect(process.env.MONGO_URI);
-    });
+  let item1 = null;
+  let item1Info = null;
 
-    afterAll(async () => {
-        await Favourites.deleteMany({});
-        await Item.deleteMany({});
-        await mongoose.disconnect();
-      });
+  let item2 = null;
+  let item2Info = null;
 
-      test('Create Favourites', async () => {
-        user1 = await user.findOne({email:'micxie@student.unimelb.edu.au'});
-        fav1Info = {
-          user: user1._id,
-        }
-        fav1 = await favouritesService.create(fav1Info)
-        const fav1db = await Favourites.findById(fav1._id);
+  let fav = null;
+  let favInfo = null;
 
-        expect(fav1).not.toBeNull();
-        expect(fav1db).not.toBeNull();
-        expect(fav1db.user).toStrictEqual(fav1Info.user);
-      
-      });
+  let user1 = null;
+  let user1Info = {
+    first_name: "Sue",
+    last_name: "Green",
+    email: "6@spacewax.com",
+    password: "magna",
+  }
 
-      test('Read by favId', async () => {
-        item1Info = {
-          name: 'Chair',
-          description: 'This is a good chair.',
-          price: 100,
-          category_ids: [],
-          group_ids: [],
-          public_visibility: true,
+  let user2 = null;
+  let user2Info = {
+    first_name: "Joanna",
+    last_name: "Xue",
+    email: "7@spacewax.com",
+    password: "magna",
+  }
 
-        }
-        item1 = await itemService.create(item1Info);
+  jest.setTimeout(15000);
 
-        item2Info = {
-          name: 'Apple',
-          description: 'Crunchy',
-          price: 5,
-          category_ids: [],
-          group_ids: [],
-          public_visibility: true,
+  beforeAll(async () => {
+    connection = mongoose.connect(process.env.MONGO_URI_TEST);
+    await Item.deleteMany({});
+    await Cart.deleteMany({});
+    await Comment.deleteMany({});
+    await Favourites.deleteMany({});
+    await Category.deleteMany({});
+    await Group.deleteMany({});
+    await User.deleteMany({});
 
-        }
-        item2 = await itemService.create(item2Info);
-        await favouritesService.addItem(fav1._id, item1._id, 1);
-        await favouritesService.addItem(fav1._id, item2._id, 1);
-        item_ids = [item1._id, item2._id];
-        const fav1read = await favouritesService.readById(fav1._id);
-        expect(fav1read).not.toBeNull;
-        expect(fav1read.items).toStrictEqual(item_ids);
-        
-      });
-      
-      test('Delete Favourite', async () => {
-        const deletedFavourite1 = await favouritesService.deleteById(fav1._id);
-        expect(await Favourites.findById(fav1._id).toBeNull);
-      });
+    user1 = await userService.create(user1Info);
+    user2 = await userService.create(user2Info);
 
+    item1Info = {
+      name: "Chair",
+      description: "Sturdy",
+      price: 300,
+      public_visibility: true,
+      seller_id: user2._id,
+    }
 
-      test('Add item to favourites', async () => {
-        fav1 = await favouritesService.create(fav1Info);
-        item_ids = [item1._id];;
-        await favouritesService.addItem(fav1._id, item1._id, 1);
-        const fav1db = await Favourites.findById(fav1._id);
+    item2Info = {
+      name: "Table",
+      description: "Big",
+      price: 4239,
+      public_visibility: true,
+      seller_id: user2._id,
+    }
 
-        expect(fav1db).not.toBeNull();
-        expect(fav1db.items).toStrictEqual(item_ids);
-      });
+    item1 = await itemService.create(item1Info);
+    item2 = await itemService.create(item2Info);
+  });
 
-      test('Delete an item from favourites', async () => {
-        
-        await favouritesService.deleteItem(fav1._id, item1._id);
-        const fav1db = await Favourites.findById(fav1._id);
-        item_ids = [];
-        expect(fav1db).not.toBeNull();
-        expect(fav1db.items).toStrictEqual(item_ids);
+  afterAll(async () => {
+    await mongoose.disconnect();
+  });
 
-      });
+  test('Create Favourites', async () => {
+    favInfo = {
+      user: user1._id,
+    }
+    fav = await favouritesService.create(favInfo)
+    const favdb = await Favourites.findById(fav._id);
 
-      test('Delete all items from favourites', async () => {
+    expect(fav).not.toBeNull();
+    expect(favdb).not.toBeNull();
+    expect(favdb.user).toStrictEqual(favInfo.user);
+  
+  });
 
-        await favouritesService.addItem(fav1._id, item1._id, 1);
-        await favouritesService.addItem(fav1._id, item2._id, 1);
-        await favouritesService.removeAllItems(fav1._id);
-        const fav1db = await Favourites.findById(fav1._id);
-        item_ids = [];
-        expect(fav1db).not.toBeNull();
-        expect(fav1db.items).toStrictEqual(item_ids);
-      });
+  test('Read by favId', async () => {
+    await favouritesService.addItem(fav._id, item1._id, 1);
+    await favouritesService.addItem(fav._id, item2._id, 1);
+
+    const favRead = await favouritesService.readById(fav._id);
+    expect(favRead).not.toBeNull();
+    expect(favRead.items.length).toBe(2);
+    
+  });
+  
+  test('Delete Favourite', async () => {
+    const deletedFavourite = await favouritesService.deleteById(fav._id);
+    expect(await Favourites.findById(fav._id)).toBeNull();
+  });
+
+  test('Add item to favourites', async () => {
+    fav = await favouritesService.create(favInfo);
+    item_ids = [item1._id];;
+    await favouritesService.addItem(fav._id, item1._id, 1);
+    const favdb = await Favourites.findById(fav._id);
+
+    expect(favdb).not.toBeNull();
+    expect(favdb.items).toStrictEqual(item_ids);
+  });
+
+  test('Delete an item from favourites', async () => {
+    await favouritesService.deleteItem(fav._id, item1._id);
+    const favdb = await Favourites.findById(fav._id);
+    expect(favdb).not.toBeNull();
+    expect(favdb.items.length).toBe(0);
+  });
+
+  test('Delete all items from favourites', async () => {
+    await favouritesService.addItem(fav._id, item1._id, 1);
+    await favouritesService.addItem(fav._id, item2._id, 1);
+    await favouritesService.removeAllItems(fav._id);
+    const favdb = await Favourites.findById(fav._id);
+
+    expect(favdb).not.toBeNull();
+    expect(favdb.items.length).toBe(0);
+  });
 
 });

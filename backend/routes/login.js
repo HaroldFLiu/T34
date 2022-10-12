@@ -9,7 +9,6 @@ const { initSession, isEmail } = require('../utils/utils');
 
 const router = express.Router();
 
-
 router.post('/login', async (req, res) => {
     try {
       const { email, password } = req.body;
@@ -48,14 +47,19 @@ router.post('/login', async (req, res) => {
   
       res
         .cookie('token', session.token, {
-          httpOnly: true,
-          sameSite: true,
+          sameSite: false,
           maxAge: 1209600000,
           secure: process.env.NODE_ENV === 'production',
+          httpOnly:false,
         })
         .json({
           title: 'Login Successful',
           detail: 'Successfully validated user credentials',
+          token: session.token,
+          sameSite: false,
+          maxAge: 1209600000,
+          secure: process.env.NODE_ENV === 'production',
+          httpOnly:false,
           //csrfToken: session.csrfToken,
         });
     } catch (err) {

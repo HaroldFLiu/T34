@@ -128,8 +128,11 @@
   display: flex;
 }
 
+/* CAP IMG SRC SIZE - FIX LATER */
 .logo-position{
   border: 3px solid #555;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 /* wrappers to move products */

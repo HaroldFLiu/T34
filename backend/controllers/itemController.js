@@ -1,21 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const itemService = require('../services/item');
 
-/*
-const createItem = async (req, res) => {
-    const {name, description, price, category_ids, group_ids, 
-        public_visibility} = req.body;
-
-    try {
-        const item = await itemService.create({name, description, price, 
-            category_ids, group_ids, public_visibility});
-
-        res.status(200).json(item);
-    } catch (error) {
-        res.status(400).json({error: error.message})
-    }
-} */
-
 const getPublicItems = async (req, res) => {
     const items = await itemService.readPublicItems();
 
@@ -30,7 +15,7 @@ const getItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.readById(item_id);
@@ -46,23 +31,24 @@ const getCategoryItems = async (req, res) => {
     const { category_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(category_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const items = await itemService.readByCategory(category_id);
+    const items = await itemService.readPublicItems();
+    const filtered = await itemService.readByCategory(category_id, items);
 
-    if (!items) {
+    if (!filtered) {
         return res.status(404).json({error: 'Items do not exist'});
     }
 
-    res.status(200).json(items);
+    res.status(200).json(filtered);
 }
 
 const deleteItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.deleteById(item_id);
@@ -74,7 +60,7 @@ const updateItem = async (req, res) => {
     const { item_id } = req.params;
 
     if (!mongoose.Types.ObjectId.isValid(item_id)) {
-        return res.status(404).json({error: 'Invalid id'});
+        return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
     const item = await itemService.updateById(item_id, req.body);

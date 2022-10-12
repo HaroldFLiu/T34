@@ -2,11 +2,9 @@ const express = require('express');
 const {
     createCart,
     getCart,
-    addToCart,
-    checkoutCart,
-    deleteFromCart,
-    deleteAllFromCart,
-    deleteCart
+    updateCart,
+    deleteCart,
+    checkoutCart
 } = require ('../controllers/cartController')
 
 const router = express.Router();
@@ -17,17 +15,11 @@ router.get('/:cartId', getCart);
 // POST a cart
 router.post('/:userId', createCart);
 
-// ADD item
-router.patch('/:cartId', addToCart);
+// UPDATE a cart
+router.patch('/:cartId', updateCart);
 
-// CHECKOUT cart
-router.patch('/:cartId', checkoutCart);
-
-// REMOVE item from cart
-router.patch('/:cartId', deleteFromCart);
-
-// REMOVE all items from cart
-router.patch('/:cartId', deleteAllFromCart);
+// CHECKOUT a cart 
+router.patch('/:cartId/checkout', checkoutCart)
 
 // DELETE a cart
 router.delete('/:cartId', deleteCart);
