@@ -8,7 +8,7 @@ const readByUserId = async (userId) => {
 };
 
 const readAll = async () => {
-    const carts = await Cart.readALl();
+    const carts = await Cart.find();
     return carts;
 }
 
