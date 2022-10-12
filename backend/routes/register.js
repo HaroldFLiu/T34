@@ -20,6 +20,8 @@ router.post('/register', async (req, res) => {
       throw new Error('Password must be a string.');
     }
     const user = await userService.create({first_name, last_name, email, password});
+    const user_id = user._id;
+    const cart = await cartService.create({user_id});
     //const user = new User({ first_name:req.body.first_name, last_name:req.body.last_name, email: req.body.email, password:req.body.password});
     //const persistedUser = await user.save();
     //const userId = persistedUser._id;
