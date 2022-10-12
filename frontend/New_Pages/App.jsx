@@ -32,7 +32,7 @@ function App() {
         <Route path="/new-listings-page">
           <NewListings/>
         </Route>
-        <Route path="/sell-page">
+        <Route path="/sell-page/:sellerId">
           <SellPage/>
         </Route>
         <Route path="/wishlist-page">

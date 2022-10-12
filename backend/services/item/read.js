@@ -65,7 +65,7 @@ const readByGroup = async (groupId) => {
 
 const readItemsBySeller = async (sellerId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
+  const filtered = items.filter((x) => x.seller_id == sellerId);
 
   if (!filtered) {
     console.log(`No items belonging to seller with ID: ${sellerId}`);

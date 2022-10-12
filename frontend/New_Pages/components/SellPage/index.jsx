@@ -1,8 +1,9 @@
 import React, {useEffect, useState}from "react";
-import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import Cookie from 'universal-cookie';
-
+import { useParams } from "react-router-dom";
+import ProductComponents from "../ProductComponents";
+import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -48,8 +49,38 @@ const SellPage = () => {
         fetchData();
       }, []);
 
-      console.log(user.first);
+   
 
+        // To hold the actual data
+        const [data, setData] = useState([])
+        const [loading, setLoading] = useState(true);
+    
+        const [currentPage, setCurrentPage] = useState(1);
+        // 10 items displayed per page
+        const [recordsPerPage] = useState(10);
+
+
+        const {sellerId} = useParams()
+        console.log(sellerId);
+    
+        useEffect(() => {
+            axios.get(`/items/${sellerId}`)
+                .then(res => {
+                        setData(res.data);
+                        setLoading(false);
+                    })
+                    .catch(() => {
+                        alert('There was an error while retrieving the data')
+                    })
+                    .then(fetchData())
+        }, [])
+    
+        const indexOfLastRecord = currentPage * recordsPerPage;
+        const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+        const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+        const nPages = Math.ceil(data.length / recordsPerPage)
+
+  
 
   return (
   <div className="parent" >
@@ -120,41 +151,14 @@ const SellPage = () => {
     <div className="wrapper" >
     <div class="row2">
       <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
+      <ProductComponents data={currentRecords}/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
       </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
+
       
     </div>
     </div>
