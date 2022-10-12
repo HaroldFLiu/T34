@@ -22,6 +22,8 @@ router.get('/getuser', authenticate, async (req, res) => {
       detail: 'Successfully authenticated user',
       user_email: email,
       user_id: userId,
+      first: user.first_name,
+      last: user.last_name,
     });
   } catch (err) {
     res.status(401).json({
