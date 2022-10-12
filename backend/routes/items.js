@@ -2,7 +2,7 @@ const express = require('express');
 const { default: mongoose } = require('mongoose');
 
 //const upload = require('../middleware/multer');
-//const cloudinary = require('../middleware/cloudinary');
+const cloudinary = require('../middleware/cloudinary');
 const upload = require('../middleware/multer')
 
 //const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
@@ -51,11 +51,19 @@ router.post('/public', async (req, res) => {
 
 // POST an image 
 router.post('/public/image', upload.single('file'), async (req, res) => {
-    if (req.file) {
-        console.log(req.file);
-        res.status(200).json({image_path: req.file.originalname});
-    } else {
-        res.status(400).json({msg: 'failed to upload image'})
+    // handle images
+    const image_urls = [];
+    const file = req.file
+    //console.log(req.files.length);
+    if (file) {
+        try {
+            const result = await cloudinary.uploader.upload(file.path);
+            image_urls.push(result.secure_url);
+            //console.log(result.secure_url)
+            res.status(200).json({image_urls: image_urls});
+        } catch (err) {
+            res.status(400).json({msg: 'failed to upload image'})
+        }
     }
 });
 

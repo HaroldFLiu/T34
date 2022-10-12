@@ -124,11 +124,11 @@ const items = [
         name: "Chair",
         description: "In good condition",
         price: 30000,
-        group_ids: ["633e7be1b5c1407aa35db545"],
-        category_ids: ["633e7be0b5c1407aa35db518"],
+        group_ids: ["633e7be1b5c1407aa35db548"],
+        category_ids: ["634527f47926a2b8c450db1c"],
         public_visibility: true,
         seller_id: "633e7c16434369b2dc9d2dab",
-        image_urls: ['image/download.png'],
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542703/ujnojhuwpuflm4kyxcys.png'],
     },
     {
         _id: "63452887966053d159c5512d",
@@ -136,10 +136,10 @@ const items = [
         description: "Soft but sturdy",
         price: 500,
         group_ids: ["633e7be1b5c1407aa35db548"],
-        category_ids: ["633e7be1b5c1407aa35db530"],
-        public_visibility: false,
+        category_ids: ["634527f47926a2b8c450db1c"],
+        public_visibility: true,
         seller_id: "633e7c16434369b2dc9d2dab",
-        image_urls: ['image/download.jpeg'],
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542293/ym1f9g3ny0msgkumg5tp.jpg'],
     },
     {
         _id: "63452887966053d159c55130",
@@ -147,9 +147,10 @@ const items = [
         description: "Plays well",
         price: 100,
         group_ids: [],
-        category_ids: ["633e7be1b5c1407aa35db536"],
+        category_ids: ["634527f47926a2b8c450db22"],
         public_visibility: true,
         seller_id: "633e7c16434369b2dc9d2dab",
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542859/hhgbas44awvx3sxmixtr.jpg']
     }
 ]
 

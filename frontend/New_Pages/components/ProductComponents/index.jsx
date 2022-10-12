@@ -19,10 +19,9 @@ return(
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
             <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
-            {/*
-             <img src={require(`../../../../backend/images/${item.image_urls[0]}`)} className="logo-position">
+             <img src={item.image_urls[0]} className="logo-position">
               </img> 
-      */}
+      
             </div>
              {/* wishlist button */}
              <div class="wishlist">

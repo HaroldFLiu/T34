@@ -13,8 +13,6 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 const NewListingPage = () => {
-  const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
-  const CLOUDINARY_UPLOAD_PRESET = 'T34ITProject';
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -50,6 +48,7 @@ const NewListingPage = () => {
       category_ids: [],
       group_ids: [],
       image_urls: [],
+      comments: []
     }
 
     if (values.itemCategory) {
@@ -74,13 +73,13 @@ const NewListingPage = () => {
       data: formData,
     })
     .then(function (res1) {
-      console.log('RES 1');
-      console.log(res1);
-      console.log(image.raw);
+      //console.log('RES 1');
+      //console.log(res1);
+      //console.log(image.raw);
 
       if (res1.status=="200") {
         console.log('image uploaded');
-        props.image_urls = [res1.data.image_path];
+        props.image_urls = res1.data.image_urls;
         console.log(props);
 
         axios.post('/public', props)
@@ -88,7 +87,6 @@ const NewListingPage = () => {
           if (res2.status=="200") {
             console.log('item details successful');
             location.pathname='/home-page';
-            console.log(res2.data);
           } else {
             console.log("item posting went wrong");
           }
