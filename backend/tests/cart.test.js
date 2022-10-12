@@ -98,8 +98,8 @@ describe('CartService', () => {
   
   });
 
-  test('Read by cartId', async () => {
-    const cartRead = await cartService.readById(cart._id);
+  test('Read by userId', async () => {
+    const cartRead = await cartService.readByUserId(user1._id);
     const cartdb = await Cart.findById(cart._id);
 
     expect(cartRead).not.toBeNull();
