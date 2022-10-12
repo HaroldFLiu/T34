@@ -14,15 +14,16 @@ import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
 import CategoryPage from "./components/CategoryPages";
+import GroupInfoPage from "./components/GroupPopUp";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:path(|home-page)">
+        <Route path="/home-page">
         <HomePage/>
         </Route>
-        <Route path="/login-page">
+        <Route path="/:path(|login-page)">
           <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
@@ -54,6 +55,9 @@ function App() {
         </Route>
         <Route path="/category-page/:categoryId">
           <CategoryPage/>
+        </Route>
+        <Route path="/group-info-page/:groupId">
+          <GroupInfoPage/>
         </Route>
 
       </Switch>

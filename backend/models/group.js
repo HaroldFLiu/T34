@@ -23,9 +23,6 @@ const groupSchema = new Schema(
       icon_url: {
         type: String,
       },
-      cloudinary_id: {
-        type: String,
-      }
     }
   );
   

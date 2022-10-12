@@ -241,6 +241,19 @@ async function seed() {
         }
     }
 
+    // delete other groups
+    const allGroups = await groupService.readAll();
+    const seededGroups = groups.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const group of allGroups) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededGroups.includes(JSON.stringify(group._id))) {
+            console.log("should not be in DB");
+            await groupService.deleteById(group._id);
+        }
+    }
+
     mongoose.disconnect();
 
     console.log("Done seeding");
