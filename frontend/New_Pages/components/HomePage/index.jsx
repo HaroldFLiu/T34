@@ -68,6 +68,8 @@ const HomePage = () => {
         console.log(server_res);
         const user = server_res.data.user_email;
         setUser(user);
+        console.log(server_res.data.user_id);
+
       };
     /*
      
@@ -76,8 +78,7 @@ const HomePage = () => {
       }, []);
     */
 
-      //console.log({user});
-
+    
       /* import category ids*/
       const [cateId, setCateID] = useState([]);
 
