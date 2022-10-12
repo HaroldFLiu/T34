@@ -3,6 +3,7 @@ import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./GroupPage.css";
 import GroupComponents from "../GroupComponents";
+import SideNav from "../SideNavComponent";
 import Cookie from 'universal-cookie';
 import PageNext from "../PageNextBar/PageNext";
 import {Link} from "react-router-dom";
@@ -15,20 +16,6 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
-/* category icons */
-import {FaCar} from 'react-icons/fa';
-import {FaTshirt} from 'react-icons/fa';
-import {BsPlugFill} from 'react-icons/bs';
-import {MdFamilyRestroom} from 'react-icons/md';
-import {IoIosLeaf} from 'react-icons/io';
-import {FaChessKnight} from 'react-icons/fa';
-import {GiSofa} from 'react-icons/gi';
-import {FaHammer} from 'react-icons/fa';
-import {FaGuitar} from 'react-icons/fa';
-import {FaPenFancy} from 'react-icons/fa';
-import {FaDog} from 'react-icons/fa';
-import {MdSportsFootball} from 'react-icons/md';
-import {MdSmartToy} from 'react-icons/md';
 
 const GroupPage = () => {
 
@@ -81,7 +68,6 @@ const GroupPage = () => {
     }, []);
 
     console.log(user.first);
-
   return (
 <div className="parent" >
      {/* top nav bar*/}
@@ -104,30 +90,13 @@ const GroupPage = () => {
       </div>
     </div>
 
-    {/* side bar*/} 
-   
-    <div class="sidenav">
-    <div className="header">
-    Categories
-    </div>
-    <a href="#"> <FaCar className="icon"/> Vechicles</a>
-    <a href="#"> <FaTshirt className="icon"/> Apparel</a>
-    <a href="#"> <BsPlugFill className="icon"/> Electronics</a>
-    <a href="#"> <MdFamilyRestroom className="icon"/> Family</a>
-    <a href="#">  <IoIosLeaf className="icon"/> Garden & Outdoor</a>
-    <a href="#"> <FaChessKnight className="icon"/> Hobbies</a>
-    <a href="#"><GiSofa className="icon"/>  Home Goods</a>
-    <a href="#"> <FaHammer className="icon-flipped"/> Home Improvement &nbsp;&nbsp;&nbsp; Supplies</a>
-    <a href="#"> <FaGuitar className="icon-flipped"/> Musical Instruments</a>
-    <a href="#"> <FaPenFancy className="icon"/> Office Supplies</a>
-    <a href="#"> <FaDog className="icon-flipped"/> Pet Supplies</a>
-    <a href="#"> <MdSportsFootball className="icon"/> Sporting Goods</a>
-    <a href="#"> <MdSmartToy className="icon"/> Toys & Games</a>
-    
-    <a href="/create-group-page" >
-      <button class="btn btn-success"> Create New Group</button>
-    </a>
-  </div>
+
+    <SideNav />
+      {/* side bar*/} 
+      <a href="/create-group-page" >
+          <button class="btn btn-success"> Create New Group</button>
+      </a>
+  
   
     {/* products display*/} 
     <div class="main">
