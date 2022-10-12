@@ -72,10 +72,24 @@ const updateItem = async (req, res) => {
     res.status(200).json(item);
 }
 
+const getUserItems = async (req, res) => {
+    const { user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const items = await itemService.readItemsBySeller(user_id);
+
+    res.status(200).json(items);
+}
+
+
 module.exports = {
     getPublicItems,
     getItem,
     deleteItem,
     updateItem,
     getCategoryItems,
+    getUserItems,
 }
