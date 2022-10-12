@@ -101,7 +101,7 @@ const SellPage = () => {
     <div class="main">
       <div className="home-title"> My Listings:</div>
       <hr />
-      <div className="number-listings"> 1234 listings 
+      <div className="number-listings"> {data.length} listings 
       
           {/* sort by button drop down*/} 
     <div className="move-drop-btn">

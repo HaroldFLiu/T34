@@ -102,7 +102,7 @@ const GroupPage = () => {
     <div class="main">
       <div className="home-title"> Suggested Groups:</div>
       <hr />
-      <div className="number-listings"> 1234, 5678 groups 
+      <div className="number-listings"> {data.length} groups 
       
           {/* sort by button drop down*/} 
     <div className="move-drop-btn">
