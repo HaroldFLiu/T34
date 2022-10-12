@@ -155,114 +155,13 @@ const SellPage = () => {
         </div>
       </div>
       </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
       
     </div>
     </div>
 
-    {/* products display 2nd row*/} 
-    <div className="wrapper" >
-    <div class="row2">
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
+
     </div>
-   
-    </div>
-    </div>
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#" class="active">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
+
     </div> 
 
 

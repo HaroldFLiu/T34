@@ -107,7 +107,6 @@ const HomePage = () => {
       if (response.status === 200) {
         location.pathname='/login-page';
       }
-      return response.data;
     })
     .catch(error => {
       console.log("Error signing out", error);
@@ -129,7 +128,7 @@ const HomePage = () => {
       {/* search bar*/}
       {/* need to add logout btn, rn just redirects without sign out*/}
      {/* <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>*/}
-     <a href="#"> <button onClick={handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
+     <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
       <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    
