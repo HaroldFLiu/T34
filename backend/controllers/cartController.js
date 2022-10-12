@@ -13,15 +13,17 @@ const createCart = async (req, res) => {
 */
 
 const getCart = async (req, res) => {
-    const { userId } = req.params;
-    if (!mongoose.isValidObjectId(userId.toString())) {
+    const { cartId } = req.params;
+    let userId = cartId;
+    if (!mongoose.isValidObjectId(userId)) {
         return res.status(404).json({error: 'User ID invalid'});
     }
     const cart = await cartService.readByUserId(userId);
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    res.status(200).json(cart)
+    //console.log(cart);
+    return res.status(200).json(cart);
 }
 
 //const getCartFromUser

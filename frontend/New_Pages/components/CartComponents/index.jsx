@@ -1,17 +1,25 @@
 import React, {useEffect, useState}from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
+import Cookie from 'universal-cookie';
 /* icon imports */
 // need to get -> userId -> cartId -> items (itemId) : then within can get details
 const CartComponents = () => {
 
     const [posts, setPosts] = useState([]);
+    const [total, setTotal] = useState([]);
+    var coookie = new Cookie();
 
     // Define the function that fetches the data from API 
     const fetchData = async () => {
       // NEED TO CHANGE OBJ ID 
-      const { data } = await axios.get("/cart/633eea0d7d3172b98415e773");
-      setPosts(data);
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const userId = server_res.data.user_id;
+      console.log(userId);
+      let { items,subtotal } = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      setPosts(items);
+      setTotal(subtotal);
+      //console.log(data);
     };
   
     // Trigger the fetchData after the initial render by using the useEffect hook
@@ -19,7 +27,6 @@ const CartComponents = () => {
       fetchData();
     }, []);
 
-    console.log(posts);
 
   return (
   <div className="parent" >
