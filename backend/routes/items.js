@@ -3,7 +3,8 @@ const { default: mongoose } = require('mongoose');
 
 //const upload = require('../middleware/multer');
 const cloudinary = require('../middleware/cloudinary');
-const upload = require('../middleware/multer')
+const upload = require('../middleware/multer');
+const { authenticate } = require('../middleware/authenticate');
 
 //const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
 //const CLOUDINARY_UPLOAD_PRESET = 'T34ITProject';
@@ -36,15 +37,16 @@ router.get('/public/item/:item_id', getItem);
 router.get('/items/:user_id', getUserItems);
 
 // POST an item
-router.post('/public', async (req, res) => {
-    // get other descriptors
+router.post('/public', authenticate, async (req, res) => {
+    // get other descriptors  
     const {name, description, price, category_ids, group_ids, 
         public_visibility, comments, image_urls} = req.body;
+    const {userId} = req.session;
 
     try {
         // create item
         const item = await itemService.create({name, description, price, category_ids, 
-            group_ids, public_visibility, comments, image_urls});
+            group_ids, public_visibility, seller_id: userId, comments, image_urls});
         res.status(200).json(item);
     } catch (error) {
         res.status(400).json({error: error.message})
