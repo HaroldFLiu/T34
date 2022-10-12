@@ -17,7 +17,7 @@ const getCart = async (req, res) => {
     if (!mongoose.isValidObjectId(userId.toString())) {
         return res.status(404).json({error: 'User ID invalid'});
     }
-    const cart = await cartService.readById(userId);
+    const cart = await cartService.readByUserId(userId);
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }

@@ -1,4 +1,3 @@
-const { useImperativeHandle } = require('react');
 const { Cart } = require('../../models/cart')
 
 const readByUserId = async (userId) => {
@@ -16,5 +15,5 @@ const readAll = async () => {
 
 module.exports = {
     readAll,
-    readByUserId
+    readByUserId,
 };
