@@ -3,6 +3,7 @@ import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
 import { RadioButton } from "./RadioButton";
+import Cookie from 'universal-cookie';
 
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';

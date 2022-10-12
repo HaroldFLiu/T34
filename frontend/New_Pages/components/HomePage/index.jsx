@@ -66,17 +66,21 @@ const HomePage = () => {
       const fetchData = async () => {
         const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
         console.log(server_res);
-        const user = server_res.data.user_email;
+        //const user = server_res.data.user_email;
+        const user = server_res.data;
         setUser(user);
-        console.log(server_res.data.user_id);
-
+        //console.log(server_res.data.user_id);
+      
       };
-    /*
-     
+      
+    
+      {/*method to unpack the data and fetch effect*/ }
       useEffect(() => {
         fetchData();
       }, []);
-    */
+
+      console.log(user.first);
+    
 
     
       /* import category ids*/
@@ -92,8 +96,8 @@ const HomePage = () => {
       useEffect(() => {
         fetchCateId();
       }, []);
-  
-      console.log(cateId);
+      
+      //console.log(cateId);
       
  
   return (
@@ -108,8 +112,9 @@ const HomePage = () => {
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      {/* need to add logout btn, rn just redirects without sign out*/}
+      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    
       <input type="text"placeholder="Search.."> 

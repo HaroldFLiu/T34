@@ -82,8 +82,7 @@ const ProductInformationPage = () => {
 
 <div class="product-info-wrap">     
     <div className="product-img-wrap">
-    <img src={items.image_urls} className="logo-position">
-              </img> 
+   <div className="imgtest"> <img src={items.image_urls} className="square-detailed"></img>  </div>  
         {/* other pictures display gallery
           <div class="row">
             <div class="column">

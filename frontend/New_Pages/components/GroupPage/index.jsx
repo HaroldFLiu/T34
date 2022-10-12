@@ -1,10 +1,10 @@
-import React from "react";
+import React, {useEffect, useState}from "react";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./GroupPage.css";
 import GroupComponents from "../GroupComponents";
-
-
+import Cookie from 'universal-cookie';
+import PageNext from "../PageNextBar/PageNext";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -31,15 +31,53 @@ import {MdSmartToy} from 'react-icons/md';
 
 const GroupPage = () => {
 
-  const [post, setPost] = React.useState(null);
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
-  React.useEffect(() => {
-    axios.get("/public").then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
 
 
+  useEffect(() => {
+      axios.get('/public')
+          .then(res => {
+                  setData(res.data);
+                  setLoading(false);
+              })
+              .catch(() => {
+                  alert('There was an error while retrieving the data')
+              })
+              .then(fetchData())
+  }, [])
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(data.length / recordsPerPage)
+
+
+
+    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+    var coookie = new Cookie();
+    const [user, setUser] = useState([]);
+    const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      console.log(server_res);
+      //const user = server_res.data.user_email;
+      const user = server_res.data;
+      setUser(user);
+      //console.log(server_res.data.user_id);
+    
+    };
+    
+  
+    {/*method to unpack the data and fetch effect*/ }
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+    console.log(user.first);
 
   return (
 <div className="parent" >
@@ -53,8 +91,10 @@ const GroupPage = () => {
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
+      <a href="/checkout-page"> Cart</a>
+   
    
       <input type="text"placeholder="Search.."> 
       </input>
@@ -110,25 +150,18 @@ const GroupPage = () => {
     <div class="row2">
       <div class="column">
         {/* insert groupscomponent here */}
-          <GroupComponents/>
+        <GroupComponents data={currentRecords}/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
       </div>
     </div>
     </div>
 
     </div>
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
+
     </div> 
 
 
