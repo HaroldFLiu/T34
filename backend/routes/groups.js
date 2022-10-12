@@ -25,16 +25,15 @@ router.get('/groups/:group_id/members', getGroupMembers);
 
 // POST a group
 router.post('/groups', async (req, res) => {
-    const {name, description, members, admins} = req.body;
+    const {name, description, members, admins, icon_url} = req.body;
 
     try {
-        const group = await groupService.create({name, description, members, admins});
+        const group = await groupService.create({name, description, members, admins, icon_url});
 
         res.status(200).json(group);
     } catch (error) {
         res.status(400).json({error: error.message})
     }
-
 });
 
 // DELETE a group
