@@ -1,10 +1,9 @@
 const express = require('express');
 const bcrypt = require('bcryptjs');
 
-const User = require('../models/user');
 const Session = require('../models/session');
 const { authenticate } = require('../middleware/authenticate');
-//const { csrfCheck } = require('../middleware/csrfCheck');
+const userService = require('../services/user');
 const { initSession, isEmail } = require('../utils/utils');
 
 const router = express.Router();
@@ -32,7 +31,9 @@ router.post('/login', async (req, res) => {
           ],
         });
       }
-      const user = await User.findOne({ email });
+      const user = await userService.readByEmail(email);
+      console.log(user);
+      
       if (!user) {
         throw new Error();
       }

@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
-
+import Cookie from 'universal-cookie';
+import {Link} from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -13,6 +14,28 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 const NewListingPage = () => {
+
+  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+    setUser(user);
+    //console.log(server_res.data.user_id);
+  
+  };
+  
+
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(user.first);
+  
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -71,6 +94,8 @@ const NewListingPage = () => {
       method: 'post',
       url: '/public/image',
       data: formData,
+      withCredentials:true, 
+      headers: {'Authorization':coookie.get("token")},
     })
     .then(function (res1) {
       //console.log('RES 1');
@@ -82,7 +107,7 @@ const NewListingPage = () => {
         props.image_urls = res1.data.image_urls;
         console.log(props);
 
-        axios.post('/public', props)
+        axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(function (res2) {
           if (res2.status=="200") {
             console.log('item details successful');
@@ -187,15 +212,16 @@ const NewListingPage = () => {
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
           <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-          <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+          <Link to={`/sell-page/${user.user_id}`} class="active"> Sell </Link>
           <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
           <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
           <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
         <div class="nav-login">
           {/* search bar*/}
-          <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-          <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-        
+          <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+          <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
+          <a href="/checkout-page"> Cart</a>
+   
           <input type="text"placeholder="Search.."> 
           </input>
         </div>

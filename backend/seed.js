@@ -27,6 +27,34 @@ const users = [
         last_name: "Green",
         email: "test1@email.com",
         password: "test1",
+    },
+    {
+        _id: "633ec1b2e21aa04fcfc81ce1",
+        first_name: "Citizen",
+        last_name: "John",
+        email: "test@email.com",
+        password: "test",
+    },
+    {
+        _id: "633ebcf5d7154bc800908348",
+        first_name: "Michael",
+        last_name: "Xie",
+        email: "mxie@email.com",
+        password: "mxie",
+    },
+    {
+        _id: "63469e594315ad8d1c4bb37f",
+        first_name: "Jane",
+        last_name: "Citizen",
+        email: "testnew@email.com",
+        password: "testnew",
+    },
+    {
+        _id: "633ec1b2e21aa04fcfc81ce1",
+        first_name: "Citizen",
+        last_name: "John",
+        email: "test@email.com",
+        password: "test",
     }
 ]
 const categories = [
@@ -39,16 +67,8 @@ const categories = [
         name: "Apparel",
     },
     {
-        _id: "634527f37926a2b8c450db0a",
-        name: "Classified",
-    },
-    {
         _id: "634527f37926a2b8c450db0d",
         name: "Electronics",
-    },
-    {
-        _id: "634527f37926a2b8c450db10",
-        name: "Entertainment",
     },
     {
         _id: "634527f47926a2b8c450db13",
@@ -97,16 +117,19 @@ const groups = [
         _id: "633e7be1b5c1407aa35db545",
         name: "Car Sellers Melbourne",
         description: "Good cars only",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634913/ilhsg3skbmxbk2lvda8w.jpg"
     },
     {
         _id: "633e7be1b5c1407aa35db548",
         name: "Fantastic Furniture",
         description: "Furniture finds in Melbourne",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634925/acam7dmu2qo0vq8jwmwp.webp"
     },
     {
         _id: "63450eea27e4ac5b133e4616",
         name: "Clothes",
         description: "Lovely clothes",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634928/lddl0g9rzzroyg4j1nwn.jpg"
     }
 ]
 
@@ -151,7 +174,29 @@ const items = [
         public_visibility: true,
         seller_id: "633e7c16434369b2dc9d2dab",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542859/hhgbas44awvx3sxmixtr.jpg']
-    }
+    },
+    {
+        _id: "63478fdd6ae1ffe6cfa57d3e",
+        name: "Dino Plushie",
+        description: "In good condition",
+        price: 20,
+        group_ids: [],
+        category_ids: ["634527f47926a2b8c450db2e"],
+        public_visibility: true,
+        seller_id: "633ec1b2e21aa04fcfc81ce1",
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579902/xkypzqj4fr970gdvnpqh.jpg'],
+    },
+    {
+        _id: "63478fdd6ae1ffe6cfa57d40",
+        name: "Turtle Plushie",
+        description: "In good condition",
+        price: 21,
+        group_ids: [],
+        category_ids: ["634527f47926a2b8c450db2e"],
+        public_visibility: true,
+        seller_id: "633ec1b2e21aa04fcfc81ce1",
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579808/tznxkancxinxbin41d2l.jpg'],
+    },
 ]
 
 async function seed() {
@@ -214,7 +259,6 @@ async function seed() {
         }
     }
 
-    
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
@@ -223,7 +267,7 @@ async function seed() {
     for (const item of allItems) {
         //console.log(JSON.stringify(item._id));
         if (!seededItems.includes(JSON.stringify(item._id))) {
-            console.log("should not be in DB");
+            console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
     }
@@ -236,8 +280,34 @@ async function seed() {
     for (const category of allCategories) {
         //console.log(JSON.stringify(item._id));
         if (!seededCategories.includes(JSON.stringify(category._id))) {
-            console.log("should not be in DB");
+            console.log("category should not be in DB");
             await categoryService.deleteById(category._id);
+        }
+    }
+
+    // delete other groups
+    const allGroups = await groupService.readAll();
+    const seededGroups = groups.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const group of allGroups) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededGroups.includes(JSON.stringify(group._id))) {
+            console.log("group should not be in DB");
+            await groupService.deleteById(group._id);
+        }
+    }
+
+    // delete other users
+    const allUsers = await userService.readAll();
+    const seededUsers = users.map((obj) => JSON.stringify(obj._id));
+    //console.log(seededItems);
+
+    for (const user of allUsers) {
+        //console.log(JSON.stringify(item._id));
+        if (!seededUsers.includes(JSON.stringify(user._id))) {
+            console.log("user should not be in DB");
+            await userService.deleteById(user._id);
         }
     }
 

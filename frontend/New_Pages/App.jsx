@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUpPage";
@@ -14,16 +14,16 @@ import MemberListPage from "./components/MemberListPage";
 import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
-import CategoryPage from "./components/CategoryPages";
+import GroupInfoPage from "./components/GroupPopUp";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:path(|home-page)">
+        <Route path="/home-page">
         <HomePage/>
         </Route>
-        <Route path="/login-page">
+        <Route path="/:path(|login-page)">
           <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
@@ -32,7 +32,7 @@ function App() {
         <Route path="/new-listings-page">
           <NewListings/>
         </Route>
-        <Route path="/sell-page">
+        <Route path="/sell-page/:sellerId">
           <SellPage/>
         </Route>
         <Route path="/wishlist-page">
@@ -53,8 +53,8 @@ function App() {
         <Route path="/checkout-page">
           <CheckoutPage/>
         </Route>
-        <Route path="/category-page/:categoryId">
-          <CategoryPage/>
+        <Route path="/group-info-page/:groupId">
+          <GroupInfoPage/>
         </Route>
         <Route path="/member-list-page">
           <MemberListPage/>

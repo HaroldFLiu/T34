@@ -12272,9 +12272,9 @@ textarea.form-control-lg {
 }
 
 .logo-position {
-  max-height: 100%;
+  max-height: 150px;
   max-width: 100%;
-  border: 3px solid #555;
+  object-fit: contain;
 }
 
 .products-wrapper {
@@ -12321,6 +12321,10 @@ textarea.form-control-lg {
   margin-left: 70%;
   padding: 1px;
   font-size: 10px;
+}
+
+.space {
+  padding-top: 14%;
 }
 
 .card button:hover {
@@ -12717,103 +12721,6 @@ h4, h3, h5 {
   font-family: Tienne, sans-serif;
 }
 
-.popup-box {
-  width: 100%;
-  height: 100vh;
-  margin-top: 7%;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.box {
-  width: 70%;
-  height: auto;
-  max-height: 70vh;
-  background: #fff;
-  border: 1px solid #999;
-  border-radius: 4px;
-  margin: calc(15vh - 20px) auto 0;
-  padding: 20px;
-  position: relative;
-  overflow: auto;
-}
-
-.close-icon {
-  content: "x";
-  cursor: pointer;
-  width: 25px;
-  height: 25px;
-  text-align: center;
-  background: #ededed;
-  border: 1px solid #999;
-  border-radius: 50%;
-  margin-top: 10%;
-  margin-right: 3%;
-  font-size: 20px;
-  line-height: 20px;
-  position: fixed;
-  top: calc(15vh - 33px);
-  right: calc(15% - 30px);
-}
-
-.square-popup {
-  width: 200px;
-  height: 200px;
-  border: thin solid;
-  margin-top: 2%;
-  margin-bottom: 1%;
-  margin-left: 2%;
-}
-
-.popup-img {
-  max-height: 100%;
-  max-width: 100%;
-}
-
-.popup-text {
-  float: left;
-  margin-left: 3%;
-}
-
-.popup-box button {
-  width: 100%;
-  border-radius: 32px;
-  margin-bottom: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
-}
-
-.header-popup {
-  margin-top: -15%;
-  font-size: 40px;
-}
-
-.hr-line {
-  color: #000;
-  border: thin solid;
-  margin-left: 20%;
-}
-
-.test {
-  max-width: max-content;
-  margin-top: 2%;
-  margin-left: 25%;
-  margin-right: 5%;
-  overflow: hidden;
-}
-
-.popup-btn button {
-  width: -moz-fit-content;
-  width: fit-content;
-  float: right;
-  font-size: 27px;
-  position: fixed;
-  top: 85%;
-  right: 20%;
-}
-
 .vis-container {
   padding-top: 3%;
   display: flex;
@@ -12875,7 +12782,6 @@ body {
 .square {
   width: 60%;
   height: 0;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/-Insert_image_here-.svg/640px--Insert_image_here-.svg.png");
   border: thin solid;
   margin-top: -1%;
   margin-left: 15%;
@@ -12956,6 +12862,11 @@ body {
 .purchase-btn:hover {
   color: #000;
   background: #a4df9a;
+}
+
+.imgtest img {
+  max-width: 600px;
+  padding-left: 30%;
 }
 
 .check-header {
@@ -13067,6 +12978,111 @@ body {
 .checkout-btn:hover, .check-remove-btn:hover {
   color: #000;
   background: #a4df9a;
+}
+
+.popup-box {
+  width: 100%;
+  height: 100vh;
+  margin-top: 4%;
+  margin-left: 5%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 70%;
+  height: auto;
+  max-height: 70vh;
+  background: #fff;
+  border: 1px solid #999;
+  border-radius: 4px;
+  margin: calc(15vh - 20px) auto 0;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: 2%;
+  margin-bottom: 1%;
+  margin-left: 2%;
+}
+
+.popup-img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.popup-text {
+  float: left;
+  text-align: center;
+  margin-left: 3%;
+}
+
+.popup-box button {
+  width: 100%;
+  border-radius: 32px;
+  margin-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.header-popup {
+  margin-top: -15%;
+  margin-left: 20%;
+  font-size: 40px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.test {
+  max-width: max-content;
+  margin-top: 2%;
+  margin-left: 25%;
+  margin-right: 5%;
+  overflow: hidden;
+}
+
+.popup-btn button {
+  width: -moz-fit-content;
+  width: fit-content;
+  float: right;
+  font-size: 27px;
+  position: fixed;
+  top: 83%;
+  right: 12%;
+}
+
+.close-icon {
+  content: "x";
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  background: #ededed;
+  border: 1px solid #999;
+  border-radius: 50%;
+  margin-top: 6%;
+  font-size: 20px;
+  line-height: 20px;
+  position: fixed;
+  top: calc(15vh - 33px);
+  right: calc(15% - 30px);
+}
+
+.popup-text button {
+  text-align: center;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

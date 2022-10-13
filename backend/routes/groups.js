@@ -7,7 +7,8 @@ const {
     getGroup,
     getGroupItems,
     deleteGroup,
-    getGroupMembers
+    getGroupMembers,
+    getGroupsByUser,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -23,18 +24,20 @@ router.get('/groups/:group_id', getGroup, getGroupItems);
 // GET group members
 router.get('/groups/:group_id/members', getGroupMembers);
 
+// GET a user's groups
+router.get('/groups/:user_id', getGroupsByUser);
+
 // POST a group
 router.post('/groups', async (req, res) => {
-    const {name, description, members, admins} = req.body;
+    const {name, description, members, admins, icon_url} = req.body;
 
     try {
-        const group = await groupService.create({name, description, members, admins});
+        const group = await groupService.create({name, description, members, admins, icon_url});
 
         res.status(200).json(group);
     } catch (error) {
         res.status(400).json({error: error.message})
     }
-
 });
 
 // DELETE a group

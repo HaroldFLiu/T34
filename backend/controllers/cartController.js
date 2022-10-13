@@ -1,25 +1,29 @@
 const { default: mongoose } = require('mongoose');
 const cartService = require('../services/cart');
-
+/*
 const createCart = async (req, res) => {
     const { userId } = req.params;
     try {
         const cart = await cartService.create({userId});
+        res.status(200).json(cart);
     } catch (error) {
         res.status(400).json({error: error.message});
     }
 }
+*/
 
 const getCart = async (req, res) => {
     const { cartId } = req.params;
-    if (!mongoose.isValidObjectId(cartId.toString())) {
-        return res.status(404).json({error: 'Cart does not exist1'});
+    let userId = cartId;
+    if (!mongoose.isValidObjectId(userId)) {
+        return res.status(404).json({error: 'User ID invalid'});
     }
-    const cart = await cartService.readById(cartId);
+    const cart = await cartService.readByUserId(userId);
     if (!cart) {
-        return res.status(404).json({error: 'Cart does not exist2'});
+        return res.status(404).json({error: 'Cart does not exist'});
     }
-    res.status(200).json(cart)
+    //console.log(cart);
+    return res.status(200).json(cart);
 }
 
 //const getCartFromUser
@@ -119,7 +123,7 @@ const deleteCart = async (req, res) => {
 
 }
 module.exports = {
-    createCart,
+    // createCart,
     getCart,
     updateCart,
     addToCart,

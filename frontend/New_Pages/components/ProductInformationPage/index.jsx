@@ -49,7 +49,7 @@ const ProductInformationPage = () => {
     fetchItems();
   }, []);
   
-  console.log(items);
+  console.log(items.image_urls);
 
  
   return (
@@ -82,9 +82,7 @@ const ProductInformationPage = () => {
 
 <div class="product-info-wrap">     
     <div className="product-img-wrap">
-        <div class="square">
-          {/* put img src here later*/} 
-        </div>
+   <div className="imgtest"> <img src={items.image_urls} className="square-detailed"></img>  </div>  
         {/* other pictures display gallery
           <div class="row">
             <div class="column">
