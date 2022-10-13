@@ -117,16 +117,19 @@ const groups = [
         _id: "633e7be1b5c1407aa35db545",
         name: "Car Sellers Melbourne",
         description: "Good cars only",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634913/ilhsg3skbmxbk2lvda8w.jpg"
     },
     {
         _id: "633e7be1b5c1407aa35db548",
         name: "Fantastic Furniture",
         description: "Furniture finds in Melbourne",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634925/acam7dmu2qo0vq8jwmwp.webp"
     },
     {
         _id: "63450eea27e4ac5b133e4616",
         name: "Clothes",
         description: "Lovely clothes",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634928/lddl0g9rzzroyg4j1nwn.jpg"
     }
 ]
 
