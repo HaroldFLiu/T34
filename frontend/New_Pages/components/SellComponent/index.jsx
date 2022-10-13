@@ -1,10 +1,16 @@
 import logo from "../../dist/img/t34-logo.jpg";
-import React, {useEffect, useState, useMemo}from "react";
+import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
 
 const SellComponent = ({data}) => {
 
+// /public/:item_id delete item here
+console.log(data);
+
+// find item_id
+// delete request here
+// below do on-click btn --> delete request 
 
 return(
     <div className="products-wrapper">  
