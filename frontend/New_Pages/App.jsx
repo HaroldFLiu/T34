@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUpPage";
@@ -15,10 +15,11 @@ import ProductInformationPage from "./components/ProductInformationPage"
 import CheckoutPage from "./components/CheckoutPage";
 import CategoryPage from "./components/CategoryPages";
 import GroupInfoPage from "./components/GroupPopUp";
+import SellCategoryPage from "./components/SellPage";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route path="/home-page">
         <HomePage/>
@@ -61,7 +62,7 @@ function App() {
         </Route>
 
       </Switch>
-    </Router>
+    </BrowserRouter>
   );
 }
 

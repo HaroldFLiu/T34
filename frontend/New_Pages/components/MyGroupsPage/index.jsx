@@ -14,6 +14,7 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 import SideNav from "../SideNavComponent";
+import SellSideNav from "../SideNavComponent";
 
 const GroupPage = () => {
 

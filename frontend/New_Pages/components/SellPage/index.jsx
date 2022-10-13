@@ -16,6 +16,7 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 import SideNav from "../SideNavComponent";
 import SellComponent from "../SellComponent";
+import SellSideNav from "../SellSideNavComponent";
 
 const SellPage = () => {
   
@@ -50,19 +51,38 @@ const SellPage = () => {
 
 
         const {sellerId} = useParams()
-        console.log(sellerId);
-    
-        useEffect(() => {
+        //console.log(sellerId);
+
+        const queryParams = new URLSearchParams(window.location.search);
+        const categoryId = queryParams.get("cat_id");
+        console.log(categoryId);
+
+        if (!categoryId) {
+          useEffect(() => {
             axios.get(`/items/${sellerId}`)
-                .then(res => {
-                        setData(res.data);
-                        setLoading(false);
-                    })
-                    .catch(() => {
-                        alert('There was an error while retrieving the data')
-                    })
-                    .then(fetchData())
-        }, [])
+              .then(res => {
+                  setData(res.data);
+                  setLoading(false);
+              })
+              .catch(() => {
+                  alert('There was an error while retrieving the data')
+              })
+              .then(fetchData())
+          }, [])
+        } else {
+          useEffect(() => {
+            axios.get(`/items/${sellerId}/${categoryId}`)
+              .then(res => {
+                  setData(res.data);
+                  setLoading(false);
+              })
+              .catch(() => {
+                  alert('There was an error while retrieving the data')
+              })
+              .then(fetchData())
+          }, []);
+        
+        }
     
         const indexOfLastRecord = currentPage * recordsPerPage;
         const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -75,7 +95,7 @@ const SellPage = () => {
     <div class="navbar">
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <Link to={`/sell-page/${user.user_id}`} class="active"> Sell </Link>
+        <Link onClick={() => {window.location.href=`/sell-page/${user.user_id}`}} class="active"> Sell </Link>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
@@ -91,7 +111,7 @@ const SellPage = () => {
       </div>
     </div>
 
-  <SideNav />
+  <SellSideNav />
   <a href="/new-listings-page" >
           <button class="btn btn-success"> Create New Item</button>
       </a>
