@@ -68,7 +68,6 @@ const GroupPage = () => {
       </div>
     </div>
 
-    <SideNav />
       {/* side bar*/} 
       <a href="/create-group-page" >
           <button class="btn btn-success"> Create New Group</button>

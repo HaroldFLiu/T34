@@ -16,7 +16,6 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 import SideNav from "../SideNavComponent";
 import SellComponent from "../SellComponent";
-import SellSideNav from "../SellSideNavComponent";
 
 const SellPage = () => {
   
@@ -111,7 +110,7 @@ const SellPage = () => {
       </div>
     </div>
 
-  <SellSideNav />
+    <SideNav />
   <a href="/new-listings-page" >
           <button class="btn btn-success"> Create New Item</button>
       </a>

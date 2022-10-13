@@ -13,13 +13,11 @@ import CreateGroupPage from "./components/CreateGroupPage"
 import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
-import CategoryPage from "./components/CategoryPages";
 import GroupInfoPage from "./components/GroupPopUp";
-import SellCategoryPage from "./components/SellPage";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
       <Switch>
         <Route path="/home-page">
         <HomePage/>
@@ -54,15 +52,12 @@ function App() {
         <Route path="/checkout-page">
           <CheckoutPage/>
         </Route>
-        <Route path="/category-page/:categoryId">
-          <CategoryPage/>
-        </Route>
         <Route path="/group-info-page/:groupId">
           <GroupInfoPage/>
         </Route>
 
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 }
 

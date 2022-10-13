@@ -27,19 +27,38 @@ const HomePage = () => {
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
+          //console.log(sellerId);
 
-  useEffect(() => {
+  const queryParams = new URLSearchParams(window.location.search);
+  const categoryId = queryParams.get("cat_id");
+
+  if (!categoryId) {
+    useEffect(() => {
       axios.get('/public')
-          .then(res => {
-                  setData(res.data);
-                  setLoading(false);
-              })
-              .catch(() => {
-                  alert('There was an error while retrieving the data')
-              })
-              .then(fetchData())
+        .then(res => {
+          setData(res.data);
+          setLoading(false);
+        })
+        .catch(() => {
+          alert('There was an error while retrieving the data')
+        })
+        .then(fetchData())
   }, [])
-
+  } else {
+    useEffect(() => {
+      axios.get(`/public/category/${categoryId}`)
+        .then(res => {
+            setData(res.data);
+            setLoading(false);
+        })
+        .catch(() => {
+            alert('There was an error while retrieving the data')
+        })
+        .then(fetchData())
+    }, []);
+  
+  }
+      
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
