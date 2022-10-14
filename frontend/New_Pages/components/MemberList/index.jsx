@@ -18,6 +18,8 @@ function MemberList() {
       fetchData();
     }, []);
 
+    
+
 
 return(
     <div className="products-wrapper">  

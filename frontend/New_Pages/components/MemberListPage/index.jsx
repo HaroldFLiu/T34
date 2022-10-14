@@ -3,6 +3,8 @@ import "./MemberListPage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import MemberList from "../MemberList";
+import { useParams } from "react-router-dom";
+import Cookie from 'universal-cookie';
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -15,17 +17,44 @@ import {RiBookOpenLine} from 'react-icons/ri';
 const MemberListPage = () => {
 
 
-  const [posts, setPosts] = useState([]);
-
-  // Define the function that fetches the data from API
+  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
   const fetchData = async () => {
-    const { data } = await axios.get("/public");
-    setPosts(data);
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+    setUser(user);
+    //console.log(server_res.data.user_id);
+  
   };
+  
 
-  // Trigger the fetchData after the initial render by using the useEffect hook
+  {/*method to unpack the data and fetch effect*/ }
   useEffect(() => {
     fetchData();
+  }, []);
+
+  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
+  const {groupId} = useParams()
+  //const thisProduct = posts.find(prod => prod.id == productId)
+  {/*degub log here */}
+  console.log(groupId);
+
+  {/*fetch item data*/}
+  
+  const [groups, setGroups] = useState([]);
+
+
+  const fetchGroups = async () => {
+    const { data } = await axios.get(`/groups/${groupId}`);
+    setGroups(data);
+  };
+
+
+  useEffect(() => {
+    fetchGroups();
   }, []);
 
 return (
@@ -40,8 +69,10 @@ return (
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      {/* need to add logout btn, rn just redirects without sign out*/}
+      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
+      <a href="/checkout-page"> Cart</a>
    
       <input type="text"placeholder="Search.."> 
       </input>
@@ -53,7 +84,7 @@ return (
       
     </div>
     <hr />
-    <div className="number-listings"> 123 members</div>
+    <div className="number-listings"> {groups.length} members</div>
     {/* search member button (need fix)*/} 
     <div className = "search-member">
         <input type="text"placeholder="Search Member.."> 
@@ -65,7 +96,7 @@ return (
        {/*Group img*/}    
     <div class="left-box">
         <div className="square-pic">  
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
+        <div className="img-wrap"> <img src={groups.image_urls} className="popup-img"></img> </div>
         </div> 
     </div>
     

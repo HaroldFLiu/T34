@@ -15,6 +15,7 @@ import {RiBookOpenLine} from 'react-icons/ri';
 import logo from "../../dist/img/t34-logo.jpg";
 import SideNav from "../SideNavComponent";
 import Cookie from 'universal-cookie';
+import {Link} from "react-router-dom";
 
 const GroupInfoPage = () => {
 
@@ -95,8 +96,9 @@ const GroupInfoPage = () => {
         </div>
         <div className="popup-text"> 
         {groups.name} <p> 31k Members</p>
+
        
-        <button> Member's List</button>
+        <button onClick={postMember}> Member's List</button>
        
         <br/>
         Owner: YenFug</div>
