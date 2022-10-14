@@ -36,6 +36,22 @@ const WishlistPage = () => {
       fetchData();
     }, []);
 
+
+            
+    // log OUT HERE
+    const handleLogOut = async () => {
+      await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+      .then(response => {
+        if (response.status === 200) {
+          location.pathname='/login-page';
+        }
+      })
+      .catch(error => {
+        console.log("Error signing out", error);
+      });
+    };
+        
+
     console.log(user.first);
 
 
@@ -51,7 +67,7 @@ const WishlistPage = () => {
         <a class="active" href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
       <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    

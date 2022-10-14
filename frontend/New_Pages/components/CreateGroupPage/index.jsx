@@ -26,16 +26,39 @@ const CreateGroupPage = () => {
     setVisbility(e.target.value);
   }  
 
-  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-  var coookie = new Cookie();
-  const [user, setUser] = useState([]);
-  const fetchData = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
-    const user = server_res.data.user_id;
-    setUser(user);
-    console.log(user);
+    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+    var coookie = new Cookie();
+    const [user, setUser] = useState([]);
+    const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      console.log(server_res);
+      //const user = server_res.data.user_email;
+      const user = server_res.data;
+      setUser(user);
+      //console.log(server_res.data.user_id);
+    
+    };
+
+    {/*method to unpack the data and fetch effect*/ }
+    useEffect(() => {
+      fetchData();
+    }, []);
+
+    console.log(user.first);
+          
+  // log OUT HERE
+  const handleLogOut = async () => {
+    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(response => {
+      if (response.status === 200) {
+        location.pathname='/login-page';
+      }
+    })
+    .catch(error => {
+      console.log("Error signing out", error);
+    });
   };
+      
 
   {/* stuff for image upload*/} 
 
@@ -152,8 +175,9 @@ const CreateGroupPage = () => {
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
+      <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
+      <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
+      <a href="/checkout-page"> Cart</a>
   
       <input type="text"placeholder="Search.."> 
       </input>

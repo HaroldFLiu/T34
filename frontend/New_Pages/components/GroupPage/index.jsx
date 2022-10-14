@@ -60,14 +60,28 @@ const GroupPage = () => {
       //console.log(server_res.data.user_id);
     
     };
-    
-  
+
     {/*method to unpack the data and fetch effect*/ }
     useEffect(() => {
       fetchData();
     }, []);
 
     console.log(user.first);
+
+          
+  // log OUT HERE
+  const handleLogOut = async () => {
+    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(response => {
+      if (response.status === 200) {
+        location.pathname='/login-page';
+      }
+    })
+    .catch(error => {
+      console.log("Error signing out", error);
+    });
+  };
+          
   return (
 <div className="parent" >
      {/* top nav bar*/}
@@ -80,7 +94,7 @@ const GroupPage = () => {
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">
       {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
       <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    
