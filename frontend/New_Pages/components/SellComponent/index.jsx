@@ -14,21 +14,14 @@ const SellComponent = ({data}) => {
 
   {data.map((item) => {
     console.log(item._id);
-/*
-    useEffect(() => {
-      // DELETE request using axios with async/await
-      async function deletePost(id) {
-          await axios.delete(`/public/${id}`);
-          setStatus('Delete successful');
-      }
-  }, []); */
-  
   })};
 
+  const [remove, setRemove] = useState([]);
 
-/* delete an item function */
+/* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
   async function deletePost(id) {
     await axios.delete(`/public/${id}`);
+    window.location.reload();
     setStatus('Delete successful');
 }
 
