@@ -31,6 +31,11 @@ const GroupInfoPage = () => {
      //console.log(server_res.data.user_id);
    
    };
+
+   const goMember = event => {
+    event.preventDefault();
+    location.pathname="/member-list-page/"+groupId;
+  }
    
  
    {/*method to unpack the data and fetch effect*/ }
@@ -98,7 +103,7 @@ const GroupInfoPage = () => {
         {groups.name} <p> 31k Members</p>
 
        
-        <button onClick={postMember}> Member's List</button>
+        <button onClick={goMember}> Member's List</button>
        
         <br/>
         Owner: YenFug</div>
