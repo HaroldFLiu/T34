@@ -125,10 +125,12 @@ const SellPage = () => {
     </div>
 
     <SideNav />
-  <a href="/new-listings-page" >
+    
+    <a href="/new-listings-page">
           <button class="btn btn-success"> Create New Item</button>
       </a>
   
+
   
     {/* products display*/} 
     <div class="main">

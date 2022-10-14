@@ -6,11 +6,32 @@ import {Link} from "react-router-dom"
 const SellComponent = ({data}) => {
 
 // /public/:item_id delete item here
-console.log(data);
 
 // find item_id
 // delete request here
 // below do on-click btn --> delete request 
+
+
+  {data.map((item) => {
+    console.log(item._id);
+/*
+    useEffect(() => {
+      // DELETE request using axios with async/await
+      async function deletePost(id) {
+          await axios.delete(`/public/${id}`);
+          setStatus('Delete successful');
+      }
+  }, []); */
+  
+  })};
+
+
+/* delete an item function */
+  async function deletePost(id) {
+    await axios.delete(`/public/${id}`);
+    setStatus('Delete successful');
+}
+
 
 return(
     <div className="products-wrapper">  
@@ -32,15 +53,16 @@ return(
             <div className="space"> </div>
             <div className="content-posts">
             <p class="price"> ${item.price}</p>
-          </div>
+          </div> </Link>
             <div className="item-cart">
             <h3>{item.name}</h3>
-            <a href="#"> <p><button>Remove</button></p></a>
+            
+            <a href="#"> <p><button onClick={() => deletePost(item._id)}>Remove </button></p></a>
         
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}
-            </Link>
+           
           </div>
           </div>   
           
