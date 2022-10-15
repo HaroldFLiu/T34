@@ -12871,8 +12871,12 @@ body {
 }
 
 .imgtest img {
-  max-width: 600px;
-  padding-left: 30%;
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  border: thin solid;
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
 .check-header {
