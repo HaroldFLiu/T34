@@ -24,10 +24,10 @@ router.post('/register', async (req, res) => {
     const user = await userService.create({first_name, last_name, email, password});
     const user_id = user._id;
     const cart = await cartService.create({user:user_id});
-    const favourite = await favouriteService.create({user:user_id});
+    const fav = await favouriteService.create({user:user_id});
   
-    user.cart = cart;
-    user.favourites = fav;
+    //user.cart = cart;
+    //user.favourites = fav;
   
     await user.save();
     //const user = new User({ first_name:req.body.first_name, last_name:req.body.last_name, email: req.body.email, password:req.body.password});

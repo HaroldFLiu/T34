@@ -36,6 +36,7 @@ const userSchema = new Schema(
       ref: 'Item',
       required: false,
     }],
+    /*
     cart: {
       type: Schema.Types.ObjectId,
       ref: 'Cart',
@@ -45,7 +46,7 @@ const userSchema = new Schema(
       type: Schema.Types.ObjectId,
       ref: 'Item',
       //required: false,
-    }],
+    }],*/
   },
   {
     timestamps: {
