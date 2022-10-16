@@ -33,7 +33,7 @@ const users = [
         first_name: "Citizen",
         last_name: "John",
         email: "test@email.com",
-        password: "test",
+        password: "test1",
     },
     {
         _id: "633ebcf5d7154bc800908348",
@@ -49,14 +49,8 @@ const users = [
         email: "testnew@email.com",
         password: "testnew",
     },
-    {
-        _id: "633ec1b2e21aa04fcfc81ce1",
-        first_name: "Citizen",
-        last_name: "John",
-        email: "test@email.com",
-        password: "test",
-    }
 ]
+
 const categories = [
     {
         _id: "634527f37926a2b8c450db04",
@@ -137,13 +131,13 @@ const carts = [
     {
         _id: "633eea0d7d3172b98415e773",
         user: "633e7c16434369b2dc9d2dab",
-        items: ["633eec982a25d4851e300c38", "633eec982a25d4851e300c3b"]
+        items: ["63478fdd6ae1ffe6cfa57d3e", "63478fdd6ae1ffe6cfa57d40"]
     }
 ]
 
 const items = [
     {
-        _id: "63452887966053d159c5512a",
+        _id: "63497baa9500a07fb7b96526",
         name: "Chair",
         description: "In good condition",
         price: 30000,
@@ -154,7 +148,7 @@ const items = [
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542703/ujnojhuwpuflm4kyxcys.png'],
     },
     {
-        _id: "63452887966053d159c5512d",
+        _id: "63497baa9500a07fb7b96529",
         name: "Another Chair",
         description: "Soft but sturdy",
         price: 500,
@@ -165,7 +159,7 @@ const items = [
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542293/ym1f9g3ny0msgkumg5tp.jpg'],
     },
     {
-        _id: "63452887966053d159c55130",
+        _id: "63497baa9500a07fb7b9652c",
         name: "Violin",
         description: "Plays well",
         price: 100,
@@ -259,6 +253,7 @@ async function seed() {
         }
     }
 
+    /*
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
@@ -270,7 +265,7 @@ async function seed() {
             console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
-    }
+    } 
 
     // delete other categories
     const allCategories = await categoryService.readAll();
@@ -310,6 +305,7 @@ async function seed() {
             await userService.deleteById(user._id);
         }
     }
+*/
 
     mongoose.disconnect();
 

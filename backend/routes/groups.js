@@ -66,4 +66,22 @@ router.patch('/groups/:group_id', async (req, res) => {
     res.status(200).json(group);
 });
 
+// UPDATE group members
+router.patch('/groups/:group_id/:user_id', async (req, res) => {
+    const { group_id, user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    try {
+        const group = await groupService.joinGroup(group_id, user_id);
+
+        res.status(200).json(group);
+    } catch (error) {
+        res.status(401).json({err: error.message});
+    }
+
+})
+
 module.exports = router;
