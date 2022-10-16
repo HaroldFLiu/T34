@@ -1,25 +1,23 @@
 const express = require ('express');
 const {
-    createFavourite,
     getFavourite,
-    deleteFavourite,
-    updateFavourite,
+    addtoFavourite,
+    deleteFromFavourite,
+    deleteAllFromFavourite,
 } = require ('../controllers/favouritesController')
 
 const router = express.Router();
 
 // GET a favourite
-router.get('/:favId', getFavourite);
+router.get('/favourites/:userId', getFavourite);
 
-// POST a favourite
-router.post('/:userId', createFavourite);
+// ADD a favourite item
+router.patch('/favourites/:userId/:itemId', addtoFavourite);
 
-// DELETE a favourite
-router.delete('/:favId', deleteFavourite);
+// DELETE a favourite item
+router.patch('/favourites/:userId/:itemId', deleteFromFavourite);
 
-//  UPDATE a favourite
-router.patch('/:favId', updateFavourite);
-
-
+// REMOVE all favourite items
+router.patch('/:favId', deleteAllFromFavourite);
 
 module.exports = router;

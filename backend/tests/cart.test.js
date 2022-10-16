@@ -115,7 +115,8 @@ describe('CartService', () => {
 
   test('Read all carts', async () => {
     const cartRead = await cartService.readAll();
-    console.log(cartRead);
+    expect(cartRead.length).toBe(0);
+    //console.log(cartRead);
   });
 
   test('Add item1 to cart', async () => {

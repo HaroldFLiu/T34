@@ -1,6 +1,7 @@
 const { default: mongoose } = require('mongoose');
 const favouritesService = require('../services/favourites');
 
+/*
 const createFavourite = async (req, res) => {
     const { userId } = req.params;
     try {
@@ -9,22 +10,25 @@ const createFavourite = async (req, res) => {
         res.status(400).json({error: error.message});
     }
 }
+*/
 
 const getFavourite = async (req, res) => {
-    const { favId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(favId)) {
+    const { userId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
 
-    const favourite = await favouritesService.readById(favId);
+    const favourite = await favouritesService.readByUserId(userId);
 
     if (!favourite) {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
 
-    res.status(200).json(group);
+    res.status(200).json(favourite);
 }
 
+/*
 const deleteFavourite = async (req, res) => {
     const { favId } = req.params;
     if (!mongoose.Types.ObjectId.isValid(favId)) {
@@ -65,18 +69,20 @@ const updateFavourite = async (req, res) => {
             }
         }
     }
-}
+}*/
 
 const addtoFavourite = async (req, res) => {
-    const { favId } = req.params;
-    const { itemId } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(favId)) {
+    const { userId, itemId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
     if (!mongoose.Types.ObjectId.isValid(itemId)) {
         return res.status(404).json({error: 'Item does not exist'});
     }
-    const favourite = await favouritesService.addItem(favId, itemId);
+
+    const favourite = await favouritesService.addItem(userId, itemId);
+
     if (!favourite) {
         return res.status(404).json({error: 'Failed to add item'});
     }
@@ -84,15 +90,17 @@ const addtoFavourite = async (req, res) => {
 }
 
 const deleteFromFavourite = async (req, res) => {
-    const { favId } = req.params;
-    const { itemId } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(favId)) {
+    const { userId, itemId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
     if (!mongoose.Types.ObjectId.isValid(itemId)) {
         return res.status(404).json({error: 'Item does not exist'});
     }
-    const favourite = await favouritesService.deleteItem(favId, itemId);
+
+    const favourite = await favouritesService.deleteItem(userId, itemId);
+
     if (!favourite) {
         return res.status(404).json({error: 'Failed to delete item'});
     }
@@ -100,11 +108,13 @@ const deleteFromFavourite = async (req, res) => {
 }
 
 const deleteAllFromFavourite = async (req, res) => {
-    const { favId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(favId)) {
+    const { userId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
-    const favourite = await favouritesService.removeAllItems(favId);
+
+    const favourite = await favouritesService.removeAllItems(userId);
+    
     if (!favourite) {
         return res.status(404).json({error: 'Failed to delete all'});
     }
@@ -112,10 +122,7 @@ const deleteAllFromFavourite = async (req, res) => {
 }
 
 module.exports = {
-    createFavourite,
     getFavourite,
-    deleteFavourite,
-    updateFavourite,
     addtoFavourite,
     deleteFromFavourite,
     deleteAllFromFavourite,

@@ -93,11 +93,11 @@ describe('FavouritesService', () => {
   
   });
 
-  test('Read by favId', async () => {
-    await favouritesService.addItem(fav._id, item1._id, 1);
-    await favouritesService.addItem(fav._id, item2._id, 1);
+  test('Add items to favourites userID', async () => {
+    await favouritesService.addItem(user1._id, item1._id);
+    await favouritesService.addItem(user1._id, item2._id);
 
-    const favRead = await favouritesService.readById(fav._id);
+    const favRead = await favouritesService.readByUserId(user1._id);
     expect(favRead).not.toBeNull();
     expect(favRead.items.length).toBe(2);
     
@@ -108,31 +108,30 @@ describe('FavouritesService', () => {
     expect(await Favourites.findById(fav._id)).toBeNull();
   });
 
-  test('Add item to favourites', async () => {
+  test('Read by user ID', async () => {
     fav = await favouritesService.create(favInfo);
-    item_ids = [item1._id];;
-    await favouritesService.addItem(fav._id, item1._id, 1);
+
+    await favouritesService.addItem(user1._id, item1._id);
     const favdb = await Favourites.findById(fav._id);
 
     expect(favdb).not.toBeNull();
-    expect(favdb.items).toStrictEqual(item_ids);
+    expect(favdb.items.length).toBe(1);
   });
 
   test('Delete an item from favourites', async () => {
-    await favouritesService.deleteItem(fav._id, item1._id);
+    await favouritesService.deleteItem(user1._id, item1._id);
     const favdb = await Favourites.findById(fav._id);
     expect(favdb).not.toBeNull();
     expect(favdb.items.length).toBe(0);
   });
 
   test('Delete all items from favourites', async () => {
-    await favouritesService.addItem(fav._id, item1._id, 1);
-    await favouritesService.addItem(fav._id, item2._id, 1);
-    await favouritesService.removeAllItems(fav._id);
+    await favouritesService.addItem(user1._id, item1._id);
+    await favouritesService.addItem(user1._id, item2._id);
+    await favouritesService.removeAllItems(user1._id);
     const favdb = await Favourites.findById(fav._id);
 
     expect(favdb).not.toBeNull();
     expect(favdb.items.length).toBe(0);
   });
-
 });
