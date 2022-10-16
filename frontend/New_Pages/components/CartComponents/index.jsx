@@ -19,7 +19,7 @@ const CartComponents = () => {
       //console.log(await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}));
       let res = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
       let items = res.data.items;
-      let subtotal = res.data.items;
+      let subtotal = res.data.subtotal;
       setPosts(items);
       setTotal(subtotal);
       //console.log(items);
