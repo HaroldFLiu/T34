@@ -27,13 +27,13 @@ const readByUserId = async (userId) => {
     }
 
     const cart = carts.filter((x) => (JSON.stringify(x.user) == JSON.stringify(userId)))[0];
-    console.log(cart);
+    //console.log(cart);
 
-    if (cart) {
-        return cart;
+    if (!cart) {
+        console.log(`Cart does not exist`);
     }
 
-    return "no cart";
+    return cart;
 };
 
 const readAll = async () => {
