@@ -130,7 +130,7 @@ const ProductInformationPage = () => {
 
       {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
       {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
-      <button className="contact-btn"> CONTACT SELLER </button>
+      {/*<button className="contact-btn"> CONTACT SELLER </button>*/}
 
       </div>
 
