@@ -61,6 +61,29 @@ const CartComponents = () => {
         </div>
 
         </div>
+        {posts.map((group) => {
+      return(
+        <div className="checkout-items-card">
+          
+        <div className="wrapper-check" >
+          <div class="row-check">
+            <div class="column-check">
+              <div class="card-check">
+                <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                <div className="check-texts">
+                  A COOL ITEM HERE
+                  <br/>
+                  <b> $14.20 </b>
+              </div>  
+              <button className="check-remove-btn"> Remove</button>
+              </div>
+            </div>
+            
+          </div>
+
+      </div>
+      )
+    })}
 
 
     </div> 
