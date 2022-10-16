@@ -31,7 +31,7 @@ const GroupInfoPage = () => {
      //console.log(server_res.data.user_id);
    
    };
-
+   
    const goMember = event => {
     event.preventDefault();
     location.pathname="/member-list-page/"+groupId;
@@ -57,13 +57,32 @@ const GroupInfoPage = () => {
 
     const fetchGroups = async () => {
       const { data } = await axios.get(`/groups/${groupId}`);
+  
       setGroups(data);
     };
 
-  
+
     useEffect(() => {
       fetchGroups();
     }, []);
+
+    const JoinGroup =  event => {
+      if (!groups.members || !groups.members.includes(user.user_id)) {
+        groups.members.push(user.user_id);
+      }
+    
+      event.preventDefault();
+      axios.patch('/groups/'+ groupId, {
+        members: groups.members,
+
+      }).then(function (response){
+        alert("You have become a member of the group!");
+      })
+      .catch(() => {
+        alert('Oops, something went wrong.');
+        });
+      
+    }
     
 
 
@@ -111,7 +130,7 @@ const GroupInfoPage = () => {
         <hr className="hr-line"/>
         <div className="test">{groups.description}</div>
         
-        <div className="popup-btn"> <button > Join Group</button> </div>
+        <div className="popup-btn" onClick={JoinGroup}> <button > Join Group</button> </div>
        
     </div>
     </div>

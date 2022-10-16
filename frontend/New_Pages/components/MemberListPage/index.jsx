@@ -5,6 +5,8 @@ import axios from "../../api/axios";
 import MemberList from "../MemberList";
 import { useParams } from "react-router-dom";
 import Cookie from 'universal-cookie';
+import PageNext from "../PageNextBar/PageNext";
+import {Link} from "react-router-dom";
 /* icon imports */
 import {AiOutlineHome} from 'react-icons/ai';
 import {HiOutlineShoppingBag} from 'react-icons/hi';
@@ -16,6 +18,55 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 const MemberListPage = () => {
 
+
+
+  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
+  const {groupId} = useParams()
+  //const thisProduct = posts.find(prod => prod.id == productId)
+  {/*degub log here */}
+  console.log(groupId);
+
+  {/*fetch item data*/}
+  
+  const [groups, setGroups] = useState([]);
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
+
+  useEffect(() => {
+    axios.get('/groups/'+groupId+'/members')
+        .then(res => {
+          console.log(res);
+                setData(res.data.members);
+                setLoading(false);
+                
+            })
+            .catch((error) => {
+              console.log(error);
+                alert('There was an error while retrieving the data');
+            })
+            .then(fetchData())
+}, [])
+console.log(data);
+const indexOfLastRecord = currentPage * recordsPerPage;
+const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+//const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+const currentRecords = ["aaa"];
+const nPages = Math.ceil(data.length / recordsPerPage)
+
+
+  const fetchGroups = async () => {
+    const { data } = await axios.get(`/groups/${groupId}/members`);
+    setGroups(data);
+  };
+
+
+  useEffect(() => {
+    fetchGroups();
+  }, []);
 
   {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
   var coookie = new Cookie();
@@ -35,35 +86,13 @@ const MemberListPage = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
-  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-  const {groupId} = useParams()
-  //const thisProduct = posts.find(prod => prod.id == productId)
-  {/*degub log here */}
-  console.log(groupId);
-
-  {/*fetch item data*/}
-  
-  const [groups, setGroups] = useState([]);
-
-
-  const fetchGroups = async () => {
-    const { data } = await axios.get(`/groups/${groupId}`);
-    setGroups(data);
-  };
-
-
-  useEffect(() => {
-    fetchGroups();
-  }, []);
-
 return (
     <div className="parent" >
      {/* top nav bar*/}
     <div class="navbar">
     <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
@@ -84,7 +113,7 @@ return (
       
     </div>
     <hr />
-    <div className="number-listings"> {groups.length} members</div>
+    <div className="number-listings"> {data.length} members</div>
     {/* search member button (need fix)*/} 
     <div className = "search-member">
         <input type="text"placeholder="Search Member.."> 
@@ -104,24 +133,16 @@ return (
     <div className="wrapper" >
         <div class="row2">
           <div class="column">
-          <MemberList/>
+          <MemberList data={currentRecords}/>
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
           </div>
         </div>
     </div>
 
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
 
     
 

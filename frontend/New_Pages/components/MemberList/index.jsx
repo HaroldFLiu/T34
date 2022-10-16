@@ -2,20 +2,31 @@
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
-function MemberList() {
+import { useParams } from "react-router-dom";
+const MemberList = ({data}) => {
 
 
-    const [posts, setPosts] = useState([]);
+    {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
+    const {groupId} = useParams()
+    //const thisProduct = posts.find(prod => prod.id == productId)
+    {/*degub log here */}
+    console.log(groupId);
 
-    // Define the function that fetches the data from API
-    const fetchData = async () => {
-      const { data } = await axios.get("/public");
-      setPosts(data);
+    {/*fetch item data*/}
+    
+    const [members, setMembers] = useState([]);
+
+
+    const fetchMembers = async () => {
+      const { data } = await axios.get(`/groups/${groupId}/members`);
+      setMembers(data);
     };
+
+    console.log(members);
+
   
-    // Trigger the fetchData after the initial render by using the useEffect hook
     useEffect(() => {
-      fetchData();
+      fetchMembers();
     }, []);
 
     
@@ -23,7 +34,7 @@ function MemberList() {
 
 return(
     <div className="products-wrapper">  
-    {posts.map((post) => {
+    {data.map((member) => {
       return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
@@ -41,7 +52,7 @@ return(
 			{/* spacer instead of wishlist btn*/}
             &nbsp;
 			<div className="item-cart">
-				<h5>{post.user_id}</h5>
+				<h5>{member.first_name}</h5>
 				{/* member list dropdown */}
 				<div className="move-drop-btn">
 					<div class="dropdown">
