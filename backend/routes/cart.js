@@ -2,27 +2,33 @@ const express = require('express');
 const {
     //createCart,
     getCart,
-    updateCart,
-    deleteCart,
-    checkoutCart
+    addToCart,
+    checkoutCart,
+    deleteFromCart,
+    deleteAllFromCart,
 } = require ('../controllers/cartController')
+
+const cartService = require('../services/cart');
 
 const router = express.Router();
 
 // GET a cart
-router.get('/:cartId', getCart);
+router.get('/cart/:userId', getCart);
 
 // POST a cart
 //router.post('/:userId', createCart);
 
-// UPDATE a cart
-router.patch('/:cartId', updateCart);
+// ADD to cart
+router.patch('/cart/:userId/:itemId', addToCart);
+
+// DELETE item from cart
+router.patch('/cart/:userId/:itemId', deleteFromCart);
 
 // CHECKOUT a cart 
-router.patch('/:cartId/checkout', checkoutCart)
+router.patch('/cart/:cartId/checkout', checkoutCart)
 
-// DELETE a cart
-router.delete('/:cartId', deleteCart);
+// DELETE whole cart
+router.delete('/cart/:userId', deleteAllFromCart);
 
 module.exports = router;
 

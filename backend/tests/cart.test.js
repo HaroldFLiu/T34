@@ -108,17 +108,20 @@ describe('CartService', () => {
     expect(cartdb.subtotal).toBe(0);
   });
 
-
   test('Delete Cart', async () => {
     const deletedCart = await cartService.deleteById(cart._id);
     expect(await Cart.findById(cart._id).toBeNull);
   });
 
+  test('Read all carts', async () => {
+    const cartRead = await cartService.readAll();
+    console.log(cartRead);
+  });
 
   test('Add item1 to cart', async () => {
     cart = await cartService.create(cartInfo);
 
-    await cartService.addItem(cart._id, item1._id, 1);
+    await cartService.addItem(user1._id, item1._id);
     const cartdb = await Cart.findById(cart._id);
 
     expect(cartdb).not.toBeNull();
@@ -127,7 +130,7 @@ describe('CartService', () => {
   });
 
   test('Delete an item1 from cart', async () => {
-    await cartService.deleteItem(cart._id, item1._id);
+    await cartService.deleteItem(user1._id, item1._id);
     const cartdb = await Cart.findById(cart._id);
 
     expect(cartdb).not.toBeNull();
@@ -136,10 +139,10 @@ describe('CartService', () => {
   });
 
   test('Delete all items from cart', async () => {
-    await cartService.addItem(cart._id, item1._id, 1);
-    await cartService.addItem(cart._id, item2._id, 1);
+    await cartService.addItem(user1._id, item1._id);
+    await cartService.addItem(user1._id, item2._id);
 
-    await cartService.removeAllItems(cart._id);
+    await cartService.removeAllItems(user1._id);
     const cartdb = await Cart.findById(cart._id);
 
     expect(cartdb).not.toBeNull();
@@ -148,14 +151,14 @@ describe('CartService', () => {
   });
   
   test('Checkout items from cart', async () => {
-    await cartService.addItem(cart._id, item1._id, 1);
-    await cartService.addItem(cart._id, item2._id, 1);
+    await cartService.addItem(user1._id, item1._id);
+    await cartService.addItem(user1._id, item2._id);
 
     const cartdb1 = await Cart.findById(cart._id);
 
     expect(cartdb1.subtotal).toBe(item1Info.price + item2Info.price);
 
-    await cartService.checkout(cart._id);
+    await cartService.checkout(user1._id);
 
     const cartdb2 = await Cart.findById(cart._id);
     const item1db = await Item.findById(item1._id);
