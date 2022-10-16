@@ -108,6 +108,7 @@ const HomePage = () => {
       <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         {/*<a href={"/sell-page/"+ user.user_id}> <HiOutlineShoppingBag className="icon"/> Sell</a>*/}
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
+        {/* can be changed to /my-groups-display TO SEE NEW PAGE TO LINK TO */}
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
       <div class="nav-login">

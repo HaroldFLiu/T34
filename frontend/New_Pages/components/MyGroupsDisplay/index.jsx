@@ -1,6 +1,4 @@
 import React, {useEffect, useState}from "react";
-import {Link} from "react-router-dom";
-
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 /* icon imports */
@@ -12,12 +10,12 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
-import logo from "../../dist/img/t34-logo.jpg";
 import SideNav from "../SideNavComponent";
 import Cookie from 'universal-cookie';
 import {Link} from "react-router-dom";
 
-const MyGroupsDisplay = () => {
+import "./MyGroupsDisplay.css"
+const MyGroupsDisplayPage = () => {
 
    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
    var coookie = new Cookie();
@@ -32,11 +30,7 @@ const MyGroupsDisplay = () => {
    
    };
    
-   const goMember = event => {
-    event.preventDefault();
-    location.pathname="/member-list-page/"+groupId;
-  }
-   
+
  
    {/*method to unpack the data and fetch effect*/ }
    useEffect(() => {
@@ -50,7 +44,7 @@ const MyGroupsDisplay = () => {
          <div class="navbar">
       <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
@@ -69,26 +63,21 @@ const MyGroupsDisplay = () => {
     <SideNav />
 
 
-    <div className="popup-box">
-      <div className="box">
-      <a href="/group-page"> <span className="close-icon"> x</span> </a>
-        <div className="square-popup">
-          <img src={groups.image_urls} className="popup-img"></img> 
+    <div className="popup-box-display">
+      <div className="display-box">
+        <div className="display-square-popup">
+          {/*<img src={groups.image_urls} className="popup-img"></img> */}
           
         </div>
         <div className="popup-text"> 
-        {groups.name} <p> 31k Members</p>
-
-       
-        <button> Member's List</button>
-       
-        <br/>
-        Owner: YenFug</div>
-        <div className="header-popup">{groups.name}</div> 
-        <hr className="hr-line"/>
-        <div className="test">{groups.description}</div>
         
-        <div className="popup-btn"> <button > Join Group</button> </div>
+        </div>
+        <div className="header-popup-display">Group Name Here <div className="smaller"> Owner name:</div> <button> Member's List</button></div> 
+        <hr className="hr-line"/>
+        <div className="component-display"> INSERT MY GROUPS COMPONENT ITEM DISPLAY HERE</div> 
+        
+        
+  
        
     </div>
     </div>
@@ -96,4 +85,4 @@ const MyGroupsDisplay = () => {
   );
 };
  
-export default MyGroupsDisplay;
+export default MyGroupsDisplayPage;
