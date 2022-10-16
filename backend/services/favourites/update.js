@@ -32,4 +32,23 @@ const removeAllItems = async (userId) => {
     return favourite; 
 };
 
-module.exports = { addItem, deleteItem, removeAllItems};
+const updateByUserId = async (userId, props) => {
+    const fav = await favouriteService.readByUserId(userId);
+  
+    if (!fav) {
+      console.log(`Cannot find favourites with user ID: ${userId}`);
+      return undefined;
+    }
+  
+    for (const property in props) {
+      if (property != 'user') {
+        fav[property] = props[property];
+      }
+    }
+  
+    await fav.save();
+  
+    return fav;
+  };
+
+module.exports = { addItem, deleteItem, removeAllItems, updateByUserId };

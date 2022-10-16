@@ -52,25 +52,27 @@ const removeAllItems = async(userId) => {
   await cart.save();
   return cart;
 }
-/*
-const updateById = async (userId, props) => {
+
+const updateByUserId = async (userId, props) => {
   const cart = await cartService.readByUserId(userId);
 
   if (!cart) {
-    console.log(`Cannot find cart with ID: ${cartId}`);
+    console.log(`Cannot find cart with user ID: ${userId}`);
     return undefined;
   }
 
   for (const property in props) {
-    cart[property] = props[property];
+    if (property != 'user') {
+      cart[property] = props[property];
+    }
   }
 
   await cart.save();
 
   return cart;
-};*/
+};
 
-module.exports = {addItem, checkout, deleteItem, removeAllItems};
+module.exports = {addItem, checkout, deleteItem, removeAllItems, updateByUserId};
 
 
 

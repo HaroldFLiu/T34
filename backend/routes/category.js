@@ -8,6 +8,6 @@ const {
 const router = express.Router();
 
 // GET all categories
-router.get('', getCatergories);    
+router.get('/category', getCatergories);    
 
 module.exports = router;
