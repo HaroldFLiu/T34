@@ -33,7 +33,8 @@ const CartComponents = () => {
 
   return (
   <div className="parent" >
-
+    {posts.map((group) => {
+      
     {/* products display*/} 
     <div class="checkout-main">
          {/* items showcase here for checkout*/}
@@ -61,8 +62,7 @@ const CartComponents = () => {
         </div>
 
         </div>
-        {posts.map((group) => {
-      return(
+    
         <div className="checkout-items-card">
           
         <div className="wrapper-check" >
@@ -82,14 +82,14 @@ const CartComponents = () => {
           </div>
 
       </div>
-      )
-    })}
+ 
 
 
     </div> 
 
   </div>
-
+  })}
+</div>
   );
 }
 

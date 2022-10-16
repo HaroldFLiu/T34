@@ -1,6 +1,6 @@
 import React, {useEffect, useState}from "react";
 import {Link} from "react-router-dom";
-import "./GroupPopUp.css";
+
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 /* icon imports */
@@ -17,7 +17,7 @@ import SideNav from "../SideNavComponent";
 import Cookie from 'universal-cookie';
 import {Link} from "react-router-dom";
 
-const GroupInfoPage = () => {
+const MyGroupsDisplay = () => {
 
    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
    var coookie = new Cookie();
@@ -42,48 +42,6 @@ const GroupInfoPage = () => {
    useEffect(() => {
      fetchData();
    }, []);
-
-
-    {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-    const {groupId} = useParams()
-    //const thisProduct = posts.find(prod => prod.id == productId)
-    {/*degub log here */}
-    console.log(groupId);
-
-    {/*fetch item data*/}
-    
-    const [groups, setGroups] = useState([]);
-
-
-    const fetchGroups = async () => {
-      const { data } = await axios.get(`/groups/${groupId}`);
-  
-      setGroups(data);
-    };
-
-
-    useEffect(() => {
-      fetchGroups();
-    }, []);
-
-    const JoinGroup =  event => {
-      if (!groups.members || !groups.members.includes(user.user_id)) {
-        groups.members.push(user.user_id);
-      }
-    
-      event.preventDefault();
-      axios.patch('/groups/'+ groupId, {
-        members: groups.members,
-
-      }).then(function (response){
-        alert("You have become a member of the group!");
-      })
-      .catch(() => {
-        alert('Oops, something went wrong.');
-        });
-      
-    }
-    
 
 
   return (
@@ -122,7 +80,7 @@ const GroupInfoPage = () => {
         {groups.name} <p> 31k Members</p>
 
        
-        <button onClick={goMember}> Member's List</button>
+        <button> Member's List</button>
        
         <br/>
         Owner: YenFug</div>
@@ -130,7 +88,7 @@ const GroupInfoPage = () => {
         <hr className="hr-line"/>
         <div className="test">{groups.description}</div>
         
-        <div className="popup-btn" onClick={JoinGroup}> <button > Join Group</button> </div>
+        <div className="popup-btn"> <button > Join Group</button> </div>
        
     </div>
     </div>
@@ -138,4 +96,4 @@ const GroupInfoPage = () => {
   );
 };
  
-export default GroupInfoPage;
+export default MyGroupsDisplay;
