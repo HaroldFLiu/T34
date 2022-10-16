@@ -33,7 +33,7 @@ const CartComponents = () => {
 
   return (
   <div className="parent" >
-    {posts.map((group) => {
+    {posts.map((cart) => {
       
     {/* products display*/} 
     <div class="checkout-main">
@@ -46,9 +46,9 @@ const CartComponents = () => {
                 <div class="card-check">
                   <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
                   <div className="check-texts">
-                    A COOL ITEM HERE
+                    {cart.name}
                     <br/>
-                    <b> $14.20 </b>
+                    <b> {cart.price} </b>
                 </div>  
                 <button className="check-remove-btn"> Remove</button>
                 </div>

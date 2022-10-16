@@ -28,7 +28,7 @@ const GroupInfoPage = () => {
      //const user = server_res.data.user_email;
      const user = server_res.data;
      setUser(user);
-     //console.log(server_res.data.user_id);
+     console.log(server_res.data.user_id);
    
    };
    
@@ -92,7 +92,7 @@ const GroupInfoPage = () => {
          <div class="navbar">
       <h1 className="website-title"> Market34</h1>
         <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
+        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
         <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
         <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
