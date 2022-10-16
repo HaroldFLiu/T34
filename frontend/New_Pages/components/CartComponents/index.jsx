@@ -19,7 +19,7 @@ const CartComponents = () => {
       //console.log(await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}));
       let res = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
       let items = res.data.items;
-      let subtotal = res.data.items;
+      let subtotal = res.data.subtotal;
       setPosts(items);
       setTotal(subtotal);
       //console.log(items);
@@ -33,7 +33,8 @@ const CartComponents = () => {
 
   return (
   <div className="parent" >
-
+    {posts.map((group) => {
+      
     {/* products display*/} 
     <div class="checkout-main">
          {/* items showcase here for checkout*/}
@@ -61,12 +62,34 @@ const CartComponents = () => {
         </div>
 
         </div>
+    
+        <div className="checkout-items-card">
+          
+        <div className="wrapper-check" >
+          <div class="row-check">
+            <div class="column-check">
+              <div class="card-check">
+                <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                <div className="check-texts">
+                  A COOL ITEM HERE
+                  <br/>
+                  <b> $14.20 </b>
+              </div>  
+              <button className="check-remove-btn"> Remove</button>
+              </div>
+            </div>
+            
+          </div>
+
+      </div>
+ 
 
 
     </div> 
 
   </div>
-
+  })}
+</div>
   );
 }
 

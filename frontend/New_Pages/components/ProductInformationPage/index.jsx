@@ -12,9 +12,14 @@ import {RiBookOpenLine} from 'react-icons/ri';
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
+import Cookies from 'universal-cookie';
+
+const coookie = new Cookies();
 const ProductInformationPage = () => {
 
   const [posts, setPosts] = useState([]);
+  const [added, setAdded] = useState(false);
+  const [itemId, setItemId] = useState();
 
 
   const fetchData = async () => {
@@ -32,7 +37,7 @@ const ProductInformationPage = () => {
   const {productId} = useParams()
   //const thisProduct = posts.find(prod => prod.id == productId)
   {/*degub log here */}
-  console.log(productId);
+  //console.log(productId);
 
   {/*fetch item data*/}
   
@@ -50,6 +55,21 @@ const ProductInformationPage = () => {
   }, []);
   
   console.log(items.image_urls);
+
+  const addToCart = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+
+    //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    //let items = res.data.items;
+    //items.push(productId);
+    await axios.patch("/cart/"+user.user_id, {itemId:productId, quantity:1}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).catch(error => {
+      console.log("Error updating cart", error);
+    });
+    setAdded(true);
+  };
 
  
   return (
@@ -108,8 +128,9 @@ const ProductInformationPage = () => {
       <div className="info-text-centered-price"> <b>${items.price}</b></div>
       <hr />
 
-      <button className="purchase-btn"> PURCHASE </button>
-      <button className="contact-btn"> CONTACT SELLER </button>
+      {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
+      {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
+      {/*<button className="contact-btn"> CONTACT SELLER </button>*/}
 
       </div>
 
