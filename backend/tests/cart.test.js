@@ -85,22 +85,18 @@ describe('CartService', () => {
   });
 
   test('Create Cart', async () => {
-    cartInfo = {
-      user: user1._id,
-    }
-    cart = await cartService.create(cartInfo)
-    const cartdb = await Cart.findById(cart._id);
+    const cartRead = await cartService.readByUserId(user1._id);
+    const cartdb = await Cart.findById(cartRead._id);
 
-    expect(cart).not.toBeNull();
+    expect(cartRead).not.toBeNull();
     expect(cartdb).not.toBeNull();
-    expect(cartdb.user.toString()).toBe(cartInfo.user.toString());
+    expect(cartdb.user.toString()).toBe(user1._id.toString());
     expect(cartdb.subtotal).toBe(0);
-  
   });
 
   test('Read by userId', async () => {
     const cartRead = await cartService.readByUserId(user1._id);
-    const cartdb = await Cart.findById(cart._id);
+    const cartdb = await Cart.findById(cartRead._id);
 
     expect(cartRead).not.toBeNull();
     expect(cartdb).not.toBeNull();
@@ -108,23 +104,18 @@ describe('CartService', () => {
     expect(cartdb.subtotal).toBe(0);
   });
 
-  test('Delete Cart', async () => {
-    const deletedCart = await cartService.deleteById(cart._id);
-    expect(await Cart.findById(cart._id).toBeNull);
-  });
-
   test('Read all carts', async () => {
     const cartRead = await cartService.readAll();
-    expect(cartRead.length).toBe(0);
+    expect(cartRead.length).toBe(2);
     //console.log(cartRead);
   });
 
   test('Add item1 to cart', async () => {
-    cart = await cartService.create(cartInfo);
-
     await cartService.addItem(user1._id, item1._id);
-    const cartdb = await Cart.findById(cart._id);
+    const cartRead = await cartService.readByUserId(user1._id);
+    const cartdb = await Cart.findById(cartRead._id);
 
+    expect(cartRead).not.toBeNull();
     expect(cartdb).not.toBeNull();
     expect(cartdb.items.length).toBe(1);
     expect(cartdb.subtotal).toBe(item1Info.price);
@@ -132,8 +123,10 @@ describe('CartService', () => {
 
   test('Delete an item1 from cart', async () => {
     await cartService.deleteItem(user1._id, item1._id);
-    const cartdb = await Cart.findById(cart._id);
+    const cartRead = await cartService.readByUserId(user1._id);
+    const cartdb = await Cart.findById(cartRead._id);
 
+    expect(cartRead).not.toBeNull();
     expect(cartdb).not.toBeNull();
     expect(cartdb.items.length).toBe(0);
     expect(cartdb.subtotal).toBe(0);
@@ -144,8 +137,10 @@ describe('CartService', () => {
     await cartService.addItem(user1._id, item2._id);
 
     await cartService.removeAllItems(user1._id);
-    const cartdb = await Cart.findById(cart._id);
+    const cartRead = await cartService.readByUserId(user1._id);
+    const cartdb = await Cart.findById(cartRead._id);
 
+    expect(cartRead).not.toBeNull();
     expect(cartdb).not.toBeNull();
     expect(cartdb.items.length).toBe(0);
     expect(cartdb.subtotal).toBe(0);
@@ -153,21 +148,22 @@ describe('CartService', () => {
   
   test('Checkout items from cart', async () => {
     await cartService.addItem(user1._id, item1._id);
-    await cartService.addItem(user1._id, item2._id);
+    const cart = await cartService.addItem(user1._id, item2._id);
 
     const cartdb1 = await Cart.findById(cart._id);
 
     expect(cartdb1.subtotal).toBe(item1Info.price + item2Info.price);
 
-    await cartService.checkout(user1._id);
+    const cartRead = await cartService.checkout(user1._id);
 
-    const cartdb2 = await Cart.findById(cart._id);
+    const cartdb2 = await Cart.findById(cartRead._id);
     const item1db = await Item.findById(item1._id);
     const item2db = await Item.findById(item2._id);
   
+    expect(cartRead).not.toBeNull();
     expect(item1db.sold).toBe(true);
     expect(item2db.sold).toBe(true);
-    expect(cartdb2).not.toBeNull;
+    expect(cartdb2).not.toBeNull();
     expect(cartdb2.items.length).toBe(0);
     expect(cartdb2.subtotal).toBe(0);
   });
