@@ -19,16 +19,16 @@ router.get('/cart/:userId', getCart);
 //router.post('/:userId', createCart);
 
 // ADD to cart
-router.patch('/cart/:userId/:itemId', addToCart);
+router.patch('/cart/:userId/add/:itemId', addToCart);
 
 // DELETE item from cart
-router.patch('/cart/:userId/:itemId', deleteFromCart);
+router.patch('/cart/:userId/remove/:itemId', deleteFromCart);
 
 // CHECKOUT a cart 
-router.patch('/cart/:cartId/checkout', checkoutCart)
+router.patch('/cart/:userId/checkout', checkoutCart)
 
 // DELETE whole cart
-router.delete('/cart/:userId', deleteAllFromCart);
+router.patch('/cart/removeAll/:userId', deleteAllFromCart);
 
 module.exports = router;
 

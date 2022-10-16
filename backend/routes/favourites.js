@@ -12,12 +12,12 @@ const router = express.Router();
 router.get('/favourites/:userId', getFavourite);
 
 // ADD a favourite item
-router.patch('/favourites/:userId/:itemId', addtoFavourite);
+router.patch('/favourites/:userId/add/:itemId', addtoFavourite);
 
 // DELETE a favourite item
-router.patch('/favourites/:userId/:itemId', deleteFromFavourite);
+router.patch('/favourites/:userId/remove/:itemId', deleteFromFavourite);
 
 // REMOVE all favourite items
-router.patch('/:favId', deleteAllFromFavourite);
+router.patch('/favourites/:userId/removeAll', deleteAllFromFavourite);
 
 module.exports = router;

@@ -82,7 +82,7 @@ const checkoutCart = async (req, res) => {
     if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    const cart = await cartService.checkout(cartId);
+    const cart = await cartService.checkout(userId);
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
