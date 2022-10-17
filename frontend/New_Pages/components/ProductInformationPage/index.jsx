@@ -34,20 +34,26 @@ const ProductInformationPage = () => {
 
   {/*fetch item data*/}
   
-  const [items, setItems] = useState([]);
-
+  const [item, setItems] = useState({});
+  const [seller, setSeller] = useState({});
 
   const fetchItems = async () => {
-    const { data } = await axios.get(`/public/item/${productId}`);
-    setItems(data);
+    axios.get(`/public/item/${productId}`)
+    .then(res => {
+      //console.log(res.data);
+      setItems(res.data.item);
+      //console.log(item);
+      setSeller(res.data.seller);
+      //console.log(seller);
+    })
+    .catch(() => {
+      alert('There was an error while retrieving the data')
+    })
   };
-
  
   useEffect(() => {
     fetchItems();
   }, []);
-  
-  console.log(items.image_urls);
 
   const addToCart = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
@@ -78,31 +84,22 @@ const ProductInformationPage = () => {
     {/* product info display*/} 
 
 <div class="product-info-wrap">     
-    <div className="product-img-wrap">
-   <div className="imgtest"> <img src={items.image_urls} className="square-detailed"></img>  </div>  
-        {/* other pictures display gallery
-          <div class="row">
-            <div class="column">
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            </div>
-           </div>*/} 
-
-      </div>
-
+<div className="product-img-wrap">
+      <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
+      </div> 
       <div className="more-info-wrap">
-      <div className="item-name-label"> {items.name}</div>
-      <div className="info-text"> <b>Seller:</b> {items.seller_id}</div> 
+
+      <div className="item-name-label"> {item.name}</div>
+      <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
       
       <hr />
       <br/>
       <div className="item-descip-wrap">
-      <div className="info-text-centered"> Item Description: <p> {items.description}</p></div>
+      <div className="info-text-centered"> Item Description: <p> {item.description}</p></div>
         </div> 
         
       <br/>
-      <div className="info-text-centered-price"> <b>${items.price}</b></div>
+      <div className="info-text-centered-price"> <b>${item.price}</b></div>
       <hr />
 
       {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
@@ -112,13 +109,6 @@ const ProductInformationPage = () => {
       </div>
 
       </div>  
-      
-      
-      
-      
-  
-
-
   </div>
 
   );
