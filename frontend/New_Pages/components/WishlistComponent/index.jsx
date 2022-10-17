@@ -27,9 +27,9 @@ return(
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
             <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
-       {/*      <img src={item?.image_urls[0]} className="logo-position">
+             <img src={logo} className="logo-position">
               </img> 
-      */}
+      
             </div>
             <div className="space"> </div>
             <div className="content-posts">
