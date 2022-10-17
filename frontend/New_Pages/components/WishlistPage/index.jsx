@@ -13,6 +13,9 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 import SideNav from "../SideNavComponent";
+import WishlistComponent from "../WishlistComponent";
+import PageNext from "../PageNextBar/PageNext";
+import { useParams } from "react-router-dom";
 
 const WishlistPage = () => {
 
@@ -22,7 +25,7 @@ const WishlistPage = () => {
     const [user, setUser] = useState([]);
     const fetchData = async () => {
       const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-      console.log(server_res);
+      //console.log(server_res);
       //const user = server_res.data.user_email;
       const user = server_res.data;
       setUser(user);
@@ -50,9 +53,39 @@ const WishlistPage = () => {
         console.log("Error signing out", error);
       });
     };
-        
 
-    console.log(user.first);
+
+      
+    const {userId} = useParams()
+    console.log("user_id: " + user.user_id);
+
+    // To hold the actual data
+    const [data, setData] = useState([])
+    const [loading, setLoading] = useState(true);
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [recordsPerPage] = useState(10);
+
+    useEffect(() => {
+        axios.get(`/favourites/${userId}`)
+            .then(res => {
+                    setData(res.data);
+                    setLoading(false);
+                })
+                .catch(() => {
+                    alert('There was an error while retrieving the data')
+                })
+    }, [])
+
+    const indexOfLastRecord = currentPage * recordsPerPage;
+    const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+    //const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord) ;
+    if(indexOfFirstRecord && indexOfLastRecord != null){
+      const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+    }else{
+      currentRecords = data;
+    }
+    const nPages = Math.ceil(data.length / recordsPerPage)
 
 
   return (
@@ -101,149 +134,23 @@ const WishlistPage = () => {
     <div className="wrapper" >
     <div class="row2">
       <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
+{/* wishlist component to be added here*/}
+        <WishlistComponent data={currentRecords}/> 
+                  <PageNext
+                        nPages={nPages}
+                        currentPage={currentPage}
+                        setCurrentPage={setCurrentPage}
+                    />
       </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
+
+
+
       
     </div>
     </div>
 
-    {/* products display 2nd row*/} 
-    <div className="wrapper" >
-    <div class="row2">
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
     </div>
-   
-    </div>
-    </div>
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#" class="active">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
+
     </div> 
 
 

@@ -3,7 +3,7 @@ import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
 
-const SellComponent = ({data}) => {
+const WishlistComponent = ({data}) => {
 
 // /public/:item_id delete item here
 
@@ -11,19 +11,7 @@ const SellComponent = ({data}) => {
 // delete request here
 // below do on-click btn --> delete request 
 
-
-  {data.map((item) => {
-    console.log(item._id);
-  })};
-
-  const [remove, setRemove] = useState([]);
-
-/* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
-  async function deletePost(id) {
-    await axios.delete(`/public/${id}`);
-    window.location.reload();
-    setStatus('Delete successful');
-}
+// need to get the user id here as well
 
 return(
     <div className="products-wrapper">  
@@ -49,7 +37,7 @@ return(
             <div className="item-cart">
             <h3>{item.name}</h3>
             
-            <a href="#"> <p><button onClick={() => deletePost(item._id)}>Remove </button></p></a>
+            <a href="#"> <p><button>Remove </button></p></a>
         
             {/* use this to link to inidivdual product info*/}
             </div>
@@ -72,4 +60,4 @@ return(
 );
 }
 
-export default SellComponent;
+export default WishlistComponent;

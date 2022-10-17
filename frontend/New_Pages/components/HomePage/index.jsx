@@ -142,12 +142,13 @@ const HomePage = () => {
     <div class="navbar">
       <h1 className="website-title"> Market34</h1>
       <a class="active" href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-      <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
+      <Link to={`/sell-page/${user.user_id}`}><HiOutlineShoppingBag className="icon"/> Sell </Link>
         {/*<a href={"/sell-page/"+ user.user_id}> <HiOutlineShoppingBag className="icon"/> Sell</a>*/}
         <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
         {/* can be changed to /my-groups-display TO SEE NEW PAGE TO LINK TO */}
         <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
+        <Link to={`/wishlist-page/${user.user_id}`}> <TbStar className="icon"/> Wishlist </Link>
+        {/*<a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>*/}
       <div class="nav-login">
       {/* search bar*/}
       {/* need to add logout btn, rn just redirects without sign out*/}

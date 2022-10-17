@@ -35,7 +35,7 @@ function App() {
         <Route path="/sell-page/:sellerId">
           <SellPage/>
         </Route>
-        <Route path="/wishlist-page">
+        <Route path="/wishlist-page/:userId">
           <WishlistPage/>
         </Route>
         <Route path="/group-page">
