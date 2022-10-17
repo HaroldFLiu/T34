@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const favouritesService = require('../services/favourites');
+const itemService = require('../services/item');
 
 /*
 const createFavourite = async (req, res) => {
@@ -25,7 +26,18 @@ const getFavourite = async (req, res) => {
         return res.status(404).json({error: 'Favourite does not exist'});
     }
 
-    res.status(200).json(favourite);
+    const items = []
+
+    console.log(favourite.items);
+
+    for (const itemId of favourite.items) {
+        const item = await itemService.readById(itemId);
+        if (item) {
+            items.push(item);
+        }
+    }
+
+    res.status(200).json(items);
 }
 
 /*

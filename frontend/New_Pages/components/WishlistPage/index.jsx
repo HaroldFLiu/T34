@@ -64,62 +64,33 @@ const SellPage = () => {
   //console.log(sellerId);
 
   const queryParams = new URLSearchParams(window.location.search);
-  const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
   //console.log(categoryId);
   
-
-  if (!categoryId) {
-    useEffect(() => {
-      axios.get(`/favourites/${userId}`)
-        .then(res => {
-          const tmp = res.data;
-          //setData(res.data);
-          if (sortBy == 'oldest') {
-            setData(tmp);
-            //console.log('newest');
-          } else if (sortBy == 'desc') {
-            setData(tmp.sort((a, b) => b.price - a.price));
-            //console.log('desc');
-          } else if (sortBy == 'asc') {
-            setData(tmp.sort((a, b) => a.price - b.price));
-            //console.log('asc');
-          } else {
-            setData(tmp.reverse());
-          }
-          setLoading(false);
-        })
-        .catch(() => {
-            alert('There are no items in your wishlist')
-        })
-        .then(fetchData())
-    }, [])
-  } else {
-    useEffect(() => {
-      axios.get(`/items/${sellerId}/${categoryId}`)
-        .then(res => {
-          const tmp = res.data;
-          //setData(res.data);
-          if (sortBy == 'oldest') {
-            setData(tmp);
-            //console.log('newest');
-          } else if (sortBy == 'desc') {
-            setData(tmp.sort((a, b) => b.price - a.price));
-            //console.log('desc');
-          } else if (sortBy == 'asc') {
-            setData(tmp.sort((a, b) => a.price - b.price));
-            //console.log('asc');
-          } else {
-            setData(tmp.reverse());
-          }
-          setLoading(false);
-        })
-        .catch(() => {
-            alert('There was an error while retrieving the data')
-        })
-        .then(fetchData())
-    }, []);
-  }
+  useEffect(() => {
+    axios.get(`/favourites/${userId}`)
+      .then(res => {
+        const tmp = res.data;
+        //setData(res.data);
+        if (sortBy == 'oldest') {
+          setData(tmp);
+          //console.log('newest');
+        } else if (sortBy == 'desc') {
+          setData(tmp.sort((a, b) => b.price - a.price));
+          //console.log('desc');
+        } else if (sortBy == 'asc') {
+          setData(tmp.sort((a, b) => a.price - b.price));
+          //console.log('asc');
+        } else {
+          setData(tmp.reverse());
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+          alert('There are no items in your wishlist')
+      })
+      .then(fetchData())
+  }, [])
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -151,15 +122,6 @@ const SellPage = () => {
       </div>
     </div>
 
-    <SideNav />
-    
-    
-    <div class="new">
-      <a href="/new-listings-page">
-        <button class="btn btn-success"> Create New Item</button>
-      </a>
-    </div>
-
     {/* products display*/} 
     <div class="main">
       <div className="home-title"> My Wishlist:</div>
@@ -167,7 +129,7 @@ const SellPage = () => {
       <div className="number-listings"> {data.length} listings 
       
           {/* sort by button drop down*/} 
-  <SortBy />
+      <SortBy />
       </div> 
       <hr />
     <div className="products-wrapper">  

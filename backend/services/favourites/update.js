@@ -5,7 +5,9 @@ const favouriteService = require('./read');
 const addItem = async (userId, itemId) => {
     const favourite = await favouriteService.readByUserId(userId);
 
-    favourite.items.push(itemId);
+    if (!favourite.items.includes(itemId)) {
+      favourite.items.push(itemId);
+    }
 
     await favourite.save();
 
@@ -33,22 +35,22 @@ const removeAllItems = async (userId) => {
 };
 
 const updateByUserId = async (userId, props) => {
-    const fav = await favouriteService.readByUserId(userId);
+    const favourite = await favouriteService.readByUserId(userId);
   
-    if (!fav) {
+    if (!favourite) {
       console.log(`Cannot find favourites with user ID: ${userId}`);
       return undefined;
     }
   
     for (const property in props) {
       if (property != 'user') {
-        fav[property] = props[property];
+        favourite[property] = props[property];
       }
     }
   
-    await fav.save();
+    await favourite.save();
   
-    return fav;
+    return favourite;
   };
 
 module.exports = { addItem, deleteItem, removeAllItems, updateByUserId };
