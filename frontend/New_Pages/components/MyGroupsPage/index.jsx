@@ -83,12 +83,12 @@ const GroupPage = () => {
       </div>
     </div>
 
-      {/* side bar*/} 
+    {/* side bar*/} 
+    <div class="new">
       <a href="/create-group-page" >
-          <button class="btn btn-success"> Create New Group</button>
+        <button class="btn btn-success"> Create New Group</button>
       </a>
-  
-  
+    </div>
   
     {/* products display*/} 
     <div class="main">

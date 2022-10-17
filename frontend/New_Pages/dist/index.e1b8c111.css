@@ -12399,6 +12399,17 @@ textarea.form-control-lg {
   transform: scaleX(-1);
 }
 
+.navbar button {
+  color: #fff;
+  background-color: #33532c;
+  border: none;
+}
+
+.new {
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
 .page-item {
   float: left;
 }

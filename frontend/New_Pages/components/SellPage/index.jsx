@@ -149,9 +149,12 @@ const SellPage = () => {
 
     <SideNav />
     
-    <a href="/new-listings-page">
-          <button class="btn btn-success"> Create New Item</button>
+    <div class="new">
+      <a href="/new-listings-page">
+        <button class="btn btn-success"> Create New Item</button>
       </a>
+    </div>
+
   
 
   
