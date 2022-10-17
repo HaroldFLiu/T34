@@ -55,6 +55,7 @@ const favourites = [
     {
         _id: "634c191d5f92d2c26cc08161",
         user: "634c191d5f92d2c26cc0815b",
+        items: ["63478fdd6ae1ffe6cfa57d3e"]
     },
     {
         _id: "634c191e5f92d2c26cc0816a",
