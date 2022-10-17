@@ -25,7 +25,7 @@ const SellPage = () => {
   const [user, setUser] = useState([]);
   const fetchData = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
+    //console.log(server_res);
     //const user = server_res.data.user_email;
     const user = server_res.data;
     setUser(user);
@@ -67,6 +67,7 @@ const SellPage = () => {
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
   //console.log(categoryId);
+  
 
   if (!categoryId) {
     useEffect(() => {
@@ -125,6 +126,7 @@ const SellPage = () => {
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage)
 
+  console.log(currentRecords);
   return (
   <div className="parent" >
      {/* top nav bar*/}
