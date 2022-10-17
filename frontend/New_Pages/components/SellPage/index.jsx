@@ -16,91 +16,114 @@ import {RiBookOpenLine} from 'react-icons/ri';
 
 import SideNav from "../SideNavComponent";
 import SellComponent from "../SellComponent";
+import SortBy from "../SortByComponent";
 
 const SellPage = () => {
-  
-      {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-      var coookie = new Cookie();
-      const [user, setUser] = useState([]);
-      const fetchData = async () => {
-        const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-        console.log(server_res);
-        //const user = server_res.data.user_email;
-        const user = server_res.data;
-        setUser(user);
-        //console.log(server_res.data.user_id);
-      
-      };
+
+  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+    setUser(user);
+    //console.log(server_res.data.user_id);
+
+  };
 
         
-      // log OUT HERE
-      const handleLogOut = async () => {
-        await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-        .then(response => {
-          if (response.status === 200) {
-            location.pathname='/login-page';
-          }
-        })
-        .catch(error => {
-          console.log("Error signing out", error);
-        });
-      };
+  // log OUT HERE
+  const handleLogOut = async () => {
+    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(response => {
+      if (response.status === 200) {
+        location.pathname='/login-page';
+      }
+    })
+    .catch(error => {
+      console.log("Error signing out", error);
+    });
+  };
           
-    
-      {/*method to unpack the data and fetch effect*/ }
-      useEffect(() => {
-        fetchData();
-      }, []);
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-   
+  // To hold the actual data
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
-        // To hold the actual data
-        const [data, setData] = useState([])
-        const [loading, setLoading] = useState(true);
-    
-        const [currentPage, setCurrentPage] = useState(1);
-        // 10 items displayed per page
-        const [recordsPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
 
+  const {sellerId} = useParams()
+  //console.log(sellerId);
 
-        const {sellerId} = useParams()
-        //console.log(sellerId);
+  const queryParams = new URLSearchParams(window.location.search);
+  const categoryId = queryParams.get("cat_id");
+  const sortBy = queryParams.get("sortBy");
+  //console.log(categoryId);
 
-        const queryParams = new URLSearchParams(window.location.search);
-        const categoryId = queryParams.get("cat_id");
-        console.log(categoryId);
+  if (!categoryId) {
+    useEffect(() => {
+      axios.get(`/items/${sellerId}`)
+        .then(res => {
+          const tmp = res.data;
+          //setData(res.data);
+          if (sortBy == 'oldest') {
+            setData(tmp);
+            //console.log('newest');
+          } else if (sortBy == 'desc') {
+            setData(tmp.sort((a, b) => b.price - a.price));
+            //console.log('desc');
+          } else if (sortBy == 'asc') {
+            setData(tmp.sort((a, b) => a.price - b.price));
+            //console.log('asc');
+          } else {
+            setData(tmp.reverse());
+          }
+          setLoading(false);
+        })
+        .catch(() => {
+            alert('There was an error while retrieving the data')
+        })
+        .then(fetchData())
+    }, [])
+  } else {
+    useEffect(() => {
+      axios.get(`/items/${sellerId}/${categoryId}`)
+        .then(res => {
+          const tmp = res.data;
+          //setData(res.data);
+          if (sortBy == 'oldest') {
+            setData(tmp);
+            //console.log('newest');
+          } else if (sortBy == 'desc') {
+            setData(tmp.sort((a, b) => b.price - a.price));
+            //console.log('desc');
+          } else if (sortBy == 'asc') {
+            setData(tmp.sort((a, b) => a.price - b.price));
+            //console.log('asc');
+          } else {
+            setData(tmp.reverse());
+          }
+          setLoading(false);
+        })
+        .catch(() => {
+            alert('There was an error while retrieving the data')
+        })
+        .then(fetchData())
+    }, []);
+  }
 
-        if (!categoryId) {
-          useEffect(() => {
-            axios.get(`/items/${sellerId}`)
-              .then(res => {
-                  setData(res.data);
-                  setLoading(false);
-              })
-              .catch(() => {
-                  alert('There was an error while retrieving the data')
-              })
-              .then(fetchData())
-          }, [])
-        } else {
-          useEffect(() => {
-            axios.get(`/items/${sellerId}/${categoryId}`)
-              .then(res => {
-                  setData(res.data);
-                  setLoading(false);
-              })
-              .catch(() => {
-                  alert('There was an error while retrieving the data')
-              })
-              .then(fetchData())
-          }, []);
-        
-        }
-    
-        const indexOfLastRecord = currentPage * recordsPerPage;
-        const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
-        const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-        const nPages = Math.ceil(data.length / recordsPerPage)
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(data.length / recordsPerPage)
 
   return (
   <div className="parent" >
@@ -139,15 +162,7 @@ const SellPage = () => {
       <div className="number-listings"> {data.length} listings 
       
           {/* sort by button drop down*/} 
-    <div className="move-drop-btn">
-      <div class="dropdown">
-                <button class="dropbtn">Sort by: Default</button>
-                <div class="dropdown-content">
-                    <a href="#">Price: High-Low</a>
-                    <a href="#">Price: Low-High</a>       
-                </div>
-        </div>
-      </div> 
+  <SortBy />
       </div> 
       <hr />
     <div className="products-wrapper">  

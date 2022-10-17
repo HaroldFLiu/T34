@@ -26,7 +26,7 @@ return(
             &nbsp;
                 <div className="item-cart">
                     <h5>{group.name}</h5>
-                    <p class="members-text">31k Members</p>
+                    <p class="members-text">{group.members.length} Members</p>
                     <p><button>Join Group</button></p>
                 </div>
             </Link>

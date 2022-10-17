@@ -15,7 +15,7 @@ import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
-
+import SortByMembers from "../SortByMemberComponent";
 
 const GroupPage = () => {
 
@@ -26,18 +26,32 @@ const GroupPage = () => {
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
-
+  const queryParams = new URLSearchParams(window.location.search);
+  const sortBy = queryParams.get("sortBy");
+  
   useEffect(() => {
-      axios.get('/groups')
-          .then(res => {
-                  setData(res.data);
-                  setLoading(false);
-                  
-              })
-              .catch(() => {
-                  alert('There was an error while retrieving the data')
-              })
-              .then(fetchData())
+    axios.get('/groups')
+    .then(res => {
+      const tmp = res.data;
+      //setData(res.data);
+      if (sortBy == 'oldest') {
+        setData(tmp);
+        //console.log('newest');
+      } else if (sortBy == 'desc') {
+        setData(tmp.sort((a, b) => b.members.length - a.members.length));
+        //console.log('desc');
+      } else if (sortBy == 'asc') {
+        setData(tmp.sort((a, b) => a.members.length - b.members.length));
+        //console.log('asc');
+      } else {
+        setData(tmp.reverse());
+      }
+      setLoading(false);
+    })
+    .catch(() => {
+      alert('There was an error while retrieving the data')
+    })
+    .then(fetchData())
   }, [])
 
   const indexOfLastRecord = currentPage * recordsPerPage;
@@ -45,28 +59,24 @@ const GroupPage = () => {
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage)
 
+  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+    setUser(user);
+    //console.log(server_res.data.user_id);
+  };
 
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-
-    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-    var coookie = new Cookie();
-    const [user, setUser] = useState([]);
-    const fetchData = async () => {
-      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-      console.log(server_res);
-      //const user = server_res.data.user_email;
-      const user = server_res.data;
-      setUser(user);
-      //console.log(server_res.data.user_id);
-    
-    };
-
-    {/*method to unpack the data and fetch effect*/ }
-    useEffect(() => {
-      fetchData();
-    }, []);
-
-    console.log(user.first);
+  console.log(user.first);
 
           
   // log OUT HERE
@@ -117,15 +127,7 @@ const GroupPage = () => {
       <div className="number-listings"> {data.length} groups 
       
           {/* sort by button drop down*/} 
-    <div className="move-drop-btn">
-      <div class="dropdown">
-                <button class="dropbtn">Sort by: Default</button>
-                <div class="dropdown-content">
-                    <a href="#">Members: High-Low</a>
-                    <a href="#">Members: Low-High</a>       
-                </div>
-        </div>
-      </div> 
+<SortByMembers />
       </div> 
       <hr />
     <div className="products-wrapper">  
