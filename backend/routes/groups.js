@@ -9,6 +9,7 @@ const {
     deleteGroup,
     getGroupMembers,
     getGroupsByUser,
+    getOtherGroups,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -26,6 +27,9 @@ router.get('/groups/members/:group_id', getGroupMembers);
 
 // GET a user's groups
 router.get('/groups/user/:user_id', getGroupsByUser);
+
+// GET groups a user is not a part of
+router.get('/groups/other/:user_id', getOtherGroups);
 
 // POST a group
 router.post('/groups', async (req, res) => {

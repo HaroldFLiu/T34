@@ -31,6 +31,13 @@ const getGroupsByUser = async (req, res) => {
     res.status(200).json(groups);
 }
 
+const getOtherGroups = async (req, res) => {
+    const { user_id } = req.params;
+    const groups = await groupService.readOtherGroups(user_id);
+
+    res.status(200).json(groups);
+}
+
 const getGroup = async (req, res) => {
     const { group_id } = req.params;
 
@@ -145,4 +152,5 @@ module.exports = {
     getGroupItemsWithCategory,
     getGroupMembers,
     getGroupsByUser,
+    getOtherGroups
 }
