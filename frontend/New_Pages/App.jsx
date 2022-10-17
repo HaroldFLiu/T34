@@ -38,7 +38,7 @@ function App() {
         <Route path="/wishlist-page/:userId">
           <WishlistPage/>
         </Route>
-        <Route path="/group-page">
+        <Route path="/group-page/:userId">
           <GroupPage/>
         </Route>
         <Route path="/create-group-page">

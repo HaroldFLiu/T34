@@ -29,7 +29,7 @@ const NavBar = () => {
         fetchData();
     }, []);
 
-    console.log(user.first + ": " + user.user_id);
+    //console.log(user.first + ": " + user.user_id);
     
     // log OUT HERE
     const handleLogOut = async () => {
@@ -50,7 +50,7 @@ const NavBar = () => {
             <NavLink to="/home-page"> <AiOutlineHome className="icon"/> Home</NavLink>
             <NavLink to={`/sell-page/${user.user_id}`}><HiOutlineShoppingBag className="icon"/> Sell </NavLink>
             {/*<a href={"/sell-page/"+ user.user_id}> <HiOutlineShoppingBag className="icon"/> Sell</a>*/}
-            <NavLink to="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</NavLink>
+            <NavLink to={`/group-page/${user.user_id}`}> <AiOutlineUsergroupAdd className="icon"/> Groups</NavLink>
             {/* can be changed to /my-groups-display TO SEE NEW PAGE TO LINK TO */}
             <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon"/> My Groups</NavLink>
             <NavLink to={`/wishlist-page/${user.user_id}`}> <TbStar className="icon"/> Wishlist </NavLink>

@@ -1,4 +1,5 @@
 import React, {useEffect, useState}from "react";
+import { useParams } from "react-router-dom";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
 import "./GroupPage.css";
@@ -7,9 +8,9 @@ import PageNext from "../PageNextBar/PageNext";
 import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent";
 import SortByMembers from "../SortByMemberComponent";
+import Cookie from 'universal-cookie';
 
 const GroupPage = () => {
-
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
 
@@ -19,9 +20,10 @@ const GroupPage = () => {
 
   const queryParams = new URLSearchParams(window.location.search);
   const sortBy = queryParams.get("sortBy");
+  const {userId} = useParams();
   
   useEffect(() => {
-    axios.get('/groups')
+    axios.get(`/groups/other/${userId}`)
     .then(res => {
       const tmp = res.data;
       //setData(res.data);
@@ -43,7 +45,7 @@ const GroupPage = () => {
       alert('There was an error while retrieving the data')
     })
     //.then(fetchData())
-  }, [])
+  }, []);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
