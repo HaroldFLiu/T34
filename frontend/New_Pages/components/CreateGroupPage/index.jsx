@@ -2,63 +2,11 @@ import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
-import { RadioButton } from "./RadioButton";
-import Cookie from 'universal-cookie';
 
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
-
-import {Link} from "react-router-dom";
+import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
-
-  {/* stuff for radio button*/} 
-  // const [visbility, setVisbility] = useState("");
-
-  const radioChangeHandler = (e) => {
-    setVisbility(e.target.value);
-  }  
-
-    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-    var coookie = new Cookie();
-    const [user, setUser] = useState([]);
-    const fetchData = async () => {
-      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-      console.log(server_res);
-      //const user = server_res.data.user_email;
-      const user = server_res.data;
-      setUser(user);
-      //console.log(server_res.data.user_id);
-    
-    };
-
-    {/*method to unpack the data and fetch effect*/ }
-    useEffect(() => {
-      fetchData();
-    }, []);
-
-    console.log(user.first);
-          
-  // log OUT HERE
-  const handleLogOut = async () => {
-    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-    .then(response => {
-      if (response.status === 200) {
-        location.pathname='/login-page';
-      }
-    })
-    .catch(error => {
-      console.log("Error signing out", error);
-    });
-  };
-      
 
   {/* stuff for image upload*/} 
 
@@ -158,7 +106,7 @@ const CreateGroupPage = () => {
   useEffect(() => {
     if (!firstRender) {
       getGroups();
-      fetchData();
+      //fetchData();
       setFirstRender(true);
     }
   }, [firstRender]);
@@ -166,23 +114,7 @@ const CreateGroupPage = () => {
   return (
     <div className="parent" >
     {/* top nav bar*/}
-    <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <Link to={`/sell-page/${user.user_id}`}> Sell </Link>
-        <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
-      <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
-      <a href="/checkout-page"> Cart</a>
-  
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
+<NavBar />
         
     <div class="listings-main">
       <div className="home-title"> Create a Group now,<a> and start lisitng privately right away!</a></div>

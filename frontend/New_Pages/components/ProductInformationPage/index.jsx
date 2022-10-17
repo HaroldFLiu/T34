@@ -1,13 +1,6 @@
 import React, {useEffect, useState}from "react";
 import "./ProductInformationPage.css";
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
+import NavBar from "../NavBarComponent";
 
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
@@ -80,22 +73,7 @@ const ProductInformationPage = () => {
       
     })}*/}
      {/* top nav bar*/}
-    <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
+<NavBar />
   
     {/* product info display*/} 
 
