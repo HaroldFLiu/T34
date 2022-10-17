@@ -80,11 +80,7 @@ const WishlistPage = () => {
     const indexOfLastRecord = currentPage * recordsPerPage;
     const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
     //const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord) ;
-    if(indexOfFirstRecord && indexOfLastRecord != null){
-      const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-    }else{
-      currentRecords = data;
-    }
+    const currentRecords = data;
     const nPages = Math.ceil(data.length / recordsPerPage)
 
 
@@ -136,11 +132,6 @@ const WishlistPage = () => {
       <div class="column">
 {/* wishlist component to be added here*/}
         <WishlistComponent data={currentRecords}/> 
-                  <PageNext
-                        nPages={nPages}
-                        currentPage={currentPage}
-                        setCurrentPage={setCurrentPage}
-                    />
       </div>
 
 
