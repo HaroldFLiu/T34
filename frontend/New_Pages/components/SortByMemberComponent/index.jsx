@@ -31,9 +31,9 @@ const SortByMembers = () => {
         } else if (queryParams.get("sortBy") == 'oldest') {
             setDisplay('Oldest');
         } else if (queryParams.get("sortBy") == 'desc') {
-            setDisplay('Highest Price');
+            setDisplay('Most Members');
         } else if (queryParams.get("sortBy") == 'asc') {
-            setDisplay('Lowest Price');
+            setDisplay('Least Members');
         } else {
             setDisplay('Default');
         }
