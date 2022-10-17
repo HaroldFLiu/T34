@@ -153,7 +153,7 @@ const SellPage = () => {
     
     <div class="new">
       <a href="/new-listings-page">
-        <button class="btn btn-success"> Create New Item</button>
+        <button class="btn btn-success"> Sell New Item</button>
       </a>
     </div>
 

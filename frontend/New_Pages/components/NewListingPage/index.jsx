@@ -166,10 +166,24 @@ const NewListingPage = () => {
     })
   }
 
+  const [sold, setSold] = useState('');
+  const getSold = () => {
+    axios.get(`/sold`)
+    .then(res => {
+      console.log('sold');
+      setSold(res.data.length);
+      console.log(res.data.length);
+    })
+    .catch(() => {
+        alert('There was an error while retrieving the data')
+    })
+  }
+
   useEffect(() => {
     if (!firstRender) {
       getGroups();
       getCatergories();
+      getSold();
       setFirstRender(true);
     }
   }, [firstRender]);
@@ -247,15 +261,18 @@ const NewListingPage = () => {
       <div className="home-title"> List an item,<a> and start selling right away!</a></div>
     </div>
     <hr />
-    <div className="number-listings"> 1234 items sold in the last 24 hours!
+    <div className="number-listings"> {sold} items sold on Market34!
     
       {/* on click to submit new listing here*/}
 
       <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
+    
     <hr />
       {/*Upload Image box and button handle uploading img*/}    
+    
     <div class="left-box">
+    <label for="item-image"> <div className="item-name">Item Image*: </div></label>
         <div className="square-pic">  
         <label htmlFor="upload-button">
 
@@ -285,15 +302,15 @@ const NewListingPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name: </div> </div></label>
+            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name*: </div> </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
               />
-            <label for="enter-price"><div className="item-name"> Price: </div></label>
+            <label for="enter-price"><div className="item-name"> Price*: </div></label>
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
             />
-            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description:</div></div></label>
+            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description*:</div></div></label>
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
@@ -312,7 +329,7 @@ const NewListingPage = () => {
 
           {/* select on change for dropdown button*/}
 
-          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility:</div></div></label>
+          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility*:</div></div></label>
           <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>

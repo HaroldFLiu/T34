@@ -191,11 +191,13 @@ const CreateGroupPage = () => {
     <div className="number-listings"> {groups} groups online
     
     {/* on click to submit new listing here*/}
-    <button className="publish-btn" onClick={PostNewGroup}> Create Group</button>
+      <button className="publish-btn" onClick={PostNewGroup}> Create Group</button>
+    
     </div>
     <hr />
       {/*Upload Image box and button handle uploading img*/}    
     <div class="left-box">
+      <label for="item-name"> <div className="item-name">Group Icon*: </div></label>
       <div className="square-pic">  
       <label htmlFor="upload-button">
         {/* image preview conditionals for user to see*/} 
@@ -223,11 +225,11 @@ const CreateGroupPage = () => {
       <form className="publish-form">
           
         {/* onChange event here to get data */}
-        <label for="item-name"> <div className="item-name">Group Name: </div></label>
+        <label for="item-name"> <div className="item-name">Group Name*: </div></label>
         <input type="listing-text"
         onChange={(e)=> setValues({...values, groupName:e.target.value})} 
         />
-        <label for="enter-desc"> <div className="item-name">Group Description:</div></label>
+        <label for="enter-desc"> <div className="item-name">Group Description*:</div></label>
         <input type="asd" 
         onChange={(e)=> setValues({...values, groupDescription:e.target.value})} 
         />
