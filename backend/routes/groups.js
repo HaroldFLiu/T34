@@ -19,13 +19,13 @@ const router = express.Router();
 router.get('/groups', getGroups);
 
 // GET a group
-router.get('/groups/:group_id', getGroup, getGroupItems);
+router.get('/groups/group/:group_id', getGroup, getGroupItems);
 
 // GET group members
-router.get('/groups/:group_id/members', getGroupMembers);
+router.get('/groups/members/:group_id', getGroupMembers);
 
 // GET a user's groups
-router.get('/groups/:user_id', getGroupsByUser);
+router.get('/groups/user/:user_id', getGroupsByUser);
 
 // POST a group
 router.post('/groups', async (req, res) => {
