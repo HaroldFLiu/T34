@@ -2,19 +2,28 @@ import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState, useMemo}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
+import Cookies from 'universal-cookie';
 
+const coookie = new Cookies();
 const ProductComponents = ({data}) => {
 
 //router.patch('/favourites/:userId/add/:itemId', addtoFavourite);
+const [added, setAdded] = useState(false);
 
-  const addWishlist = async (item_id) => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
-    const user = server_res.data;
-    await axios.patch(`favourites/${user.user_id}/add/${item_id}`).then(setAdded(true)).catch(error => {
-      console.log("Error updating cart", error);
-    });
+const addWishlist = async item_id => {
+  const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+  console.log(server_res);
+  //const user = server_res.data.user_email;
+  const user = server_res.data;
+
+  //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+  //let items = res.data.items;
+  //items.push(productId);
+  await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
   };
+  
+
+
 
 
 return(
@@ -35,7 +44,7 @@ return(
             </div></Link>
              {/* wishlist button */}
              <div class="wishlist">
-              <button> wishlist </button>
+             <button onClick={() => addWishlist(item._id)}> wishlist </button>
             </div>
             <Link to={`/product-page/${item._id}`}>
             <div className="content-posts">
@@ -43,8 +52,8 @@ return(
           </div>
             <div className="item-cart">
             <h3>{item.name}</h3>
-            <a href="#"> <p><button onClick={() => addWishlist(item._id)}>Add to Cart</button></p></a>
-        
+            <a href="#"> <p><button>Add to Cart</button></p></a>
+          
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}

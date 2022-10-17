@@ -4,8 +4,7 @@ import axios from "../../api/axios";
 import {Link} from "react-router-dom"
 
 const WishlistComponent = ({data}) => {
-
-
+  
 return(
     <div className="products-wrapper">  
     {data.map((item) => {

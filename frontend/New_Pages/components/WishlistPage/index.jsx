@@ -126,7 +126,9 @@ const SellPage = () => {
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage)
 
-  console.log(currentRecords);
+
+
+  console.log(data);
   return (
   <div className="parent" >
      {/* top nav bar*/}
@@ -151,15 +153,13 @@ const SellPage = () => {
 
     <SideNav />
     
+    
     <div class="new">
       <a href="/new-listings-page">
         <button class="btn btn-success"> Create New Item</button>
       </a>
     </div>
 
-  
-
-  
     {/* products display*/} 
     <div class="main">
       <div className="home-title"> My Wishlist:</div>
