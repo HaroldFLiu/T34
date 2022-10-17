@@ -18,7 +18,7 @@ const SellPage = () => {
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
-  const {sellerId} = useParams()
+  const {sellerId} = useParams();
   //console.log(sellerId);
 
   const queryParams = new URLSearchParams(window.location.search);

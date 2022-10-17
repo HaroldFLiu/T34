@@ -19,7 +19,7 @@ return(
             
             <Link to={`/group-info-page/${group._id}`}>
             <div className="img-wrap"> 
-              <img src={logo} className="logo-position">
+              <img src={group.icon_url} className="logo-position">
               </img> 
             </div>
             {/* spacer instead of wishlist btn*/}

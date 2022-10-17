@@ -6,7 +6,7 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent"
 
 import "./MyGroupsDisplay.css"
-const MyGroupsDisplayPage = () => {
+const MyGroupsDisplay = () => {
 
   return (
    <div className="parent" > 
@@ -33,4 +33,4 @@ const MyGroupsDisplayPage = () => {
   );
 };
  
-export default MyGroupsDisplayPage;
+export default MyGroupsDisplay;

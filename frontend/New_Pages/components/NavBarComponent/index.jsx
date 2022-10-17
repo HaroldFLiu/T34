@@ -15,17 +15,13 @@ import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 
 const NavBar = () => {
-    {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+    // get user info
     var coookie = new Cookie();
     const [user, setUser] = useState([]);
     const fetchData = async () => {
         const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-        //console.log(server_res);
-        //const user = server_res.data.user_email;
         const user = server_res.data;
         setUser(user);
-        //console.log(server_res.data.user_id);
-    
     };
     
     {/*method to unpack the data and fetch effect*/ }
@@ -48,10 +44,6 @@ const NavBar = () => {
         });
     };
 
-    const makeActive = () => {
-        this.setState({ class: 'active' });
-    }
-
     return (
         <div class="navbar">
             <h1 className="website-title"> Market34</h1>
@@ -60,7 +52,7 @@ const NavBar = () => {
             {/*<a href={"/sell-page/"+ user.user_id}> <HiOutlineShoppingBag className="icon"/> Sell</a>*/}
             <NavLink to="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</NavLink>
             {/* can be changed to /my-groups-display TO SEE NEW PAGE TO LINK TO */}
-            <NavLink to="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</NavLink>
+            <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon"/> My Groups</NavLink>
             <NavLink to={`/wishlist-page/${user.user_id}`}> <TbStar className="icon"/> Wishlist </NavLink>
             {/*<a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>*/}
             <div class="nav-login">
