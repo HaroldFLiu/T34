@@ -65,7 +65,7 @@ const ProductInformationPage = () => {
     //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     //let items = res.data.items;
     //items.push(productId);
-    await axios.patch("/cart/"+user.user_id, {itemId:productId, quantity:1}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(setAdded(true)).catch(error => {
+    await axios.patch("/cart/"+user.user_id+"/add/"+productId, {itemId:productId}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(setAdded(true)).catch(error => {
       console.log("Error updating cart", error);
     });
   };
