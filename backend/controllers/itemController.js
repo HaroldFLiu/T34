@@ -97,6 +97,12 @@ const getUserItemsWithCategory = async (req, res) => {
     res.status(200).json(filtered);
 }
 
+const getSoldItems = async (req, res) => {
+    const items = await itemService.readAllSold();
+
+    res.status(200).json(items);
+}
+
 module.exports = {
     getPublicItems,
     getItem,
@@ -105,4 +111,5 @@ module.exports = {
     getCategoryItems,
     getUserItems,
     getUserItemsWithCategory,
+    getSoldItems,
 }

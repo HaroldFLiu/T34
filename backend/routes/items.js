@@ -16,6 +16,7 @@ const {
     deleteItem,
     getUserItems,
     getUserItemsWithCategory,
+    getSoldItems,
 } = require('../controllers/itemController');
 
 const {
@@ -40,6 +41,9 @@ router.get('/items/:user_id', getUserItems);
 
 // GET a user's items by ctageory
 router.get('/items/:user_id/:category_id', getUserItemsWithCategory);
+
+// GET all sold items
+router.get('/sold', getSoldItems);
 
 // POST an item
 router.post('/public', authenticate, async (req, res) => {
