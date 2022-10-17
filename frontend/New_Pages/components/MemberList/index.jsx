@@ -6,35 +6,12 @@ import { useParams } from "react-router-dom";
 const MemberList = ({data}) => {
 
 
-    {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-    const {groupId} = useParams()
-    //const thisProduct = posts.find(prod => prod.id == productId)
-    {/*degub log here */}
-    console.log(groupId);
-
-    {/*fetch item data*/}
-    
-    const [members, setMembers] = useState([]);
-
-
-    const fetchMembers = async () => {
-      const { data } = await axios.get(`/groups/${groupId}/members`);
-      setMembers(data);
-    };
-
-    console.log(members);
-
-  
-    useEffect(() => {
-      fetchMembers();
-    }, []);
 
     
-
 
 return(
     <div className="products-wrapper">  
-    {data.map((member) => {
+    {data.map((member) => {{{console.log(member);}}
       return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
@@ -56,7 +33,7 @@ return(
 				{/* member list dropdown */}
 				<div className="move-drop-btn">
 					<div class="dropdown">
-						<button class="dropbtn">Sort by: Default</button>
+						<button class="dropbtn">...</button>
 						<div class="dropdown-content">
 							<a href="#">remove member</a>
 							<a href="#">set as admin</a>       

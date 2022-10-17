@@ -29,7 +29,7 @@ const MemberListPage = () => {
   {/*fetch item data*/}
   
   const [groups, setGroups] = useState([]);
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -54,19 +54,19 @@ console.log(data);
 const indexOfLastRecord = currentPage * recordsPerPage;
 const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
 //const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-const currentRecords = ["aaa"];
+const currentRecords = ["aaa"]; //!need fix
 const nPages = Math.ceil(data.length / recordsPerPage)
 
+const fetchGroups = async () => {
+  const { data } = await axios.get(`/groups/${groupId}/members`);
+  setGroups(data);
+};
 
-  const fetchGroups = async () => {
-    const { data } = await axios.get(`/groups/${groupId}/members`);
-    setGroups(data);
-  };
 
+useEffect(() => {
+  fetchGroups();
+}, []);
 
-  useEffect(() => {
-    fetchGroups();
-  }, []);
 
   {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
   var coookie = new Cookie();
@@ -86,6 +86,36 @@ const nPages = Math.ceil(data.length / recordsPerPage)
   useEffect(() => {
     fetchData();
   }, []);
+
+   // log OUT HERE
+   const handleLogOut = async () => {
+    await axios.put("/logout", {} ,{withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(response => {
+      if (response.status === 200) {
+        location.pathname='/login-page';
+      }
+    })
+    .catch(error => {
+      console.log("Error signing out", error);
+    });
+  };
+
+  //search
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if (searchInput !== '') {
+        const filteredData = data.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setFilteredResults(filteredData)
+    }
+    else{
+        setFilteredResults(data)
+    }
+}
+
 return (
     <div className="parent" >
      {/* top nav bar*/}
@@ -99,7 +129,7 @@ return (
       <div class="nav-login">
       {/* search bar*/}
       {/* need to add logout btn, rn just redirects without sign out*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+      <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
       <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
       <a href="/checkout-page"> Cart</a>
    
@@ -116,7 +146,7 @@ return (
     <div className="number-listings"> {data.length} members</div>
     {/* search member button (need fix)*/} 
     <div className = "search-member">
-        <input type="text"placeholder="Search Member.."> 
+        <input type="text"placeholder="Search Member.." onChange={(e) => searchItems(e.target.value)}> 
             </input>
     </div>
     
@@ -133,6 +163,8 @@ return (
     <div className="wrapper" >
         <div class="row2">
           <div class="column">
+            {/* {searchInput.length > 1 ?
+            (filteredResults.map((item) => {return }))} */}
           <MemberList data={currentRecords}/>
           <PageNext
                 nPages={nPages}
