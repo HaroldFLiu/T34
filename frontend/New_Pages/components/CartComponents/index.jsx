@@ -8,6 +8,7 @@ const CartComponents = () => {
 
     const [posts, setPosts] = useState([]);
     const [total, setTotal] = useState([]);
+    const [items, setItems] = useState([]);
     var coookie = new Cookie();
 
     // Define the function that fetches the data from API 
@@ -20,9 +21,17 @@ const CartComponents = () => {
       let res = await axios.get("/cart/"+userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
       let items = res.data.items;
       let subtotal = res.data.subtotal;
+      console.log(res);
       setPosts(items);
       setTotal(subtotal);
-      //console.log(items);
+      var iteminfo = []
+      items.forEach( async element => {
+        let { data } = await axios.get(`/public/item/${element}`);
+        iteminfo.push(data);
+      });
+      setItems(iteminfo);
+      console.log(iteminfo);
+
     };
   
     // Trigger the fetchData after the initial render by using the useEffect hook
@@ -33,8 +42,8 @@ const CartComponents = () => {
 
   return (
   <div className="parent" >
-    {posts.map((cart) => {
-      
+    {items.forEach((item) => {
+
     {/* products display*/} 
     <div class="checkout-main">
          {/* items showcase here for checkout*/}
@@ -44,11 +53,11 @@ const CartComponents = () => {
             <div class="row-check">
               <div class="column-check">
                 <div class="card-check">
-                  <div className="img-wrap-check"> <img src={logo} className="logo-position"></img> </div>
+                  <div className="img-wrap-check"> <img src={item.image_urls} className="logo-position"></img> </div>
                   <div className="check-texts">
-                    {cart.name}
+                    {item.name} 
                     <br/>
-                    <b> {cart.price} </b>
+                    <b> {item.price} </b>
                 </div>  
                 <button className="check-remove-btn"> Remove</button>
                 </div>
@@ -57,9 +66,11 @@ const CartComponents = () => {
             </div>
 
         </div>
+        {/*
         <div>
-          {posts}
+          {item}
         </div>
+    */}
 
         </div>
     
