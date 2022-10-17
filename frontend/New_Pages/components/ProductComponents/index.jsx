@@ -21,12 +21,12 @@ return(
             <div className="img-wrap"> 
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
-      
-            </div>
+            </div></Link>
              {/* wishlist button */}
              <div class="wishlist">
               <button> wishlist </button>
             </div>
+            <Link to={`/product-page/${item._id}`}>
             <div className="content-posts">
             <p class="price"> ${item.price}</p>
           </div>

@@ -5,18 +5,10 @@ import {Link} from "react-router-dom"
 
 const WishlistComponent = ({data}) => {
 
-// /public/:item_id delete item here
 
-// find item_id
-// delete request here
-// below do on-click btn --> delete request 
-
-// need to get the user id here as well
-//const firstElement = (arr ?? [])[0];
-const undef = undefined;
 return(
     <div className="products-wrapper">  
-    {[data].map((item) => {
+    {data.map((item) => {
       return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
@@ -27,7 +19,7 @@ return(
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
             <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
-             <img src={logo} className="logo-position">
+             <img src={item.image_urls[0]} className="logo-position">
               </img> 
       
             </div>
