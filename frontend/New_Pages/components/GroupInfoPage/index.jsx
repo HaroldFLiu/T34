@@ -9,6 +9,7 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent";
 import Cookie from 'universal-cookie';
 import {Link} from "react-router-dom";
+import ProductComponents from "../ProductComponents";
 
 const GroupInfoPage = () => {
   const [group, setGroup] = useState({});
@@ -87,7 +88,8 @@ const GroupInfoPage = () => {
 
     <div className="popup-box">
       <div className="box">
-      <a href="/group-page"> <span className="close-icon"> x</span> </a>
+     { /*<a href="/group-page"> <span className="close-icon"> x</span> </a>*/}
+    
        { <div className="square-popup">
           <img src={group.icon_url} className="popup-img"></img> 
           
