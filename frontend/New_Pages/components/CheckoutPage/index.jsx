@@ -6,7 +6,9 @@ import "./CheckoutPage.css";
 import CartComponents from "../CartComponents"
 import NavBar from "../NavBarComponent"
 import { useParams } from "react-router-dom";
+import Cookies from 'universal-cookie';
 
+const coookie = new Cookies();
 const CheckoutPage = () => {
   const [items, setItems] = useState([]);
   const [cart, setCart] = useState({});
@@ -28,6 +30,13 @@ const CheckoutPage = () => {
     })
   };
 
+  const checkoutCart = async () => {
+    await axios.patch("/cart/checkout/"+userId, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).catch(error => {
+      console.log("Error updating cart", error);
+    });
+  };
+
+    
   // Trigger the fetchData after the initial render by using the useEffect hook
   useEffect(() => {
     fetchData();
@@ -62,7 +71,7 @@ const CheckoutPage = () => {
           <b>TOTAL</b>
           <div className="payment-detail-text">${cart.subtotal}</div> 
           <br/>
-          <button className="checkout-btn"> <b> CHECKOUT</b></button>
+          <button className="checkout-btn" onClick={() => checkoutCart()}> <b> CHECKOUT</b></button>
         </div>
       </div> 
       <CartComponents data={items}/>

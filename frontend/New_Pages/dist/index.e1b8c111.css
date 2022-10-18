@@ -12901,6 +12901,7 @@ body {
 }
 
 .checkout-items-card {
+  height: 300px;
   margin-left: 5%;
 }
 
@@ -12923,12 +12924,14 @@ body {
 }
 
 .card-check {
-  width: max-content;
-  width: 150%;
+  max-width: 700px;
+  width: 600px;
   text-align: center;
   white-space: initial;
   border: thin solid #000;
   margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
   font-family: Tienne, sans-serif;
   display: inline-block;
   overflow: hidden;
@@ -12958,7 +12961,8 @@ body {
 .check-remove-btn {
   float: right;
   width: 20%;
-  margin-top: 25%;
+  border-radius: 12px;
+  margin-top: 15%;
   margin-right: 3%;
 }
 

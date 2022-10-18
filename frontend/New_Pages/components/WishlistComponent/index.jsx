@@ -2,9 +2,26 @@ import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
+import Cookies from 'universal-cookie';
 
+const coookie = new Cookies();
 const WishlistComponent = ({data}) => {
+
+  /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+
+  // /favourites/:userId/remove/:itemId
+/* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+async function removeWishlist(item_id) {
+  const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+  console.log(server_res);
+  const user = server_res.data;
+  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+    window.location.reload()
+  );
   
+};
+  
+
 return(
     <div className="products-wrapper">  
     {data.map((item) => {
@@ -29,7 +46,7 @@ return(
             <div className="item-cart">
             <h3>{item.name}</h3>
             
-            <a href="#"> <p><button>Remove </button></p></a>
+            <a href="#"> <p><button  onClick={() => removeWishlist(item._id)}>Remove from Wishlist</button></p></a>
         
             {/* use this to link to inidivdual product info*/}
             </div>

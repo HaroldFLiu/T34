@@ -19,10 +19,10 @@ router.get('/cart/:userId', getCart);
 //router.post('/:userId', createCart);
 
 // ADD to cart
-router.patch('/cart/add/:userId/:itemId', addToCart);
+router.patch('/cart/:userId/add/:itemId', addToCart);
 
 // DELETE item from cart
-router.patch('/cart/remove/:userId//:itemId', deleteFromCart);
+router.patch('/cart/remove/:userId/:itemId', deleteFromCart);
 
 // CHECKOUT a cart 
 router.patch('/cart/checkout/:userId/', checkoutCart)

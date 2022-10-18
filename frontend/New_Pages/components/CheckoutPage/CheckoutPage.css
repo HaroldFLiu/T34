@@ -21,6 +21,7 @@
 /* space within checkout page that can be used (6/10 SHLD DELETE THIS) */
 .checkout-items-card{
     margin-left: 5%;
+    height: 300px;
 }
 
 /* item card for checkout */
@@ -48,8 +49,8 @@
   
   .card-check {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: max-content;
-    width: 150%;
+    max-width: 700px;
+    width: 600px;
     margin: auto;
     text-align: center;
     font-family: 'Tienne', sans-serif;
@@ -58,6 +59,8 @@
     display: inline-block;
     overflow: hidden;
     white-space: initial;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
   }
   
@@ -88,12 +91,11 @@
 
   /* remove item button */
   .check-remove-btn{
-    margin-top: 25%;
+    margin-top: 15%;
     margin-right: 3%;
     float: right;
     width: 20%;
-
-
+    border-radius: 12px;
   }
 
   /* price inside display card */

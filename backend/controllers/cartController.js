@@ -106,19 +106,20 @@ const checkoutCart = async (req, res) => {
     
 }
 const deleteFromCart = async (req, res) => {
-    const { cartId } = req.params;
-    const { itemId } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
+    const { userId,itemId } = req.params;
+    //const { itemId } = req.body;
+    //console.log(itemId);
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
     if (!mongoose.Types.ObjectId.isValid(itemId)) {
         return res.status(404).json({error: 'Item does not exist'});
     }
-    const cart = await cartService.deleteItem(cartId, itemId);
+    const cart = await cartService.deleteItem(userId, itemId);
     if (!cart) {
         return res.status(404).json({error: 'Failed to delete item'});
     }
-    //res.status(200).json(cart);
+    res.status(200).json(cart);
 }
 
 const deleteAllFromCart = async (req, res) => {
