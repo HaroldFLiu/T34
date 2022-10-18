@@ -55,8 +55,8 @@ const getGroup = async (req, res) => {
 }
 
 const getGroupMembers = async (req, res) => {
-    const { group_id } = req.params;
-    const group = await groupService.readById(group_id);
+    const { groupId } = req.params;
+    const group = await groupService.readById(groupId);
 
     if (!group) {
         return res.status(404).json({error: 'No group with that ID'});
@@ -75,8 +75,14 @@ const getGroupMembers = async (req, res) => {
         const user = await userService.readById(userId);
         groupAdmins.push(user);
     }
+    
+    const data = {
+        members: groupMembers, 
+        admins: groupAdmins
+    }
 
-    res.status(200).json({members: groupMembers, admins: groupAdmins});
+    console.log(data);
+    res.status(200).json(data);
 }
 
 const getGroupItems = async (req, res) => {

@@ -23,7 +23,7 @@ router.get('/groups', getGroups);
 router.get('/groups/group/:group_id', getGroup, getGroupItems);
 
 // GET group members
-router.get('/groups/members/:group_id', getGroupMembers);
+router.get('/groups/members/:groupId', getGroupMembers);
 
 // GET a user's groups
 router.get('/groups/user/:user_id', getGroupsByUser);
