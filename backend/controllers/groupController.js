@@ -88,14 +88,14 @@ const getGroupMembers = async (req, res) => {
 }
 
 const getGroupItems = async (req, res) => {
-    const { group_id } = req.params;
+    const { groupId } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(group_id)) {
+    if (!mongoose.Types.ObjectId.isValid(groupId)) {
         return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const items = await itemService.readByGroup(group_id);
-
+    const items = await itemService.readByGroup(groupId);
+    console.log(items);
     if (!items) {
         return res.status(404).json({error: 'Group items do not exist'});
     }

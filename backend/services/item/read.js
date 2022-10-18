@@ -50,7 +50,7 @@ const readAllSold = async () => {
 const readPublicItems = async() => {
   const items = await Item.find();
 
-  const filtered = items.filter((x) => x.public_visibility == true);
+  const filtered = items.filter((x) => ((x.public_visibility == true) && (x.sold == false)));
 
   if (!filtered) {
     console.log(`No public items`);
@@ -61,11 +61,14 @@ const readPublicItems = async() => {
 
 const readByGroup = async (groupId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.group_ids.includes(groupId));
+  const filtered = items.filter((x) => 
+    x.group_ids.includes(groupId) == true
+  );
 
   if (!filtered) {
     console.log(`No items belonging to group with ID: ${groupId}`);
   }
+  console.log(filtered);
   
   return filtered;
 };

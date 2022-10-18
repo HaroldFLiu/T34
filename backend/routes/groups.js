@@ -22,7 +22,10 @@ const router = express.Router();
 router.get('/groups', getGroups);
 
 // GET a group
-router.get('/groups/group/:groupId', getGroup, getGroupItems);
+router.get('/groups/group/:groupId', getGroup);
+
+// GET a group's items
+router.get('/groups/items/:groupId', getGroupItems);
 
 // GET group members
 router.get('/groups/members/:groupId', getGroupMembers);
