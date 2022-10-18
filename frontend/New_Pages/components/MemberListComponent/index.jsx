@@ -1,5 +1,3 @@
-
-import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
@@ -17,7 +15,8 @@ return(
           <div class="card">
             &nbsp;
 			<div className="item-cart">
-				<h5>{member.first_name}</h5>
+				<h5>{member.first_name} {member.last_name}</h5>
+   
 				{/* member list dropdown */}
 				<div className="move-drop-btn">
 					<div class="dropdown">

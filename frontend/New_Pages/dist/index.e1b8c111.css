@@ -13166,9 +13166,30 @@ body {
 
 .search-member {
   float: right;
-  margin-top: -30px;
-  margin-right: 100px;
+  margin-top: -6px;
+  margin-right: 3%;
   font-size: 20px;
+}
+
+.square-pic-mem {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.left-box-mem {
+  max-width: 500px;
+  max-height: 500px;
+  height: 200px;
+  width: 200px;
+  float: left;
+  border: thin solid;
+  display: flex;
+}
+
+.shift-title {
+  margin-left: 13%;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
