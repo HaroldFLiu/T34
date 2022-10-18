@@ -2,7 +2,7 @@ import React, {useEffect, useState}from "react";
 import "./MemberListPage.css";
 import logo from "../../dist/img/t34-logo.jpg";
 import axios from "../../api/axios";
-import MemberList from "../MemberList";
+import MemberList from "../MemberListComponent";
 import { useParams } from "react-router-dom";
 import Cookie from 'universal-cookie';
 import PageNext from "../PageNextBar/PageNext";
@@ -15,6 +15,8 @@ import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
+
+
 
 const MemberListPage = () => {
   
@@ -78,21 +80,21 @@ const MemberListPage = () => {
     fetchData();
   }, []);
 
-  // //search
-  // const [searchInput, setSearchInput] = useState('');
-  // const [filteredResults, setFilteredResults] = useState([]);
-  // const searchItems = (searchValue) => {
-  //   setSearchInput(searchValue)
-  //   if (searchInput !== '') {
-  //       const filteredData = data.filter((item) => {
-  //           return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-  //       })
-  //       setFilteredResults(filteredData)
-  //   }
-  //   else{
-  //       setFilteredResults(data)
-  //   }
-  //}
+  //search
+  const [searchInput, setSearchInput] = useState('');
+  const [filteredResults, setFilteredResults] = useState([]);
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    if (searchInput !== '') {
+        const filteredData = members.filter((item) => {
+            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
+        })
+        setFilteredResults(filteredData)
+    }
+    else{
+        setFilteredResults(members)
+    }
+  }
 
 return (
     <div className="parent" >
@@ -120,10 +122,10 @@ return (
     <hr />
     {/* <div className="number-listings"> {data.length} members</div> */}
     {/* search member button (need fix)*/} 
-    {/* <div className = "search-member">
+    <div className = "search-member">
         <input type="text"placeholder="Search Member.." onChange={(e) => searchItems(e.target.value)}> 
             </input>
-    </div> */}
+    </div>
     
     <hr />
 
@@ -135,20 +137,7 @@ return (
     </div>
     
     {/* member list of the group*/}
-    <div className="wrapper" >
-        <div class="row2">
-          <div class="column">
-            {/* {searchInput.length > 1 ?
-            (filteredResults.map((item) => {return }))} */}
-          {/* <MemberList data={currentRecords}/>
-          <PageNext
-                nPages={nPages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-            /> */}
-          </div>
-        </div>
-    </div> 
+    <MemberList data={members}/>
 </div>
 
     );
