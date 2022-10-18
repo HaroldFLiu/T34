@@ -11,7 +11,7 @@ const CreateGroupPage = () => {
   const [user, setUser] = useState([]);
   const fetchData = async () => {
       const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-      const user = server_res.data;
+      const user = server_res.data.user_id;
       setUser(user);
   };
   
@@ -39,7 +39,6 @@ const CreateGroupPage = () => {
     groupDescription: "",
   });
 
-  console.log(values);
 
   const PostNewGroup =  event => {
     /* group details */
@@ -86,20 +85,20 @@ const CreateGroupPage = () => {
         .then(function (res2) {
           if (res2.status=="200") {
             console.log('group details successful');
-            location.pathname='/group-page';
+            location.pathname=`/my-groups-page/${user}`;
           } else {
             console.log("group posting went wrong");
           }
         })
         .catch(function (error) {
-            console.log(error);
+          alert(error);
         });
       } else {
-        console.log("group image posting went wrong");
+        alert("Group image posting went wrong");
       }
     })
     .catch(function (error) {
-      console.log(error);
+      alert("Group image posting went wrong. Only accepts .jpeg, .jpg, .png");
     });
   }
 
