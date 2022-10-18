@@ -181,7 +181,7 @@ const carts = [
 
 const items = [
     {
-        _id: "63497baa9500a07fb7b96526",
+        _id: "634e8524eea149de8d36f942",
         name: "Chair",
         description: "In good condition",
         price: 30000,
@@ -193,7 +193,7 @@ const items = [
         sold: false,
     },
     {
-        _id: "634c18a7a6b466526b780d71",
+        _id: "634e8524eea149de8d36f945",
         name: "Another Chair",
         description: "Soft but sturdy",
         price: 500,
@@ -205,7 +205,7 @@ const items = [
         sold: false,
     },
     {
-        _id: "63497baa9500a07fb7b9652c",
+        _id: "634e8524eea149de8d36f948",
         name: "Violin",
         description: "Plays well",
         price: 100,
@@ -307,6 +307,7 @@ async function seed() {
         }
     }
 
+    /*
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
@@ -318,7 +319,7 @@ async function seed() {
             console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
-    } 
+    } */
 
     // delete other categories
     const allCategories = await categoryService.readAll();
@@ -333,6 +334,7 @@ async function seed() {
         }
     }
 
+    /*
     // delete other groups
     const allGroups = await groupService.readAll();
     const seededGroups = groups.map((obj) => JSON.stringify(obj._id));
@@ -357,7 +359,7 @@ async function seed() {
             console.log("user should not be in DB");
             await userService.deleteById(user._id);
         }
-    }
+    }*/
 
     mongoose.disconnect();
 
