@@ -15,7 +15,9 @@ const CartComponents = ({data}) => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     console.log(server_res);
     const user = server_res.data;
-    var res = await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+      window.location.reload()
+    );
 
     };
 
