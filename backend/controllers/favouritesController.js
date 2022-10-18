@@ -32,7 +32,7 @@ const getFavourite = async (req, res) => {
 
     for (const itemId of favourite.items) {
         const item = await itemService.readById(itemId);
-        if (item) {
+        if (item.sold == false) {
             items.push(item);
         }
     }
