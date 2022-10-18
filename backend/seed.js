@@ -307,7 +307,7 @@ async function seed() {
         }
     }
 
-    /*
+    
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
@@ -319,7 +319,7 @@ async function seed() {
             console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
-    } */
+    } 
 
     // delete other categories
     const allCategories = await categoryService.readAll();
@@ -334,7 +334,7 @@ async function seed() {
         }
     }
 
-    /*
+    
     // delete other groups
     const allGroups = await groupService.readAll();
     const seededGroups = groups.map((obj) => JSON.stringify(obj._id));
@@ -348,18 +348,18 @@ async function seed() {
         }
     }
 
-    // delete other users
-    const allUsers = await userService.readAll();
-    const seededUsers = users.map((obj) => JSON.stringify(obj._id));
-    //console.log(seededItems);
+    // // delete other users
+    // const allUsers = await userService.readAll();
+    // const seededUsers = users.map((obj) => JSON.stringify(obj._id));
+    // //console.log(seededItems);
 
-    for (const user of allUsers) {
-        //console.log(JSON.stringify(item._id));
-        if (!seededUsers.includes(JSON.stringify(user._id))) {
-            console.log("user should not be in DB");
-            await userService.deleteById(user._id);
-        }
-    }*/
+    // for (const user of allUsers) {
+    //     //console.log(JSON.stringify(item._id));
+    //     if (!seededUsers.includes(JSON.stringify(user._id))) {
+    //         console.log("user should not be in DB");
+    //         await userService.deleteById(user._id);
+    //     }
+    // }
 
     mongoose.disconnect();
 

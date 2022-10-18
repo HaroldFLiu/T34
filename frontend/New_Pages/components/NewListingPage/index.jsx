@@ -3,10 +3,7 @@ import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import NavBar from "../NavBarComponent"
-import Cookies from 'universal-cookie';
-
-const coookie = new Cookies();
-
+import Cookie from 'universal-cookie';
 
 const NewListingPage = () => {
   const [firstRender, setFirstRender] = useState(false);
@@ -18,6 +15,19 @@ const NewListingPage = () => {
     itemGroup: "",
     itemVisbility: "",
   });
+
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const user = server_res.data.user_id;
+      setUser(user);
+  };
+  
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+      fetchData();
+  }, []);
 
   {/* stuff for image upload*/} 
 
@@ -131,7 +141,7 @@ const NewListingPage = () => {
   {/* options for group dropdown menu */}
   const [groups, setGroups] = useState('');
   const getGroups = () => {
-    axios.get('/groups')
+    axios.get(`/groups/user/${user}`)
     .then(res => {
       setGroups(res.data);
     }).catch(err => {
