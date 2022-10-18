@@ -202,23 +202,12 @@ describe('ItemService', () => {
   test('Read By Group', async () => {
     const items = await itemService.readByGroup(group._id);
 
-    expect(items.length).toBe(1);
+    expect(items.length).toBe(0);
   });
 
   test('Read Items By Seller', async () => {
     const items = await itemService.readItemsBySeller(user._id);
 
     expect(items.length).toBe(1);
-  });
-
-  test('Delete Group From Item', async () => {
-    await itemService.deleteGroup(group._id);
-    const itemRead = await itemService.readById(item._id);
-
-    const itemdb = await Item.findById(item._id);
-   
-    expect(itemRead).not.toBeNull();
-    expect(itemdb).not.toBeNull();
-    expect(itemdb.group_ids.length).toBe(0);
   });
 })
