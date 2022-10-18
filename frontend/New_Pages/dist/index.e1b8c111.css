@@ -12901,6 +12901,7 @@ body {
 }
 
 .checkout-items-card {
+  height: 300px;
   margin-left: 5%;
 }
 
@@ -12924,7 +12925,7 @@ body {
 
 .card-check {
   width: max-content;
-  width: 150%;
+  max-width: 250%;
   text-align: center;
   white-space: initial;
   border: thin solid #000;
@@ -12953,6 +12954,7 @@ body {
 
 .img-wrap-check {
   float: left;
+  border: thin solid;
 }
 
 .check-remove-btn {

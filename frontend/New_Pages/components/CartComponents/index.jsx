@@ -4,6 +4,7 @@ import axios from "../../api/axios";
 import Cookie from 'universal-cookie';
 /* icon imports */
 // need to get -> userId -> cartId -> items (itemId) : then within can get details
+
 const CartComponents = ({data}) => {
   //console.log("cart component");
   //console.log(data);

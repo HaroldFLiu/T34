@@ -21,6 +21,7 @@
 /* space within checkout page that can be used (6/10 SHLD DELETE THIS) */
 .checkout-items-card{
     margin-left: 5%;
+    height: 300px;
 }
 
 /* item card for checkout */
@@ -49,7 +50,7 @@
   .card-check {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     width: max-content;
-    width: 150%;
+    max-width: 250%;
     margin: auto;
     text-align: center;
     font-family: 'Tienne', sans-serif;
@@ -84,6 +85,7 @@
   /* img wrap for checkout display card */
   .img-wrap-check{
     float: left;
+    border: thin solid;
   }
 
   /* remove item button */
