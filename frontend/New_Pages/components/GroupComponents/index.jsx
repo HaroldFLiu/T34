@@ -1,28 +1,13 @@
-
 import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
-import axios from "../../api/axios";
+import {Link} from "react-router-dom";
 
-function GroupComponents() {
-
-
-    const [posts, setPosts] = useState([]);
-
-    // Define the function that fetches the data from API
-    const fetchData = async () => {
-      const { data } = await axios.get("/groups");
-      setPosts(data);
-    };
-  
-    // Trigger the fetchData after the initial render by using the useEffect hook
-    useEffect(() => {
-      fetchData();
-    }, []);
+const GroupComponents = ({data}) => {
 
 
 return(
     <div className="products-wrapper">  
-    {posts.map((post) => {
+    {data.map((group) => {
       return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
@@ -30,27 +15,27 @@ return(
         <div class="row2">
           <div class="column">
           <div class="card">
-            {/*  add href to group info page*/}
-            <a href="#" >
+            {/*  add href to group info page LINK LATER groupId*/}
+            
+            <Link to={`/group-info-page/${group._id}`}>
             <div className="img-wrap"> 
-              <img src={logo} className="logo-position">
+              <img src={group.icon_url} className="logo-position">
               </img> 
             </div>
             {/* spacer instead of wishlist btn*/}
             &nbsp;
                 <div className="item-cart">
-                    <h5>{post.name}</h5>
-                    <p class="members-text">31k Members</p>
+                    <h5>{group.name}</h5>
+                    <p class="members-text">{group.members.length} Members</p>
                     <p><button>Join Group</button></p>
                 </div>
-            </a>
+            </Link>
+
           </div>
           </div>   
 
         </div>
         </div>
-    
-    
         </div>  
       )
     })}
@@ -60,5 +45,4 @@ return(
       
 );
 }
-
 export default GroupComponents;

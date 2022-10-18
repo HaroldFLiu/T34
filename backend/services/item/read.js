@@ -40,6 +40,13 @@ const readAll = async () => {
   return Item.find();
 };
 
+const readAllSold = async () => {
+  const items = await Item.find();
+
+  const filtered = items.filter((x) => x.sold == true);
+  return filtered;
+};
+
 const readPublicItems = async() => {
   const items = await Item.find();
 
@@ -65,7 +72,7 @@ const readByGroup = async (groupId) => {
 
 const readItemsBySeller = async (sellerId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
+  const filtered = items.filter((x) => JSON.stringify(x.seller_id) == JSON.stringify(sellerId));
 
   if (!filtered) {
     console.log(`No items belonging to seller with ID: ${sellerId}`);
@@ -75,4 +82,4 @@ const readItemsBySeller = async (sellerId) => {
 }
 
 module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems, readByGroup, readItemsBySeller };
+  readAll, readPublicItems, readByGroup, readItemsBySeller, readAllSold };

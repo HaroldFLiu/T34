@@ -1,103 +1,73 @@
-import React from "react";
-import logo from "../../dist/img/t34-logo.jpg";
+import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
+import Cookie from 'universal-cookie';
+import { useParams } from "react-router-dom";
+import ProductComponents from "../ProductComponents";
+import PageNext from "../PageNextBar/PageNext";
+import NavBar from "../NavBarComponent";
+import SortBy from "../SortByComponent";
+import WishlistComponent from "../WishlistComponent";
 
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
+const SellPage = () => {
+  // To hold the actual data
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
 
-/* category icons */
-import {FaCar} from 'react-icons/fa';
-import {FaTshirt} from 'react-icons/fa';
-import {BsPlugFill} from 'react-icons/bs';
-import {MdFamilyRestroom} from 'react-icons/md';
-import {IoIosLeaf} from 'react-icons/io';
-import {FaChessKnight} from 'react-icons/fa';
-import {GiSofa} from 'react-icons/gi';
-import {FaHammer} from 'react-icons/fa';
-import {FaGuitar} from 'react-icons/fa';
-import {FaPenFancy} from 'react-icons/fa';
-import {FaDog} from 'react-icons/fa';
-import {MdSportsFootball} from 'react-icons/md';
-import {MdSmartToy} from 'react-icons/md';
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
 
-const WishlistPage = () => {
+  const {userId} = useParams()
+  //console.log(sellerId);
 
-  const [post, setPost] = React.useState(null);
+  const queryParams = new URLSearchParams(window.location.search);
+  const sortBy = queryParams.get("sortBy");
+  //console.log(categoryId);
+  
+  useEffect(() => {
+    axios.get(`/favourites/${userId}`)
+      .then(res => {
+        const tmp = res.data;
+        //setData(res.data);
+        if (sortBy == 'oldest') {
+          setData(tmp);
+          //console.log('newest');
+        } else if (sortBy == 'desc') {
+          setData(tmp.sort((a, b) => b.price - a.price));
+          //console.log('desc');
+        } else if (sortBy == 'asc') {
+          setData(tmp.sort((a, b) => a.price - b.price));
+          //console.log('asc');
+        } else {
+          setData(tmp.reverse());
+        }
+        setLoading(false);
+      })
+      .catch(() => {
+          alert('There are no items in your wishlist')
+      })
+      //.then(fetchData())
+  }, [])
 
-  React.useEffect(() => {
-    axios.get("/item").then((response) => {
-      setPost(response.data);
-    });
-  }, []);
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(data.length / recordsPerPage)
 
-
+  console.log(data);
   return (
   <div className="parent" >
      {/* top nav bar*/}
-     <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a class="active" href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
+    <NavBar />
 
-
-    {/* side bar*/} 
-   
-    <div class="sidenav">
-    <div className="header">
-    Categories
-    </div>
-    <a href="#"> <FaCar className="icon"/> Vechicles</a>
-    <a href="#"> <FaTshirt className="icon"/> Apparel</a>
-    <a href="#"> <BsPlugFill className="icon"/> Electronics</a>
-    <a href="#"> <MdFamilyRestroom className="icon"/> Family</a>
-    <a href="#">  <IoIosLeaf className="icon"/> Garden & Outdoor</a>
-    <a href="#"> <FaChessKnight className="icon"/> Hobbies</a>
-    <a href="#"><GiSofa className="icon"/>  Home Goods</a>
-    <a href="#"> <FaHammer className="icon-flipped"/> Home Improvement &nbsp;&nbsp;&nbsp; Supplies</a>
-    <a href="#"> <FaGuitar className="icon-flipped"/> Musical Instruments</a>
-    <a href="#"> <FaPenFancy className="icon"/> Office Supplies</a>
-    <a href="#"> <FaDog className="icon-flipped"/> Pet Supplies</a>
-    <a href="#"> <MdSportsFootball className="icon"/> Sporting Goods</a>
-    <a href="#"> <MdSmartToy className="icon"/> Toys & Games</a>
-    <a href="/new-listings-page" >
-      <button class="btn btn-success"> Create New Listing</button>
-    </a>
-  </div>
-  
     {/* products display*/} 
     <div class="main">
-      <div className="home-title"> Wishlisted Items:</div>
+      <div className="home-title"> My Wishlist:</div>
       <hr />
-      <div className="number-listings"> 1234 listings 
+      <div className="number-listings"> {data.length} listings 
       
           {/* sort by button drop down*/} 
-    <div className="move-drop-btn">
-      <div class="dropdown">
-                <button class="dropbtn">Sort by: Default</button>
-                <div class="dropdown-content">
-                    <a href="#">Price: High-Low</a>
-                    <a href="#">Price: Low-High</a>       
-                </div>
-        </div>
-      </div> 
+      <SortBy />
       </div> 
       <hr />
     <div className="products-wrapper">  
@@ -105,149 +75,21 @@ const WishlistPage = () => {
     <div className="wrapper" >
     <div class="row2">
       <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
+      <WishlistComponent data={currentRecords}/> 
+          <PageNext
+                nPages={nPages}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
       </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-        {/* spacer instead of wishlist btn*/}
-        &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
+
       
     </div>
     </div>
 
-    {/* products display 2nd row*/} 
-    <div className="wrapper" >
-    <div class="row2">
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
-      <div class="column">
-      <div class="card">
-        <div className="img-wrap"> <img src={logo} className="logo-position"></img> </div>
-         {/* spacer instead of wishlist btn*/}
-         &nbsp;
-        <p class="price">$19.95</p>
-        <div className="item-cart">
-        <h3>Item Name</h3>
-        <p><button>Remove</button></p>
-        </div>
-      </div>
-      </div>
+
     </div>
-   
-    </div>
-    </div>
-    {/* next page bar here*/}
-    <div class="center-next">
-      <div class="pagination">
-      <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#" class="active">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
-      <a href="#">&raquo;</a>
-    </div>
-  </div>
+
     </div> 
 
 
@@ -256,4 +98,4 @@ const WishlistPage = () => {
   );
 }
 
-export default WishlistPage;
+export default SellPage;

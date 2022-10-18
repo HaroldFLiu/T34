@@ -29,12 +29,14 @@ describe('ItemService', () => {
   let userInfo = {
     first_name: "Sue",
     last_name: "Green",
-    email: "sfwfwef3@spacewax.com",
+    email: "1@spacewax.com",
     password: "magna",
   }
 
   let group = null;
   let groupInfo = null;
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
@@ -100,6 +102,7 @@ describe('ItemService', () => {
       name: 'Table',
       description: 'This is a good table.',
       price: 150,
+      sold: true,
     }
 
     const updatedItem = await itemService.updateById(item._id, itemUpdateInfo1);
@@ -115,6 +118,13 @@ describe('ItemService', () => {
     expect(updatedItemdb.group_ids.length).toStrictEqual(itemInfo.group_ids.length);
     expect(updatedItemdb.public_visibility).toBe(itemInfo.public_visibility);
     expect(updatedItemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+    expect(updatedItemdb.sold).toBe(itemUpdateInfo1.sold);
+  });
+
+  test('Get Sold Items', async () => {
+    const sold = await itemService.readAllSold();
+
+    expect(sold.length).toBe(1);
   });
 
   test('Add A Category', async () => {

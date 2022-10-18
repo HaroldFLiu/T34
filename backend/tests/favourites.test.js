@@ -29,7 +29,7 @@ describe('FavouritesService', () => {
   let user1Info = {
     first_name: "Sue",
     last_name: "Green",
-    email: "34324234@spacewax.com",
+    email: "6@spacewax.com",
     password: "magna",
   }
 
@@ -37,9 +37,11 @@ describe('FavouritesService', () => {
   let user2Info = {
     first_name: "Joanna",
     last_name: "Xue",
-    email: "354234@spacewax.com",
+    email: "7@spacewax.com",
     password: "magna",
   }
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
@@ -79,58 +81,52 @@ describe('FavouritesService', () => {
   });
 
   test('Create Favourites', async () => {
-    favInfo = {
-      user: user1._id,
-    }
-    fav = await favouritesService.create(favInfo)
+    fav = await favouritesService.readByUserId(user1._id);
     const favdb = await Favourites.findById(fav._id);
 
     expect(fav).not.toBeNull();
     expect(favdb).not.toBeNull();
-    expect(favdb.user).toStrictEqual(favInfo.user);
-  
+    expect(favdb.user).toStrictEqual(user1._id);
   });
 
-  test('Read by favId', async () => {
-    await favouritesService.addItem(fav._id, item1._id, 1);
-    await favouritesService.addItem(fav._id, item2._id, 1);
+  test('Add items to favourites userID', async () => {
+    await favouritesService.addItem(user1._id, item1._id);
+    await favouritesService.addItem(user1._id, item2._id);
 
-    const favRead = await favouritesService.readById(fav._id);
-    expect(favRead).not.toBeNull();
-    expect(favRead.items.length).toBe(2);
-    
-  });
-  
-  test('Delete Favourite', async () => {
-    const deletedFavourite = await favouritesService.deleteById(fav._id);
-    expect(await Favourites.findById(fav._id)).toBeNull();
-  });
-
-  test('Add item to favourites', async () => {
-    fav = await favouritesService.create(favInfo);
-    item_ids = [item1._id];;
-    await favouritesService.addItem(fav._id, item1._id, 1);
+    const favRead = await favouritesService.readByUserId(user1._id);
     const favdb = await Favourites.findById(fav._id);
 
+    expect(favRead).not.toBeNull();
     expect(favdb).not.toBeNull();
-    expect(favdb.items).toStrictEqual(item_ids);
+    expect(favdb.items.length).toBe(2);
+  });
+  
+  test('Read by user ID', async () => {
+    const favRead = await favouritesService.readByUserId(user1._id);
+    const favdb = await Favourites.findById(favRead._id);
+
+    expect(favRead).not.toBeNull();
+    expect(favdb).not.toBeNull();
+    expect(favdb.items.length).toBe(2);
+    //expect(favdb.items.length).toBe(1);
   });
 
   test('Delete an item from favourites', async () => {
-    await favouritesService.deleteItem(fav._id, item1._id);
-    const favdb = await Favourites.findById(fav._id);
+    const favRead = await favouritesService.deleteItem(user1._id, item1._id);
+    const favdb = await Favourites.findById(favRead._id);
+
+    expect(favRead).not.toBeNull();
     expect(favdb).not.toBeNull();
-    expect(favdb.items.length).toBe(0);
+    expect(favdb.items.length).toBe(1);
   });
 
   test('Delete all items from favourites', async () => {
-    await favouritesService.addItem(fav._id, item1._id, 1);
-    await favouritesService.addItem(fav._id, item2._id, 1);
-    await favouritesService.removeAllItems(fav._id);
-    const favdb = await Favourites.findById(fav._id);
+    await favouritesService.addItem(user1._id, item1._id);
+    const favRead = await favouritesService.removeAllItems(user1._id);
+    const favdb = await Favourites.findById(favRead._id);
 
+    expect(favRead).not.toBeNull();
     expect(favdb).not.toBeNull();
     expect(favdb.items.length).toBe(0);
   });
-
 });

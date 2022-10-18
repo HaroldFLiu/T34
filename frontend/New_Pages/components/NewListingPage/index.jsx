@@ -2,19 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
-
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
+import NavBar from "../NavBarComponent"
 
 const NewListingPage = () => {
-  const CLOUDINARY_URL='https://api.cloudinary.com/v1_1/dvudxm6kj/image/upload';
-  const CLOUDINARY_UPLOAD_PRESET = 'T34ITProject';
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -50,7 +40,7 @@ const NewListingPage = () => {
       category_ids: [],
       group_ids: [],
       image_urls: [],
-      cloudinary_ids: [],
+      comments: []
     }
 
     if (values.itemCategory) {
@@ -64,23 +54,29 @@ const NewListingPage = () => {
     /* image details */
     const formData = new FormData();
     formData.append('file', image.raw);
-    formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
+    //formData.append('upload_preset', CLOUDINARY_UPLOAD_PRESET)
     //console.log(formData);
 
     /* posting */
     // image upload
-    axios.post(CLOUDINARY_URL, formData)
+    axios({
+      method: 'post',
+      url: '/public/image',
+      data: formData,
+      withCredentials:true, 
+      headers: {'Authorization':coookie.get("token")},
+    })
     .then(function (res1) {
-      console.log('RES 1');
-      console.log(res1);
+      //console.log('RES 1');
+      //console.log(res1);
+      //console.log(image.raw);
 
       if (res1.status=="200") {
-        console.log('image uploaded to cloudinary');
-        props.cloudinary_ids = [res2.data.public_id];
-        props.image_urls = [res2.data.secure_url];
+        console.log('image uploaded');
+        props.image_urls = res1.data.image_urls;
         console.log(props);
 
-        axios.post('/public', props)
+        axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(function (res2) {
           if (res2.status=="200") {
             console.log('item details successful');
@@ -93,11 +89,11 @@ const NewListingPage = () => {
             console.log(error);
         });
       } else {
-        console.log("image posting to cloudinary went wrong");
+        console.log("image posting  went wrong");
       }
     })
-    .catch(function (error) {
-      console.log("Image Required");
+    .catch(() => {
+      alert('Image Required. Please fill in all fields.');
     });
   }
 
@@ -139,10 +135,24 @@ const NewListingPage = () => {
     })
   }
 
+  const [sold, setSold] = useState('');
+  const getSold = () => {
+    axios.get(`/sold`)
+    .then(res => {
+      console.log('sold');
+      setSold(res.data.length);
+      console.log(res.data.length);
+    })
+    .catch(() => {
+        alert('There was an error while retrieving the data')
+    })
+  }
+
   useEffect(() => {
     if (!firstRender) {
       getGroups();
       getCatergories();
+      getSold();
       setFirstRender(true);
     }
   }, [firstRender]);
@@ -182,36 +192,24 @@ const NewListingPage = () => {
   return (
     <div className="parent" >
       {/* top nav bar*/}
-    <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-          <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-          <a class="active" href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-          <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-          <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-          <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-        <div class="nav-login">
-          {/* search bar*/}
-          <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-          <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-        
-          <input type="text"placeholder="Search.."> 
-          </input>
-        </div>
-    </div>
+    <NavBar />
         
     <div class="listings-main">
       <div className="home-title"> List an item,<a> and start selling right away!</a></div>
     </div>
     <hr />
-    <div className="number-listings"> 1234 items sold in the last 24 hours!
+    <div className="number-listings"> {sold} items sold on Market34!
     
       {/* on click to submit new listing here*/}
 
       <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
+    
     <hr />
       {/*Upload Image box and button handle uploading img*/}    
+    
     <div class="left-box">
+    <label for="item-image"> <div className="item-name">Item Image*: </div></label>
         <div className="square-pic">  
         <label htmlFor="upload-button">
 
@@ -241,15 +239,15 @@ const NewListingPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name: </div> </div></label>
+            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name*: </div> </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
               />
-            <label for="enter-price"><div className="item-name"> Price: </div></label>
+            <label for="enter-price"><div className="item-name"> Price*: </div></label>
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
             />
-            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description:</div></div></label>
+            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description*:</div></div></label>
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
@@ -268,7 +266,7 @@ const NewListingPage = () => {
 
           {/* select on change for dropdown button*/}
 
-          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility:</div></div></label>
+          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility*:</div></div></label>
           <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>

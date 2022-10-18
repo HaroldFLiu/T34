@@ -17,6 +17,25 @@ const readById = async (userId) => {
   return user;
 };
 
+const readAll = async () => {
+  return await User.find();
+}
+
+const readByEmail = async (email) => {
+  const users = await readAll();
+
+  const user = users.filter((x) => (x.email == email))[0];
+  console.log(user);
+
+  if (isNilOrEmpty(user)) {
+    console.log(`Cannot find user with email: ${email}`);
+  }
+
+  return user;
+};
+
 module.exports = {
     readById,
+    readAll,
+    readByEmail,
 }
