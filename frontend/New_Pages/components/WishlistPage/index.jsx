@@ -7,7 +7,7 @@ import PageNext from "../PageNextBar/PageNext";
 import NavBar from "../NavBarComponent";
 import SortBy from "../SortByComponent";
 import WishlistComponent from "../WishlistComponent";
-
+import "./Wishlist.css"
 const SellPage = () => {
   // To hold the actual data
   const [data, setData] = useState([])
@@ -61,7 +61,7 @@ const SellPage = () => {
     <NavBar />
 
     {/* products display*/} 
-    <div class="main">
+    <div class="main-wishlist">
       <div className="home-title"> My Wishlist:</div>
       <hr />
       <div className="number-listings"> {data.length} listings 

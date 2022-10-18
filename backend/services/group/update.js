@@ -15,7 +15,9 @@ const updateById = async (groupId, props) => {
 const joinGroup = async (groupId, userId) => {
   const group = await Group.findById(groupId);
 
-  group.members.push(userId);
+  if (!group.members.includes(userId)) {
+    group.members.push(userId);
+  }
 
   await group.save();
 
@@ -25,11 +27,13 @@ const joinGroup = async (groupId, userId) => {
 const leaveGroup = async (groupId, userId) => {
   const group = await Group.findById(groupId);
 
-  const index = group.members.indexOf(userId);
-  if (index > -1) {
-    group.members.splice(index, 1);
+  if (group.members.includes(userId)) {
+    const index = group.members.indexOf(userId);
+    if (index > -1) {
+      group.members.splice(index, 1);
+    }
   }
-
+  
   await group.save();
 
   return group;

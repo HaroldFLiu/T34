@@ -1,0 +1,27 @@
+.search-member{
+    float: right;
+    margin-right: 3%;
+    font-size: 20px;
+    margin-top: -6px;
+}
+
+.square-pic-mem{
+    max-width: fit-content;
+    max-height: fit-content;
+    
+}
+
+.left-box-mem{
+    border: solid thin;
+    max-width: 500px;
+    max-height: 500px;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    float: left;
+
+}
+
+.shift-title{
+    margin-left: 13%;
+}

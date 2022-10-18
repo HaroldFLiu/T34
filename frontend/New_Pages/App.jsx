@@ -13,8 +13,9 @@ import CreateGroupPage from "./components/CreateGroupPage"
 import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
-import GroupInfoPage from "./components/GroupPopUp";
+import GroupInfoPage from "./components/GroupInfoPage";
 import MyGroupsDisplay from "./components/MyGroupsDisplay";
+import MemberListPage from "./components/MemberListPage";
 
 function App() {
   return (
@@ -59,7 +60,9 @@ function App() {
         <Route path="/my-groups-display">
           <MyGroupsDisplay/>
         </Route>
-
+        <Route path="/member-list-page/:groupId">
+          <MemberListPage/>
+        </Route>
       </Switch>
     </Router>
   );

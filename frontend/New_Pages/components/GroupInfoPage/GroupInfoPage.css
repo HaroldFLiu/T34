@@ -122,3 +122,12 @@
   padding-right: 30px;
   text-align: center;
 }
+
+.box img {
+  width: 100%;
+  height: 100%;
+}
+
+.box1 img {
+  object-fit: cover;
+}
