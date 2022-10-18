@@ -5,7 +5,7 @@ import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import NavBar from "../NavBarComponent"
 import Cookies from 'universal-cookie';
 
-const cookies = new Cookies();
+const coookie = new Cookies();
 
 
 const NewListingPage = () => {
