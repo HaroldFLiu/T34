@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
-
+import Cookie from 'universal-cookie';
 import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const user = server_res.data;
+      setUser(user);
+  };
+  
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+      fetchData();
+  }, []);
 
   {/* stuff for image upload*/} 
 
