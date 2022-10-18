@@ -100,6 +100,7 @@ const GroupInfoPage = () => {
   //   }
   // }
   
+  // <div class="box box1"><img src="balloon.jpg" alt="a balloon"></div>
   return (
     <div className="parent" > 
     <NavBar />
@@ -108,10 +109,10 @@ const GroupInfoPage = () => {
     <div className="popup-box">
       <div className="box">
       <a href="/group-page"> <span className="close-icon"> x</span> </a>
-        <div className="square-popup">
+       { <div className="square-popup">
           <img src={group.icon_url} className="popup-img"></img> 
           
-        </div>
+        </div>}
         <div className="popup-text"> 
         {group.name}
 
