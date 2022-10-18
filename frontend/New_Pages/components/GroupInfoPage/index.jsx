@@ -88,7 +88,8 @@ const GroupInfoPage = () => {
 
     <div className="popup-box">
       <div className="box">
-      <a href="/group-page"> <span className="close-icon"> x</span> </a>
+     { /*<a href="/group-page"> <span className="close-icon"> x</span> </a>*/}
+    
        { <div className="square-popup">
           <img src={group.icon_url} className="popup-img"></img> 
           

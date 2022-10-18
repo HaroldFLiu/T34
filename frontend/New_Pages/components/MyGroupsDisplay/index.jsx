@@ -91,7 +91,11 @@ const MyGroupsDisplay = () => {
     <div className="popup-box-display">
       <div className="display-box">
         <div className="display-square-popup">
-          {/*<img src={groups.image_urls} className="popup-img"></img> */}
+          <img src={group.icon_url} className="popup-img"></img> 
+          {/* <div className="square-popup">
+          <img src={group.icon_url} className="popup-img"></img> 
+          
+        </div>*/}
         </div>
         <div className="popup-text"> 
         
