@@ -23,6 +23,8 @@ const HomePage = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
+  const searchBy = queryParams.get("searchBy")
+  console.log(searchBy);
 
   //console.log(sortBy);
 
