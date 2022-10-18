@@ -19,7 +19,7 @@ const readById = async (itemId) => {
 };
 
 const readByCategory = async (categoryId, items) => {
-  const filtered = items.filter((x) => x.category_ids.includes(categoryId));
+  const filtered = items.filter((x) => x.category_ids.includes(categoryId)  && (x.sold == false));
   
   return filtered;
 };
