@@ -7,30 +7,15 @@ import { useParams } from "react-router-dom";
 import Cookie from 'universal-cookie';
 import PageNext from "../PageNextBar/PageNext";
 import {Link} from "react-router-dom";
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
-
-
+import NavBar from "../NavBarComponent";
 
 const MemberListPage = () => {
-  
-  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
   const {groupId} = useParams()
-  //const thisProduct = posts.find(prod => prod.id == productId)
-  {/*degub log here */}
-  console.log(groupId);
 
   {/*fetch item data*/}
-  
+
   const [members, setMembers] = useState([]);
   const [admins, setAdmins] = useState([]);
-  const [data, setData] = useState([]);
   const [firstRender, setFirstRender] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -38,15 +23,14 @@ const MemberListPage = () => {
   const [recordsPerPage] = useState(10);
 
   const fetchMembers = async () => {
-    axios.get('/groups/'+groupId+'/members')
+    axios.get('/groups/members/'+groupId)
     .then(res => {
-      //console.log(res);
+      console.log(res);
       setMembers(res.data.members);
       setAdmins(res.data.admins);
+      console.log(members);
+      console.log(admins);
       setFirstRender(true);
-
-      //console.log(members);
-      //console.log(admins);
     })
     .catch((error) => {
       console.log(error);
@@ -99,22 +83,7 @@ const MemberListPage = () => {
 return (
     <div className="parent" >
      {/* top nav bar*/}
-    <div class="navbar">
-    <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-group-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      {/* need to add logout btn, rn just redirects without sign out*/}
-      <a href="/checkout-page"> Cart</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
-        
+    <NavBar />
     <div class="listings-main">
       <div className="home-title"> Members </div>
       

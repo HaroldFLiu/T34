@@ -12399,6 +12399,17 @@ textarea.form-control-lg {
   transform: scaleX(-1);
 }
 
+.navbar button {
+  color: #fff;
+  background-color: #33532c;
+  border: none;
+}
+
+.new {
+  margin-top: 35px;
+  margin-left: 35px;
+}
+
 .page-item {
   float: left;
 }
@@ -12865,8 +12876,12 @@ body {
 }
 
 .imgtest img {
-  max-width: 600px;
-  padding-left: 30%;
+  width: 500px;
+  height: 500px;
+  object-fit: contain;
+  border: thin solid;
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
 .check-header {
@@ -12886,6 +12901,7 @@ body {
 }
 
 .checkout-items-card {
+  height: 300px;
   margin-left: 5%;
 }
 
@@ -12908,12 +12924,14 @@ body {
 }
 
 .card-check {
-  width: max-content;
-  width: 150%;
+  max-width: 700px;
+  width: 600px;
   text-align: center;
   white-space: initial;
   border: thin solid #000;
   margin: auto;
+  padding-top: 1%;
+  padding-bottom: 1%;
   font-family: Tienne, sans-serif;
   display: inline-block;
   overflow: hidden;
@@ -12943,7 +12961,8 @@ body {
 .check-remove-btn {
   float: right;
   width: 20%;
-  margin-top: 25%;
+  border-radius: 12px;
+  margin-top: 15%;
   margin-right: 3%;
 }
 
@@ -13083,6 +13102,66 @@ body {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.popup-box-display {
+  width: 100%;
+  height: 100vh;
+  margin-top: 4%;
+  margin-left: 1%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.display-box {
+  width: 70%;
+  height: auto;
+  max-height: 70vh;
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.display-square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: -.5%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+}
+
+.header-popup-display button {
+  float: right;
+  margin-top: -16%;
+  font-size: 16px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.smaller {
+  text-align: left;
+  font-size: 15px;
+}
+
+.header-popup-display {
+  text-align: left;
+  margin-top: -15%;
+  margin-left: 20%;
+  font-size: 40px;
+}
+
+.component-display {
+  border: thin solid;
+  margin-top: 7%;
 }
 
 .search-member {
