@@ -10,7 +10,7 @@ const deleteById = async (groupId) => {
   await itemService.deleteGroup(groupId);
 
   const deletedGroup = await Group.findByIdAndDelete(groupId);
-  console.log(`Deleted group by ID: ${groupId}, Group: ${JSON.stringify(deletedGroup)}`);
+  //console.log(`Deleted group by ID: ${groupId}, Group: ${JSON.stringify(deletedGroup)}`);
   return deletedGroup;
 };
 

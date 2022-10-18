@@ -127,10 +127,18 @@ body {
   color: black;
 }
 
-/* to reformt img size CHANGE LATER*/
+/* to reformt img size CHANGE LATER
+
+  max-width: 500px;
+  max-height: 500px;*/
 .imgtest img{
-  padding-left: 30%;
-  max-width: 600px;
+  margin-left: 20%;
+  margin-top: 10%;
+  width: 500px;
+  height: 500px;
+
+  border: thin solid;
+  object-fit: contain;
 
 
 }

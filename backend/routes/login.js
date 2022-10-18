@@ -32,7 +32,7 @@ router.post('/login', async (req, res) => {
         });
       }
       const user = await userService.readByEmail(email);
-      console.log(user);
+      //console.log(user);
       
       if (!user) {
         throw new Error();

@@ -22,41 +22,55 @@ const { decodeBase64 } = require('bcryptjs');
 
 const users = [
     {
-        _id: "633e7c16434369b2dc9d2dab",
+        _id: "634c191d5f92d2c26cc0815b",
         first_name: "Sue",
         last_name: "Green",
         email: "test1@email.com",
         password: "test1",
     },
     {
-        _id: "633ec1b2e21aa04fcfc81ce1",
+        _id: "634c191d5f92d2c26cc08164",
         first_name: "Citizen",
         last_name: "John",
         email: "test@email.com",
-        password: "test",
+        password: "test1",
     },
     {
-        _id: "633ebcf5d7154bc800908348",
+        _id: "634c191e5f92d2c26cc0816d",
         first_name: "Michael",
         last_name: "Xie",
         email: "mxie@email.com",
         password: "mxie",
     },
     {
-        _id: "63469e594315ad8d1c4bb37f",
+        _id: "634c191e5f92d2c26cc08176",
         first_name: "Jane",
         last_name: "Citizen",
         email: "testnew@email.com",
         password: "testnew",
     },
-    {
-        _id: "633ec1b2e21aa04fcfc81ce1",
-        first_name: "Citizen",
-        last_name: "John",
-        email: "test@email.com",
-        password: "test",
-    }
 ]
+
+const favourites = [ 
+    {
+        _id: "634c191d5f92d2c26cc08161",
+        user: "634c191d5f92d2c26cc0815b",
+        items: ["63478fdd6ae1ffe6cfa57d3e"]
+    },
+    {
+        _id: "634c191e5f92d2c26cc0816a",
+        user: "634c191d5f92d2c26cc08164",
+    },
+    {
+        _id: "634c191e5f92d2c26cc08173",
+        user: "634c191e5f92d2c26cc0816d",
+    },
+    {
+        _id: "634c191f5f92d2c26cc0817c",
+        user: "634c191e5f92d2c26cc08176",
+    },
+];
+
 const categories = [
     {
         _id: "634527f37926a2b8c450db04",
@@ -114,7 +128,7 @@ const categories = [
 
 const groups = [
     {
-        _id: "633e7be1b5c1407aa35db545",
+        _id: "634c18a6a6b466526b780d65",
         name: "Car Sellers Melbourne",
         description: "Good cars only",
         icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634913/ilhsg3skbmxbk2lvda8w.jpg"
@@ -122,6 +136,8 @@ const groups = [
     {
         _id: "633e7be1b5c1407aa35db548",
         name: "Fantastic Furniture",
+        members: ["634c191d5f92d2c26cc0815b"],
+        admins: ["634c191d5f92d2c26cc0815b"],
         description: "Furniture finds in Melbourne",
         icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634925/acam7dmu2qo0vq8jwmwp.webp"
     },
@@ -135,44 +151,60 @@ const groups = [
 
 const carts = [
     {
-        _id: "633eea0d7d3172b98415e773",
-        user: "633e7c16434369b2dc9d2dab",
-        items: ["633eec982a25d4851e300c38", "633eec982a25d4851e300c3b"]
-    }
+        _id: "634c191d5f92d2c26cc0815f",
+        user: "634c191d5f92d2c26cc0815b",
+        items: ["63478fdd6ae1ffe6cfa57d3e", "63478fdd6ae1ffe6cfa57d40"],
+        subtotal: 41
+    },
+    {
+        _id: "634c191e5f92d2c26cc08168",
+        user: "634c191d5f92d2c26cc08164",
+        items: []
+    },
+    {
+        _id: "634c191e5f92d2c26cc08171",
+        user: "634c191e5f92d2c26cc0816d",
+        items: []
+    },
+    {
+        _id: "634c191f5f92d2c26cc0817a",
+        user: "634c191e5f92d2c26cc08176",
+        items: []
+    },
 ]
 
 const items = [
     {
-        _id: "63452887966053d159c5512a",
+        _id: "63497baa9500a07fb7b96526",
         name: "Chair",
         description: "In good condition",
         price: 30000,
         group_ids: ["633e7be1b5c1407aa35db548"],
         category_ids: ["634527f47926a2b8c450db1c"],
         public_visibility: true,
-        seller_id: "633e7c16434369b2dc9d2dab",
+        seller_id: "634c191d5f92d2c26cc0815b",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542703/ujnojhuwpuflm4kyxcys.png'],
     },
     {
-        _id: "63452887966053d159c5512d",
+        _id: "634c18a7a6b466526b780d71",
         name: "Another Chair",
         description: "Soft but sturdy",
         price: 500,
         group_ids: ["633e7be1b5c1407aa35db548"],
         category_ids: ["634527f47926a2b8c450db1c"],
         public_visibility: true,
-        seller_id: "633e7c16434369b2dc9d2dab",
+        seller_id: "634c191d5f92d2c26cc0815b",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542293/ym1f9g3ny0msgkumg5tp.jpg'],
     },
     {
-        _id: "63452887966053d159c55130",
+        _id: "63497baa9500a07fb7b9652c",
         name: "Violin",
         description: "Plays well",
         price: 100,
         group_ids: [],
         category_ids: ["634527f47926a2b8c450db22"],
         public_visibility: true,
-        seller_id: "633e7c16434369b2dc9d2dab",
+        seller_id: "634c191d5f92d2c26cc0815b",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542859/hhgbas44awvx3sxmixtr.jpg']
     },
     {
@@ -183,7 +215,7 @@ const items = [
         group_ids: [],
         category_ids: ["634527f47926a2b8c450db2e"],
         public_visibility: true,
-        seller_id: "633ec1b2e21aa04fcfc81ce1",
+        seller_id: "634c191e5f92d2c26cc08176",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579902/xkypzqj4fr970gdvnpqh.jpg'],
     },
     {
@@ -194,7 +226,7 @@ const items = [
         group_ids: [],
         category_ids: ["634527f47926a2b8c450db2e"],
         public_visibility: true,
-        seller_id: "633ec1b2e21aa04fcfc81ce1",
+        seller_id: "634c191e5f92d2c26cc08176",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579808/tznxkancxinxbin41d2l.jpg'],
     },
 ]
@@ -251,11 +283,16 @@ async function seed() {
     }
 
     for (const cart of carts) {
-        tmp = await cartService.readById(cart._id);
-        if (!tmp) {
-            await cartService.create(cart);
-        } else {
-            await cartService.updateById(cart._id, cart);
+        tmp = await cartService.readByUserId(cart.user);
+        if (tmp) {
+            await cartService.updateByUserId(cart.user, cart);
+        }
+    }
+
+    for (const fav of favourites) {
+        tmp = await favouritesService.readByUserId(fav.user);
+        if (tmp) {
+            await favouritesService.updateByUserId(fav.user, fav);
         }
     }
 
@@ -270,7 +307,7 @@ async function seed() {
             console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
-    }
+    } 
 
     // delete other categories
     const allCategories = await categoryService.readAll();

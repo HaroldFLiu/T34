@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const cartService = require('../services/cart');
+const itemService = require('../services/item');
 /*
 const createCart = async (req, res) => {
     const { userId } = req.params;
@@ -13,26 +14,42 @@ const createCart = async (req, res) => {
 */
 
 const getCart = async (req, res) => {
-    const { cartId } = req.params;
-    let userId = cartId;
+    const { userId } = req.params;
+
     if (!mongoose.isValidObjectId(userId)) {
-        return res.status(404).json({error: 'User ID invalid'});
+        return res.status(404).json({error: 'Cart ID invalid'});
     }
     const cart = await cartService.readByUserId(userId);
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
     //console.log(cart);
-    return res.status(200).json(cart);
+    const items = []
+
+    for (const itemId of cart.items) {
+        const item = await itemService.readById(itemId);
+        if (item) {
+            items.push(item);
+        }
+    }
+    
+    const data = {
+        cart: cart,
+        items: items
+    }
+
+    //console.log(data);
+    return res.status(200).json(data);
 }
 
 //const getCartFromUser
 
+/*
 const updateCart = async (req, res) => {
-    const { cartId } = req.params;
-    const { itemId, quantity } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
-        return res.status(404).json({error: 'Cart does not exist'});
+    const { userId } = req.params;
+    const { itemId } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
+        return res.status(404).json({error: 'User does not exist'});
     }
     if ( itemId == -1 && quantity == -1) {
         const cart = await cartService.removeAllItems(cartId);
@@ -57,18 +74,19 @@ const updateCart = async (req, res) => {
             }
         }
     }
-}
+}*/
 
 const addToCart = async (req, res) => {
-    const { cartId } = req.params;
-    const { itemId, quantity } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
+    const { userId } = req.params;
+    const { itemId } = req.body;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
     if (!mongoose.Types.ObjectId.isValid(itemId)) {
         return res.status(404).json({error: 'Item does not exist'});
     }
-    const cart = await cartService.addItem(cartId, itemId. quantity);
+    const cart = await cartService.addItem(userId, itemId);
+
     if (!cart) {
         return res.status(404).json({error: 'Failed to add item'});
     }
@@ -76,11 +94,11 @@ const addToCart = async (req, res) => {
 }
 
 const checkoutCart = async (req, res) => {
-    const { cartId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
+    const { userId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    const cart = await cartService.checkout(cartId);
+    const cart = await cartService.checkout(userId);
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
@@ -104,16 +122,17 @@ const deleteFromCart = async (req, res) => {
 }
 
 const deleteAllFromCart = async (req, res) => {
-    const { cartId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
+    const { userId } = req.params;
+    if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    const cart = await cartService.removeAllItems(cartId);
+    const cart = await cartService.removeAllItems(userId);
     if (!cart) {
         return res.status(404).json({error: 'Failed to delete all'});
     }
     //res.status(200).json(cart);
 }
+/*
 const deleteCart = async (req, res) => {
     const { cartId } = req.params;
     if (!mongoose.Types.ObjectId.isValid(cartId)) {
@@ -121,14 +140,14 @@ const deleteCart = async (req, res) => {
     }
     const cart = await cartService.deletebyId(cartId);
 
-}
+}*/
 module.exports = {
     // createCart,
     getCart,
-    updateCart,
+    //updateCart,
     addToCart,
     checkoutCart,
     deleteFromCart,
     deleteAllFromCart,
-    deleteCart,
+    //deleteCart,
 }
