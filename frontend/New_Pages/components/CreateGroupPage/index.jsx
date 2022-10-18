@@ -129,7 +129,7 @@ const CreateGroupPage = () => {
 <NavBar />
         
     <div class="listings-main">
-      <div className="home-title"> Create a Group now,<a> and start lisitng privately right away!</a></div>
+      <div className="home-title"> Create a Group now,<a> and start listing privately right away!</a></div>
     </div>
     <hr />
     <div className="number-listings"> {groups} groups online
