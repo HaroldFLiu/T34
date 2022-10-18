@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
 const categoryRoutes = require('./routes/category');
+const favouriteRoutes = require('./routes/favourites');
 //const uploadRoute = require('./routes/upload');
 //const Grid = require('gridfs-stream');
 
@@ -51,8 +52,9 @@ app.use('', del_userRoutes);
 app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
-app.use('/cart', cartRoutes);
-app.use('/category', categoryRoutes);
+app.use('', cartRoutes);
+app.use('', favouriteRoutes);
+app.use('', categoryRoutes);
 //app.use('/file', uploadRoute);
 
 // connect to database

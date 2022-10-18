@@ -279,3 +279,15 @@
   position: relative;
   bottom: 6px;
 }
+
+/* logout btn styling */
+.navbar button{
+  color: white;
+  background-color: #33532C;
+  border: none;
+}
+
+.new {
+  margin-left: 35px;
+  margin-top: 35px;
+}

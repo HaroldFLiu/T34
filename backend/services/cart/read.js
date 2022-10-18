@@ -20,8 +20,19 @@ const readById = async (cartId) => {
 
 const readByUserId = async (userId) => {
     const carts = await readAll();
-    const cart = carts.filter((x) => (x.user == userId))[0]
-  
+    //console.log(carts);
+
+    if (!isMongoId(`${userId}`)) {
+        console.log(`Cart ID: ${userId} is not a valid MongoID`);
+    }
+
+    const cart = carts.filter((x) => (JSON.stringify(x.user) == JSON.stringify(userId)))[0];
+    //console.log(cart);
+
+    if (!cart) {
+        console.log(`Cart does not exist`);
+    }
+
     return cart;
 };
 
@@ -29,7 +40,6 @@ const readAll = async () => {
     const carts = await Cart.find();
     return carts;
 }
-
 
 module.exports = {
     readAll,

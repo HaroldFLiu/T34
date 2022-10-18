@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const itemService = require('../services/item');
+const userService = require('../services/user');
 
 const getPublicItems = async (req, res) => {
     const items = await itemService.readPublicItems();
@@ -24,7 +25,19 @@ const getItem = async (req, res) => {
         return res.status(404).json({error: 'Item does not exist'});
     }
 
-    res.status(200).json(item);
+    const seller = await userService.readById(item.seller_id);
+
+    const data = {
+        item: item, 
+        seller: { 
+            first_name: seller.first_name, 
+            last_name: seller.last_name
+        }
+    }
+
+    //console.log(data)
+
+    res.status(200).json(data);
 }
 
 const getCategoryItems = async (req, res) => {
@@ -97,6 +110,12 @@ const getUserItemsWithCategory = async (req, res) => {
     res.status(200).json(filtered);
 }
 
+const getSoldItems = async (req, res) => {
+    const items = await itemService.readAllSold();
+
+    res.status(200).json(items);
+}
+
 module.exports = {
     getPublicItems,
     getItem,
@@ -105,4 +124,5 @@ module.exports = {
     getCategoryItems,
     getUserItems,
     getUserItemsWithCategory,
+    getSoldItems,
 }

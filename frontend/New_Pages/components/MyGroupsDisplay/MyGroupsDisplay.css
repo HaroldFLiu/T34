@@ -1,0 +1,63 @@
+/* Popup style */
+.popup-box-display {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    margin-top: 4%;
+    display: flex;
+    margin-left: 1%;
+  }
+   
+  .display-box {
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
+    height: auto;
+    max-height: 70vh;
+    
+    background: #fff;
+    padding: 20px;
+    overflow: auto;
+  }
+   
+  /* wrap for img sqaure*/
+  .display-square-popup{
+    border: solid thin;
+    width: 200px;
+    height: 200px;
+    margin-right: 10%;
+    margin-top: -0.5%;
+    margin-bottom: 1%;
+  }
+  
+  .header-popup-display button{
+    float:right;
+    font-size: 16px;
+    margin-top: -16%;
+  }
+  
+  /* line tag for popup */
+  .hr-line{
+    border: solid thin;
+    color: black;
+    margin-left: 20%;
+  }
+  
+.smaller{
+    font-size: 15px;
+    text-align: left;
+}
+
+.header-popup-display{
+    margin-top: -15%;
+    font-size: 40px;
+    margin-left: 20%;
+    text-align: left;
+}
+
+.component-display{
+    border: thin solid;
+    margin-top: 7%;
+}
