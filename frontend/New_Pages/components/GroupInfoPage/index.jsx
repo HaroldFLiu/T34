@@ -9,6 +9,7 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent";
 import Cookie from 'universal-cookie';
 import {Link} from "react-router-dom";
+import ProductComponents from "../ProductComponents";
 
 const GroupInfoPage = () => {
   const [group, setGroup] = useState({});

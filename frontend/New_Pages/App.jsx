@@ -57,7 +57,7 @@ function App() {
         <Route path="/group-info-page/:groupId">
           <GroupInfoPage/>
         </Route>
-        <Route path="/my-groups-display">
+        <Route path="/my-groups-display/:groupId">
           <MyGroupsDisplay/>
         </Route>
         <Route path="/member-list-page/:groupId">
