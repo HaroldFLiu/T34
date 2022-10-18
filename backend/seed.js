@@ -131,7 +131,7 @@ const groups = [
         _id: "634c18a6a6b466526b780d65",
         name: "Car Sellers Melbourne",
         description: "Good cars only",
-        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634913/ilhsg3skbmxbk2lvda8w.jpg",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1666087007/a2hh5gshdqyxap2uhj74.webp",
         members: ["634c191d5f92d2c26cc0815b"],
         admins: ["634c191d5f92d2c26cc0815b"]
     },
@@ -141,7 +141,7 @@ const groups = [
         members: ["634c191d5f92d2c26cc0815b"],
         admins: ["634c191d5f92d2c26cc0815b"],
         description: "Furniture finds in Melbourne",
-        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634925/acam7dmu2qo0vq8jwmwp.webp",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1666086923/buoijq0sjk1ckrfcigks.jpg",
         members: ["634c191d5f92d2c26cc0815b"],
         admins: ["634c191d5f92d2c26cc0815b"]
     },
@@ -149,7 +149,7 @@ const groups = [
         _id: "63450eea27e4ac5b133e4616",
         name: "Clothes",
         description: "Lovely clothes",
-        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1665634928/lddl0g9rzzroyg4j1nwn.jpg",
+        icon_url: "https://res.cloudinary.com/dvudxm6kj/image/upload/v1666087005/qph21niaom4aolfzje42.webp",
         members: [],
         admins: []
     }
