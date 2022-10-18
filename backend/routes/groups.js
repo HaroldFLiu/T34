@@ -20,7 +20,7 @@ const router = express.Router();
 router.get('/groups', getGroups);
 
 // GET a group
-router.get('/groups/group/:group_id', getGroup, getGroupItems);
+router.get('/groups/group/:groupId', getGroup, getGroupItems);
 
 // GET group members
 router.get('/groups/members/:groupId', getGroupMembers);

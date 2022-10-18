@@ -12999,6 +12999,73 @@ body {
   background: #a4df9a;
 }
 
+.popup-box-display {
+  width: 100%;
+  height: 100vh;
+  margin-top: 4%;
+  margin-left: 1%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.display-box {
+  width: 70%;
+  height: auto;
+  max-height: 70vh;
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.display-square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: -.5%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+}
+
+.header-popup-display button {
+  float: right;
+  margin-top: -16%;
+  font-size: 16px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.smaller {
+  text-align: left;
+  font-size: 15px;
+}
+
+.header-popup-display {
+  text-align: left;
+  margin-top: -15%;
+  margin-left: 20%;
+  font-size: 40px;
+}
+
+.component-display {
+  border: thin solid;
+  margin-top: 7%;
+}
+
+.search-member {
+  float: right;
+  margin-top: -30px;
+  margin-right: 100px;
+  font-size: 20px;
+}
+
 .popup-box {
   width: 100%;
   height: 100vh;
@@ -13102,73 +13169,6 @@ body {
   text-align: center;
   padding-left: 30px;
   padding-right: 30px;
-}
-
-.popup-box-display {
-  width: 100%;
-  height: 100vh;
-  margin-top: 4%;
-  margin-left: 1%;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.display-box {
-  width: 70%;
-  height: auto;
-  max-height: 70vh;
-  background: #fff;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-  overflow: auto;
-}
-
-.display-square-popup {
-  width: 200px;
-  height: 200px;
-  border: thin solid;
-  margin-top: -.5%;
-  margin-bottom: 1%;
-  margin-right: 10%;
-}
-
-.header-popup-display button {
-  float: right;
-  margin-top: -16%;
-  font-size: 16px;
-}
-
-.hr-line {
-  color: #000;
-  border: thin solid;
-  margin-left: 20%;
-}
-
-.smaller {
-  text-align: left;
-  font-size: 15px;
-}
-
-.header-popup-display {
-  text-align: left;
-  margin-top: -15%;
-  margin-left: 20%;
-  font-size: 40px;
-}
-
-.component-display {
-  border: thin solid;
-  margin-top: 7%;
-}
-
-.search-member {
-  float: right;
-  margin-top: -30px;
-  margin-right: 100px;
-  font-size: 20px;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
