@@ -7,8 +7,7 @@ const { authenticate } = require('../middleware/authenticate');
 const { initSession, isEmail } = require('../utils/utils');
 const User = require('../models/user');
 const userService = require('../services/user');
-//const cartService = require('../services/cart');
-//const favouriteService = require('../services/favourites');
+const cartService = require('../services/cart')
 
 const router = express.Router();
 
@@ -23,11 +22,7 @@ router.post('/register', async (req, res) => {
     }
     const user = await userService.create({first_name, last_name, email, password});
     const user_id = user._id;
-  
-    //user.cart = cart;
-    //user.favourites = fav;
-  
-    await user.save();
+    const cart = await cartService.create({user:user_id});
     //const user = new User({ first_name:req.body.first_name, last_name:req.body.last_name, email: req.body.email, password:req.body.password});
     //const persistedUser = await user.save();
     //const userId = persistedUser._id;

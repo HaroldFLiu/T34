@@ -10,7 +10,7 @@ const favouritesSchema = new Schema(
       items: [{
         type: Schema.Types.ObjectId,
         ref: 'Item',
-        default: [],
+        required: false,
       }]
     }
   );

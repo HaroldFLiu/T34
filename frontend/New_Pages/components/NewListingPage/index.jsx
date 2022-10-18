@@ -2,9 +2,40 @@ import React, { useEffect, useState } from "react";
 import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
-import NavBar from "../NavBarComponent"
+import Cookie from 'universal-cookie';
+import {Link} from "react-router-dom";
+/* icon imports */
+import {AiOutlineHome} from 'react-icons/ai';
+import {HiOutlineShoppingBag} from 'react-icons/hi';
+import {MdOutlineGroups} from 'react-icons/md';
+import {AiOutlineUsergroupAdd} from 'react-icons/ai';
+import {TbStar} from 'react-icons/tb';
+import {AiOutlineLock} from 'react-icons/ai';
+import {RiBookOpenLine} from 'react-icons/ri';
 
 const NewListingPage = () => {
+
+  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+    setUser(user);
+    //console.log(server_res.data.user_id);
+  
+  };
+  
+
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  console.log(user.first);
+  
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -135,24 +166,10 @@ const NewListingPage = () => {
     })
   }
 
-  const [sold, setSold] = useState('');
-  const getSold = () => {
-    axios.get(`/sold`)
-    .then(res => {
-      console.log('sold');
-      setSold(res.data.length);
-      console.log(res.data.length);
-    })
-    .catch(() => {
-        alert('There was an error while retrieving the data')
-    })
-  }
-
   useEffect(() => {
     if (!firstRender) {
       getGroups();
       getCatergories();
-      getSold();
       setFirstRender(true);
     }
   }, [firstRender]);
@@ -192,24 +209,37 @@ const NewListingPage = () => {
   return (
     <div className="parent" >
       {/* top nav bar*/}
-    <NavBar />
+    <div class="navbar">
+      <h1 className="website-title"> Market34</h1>
+          <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
+          <Link to={`/sell-page/${user.user_id}`} class="active"> Sell </Link>
+          <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
+          <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
+          <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
+        <div class="nav-login">
+          {/* search bar*/}
+          <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>
+          <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
+          <a href="/checkout-page"> Cart</a>
+   
+          <input type="text"placeholder="Search.."> 
+          </input>
+        </div>
+    </div>
         
     <div class="listings-main">
       <div className="home-title"> List an item,<a> and start selling right away!</a></div>
     </div>
     <hr />
-    <div className="number-listings"> {sold} items sold on Market34!
+    <div className="number-listings"> 1234 items sold in the last 24 hours!
     
       {/* on click to submit new listing here*/}
 
       <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
-    
     <hr />
       {/*Upload Image box and button handle uploading img*/}    
-    
     <div class="left-box">
-    <label for="item-image"> <div className="item-name">Item Image*: </div></label>
         <div className="square-pic">  
         <label htmlFor="upload-button">
 
@@ -239,15 +269,15 @@ const NewListingPage = () => {
             
             {/* onChange event here to get data */}
             
-            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name*: </div> </div></label>
+            <label for="item-name"> <div className="item-name"> <div className="item-name"> Item Name: </div> </div></label>
             <input type="listing-text"
                 onChange={(e)=> setValues({...values, itemName:e.target.value})} 
               />
-            <label for="enter-price"><div className="item-name"> Price*: </div></label>
+            <label for="enter-price"><div className="item-name"> Price: </div></label>
             <input type="listing-text"
               onChange={(e)=> setValues({...values, itemPrice:e.target.value})} 
             />
-            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description*:</div></div></label>
+            <label for="enter-desc"> <div className="item-name"><div className="item-name">Item Description:</div></div></label>
             <input type="asd" 
                 onChange={(e)=> setValues({...values, itemDescription:e.target.value})} 
             />
@@ -266,7 +296,7 @@ const NewListingPage = () => {
 
           {/* select on change for dropdown button*/}
 
-          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility*:</div></div></label>
+          <label for="visbility-list"> <div className="item-name"><div className="item-name">Item Visibility:</div></div></label>
           <select type="category-listing" value={selectedVis} onChange={handleChangeVis}>
                 {visibilityOptions.map(option => (
                 <option key={option.value} value={option.value}>
