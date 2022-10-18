@@ -64,7 +64,7 @@ const GroupPage = () => {
       </div>
 
       {/* products display*/} 
-      <div class="main">
+      <div class="main-groups">
         <div className="home-title"> Suggested Groups:</div>
         <hr />
         <div className="number-listings"> {data.length} groups 

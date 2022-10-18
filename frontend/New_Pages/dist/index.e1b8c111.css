@@ -12196,6 +12196,11 @@ textarea.form-control-lg {
   margin-left: 340px;
 }
 
+.main-home {
+  margin-top: 110px;
+  margin-left: 340px;
+}
+
 .nav-login a {
   float: right;
   color: #f2f2f2;
@@ -12728,8 +12733,20 @@ select[type="category-listing"] {
   font-weight: bold;
 }
 
+.main-wishlist {
+  margin-top: 110px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 h4, h3, h5 {
   font-family: Tienne, sans-serif;
+}
+
+.main-groups {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .vis-container {
@@ -13061,9 +13078,30 @@ body {
 
 .search-member {
   float: right;
-  margin-top: -30px;
-  margin-right: 100px;
+  margin-top: -6px;
+  margin-right: 3%;
   font-size: 20px;
+}
+
+.square-pic-mem {
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
+}
+
+.left-box-mem {
+  max-width: 500px;
+  max-height: 500px;
+  height: 200px;
+  width: 200px;
+  float: left;
+  border: thin solid;
+  display: flex;
+}
+
+.shift-title {
+  margin-left: 13%;
 }
 
 .popup-box {

@@ -85,8 +85,15 @@ return (
      {/* top nav bar*/}
     <NavBar />
     <div class="listings-main">
-      <div className="home-title"> Members </div>
-      
+
+             {/*Group img   <div className="img-wrap-mem"> <img src={logo} className="popup-img"></img> </div> */} 
+    <div class="left-box-mem">
+        <div className="square-pic-mem">  
+        <img src={logo} className="popup-img"></img>
+        </div> 
+    </div>
+      <div className="shift-title"> <div className="home-title"> Members </div> </div>
+          
     </div>
     <hr />
     {/* <div className="number-listings"> {data.length} members</div> */}
@@ -95,17 +102,13 @@ return (
         <input type="text"placeholder="Search Member.." onChange={(e) => searchItems(e.target.value)}> 
             </input>
     </div>
-    
+    <br/>
     <hr />
 
-       {/*Group img*/}    
-    <div class="left-box">
-        <div className="square-pic">  
-        {/* <div className="img-wrap"> <img src={groups.image_urls} className="popup-img"></img> </div> */}
-        </div> 
-    </div>
+
     
     {/* member list of the group*/}
+    
     <MemberList data={members}/>
 </div>
 
