@@ -36,7 +36,7 @@ const CheckoutPage = () => {
     });
   };
 
-
+    
   // Trigger the fetchData after the initial render by using the useEffect hook
   useEffect(() => {
     fetchData();
