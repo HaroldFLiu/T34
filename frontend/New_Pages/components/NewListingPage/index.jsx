@@ -84,30 +84,25 @@ const NewListingPage = () => {
       //console.log('RES 1');
       //console.log(res1);
       //console.log(image.raw);
+      console.log('image uploaded');
+      props.image_urls = res1.data.image_urls;
+      console.log(props);
 
-      if (res1.status=="200") {
-        console.log('image uploaded');
-        props.image_urls = res1.data.image_urls;
-        console.log(props);
-
-        axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-        .then(function (res2) {
-          if (res2.status=="200") {
-            console.log('item details successful');
-            location.pathname='/home-page';
-          } else {
-            console.log("item posting went wrong");
-          }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-      } else {
-        console.log("image posting  went wrong");
-      }
+      axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+      .then(function (res2) {
+        if (res2.status=="200") {
+          console.log('item details successful');
+          location.pathname='/home-page';
+        } else {
+          console.log("item posting went wrong");
+        }
+      })
+      .catch(function (error) {
+        alert('Please fill in all required fields.');
+      });
     })
     .catch(() => {
-      alert('Image Required. Please fill in all fields.');
+      alert('Image Required. Please fill in all required fields. Accepted images are .jpg, .jpeg, .png, .webp');
     });
   }
 
