@@ -307,7 +307,7 @@ async function seed() {
         }
     }
 
-    
+    /*
     // delete other items
     const allItems = await itemService.readAll();
     const seededItems = items.map((obj) => JSON.stringify(obj._id));
@@ -319,7 +319,7 @@ async function seed() {
             console.log("item should not be in DB");
             await itemService.deleteById(item._id);
         }
-    } 
+    } */
 
     // delete other categories
     const allCategories = await categoryService.readAll();
@@ -334,7 +334,7 @@ async function seed() {
         }
     }
 
-    
+    /*
     // delete other groups
     const allGroups = await groupService.readAll();
     const seededGroups = groups.map((obj) => JSON.stringify(obj._id));
@@ -346,7 +346,7 @@ async function seed() {
             console.log("group should not be in DB");
             await groupService.deleteById(group._id);
         }
-    }
+    }*/
 
     // // delete other users
     // const allUsers = await userService.readAll();
