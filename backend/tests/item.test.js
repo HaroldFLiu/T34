@@ -29,12 +29,14 @@ describe('ItemService', () => {
   let userInfo = {
     first_name: "Sue",
     last_name: "Green",
-    email: "sfwfwef3@spacewax.com",
+    email: "1@spacewax.com",
     password: "magna",
   }
 
   let group = null;
   let groupInfo = null;
+
+  jest.setTimeout(15000);
 
   beforeAll(async () => {
     connection = mongoose.connect(process.env.MONGO_URI_TEST);
@@ -100,6 +102,7 @@ describe('ItemService', () => {
       name: 'Table',
       description: 'This is a good table.',
       price: 150,
+      sold: true,
     }
 
     const updatedItem = await itemService.updateById(item._id, itemUpdateInfo1);
@@ -115,6 +118,13 @@ describe('ItemService', () => {
     expect(updatedItemdb.group_ids.length).toStrictEqual(itemInfo.group_ids.length);
     expect(updatedItemdb.public_visibility).toBe(itemInfo.public_visibility);
     expect(updatedItemdb.seller_id.toString()).toBe(itemInfo.seller_id.toString());
+    expect(updatedItemdb.sold).toBe(itemUpdateInfo1.sold);
+  });
+
+  test('Get Sold Items', async () => {
+    const sold = await itemService.readAllSold();
+
+    expect(sold.length).toBe(1);
   });
 
   test('Add A Category', async () => {
@@ -179,36 +189,25 @@ describe('ItemService', () => {
   test('Read Public Items', async () => {
     const items = await itemService.readPublicItems();
 
-    expect(items.length).toBe(1);
+    expect(items.length).toBe(0);
   });
   
   test('Read By Category', async () => {
     const items = await itemService.readPublicItems();
     const categoryItems = await itemService.readByCategory(category._id, items);
 
-    expect(categoryItems.length).toBe(1);
+    expect(categoryItems.length).toBe(0);
   });
 
   test('Read By Group', async () => {
     const items = await itemService.readByGroup(group._id);
 
-    expect(items.length).toBe(1);
+    expect(items.length).toBe(0);
   });
 
   test('Read Items By Seller', async () => {
     const items = await itemService.readItemsBySeller(user._id);
 
     expect(items.length).toBe(1);
-  });
-
-  test('Delete Group From Item', async () => {
-    await itemService.deleteGroup(group._id);
-    const itemRead = await itemService.readById(item._id);
-
-    const itemdb = await Item.findById(item._id);
-   
-    expect(itemRead).not.toBeNull();
-    expect(itemdb).not.toBeNull();
-    expect(itemdb.group_ids.length).toBe(0);
   });
 })

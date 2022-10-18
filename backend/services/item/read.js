@@ -19,7 +19,7 @@ const readById = async (itemId) => {
 };
 
 const readByCategory = async (categoryId, items) => {
-  const filtered = items.filter((x) => x.category_ids.includes(categoryId));
+  const filtered = items.filter((x) => x.category_ids.includes(categoryId)  && (x.sold == false));
   
   return filtered;
 };
@@ -40,10 +40,17 @@ const readAll = async () => {
   return Item.find();
 };
 
+const readAllSold = async () => {
+  const items = await Item.find();
+
+  const filtered = items.filter((x) => x.sold == true);
+  return filtered;
+};
+
 const readPublicItems = async() => {
   const items = await Item.find();
 
-  const filtered = items.filter((x) => x.public_visibility == true);
+  const filtered = items.filter((x) => ((x.public_visibility == true) && (x.sold == false)));
 
   if (!filtered) {
     console.log(`No public items`);
@@ -54,18 +61,21 @@ const readPublicItems = async() => {
 
 const readByGroup = async (groupId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.group_ids.includes(groupId));
+  const filtered = items.filter((x) => 
+    (x.group_ids.includes(groupId) == true) && (x.sold == false)
+  );
 
   if (!filtered) {
     console.log(`No items belonging to group with ID: ${groupId}`);
   }
+  console.log(filtered);
   
   return filtered;
 };
 
 const readItemsBySeller = async (sellerId) => {
   const items = await Item.find();
-  const filtered = items.filter((x) => x.seller_id.toString() == sellerId.toString());
+  const filtered = items.filter((x) => JSON.stringify(x.seller_id) == JSON.stringify(sellerId));
 
   if (!filtered) {
     console.log(`No items belonging to seller with ID: ${sellerId}`);
@@ -75,4 +85,4 @@ const readItemsBySeller = async (sellerId) => {
 }
 
 module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems, readByGroup, readItemsBySeller };
+  readAll, readPublicItems, readByGroup, readItemsBySeller, readAllSold };

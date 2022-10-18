@@ -35,7 +35,7 @@ body {
     display: flex;
     margin-top: -1%;
     margin-left: 15%;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/-Insert_image_here-.svg/640px--Insert_image_here-.svg.png");
+   
   }
 
   /* imgs below square item img */
@@ -125,4 +125,20 @@ body {
 .purchase-btn:hover {
   background: #A4DF9A;
   color: black;
+}
+
+/* to reformt img size CHANGE LATER
+
+  max-width: 500px;
+  max-height: 500px;*/
+.imgtest img{
+  margin-left: 20%;
+  margin-top: 10%;
+  width: 500px;
+  height: 500px;
+
+  border: thin solid;
+  object-fit: contain;
+
+
 }

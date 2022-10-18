@@ -11,6 +11,7 @@ const cookieParser = require('cookie-parser');
 const groupRoutes = require('./routes/groups');
 const itemRoutes = require('./routes/items');
 const categoryRoutes = require('./routes/category');
+const favouriteRoutes = require('./routes/favourites');
 //const uploadRoute = require('./routes/upload');
 //const Grid = require('gridfs-stream');
 
@@ -24,14 +25,12 @@ const getuserRoutes = require('./routes/getuser');
 const { applySpec } = require('ramda');
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:1234'],
+    credentials: true,
+}));
 
 // middleware
-app.use(function(req, res, next) {
-        res.header("Access-Control-Allow-Origin", "*");
-        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-        next();
-});
 app.use(express.json());
 app.use(
     express.urlencoded({ extended: true })
@@ -53,8 +52,9 @@ app.use('', del_userRoutes);
 app.use('', loginRoutes);
 app.use('', groupRoutes);
 app.use('', itemRoutes);
-app.use('/cart', cartRoutes);
-app.use('/category', categoryRoutes);
+app.use('', cartRoutes);
+app.use('', favouriteRoutes);
+app.use('', categoryRoutes);
 //app.use('/file', uploadRoute);
 
 // connect to database
@@ -78,6 +78,7 @@ app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
+    res.header('Access-Control-Allow-Credentials', 'true');
 });
 
 

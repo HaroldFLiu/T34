@@ -24,25 +24,41 @@ const getGroups = async (req, res) => {
     res.status(200).json(groups);
 }
 
-const getGroup = async (req, res) => {
-    const { group_id } = req.params;
+const getGroupsByUser = async (req, res) => {
+    const { user_id } = req.params;
+    const groups = await groupService.readByUser(user_id);
 
-    if (!mongoose.Types.ObjectId.isValid(group_id)) {
+    res.status(200).json(groups);
+}
+
+const getOtherGroups = async (req, res) => {
+    const { user_id } = req.params;
+    const groups = await groupService.readOtherGroups(user_id);
+
+    res.status(200).json(groups);
+}
+
+const getGroup = async (req, res) => {
+    const { groupId } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(groupId)) {
         return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const group = await groupService.readById(group_id);
+    const group = await groupService.readById(groupId);
 
     if (!group) {
         return res.status(404).json({error: 'Group does not exist'});
     }
 
+    //console.log(group);
+
     res.status(200).json(group);
 }
 
 const getGroupMembers = async (req, res) => {
-    const { group_id } = req.params;
-    const group = await groupService.readById(group_id);
+    const { groupId } = req.params;
+    const group = await groupService.readById(groupId);
 
     if (!group) {
         return res.status(404).json({error: 'No group with that ID'});
@@ -61,19 +77,25 @@ const getGroupMembers = async (req, res) => {
         const user = await userService.readById(userId);
         groupAdmins.push(user);
     }
+    
+    const data = {
+        members: groupMembers, 
+        admins: groupAdmins
+    }
 
-    res.status(200).json({members: groupMembers, admins: groupAdmins});
+    console.log(data);
+    res.status(200).json(data);
 }
 
 const getGroupItems = async (req, res) => {
-    const { group_id } = req.params;
+    const { groupId } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(group_id)) {
+    if (!mongoose.Types.ObjectId.isValid(groupId)) {
         return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const items = await itemService.readByGroup(group_id);
-
+    const items = await itemService.readByGroup(groupId);
+    console.log(items);
     if (!items) {
         return res.status(404).json({error: 'Group items do not exist'});
     }
@@ -128,6 +150,38 @@ const updateGroup = async (req, res) => {
     res.status(200).json(group);
 }
 
+const addMember = async (req, res) => {
+    const { group_id, user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const group = await groupService.joinGroup(group_id, user_id)
+
+    if (!group) {
+        return res.status(404).json({error: 'Failed to add member'});
+    }
+
+    res.status(200).json(group);
+}
+
+const removeMember = async (req, res) => {
+    const { group_id, user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const group = await groupService.leaveGroup(group_id, user_id)
+
+    if (!group) {
+        return res.status(404).json({error: 'Failed to remove member'});
+    }
+
+    res.status(200).json(group);
+}
+
 module.exports = {
     createGroup,
     getGroups,
@@ -136,5 +190,9 @@ module.exports = {
     getGroup,
     getGroupItems,
     getGroupItemsWithCategory,
-    getGroupMembers
+    getGroupMembers,
+    getGroupsByUser,
+    getOtherGroups,
+    addMember,
+    removeMember,
 }

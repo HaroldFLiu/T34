@@ -1,131 +1,184 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
-import { RadioButton } from "./RadioButton";
-
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
+import Cookie from 'universal-cookie';
+import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const user = server_res.data.user_id;
+      setUser(user);
+  };
+  
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+      fetchData();
+  }, []);
 
-      {/* stuff for radio button*/} 
-      const [visbility, setVisbility] = useState("");
+  {/* stuff for image upload*/} 
 
-    const radioChangeHandler = (e) => {
-      setVisbility(e.target.value);
-    }  
+  const [image, setImage] = useState({ preview: "", raw: "" });
+
+  const handleChange = e => {
+    if (e.target.files.length) {
+    console.log(e.target.files[0])
+      setImage({
+        preview: URL.createObjectURL(e.target.files[0]),
+        raw: e.target.files[0]
+      });
+    }
+  };
+
+  const [values, setValues] = useState({
+    groupName: "",
+    groupDescription: "",
+  });
 
 
-     {/* stuff for image upload*/} 
+  const PostNewGroup =  event => {
+    /* group details */
+    event.preventDefault();
+    const props = {
+      name: values.groupName,
+      description: values.groupDescription,
+      members: [user],
+      admins: [user],
+      icon_url: ""
+    }
 
-     const [image, setImage] = useState({ preview: "", raw: "" });
+    /* image details */
+    const formData = new FormData();
+    formData.append('file', image.raw);
+    //console.log(formData);
 
-     const handleChange = e => {
-       if (e.target.files.length) {
-         setImage({
-           preview: URL.createObjectURL(e.target.files[0]),
-           raw: e.target.files[0]
-         });
-       }
-     };
-   
-     const handleUpload = async e => {
-       e.preventDefault();
-       const formData = new FormData();
-       formData.append("image", image.raw);
-       try {
-        const response = await axios({
-          method: "post",
-          url: "/api/upload/file",
-          data: formData,
-          headers: { "Content-Type": "multipart/form-data" },
+    if (!image.raw) {
+      alert('Image Required. Please fill in all fields.');
+    }
+
+    if (!props.name) {
+      alert('Group Name Required. Please fill in all fields.');
+    }
+
+    if (!props.description) {
+      alert('Group Description Required. Please fill in all fields.');
+    }
+
+    /* posting */
+    // image upload
+    axios({
+      method: 'post',
+      url: '/public/image',
+      data: formData,
+    })
+    .then(function (res1) {
+      if (res1.status=="200") {
+        console.log('group image uploaded');
+        props.icon_url = res1.data.image_urls[0];
+        console.log(props);
+
+        axios.post('/groups', props)
+        .then(function (res2) {
+          if (res2.status=="200") {
+            console.log('group details successful');
+            location.pathname=`/my-groups-page/${user}`;
+          } else {
+            console.log("group posting went wrong");
+          }
+        })
+        .catch(function (error) {
+          alert(error);
         });
-      } catch(error) {
-        console.log(error)
+      } else {
+        alert("Group image posting went wrong");
       }
+    })
+    .catch(function (error) {
+      alert("Group image posting went wrong. Only accepts .jpeg, .jpg, .png");
+    });
+  }
 
-     };
-    
-    return (
+  {/* get number of groups */}
+  const [groups, setGroups] = useState('');
+  const getGroups = () => {
+    axios.get('/groups')
+    .then(res => {
+      setGroups(res.data.length);
+    }).catch(err => {
+      console.log(err);
+    })
+  }
+
+  const [firstRender, setFirstRender] = useState(false);
+  useEffect(() => {
+    if (!firstRender) {
+      getGroups();
+      //fetchData();
+      setFirstRender(true);
+    }
+  }, [firstRender]);
+  
+  return (
     <div className="parent" >
-     {/* top nav bar*/}
-     <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-        <a class="active" href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
+    {/* top nav bar*/}
+<NavBar />
         
     <div class="listings-main">
-      <div className="home-title"> Create a Group now,<a> and start lisitng privately right away!</a></div>
-      
+      <div className="home-title"> Create a Group now,<a> and start listing privately right away!</a></div>
     </div>
     <hr />
-    <div className="number-listings"> 1234, 5678 groups online
+    <div className="number-listings"> {groups} groups online
     
     {/* on click to submit new listing here*/}
-
-    <button className="publish-btn"> Create Group</button>
+      <button className="publish-btn" onClick={PostNewGroup}> Create Group</button>
+    
     </div>
     <hr />
-       {/*Upload Image box and button handle uploading img*/}    
+      {/*Upload Image box and button handle uploading img*/}    
     <div class="left-box">
-        <div className="square-pic">  
-        <label htmlFor="upload-button">
-
-             {/* image preview conditionals for user to see*/} 
-            {image.preview ? (
+      <label for="item-name"> <div className="item-name">Group Icon*: </div></label>
+      <div className="square-pic">  
+      <label htmlFor="upload-button">
+        {/* image preview conditionals for user to see*/} 
+        {image.preview ? (
           <img src={image.preview} alt="dummy" width="100%" height="100%" />
         ) : (
           <>
-     <img src={uploadPlaceholder} className="upload-placeholder"></img> 
+            <img src={uploadPlaceholder} className="upload-placeholder"></img> 
           </>
         )}
-        </label>  
-        <input
-        type="file"
-        id="upload-button"
-        style={{ display: "none" }}
-        onChange={handleChange}
-      />  
-        </div>
+      </label>  
 
-    <button onClick={handleUpload}>Upload Image</button>   
+      <input
+      type="file" 
+      id="upload-button"
+      style={{ display: "none" }}
+      onChange={handleChange}
+      /> 
+      </div>
+      {/* <button onClick={handleUpload}>Upload Image</button>   */}
     </div>
     
     {/* form to input new listing data*/}
     <div class="container">
-        <form className="publish-form">
-            
-            {/* onChange event here to get data */}
-            
-            <label for="item-name"> <div className="item-name">Group Name: </div></label>
-            <input type="listing-text"
-             />
-            <label for="enter-desc"> <div className="item-name">Group Description:</div></label>
-            <input type="asd" 
-            />
-             {/* select on change for dropdown button*/}
+      <form className="publish-form">
+          
+        {/* onChange event here to get data */}
+        <label for="item-name"> <div className="item-name">Group Name*: </div></label>
+        <input type="listing-text"
+        onChange={(e)=> setValues({...values, groupName:e.target.value})} 
+        />
+        <label for="enter-desc"> <div className="item-name">Group Description*:</div></label>
+        <input type="asd" 
+        onChange={(e)=> setValues({...values, groupDescription:e.target.value})} 
+        />
+          {/* select on change for dropdown button*/}
     
-    {/* visibility radio buttons to be done here  */}
+    {/* visibility radio buttons to be done here 
     <div className="vis-container">
       <div class="flex-child">
       <div className="visbility-header">
@@ -142,8 +195,11 @@ const CreateGroupPage = () => {
         Anyone can join this group.
       </div>
     </div>
-    
-    <div class="flex-child">
+
+
+
+    <div class="flex-child"> 
+
     <div className="visbility-header">
     <div  className="radio-public">
       <RadioButton
@@ -158,14 +214,12 @@ const CreateGroupPage = () => {
         Only people given access can join this group.
       </div>
     </div>
+    </div>            
+    */}
 
+      </form> 
     </div>
-    </form> 
-    </div>
-       
-</div>
-    
-   
+  </div>
   );
 }
 

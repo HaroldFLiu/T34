@@ -26,16 +26,28 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    /*
     groups: [{
       type: Schema.Types.ObjectId,
       ref: 'Group',
       required: false,
-    }],
+    }],*/
     items: [{
       type: Schema.Types.ObjectId,
       ref: 'Item',
       required: false,
-    }]
+    }],
+    /*
+    cart: {
+      type: Schema.Types.ObjectId,
+      ref: 'Cart',
+      //required: true,
+    },
+    favourites: [{
+      type: Schema.Types.ObjectId,
+      ref: 'Item',
+      //required: false,
+    }],*/
   },
   {
     timestamps: {
@@ -65,5 +77,5 @@ userSchema.pre('save', function(next){
 });
 
 
-var User = mongoose.model('User', userSchema);
-module.exports = User;
+const User = mongoose.model('User', userSchema);
+module.exports = { User };

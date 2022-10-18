@@ -1,48 +1,56 @@
 const { Favourites } = require('../../models/favourites');
 const { Item } = require('../../models/item');
+const favouriteService = require('./read');
 
-const addItem = async (favId, itemId) => {
+const addItem = async (userId, itemId) => {
+    const favourite = await favouriteService.readByUserId(userId);
 
-    const favourite = await Favourites.findById(favId);
-    const item = await Item.findById(itemId);
-
-    favourite.items.push(itemId);
-    await favourite.save();
-    return favourite;
-};
-
-const deleteItem = async (favId, itemId) => {
-    const favourite = await Favourites.findById(favId);  
-    const item = await Item.findById(itemId)
-
-    const tempItems = [];
-    let count = 0;
-
-    for (let i =0 ; i < favourite.items.length; i++) {
-        if (!favourite.items[i].equals(itemId)) {
-             tempItems.push(favourite.items[i]);
-        }
-        else {
-            if (count == 0) {
-                count ++;
-            }
-            else {
-                tempItems.push(favourite.items[i]);
-            }
-        }
+    if (!favourite.items.includes(itemId)) {
+      favourite.items.push(itemId);
     }
-    favourite.items = tempItems;
-    await favourite.save();
-    return favourite;
 
+    await favourite.save();
+
+    return favourite;
 };
 
-const removeAllItems = async (favId) => {
-    const favourite = await Favourites.findById(favId);
+const deleteItem = async (userId, itemId) => {
+    const favourite = await favouriteService.readByUserId(userId);  
+
+    favourite.items = favourite.items.filter((x) => (JSON.stringify(x._id) != JSON.stringify(itemId)));
+
+    await favourite.save();
+
+    return favourite;
+};
+
+const removeAllItems = async (userId) => {
+    const favourite = await favouriteService.readByUserId(userId);
 
     favourite.items = [];
+
     await favourite.save();
+
     return favourite; 
 };
 
-module.exports = { addItem, deleteItem, removeAllItems};
+const updateByUserId = async (userId, props) => {
+    const favourite = await favouriteService.readByUserId(userId);
+  
+    if (!favourite) {
+      console.log(`Cannot find favourites with user ID: ${userId}`);
+      return undefined;
+    }
+  
+    for (const property in props) {
+      if (property != 'user') {
+        favourite[property] = props[property];
+      }
+    }
+  
+    await favourite.save();
+  
+    return favourite;
+  };
+
+module.exports = { addItem, deleteItem, removeAllItems, updateByUserId };

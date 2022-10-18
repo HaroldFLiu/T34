@@ -26,7 +26,7 @@ const LoginPage = () => {
     if (response.status=="200") {
       let token =response.data.token;
       console.log(token);
-      cookies.set('token',token,{maxAge:response.data.maxAge, sameSite:response.data.sameSite,secure:response.data.secure});
+      cookies.set('token',token,{maxAge:response.data.maxAge, sameSite:response.data.sameSite,secure:response.data.secure, httpOnly: response.data.httpOnly});
       location.pathname='/home-page';
     }
     else if(response.status=="401") {
@@ -37,8 +37,12 @@ const LoginPage = () => {
       console.log("oops");
     }
   })
-  .catch(function (error) {
-    console.log(error);
+  
+  //.catch(function (error) {
+    //console.log(error);
+ // });
+ .catch(() => {
+  alert('Authentication failed. Please check username and password');
   });
 }
 

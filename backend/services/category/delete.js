@@ -6,7 +6,7 @@ const deleteById = async (categoryId) => {
 
   const deletedCategory = await Category.findByIdAndDelete(categoryId);
   console.log(`Deleted category by ID: ${categoryId}, Category: ${JSON.stringify(deletedCategory)}`);
-  return deletedItem;
+  return deletedCategory;
 };
 
 module.exports = { deleteById };

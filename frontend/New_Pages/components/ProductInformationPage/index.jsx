@@ -1,51 +1,60 @@
 import React, {useEffect, useState}from "react";
 import "./ProductInformationPage.css";
-/* icon imports */
-import {AiOutlineHome} from 'react-icons/ai';
-import {HiOutlineShoppingBag} from 'react-icons/hi';
-import {MdOutlineGroups} from 'react-icons/md';
-import {AiOutlineUsergroupAdd} from 'react-icons/ai';
-import {TbStar} from 'react-icons/tb';
-import {AiOutlineLock} from 'react-icons/ai';
-import {RiBookOpenLine} from 'react-icons/ri';
+import NavBar from "../NavBarComponent";
 
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
+import Cookies from 'universal-cookie';
+
+const coookie = new Cookies();
 const ProductInformationPage = () => {
 
-  const [values, setValues] = useState({
-    itemName: "",
-    itemDescription: "",
-    itemPrice: "",
-
-  });
-
-  const props = {
-    name: values.itemName,
-    description: values.itemDescription,
-    price: values.itemPrice,
-  }
-
-  const [posts, setPosts] = useState([]);
-
-
-  const fetchData = async () => {
-    const { data } = await axios.get("/public");
-    setPosts(data);
-  };
-
- 
-  useEffect(() => {
-    fetchData();
-  }, []);
-  
+  const [added, setAdded] = useState(false);
 
   {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
-  let {productId} = useParams()
-  const thisProduct = posts.find(prod => prod.id == productId)
+  const {productId} = useParams()
+  //const thisProduct = posts.find(prod => prod.id == productId)
   {/*degub log here */}
-  console.log(thisProduct);
+  //console.log(productId);
+
+  {/*fetch item data*/}
+  
+  const [item, setItems] = useState({});
+  const [seller, setSeller] = useState({});
+
+  const fetchItems = async () => {
+    axios.get(`/public/item/${productId}`)
+    .then(res => {
+      //console.log(res.data);
+      setItems(res.data.item);
+      //console.log(item);
+      setSeller(res.data.seller);
+      //console.log(seller);
+    })
+    .catch(() => {
+      alert('There was an error while retrieving the data')
+    })
+  };
+ 
+  useEffect(() => {
+    fetchItems();
+  }, []);
+
+  const addToCart = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    console.log(server_res);
+    //const user = server_res.data.user_email;
+    const user = server_res.data;
+
+    //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    //let items = res.data.items;
+    //items.push(productId);
+    await axios.patch("/cart/"+user.user_id+"/add/"+productId, {itemId:productId}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(setAdded(true)).catch(error => {
+      console.log("Error updating cart", error);
+    });
+  };
+
  
   return (
 <div className="parent" >
@@ -56,68 +65,36 @@ const ProductInformationPage = () => {
       
     })}*/}
      {/* top nav bar*/}
-    <div class="navbar">
-      <h1 className="website-title"> Market34</h1>
-        <a href="/home-page"> <AiOutlineHome className="icon"/> Home</a>
-        <a href="/sell-page"> <HiOutlineShoppingBag className="icon"/> Sell</a>
-        <a href="/group-page"> <AiOutlineUsergroupAdd className="icon"/> Groups</a>
-        <a href="/my-groups-page"> <MdOutlineGroups className="icon"/> My Groups</a>
-        <a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>
-      <div class="nav-login">
-      {/* search bar*/}
-      <a href="/login-page"> <AiOutlineLock className="icon"/> Log In</a>
-      <a href="/sign-up-page"><RiBookOpenLine className="icon" /> Register</a>
-   
-      <input type="text"placeholder="Search.."> 
-      </input>
-      </div>
-    </div>
+<NavBar />
   
     {/* product info display*/} 
 
 <div class="product-info-wrap">     
-    <div className="product-img-wrap">
-        <div class="square">
-          {/* put img src here later*/} 
-        </div>
-        {/* other pictures display gallery
-          <div class="row">
-            <div class="column">
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            <img src={uploadPlaceholder} className="img-gallery"></img> 
-            </div>
-           </div>*/} 
-
-      </div>
-
+<div className="product-img-wrap">
+      <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
+      </div> 
       <div className="more-info-wrap">
-      <div className="item-name-label"> {thisProduct?.name}</div>
-      <div className="info-text"> <b>Seller:</b> {thisProduct?.seller_id}</div> 
+
+      <div className="item-name-label"> {item.name}</div>
+      <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
       
       <hr />
       <br/>
       <div className="item-descip-wrap">
-      <div className="info-text-centered"> Item Description: <p> {thisProduct?.description}</p></div>
+      <div className="info-text-centered"> Item Description: <p> {item.description}</p></div>
         </div> 
         
       <br/>
-      <div className="info-text-centered-price"> <b>${thisProduct?.price}</b></div>
+      <div className="info-text-centered-price"> <b>${item.price}</b></div>
       <hr />
 
-      <button className="purchase-btn"> PURCHASE </button>
-      <button className="contact-btn"> CONTACT SELLER </button>
+      {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
+      {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
+      {/*<button className="contact-btn"> CONTACT SELLER </button>*/}
 
       </div>
 
       </div>  
-      
-      
-      
-      
-  
-
-
   </div>
 
   );

@@ -38,6 +38,11 @@
 
 }
 
+.main-home{
+  margin-top: 110px; /* Add a top margin to avoid content overlay */
+  margin-left: 340px; /* Same as the width of the sidebar */
+}
+
 /* Links inside the navbar for login and user*/
 .nav-login a{
   float: right;
@@ -128,11 +133,11 @@
   display: flex;
 }
 
-/* CAP IMG SRC SIZE - FIX LATER */
+/* CAP IMG SRC SIZE - removed:  border: 3px solid #555;*/
 .logo-position{
-  border: 3px solid #555;
-  max-height: 100%;
+  max-height: 150px;
   max-width: 100%;
+  object-fit: contain;
 }
 
 /* wrappers to move products */
@@ -184,7 +189,11 @@
   width: 18%;
   font-size: 10px;
   margin-left: 70%;
-  
+}
+
+/* space to be used in place of wishlist btn for sell page */
+.space{
+  padding-top: 14%;
 }
 
 .card button:hover {
@@ -274,4 +283,16 @@
   transform: scaleX(-1); 
   position: relative;
   bottom: 6px;
+}
+
+/* logout btn styling */
+.navbar button{
+  color: white;
+  background-color: #33532C;
+  border: none;
+}
+
+.new {
+  margin-left: 35px;
+  margin-top: 35px;
 }

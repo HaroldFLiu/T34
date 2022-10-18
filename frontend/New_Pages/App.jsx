@@ -1,7 +1,7 @@
 import "./App.css";
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
+import { Switch, BrowserRouter as Router, Route, BrowserRouter } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import LoginPage from "./components/LoginPage";
 import SignUp from "./components/SignUpPage";
@@ -13,15 +13,18 @@ import CreateGroupPage from "./components/CreateGroupPage"
 import MyGroupsPage from "./components/MyGroupsPage"
 import ProductInformationPage from "./components/ProductInformationPage" 
 import CheckoutPage from "./components/CheckoutPage";
+import GroupInfoPage from "./components/GroupInfoPage";
+import MyGroupsDisplay from "./components/MyGroupsDisplay";
+import MemberListPage from "./components/MemberListPage";
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/:path(|home-page)">
+        <Route path="/home-page">
         <HomePage/>
         </Route>
-        <Route path="/login-page">
+        <Route path="/:path(|login-page)">
           <LoginPage/>
         </Route>
         <Route path="/sign-up-page">
@@ -30,28 +33,36 @@ function App() {
         <Route path="/new-listings-page">
           <NewListings/>
         </Route>
-        <Route path="/sell-page">
+        <Route path="/sell-page/:sellerId">
           <SellPage/>
         </Route>
-        <Route path="/wishlist-page">
+        <Route path="/wishlist-page/:userId">
           <WishlistPage/>
         </Route>
-        <Route path="/group-page">
+        <Route path="/group-page/:userId">
           <GroupPage/>
         </Route>
         <Route path="/create-group-page">
           <CreateGroupPage/>
         </Route>
-        <Route path="/my-groups-page">
+        <Route path="/my-groups-page/:userId">
           <MyGroupsPage/>
         </Route>
-        <Route path="/product-page">
+        <Route path="/product-page/:productId">
           <ProductInformationPage/>
         </Route>
-        <Route path="/checkout-page">
+        <Route path="/checkout-page/:userId">
           <CheckoutPage/>
         </Route>
-
+        <Route path="/group-info-page/:groupId">
+          <GroupInfoPage/>
+        </Route>
+        <Route path="/my-groups-display/:groupId">
+          <MyGroupsDisplay/>
+        </Route>
+        <Route path="/member-list-page/:groupId">
+          <MemberListPage/>
+        </Route>
       </Switch>
     </Router>
   );
