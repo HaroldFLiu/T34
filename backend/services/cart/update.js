@@ -1,70 +1,80 @@
 const { otherwise } = require('ramda');
 const { Cart } = require('../../models/cart')
+const { Item } = require('../../models/item');
 const itemService = require('../item');
-const cartService = require('./read');
 
-const addItem = async(userId, itemId) => {
+const addItem = async(cartId, itemId, quantity) => {
   const item = await itemService.readById(itemId);
-  const cart = await cartService.readByUserId(userId);
   
-  cart.items.push(itemId);
-  cart.subtotal += item.price;
-
+  const cart = await Cart.findById(cartId);
+  for (let i = 0; i < quantity; i++) {
+    cart.items.push(itemId);
+    cart.subtotal += item.price;
+  }
   await cart.save();
   
   return cart;
+
 };
 
-const checkout = async(userId) => {
-  const cart = await cartService.readByUserId(userId);
-
+const checkout = async(cartId) => {
+  const cart = await Cart.findById(cartId);
   for (let i = 0; i < cart.items.length; i++) {
-    const item = await itemService.readById(cart.items[i]);
+    const item = await Item.findById(cart.items[i]);
     item.sold = true;
     await item.save();
   }
-
   cart.items = [];
   cart.subtotal = 0.00;
   await cart.save();
   
   return cart;
+
 }
 
-const deleteItem = async(userId, itemId) => {
-  const cart = await cartService.readByUserId(userId);
-  const item = await itemService.readById(itemId);
-
-  //const tempItems = [];
-  //let count = 0;
-
-  cart.items = cart.items.filter((x) => (JSON.stringify(x._id) != JSON.stringify(itemId)));
-  cart.subtotal -= item.price;
+const deleteItem = async(cartId, itemId) => {
+  const cart = await Cart.findById(cartId);
+  const item = await Item.findById(itemId);
+  const tempItems = [];
+  let count = 0;
+  for (let i = 0; i < cart.items.length; i++) {
+      if (!cart.items[i].equals(itemId)) {
+          tempItems.push(cart.items[i]);
+      }
+      else {
+        if (count == 0) {
+          cart.subtotal -= item.price;
+          count ++;
+        }
+        else {
+          tempItems.push(cart.items[i]);
+        }
+      }
+  }
+  cart.items = tempItems;
   
   await cart.save();
   return cart;
 }
 
-const removeAllItems = async(userId) => {
-  const cart = await cartService.readByUserId(userId);
+const removeAllItems = async(cartId) => {
+  const cart = await Cart.findById(cartId);
   cart.items = [];
   cart.subtotal = 0.00;
   await cart.save();
   return cart;
 }
 
-const updateByUserId = async (userId, props) => {
-  const cart = await cartService.readByUserId(userId);
+const updateById = async (cartId, props) => {
+  const cart = await Cart.findById(cartId);
 
   if (!cart) {
-    console.log(`Cannot find cart with user ID: ${userId}`);
+    console.log(`Cannot find cart with ID: ${cartId}`);
     return undefined;
   }
 
   for (const property in props) {
-    if (property != 'user') {
-      cart[property] = props[property];
-    }
+    cart[property] = props[property];
   }
 
   await cart.save();
@@ -72,7 +82,7 @@ const updateByUserId = async (userId, props) => {
   return cart;
 };
 
-module.exports = {addItem, checkout, deleteItem, removeAllItems, updateByUserId};
+module.exports = {addItem, checkout, deleteItem, removeAllItems, updateById};
 
 
 

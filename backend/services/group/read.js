@@ -33,18 +33,5 @@ const readByUser = async (userId) => {
   return userGroups;
 }
 
-const readOtherGroups = async (userId) => {
-  if (!isMongoId(`${userId}`)) {
-    console.log(`${userId} is not a valid MongoID`);
-    return undefined;
-  }
-  const groups = await readAll();
 
-  const userGroups = groups.filter((x) => !x.members.includes(userId));
-
-  return userGroups;
-}
-
-
-
-module.exports = { readById, readAll, readByUser, readOtherGroups };
+module.exports = { readById, readAll, readByUser };

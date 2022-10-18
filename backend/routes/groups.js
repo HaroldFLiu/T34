@@ -9,7 +9,6 @@ const {
     deleteGroup,
     getGroupMembers,
     getGroupsByUser,
-    getOtherGroups,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -20,16 +19,13 @@ const router = express.Router();
 router.get('/groups', getGroups);
 
 // GET a group
-router.get('/groups/group/:group_id', getGroup, getGroupItems);
+router.get('/groups/:group_id', getGroup, getGroupItems);
 
 // GET group members
-router.get('/groups/members/:group_id', getGroupMembers);
+router.get('/groups/:group_id/members', getGroupMembers);
 
 // GET a user's groups
-router.get('/groups/user/:user_id', getGroupsByUser);
-
-// GET groups a user is not a part of
-router.get('/groups/other/:user_id', getOtherGroups);
+router.get('/groups/:user_id', getGroupsByUser);
 
 // POST a group
 router.post('/groups', async (req, res) => {
@@ -70,39 +66,4 @@ router.patch('/groups/:group_id', async (req, res) => {
     res.status(200).json(group);
 });
 
-// ADD group members
-router.patch('/groups/:group_id/add/:user_id', async (req, res) => {
-    const { group_id, user_id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
-        return res.status(404).json({error: 'Invalid Mongo ID'});
-    }
-
-    try {
-        const group = await groupService.joinGroup(group_id, user_id);
-
-        res.status(200).json(group);
-    } catch (error) {
-        res.status(401).json({err: error.message});
-    }
-
-})
-
-// LEAVE group
-router.patch('/groups/:group_id/leave/:user_id', async (req, res) => {
-    const { group_id, user_id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
-        return res.status(404).json({error: 'Invalid Mongo ID'});
-    }
-
-    try {
-        const group = await groupService.leaveGroup(group_id, user_id);
-
-        res.status(200).json(group);
-    } catch (error) {
-        res.status(401).json({err: error.message});
-    }
-
-})
 module.exports = router;
