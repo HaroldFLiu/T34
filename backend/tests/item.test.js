@@ -189,14 +189,14 @@ describe('ItemService', () => {
   test('Read Public Items', async () => {
     const items = await itemService.readPublicItems();
 
-    expect(items.length).toBe(1);
+    expect(items.length).toBe(0);
   });
   
   test('Read By Category', async () => {
     const items = await itemService.readPublicItems();
     const categoryItems = await itemService.readByCategory(category._id, items);
 
-    expect(categoryItems.length).toBe(1);
+    expect(categoryItems.length).toBe(0);
   });
 
   test('Read By Group', async () => {
