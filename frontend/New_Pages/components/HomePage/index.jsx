@@ -51,6 +51,92 @@ const [posts, setPosts] = useState([]);
     fetchData();
   }, []);
 
+<<<<<<< Updated upstream
+=======
+  // To hold the actual data
+  const [data, setData] = useState([])
+  const [loading, setLoading] = useState(true);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  // 10 items displayed per page
+  const [recordsPerPage] = useState(10);
+
+          //console.log(sellerId);
+
+  const queryParams = new URLSearchParams(window.location.search);
+  const categoryId = queryParams.get("cat_id");
+  const sortBy = queryParams.get("sortBy");
+  const searchBy = queryParams.get("searchBy")
+  console.log(searchBy);
+
+  //console.log(sortBy);
+
+  const fetchPublic = async () => {
+    await axios.get('/public')
+    .then(res => {
+      const tmp = res.data;
+      //setData(res.data);
+      if (sortBy == 'oldest') {
+        setData(tmp);
+        //console.log('newest');
+      } else if (sortBy == 'desc') {
+        setData(tmp.sort((a, b) => b.price - a.price));
+        //console.log('desc');
+      } else if (sortBy == 'asc') {
+        setData(tmp.sort((a, b) => a.price - b.price));
+        //console.log('asc');
+      } else {
+        setData(tmp.reverse());
+      }
+      setLoading(false);
+    })
+    .catch(() => {
+      alert('There was an error while retrieving the data')
+    })
+    //.then(fetchData());
+  }
+
+  const fetchPublicCategory = async () => {
+    await axios.get(`/public/category/${categoryId}`)
+    .then(res => {
+        const tmp = res.data;
+        //setData(res.data);
+        if (sortBy == 'oldest') {
+          setData(tmp);
+          //console.log('newest');
+        } else if (sortBy == 'desc') {
+          setData(tmp.sort((a, b) => b.price - a.price));
+          //console.log('desc');
+        } else if (sortBy == 'asc') {
+          setData(tmp.sort((a, b) => a.price - b.price));
+          //console.log('asc');
+        } else {
+          setData(tmp.reverse());
+        }
+        setLoading(false);
+    })
+    .catch(() => {
+        alert('There was an error while retrieving the data')
+    })
+    //.then(fetchData())
+  }
+
+  if (!categoryId) {
+    useEffect(() => {
+      fetchPublic();
+    }, []);
+  } else {
+    useEffect(() => {
+      fetchPublicCategory();
+    }, []);
+  }
+
+  const indexOfLastRecord = currentPage * recordsPerPage;
+  const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
+  const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
+  const nPages = Math.ceil(data.length / recordsPerPage)
+      
+>>>>>>> Stashed changes
   return (
   <div className="parent" >
      {/* top nav bar*/}
