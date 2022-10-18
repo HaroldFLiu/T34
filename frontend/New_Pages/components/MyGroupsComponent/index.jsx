@@ -27,7 +27,7 @@ return(
                 <div className="item-cart">
                     <h5>{group.name}</h5>
                     <p class="members-text">{group.members.length} Members</p>
-                    <Link to={`/my-groups-display/${group._id}`}> <p><button>View Group</button></p></Link>
+                    <Link to={`/my-groups-display/${group._id}`}> <p><button>View Group Items</button></p></Link>
                 </div>
         
 
