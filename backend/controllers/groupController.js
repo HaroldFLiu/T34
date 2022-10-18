@@ -27,7 +27,6 @@ const getGroups = async (req, res) => {
 const getGroupsByUser = async (req, res) => {
     const { user_id } = req.params;
     const groups = await groupService.readByUser(user_id);
-    console.log(groups);
 
     res.status(200).json(groups);
 }
