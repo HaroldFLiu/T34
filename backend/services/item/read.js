@@ -62,7 +62,7 @@ const readPublicItems = async() => {
 const readByGroup = async (groupId) => {
   const items = await Item.find();
   const filtered = items.filter((x) => 
-    x.group_ids.includes(groupId) == true
+    (x.group_ids.includes(groupId) == true) && (x.sold == false)
   );
 
   if (!filtered) {

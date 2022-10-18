@@ -190,6 +190,7 @@ const items = [
         public_visibility: true,
         seller_id: "634c191d5f92d2c26cc0815b",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542703/ujnojhuwpuflm4kyxcys.png'],
+        sold: false,
     },
     {
         _id: "634c18a7a6b466526b780d71",
@@ -201,6 +202,7 @@ const items = [
         public_visibility: true,
         seller_id: "634c191d5f92d2c26cc0815b",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542293/ym1f9g3ny0msgkumg5tp.jpg'],
+        sold: false,
     },
     {
         _id: "63497baa9500a07fb7b9652c",
@@ -211,7 +213,8 @@ const items = [
         category_ids: ["634527f47926a2b8c450db22"],
         public_visibility: true,
         seller_id: "634c191d5f92d2c26cc0815b",
-        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542859/hhgbas44awvx3sxmixtr.jpg']
+        image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665542859/hhgbas44awvx3sxmixtr.jpg'],
+        sold: false,
     },
     {
         _id: "63478fdd6ae1ffe6cfa57d3e",
@@ -223,6 +226,7 @@ const items = [
         public_visibility: true,
         seller_id: "634c191e5f92d2c26cc08176",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579902/xkypzqj4fr970gdvnpqh.jpg'],
+        sold: false,
     },
     {
         _id: "63478fdd6ae1ffe6cfa57d40",
@@ -234,6 +238,7 @@ const items = [
         public_visibility: true,
         seller_id: "634c191e5f92d2c26cc08176",
         image_urls: ['https://res.cloudinary.com/dvudxm6kj/image/upload/v1665579808/tznxkancxinxbin41d2l.jpg'],
+        sold: false
     },
 ]
 
