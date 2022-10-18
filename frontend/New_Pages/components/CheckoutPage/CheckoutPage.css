@@ -49,8 +49,8 @@
   
   .card-check {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    width: max-content;
-    max-width: 250%;
+    max-width: 700px;
+    width: 600px;
     margin: auto;
     text-align: center;
     font-family: 'Tienne', sans-serif;
@@ -59,6 +59,8 @@
     display: inline-block;
     overflow: hidden;
     white-space: initial;
+    padding-top: 1%;
+    padding-bottom: 1%;
 
   }
   
@@ -85,17 +87,15 @@
   /* img wrap for checkout display card */
   .img-wrap-check{
     float: left;
-    border: thin solid;
   }
 
   /* remove item button */
   .check-remove-btn{
-    margin-top: 25%;
+    margin-top: 15%;
     margin-right: 3%;
     float: right;
     width: 20%;
-
-
+    border-radius: 12px;
   }
 
   /* price inside display card */
