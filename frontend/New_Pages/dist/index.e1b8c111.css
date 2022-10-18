@@ -12196,6 +12196,11 @@ textarea.form-control-lg {
   margin-left: 340px;
 }
 
+.main-home {
+  margin-top: 110px;
+  margin-left: 340px;
+}
+
 .nav-login a {
   float: right;
   color: #f2f2f2;
@@ -12728,8 +12733,20 @@ select[type="category-listing"] {
   font-weight: bold;
 }
 
+.main-wishlist {
+  margin-top: 110px;
+  margin-left: 60px;
+  margin-right: 60px;
+}
+
 h4, h3, h5 {
   font-family: Tienne, sans-serif;
+}
+
+.main-groups {
+  margin-top: 40px;
+  margin-left: 60px;
+  margin-right: 60px;
 }
 
 .vis-container {

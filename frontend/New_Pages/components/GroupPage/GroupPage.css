@@ -3,3 +3,9 @@
 h4, h3, h5{
     font-family: 'Tienne', sans-serif;
 }
+
+.main-groups{
+    margin-top: 40px; /* Add a top margin to avoid content overlay */
+    margin-left: 60px; /* Same as the width of the sidebar */
+    margin-right: 60px;
+}

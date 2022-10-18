@@ -1,0 +1,5 @@
+.main-wishlist{
+    margin-top: 110px; /* Add a top margin to avoid content overlay */
+    margin-left: 60px; /* Same as the width of the sidebar */
+    margin-right: 60px;
+}

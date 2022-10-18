@@ -98,7 +98,7 @@ const HomePage = () => {
       <SideNav />
     
       {/* products display*/} 
-      <div class="main">
+      <div class="main-home">
         <div className="home-title"> Listings:</div>
         <hr />
         <div className="number-listings"> {data.length} listings 
