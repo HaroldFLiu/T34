@@ -5,7 +5,7 @@ import Cookie from 'universal-cookie';
 import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent"
 import SortByMembers from "../SortByMemberComponent";
-import GroupComponents from "../GroupComponents";
+import MyGroupComponents from "../MyGroupsComponent";
 import PageNext from "../PageNextBar/PageNext";
 
 import "./MyGroupsPage.css"
@@ -77,7 +77,7 @@ const MyGroupsPage = () => {
             <div class="row2">
               <div class="column">
                 {/* insert groupscomponent here */}
-                <GroupComponents data={currentRecords}/> 
+                <MyGroupComponents data={currentRecords}/> 
                 <PageNext
                 nPages={nPages}
                 currentPage={currentPage}
