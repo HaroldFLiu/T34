@@ -18,7 +18,6 @@ async function removeWishlist(item_id) {
   await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
     window.location.reload()
   );
-  
 };
   
 

@@ -17,6 +17,30 @@ const readById = async (groupId) => {
   return group;
 };
 
+const getMembership = async (groupId, userId) => {
+  if (!isMongoId(`${groupId}`)) {
+    console.log(`Group ID: ${groupId} is not a valid MongoID`);
+    return undefined;
+  }
+
+  if (!isMongoId(`${userId}`)) {
+    console.log(`User ID: ${userId} is not a valid MongoID`);
+    return undefined;
+  }
+
+  const group = await Group.findById(groupId);
+
+  if (isNilOrEmpty(group)) {
+    console.log(`Cannot find group with ID: ${groupId}`);
+  }
+
+  if (group.members.includes(userId)) {
+    return true;
+  }
+
+  return false;
+};
+
 const readAll = async () => {
   return Group.find();
 };
@@ -47,4 +71,4 @@ const readOtherGroups = async (userId) => {
 
 
 
-module.exports = { readById, readAll, readByUser, readOtherGroups };
+module.exports = { readById, readAll, readByUser, readOtherGroups, getMembership};

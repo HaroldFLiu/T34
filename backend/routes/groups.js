@@ -10,6 +10,8 @@ const {
     getGroupMembers,
     getGroupsByUser,
     getOtherGroups,
+    addMember,
+    removeMember,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -71,38 +73,9 @@ router.patch('/groups/:group_id', async (req, res) => {
 });
 
 // ADD group members
-router.patch('/groups/:group_id/add/:user_id', async (req, res) => {
-    const { group_id, user_id } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
-        return res.status(404).json({error: 'Invalid Mongo ID'});
-    }
-
-    try {
-        const group = await groupService.joinGroup(group_id, user_id);
-
-        res.status(200).json(group);
-    } catch (error) {
-        res.status(401).json({err: error.message});
-    }
-
-})
+router.patch('/groups/:group_id/add/:user_id', addMember);
 
 // LEAVE group
-router.patch('/groups/:group_id/leave/:user_id', async (req, res) => {
-    const { group_id, user_id } = req.params;
+router.patch('/groups/:group_id/leave/:user_id', removeMember);
 
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
-        return res.status(404).json({error: 'Invalid Mongo ID'});
-    }
-
-    try {
-        const group = await groupService.leaveGroup(group_id, user_id);
-
-        res.status(200).json(group);
-    } catch (error) {
-        res.status(401).json({err: error.message});
-    }
-
-})
 module.exports = router;
