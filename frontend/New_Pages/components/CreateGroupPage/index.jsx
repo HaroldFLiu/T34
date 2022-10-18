@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
-
+import Cookie from 'universal-cookie';
 import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const user = server_res.data;
+      setUser(user);
+  };
+  
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+      fetchData();
+  }, []);
 
   {/* stuff for image upload*/} 
 
@@ -117,7 +129,7 @@ const CreateGroupPage = () => {
 <NavBar />
         
     <div class="listings-main">
-      <div className="home-title"> Create a Group now,<a> and start lisitng privately right away!</a></div>
+      <div className="home-title"> Create a Group now,<a> and start listing privately right away!</a></div>
     </div>
     <hr />
     <div className="number-listings"> {groups} groups online
