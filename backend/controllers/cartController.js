@@ -1,5 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const cartService = require('../services/cart');
+const itemService = require('../services/item');
 /*
 const createCart = async (req, res) => {
     const { userId } = req.params;
@@ -25,15 +26,20 @@ const getCart = async (req, res) => {
     //console.log(cart);
     const items = []
 
-    console.log(cart.items);
-
     for (const itemId of cart.items) {
         const item = await itemService.readById(itemId);
         if (item) {
             items.push(item);
         }
     }
-    return res.status(200).json(items);
+    
+    const data = {
+        cart: cart,
+        items: items
+    }
+
+    //console.log(data);
+    return res.status(200).json(data);
 }
 
 //const getCartFromUser

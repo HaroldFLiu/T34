@@ -50,7 +50,7 @@ function App() {
         <Route path="/product-page/:productId">
           <ProductInformationPage/>
         </Route>
-        <Route path="/checkout-page">
+        <Route path="/checkout-page/:userId">
           <CheckoutPage/>
         </Route>
         <Route path="/group-info-page/:groupId">

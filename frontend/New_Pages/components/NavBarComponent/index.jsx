@@ -61,7 +61,7 @@ const NavBar = () => {
                 {/* <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>*/}
                 <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
                 <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
-                <NavLink to="/checkout-page"> Cart</NavLink>
+                <NavLink to={`/checkout-page/${user.user_id}`}> Cart</NavLink>
                 <input type="text"placeholder="Search.."></input>
             </div>
         </div>

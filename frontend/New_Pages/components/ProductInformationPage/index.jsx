@@ -10,21 +10,7 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 const ProductInformationPage = () => {
 
-  const [posts, setPosts] = useState([]);
   const [added, setAdded] = useState(false);
-  const [itemId, setItemId] = useState();
-
-
-  const fetchData = async () => {
-    const { data } = await axios.get("/public");
-    setPosts(data);
-  };
-
- 
-  useEffect(() => {
-    fetchData();
-  }, []);
-  
 
   {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
   const {productId} = useParams()
