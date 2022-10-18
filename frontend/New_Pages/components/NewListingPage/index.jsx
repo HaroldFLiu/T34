@@ -3,6 +3,10 @@ import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import NavBar from "../NavBarComponent"
+import Cookies from 'universal-cookie';
+
+const cookies = new Cookies();
+
 
 const NewListingPage = () => {
   const [firstRender, setFirstRender] = useState(false);
