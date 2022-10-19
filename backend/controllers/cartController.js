@@ -28,7 +28,7 @@ const getCart = async (req, res) => {
 
     for (const itemId of cart.items) {
         const item = await itemService.readById(itemId);
-        if (item) {
+        if (item && (item.sold == false)) {
             items.push(item);
         }
     }
