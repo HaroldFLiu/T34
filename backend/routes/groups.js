@@ -12,6 +12,7 @@ const {
     getOtherGroups,
     addMember,
     removeMember,
+    getGroupItemsWithCategory,
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -26,6 +27,9 @@ router.get('/groups/group/:groupId', getGroup);
 
 // GET a group's items
 router.get('/groups/items/:groupId', getGroupItems);
+
+// GET a group's items with a category
+router.get('/groups/items/:groupId/category/:catId', getGroupItemsWithCategory);
 
 // GET group members
 router.get('/groups/members/:groupId', getGroupMembers);

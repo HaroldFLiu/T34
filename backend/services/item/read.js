@@ -24,18 +24,6 @@ const readByCategory = async (categoryId, items) => {
   return filtered;
 };
 
-const readByPriceAsc = async (items) => {
-  const filtered = items.sort({ price: 'asc' });
-
-  return filtered;
-}
-
-const readByPriceDesc = async (items) => {
-  const filtered = items.sort({ price: 'desc' });
-
-  return filtered;
-}
-
 const readAll = async () => {
   return Item.find();
 };
@@ -68,7 +56,7 @@ const readByGroup = async (groupId) => {
   if (!filtered) {
     console.log(`No items belonging to group with ID: ${groupId}`);
   }
-  console.log(filtered);
+  //console.log(filtered);
   
   return filtered;
 };
@@ -84,5 +72,5 @@ const readItemsBySeller = async (sellerId) => {
   return filtered;
 }
 
-module.exports = { readById, readByCategory, readByPriceAsc, readByPriceDesc, 
-  readAll, readPublicItems, readByGroup, readItemsBySeller, readAllSold };
+module.exports = { readById, readByCategory, readAll, readPublicItems, 
+  readByGroup, readItemsBySeller, readAllSold };

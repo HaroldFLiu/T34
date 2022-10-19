@@ -1,7 +1,7 @@
 /* Popup style */
 .popup-box-display {
     position: fixed;
-    width: 100%;
+    width: 110%;
     height: 100vh;
     top: 0;
     left: 0;
@@ -60,4 +60,8 @@
 .component-display{
     border: thin solid;
     margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
 }

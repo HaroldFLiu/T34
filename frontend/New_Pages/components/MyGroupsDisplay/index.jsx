@@ -6,6 +6,7 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent"
 import ProductComponents from "../ProductComponents";
 import PageNext from "../PageNextBar/PageNext";
+import SortBy from "../SortByComponent";
 
 import "./MyGroupsDisplay.css"
 const MyGroupsDisplay = () => {
@@ -26,7 +27,7 @@ const MyGroupsDisplay = () => {
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
 
-  const fetchPublic = async () => {
+  const fetchGroupItems = async () => {
     await axios.get('/groups/items/' + groupId)
     .then(res => {
       const tmp = res.data;
@@ -53,23 +54,53 @@ const MyGroupsDisplay = () => {
     //.then(fetchData());
   }
 
+  const fetchGroupItemsWithCategory = async () => {
+    await axios.get(`/groups/items/${groupId}/category/${categoryId}`)
+    .then(res => {
+        const tmp = res.data;
+        console.log(res.data);
+        //setData(res.data);
+        if (sortBy == 'oldest') {
+          setData(tmp);
+          //console.log('newest');
+        } else if (sortBy == 'desc') {
+          setData(tmp.sort((a, b) => b.price - a.price));
+          //console.log('desc');
+        } else if (sortBy == 'asc') {
+          setData(tmp.sort((a, b) => a.price - b.price));
+          //console.log('asc');
+        } else {
+          setData(tmp.reverse());
+        }
+        setLoading(false);
+    })
+    .catch((err) => {
+        alert(err)
+    })
+    //.then(fetchData())
+  }
+
 
   {/*method to unpack the data and fetch effect*/ }
-  useEffect(() => {
-    if (!firstRender) {
-      fetchPublic();
+  if (categoryId) {
+    useEffect(() => {
+      //console.log(categoryId);
+      //console.log(groupId);
       fetchGroup();
-      setFirstRender(true);
-   
-    }
-  }, [firstRender]);
-   
+      fetchGroupItemsWithCategory();
+      //setFirstRender(true);
+    }, []);
+  } else {
+    useEffect(() => {
+      fetchGroup();
+      fetchGroupItems();
+      //setFirstRender(true);
+    }, []);
+  }
+
   const {groupId} = useParams()
 
   const fetchGroup = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    const user = server_res.data;
-
     await axios.get(`/groups/group/${groupId}`)
     .then(res => {
       setGroup(res.data);
@@ -81,7 +112,7 @@ const MyGroupsDisplay = () => {
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(data.length / recordsPerPage)
 
-  console.log(data);
+  //console.log(data);
   return (
    <div className="parent" > 
    <NavBar />
@@ -92,16 +123,22 @@ const MyGroupsDisplay = () => {
       <div className="display-box">
         <div className="display-square-popup">
           <img src={group.icon_url} className="popup-img"></img> 
-          {/* <div className="square-popup">
-          <img src={group.icon_url} className="popup-img"></img> 
-          
-        </div>*/}
         </div>
         <div className="popup-text"> 
-        
         </div>
-        <div className="header-popup-display">{group.name} <button> Member's List</button></div> 
+        <div className="header-popup-display">{group.name} 
+          <button> Member's List</button>
+        </div> 
         <hr className="hr-line"/>
+
+        
+        <div className="number-group-listings"> 
+          <hr />
+          {data.length} listings 
+          <SortBy/>
+          <hr />
+        </div> 
+
        {/* <div className="component-display"> INSERT MY GROUPS COMPONENT ITEM DISPLAY HERE</div> */}
         <br/>
        <div className="wrapper" >

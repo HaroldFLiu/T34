@@ -103,15 +103,31 @@ const getGroupItems = async (req, res) => {
     res.status(200).json(items);
 }
 
-const getGroupItemsWithCategory = async (req, res) => {
-    const { group_id, category_id} = req.params;
+const getGroupAndCategoryItems = async (req, res) => {
+    const { groupId, catId } = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(category_id)) {
+    if (!mongoose.Types.ObjectId.isValid(groupId) || !mongoose.Types.ObjectId.isValid(catId)) {
         return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const items = await itemService.readByGroup(group_id);
-    const filtered = await itemService.readByCategory(category_id, items);
+    const items = await itemService.readByGroup(groupId);
+    console.log(items);
+    if (!items) {
+        return res.status(404).json({error: 'Group items do not exist'});
+    }
+
+    res.status(200).json(items);
+}
+
+const getGroupItemsWithCategory = async (req, res) => {
+    const { groupId, catId} = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(groupId) || !mongoose.Types.ObjectId.isValid(catId)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const items = await itemService.readByGroup(groupId);
+    const filtered = await itemService.readByCategory(catId, items);
 
     if (!filtered) {
         return res.status(404).json({error: 'Group items with category do not exist'});
