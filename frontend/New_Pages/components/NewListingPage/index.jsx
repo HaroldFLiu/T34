@@ -136,7 +136,7 @@ const NewListingPage = () => {
   {/* options for group dropdown menu */}
   const [groups, setGroups] = useState('');
   const getGroups = () => {
-    axios.get(`/groups/user/${user}`)
+    axios.get(`/groups/`)
     .then(res => {
       setGroups(res.data);
     }).catch(err => {
