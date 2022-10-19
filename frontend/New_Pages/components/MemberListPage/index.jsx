@@ -32,12 +32,14 @@ const MemberListPage = () => {
     await axios.get(`/groups/group/${groupId}`)
     .then(res => {
       setGroup(res.data);
-      if (group.admins && group.admins.includes(user)) {
+
+      if (res.data.admins && res.data.admins.includes(user)) {
         setIsAdmin(true);
         console.log(isAdmin);
       }
     })
   };
+
 
   const fetchMembers = async () => {
     await axios.get('/groups/members/'+groupId)
@@ -45,7 +47,6 @@ const MemberListPage = () => {
       //console.log(res);
       setMembers(res.data.members);
       setAdmins(res.data.admins);
-
       setFirstRender(true);
     })
     .catch((error) => {
@@ -57,6 +58,7 @@ const MemberListPage = () => {
   useEffect(() => {
     fetchMembers();
     fetchGroup();
+    //checkAdminship();
   }, [firstRender]);
 
   const indexOfLastRecord = currentPage * recordsPerPage;

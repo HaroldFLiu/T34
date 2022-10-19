@@ -32,7 +32,7 @@ const MyGroupsDisplay = () => {
     await axios.get('/groups/items/' + groupId)
     .then(res => {
       const tmp = res.data;
-      console.log(res);
+      //console.log(res);
       //setData(res.data);
       if (sortBy == 'oldest') {
         setData(tmp);
@@ -59,7 +59,7 @@ const MyGroupsDisplay = () => {
     await axios.get(`/groups/items/${groupId}/category/${categoryId}`)
     .then(res => {
         const tmp = res.data;
-        console.log(res.data);
+        //console.log(res.data);
         //setData(res.data);
         if (sortBy == 'oldest') {
           setData(tmp);

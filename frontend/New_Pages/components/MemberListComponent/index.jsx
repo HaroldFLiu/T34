@@ -27,7 +27,7 @@ const MemberList = ({data, isAdmin}) => {
     
 return(
   <div className="products-wrapper">  
-    {data.map((member) => {{{console.log(member);}}
+    {data.map((member) => {
       return(
         <div className="products-wrapper-test">  
 
