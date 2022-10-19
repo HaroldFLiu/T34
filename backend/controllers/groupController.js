@@ -103,22 +103,6 @@ const getGroupItems = async (req, res) => {
     res.status(200).json(items);
 }
 
-const getGroupAndCategoryItems = async (req, res) => {
-    const { groupId, catId } = req.params;
-
-    if (!mongoose.Types.ObjectId.isValid(groupId) || !mongoose.Types.ObjectId.isValid(catId)) {
-        return res.status(404).json({error: 'Invalid Mongo ID'});
-    }
-
-    const items = await itemService.readByGroup(groupId);
-    console.log(items);
-    if (!items) {
-        return res.status(404).json({error: 'Group items do not exist'});
-    }
-
-    res.status(200).json(items);
-}
-
 const getGroupItemsWithCategory = async (req, res) => {
     const { groupId, catId} = req.params;
 
@@ -182,6 +166,23 @@ const addMember = async (req, res) => {
     res.status(200).json(group);
 }
 
+
+const addAdmin = async (req, res) => {
+    const { group_id, user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const group = await groupService.addAdmin(group_id, user_id)
+
+    if (!group) {
+        return res.status(404).json({error: 'Failed to make admin'});
+    }
+
+    res.status(200).json(group);
+}
+
 const removeMember = async (req, res) => {
     const { group_id, user_id } = req.params;
 
@@ -211,4 +212,5 @@ module.exports = {
     getOtherGroups,
     addMember,
     removeMember,
+    addAdmin,
 }

@@ -13,23 +13,39 @@ const MemberListPage = () => {
   const {groupId} = useParams()
 
   {/*fetch item data*/}
-
+  const [group, setGroup] = useState({});
   const [members, setMembers] = useState([]);
   const [admins, setAdmins] = useState([]);
   const [firstRender, setFirstRender] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const [currentPage, setCurrentPage] = useState(1);
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
-  const fetchMembers = async () => {
-    axios.get('/groups/members/'+groupId)
+  var coookie = new Cookie();
+
+  const fetchGroup = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
+    await axios.get(`/groups/group/${groupId}`)
     .then(res => {
-      console.log(res);
+      setGroup(res.data);
+      if (group.admins && group.admins.includes(user)) {
+        setIsAdmin(true);
+        console.log(isAdmin);
+      }
+    })
+  };
+
+  const fetchMembers = async () => {
+    await axios.get('/groups/members/'+groupId)
+    .then(res => {
+      //console.log(res);
       setMembers(res.data.members);
       setAdmins(res.data.admins);
-      console.log(members);
-      console.log(admins);
+
       setFirstRender(true);
     })
     .catch((error) => {
@@ -40,29 +56,13 @@ const MemberListPage = () => {
 
   useEffect(() => {
     fetchMembers();
+    fetchGroup();
   }, [firstRender]);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = members.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(members.length / recordsPerPage)
-
-  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
-  var coookie = new Cookie();
-  const [user, setUser] = useState([]);
-  const fetchData = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    //console.log(server_res);
-    //const user = server_res.data.user_email;
-    const tmp = server_res.data.user_id;
-    setUser(tmp);
-    console.log(user);
-  };
-
-  {/*method to unpack the data and fetch effect*/ }
-  useEffect(() => {
-    fetchData();
-  }, []);
 
   //search
   const [searchInput, setSearchInput] = useState('');
@@ -89,10 +89,10 @@ return (
              {/*Group img   <div className="img-wrap-mem"> <img src={logo} className="popup-img"></img> </div> */} 
     <div class="left-box-mem">
         <div className="square-pic-mem">  
-        <img src={logo} className="popup-img"></img>
+        <img src={group.icon_url} className="popup-img"></img>
         </div> 
     </div>
-      <div className="shift-title"> <div className="home-title"> Members </div> </div>
+      <div className="shift-title"> <div className="home-title"> Members of {group.name}</div> </div>
           
     </div>
     <hr />
@@ -108,10 +108,9 @@ return (
 
     {/* member list of the group*/}
     
-    <MemberList data={members}/>
-</div>
-
-    );
+    <MemberList data={members} isAdmin={isAdmin}/>
+    </div>
+  );
 }
 
 export default MemberListPage;

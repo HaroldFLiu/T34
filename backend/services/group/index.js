@@ -1,7 +1,7 @@
 const { create } = require('./create');
 const { deleteById } = require('./delete');
 const { readAll, readById, readByUser, readOtherGroups, getMembership} = require('./read');
-const { updateById, joinGroup, leaveGroup } = require('./update');
+const { updateById, joinGroup, leaveGroup, addAdmin } = require('./update');
 
 module.exports = {
   create,
@@ -13,5 +13,6 @@ module.exports = {
   leaveGroup,
   readByUser,
   readOtherGroups,
-  getMembership
+  getMembership,
+  addAdmin
 };

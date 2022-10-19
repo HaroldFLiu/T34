@@ -13,6 +13,7 @@ const {
     addMember,
     removeMember,
     getGroupItemsWithCategory,
+    addAdmin
 } = require('../controllers/groupController')
 
 const groupService = require('../services/group');
@@ -81,6 +82,9 @@ router.patch('/groups/:group_id', async (req, res) => {
 
 // ADD group members
 router.patch('/groups/:group_id/add/:user_id', addMember);
+
+// ADD admin 
+router.patch('/groups/:group_id/admin/:user_id', addAdmin);
 
 // LEAVE group
 router.patch('/groups/:group_id/leave/:user_id', removeMember);

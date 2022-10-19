@@ -24,6 +24,18 @@ const joinGroup = async (groupId, userId) => {
   return group;
 }
 
+const addAdmin = async (groupId, userId) => {
+  const group = await Group.findById(groupId);
+
+  if (!group.admins.includes(userId)) {
+    group.admins.push(userId);
+  }
+
+  await group.save();
+
+  return group;
+}
+
 const leaveGroup = async (groupId, userId) => {
   const group = await Group.findById(groupId);
 
@@ -39,4 +51,4 @@ const leaveGroup = async (groupId, userId) => {
   return group;
 }
   
-module.exports = { updateById, joinGroup, leaveGroup };
+module.exports = { updateById, joinGroup, leaveGroup, addAdmin };
