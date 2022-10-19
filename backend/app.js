@@ -26,7 +26,7 @@ const { applySpec } = require('ramda');
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:1234','t34home-haroldfliu.vercel.app','https://t34home.vercel.app'],
+    origin: ['http://localhost:1234','https://t34home-haroldfliu.vercel.app','https://t34home.vercel.app'],
     credentials: true,
 }));
 
