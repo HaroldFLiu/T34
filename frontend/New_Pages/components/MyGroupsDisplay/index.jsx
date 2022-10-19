@@ -26,6 +26,7 @@ const MyGroupsDisplay = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
+  const {groupId} = useParams()
 
   const fetchGroupItems = async () => {
     await axios.get('/groups/items/' + groupId)
@@ -84,21 +85,15 @@ const MyGroupsDisplay = () => {
   {/*method to unpack the data and fetch effect*/ }
   if (categoryId) {
     useEffect(() => {
-      //console.log(categoryId);
-      //console.log(groupId);
       fetchGroup();
       fetchGroupItemsWithCategory();
-      //setFirstRender(true);
     }, []);
   } else {
     useEffect(() => {
       fetchGroup();
       fetchGroupItems();
-      //setFirstRender(true);
     }, []);
   }
-
-  const {groupId} = useParams()
 
   const fetchGroup = async () => {
     await axios.get(`/groups/group/${groupId}`)
@@ -106,6 +101,11 @@ const MyGroupsDisplay = () => {
       setGroup(res.data);
     })
   };
+
+  const goMember = event => {
+    event.preventDefault();
+    location.pathname="/member-list-page/"+groupId;
+  }
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
@@ -127,7 +127,7 @@ const MyGroupsDisplay = () => {
         <div className="popup-text"> 
         </div>
         <div className="header-popup-display">{group.name} 
-          <button> Member's List</button>
+          <button onClick={goMember}> Member's List</button>
         </div> 
         <hr className="hr-line"/>
 

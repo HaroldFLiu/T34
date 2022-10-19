@@ -96,6 +96,7 @@ return (
           
     </div>
     <hr />
+    {members.length} members
     {/* <div className="number-listings"> {data.length} members</div> */}
     {/* search member button (need fix)*/} 
     <div className = "search-member">
@@ -105,8 +106,6 @@ return (
     <br/>
     <hr />
 
-
-    
     {/* member list of the group*/}
     
     <MemberList data={members}/>

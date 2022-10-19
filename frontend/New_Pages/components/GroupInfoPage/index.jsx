@@ -84,7 +84,6 @@ const GroupInfoPage = () => {
   return (
     <div className="parent" > 
     <NavBar />
-    <SideNav />
 
     <div className="popup-box">
       <div className="box">
