@@ -51,7 +51,7 @@ return(
             <p class="price"> ${item.price}</p>
           </div>
             <div className="item-cart">
-            <h3>{item.name}</h3>
+            <h5>{item.name}</h5>
             <a href="#"> <p><button>Add to Cart</button></p></a>
           
             {/* use this to link to inidivdual product info*/}
