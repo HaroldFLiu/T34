@@ -16,18 +16,15 @@ const NewListingPage = () => {
     itemVisbility: "",
   });
 
-  var coookie = new Cookie();
-  const [user, setUser] = useState([]);
-  const fetchData = async () => {
-      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-      const user = server_res.data.user_id;
-      setUser(user);
-  };
-  
   {/*method to unpack the data and fetch effect*/ }
   useEffect(() => {
-      fetchData();
-  }, []);
+    if (!firstRender) {
+      getGroups();
+      getCatergories();
+      getSold();
+      setFirstRender(true);
+    }
+  }, [firstRender]);
 
   {/* stuff for image upload*/} 
 
@@ -109,8 +106,8 @@ const NewListingPage = () => {
   {/* options to select for category drop down*/}
   const [categories, setCategories] = useState('');
   
-  const getCatergories = () => {
-    axios.get('/category')
+  const getCatergories = async () => {
+    await axios.get('/category')
     .then(res => {
       setCategories(res.data);
     }).catch(err => {
@@ -134,37 +131,36 @@ const NewListingPage = () => {
   ];
 
   {/* options for group dropdown menu */}
+  var coookie = new Cookie();
   const [groups, setGroups] = useState('');
-  const getGroups = () => {
-    axios.get(`/groups/`)
+  const getGroups = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
+    console.log(user);
+
+    await axios.get(`/groups/user/${user}`)
     .then(res => {
+      //console.log(res);
       setGroups(res.data);
+      //console.log(groups);
     }).catch(err => {
       console.log(err);
     })
   }
 
   const [sold, setSold] = useState('');
-  const getSold = () => {
-    axios.get(`/sold`)
+  const getSold = async () => {
+    await axios.get(`/sold`)
     .then(res => {
-      console.log('sold');
+      //console.log('sold');
       setSold(res.data.length);
-      console.log(res.data.length);
+      //console.log(res.data.length);
     })
     .catch(() => {
         alert('There was an error while retrieving the data')
     })
   }
-
-  useEffect(() => {
-    if (!firstRender) {
-      getGroups();
-      getCatergories();
-      getSold();
-      setFirstRender(true);
-    }
-  }, [firstRender]);
     
   const groupOptions = [
     {value: '', text: '---Select group if applicable---'}
