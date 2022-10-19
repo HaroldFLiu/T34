@@ -6,10 +6,12 @@ const cartService = require('./read');
 const addItem = async(userId, itemId) => {
   const item = await itemService.readById(itemId);
   const cart = await cartService.readByUserId(userId);
-  
-  cart.items.push(itemId);
-  cart.subtotal += item.price;
 
+  if (!cart.items.includes(itemId)) {
+    cart.items.push(itemId);
+    cart.subtotal += item.price;
+  }
+  
   await cart.save();
   
   return cart;
@@ -35,11 +37,10 @@ const deleteItem = async(userId, itemId) => {
   const cart = await cartService.readByUserId(userId);
   const item = await itemService.readById(itemId);
 
-  //const tempItems = [];
-  //let count = 0;
-
-  cart.items = cart.items.filter((x) => (JSON.stringify(x._id) != JSON.stringify(itemId)));
-  cart.subtotal -= item.price;
+  if (cart.items.includes(itemId)) {
+    cart.items = cart.items.filter((x) => (JSON.stringify(x._id) != JSON.stringify(itemId)));
+    cart.subtotal -= item.price;
+  }
   
   await cart.save();
   return cart;

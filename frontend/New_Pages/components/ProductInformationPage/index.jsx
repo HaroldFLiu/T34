@@ -6,6 +6,7 @@ import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 import Cookies from 'universal-cookie';
+import { MdStackedLineChart } from "react-icons/md";
 
 const coookie = new Cookies();
 const ProductInformationPage = () => {
@@ -39,11 +40,29 @@ const ProductInformationPage = () => {
  
   useEffect(() => {
     fetchItems();
+    checkCart();
   }, []);
+
+  const checkCart = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
+    await axios.get(`/cart/${user}`)
+    .then(res => {
+      const cart = res.data.cart;
+      console.log(res);
+      if (cart.items.includes(productId)) {
+        setAdded(true);
+      }
+    })
+    .catch((err) => {
+      console.log(err)
+    });
+  }
 
   const addToCart = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
+    //console.log(server_res);
     //const user = server_res.data.user_email;
     const user = server_res.data;
 
@@ -57,46 +76,33 @@ const ProductInformationPage = () => {
 
  
   return (
-<div className="parent" >
-  {/*
-{thisProduct.map((item) => {
-      return(  
-      <>123 </> )
-      
-    })}*/}
-     {/* top nav bar*/}
-<NavBar />
-  
-    {/* product info display*/} 
+    <div className="parent" >
+      {/* top nav bar*/}
+      <NavBar />
 
-<div class="product-info-wrap">     
-<div className="product-img-wrap">
-      <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
-      </div> 
-      <div className="more-info-wrap">
-
-      <div className="item-name-label"> {item.name}</div>
-      <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
-      
-      <hr />
-      <br/>
-      <div className="item-descip-wrap">
-      <div className="info-text-centered"> Item Description: <p> {item.description}</p></div>
+      {/* product info display*/} 
+      <div class="product-info-wrap">     
+        <div className="product-img-wrap">
+          <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
         </div> 
-        
-      <br/>
-      <div className="info-text-centered-price"> <b>${item.price}</b></div>
-      <hr />
 
-      {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
-      {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
-      {/*<button className="contact-btn"> CONTACT SELLER </button>*/}
+        <div className="more-info-wrap">
+          <div className="item-name-label"> {item.name}</div>
+          <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
+          <hr />
+          <br/>
+          <div className="item-descip-wrap">
+            <div className="info-text-centered"> Item Description: <p> {item.description}</p></div>
+          </div> 
+          <br/>
+          <div className="info-text-centered-price"> <b>${item.price}</b></div>
+          <hr />
 
-      </div>
-
+          {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
+          {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
+        </div>
       </div>  
-  </div>
-
+    </div>
   );
 }
 
