@@ -12481,7 +12481,7 @@ textarea.form-control-lg {
 
 .Auth-form {
   width: 420px;
-  background-color: #97eaff;
+  background-color: #a4df9a;
   border-radius: 8px;
   padding-top: 30px;
   padding-bottom: 20px;
@@ -12517,6 +12517,14 @@ label {
   text-align: center;
   margin-bottom: 20px;
   font-size: 70px;
+}
+
+.submit {
+  color: #fff;
+  background: #5a896a;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 * {
@@ -12952,7 +12960,7 @@ body {
 .check-header {
   text-align: left;
   margin-top: 2%;
-  margin-left: 20%;
+  margin-left: 18.5%;
   font-family: Tienne, sans-serif;
   font-size: 35px;
   font-weight: 700;
@@ -12961,7 +12969,7 @@ body {
 .total-items {
   text-align: left;
   margin-top: -1%;
-  margin-left: 20%;
+  margin-left: 18.5%;
   font-family: Tienne, sans-serif;
 }
 

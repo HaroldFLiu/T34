@@ -18,7 +18,7 @@
     padding-top: 30px;
     padding-bottom: 20px;
     border-radius: 8px;
-    background-color: rgb(151, 234, 255);
+    background-color: #A4DF9A;
   }
   
   .Auth-form-content {
@@ -50,4 +50,12 @@
     font-size: 70px;
     margin-bottom: 20px;
     text-align: center;
+  }
+
+  .submit {
+    color: white;
+    background: #5A896A;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
   }

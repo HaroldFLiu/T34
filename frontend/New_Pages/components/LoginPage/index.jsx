@@ -74,7 +74,7 @@ const LoginPage = () => {
             />
           </div>
           <div className="d-grid gap-2 mt-3">
-            <button type="submit" onClick={PostLogin} className="btn btn-primary">
+            <button type="submit" onClick={PostLogin} className="submit">
               Submit
             </button>
           </div>
