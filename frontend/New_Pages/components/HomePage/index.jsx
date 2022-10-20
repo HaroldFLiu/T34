@@ -25,7 +25,8 @@ const HomePage = () => {
   const sortBy = queryParams.get("sortBy");
   const searchBy = queryParams.get("searchBy")
 
-  console.log(sortBy);
+  //console.log(sortBy);
+  //console.log(searchBy);
 
   const fetchPublic = async () => {
     await axios.get('/public')
