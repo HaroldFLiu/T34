@@ -22,12 +22,38 @@ const SellPage = () => {
 
   const queryParams = new URLSearchParams(window.location.search);
   const sortBy = queryParams.get("sortBy");
+  const searchBy = queryParams.get("searchBy");
   //console.log(categoryId);
   
   useEffect(() => {
     axios.get(`/favourites/${userId}`)
       .then(res => {
-        const tmp = res.data;
+        var tmp = res.data;
+
+        //search filter logic
+      if (queryParams.has("searchBy")) {
+        const searchedData = [];
+        const query_characters = searchBy.toLowerCase().split("");
+      
+        tmp.forEach(entry => {
+          //console.log(entry.name.toLowerCase().split(""))
+          var i = 0;
+          var count = 0;
+          entry.name.toLowerCase().split("").forEach(character => {
+            if (query_characters[i] == character) {
+              count++;
+            }
+            i++;
+          });
+          if (count == query_characters.length) {
+            console.log(entry.name);
+            searchedData.push(entry);
+          }
+        });
+        tmp = searchedData;
+        //console.log(tmp);
+      }
+      
         //setData(res.data);
         if (sortBy == 'oldest') {
           setData(tmp);
