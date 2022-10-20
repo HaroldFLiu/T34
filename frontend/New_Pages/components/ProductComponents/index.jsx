@@ -20,6 +20,7 @@ const addWishlist = async item_id => {
   //let items = res.data.items;
   //items.push(productId);
   await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+  alert('Item added to wishlist!');
   };
 
   const [remove, setRemove] = useState([]);
