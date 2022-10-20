@@ -24,9 +24,8 @@ const HomePage = () => {
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
   const searchBy = queryParams.get("searchBy")
-  console.log(searchBy);
 
-  //console.log(sortBy);
+  console.log(sortBy);
 
   const fetchPublic = async () => {
     await axios.get('/public')
@@ -78,8 +77,10 @@ const HomePage = () => {
     //.then(fetchData())
   }
 
+
   if (!categoryId) {
     useEffect(() => {
+      
       fetchPublic();
     }, []);
   } else {

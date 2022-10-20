@@ -52,12 +52,16 @@ const NavBar = () => {
     const handleKeyDown = event => {
         if (event.key === 'Enter') {
           event.preventDefault();
+          
           queryParams.set('searchBy', query);
+          
           setURL(currentURL.pathname + '?' + queryParams.toString());
-          console.log(url);
-          location.pathname = url.toString();
+          //console.log(currentURL.pathname + '?' + queryParams.toString());
+        
+          location.pathname = currentURL.pathname + '?' + queryParams.toString();
         }
       };
+
 
     return (
         <div class="navbar">
