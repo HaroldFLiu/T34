@@ -15,7 +15,7 @@ const coookie = new Cookies();
 const HomePage = () => {
 
   // To hold the actual data
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -28,7 +28,7 @@ const HomePage = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
-  const searchBy = queryParams.get("searchBy")
+  const searchBy = queryParams.get("searchBy");
 
   //console.log(sortBy);
   //console.log(searchBy);
@@ -40,7 +40,32 @@ const HomePage = () => {
 
     await axios.get('/public')
     .then(res => {
-      const tmp = res.data;
+      var tmp = res.data;
+
+      //search filter logic
+      if (queryParams.has("searchBy")) {
+        const searchedData = [];
+        const query_characters = searchBy.toLowerCase().split("");
+      
+        tmp.forEach(entry => {
+          //console.log(entry.name.toLowerCase().split(""))
+          var i = 0;
+          var count = 0;
+          entry.name.toLowerCase().split("").forEach(character => {
+            if (query_characters[i] == character) {
+              count++;
+            }
+            i++;
+          });
+          if (count == query_characters.length) {
+            console.log(entry.name);
+            searchedData.push(entry);
+          }
+        });
+        tmp = searchedData;
+        //console.log(tmp);
+      }
+
       //setData(res.data);
       if (sortBy == 'oldest') {
         setData(tmp);
@@ -65,7 +90,31 @@ const HomePage = () => {
   const fetchPublicCategory = async () => {
     await axios.get(`/public/category/${categoryId}`)
     .then(res => {
-        const tmp = res.data;
+        var tmp = res.data;
+
+        //search filter logic
+        if (queryParams.has("searchBy")) {
+          const searchedData = [];
+          const query_characters = searchBy.toLowerCase().split("");
+      
+          tmp.forEach(entry => {
+            //console.log(entry.name.toLowerCase().split(""))
+            var i = 0;
+            var count = 0;
+            entry.name.toLowerCase().split("").forEach(character => {
+              if (query_characters[i] == character) {
+                count++;
+              }
+              i++;
+            });
+            if (count == query_characters.length) {
+              console.log(entry.name);
+              searchedData.push(entry);
+            }
+          });
+          tmp = searchedData;
+          //console.log(tmp);
+        }
         //setData(res.data);
         if (sortBy == 'oldest') {
           setData(tmp);
