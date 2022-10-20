@@ -12321,13 +12321,25 @@ textarea.form-control-lg {
 .wishlist button {
   color: #fff;
   text-align: center;
-  width: 18%;
+  width: 15%;
   background-color: green;
   border-color: #000;
   border-radius: 60%;
   outline: 0;
   margin-left: 70%;
   padding: 1px 1px 5px;
+  font-size: 13px;
+}
+
+.sold button {
+  color: #fff;
+  text-align: center;
+  width: 18%;
+  background-color: green;
+  border-color: #000;
+  outline: 0;
+  margin-left: 70%;
+  padding: 1px;
   font-size: 13px;
 }
 
@@ -13111,10 +13123,9 @@ body {
   width: 100%;
   height: 100vh;
   margin-top: 4%;
-  margin-left: 5%;
   display: flex;
   position: fixed;
-  top: 0;
+  top: -30px;
   left: 0;
 }
 
@@ -13153,10 +13164,18 @@ body {
 
 .popup-box button {
   width: 100%;
+  color: #fff;
+  background-color: #33532c;
+  border: none;
   border-radius: 32px;
   margin-bottom: 5%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 5px 5%;
+}
+
+.popup-box button:hover {
+  opacity: 1;
+  color: #000;
+  background: #a4df9a;
 }
 
 .header-popup {
@@ -13185,8 +13204,8 @@ body {
   float: right;
   font-size: 27px;
   position: fixed;
-  top: 83%;
-  right: 12%;
+  top: 80%;
+  right: 18%;
 }
 
 .close-icon {

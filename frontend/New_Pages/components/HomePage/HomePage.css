@@ -187,11 +187,23 @@
   border-color: #000;
   background-color: green;
   text-align: center;
-  width: 18%;
+  width: 15%;
   font-size: 13px;
   margin-left: 70%;
   border-radius: 60%;
   padding-bottom: 5px;
+}
+
+.sold button{
+  outline: 0;
+  padding: 1px;
+  color: white;
+  border-color: #000;
+  background-color: green;
+  text-align: center;
+  width: 18%;
+  font-size: 13px;
+  margin-left: 70%;
 }
 
 /* space to be used in place of wishlist btn for sell page */

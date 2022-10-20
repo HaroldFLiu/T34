@@ -41,8 +41,9 @@ return(
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
             </div>
-            <div class="wishlist">
-              {(item.sold == true) && <p><button > SOLD </button></p>}
+            {/*btn css in home.css */}
+            <div class="sold">
+              {(item.sold == true) && <p><button > <b> SOLD</b> </button></p>}
               {(item.sold == false) && <div className="space"> </div>}
             </div>
             <div className="content-posts">
