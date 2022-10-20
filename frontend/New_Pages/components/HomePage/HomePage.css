@@ -35,12 +35,13 @@
 .main {
   margin-top: 40px; /* Add a top margin to avoid content overlay */
   margin-left: 340px; /* Same as the width of the sidebar */
-
+  margin-right: 50px;
 }
 
 .main-home{
   margin-top: 110px; /* Add a top margin to avoid content overlay */
   margin-left: 340px; /* Same as the width of the sidebar */
+  margin-right: 50px;
 }
 
 /* Links inside the navbar for login and user*/
@@ -215,9 +216,7 @@
 /* drop down button Sort By: */
 .move-drop-btn{
   float: right;
-  margin-right: 100px;
-  margin-top: -10px;
-  
+  margin-top: -16px;
 }
 
 .website-title{

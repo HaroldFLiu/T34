@@ -1,8 +1,8 @@
 /* Popup style */
 .popup-box-display {
     position: fixed;
-    width: 100%;
-    height: 100vh;
+    width: 110%;
+    height: 100%;
     top: 0;
     left: 0;
     margin-top: 4%;
@@ -15,7 +15,7 @@
     width: 70%;
     margin: 0 auto;
     height: auto;
-    max-height: 70vh;
+    max-height: 80vh;
     
     background: #fff;
     padding: 20px;
@@ -60,4 +60,14 @@
 .component-display{
     border: thin solid;
     margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
+}
+
+.header-popup-display .remove-leave {
+  float:right;
+  font-size: 16px;
+  margin-top: -11%;
 }

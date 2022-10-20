@@ -104,14 +104,14 @@ const getGroupItems = async (req, res) => {
 }
 
 const getGroupItemsWithCategory = async (req, res) => {
-    const { group_id, category_id} = req.params;
+    const { groupId, catId} = req.params;
 
-    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(category_id)) {
+    if (!mongoose.Types.ObjectId.isValid(groupId) || !mongoose.Types.ObjectId.isValid(catId)) {
         return res.status(404).json({error: 'Invalid Mongo ID'});
     }
 
-    const items = await itemService.readByGroup(group_id);
-    const filtered = await itemService.readByCategory(category_id, items);
+    const items = await itemService.readByGroup(groupId);
+    const filtered = await itemService.readByCategory(catId, items);
 
     if (!filtered) {
         return res.status(404).json({error: 'Group items with category do not exist'});
@@ -129,9 +129,7 @@ const deleteGroup = async (req, res) => {
 
     const group = await groupService.deleteById(group_id);
 
-    if (!group) {
-        res.status(200).json({mssg: 'Group deleted successfully'});
-    }
+    res.status(200).json({mssg: 'Group deleted successfully'});
 }
 
 const updateGroup = async (req, res) => {
@@ -166,6 +164,23 @@ const addMember = async (req, res) => {
     res.status(200).json(group);
 }
 
+
+const addAdmin = async (req, res) => {
+    const { group_id, user_id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(group_id) || !mongoose.Types.ObjectId.isValid(user_id)) {
+        return res.status(404).json({error: 'Invalid Mongo ID'});
+    }
+
+    const group = await groupService.addAdmin(group_id, user_id)
+
+    if (!group) {
+        return res.status(404).json({error: 'Failed to make admin'});
+    }
+
+    res.status(200).json(group);
+}
+
 const removeMember = async (req, res) => {
     const { group_id, user_id } = req.params;
 
@@ -195,4 +210,5 @@ module.exports = {
     getOtherGroups,
     addMember,
     removeMember,
+    addAdmin,
 }

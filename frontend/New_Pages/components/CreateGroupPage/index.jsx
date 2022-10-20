@@ -2,11 +2,23 @@ import React, { useEffect, useState } from "react";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import "./CreateGroupPage.css";
-
+import Cookie from 'universal-cookie';
 import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
+  var coookie = new Cookie();
+  const [user, setUser] = useState([]);
+  const fetchData = async () => {
+      const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+      const user = server_res.data.user_id;
+      setUser(user);
+  };
+  
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+      fetchData();
+  }, []);
 
   {/* stuff for image upload*/} 
 
@@ -14,7 +26,7 @@ const CreateGroupPage = () => {
 
   const handleChange = e => {
     if (e.target.files.length) {
-    console.log(e.target.files[0])
+    //console.log(e.target.files[0])
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0]
@@ -27,7 +39,6 @@ const CreateGroupPage = () => {
     groupDescription: "",
   });
 
-  console.log(values);
 
   const PostNewGroup =  event => {
     /* group details */
@@ -66,28 +77,29 @@ const CreateGroupPage = () => {
     })
     .then(function (res1) {
       if (res1.status=="200") {
-        console.log('group image uploaded');
+        //console.log('group image uploaded');
         props.icon_url = res1.data.image_urls[0];
-        console.log(props);
+        //console.log(props);
 
         axios.post('/groups', props)
         .then(function (res2) {
           if (res2.status=="200") {
-            console.log('group details successful');
-            location.pathname='/group-page';
+            //console.log('group details successful');
+            alert('Created group successfully');
+            location.pathname=`/my-groups-page/${user}`;
           } else {
             console.log("group posting went wrong");
           }
         })
         .catch(function (error) {
-            console.log(error);
+          alert(error);
         });
       } else {
-        console.log("group image posting went wrong");
+        alert("Group image posting went wrong");
       }
     })
     .catch(function (error) {
-      console.log(error);
+      alert("Group image posting went wrong. Only accepts .jpeg, .jpg, .png");
     });
   }
 
@@ -117,7 +129,7 @@ const CreateGroupPage = () => {
 <NavBar />
         
     <div class="listings-main">
-      <div className="home-title"> Create a Group now,<a> and start lisitng privately right away!</a></div>
+      <div className="home-title"> Create a Group now,<a> and start listing privately right away!</a></div>
     </div>
     <hr />
     <div className="number-listings"> {groups} groups online

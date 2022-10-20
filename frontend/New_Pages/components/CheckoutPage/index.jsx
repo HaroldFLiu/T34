@@ -31,7 +31,9 @@ const CheckoutPage = () => {
   };
 
   const checkoutCart = async () => {
-    await axios.patch("/cart/checkout/"+userId, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).catch(error => {
+    await axios.patch("/cart/checkout/"+userId, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+      window.location.reload()
+    ).catch(error => {
       console.log("Error updating cart", error);
     });
   };

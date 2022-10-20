@@ -8,6 +8,10 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent";
 import SortBy from "../SortByComponent";
 
+import Cookies from 'universal-cookie';
+
+const coookie = new Cookies();
+
 const HomePage = () => {
 
   // To hold the actual data
@@ -17,6 +21,7 @@ const HomePage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
+  const [user, setUser] = useState('');
 
           //console.log(sellerId);
 
@@ -29,6 +34,10 @@ const HomePage = () => {
   //console.log(searchBy);
 
   const fetchPublic = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+    setUser(user);
+
     await axios.get('/public')
     .then(res => {
       const tmp = res.data;
@@ -115,7 +124,7 @@ const HomePage = () => {
           <div class="row2">
             <div class="column">
 
-            <ProductComponents data={currentRecords}/> 
+            <ProductComponents data={currentRecords} userId={user}/> 
             <PageNext
                   nPages={nPages}
                   currentPage={currentPage}

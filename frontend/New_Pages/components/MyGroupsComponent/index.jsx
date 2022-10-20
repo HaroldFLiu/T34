@@ -17,13 +17,13 @@ return(
           <div class="card">
             {/*  add href to group info page LINK LATER groupId*/}
             
-            <Link to={`/group-info-page/${group._id}`}>
+    
             <div className="img-wrap"> 
               <img src={group.icon_url} className="logo-position">
               </img> 
             </div>
             {/* spacer instead of wishlist btn*/}
-            &nbsp;  </Link>
+            &nbsp; 
                 <div className="item-cart">
                     <h5>{group.name}</h5>
                     <p class="members-text">{group.members.length} Members</p>

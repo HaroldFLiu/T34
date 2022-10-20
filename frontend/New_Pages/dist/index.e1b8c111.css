@@ -12194,11 +12194,13 @@ textarea.form-control-lg {
 .main {
   margin-top: 40px;
   margin-left: 340px;
+  margin-right: 50px;
 }
 
 .main-home {
   margin-top: 110px;
   margin-left: 340px;
+  margin-right: 50px;
 }
 
 .nav-login a {
@@ -12348,8 +12350,7 @@ textarea.form-control-lg {
 
 .move-drop-btn {
   float: right;
-  margin-top: -10px;
-  margin-right: 100px;
+  margin-top: -16px;
 }
 
 .website-title {
@@ -13126,8 +13127,8 @@ body {
 }
 
 .popup-box-display {
-  width: 100%;
-  height: 100vh;
+  width: 110%;
+  height: 100%;
   margin-top: 4%;
   margin-left: 1%;
   display: flex;
@@ -13139,7 +13140,7 @@ body {
 .display-box {
   width: 70%;
   height: auto;
-  max-height: 70vh;
+  max-height: 80vh;
   background: #fff;
   margin: 0 auto;
   padding: 20px;
@@ -13183,6 +13184,16 @@ body {
 .component-display {
   border: thin solid;
   margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
+}
+
+.header-popup-display .remove-leave {
+  float: right;
+  margin-top: -11%;
+  font-size: 16px;
 }
 
 .search-member {

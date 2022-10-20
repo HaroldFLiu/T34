@@ -5,14 +5,31 @@ import {Link} from "react-router-dom"
 import Cookies from 'universal-cookie';
 
 const coookie = new Cookies();
-const ProductComponents = ({data}) => {
+const ProductComponents = ({data, userId}) => {
+  const [wishlist, setWishlist] = useState([])
+  const fetchWishlist = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    await axios.get(`/favourites/${user.user_id}`)
+    .then(res => {
+      setWishlist(res.data.map((x) => x._id));
+    })
+    .catch(() => {
+      alert('There are no items in your wishlist')
+    })
+  }
+
+  useEffect(() => {
+    fetchWishlist();
+  }, []);
 
 //router.patch('/favourites/:userId/add/:itemId', addtoFavourite);
 const [added, setAdded] = useState(false);
 
 const addWishlist = async item_id => {
   const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-  console.log(server_res);
+  //console.log(server_res);
   //const user = server_res.data.user_email;
   const user = server_res.data;
 
@@ -20,11 +37,31 @@ const addWishlist = async item_id => {
   //let items = res.data.items;
   //items.push(productId);
   await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-  };
+  .then(window.location.reload())
+};
+
+async function removeWishlist(item_id) {
+  const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+  console.log(server_res);
+  const user = server_res.data;
+  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+    window.location.reload()
+  );
+};
   
 
+  const [remove, setRemove] = useState([]);
 
+  /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+  async function deletePost(itemId) {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
 
+    await axios.delete(`/public/${itemId}`);
+    alert('Removed item successfully');
+    location.pathname="/sell-page/"+user.user_id;
+    setStatus('Delete successful');
+  }
 
 return(
     <div className="products-wrapper">  
@@ -37,39 +74,33 @@ return(
           <div class="column">
           <div class="card">
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
-            <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
-            </div></Link>
+            </div>
              {/* wishlist button */}
              <div class="wishlist">
-             <button onClick={() => addWishlist(item._id)}> wishlist </button>
+             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
+             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button onClick={() => removeWishlist(item._id)}> in wishlist </button>}
+             {(item.seller_id == userId) && <br></br>}
             </div>
-            <Link to={`/product-page/${item._id}`}>
             <div className="content-posts">
             <p class="price"> ${item.price}</p>
           </div>
             <div className="item-cart">
-            <h3>{item.name}</h3>
-            <a href="#"> <p><button>Add to Cart</button></p></a>
-          
+            <h5>{item.name}</h5>
+            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
+            </Link>
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}
-            </Link>
           </div>
           </div>   
-          
         </div>
         </div>
-    
-    
         </div>  
       )
-      
     })}
-
     </div>  
       
 );

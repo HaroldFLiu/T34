@@ -3,6 +3,7 @@ import "./NewListings.css";
 import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import NavBar from "../NavBarComponent"
+import Cookie from 'universal-cookie';
 
 const NewListingPage = () => {
   const [firstRender, setFirstRender] = useState(false);
@@ -14,6 +15,16 @@ const NewListingPage = () => {
     itemGroup: "",
     itemVisbility: "",
   });
+
+  {/*method to unpack the data and fetch effect*/ }
+  useEffect(() => {
+    if (!firstRender) {
+      getGroups();
+      getCatergories();
+      getSold();
+      setFirstRender(true);
+    }
+  }, [firstRender]);
 
   {/* stuff for image upload*/} 
 
@@ -70,38 +81,34 @@ const NewListingPage = () => {
       //console.log('RES 1');
       //console.log(res1);
       //console.log(image.raw);
+      //console.log('image uploaded');
+      props.image_urls = res1.data.image_urls;
+      //console.log(props);
 
-      if (res1.status=="200") {
-        console.log('image uploaded');
-        props.image_urls = res1.data.image_urls;
-        console.log(props);
-
-        axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-        .then(function (res2) {
-          if (res2.status=="200") {
-            console.log('item details successful');
-            location.pathname='/home-page';
-          } else {
-            console.log("item posting went wrong");
-          }
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-      } else {
-        console.log("image posting  went wrong");
-      }
+      axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+      .then(function (res2) {
+        if (res2.status=="200") {
+          //console.log('item details successful');
+          alert('Listed item successfully');
+          location.pathname='/home-page';
+        } else {
+          console.log("item posting went wrong");
+        }
+      })
+      .catch(function (error) {
+        alert('Please fill in all required fields.');
+      });
     })
     .catch(() => {
-      alert('Image Required. Please fill in all fields.');
+      alert('Image Required. Please fill in all required fields. Accepted images are .jpg, .jpeg, .png, .webp');
     });
   }
 
   {/* options to select for category drop down*/}
   const [categories, setCategories] = useState('');
   
-  const getCatergories = () => {
-    axios.get('/category')
+  const getCatergories = async () => {
+    await axios.get('/category')
     .then(res => {
       setCategories(res.data);
     }).catch(err => {
@@ -125,37 +132,36 @@ const NewListingPage = () => {
   ];
 
   {/* options for group dropdown menu */}
+  var coookie = new Cookie();
   const [groups, setGroups] = useState('');
-  const getGroups = () => {
-    axios.get('/groups')
+  const getGroups = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
+    //console.log(user);
+
+    await axios.get(`/groups/user/${user}`)
     .then(res => {
+      //console.log(res);
       setGroups(res.data);
+      //console.log(groups);
     }).catch(err => {
       console.log(err);
     })
   }
 
   const [sold, setSold] = useState('');
-  const getSold = () => {
-    axios.get(`/sold`)
+  const getSold = async () => {
+    await axios.get(`/sold`)
     .then(res => {
-      console.log('sold');
+      //console.log('sold');
       setSold(res.data.length);
-      console.log(res.data.length);
+      //console.log(res.data.length);
     })
     .catch(() => {
         alert('There was an error while retrieving the data')
     })
   }
-
-  useEffect(() => {
-    if (!firstRender) {
-      getGroups();
-      getCatergories();
-      getSold();
-      setFirstRender(true);
-    }
-  }, [firstRender]);
     
   const groupOptions = [
     {value: '', text: '---Select group if applicable---'}
@@ -172,20 +178,20 @@ const NewListingPage = () => {
 
   {/* handle onchange for each drop down state*/}
   const handleChangeCat = e => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedCat(e.target.value);
     setValues({...values, itemCategory:e.target.value})
   };
 
   const handleChangeVis = e => {
     setValues({...values, itemVisbility:e.target.value})
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedVis(e.target.value);
   };
   
   const handleChangeGroup = e => {
     setValues({...values, itemGroup:e.target.value})
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedGroup(e.target.value);
   };
     

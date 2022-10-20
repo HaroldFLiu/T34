@@ -21,6 +21,7 @@ const SellComponent = ({data}) => {
 /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
   async function deletePost(id) {
     await axios.delete(`/public/${id}`);
+    alert('Removed item successfully');
     window.location.reload();
     setStatus('Delete successful');
 }
@@ -36,21 +37,22 @@ return(
           <div class="column">
           <div class="card">
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
-            <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
-      
             </div>
-            <div className="space"> </div>
+            <div class="wishlist">
+              {(item.sold == true) && <p><button > SOLD </button></p>}
+              {(item.sold == false) && <div className="space"> </div>}
+            </div>
             <div className="content-posts">
             <p class="price"> ${item.price}</p>
-          </div> </Link>
+          </div>
             <div className="item-cart">
             <h3>{item.name}</h3>
             
-            <a href="#"> <p><button onClick={() => deletePost(item._id)}>Remove </button></p></a>
-        
+            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
+            </Link>
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}

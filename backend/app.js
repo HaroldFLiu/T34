@@ -25,10 +25,13 @@ const getuserRoutes = require('./routes/getuser');
 const { applySpec } = require('ramda');
 
 const app = express();
+
+
 app.use(cors({
-    origin: ['http://localhost:1234'],
-    credentials: true,
+    origin: ['http://localhost:1234','http://vercel.app','https://vercel.app','https://t34home.vercel.app','http://t34home.vercel.app'],
+    credentials:true,
 }));
+
 
 // middleware
 app.use(express.json());
@@ -74,12 +77,23 @@ mongoose.connect(process.env.MONGO_URI, {
 });
 
 // fix CORS error
+
+
+/*
+
 app.use(function (req, res, next) {
+    const allowedOrigins = ['http://127.0.0.1:1234', 'https://127.0.0.1:1234','http://t34home.vercel.app/','https://t34home.vercel.app/'];
+    const origin = req.headers.origin;
+    if (allowedOrigins.includes(origin)) {
+       res.setHeader('Access-Control-Allow-Origin', origin);
+    }
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     res.header('Access-Control-Allow-Methods', 'GET,POST,PATCH,DELETE');
     res.header('Access-Control-Allow-Credentials', 'true');
 });
+*/
+
 
 
 
