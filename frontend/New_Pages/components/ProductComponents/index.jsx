@@ -3,6 +3,7 @@ import React, {useEffect, useState, useMemo}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
 import Cookies from 'universal-cookie';
+import { FaHeart } from "react-icons/fa";
 
 const coookie = new Cookies();
 const ProductComponents = ({data, userId}) => {
@@ -80,8 +81,9 @@ return(
             </div>
              {/* wishlist button */}
              <div class="wishlist">
-             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
-             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button onClick={() => removeWishlist(item._id)}> in wishlist </button>}
+              {/* css for heart btn in home.css */}
+             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> <FaHeart className="heart-icon"/> </button>}
+             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button onClick={() => removeWishlist(item._id)}> <FaHeart className="heart-icon-clicked"/>  </button>}
              {(item.seller_id == userId) && <br></br>}
             </div>
             <div className="content-posts">

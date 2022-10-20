@@ -12324,10 +12324,11 @@ textarea.form-control-lg {
   width: 18%;
   background-color: green;
   border-color: #000;
+  border-radius: 60%;
   outline: 0;
   margin-left: 70%;
-  padding: 1px;
-  font-size: 10px;
+  padding: 1px 1px 5px;
+  font-size: 13px;
 }
 
 .space {
@@ -12414,6 +12415,10 @@ textarea.form-control-lg {
 .new {
   margin-top: 35px;
   margin-left: 35px;
+}
+
+.heart-icon-clicked {
+  color: #000;
 }
 
 .page-item {
