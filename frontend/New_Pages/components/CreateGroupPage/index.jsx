@@ -26,7 +26,7 @@ const CreateGroupPage = () => {
 
   const handleChange = e => {
     if (e.target.files.length) {
-    console.log(e.target.files[0])
+    //console.log(e.target.files[0])
       setImage({
         preview: URL.createObjectURL(e.target.files[0]),
         raw: e.target.files[0]
@@ -77,14 +77,15 @@ const CreateGroupPage = () => {
     })
     .then(function (res1) {
       if (res1.status=="200") {
-        console.log('group image uploaded');
+        //console.log('group image uploaded');
         props.icon_url = res1.data.image_urls[0];
-        console.log(props);
+        //console.log(props);
 
         axios.post('/groups', props)
         .then(function (res2) {
           if (res2.status=="200") {
-            console.log('group details successful');
+            //console.log('group details successful');
+            alert('Created group successfully');
             location.pathname=`/my-groups-page/${user}`;
           } else {
             console.log("group posting went wrong");

@@ -21,6 +21,7 @@ const SellComponent = ({data}) => {
 /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
   async function deletePost(id) {
     await axios.delete(`/public/${id}`);
+    alert('Removed item successfully');
     window.location.reload();
     setStatus('Delete successful');
 }
@@ -50,7 +51,8 @@ return(
             <h3>{item.name}</h3>
             
             <a href="#"> <p><button onClick={() => deletePost(item._id)}>Remove </button></p></a>
-        
+            {(item.sold == true) && <a href="#"> <p><button > SOLD </button></p></a>}
+            {(item.sold == false) && <a href="#"> <p><button > LISTED </button></p></a>}
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}

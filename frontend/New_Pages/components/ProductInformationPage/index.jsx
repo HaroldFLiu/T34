@@ -23,8 +23,12 @@ const ProductInformationPage = () => {
   
   const [item, setItems] = useState({});
   const [seller, setSeller] = useState({});
+  const [isSeller, setIsSeller] = useState(false);
 
   const fetchItems = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
     axios.get(`/public/item/${productId}`)
     .then(res => {
       //console.log(res.data);
@@ -32,11 +36,18 @@ const ProductInformationPage = () => {
       //console.log(item);
       setSeller(res.data.seller);
       //console.log(seller);
+      //console.log(res.data.item.seller_id);
+      //console.log(user);
+      if (res.data.item.seller_id == user) {
+        setIsSeller(true);
+      }
     })
     .catch(() => {
       alert('There was an error while retrieving the data')
     })
   };
+
+  //console.log(isSeller);
  
   useEffect(() => {
     fetchItems();
@@ -50,7 +61,7 @@ const ProductInformationPage = () => {
     await axios.get(`/cart/${user}`)
     .then(res => {
       const cart = res.data.cart;
-      console.log(res);
+      //console.log(res);
       if (cart.items.includes(productId)) {
         setAdded(true);
       }
@@ -74,6 +85,18 @@ const ProductInformationPage = () => {
     });
   };
 
+  const [remove, setRemove] = useState([]);
+
+  /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+  async function deletePost(itemId) {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    await axios.delete(`/public/${itemId}`);
+    alert('Removed item successfully');
+    location.pathname="/sell-page/"+user.user_id;
+    setStatus('Delete successful');
+  }
  
   return (
     <div className="parent" >
@@ -98,8 +121,11 @@ const ProductInformationPage = () => {
           <div className="info-text-centered-price"> <b>${item.price}</b></div>
           <hr />
 
-          {!added && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
-          {added && <button className="purchase-btn" button> IN CART ALREADY</button>}
+          {!added && !isSeller && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
+          {added && !isSeller && <button className="purchase-btn" button> IN CART ALREADY</button>}
+          {isSeller && (item.sold == true) && <button className="purchase-btn" button> SOLD </button>}
+          {isSeller && (item.sold == false) && <button className="purchase-btn" button> LISTED </button>}
+          {isSeller && <a href="#"> <p><button onClick={() => deletePost(item._id)}> Remove </button></p></a>}
         </div>
       </div>  
     </div>

@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 import Cookies from 'universal-cookie';
 
 const coookie = new Cookies();
-const ProductComponents = ({data}) => {
+const ProductComponents = ({data, userId}) => {
 
 //router.patch('/favourites/:userId/add/:itemId', addtoFavourite);
 const [added, setAdded] = useState(false);
@@ -21,10 +21,19 @@ const addWishlist = async item_id => {
   //items.push(productId);
   await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
   };
-  
 
+  const [remove, setRemove] = useState([]);
 
+  /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+  async function deletePost(itemId) {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
 
+    await axios.delete(`/public/${itemId}`);
+    alert('Removed item successfully');
+    location.pathname="/sell-page/"+user.user_id;
+    setStatus('Delete successful');
+  }
 
 return(
     <div className="products-wrapper">  
@@ -37,39 +46,32 @@ return(
           <div class="column">
           <div class="card">
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
-            <Link to={`/product-page/${item._id}`}>
             <div className="img-wrap"> 
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
-            </div></Link>
+            </div>
              {/* wishlist button */}
              <div class="wishlist">
-             <button onClick={() => addWishlist(item._id)}> wishlist </button>
+             {(item.seller_id != userId) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
+             {(item.seller_id == userId) && <br></br>}
             </div>
-            <Link to={`/product-page/${item._id}`}>
             <div className="content-posts">
             <p class="price"> ${item.price}</p>
           </div>
             <div className="item-cart">
             <h5>{item.name}</h5>
-            <a href="#"> <p><button>Add to Cart</button></p></a>
-          
+            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
+            </Link>
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}
-            </Link>
           </div>
           </div>   
-          
         </div>
         </div>
-    
-    
         </div>  
       )
-      
     })}
-
     </div>  
       
 );

@@ -116,7 +116,6 @@ const GroupInfoPage = () => {
           
         </div>}
         <div className="popup-text"> 
-        {group.name}
 
         <button onClick={goMember}> Member's List</button>
        

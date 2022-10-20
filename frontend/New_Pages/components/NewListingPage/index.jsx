@@ -81,14 +81,15 @@ const NewListingPage = () => {
       //console.log('RES 1');
       //console.log(res1);
       //console.log(image.raw);
-      console.log('image uploaded');
+      //console.log('image uploaded');
       props.image_urls = res1.data.image_urls;
-      console.log(props);
+      //console.log(props);
 
       axios.post('/public', props,  {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
       .then(function (res2) {
         if (res2.status=="200") {
-          console.log('item details successful');
+          //console.log('item details successful');
+          alert('Listed item successfully');
           location.pathname='/home-page';
         } else {
           console.log("item posting went wrong");
@@ -137,7 +138,7 @@ const NewListingPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    console.log(user);
+    //console.log(user);
 
     await axios.get(`/groups/user/${user}`)
     .then(res => {
@@ -177,20 +178,20 @@ const NewListingPage = () => {
 
   {/* handle onchange for each drop down state*/}
   const handleChangeCat = e => {
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedCat(e.target.value);
     setValues({...values, itemCategory:e.target.value})
   };
 
   const handleChangeVis = e => {
     setValues({...values, itemVisbility:e.target.value})
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedVis(e.target.value);
   };
   
   const handleChangeGroup = e => {
     setValues({...values, itemGroup:e.target.value})
-    console.log(e.target.value);
+    //console.log(e.target.value);
     setSelectedGroup(e.target.value);
   };
     

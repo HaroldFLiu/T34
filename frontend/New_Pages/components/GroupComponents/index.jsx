@@ -17,7 +17,7 @@ return(
           <div class="card">
             {/*  add href to group info page LINK LATER groupId*/}
             
-            <Link to={`/group-info-page/${group._id}`}>
+            
             <div className="img-wrap"> 
               <img src={group.icon_url} className="logo-position">
               </img> 
@@ -27,10 +27,8 @@ return(
                 <div className="item-cart">
                     <h5>{group.name}</h5>
                     <p class="members-text">{group.members.length} Members</p>
-                    <p><button>Join Group</button></p>
+                    <Link to={`/group-info-page/${group._id}`}> <p><button>See More</button></p></Link>
                 </div>
-            </Link>
-
           </div>
           </div>   
 
