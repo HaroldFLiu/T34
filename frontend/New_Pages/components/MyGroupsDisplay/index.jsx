@@ -99,13 +99,41 @@ const MyGroupsDisplay = () => {
       fetchGroupItems();
     }, []);
   }
+  const [isAdmin, setIsAdmin] = useState(false);
 
   const fetchGroup = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+
     await axios.get(`/groups/group/${groupId}`)
     .then(res => {
       setGroup(res.data);
+      setIsAdmin(res.data.admins.includes(user));
     })
   };
+
+  async function removeGroup () {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    //console.log(server_res);
+    const user = server_res.data;
+
+    console.log("remove");
+    await axios.delete('/groups/'+ groupId);
+    alert("Group has been deleted!");
+    location.pathname="/my-groups-page/"+user.user_id;
+  };
+
+  async function leaveGroup () {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+   //console.log(server_res);
+    const user = server_res.data;
+    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id)
+    .then(function (response){
+      alert("You left the group!");
+      location.pathname="/my-groups-page/"+user.user_id;
+    })
+  };
+  
 
   const goMember = event => {
     event.preventDefault();
@@ -133,7 +161,11 @@ const MyGroupsDisplay = () => {
         </div>
         <div className="header-popup-display">{group.name} 
           <button onClick={goMember}> Member's List</button>
+          {isAdmin && <button className="remove-leave" onClick={() => removeGroup()}> Remove Group</button>}
+          {!isAdmin && <button className="remove-leave" onClick={() => leaveGroup()}> Leave Group</button>}
         </div> 
+
+
         <hr className="hr-line"/>
 
         

@@ -65,3 +65,9 @@
 .number-group-listings {
   margin-top: 150px;
 }
+
+.header-popup-display .remove-leave {
+  float:right;
+  font-size: 16px;
+  margin-top: -11%;
+}

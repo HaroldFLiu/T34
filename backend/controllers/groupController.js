@@ -129,9 +129,7 @@ const deleteGroup = async (req, res) => {
 
     const group = await groupService.deleteById(group_id);
 
-    if (!group) {
-        res.status(200).json({mssg: 'Group deleted successfully'});
-    }
+    res.status(200).json({mssg: 'Group deleted successfully'});
 }
 
 const updateGroup = async (req, res) => {
