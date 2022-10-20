@@ -6,13 +6,30 @@ import Cookies from 'universal-cookie';
 
 const coookie = new Cookies();
 const ProductComponents = ({data, userId}) => {
+  const [wishlist, setWishlist] = useState([])
+  const fetchWishlist = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    await axios.get(`/favourites/${user.user_id}`)
+    .then(res => {
+      setWishlist(res.data.map((x) => x._id));
+    })
+    .catch(() => {
+      alert('There are no items in your wishlist')
+    })
+  }
+
+  useEffect(() => {
+    fetchWishlist();
+  }, []);
 
 //router.patch('/favourites/:userId/add/:itemId', addtoFavourite);
 const [added, setAdded] = useState(false);
 
 const addWishlist = async item_id => {
   const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-  console.log(server_res);
+  //console.log(server_res);
   //const user = server_res.data.user_email;
   const user = server_res.data;
 
@@ -20,8 +37,8 @@ const addWishlist = async item_id => {
   //let items = res.data.items;
   //items.push(productId);
   await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-  alert('Item added to wishlist!');
-  };
+  .then(window.location.reload())
+};
 
   const [remove, setRemove] = useState([]);
 
@@ -53,7 +70,8 @@ return(
             </div>
              {/* wishlist button */}
              <div class="wishlist">
-             {(item.seller_id != userId) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
+             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
+             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button> in wishlist </button>}
              {(item.seller_id == userId) && <br></br>}
             </div>
             <div className="content-posts">
