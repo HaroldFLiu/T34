@@ -8,6 +8,8 @@ import SortByMembers from "../SortByMemberComponent";
 import MyGroupComponents from "../MyGroupsComponent";
 import PageNext from "../PageNextBar/PageNext";
 
+import { AiFillPlusCircle } from "react-icons/ai";
+
 import "./MyGroupsPage.css"
 const MyGroupsPage = () => {
   const [data, setData] = useState([])
@@ -78,13 +80,6 @@ const MyGroupsPage = () => {
     <div className="parent" >
       <NavBar />
 
-      {/* side bar*/} 
-      <div class="new">
-        <a href="/create-group-page" >
-          <button class="btn btn-success"> Create New Group</button>
-        </a>
-      </div>
-
       {/* products display*/} 
       <div class="main-groups">
         <div className="home-title"> My Groups:</div>
@@ -111,6 +106,7 @@ const MyGroupsPage = () => {
             </div>
           </div>
         </div>
+        <span className="add-new"><a href="/new-listings-page"> <AiFillPlusCircle className="add-icon"/></a></span>
       </div> 
     </div>
   );

@@ -43,7 +43,7 @@ return(
             </div>
             {/*btn css in home.css */}
             <div class="sold">
-              {(item.sold == true) && <p><button > <b> SOLD</b> </button></p>}
+              {(item.sold == true) && <p><label> <b> SOLD</b> </label></p>}
               {(item.sold == false) && <div className="space"> </div>}
             </div>
             <div className="content-posts">
@@ -52,7 +52,7 @@ return(
             <div className="item-cart">
             <div className="no-wrap"> <h5>{item.name}</h5> </div>
             
-            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
+            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button className="see-more">See More</button></p></a>
             </Link>
             {/* use this to link to inidivdual product info*/}
             </div>

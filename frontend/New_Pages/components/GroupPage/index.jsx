@@ -10,6 +10,8 @@ import NavBar from "../NavBarComponent";
 import SortByMembers from "../SortByMemberComponent";
 import Cookie from 'universal-cookie';
 
+import { AiFillPlusCircle } from "react-icons/ai";
+
 const GroupPage = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
@@ -80,13 +82,6 @@ const GroupPage = () => {
     <div className="parent" >
       <NavBar />
 
-      {/* side bar*/} 
-      <div class="new">
-        <a href="/create-group-page" >
-          <button class="btn btn-success"> Create New Group</button>
-        </a>
-      </div>
-
       {/* products display*/} 
       <div class="main-groups">
         <div className="home-title"> Suggested Groups:</div>
@@ -113,6 +108,7 @@ const GroupPage = () => {
             </div>
           </div>
         </div>
+        <span className="add-new"><a href="/new-listings-page"> <AiFillPlusCircle className="add-icon"/></a></span>
       </div> 
     </div>
   );

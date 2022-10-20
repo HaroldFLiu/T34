@@ -76,7 +76,9 @@ const CheckoutPage = () => {
           <button className="checkout-btn" onClick={() => checkoutCart()}> <b> CHECKOUT</b></button>
         </div>
       </div> 
+
       <CartComponents data={items}/>
+      
     </div>
   );
 }

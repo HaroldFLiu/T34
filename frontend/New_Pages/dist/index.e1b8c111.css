@@ -12309,7 +12309,6 @@ textarea.form-control-lg {
 .card button {
   color: #fff;
   text-align: center;
-  cursor: pointer;
   width: 100%;
   background-color: #5a896a;
   border: none;
@@ -12318,20 +12317,18 @@ textarea.form-control-lg {
   font-size: 18px;
 }
 
-.wishlist button {
-  color: #fff;
+.wishlist a {
+  color: #000;
   text-align: center;
   width: 15%;
-  background-color: green;
-  border-color: #000;
-  border-radius: 60%;
+  background-color: #fff;
   outline: 0;
   margin-left: 70%;
   padding: 1px 1px 5px;
   font-size: 13px;
 }
 
-.sold button {
+.sold label {
   color: #fff;
   text-align: center;
   width: 18%;
@@ -12340,6 +12337,7 @@ textarea.form-control-lg {
   outline: 0;
   margin-left: 70%;
   padding: 1px;
+  font-family: Tienne, sans-serif;
   font-size: 13px;
 }
 
@@ -12429,8 +12427,15 @@ textarea.form-control-lg {
   margin-left: 35px;
 }
 
-.heart-icon-clicked {
-  color: #000;
+.heart-icon {
+  color: #33532c;
+  width: 30px;
+  height: 30px;
+}
+
+.heart-icon:hover {
+  cursor: pointer;
+  color: #5a896a;
 }
 
 .no-wrap {
@@ -12439,6 +12444,23 @@ textarea.form-control-lg {
   text-align: center;
   display: block;
   overflow: hidden;
+}
+
+.add-new {
+  z-index: 1;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
+
+.add-icon {
+  width: 90px;
+  height: 90px;
+  color: #33532c;
+}
+
+.add-icon:hover {
+  color: #5a896a;
 }
 
 .page-item {
@@ -12944,7 +12966,7 @@ body {
 }
 
 .checkout-items-card {
-  height: 300px;
+  height: 250px;
   margin-left: 5%;
 }
 
@@ -13032,14 +13054,8 @@ body {
   box-shadow: 0 4px 8px #0003;
 }
 
-.text-outline {
-  color: #a4df9a;
-  text-shadow: 0 0 4px #000;
-}
-
-.text-outline-bag {
-  color: green;
-  text-shadow: 0 0 2px #000;
+.text-outline, .text-outline-bag {
+  color: #33532c;
 }
 
 .payment-detail-text {
@@ -13059,91 +13075,6 @@ body {
 .checkout-btn:hover, .check-remove-btn:hover {
   color: #000;
   background: #a4df9a;
-}
-
-.popup-box-display {
-  width: 110%;
-  height: 100%;
-  margin-top: 6%;
-  margin-left: 1%;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.display-box {
-  width: 70%;
-  height: auto;
-  max-height: 80vh;
-  background: #fff;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-  overflow: auto;
-}
-
-.display-square-popup {
-  width: 200px;
-  height: 200px;
-  border: thin solid;
-  margin-top: -.5%;
-  margin-bottom: 1%;
-  margin-right: 10%;
-}
-
-.header-popup-display button {
-  float: right;
-  margin-top: -16%;
-  font-size: 16px;
-}
-
-.hr-line {
-  color: #000;
-  border: thin solid;
-  margin-left: 20%;
-}
-
-.smaller {
-  text-align: left;
-  font-size: 15px;
-}
-
-.header-popup-display {
-  text-align: left;
-  margin-top: -15%;
-  margin-left: 20%;
-  font-size: 40px;
-}
-
-.component-display {
-  border: thin solid;
-  margin-top: 7%;
-}
-
-.number-group-listings {
-  margin-top: 150px;
-}
-
-.header-popup-display .remove-leave {
-  float: right;
-  margin-top: -11%;
-  font-size: 16px;
-}
-
-.header-popup-display button {
-  color: #000;
-  text-align: center;
-  background-color: #a4df9a;
-  border: none;
-  border-radius: 12px;
-  padding: 5px 15px;
-}
-
-.header-popup-display button:hover {
-  opacity: 1;
-  color: #fff;
-  background: #5a896a;
 }
 
 .popup-box {
@@ -13265,6 +13196,91 @@ body {
 
 .box1 img {
   object-fit: cover;
+}
+
+.popup-box-display {
+  width: 110%;
+  height: 100%;
+  margin-top: 6%;
+  margin-left: 1%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.display-box {
+  width: 70%;
+  height: auto;
+  max-height: 80vh;
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.display-square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: -.5%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+}
+
+.header-popup-display button {
+  float: right;
+  margin-top: -16%;
+  font-size: 16px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.smaller {
+  text-align: left;
+  font-size: 15px;
+}
+
+.header-popup-display {
+  text-align: left;
+  margin-top: -15%;
+  margin-left: 20%;
+  font-size: 40px;
+}
+
+.component-display {
+  border: thin solid;
+  margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
+}
+
+.header-popup-display .remove-leave {
+  float: right;
+  margin-top: -11%;
+  font-size: 16px;
+}
+
+.header-popup-display button {
+  color: #000;
+  text-align: center;
+  background-color: #a4df9a;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+}
+
+.header-popup-display button:hover {
+  opacity: 1;
+  color: #fff;
+  background: #5a896a;
 }
 
 .search-member {

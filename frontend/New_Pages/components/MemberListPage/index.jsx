@@ -40,18 +40,39 @@ const MemberListPage = () => {
     })
   };
 
+  const queryParams = new URLSearchParams(window.location.search);
+  const searchBy = queryParams.get("searchBy");
 
   const fetchMembers = async () => {
     await axios.get('/groups/members/'+groupId)
     .then(res => {
-      //console.log(res);
-      setMembers(res.data.members);
+      //search filter logic
+      var tmp = res.data.members;
+
+      if (queryParams.has("searchBy")) {
+        const searchedData = [];
+        const query_characters = searchBy.toLowerCase().split("");
+        tmp.forEach(entry => {
+          //console.log(entry.name.toLowerCase().split(""))
+          var i = 0, count = 0;
+          var name = entry.first_name + " " + entry.last_name;
+          name.toLowerCase().split("").forEach(character => {
+            if (query_characters[i] == character) {
+              count++;
+            }
+            i++;
+          });
+          if (count == query_characters.length) {
+            console.log(entry.name);
+            searchedData.push(entry);
+          }
+        });
+        tmp = searchedData;
+        //console.log(tmp);
+      }
+      setMembers(tmp);
       setAdmins(res.data.admins);
       setFirstRender(true);
-    })
-    .catch((error) => {
-      console.log(error);
-        alert('There was an error while retrieving the data');
     })
   };
 
@@ -59,28 +80,12 @@ const MemberListPage = () => {
     fetchMembers();
     fetchGroup();
     //checkAdminship();
-  }, [firstRender]);
+  }, []);
 
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = members.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(members.length / recordsPerPage)
-
-  //search
-  const [searchInput, setSearchInput] = useState('');
-  const [filteredResults, setFilteredResults] = useState([]);
-  const searchItems = (searchValue) => {
-    setSearchInput(searchValue)
-    if (searchInput !== '') {
-        const filteredData = members.filter((item) => {
-            return Object.values(item).join('').toLowerCase().includes(searchInput.toLowerCase())
-        })
-        setFilteredResults(filteredData)
-    }
-    else{
-        setFilteredResults(members)
-    }
-  }
+  const nPages = Math.ceil(members.length / recordsPerPage);
 
 return (
     <div className="parent" >
@@ -99,12 +104,6 @@ return (
     </div>
     <hr />
     {members.length} members
-    {/* <div className="number-listings"> {data.length} members</div> */}
-    {/* search member button (need fix)*/} 
-    <div className = "search-member">
-        <input type="text"placeholder="Search Member.." onChange={(e) => searchItems(e.target.value)}> 
-            </input>
-    </div>
     <br/>
     <hr />
 

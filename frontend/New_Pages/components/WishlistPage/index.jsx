@@ -85,7 +85,7 @@ const SellPage = () => {
     <NavBar />
 
     {/* products display*/} 
-    <div class="main-wishlist">
+    <div class="main-groups">
       <div className="home-title"> My Wishlist:</div>
       <hr />
       <div className="number-listings"> {data.length} listings 

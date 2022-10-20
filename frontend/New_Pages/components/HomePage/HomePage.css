@@ -175,26 +175,26 @@
   color: white;
   background-color: #5A896A;
   text-align: center;
-  cursor: pointer;
   width: 100%;
   font-size: 18px;
 }
 
-.wishlist button{
+.wishlist a{
   outline: 0;
   padding: 1px;
-  color: white;
-  border-color: #000;
-  background-color: green;
+  color: black;
+  /*border-color: #000;
+  background-color: green;*/
+  background-color: white;
   text-align: center;
   width: 15%;
   font-size: 13px;
   margin-left: 70%;
-  border-radius: 60%;
+  /*border-radius: 60%;*/
   padding-bottom: 5px;
 }
 
-.sold button{
+.sold label{
   outline: 0;
   padding: 1px;
   color: white;
@@ -204,6 +204,7 @@
   width: 18%;
   font-size: 13px;
   margin-left: 70%;
+  font-family: 'Tienne', sans-serif;
 }
 
 /* space to be used in place of wishlist btn for sell page */
@@ -310,14 +311,38 @@
   margin-top: 35px;
 }
 /* heart for wishlist btn */
-.heart-icon-clicked{
-  color: black;
+.heart-icon{
+  color: #33532C;
+  width: 30px;
+  height: 30px;
 }
+
+.heart-icon:hover {
+  cursor: pointer;
+  color: #5A896A;
+}
+
 .no-wrap{
   display: block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
-  
+}
+
+.add-new {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1; /* Stay on top */
+}
+
+.add-icon {
+  width: 90px;
+  height: 90px;
+  color: #33532C;
+}
+
+.add-icon:hover {
+  color: #5A896A;
 }

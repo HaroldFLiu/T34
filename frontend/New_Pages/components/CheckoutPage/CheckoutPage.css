@@ -21,7 +21,7 @@
 /* space within checkout page that can be used (6/10 SHLD DELETE THIS) */
 .checkout-items-card{
     margin-left: 5%;
-    height: 300px;
+    height: 250px;
 }
 
 /* item card for checkout */
@@ -83,7 +83,6 @@
     margin-left: 5%;
     margin-top: 3%;
     font-size: larger;
-
   }
 
   /* img wrap for checkout display card */
@@ -129,13 +128,11 @@
   }
   /* text outline PAYMENT METHOD */
   .text-outline{
-    color: #A4DF9A;
-    text-shadow: 0 0 4px black;
+    color: #33532C;
   }
 
   .text-outline-bag{
-    color: green;
-    text-shadow: 0 0 2px black;
+    color: #33532C;
   }
 
   /* floated right text prices inside order summary */

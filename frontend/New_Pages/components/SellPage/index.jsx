@@ -9,6 +9,8 @@ import SideNav from "../SideNavComponent";
 import SellComponent from "../SellComponent";
 import SortBy from "../SortByComponent";
 
+import { AiFillPlusCircle } from "react-icons/ai";
+
 const SellPage = () => {
   // To hold the actual data
   const [data, setData] = useState([])
@@ -134,14 +136,6 @@ const SellPage = () => {
     <NavBar />
 
     <SideNav />
-    
-    <div class="new">
-      <a href="/new-listings-page">
-        <button class="btn btn-success"> Sell New Item</button>
-      </a>
-    </div>
-
-  
 
   
     {/* products display*/} 
@@ -169,7 +163,9 @@ const SellPage = () => {
     </div>
     </div>
     </div>
+      <span className="add-new"><a href="/new-listings-page"> <AiFillPlusCircle className="add-icon"/></a></span>
     </div> 
+    
   </div>
 
   );

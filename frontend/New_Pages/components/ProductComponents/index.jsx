@@ -5,6 +5,9 @@ import {Link} from "react-router-dom"
 import Cookies from 'universal-cookie';
 import { FaHeart } from "react-icons/fa";
 
+import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
+
 const coookie = new Cookies();
 const ProductComponents = ({data, userId}) => {
   const [wishlist, setWishlist] = useState([])
@@ -82,8 +85,8 @@ return(
              {/* wishlist button */}
              <div class="wishlist">
               {/* css for heart btn in home.css */}
-             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> <FaHeart className="heart-icon"/> </button>}
-             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button onClick={() => removeWishlist(item._id)}> <FaHeart className="heart-icon-clicked"/>  </button>}
+             {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <a className="wishlist" onClick={() => addWishlist(item._id)}> <AiOutlineHeart className="heart-icon"/> </a>}
+             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <a className="wishlist" onClick={() => removeWishlist(item._id)}> <AiFillHeart className="heart-icon"/>  </a>}
              {(item.seller_id == userId) && <br></br>}
             </div>
             <div className="content-posts">
