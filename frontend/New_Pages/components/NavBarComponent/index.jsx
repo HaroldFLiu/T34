@@ -13,6 +13,7 @@ import {AiOutlineUsergroupAdd} from 'react-icons/ai';
 import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
+import {BsCart2} from "react-icons/bs";
 
 const NavBar = () => {
     // get user info
@@ -82,7 +83,7 @@ const NavBar = () => {
                 {/* <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>*/}
                 <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
                 <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
-                <NavLink to={`/checkout-page/${user.user_id}`}> Cart</NavLink>
+                <NavLink to={`/checkout-page/${user.user_id}`}> <BsCart2 className="icon"/> Cart</NavLink>
                 <input 
                     type="text"
                     id="query"

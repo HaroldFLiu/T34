@@ -52,7 +52,7 @@ const CheckoutPage = () => {
       {/* products display*/} 
       <div class="checkout-main">
 
-        <div className="check-header"> YOUR BAG</div> 
+      <div className="text-outline-bag">  <div className="check-header"> YOUR BAG</div> </div> 
         <br/>
         <div className="total-items"> TOTAL ({items.length} items) <b> ${cart.subtotal}</b> </div>
         <br/>
@@ -61,7 +61,7 @@ const CheckoutPage = () => {
 
         {/* payment method here*/}
         <div className="payment-detail">
-          <h1>ORDER SUMMARY </h1>
+          <div className="text-outline"> <h1>ORDER SUMMARY </h1></div>
           <br/>
 
           {items.map((item) => {

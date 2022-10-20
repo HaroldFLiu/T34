@@ -12971,7 +12971,7 @@ body {
   width: 600px;
   text-align: center;
   white-space: initial;
-  border: thin solid #000;
+  border: thin solid green;
   margin: auto;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -12982,10 +12982,12 @@ body {
 }
 
 .row-check {
+  float: left;
   display: flex;
 }
 
 .column-check {
+  float: left;
   flex: 33.33%;
   padding: 5%;
 }
@@ -13004,9 +13006,14 @@ body {
 .check-remove-btn {
   float: right;
   width: 20%;
-  border-radius: 12px;
+  color: #fff;
+  background-color: #5a896a;
+  border: none;
+  border-radius: 20px;
   margin-top: 15%;
   margin-right: 3%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .check-price {
@@ -13016,11 +13023,23 @@ body {
 
 .payment-detail {
   float: right;
-  border: thin solid #000;
+  border: solid #33532c;
+  border-radius: 30px;
   margin-top: 5%;
   margin-right: 15%;
-  padding: 2% 2% 1%;
+  padding: 2% 2% 3%;
   position: relative;
+  box-shadow: 0 4px 8px #0003;
+}
+
+.text-outline {
+  color: #a4df9a;
+  text-shadow: 0 0 4px #000;
+}
+
+.text-outline-bag {
+  color: green;
+  text-shadow: 0 0 2px #000;
 }
 
 .payment-detail-text {
@@ -13032,7 +13051,7 @@ body {
   text-align: center;
   width: 100%;
   color: #fff;
-  background: #000;
+  background: #5a896a;
   margin-top: 10%;
   font-size: 20px;
 }

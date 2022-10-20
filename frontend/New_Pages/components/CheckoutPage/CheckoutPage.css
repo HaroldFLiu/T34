@@ -55,7 +55,7 @@
     text-align: center;
     font-family: 'Tienne', sans-serif;
     border: solid thin;
-    border-color: black;
+    border-color: green;
     display: inline-block;
     overflow: hidden;
     white-space: initial;
@@ -68,9 +68,11 @@
 /* Row and Col for the Product gallery view */
 .row-check {
     display: flex;
+    float: left;
   }
   
   .column-check {
+    float: left;
     flex: 33.33%;
     padding: 5%;
   }
@@ -95,7 +97,12 @@
     margin-right: 3%;
     float: right;
     width: 20%;
-    border-radius: 12px;
+    border-radius: 20px;
+    background-color: #5A896A;
+    color: white;
+    border: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
 
   /* price inside display card */
@@ -108,15 +115,27 @@
   .payment-detail{
     float: right;
     position: relative;
-    border: thin solid;
-    border-color: black;
+    border: medium solid;
+    border-color: #33532C;
     margin-right: 15%;
     margin-top: 5%;
     padding-top: 2%;
     padding-left: 2%;
     padding-right: 2%;
-    padding-bottom: 1%;
-  
+    padding-bottom: 3%;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+  }
+  /* text outline PAYMENT METHOD */
+  .text-outline{
+    color: #A4DF9A;
+    text-shadow: 0 0 4px black;
+  }
+
+  .text-outline-bag{
+    color: green;
+    text-shadow: 0 0 2px black;
   }
 
   /* floated right text prices inside order summary */
@@ -131,7 +150,7 @@
     margin-top: 10%;
     width: 100%;
     font-size: 20px;
-    background: black;
+    background: #5A896A;
     color: white;
   }
 
