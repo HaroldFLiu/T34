@@ -13161,7 +13161,7 @@ body {
   height: auto;
   max-height: 70vh;
   background: #fff;
-  border: 1px solid #999;
+  border: 4px double #999;
   border-radius: 4px;
   margin: calc(15vh - 20px) auto 0;
   padding: 20px;

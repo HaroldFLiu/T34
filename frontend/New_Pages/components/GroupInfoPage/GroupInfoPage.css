@@ -20,7 +20,8 @@
   background: #fff;
   border-radius: 4px;
   padding: 20px;
-  border: 1px solid #999;
+  border: 4px solid #999;
+  border-style: double;
   overflow: auto;
 }
  
