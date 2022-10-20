@@ -40,6 +40,16 @@ const addWishlist = async item_id => {
   .then(window.location.reload())
 };
 
+async function removeWishlist(item_id) {
+  const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+  console.log(server_res);
+  const user = server_res.data;
+  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+    window.location.reload()
+  );
+};
+  
+
   const [remove, setRemove] = useState([]);
 
   /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
@@ -71,7 +81,7 @@ return(
              {/* wishlist button */}
              <div class="wishlist">
              {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <button onClick={() => addWishlist(item._id)}> wishlist </button>}
-             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button> in wishlist </button>}
+             {(item.seller_id != userId) && (wishlist.includes(item._id)) && <button onClick={() => removeWishlist(item._id)}> in wishlist </button>}
              {(item.seller_id == userId) && <br></br>}
             </div>
             <div className="content-posts">
