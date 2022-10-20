@@ -14,6 +14,7 @@ const MyGroupsDisplay = () => {
     // To hold the actual data
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState('')
 
   const [currentPage, setCurrentPage] = useState(1);
   // 10 items displayed per page
@@ -29,6 +30,10 @@ const MyGroupsDisplay = () => {
   const {groupId} = useParams()
 
   const fetchGroupItems = async () => {
+    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data.user_id;
+    setUser(user);
+
     await axios.get('/groups/items/' + groupId)
     .then(res => {
       const tmp = res.data;
@@ -145,7 +150,7 @@ const MyGroupsDisplay = () => {
           <div class="row2">
             <div class="column">
 
-            <ProductComponents data={currentRecords}/> 
+            <ProductComponents data={currentRecords} userId={user}/> 
             <PageNext
                   nPages={nPages}
                   currentPage={currentPage}
