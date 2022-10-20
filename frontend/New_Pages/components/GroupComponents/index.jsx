@@ -25,7 +25,8 @@ return(
             {/* spacer instead of wishlist btn*/}
             &nbsp;
                 <div className="item-cart">
-                    <h5>{group.name}</h5>
+                  {/* css for this in home.css*/}
+                    <div className="no-wrap"> <h5>{group.name}</h5> </div>
                     <p class="members-text">{group.members.length} Members</p>
                     <Link to={`/group-info-page/${group._id}`}> <p><button>See More</button></p></Link>
                 </div>

@@ -313,3 +313,11 @@
 .heart-icon-clicked{
   color: black;
 }
+.no-wrap{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  
+}

@@ -12433,6 +12433,14 @@ textarea.form-control-lg {
   color: #000;
 }
 
+.no-wrap {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+}
+
 .page-item {
   float: left;
 }
@@ -13255,13 +13263,13 @@ body {
 }
 
 .left-box-mem {
-  max-width: 500px;
-  max-height: 500px;
-  height: 200px;
-  width: 200px;
+  max-width: 300px;
+  max-height: 300px;
+  height: 250px;
+  width: 250px;
   float: left;
   border: thin solid;
-  display: flex;
+  margin-right: 3%;
 }
 
 .shift-title {

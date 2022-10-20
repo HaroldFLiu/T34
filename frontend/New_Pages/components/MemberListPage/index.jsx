@@ -94,7 +94,7 @@ return (
         <img src={group.icon_url} className="popup-img"></img>
         </div> 
     </div>
-      <div className="shift-title"> <div className="home-title"> Members of {group.name}</div> </div>
+      <div className="shift-title"> <div className="home-title"> Members of <b> "{group.name}"</b></div> </div>
           
     </div>
     <hr />
