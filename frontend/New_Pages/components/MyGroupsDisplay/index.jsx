@@ -27,6 +27,7 @@ const MyGroupsDisplay = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
+  const searchBy = queryParams.get("searchBy");
   const {groupId} = useParams()
 
   const fetchGroupItems = async () => {
@@ -36,7 +37,28 @@ const MyGroupsDisplay = () => {
 
     await axios.get('/groups/items/' + groupId)
     .then(res => {
-      const tmp = res.data;
+      var tmp = res.data;
+
+      if (queryParams.has("searchBy")) {
+        const searchedData = [];
+        const query_characters = searchBy.toLowerCase().split("");
+        tmp.forEach(entry => {
+          //console.log(entry.name.toLowerCase().split(""))
+          var i = 0, count = 0;
+          entry.name.toLowerCase().split("").forEach(character => {
+            if (query_characters[i] == character) {
+              count++;
+            }
+            i++;
+          });
+          if (count == query_characters.length) {
+            console.log(entry.name);
+            searchedData.push(entry);
+          }
+        });
+        tmp = searchedData;
+      }
+
       //console.log(res);
       //setData(res.data);
       if (sortBy == 'oldest') {
@@ -53,8 +75,8 @@ const MyGroupsDisplay = () => {
       }
       setLoading(false);
     })
-    .catch(() => {
-      alert('There was an error while retrieving the data')
+    .catch((err) => {
+      alert(err);
     })
 
     //.then(fetchData());

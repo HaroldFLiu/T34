@@ -106,7 +106,7 @@ const MyGroupsPage = () => {
             </div>
           </div>
         </div>
-        <span className="add-new"><a href="/new-listings-page"> <AiFillPlusCircle className="add-icon"/></a></span>
+        <span className="add-new"><a href="/create-group-page"> <AiFillPlusCircle className="add-icon"/></a></span>
       </div> 
     </div>
   );

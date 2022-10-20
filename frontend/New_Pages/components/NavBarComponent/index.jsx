@@ -14,6 +14,7 @@ import {TbStar} from 'react-icons/tb';
 import {AiOutlineLock} from 'react-icons/ai';
 import {RiBookOpenLine} from 'react-icons/ri';
 import {BsCart2} from "react-icons/bs";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const NavBar = () => {
     // get user info
@@ -75,7 +76,7 @@ const NavBar = () => {
             <NavLink to={`/group-page/${user.user_id}`}> <AiOutlineUsergroupAdd className="icon"/> Groups</NavLink>
             {/* can be changed to /my-groups-display TO SEE NEW PAGE TO LINK TO */}
             <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon"/> My Groups</NavLink>
-            <NavLink to={`/wishlist-page/${user.user_id}`}> <TbStar className="icon"/> Wishlist </NavLink>
+            <NavLink to={`/wishlist-page/${user.user_id}`}> <AiOutlineHeart className="icon"/> Wishlist </NavLink>
             {/*<a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>*/}
             <div class="nav-login">
                 {/* search bar*/}
