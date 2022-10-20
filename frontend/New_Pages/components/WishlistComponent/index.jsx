@@ -43,7 +43,7 @@ return(
             <p class="price"> ${item.price}</p>
           </div> </Link>
             <div className="item-cart">
-            <h3>{item.name}</h3>
+            <h5>{item.name}</h5>
             
             <a href="#"> <p><button  onClick={() => removeWishlist(item._id)}>Remove from Wishlist</button></p></a>
         

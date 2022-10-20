@@ -49,7 +49,7 @@ return(
             <p class="price"> ${item.price}</p>
           </div>
             <div className="item-cart">
-            <h3>{item.name}</h3>
+            <h5>{item.name}</h5>
             
             <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
             </Link>
