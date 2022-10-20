@@ -28,8 +28,10 @@ const HomePage = () => {
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
+  const searchBy = queryParams.get("searchBy")
 
   //console.log(sortBy);
+  //console.log(searchBy);
 
   const fetchPublic = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
@@ -85,8 +87,10 @@ const HomePage = () => {
     //.then(fetchData())
   }
 
+
   if (!categoryId) {
     useEffect(() => {
+      
       fetchPublic();
     }, []);
   } else {

@@ -23,6 +23,11 @@ const NavBar = () => {
         const user = server_res.data;
         setUser(user);
     };
+
+    const [url, setURL] = useState('');
+    const [query, setQuery] = useState('');
+    const currentURL = new URL(window.location.href);
+    const queryParams = new URLSearchParams(window.location.search);
     
     {/*method to unpack the data and fetch effect*/ }
     useEffect(() => {
@@ -44,6 +49,22 @@ const NavBar = () => {
         });
     };
 
+    const handleKeyDown = event => {
+        if (event.key === 'Enter') {
+          event.preventDefault();
+          
+          queryParams.set('searchBy', query);
+          
+          setURL(currentURL.pathname + "?" + queryParams.toString());
+          //console.log(currentURL.pathname + "?" + queryParams.toString());
+        
+          //location.pathname = url;
+          //console.log(url);
+          window.location.replace(currentURL.pathname + "?" + queryParams.toString());
+        }
+      };
+
+
     return (
         <div class="navbar">
             <h1 className="website-title"> Market34</h1>
@@ -62,7 +83,16 @@ const NavBar = () => {
                 <a href="#"> <button onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </button></a>
                 <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
                 <NavLink to={`/checkout-page/${user.user_id}`}> Cart</NavLink>
-                <input type="text"placeholder="Search.."></input>
+                <input 
+                    type="text"
+                    id="query"
+                    name="query"
+                    placeholder="Search.."
+                    value = {query}
+                    onChange={event => setQuery(event.target.value)}
+                    onKeyDown={handleKeyDown}
+                    href={url}
+                    ></input>
             </div>
         </div>
     )
