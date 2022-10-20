@@ -2,8 +2,9 @@ import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 import Cookies from 'universal-cookie';
+import "./MemberList.css"
 
-const MemberList = ({data, isAdmin}) => {
+const MemberList = ({data, isAdmin, admins}) => {
   const {groupId} = useParams();
   const coookie = new Cookies();
 
@@ -26,7 +27,7 @@ const MemberList = ({data, isAdmin}) => {
   };
     
 return(
-  <div className="products-wrapper">  
+  <div className="members">  
     {data.map((member) => {
       return(
         <div className="products-wrapper-test">  
@@ -47,7 +48,7 @@ return(
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
                           <a href='#' onClick={() => removeMember(member._id)}>Remove member</a>
-                          <a href='#' onClick={() => makeAdmin(member._id)}>Add as an admin</a>       
+                          {!admins.includes(member._id) && <a href='#' onClick={() => makeAdmin(member._id)}>Add as an admin</a>}     
                         </div>
                       </div>
                     </div> 

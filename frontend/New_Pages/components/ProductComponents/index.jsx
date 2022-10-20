@@ -74,28 +74,27 @@ return(
         <div className="products-wrapper-test">  
         {/* products display 1st row*/} 
         <div className="wrapper" >
-        <div class="row2">
-          <div class="column">
-          <div class="card">
+        <div className="row2">
+          <div className="column">
+          <div className="card">
             {/*  add href to product page TO LINK TO OBJECT_ID*/}
             <div className="img-wrap"> 
              <img src={item.image_urls[0]} className="logo-position">
               </img> 
             </div>
              {/* wishlist button */}
-             <div class="wishlist">
+             <div className="wishlist">
               {/* css for heart btn in home.css */}
              {(item.seller_id != userId) && (!wishlist.includes(item._id)) && <a className="wishlist" onClick={() => addWishlist(item._id)}> <AiOutlineHeart className="heart-icon"/> </a>}
              {(item.seller_id != userId) && (wishlist.includes(item._id)) && <a className="wishlist" onClick={() => removeWishlist(item._id)}> <AiFillHeart className="heart-icon"/>  </a>}
              {(item.seller_id == userId) && <br></br>}
             </div>
             <div className="content-posts">
-            <p class="price"> ${item.price}</p>
+            <p className="price"> ${item.price}</p>
           </div>
             <div className="item-cart">
             <div className="no-wrap"> <h5>{item.name}</h5> </div>
-            <Link to={`/product-page/${item._id}`}> <a href="#"> <p><button>See More</button></p></a>
-            </Link>
+            <Link to={`/product-page/${item._id}`}> <p><button>See More</button></p></Link>
             {/* use this to link to inidivdual product info*/}
             </div>
             {/* closing tag here BELOW */}

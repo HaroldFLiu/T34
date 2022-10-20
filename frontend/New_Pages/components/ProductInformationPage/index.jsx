@@ -6,7 +6,8 @@ import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 import Cookies from 'universal-cookie';
-import { MdStackedLineChart } from "react-icons/md";
+
+import { AiFillTag } from "react-icons/ai";
 
 const coookie = new Cookies();
 const ProductInformationPage = () => {
@@ -24,22 +25,28 @@ const ProductInformationPage = () => {
   const [item, setItems] = useState({});
   const [seller, setSeller] = useState({});
   const [isSeller, setIsSeller] = useState(false);
+  const [category, setCategory] = useState({});
 
   const fetchItems = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
     axios.get(`/public/item/${productId}`)
-    .then(res => {
-      //console.log(res.data);
+    .then(async (res) => {
       setItems(res.data.item);
-      //console.log(item);
       setSeller(res.data.seller);
-      //console.log(seller);
-      //console.log(res.data.item.seller_id);
-      //console.log(user);
       if (res.data.item.seller_id == user) {
         setIsSeller(true);
+      }
+
+      if (res.data.item.category_ids) {
+        //console.log("yes")
+        
+        await axios.get(`/category/${res.data.item.category_ids[0]}`)
+        .then(res => {
+          setCategory(res.data);
+          //console.log(res.data.name);
+        })
       }
     })
     .catch(() => {
@@ -104,7 +111,7 @@ const ProductInformationPage = () => {
       <NavBar />
 
       {/* product info display*/} 
-      <div class="product-info-wrap">     
+      <div className="product-info-wrap">     
         <div className="product-img-wrap">
           <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
         </div> 
@@ -115,17 +122,21 @@ const ProductInformationPage = () => {
           <hr />
           <br/>
           <div className="item-descip-wrap">
-            <div className="info-text-centered"> Item Description: <p> {item.description}</p></div>
+            <div className="info-text-centered"> <b>Item Description:</b> 
+              <p> {item.description}</p>
+            </div>
+            <br />
           </div> 
           <br/>
           <div className="info-text-centered-price"> <b>${item.price}</b></div>
           <hr />
+          <div className="info-text-left"> <AiFillTag /><b>Tags: </b> {category.name} </div>
 
-          {!added && !isSeller && <button className="purchase-btn" button onClick={() => addToCart()}> ADD TO CART </button>}
-          {added && !isSeller && <button className="purchase-btn" button> IN CART ALREADY</button>}
-          {isSeller && (item.sold == true) && <button className="purchase-btn" button> SOLD </button>}
-          {isSeller && (item.sold == false) && <button className="purchase-btn" button> LISTED </button>}
-          {isSeller && <a href="#"> <p><button onClick={() => deletePost(item._id)}> Remove </button></p></a>}
+          {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}
+          {added && !isSeller && <button className="purchase-btn"> IN CART ALREADY</button>}
+          {isSeller && (item.sold == true) && <label className="status sold-label"> SOLD </label>}
+          {isSeller && (item.sold == false) && <label className="status"> LISTED </label>}
+          {isSeller && <a href="#"> <p><button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
         </div>
       </div>  
     </div>

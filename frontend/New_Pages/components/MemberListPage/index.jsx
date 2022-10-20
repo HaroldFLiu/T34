@@ -87,29 +87,25 @@ const MemberListPage = () => {
   const currentRecords = members.slice(indexOfFirstRecord, indexOfLastRecord);
   const nPages = Math.ceil(members.length / recordsPerPage);
 
-return (
+  return (
     <div className="parent" >
-     {/* top nav bar*/}
-    <NavBar />
-    <div class="listings-main">
+      {/* top nav bar*/}
+      <NavBar />
+      <div class="listings-main">
+        <div class="left-box-mem">
+          <div className="square-pic-mem">  
+            <img src={group.icon_url} className="popup-img"></img>
+          </div> 
+        </div>
+        <div className="shift-title"> <div className="home-title"> Members of <b> "{group.name}"</b></div></div>
+        <hr className="lines"/>
+      {members.length} members
+        <br/>
+        <hr className="lines"/>
+      </div>
 
-             {/*Group img   <div className="img-wrap-mem"> <img src={logo} className="popup-img"></img> </div> */} 
-    <div class="left-box-mem">
-        <div className="square-pic-mem">  
-        <img src={group.icon_url} className="popup-img"></img>
-        </div> 
-    </div>
-      <div className="shift-title"> <div className="home-title"> Members of <b> "{group.name}"</b></div> </div>
-          
-    </div>
-    <hr />
-    {members.length} members
-    <br/>
-    <hr />
-
-    {/* member list of the group*/}
-    
-    <MemberList data={members} isAdmin={isAdmin}/>
+      {/* member list of the group*/}
+      <MemberList data={members} isAdmin={isAdmin} admins={group.admins}/>
     </div>
   );
 }

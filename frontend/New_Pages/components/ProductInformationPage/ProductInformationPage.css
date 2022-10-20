@@ -80,6 +80,14 @@ body {
   overflow: hidden;
 }
 
+.info-text-left{
+  font-size: 20px;
+  text-align: left;
+  white-space: normal;
+  overflow: hidden;
+  margin-left: 2%;
+}
+
 /* price text */
 .info-text-centered-price{
   font-size: 35px;
@@ -96,8 +104,26 @@ body {
   margin-left: 20%;
   margin-top: 10%;
   font-weight: bolder;
-  background-color: black;
+  background-color: #5A896A;
   color: white;
+}
+
+.status {
+  text-align: center;
+  width: 60%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-size: 25px;
+  margin-left: 20%;
+  margin-top: 10%;
+  font-weight: bolder;
+  color: white;
+  background-color: black;
+  font-family: 'Tienne', sans-serif;
+}
+
+.sold-label {
+  background-color: green;
 }
 
 /* contact button */
@@ -111,7 +137,7 @@ body {
   padding-bottom: 1%;
   font-weight: 700;
   background-color:#5A896A;
-  border-color: #5A896A;;
+  border-color: #5A896A;
   color: white;
 }
 

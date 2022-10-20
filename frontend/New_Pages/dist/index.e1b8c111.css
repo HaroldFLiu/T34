@@ -12371,9 +12371,11 @@ textarea.form-control-lg {
 }
 
 .center-next {
+  z-index: 1;
   text-align: center;
   padding-top: 2%;
   padding-bottom: 2%;
+  bottom: 50px;
 }
 
 .pagination {
@@ -12906,6 +12908,14 @@ body {
   overflow: hidden;
 }
 
+.info-text-left {
+  text-align: left;
+  white-space: normal;
+  margin-left: 2%;
+  font-size: 20px;
+  overflow: hidden;
+}
+
 .info-text-centered-price {
   text-align: center;
   font-size: 35px;
@@ -12915,13 +12925,31 @@ body {
   text-align: center;
   width: 60%;
   color: #fff;
-  background-color: #000;
+  background-color: #5a896a;
   margin-top: 10%;
   margin-left: 20%;
   padding-top: 1%;
   padding-bottom: 1%;
   font-size: 25px;
   font-weight: bolder;
+}
+
+.status {
+  text-align: center;
+  width: 60%;
+  color: #fff;
+  background-color: #000;
+  margin-top: 10%;
+  margin-left: 20%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  font-family: Tienne, sans-serif;
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.sold-label {
+  background-color: green;
 }
 
 .contact-btn {
@@ -13317,6 +13345,20 @@ body {
 
 .shift-title {
   margin-left: 13%;
+}
+
+.lines {
+  margin-right: 3%;
+}
+
+.card-text {
+  font-size: 85%;
+}
+
+.members {
+  margin-top: 5%;
+  margin-left: 22%;
+  margin-right: 5%;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */

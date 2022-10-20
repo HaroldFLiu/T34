@@ -68,7 +68,7 @@ const NavBar = () => {
 
 
     return (
-        <div class="navbar">
+        <div className="navbar">
             <h1 className="website-title"> Market34</h1>
             <NavLink to="/home-page"> <AiOutlineHome className="icon"/> Home</NavLink>
             <NavLink to={`/sell-page/${user.user_id}`}><HiOutlineShoppingBag className="icon"/> Sell </NavLink>
@@ -78,11 +78,11 @@ const NavBar = () => {
             <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon"/> My Groups</NavLink>
             <NavLink to={`/wishlist-page/${user.user_id}`}> <AiOutlineHeart className="icon"/> Wishlist </NavLink>
             {/*<a href="/wishlist-page"> <TbStar className="icon"/> Wishlist</a>*/}
-            <div class="nav-login">
+            <div className="nav-login">
                 {/* search bar*/}
                 {/* need to add logout btn, rn just redirects without sign out*/}
                 {/* <a href="/login-page"> <AiOutlineLock className="icon"/> Log Out</a>*/}
-                <Link onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </Link>
+                <Link to="#" onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </Link>
                 <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
                 <NavLink to={`/checkout-page/${user.user_id}`}> <BsCart2 className="icon"/> Cart</NavLink>
                 <input 
