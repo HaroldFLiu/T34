@@ -55,10 +55,12 @@ const NavBar = () => {
           
           queryParams.set('searchBy', query);
           
-          setURL(currentURL.pathname + '?' + queryParams.toString());
-          //console.log(currentURL.pathname + '?' + queryParams.toString());
+          setURL(currentURL.pathname + "?" + queryParams.toString());
+          //console.log(currentURL.pathname + "?" + queryParams.toString());
         
-          location.pathname = currentURL.pathname + '?' + queryParams.toString();
+          //location.pathname = url;
+          //console.log(url);
+          window.location.replace(currentURL.pathname + "?" + queryParams.toString());
         }
       };
 
@@ -89,7 +91,7 @@ const NavBar = () => {
                     value = {query}
                     onChange={event => setQuery(event.target.value)}
                     onKeyDown={handleKeyDown}
-                    
+                    href={url}
                     ></input>
             </div>
         </div>
