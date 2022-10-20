@@ -32,11 +32,9 @@ const GroupPage = () => {
       if (queryParams.has("searchBy")) {
         const searchedData = [];
         const query_characters = searchBy.toLowerCase().split("");
-      
         tmp.forEach(entry => {
           //console.log(entry.name.toLowerCase().split(""))
-          var i = 0;
-          var count = 0;
+          var i = 0, count = 0;
           entry.name.toLowerCase().split("").forEach(character => {
             if (query_characters[i] == character) {
               count++;
@@ -51,7 +49,7 @@ const GroupPage = () => {
         tmp = searchedData;
         //console.log(tmp);
       }
-      
+
       //setData(res.data);
       if (sortBy == 'oldest') {
         setData(tmp);
