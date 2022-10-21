@@ -135,10 +135,6 @@ const CreateGroupPage = () => {
     </div>
     <hr />
     <div className="number-listings"> {groups} groups online
-    
-    {/* on click to submit new listing here*/}
-      <button className="publish-btn" onClick={PostNewGroup}> Create Group</button>
-    
     </div>
     <hr />
       {/*Upload Image box and button handle uploading img*/}    
@@ -168,7 +164,7 @@ const CreateGroupPage = () => {
     
     {/* form to input new listing data*/}
     <div class="container">
-      <form className="publish-form">
+      <form className="publish-form-group">
           
         {/* onChange event here to get data */}
         <label for="item-name"> <div className="item-name">Group Name*: </div></label>
@@ -179,48 +175,10 @@ const CreateGroupPage = () => {
         <input type="asd" 
         onChange={(e)=> setValues({...values, groupDescription:e.target.value})} 
         />
-          {/* select on change for dropdown button*/}
-    
-    {/* visibility radio buttons to be done here 
-    <div className="vis-container">
-      <div class="flex-child">
-      <div className="visbility-header">
-      <div  className="radio-public">
-      <RadioButton
-          changed={radioChangeHandler}
-          id="1"
-          value="public"
-        />
-        </div>
-        Public
-      </div>
-      <div className="visbility-text">
-        Anyone can join this group.
-      </div>
-    </div>
-
-
-
-    <div class="flex-child"> 
-
-    <div className="visbility-header">
-    <div  className="radio-public">
-      <RadioButton
-          changed={radioChangeHandler}
-          id="2"
-          value="private"
-        />
-        </div>
-        Private
-      </div>
-      <div className="visbility-text-1">
-        Only people given access can join this group.
-      </div>
-    </div>
-    </div>            
-    */}
 
       </form> 
+          {/* on click to submit new listing here*/}
+          <button className="publish-btn" onClick={PostNewGroup}> Create Group</button>
     </div>
   </div>
   );

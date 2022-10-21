@@ -2,7 +2,7 @@
 
 /* area to be filled taking in consideration nav bar */
 .listings-main{
-    margin-left: 5%;
+    margin-left: 2%;
     margin-top: 2%;
 }
 
@@ -16,29 +16,28 @@
     border-radius: 5px;
     background-color: #f2f2f2;
     padding: 10px;
-    margin-right: 5%;
+    margin-right: 2%;
     font-family: 'Tienne', sans-serif;
   }
 
 /* Number of listings  */
 .number-listings{
     font-family: 'Tienne', sans-serif;
-    margin-left: 2%;
-
+    margin-left: 5%;
 }
 
 /* Publish Item button  */
 .publish-btn{
-    background-color: #4CAF50; 
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin-left: 70%;
-      
+  background-color: #4CAF50; 
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 90%;
+  margin-bottom: 5px;
 }
 
 /* For item name and price name */
@@ -64,11 +63,14 @@ input[type=asd]{
   margin-top: 2px; /* Add a top margin */
   margin-bottom: 6px; /* Bottom margin */
   resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
-
 }
 
-  .publish-form{
-    margin-bottom: 15%;
+  .publish-form-group{
+    margin-bottom: 16%;
+  }
+
+  .publish-form-item{
+    margin-bottom: 5%;
   }
 
 
@@ -118,19 +120,20 @@ input[type=asd]{
 
 /* Left size div box to put content into*/
 .left-box{
-  border-width:2px;
+  border-width:1px;
   border-style:solid;
   border-color:black;
 
-  width: 23%;
+  width: 25%;
   float:left;
-  margin-left: 30px;
+  margin-left: 45px;
 }
 
 /* square border area for the placeholder img */
 .square-pic{
   width: 100%;
   height: 100%;
+  margin-bottom: -7px;
 }
 
 /* select listing formating */

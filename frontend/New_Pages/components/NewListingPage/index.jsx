@@ -206,10 +206,6 @@ const NewListingPage = () => {
     </div>
     <hr />
     <div className="number-listings"> {sold} items sold on Market34!
-    
-      {/* on click to submit new listing here*/}
-
-      <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
     
     <hr />
@@ -242,7 +238,7 @@ const NewListingPage = () => {
     
     {/* form to input new listing data*/}
     <div class="container">
-        <form className="publish-form">
+        <form className="publish-form-item">
             
             {/* onChange event here to get data */}
             
@@ -295,6 +291,9 @@ const NewListingPage = () => {
 
         
     </form> 
+        
+      {/* on click to submit new listing here*/}
+      <button className="publish-btn" onClick={PostNewListing}> Publish Item</button>
     </div>
         
     </div>
