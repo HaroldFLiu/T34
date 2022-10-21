@@ -7,6 +7,7 @@ const SortBy = () => {
     const currentURL = new URL(window.location.href);
     const queryParams = new URLSearchParams(window.location.search);
 
+    // change url according to sort by option
     const getURL = async (sortBy) => {
         if (sortBy == 'newest') {
             queryParams.set('sortBy', 'newest');
@@ -19,12 +20,9 @@ const SortBy = () => {
         }
         
         setURL(currentURL.pathname + '?' + queryParams.toString());
-
-        //console.log(queryParams.toString());
-        //console.log(url);
-        //.log(display);
     }
 
+    // change display of sort by to current sort by option
     const getDisplay = async () => {
         if (queryParams.get("sortBy") == 'newest') {
             setDisplay('Newest');

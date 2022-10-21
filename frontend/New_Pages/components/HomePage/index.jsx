@@ -23,31 +23,29 @@ const HomePage = () => {
   const [recordsPerPage] = useState(10);
   const [user, setUser] = useState('');
 
-          //console.log(sellerId);
-
+  // get parameters
   const queryParams = new URLSearchParams(window.location.search);
   const categoryId = queryParams.get("cat_id");
   const sortBy = queryParams.get("sortBy");
   const searchBy = queryParams.get("searchBy");
 
-  //console.log(sortBy);
-  //console.log(searchBy);
-
+  // function to get public items listed
   const fetchPublic = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
     setUser(user);
 
+    // get public items
     await axios.get('/public', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 
-      //search filter logic
+      // search filter logic
       if (queryParams.has("searchBy")) {
         const searchedData = [];
         const query_characters = searchBy.toLowerCase().split("");
         tmp.forEach(entry => {
-          //console.log(entry.name.toLowerCase().split(""))
           var i = 0, count = 0;
           entry.name.toLowerCase().split("").forEach(character => {
             if (query_characters[i] == character) {
@@ -61,19 +59,15 @@ const HomePage = () => {
           }
         });
         tmp = searchedData;
-        //console.log(tmp);
       }
 
-      //setData(res.data);
+      // sort by logic
       if (sortBy == 'oldest') {
         setData(tmp);
-        //console.log('newest');
       } else if (sortBy == 'desc') {
         setData(tmp.sort((a, b) => b.price - a.price));
-        //console.log('desc');
       } else if (sortBy == 'asc') {
         setData(tmp.sort((a, b) => a.price - b.price));
-        //console.log('asc');
       } else {
         setData(tmp.reverse());
       }
@@ -82,20 +76,20 @@ const HomePage = () => {
     .catch(() => {
       alert('There was an error while retrieving the data')
     })
-    //.then(fetchData());
   }
 
+  // function to get public items listed by category
   const fetchPublicCategory = async () => {
-    await axios.get(`/public/category/${categoryId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.get(`/public/category/${categoryId}`, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
         var tmp = res.data;
 
-        //search filter logic
+        // search filter logic
         if (queryParams.has("searchBy")) {
           const searchedData = [];
           const query_characters = searchBy.toLowerCase().split("");
           tmp.forEach(entry => {
-            //console.log(entry.name.toLowerCase().split(""))
             var i = 0, count = 0;
             entry.name.toLowerCase().split("").forEach(character => {
               if (query_characters[i] == character) {
@@ -109,18 +103,15 @@ const HomePage = () => {
             }
           });
           tmp = searchedData;
-          //console.log(tmp);
         }
-        //setData(res.data);
+    
+        // sort by logic
         if (sortBy == 'oldest') {
           setData(tmp);
-          //console.log('newest');
         } else if (sortBy == 'desc') {
           setData(tmp.sort((a, b) => b.price - a.price));
-          //console.log('desc');
         } else if (sortBy == 'asc') {
           setData(tmp.sort((a, b) => a.price - b.price));
-          //console.log('asc');
         } else {
           setData(tmp.reverse());
         }
@@ -129,10 +120,9 @@ const HomePage = () => {
     .catch(() => {
         alert('There was an error while retrieving the data')
     })
-    //.then(fetchData())
   }
 
-
+  // get data
   if (!categoryId) {
     useEffect(() => {
       fetchPublic();
@@ -143,6 +133,7 @@ const HomePage = () => {
     }, []);
   }
 
+  // pagination
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -150,7 +141,7 @@ const HomePage = () => {
       
   return (
     <div className="parent" >
-      {/* top nav bar*/}
+      {/* nav bars */}
       <NavBar />
       <SideNav />
     

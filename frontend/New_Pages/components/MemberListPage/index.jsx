@@ -10,9 +10,11 @@ import {Link} from "react-router-dom";
 import NavBar from "../NavBarComponent";
 
 const MemberListPage = () => {
+  // get parameters
+  const queryParams = new URLSearchParams(window.location.search);
+  const searchBy = queryParams.get("searchBy");
   const {groupId} = useParams()
 
-  {/*fetch item data*/}
   const [group, setGroup] = useState({});
   const [members, setMembers] = useState([]);
   const [admins, setAdmins] = useState([]);
@@ -25,14 +27,17 @@ const MemberListPage = () => {
 
   var coookie = new Cookie();
 
+  // function to get group information
   const fetchGroup = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
     await axios.get(`/groups/group/${groupId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroup(res.data);
 
+      // check if user is an admin of the group
       if (res.data.admins && res.data.admins.includes(user)) {
         setIsAdmin(true);
         console.log(isAdmin);
@@ -40,20 +45,17 @@ const MemberListPage = () => {
     })
   };
 
-  const queryParams = new URLSearchParams(window.location.search);
-  const searchBy = queryParams.get("searchBy");
-
+  // get all members of the group
   const fetchMembers = async () => {
     await axios.get('/groups/members/'+groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
-      //search filter logic
+      // search filter logic
       var tmp = res.data.members;
 
       if (queryParams.has("searchBy")) {
         const searchedData = [];
         const query_characters = searchBy.toLowerCase().split("");
         tmp.forEach(entry => {
-          //console.log(entry.name.toLowerCase().split(""))
           var i = 0, count = 0;
           var name = entry.first_name + " " + entry.last_name;
           name.toLowerCase().split("").forEach(character => {
@@ -68,7 +70,6 @@ const MemberListPage = () => {
           }
         });
         tmp = searchedData;
-        //console.log(tmp);
       }
       setMembers(tmp);
       setAdmins(res.data.admins);
@@ -79,9 +80,9 @@ const MemberListPage = () => {
   useEffect(() => {
     fetchMembers();
     fetchGroup();
-    //checkAdminship();
   }, []);
 
+  // pagination
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = members.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -91,6 +92,8 @@ const MemberListPage = () => {
     <div className="parent" >
       {/* top nav bar*/}
       <NavBar />
+
+      {/* group info */}
       <div class="listings-main">
         <div class="left-box-mem">
           <div className="square-pic-mem">  
@@ -99,8 +102,8 @@ const MemberListPage = () => {
         </div>
         <div className="shift-title"> <div className="home-title"> Members of <b> "{group.name}"</b></div></div>
         <hr className="lines"/>
-      {members.length} members
-        <br/>
+          {members.length} members
+          <br/>
         <hr className="lines"/>
       </div>
 

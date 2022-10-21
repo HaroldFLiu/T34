@@ -8,22 +8,24 @@ const MemberList = ({data, isAdmin, admins}) => {
   const {groupId} = useParams();
   const coookie = new Cookies();
 
+  // function to remove a member if user is an admin
   async function removeMember(memberId) {
-    await axios.patch(`/groups/${groupId}/leave/${memberId}`, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.patch(`/groups/${groupId}/leave/${memberId}`, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(() => {
       alert('Removed user from group');
       window.location.reload()
-      }
-    );
+    });
   };
   
+  // function to make a member an admin if user is an admin
   async function makeAdmin(memberId) {
-    await axios.patch(`/groups/${groupId}/admin/${memberId}`, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.patch(`/groups/${groupId}/admin/${memberId}`, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(() => {
       alert('Made user an admin of group');
       window.location.reload()
-      }
-    );
+    });
   };
     
 return(
@@ -48,7 +50,8 @@ return(
                         <button class="dropbtn">...</button>
                         <div class="dropdown-content">
                           <a href='#' onClick={() => removeMember(member._id)}>Remove member</a>
-                          {!admins.includes(member._id) && <a href='#' onClick={() => makeAdmin(member._id)}>Add as an admin</a>}     
+                          {!admins.includes(member._id) && 
+                            <a href='#' onClick={() => makeAdmin(member._id)}>Add as an admin</a>}     
                         </div>
                       </div>
                     </div> 

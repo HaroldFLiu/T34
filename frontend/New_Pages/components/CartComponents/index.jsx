@@ -6,11 +6,15 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 
 const CartComponents = ({data}) => {
+
+  // function to remove a single item from a user's cart
   async function removeCart(item_id) {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     console.log(server_res);
     const user = server_res.data;
-    await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+    await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
       window.location.reload()
     );
   };
@@ -20,7 +24,7 @@ const CartComponents = ({data}) => {
     {data.map((item) => {
       return(
         <div className="checkout-items-card">  
-        {/* products display 1st row*/} 
+        {/* products display */} 
         <div className="wrapper-check" >
         <div class="row-check">
           <div class="column-check">

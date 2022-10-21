@@ -22,7 +22,7 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 
 const SideNav = () => {
-    {/* options for category menu */}
+  {/* list of icons for side nav */}
   const icons = [
     FaCar,
     FaTshirt,
@@ -38,8 +38,11 @@ const SideNav = () => {
     MdSportsFootball,
     MdSmartToy,
   ];
+
+
   const [categories, setCategories] = useState('');
 
+  // function to get category information
   const getCatergories = async () => {
     await axios.get('/category', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
@@ -55,9 +58,8 @@ const SideNav = () => {
     categoryOptions.push({id: categories[i]._id, name: categories[i].name, icon: icons[i]});
   }
 
-  //console.log(categoryOptions);
-
   const [firstRender, setFirstRender] = useState(false);
+
   useEffect(() => {
     if (!firstRender) {
       getCatergories();
@@ -67,14 +69,18 @@ const SideNav = () => {
 
   return (
     <div className="sidenav">
-        <div className="header">
-            Categories 
-        </div>
-        {categoryOptions.map((category) => (
-          <Link onClick={() => window.location.href="?cat_id=" + category.id}> <category.icon className="icon"/> {category.name}</Link>
-        ))}
-        <br></br>
-        <Link onClick={() => { window.location = window.location.pathname}}> <GrClear className="icon"/> Clear Category</Link>
+      <div className="header">
+          Categories 
+      </div>
+      {categoryOptions.map((category) => (
+        <Link onClick={() => window.location.href="?cat_id=" + category.id}> 
+          <category.icon className="icon"/> {category.name}
+        </Link>
+      ))}
+      <br></br>
+      <Link onClick={() => { window.location = window.location.pathname}}> 
+        <GrClear className="icon"/> Clear Category
+      </Link>
     </div>
   );
 }

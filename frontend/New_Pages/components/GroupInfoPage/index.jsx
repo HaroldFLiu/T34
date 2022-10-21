@@ -18,10 +18,10 @@ const GroupInfoPage = () => {
   const [isMember, setIsMember] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
 
-  {/*get user id axios.get(BASE_URL + '/todos', { withCredentials: true });*/}
+  const {groupId} = useParams()
+
   var coookie = new Cookie();
 
-  {/*method to unpack the data and fetch effect*/ }
   useEffect(() => {
     if (!firstRender) {
       fetchGroup();
@@ -29,18 +29,21 @@ const GroupInfoPage = () => {
     }
   }, [firstRender]);
    
+  // function to redirect to member list page
   const goMember = event => {
     event.preventDefault();
     location.pathname="/member-list-page/"+groupId;
   }
    
-  const {groupId} = useParams()
-
+  // function to fetch group data, as well as determine if user is an admin 
+  // and/or member of the group
   const fetchGroup = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    await axios.get(`/groups/group/${groupId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.get(`/groups/group/${groupId}`, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroup(res.data);
       console.log(res.data);
@@ -54,45 +57,52 @@ const GroupInfoPage = () => {
     })
   };
 
-  console.log(isAdmin);
-  console.log(isMember);
+  // function to join group if you are not a member
   async function joinGroup () {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
-    await axios.patch('/groups/'+ groupId +'/add/' + user.user_id, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+
+    await axios.patch('/groups/'+ groupId +'/add/' + user.user_id, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("You have joined the group!");
-      location.pathname="/my-groups-display/"+groupId;
+      // redirect if successful
       setIsMember(true);
+      location.pathname="/my-groups-display/"+groupId;
     })
     .catch(() => {
       alert('Oops, something went wrong.');
     });
   };
 
+  // function to leave the group if you are a member
   async function leaveGroup () {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-   //console.log(server_res);
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
-    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+
+    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("You left the group!");
-      location.pathname="/my-groups-page/"+user.user_id;
       setIsMember(false);
+      // redirect if successful
+      location.pathname="/my-groups-page/"+user.user_id;
     })
     .catch(() => {
       alert('Oops, something went wrong.');
     });
   };
 
+  // function to remove the group if you are an admin
   async function removeGroup () {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    //console.log(server_res);
-     const user = server_res.data;
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
 
-    console.log("remove");
-    await axios.delete('/groups/'+ groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.delete('/groups/'+ groupId, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("Group has been deleted!");
       location.pathname="/my-groups-page/"+user.user_id;
@@ -102,35 +112,32 @@ const GroupInfoPage = () => {
     });
   };
   
-  // <div class="box box1"><img src="balloon.jpg" alt="a balloon"></div>
   return (
     <div className="parent" > 
-    <NavBar />
+      <NavBar />
 
-    <div className="popup-box">
-      <div className="box">
-     { /*<a href="/group-page"> <span className="close-icon"> x</span> </a>*/}
-    
-       { <div className="square-popup">
-          <img src={group.icon_url} className="popup-img"></img> 
+      <div className="popup-box">
+        <div className="box">
+      
+          {<div className="square-popup">
+            <img src={group.icon_url} className="popup-img"></img> 
+          </div>}
+
+          <div className="popup-text"> 
+            <button onClick={goMember}> Member's List</button>
+            <br/>
+          </div>
+
+          <div className="header-popup">{group.name}</div> 
+          <hr className="hr-line"/>
+          <div className="test">{group.description}</div>
           
-        </div>}
-        <div className="popup-text"> 
-
-        <button onClick={goMember}> Member's List</button>
-       
-        <br/>
+          {!isMember && <div className="popup-btn" onClick={() => joinGroup()}> <button > Join Group</button> </div>}
+          {isMember && <div className="popup-btn" onClick={() => leaveGroup()}> <button > Leave Group</button> </div>}
+          {isAdmin && <div onClick={() => removeGroup()}> <button> Remove Group</button> </div>}
         </div>
-        <div className="header-popup">{group.name}</div> 
-        <hr className="hr-line"/>
-        <div className="test">{group.description}</div>
-        
-        {!isMember && <div className="popup-btn" onClick={() => joinGroup()}> <button > Join Group</button> </div>}
-        {isMember && <div className="popup-btn" onClick={() => leaveGroup()}> <button > Leave Group</button> </div>}
-        {isAdmin && <div onClick={() => removeGroup()}> <button> Remove Group</button> </div>}
+      </div>
     </div>
-    </div>
-  </div>
   );
 };
  

@@ -21,22 +21,23 @@ const GroupPage = () => {
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
+  // get parameters
   const queryParams = new URLSearchParams(window.location.search);
   const sortBy = queryParams.get("sortBy");
   const searchBy = queryParams.get("searchBy");
   const {userId} = useParams();
   
   useEffect(() => {
+    // function to get groups a user is not a part of
     axios.get(`/groups/other/${userId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 
-      //search filter logic
+      // search filter logic
       if (queryParams.has("searchBy")) {
         const searchedData = [];
         const query_characters = searchBy.toLowerCase().split("");
         tmp.forEach(entry => {
-          //console.log(entry.name.toLowerCase().split(""))
           var i = 0, count = 0;
           entry.name.toLowerCase().split("").forEach(character => {
             if (query_characters[i] == character) {
@@ -50,19 +51,15 @@ const GroupPage = () => {
           }
         });
         tmp = searchedData;
-        //console.log(tmp);
       }
 
-      //setData(res.data);
+      // sort by logic
       if (sortBy == 'oldest') {
         setData(tmp);
-        //console.log('newest');
       } else if (sortBy == 'desc') {
         setData(tmp.sort((a, b) => b.members.length - a.members.length));
-        //console.log('desc');
       } else if (sortBy == 'asc') {
         setData(tmp.sort((a, b) => a.members.length - b.members.length));
-        //console.log('asc');
       } else {
         setData(tmp.reverse());
       }
@@ -71,9 +68,9 @@ const GroupPage = () => {
     .catch(() => {
       alert('There was an error while retrieving the data')
     })
-    //.then(fetchData())
   }, []);
 
+  // pagination
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
@@ -109,6 +106,7 @@ const GroupPage = () => {
             </div>
           </div>
         </div>
+
         <span className="add-new"><a href="/create-group-page"> <AiFillPlusCircle className="add-icon"/></a></span>
       </div> 
     </div>

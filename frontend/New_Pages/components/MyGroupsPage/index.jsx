@@ -11,6 +11,7 @@ import PageNext from "../PageNextBar/PageNext";
 import { AiFillPlusCircle } from "react-icons/ai";
 var coookie = new Cookie();
 import "./MyGroupsPage.css"
+
 const MyGroupsPage = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);
@@ -19,22 +20,23 @@ const MyGroupsPage = () => {
   // 10 items displayed per page
   const [recordsPerPage] = useState(10);
 
+  // get parameters
   const queryParams = new URLSearchParams(window.location.search);
   const sortBy = queryParams.get("sortBy");
   const searchBy = queryParams.get("searchBy");
   const {userId} = useParams();
 
   useEffect(() => {
+    // get a user's groups
     axios.get(`/groups/user/${userId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 
-      //search filter logic
+      // search filter logic
       if (queryParams.has("searchBy")) {
         const searchedData = [];
         const query_characters = searchBy.toLowerCase().split("");
         tmp.forEach(entry => {
-          //console.log(entry.name.toLowerCase().split(""))
           var i = 0, count = 0;
           entry.name.toLowerCase().split("").forEach(character => {
             if (query_characters[i] == character) {
@@ -48,19 +50,15 @@ const MyGroupsPage = () => {
           }
         });
         tmp = searchedData;
-        //console.log(tmp);
       }
 
-      //setData(res.data);
+      // sort by logic
       if (sortBy == 'oldest') {
         setData(tmp);
-        //console.log('newest');
       } else if (sortBy == 'desc') {
         setData(tmp.sort((a, b) => b.members.length - a.members.length));
-        //console.log('desc');
       } else if (sortBy == 'asc') {
         setData(tmp.sort((a, b) => a.members.length - b.members.length));
-        //console.log('asc');
       } else {
         setData(tmp.reverse());
       }
@@ -71,6 +69,7 @@ const MyGroupsPage = () => {
     })
   }, []);
 
+  // pagination
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);

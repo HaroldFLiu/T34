@@ -14,38 +14,35 @@ const ProductInformationPage = () => {
 
   const [added, setAdded] = useState(false);
 
-  {/* TO GET SINGLE ITEM NEED CONDITION TO ACCESS CLICKED ITEMS'S ID*/}
   const {productId} = useParams()
-  //const thisProduct = posts.find(prod => prod.id == productId)
-  {/*degub log here */}
-  //console.log(productId);
-
-  {/*fetch item data*/}
   
   const [item, setItems] = useState({});
   const [seller, setSeller] = useState({});
   const [isSeller, setIsSeller] = useState(false);
   const [category, setCategory] = useState({});
 
+  // get item information
   const fetchItems = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
     axios.get(`/public/item/${productId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(async (res) => {
       setItems(res.data.item);
       setSeller(res.data.seller);
+
+      // to know if user is the seller
       if (res.data.item.seller_id == user) {
         setIsSeller(true);
       }
 
+      // since items don't have to have categories
       if (res.data.item.category_ids) {
-        //console.log("yes")
-        
-        await axios.get(`/category/${res.data.item.category_ids[0]}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+        await axios.get(`/category/${res.data.item.category_ids[0]}`, 
+          {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(res => {
           setCategory(res.data);
-          //console.log(res.data.name);
         })
       }
     })
@@ -53,22 +50,21 @@ const ProductInformationPage = () => {
       alert('There was an error while retrieving the data')
     })
   };
-
-  //console.log(isSeller);
  
   useEffect(() => {
     fetchItems();
     checkCart();
   }, []);
 
+  // function to check if item is in user's cart
   const checkCart = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
     await axios.get(`/cart/${user}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       const cart = res.data.cart;
-      //console.log(res);
       if (cart.items.includes(productId)) {
         setAdded(true);
       }
@@ -78,25 +74,24 @@ const ProductInformationPage = () => {
     });
   }
 
+  // function to add item to cart, if not in cart 
   const addToCart = async () => {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    //console.log(server_res);
-    //const user = server_res.data.user_email;
+    const server_res = await axios.get("/getuser", {withCredentials:true, 
+      headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    //let items = res.data.items;
-    //items.push(productId);
-    await axios.patch("/cart/"+user.user_id+"/add/"+productId, {itemId:productId}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(setAdded(true)).catch(error => {
+    await axios.patch("/cart/"+user.user_id+"/add/"+productId, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(setAdded(true)).catch(error => {
       console.log("Error updating cart", error);
     });
   };
 
   const [remove, setRemove] = useState([]);
 
-  /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
+  // function to delete post if user is seller
   async function deletePost(itemId) {
-    const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
     await axios.delete(`/public/${itemId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
@@ -106,10 +101,10 @@ const ProductInformationPage = () => {
  
   return (
     <div className="parent" >
-      {/* top nav bar*/}
+      {/* top nav bar */}
       <NavBar />
 
-      {/* product info display*/} 
+      {/* product info display */} 
       <div className="product-info-wrap">     
         <div className="product-img-wrap">
           <div className="imgtest"> <img src={item.image_urls} className="square-detailed"></img>  </div> 
@@ -131,11 +126,13 @@ const ProductInformationPage = () => {
           <hr />
           <div className="info-text-left"> <AiFillTag /><b>Tags: </b> {category.name} </div>
 
+          {/* different dislay depending on if you are seller or not, as well as if item is in cart or not*/}
           {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}
           {added && !isSeller && <button className="purchase-btn"> IN CART ALREADY</button>}
           {isSeller && (item.sold == true) && <label className="status sold-label"> SOLD </label>}
           {isSeller && (item.sold == false) && <label className="status"> LISTED </label>}
-          {isSeller && <a href="#"> <p><button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
+          {isSeller && <a href="#"> <p>
+            <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
         </div>
       </div>  
     </div>

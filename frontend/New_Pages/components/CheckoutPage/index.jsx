@@ -16,7 +16,7 @@ const CheckoutPage = () => {
 
   const {userId} = useParams();
 
-  // Define the function that fetches the data from API 
+  // function that fetches the user's cart
   const fetchData = async () => {
     axios.get("/cart/"+ userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
@@ -30,15 +30,17 @@ const CheckoutPage = () => {
     })
   };
 
+  // function that checks out user's cart
   const checkoutCart = async () => {
-    await axios.patch("/cart/checkout/"+userId, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+    await axios.patch("/cart/checkout/"+userId, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
       window.location.reload()
     ).catch(error => {
       console.log("Error updating cart", error);
     });
   };
 
-  // Trigger the fetchData after the initial render by using the useEffect hook
+  // trigger the fetchData after the initial render by using the useEffect hook
   useEffect(() => {
     fetchData();
   }, [firstRender]);
