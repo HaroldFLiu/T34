@@ -12470,10 +12470,6 @@ textarea.form-control-lg {
   float: left;
 }
 
-.page-link:hover {
-  color: #fff;
-}
-
 .App {
   background-color: #fff;
 }
@@ -12659,7 +12655,7 @@ body, html, .App, #root, .auth-wrapper {
 
 .listings-main {
   margin-top: 2%;
-  margin-left: 2%;
+  margin-left: 5%;
 }
 
 .home-title a {
@@ -12669,13 +12665,13 @@ body, html, .App, #root, .auth-wrapper {
 .container {
   background-color: #f2f2f2;
   border-radius: 5px;
-  margin-right: 2%;
+  margin-right: 5%;
   padding: 10px;
   font-family: Tienne, sans-serif;
 }
 
 .number-listings {
-  margin-left: 5%;
+  margin-left: 2%;
   font-family: Tienne, sans-serif;
 }
 
@@ -12684,8 +12680,7 @@ body, html, .App, #root, .auth-wrapper {
   text-align: center;
   background-color: #4caf50;
   border: none;
-  margin-bottom: 5px;
-  margin-left: 90%;
+  margin-left: 70%;
   padding: 10px;
   font-size: 16px;
   text-decoration: none;
@@ -12716,12 +12711,8 @@ input[type="asd"] {
   padding: 50px;
 }
 
-.publish-form-group {
-  margin-bottom: 16%;
-}
-
-.publish-form-item {
-  margin-bottom: 5%;
+.publish-form {
+  margin-bottom: 15%;
 }
 
 .dropbtn {
@@ -12766,16 +12757,15 @@ input[type="asd"] {
 }
 
 .left-box {
-  width: 25%;
+  width: 23%;
   float: left;
-  border: 1px solid #000;
-  margin-left: 45px;
+  border: 2px solid #000;
+  margin-left: 30px;
 }
 
 .square-pic {
   width: 100%;
   height: 100%;
-  margin-bottom: -7px;
 }
 
 select[type="category-listing"] {
@@ -12919,14 +12909,6 @@ body {
   overflow: hidden;
 }
 
-.info-text-left {
-  text-align: left;
-  white-space: normal;
-  margin-left: 2%;
-  font-size: 20px;
-  overflow: hidden;
-}
-
 .info-text-centered-price {
   text-align: center;
   font-size: 35px;
@@ -12936,31 +12918,13 @@ body {
   text-align: center;
   width: 60%;
   color: #fff;
-  background-color: #5a896a;
-  margin-top: 10%;
-  margin-left: 20%;
-  padding-top: 1%;
-  padding-bottom: 1%;
-  font-size: 25px;
-  font-weight: bolder;
-}
-
-.status {
-  text-align: center;
-  width: 60%;
-  color: #fff;
   background-color: #000;
   margin-top: 10%;
   margin-left: 20%;
   padding-top: 1%;
   padding-bottom: 1%;
-  font-family: Tienne, sans-serif;
   font-size: 25px;
   font-weight: bolder;
-}
-
-.sold-label {
-  background-color: green;
 }
 
 .contact-btn {
@@ -12996,15 +12960,10 @@ body {
   margin-left: 20%;
 }
 
-.move-up-remove button {
-  border: none;
-  margin-top: 3%;
-}
-
 .check-header {
   text-align: left;
   margin-top: 2%;
-  margin-left: 18.5%;
+  margin-left: 20%;
   font-family: Tienne, sans-serif;
   font-size: 35px;
   font-weight: 700;
@@ -13013,12 +12972,12 @@ body {
 .total-items {
   text-align: left;
   margin-top: -1%;
-  margin-left: 18.5%;
+  margin-left: 20%;
   font-family: Tienne, sans-serif;
 }
 
 .checkout-items-card {
-  height: 250px;
+  height: 300px;
   margin-left: 5%;
 }
 
@@ -13045,7 +13004,7 @@ body {
   width: 600px;
   text-align: center;
   white-space: initial;
-  border: thin solid green;
+  border: thin solid #000;
   margin: auto;
   padding-top: 1%;
   padding-bottom: 1%;
@@ -13056,12 +13015,10 @@ body {
 }
 
 .row-check {
-  float: left;
   display: flex;
 }
 
 .column-check {
-  float: left;
   flex: 33.33%;
   padding: 5%;
 }
@@ -13080,14 +13037,9 @@ body {
 .check-remove-btn {
   float: right;
   width: 20%;
-  color: #fff;
-  background-color: #5a896a;
-  border: none;
-  border-radius: 20px;
+  border-radius: 12px;
   margin-top: 15%;
   margin-right: 3%;
-  padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .check-price {
@@ -13097,17 +13049,11 @@ body {
 
 .payment-detail {
   float: right;
-  border: solid #33532c;
-  border-radius: 30px;
+  border: thin solid #000;
   margin-top: 5%;
   margin-right: 15%;
-  padding: 2% 2% 3%;
+  padding: 2% 2% 1%;
   position: relative;
-  box-shadow: 0 4px 8px #0003;
-}
-
-.text-outline, .text-outline-bag {
-  color: #33532c;
 }
 
 .payment-detail-text {
@@ -13119,7 +13065,7 @@ body {
   text-align: center;
   width: 100%;
   color: #fff;
-  background: #5a896a;
+  background: #000;
   margin-top: 10%;
   font-size: 20px;
 }
@@ -13127,91 +13073,6 @@ body {
 .checkout-btn:hover, .check-remove-btn:hover {
   color: #000;
   background: #a4df9a;
-}
-
-.popup-box-display {
-  width: 110%;
-  height: 100%;
-  margin-top: 6%;
-  margin-left: 1%;
-  display: flex;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
-
-.display-box {
-  width: 70%;
-  height: auto;
-  max-height: 80vh;
-  background: #fff;
-  margin: 0 auto;
-  padding: 20px;
-  position: relative;
-  overflow: auto;
-}
-
-.display-square-popup {
-  width: 200px;
-  height: 200px;
-  border: thin solid;
-  margin-top: -.5%;
-  margin-bottom: 1%;
-  margin-right: 10%;
-}
-
-.header-popup-display button {
-  float: right;
-  margin-top: -16%;
-  font-size: 16px;
-}
-
-.hr-line {
-  color: #000;
-  border: thin solid;
-  margin-left: 20%;
-}
-
-.smaller {
-  text-align: left;
-  font-size: 15px;
-}
-
-.header-popup-display {
-  text-align: left;
-  margin-top: -15%;
-  margin-left: 20%;
-  font-size: 40px;
-}
-
-.component-display {
-  border: thin solid;
-  margin-top: 7%;
-}
-
-.number-group-listings {
-  margin-top: 150px;
-}
-
-.header-popup-display .remove-leave {
-  float: right;
-  margin-top: -11%;
-  font-size: 16px;
-}
-
-.header-popup-display button {
-  color: #000;
-  text-align: center;
-  background-color: #a4df9a;
-  border: none;
-  border-radius: 12px;
-  padding: 5px 15px;
-}
-
-.header-popup-display button:hover {
-  opacity: 1;
-  color: #fff;
-  background: #5a896a;
 }
 
 .popup-box {
@@ -13335,6 +13196,91 @@ body {
   object-fit: cover;
 }
 
+.popup-box-display {
+  width: 110%;
+  height: 100%;
+  margin-top: 6%;
+  margin-left: 1%;
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.display-box {
+  width: 70%;
+  height: auto;
+  max-height: 80vh;
+  background: #fff;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  overflow: auto;
+}
+
+.display-square-popup {
+  width: 200px;
+  height: 200px;
+  border: thin solid;
+  margin-top: -.5%;
+  margin-bottom: 1%;
+  margin-right: 10%;
+}
+
+.header-popup-display button {
+  float: right;
+  margin-top: -16%;
+  font-size: 16px;
+}
+
+.hr-line {
+  color: #000;
+  border: thin solid;
+  margin-left: 20%;
+}
+
+.smaller {
+  text-align: left;
+  font-size: 15px;
+}
+
+.header-popup-display {
+  text-align: left;
+  margin-top: -15%;
+  margin-left: 20%;
+  font-size: 40px;
+}
+
+.component-display {
+  border: thin solid;
+  margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
+}
+
+.header-popup-display .remove-leave {
+  float: right;
+  margin-top: -11%;
+  font-size: 16px;
+}
+
+.header-popup-display button {
+  color: #000;
+  text-align: center;
+  background-color: #a4df9a;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+}
+
+.header-popup-display button:hover {
+  opacity: 1;
+  color: #fff;
+  background: #5a896a;
+}
+
 .search-member {
   float: right;
   margin-top: -6px;
@@ -13365,16 +13311,6 @@ body {
 
 .lines {
   margin-right: 3%;
-}
-
-.card-text {
-  font-size: 85%;
-}
-
-.members {
-  margin-top: 5%;
-  margin-left: 22%;
-  margin-right: 5%;
 }
 
 /*# sourceMappingURL=index.e1b8c111.css.map */
