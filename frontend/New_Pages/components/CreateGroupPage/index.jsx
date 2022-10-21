@@ -58,14 +58,17 @@ const CreateGroupPage = () => {
 
     if (!image.raw) {
       alert('Image Required. Please fill in all fields.');
+      return;
     }
 
     if (!props.name) {
       alert('Group Name Required. Please fill in all fields.');
+      return;
     }
 
     if (!props.description) {
       alert('Group Description Required. Please fill in all fields.');
+      return;
     }
 
     /* posting */
