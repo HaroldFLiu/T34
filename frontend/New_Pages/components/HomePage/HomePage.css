@@ -160,6 +160,8 @@
   margin: auto;
   text-align: center;
   font-family: 'Tienne', sans-serif;
+  min-height: 308px;
+
 }
 
 .price {
