@@ -3,4 +3,6 @@
     float: left;
 }
 
-
+.page-link:hover{
+    color: white;
+}

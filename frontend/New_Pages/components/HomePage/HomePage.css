@@ -275,7 +275,6 @@
 /* add a hoverable thingy */
 .pagination a:hover:not(.active) {background-color:#4CAF50;;}
 
-
 /* ADD HREF TO PRODUCTS */
 .card a,
 .card a:hover{

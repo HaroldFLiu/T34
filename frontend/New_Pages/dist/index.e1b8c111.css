@@ -12284,12 +12284,6 @@ textarea.form-control-lg {
   object-fit: contain;
 }
 
-.logo-position-cart {
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
-}
-
 .products-wrapper {
   margin-top: -10px;
 }
@@ -12473,6 +12467,10 @@ textarea.form-control-lg {
 
 .page-item {
   float: left;
+}
+
+.page-link:hover {
+  color: #fff;
 }
 
 .App {
