@@ -168,3 +168,9 @@ body {
 
 
 }
+
+/* remove button */
+.move-up-remove button{
+  margin-top: 3%;
+  border: none;
+}

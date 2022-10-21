@@ -140,8 +140,9 @@ const ProductInformationPage = () => {
           {added && !isSeller && <button className="purchase-btn"> IN CART ALREADY</button>}
           {isSeller && (item.sold == true) && <label className="status sold-label"> SOLD </label>}
           {isSeller && (item.sold == false) && <label className="status"> LISTED </label>}
+          <div className="move-up-remove"> 
           {isSeller && <a href="#"> <p>
-            <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
+            <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}</div>
         </div>
       </div>  
     </div>
