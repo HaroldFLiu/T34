@@ -12295,7 +12295,7 @@ textarea.form-control-lg {
 .card {
   max-width: 250px;
   text-align: center;
-  min-height: 308px;
+  min-height: 320px;
   margin: auto;
   font-family: Tienne, sans-serif;
   box-shadow: 0 4px 8px #0003;
@@ -12353,6 +12353,7 @@ textarea.form-control-lg {
 }
 
 .img-wrap {
+  object-fit: contain;
   margin-top: 10px;
 }
 

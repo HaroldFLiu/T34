@@ -160,7 +160,7 @@
   margin: auto;
   text-align: center;
   font-family: 'Tienne', sans-serif;
-  min-height: 308px;
+  min-height: 320px;
 
 }
 
@@ -223,6 +223,7 @@
 /* moves the img in the product card down abit */
 .img-wrap{
   margin-top: 10px;
+  object-fit: contain;
 }
 
 /* moves item name + cart up abit */
