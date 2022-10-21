@@ -27,15 +27,32 @@ const getItem = async (req, res) => {
 
     const seller = await userService.readById(item.seller_id);
 
-    const data = {
-        item: item, 
-        seller: { 
-            first_name: seller.first_name, 
-            last_name: seller.last_name
+    var data = null;
+
+
+    if (item.buyer_id) {
+        buyer = await userService.readById(item.buyer_id);
+
+        data = {
+            item: item, 
+            seller: { 
+                first_name: seller.first_name, 
+                last_name: seller.last_name
+            },
+            buyer: { 
+                first_name: buyer.first_name, 
+                last_name: buyer.last_name
+            },
+        }
+    } else {
+        data = {
+            item: item, 
+            seller: { 
+                first_name: seller.first_name, 
+                last_name: seller.last_name
+            }
         }
     }
-
-    //console.log(data)
 
     res.status(200).json(data);
 }

@@ -23,6 +23,7 @@ const checkout = async(userId) => {
   for (let i = 0; i < cart.items.length; i++) {
     const item = await itemService.readById(cart.items[i]);
     item.sold = true;
+    item.buyer_id = userId;
     await item.save();
   }
 

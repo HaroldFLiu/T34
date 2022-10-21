@@ -18,6 +18,7 @@ const ProductInformationPage = () => {
   
   const [item, setItems] = useState({});
   const [seller, setSeller] = useState({});
+  const [buyer, setBuyer] = useState({});
   const [isSeller, setIsSeller] = useState(false);
   const [category, setCategory] = useState({});
 
@@ -29,6 +30,7 @@ const ProductInformationPage = () => {
 
     axios.get(`/public/item/${productId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(async (res) => {
+      console.log(res);
       setItems(res.data.item);
       setSeller(res.data.seller);
 
@@ -45,12 +47,16 @@ const ProductInformationPage = () => {
           setCategory(res.data);
         })
       }
+
+      if (res.data.buyer) {
+        setBuyer(res.data.buyer);
+      }
     })
     .catch(() => {
       alert('There was an error while retrieving the data')
     })
   };
- 
+
   useEffect(() => {
     fetchItems();
     checkCart();
@@ -125,6 +131,7 @@ const ProductInformationPage = () => {
           <div className="info-text-centered-price"> <b>${item.price}</b></div>
           <hr />
           <div className="info-text-left"> <AiFillTag /><b>Tags: </b> {category.name} </div>
+          {buyer && <div className="info-text-left"> <br/><b>Sold To: </b> {buyer.first_name} {buyer.last_name} </div>}
 
           {/* different dislay depending on if you are seller or not, as well as if item is in cart or not*/}
           {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}

@@ -38,4 +38,22 @@ router.get('/getuser', authenticate, async (req, res) => {
     });
   }
 });
+
+// GET a user's details
+router.get('/getuser/:userId', authenticate, async (req, res) => {
+  const { userId } = req.params;
+
+  // ensure id is valid
+  if (!mongoose.Types.ObjectId.isValid(userId)) {
+      return res.status(404).json({error: 'Invalid Mongo ID'});
+  }
+
+  const user = await user.readById(userId);
+
+  if (!user) {
+      return res.status(404).json({error: 'No user with that ID'});
+  }
+
+  res.status(200).json(user);
+});
 module.exports = router;
