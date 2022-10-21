@@ -12,6 +12,7 @@ const router = express.Router();
 // GET all categories
 router.get('/category', authenticate, getCatergories);    
 
+// GET a category
 router.get('/category/:categoryId', authenticate, getCatergory);   
 
 module.exports = router;

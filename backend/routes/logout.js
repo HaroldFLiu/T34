@@ -9,6 +9,7 @@ const { initSession, isEmail } = require('../utils/utils');
 
 const router = express.Router();
 
+// PUT a logout
 router.put('/logout', authenticate, async (req, res) => {
     try {
       const { session } = req;

@@ -12,6 +12,7 @@ const userService = require('../services/user');
 
 const router = express.Router();
 
+// POST a user
 router.post('/register', async (req, res) => {
   try {
     const {email, password, first_name, last_name } = req.body;

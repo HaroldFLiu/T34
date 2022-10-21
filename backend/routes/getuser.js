@@ -10,6 +10,7 @@ const userService = require('../services/user');
 
 const router = express.Router();
 
+// GET the user's details
 router.get('/getuser', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;

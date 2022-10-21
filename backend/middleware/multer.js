@@ -1,16 +1,10 @@
 const multer = require("multer");
 const path = require("path");
 
-// Multer config
+// Multer config -- only accept certain files and use external 3rd party service
+// Cloudinary as storage
 module.exports = multer({
   storage: multer.diskStorage({
-    /*
-    destination: (req, file, cb) => {
-      cb(null, 'images/')
-    },
-    filename: (req, file, cb) => {
-      cb(null, file.originalname)
-    },*/
   }),
   fileFilter: (req, file, cb) => {
     let ext = path.extname(file.originalname);  

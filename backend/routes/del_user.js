@@ -9,6 +9,7 @@ const { initSession, isEmail } = require('../utils/utils');
 
 const router = express.Router();
 
+// DELETE a user
 router.delete('/del_user', authenticate, async (req, res) => {
   try {
     const { userId } = req.session;

@@ -1,17 +1,6 @@
 const { default: mongoose } = require('mongoose');
 const cartService = require('../services/cart');
 const itemService = require('../services/item');
-/*
-const createCart = async (req, res) => {
-    const { userId } = req.params;
-    try {
-        const cart = await cartService.create({userId});
-        res.status(200).json(cart);
-    } catch (error) {
-        res.status(400).json({error: error.message});
-    }
-}
-*/
 
 const getCart = async (req, res) => {
     const { userId } = req.params;
@@ -23,7 +12,7 @@ const getCart = async (req, res) => {
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    //console.log(cart);
+
     const items = []
 
     for (const itemId of cart.items) {
@@ -42,43 +31,9 @@ const getCart = async (req, res) => {
     return res.status(200).json(data);
 }
 
-//const getCartFromUser
-
-/*
-const updateCart = async (req, res) => {
-    const { userId } = req.params;
-    const { itemId } = req.body;
-    if (!mongoose.Types.ObjectId.isValid(userId)) {
-        return res.status(404).json({error: 'User does not exist'});
-    }
-    if ( itemId == -1 && quantity == -1) {
-        const cart = await cartService.removeAllItems(cartId);
-        if (!cart) {
-            return res.status(404).json({error: 'Failed to remove all items'});
-        }
-    }
-    else {
-        if (!mongoose.Types.ObjectId.isValid(itemId)) {
-            return res.status(404).json({error: 'Item does not exist'});
-        }
-        if (quantity > 0) {
-            const cart = await cartService.addItem(cartId, itemId. quantity);
-            if (!cart) {
-                return res.status(404).json({error: 'Failed to add item'});
-            }
-        }
-        else if (quantity < 0) {
-            const cart = await cartService.deleteItem(cartId, itemId);
-            if (!cart) {
-                return res.status(404).json({error: 'Failed to delete item'});
-            }
-        }
-    }
-}*/
-
 const addToCart = async (req, res) => {
-    const { userId } = req.params;
-    const { itemId } = req.body;
+    const { userId, itemId } = req.params;
+
     if (!mongoose.Types.ObjectId.isValid(userId)) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
@@ -106,7 +61,7 @@ const checkoutCart = async (req, res) => {
     
 }
 const deleteFromCart = async (req, res) => {
-    const { userId,itemId } = req.params;
+    const { userId, itemId } = req.params;
     //const { itemId } = req.body;
     //console.log(itemId);
     if (!mongoose.Types.ObjectId.isValid(userId)) {
@@ -133,22 +88,11 @@ const deleteAllFromCart = async (req, res) => {
     }
     //res.status(200).json(cart);
 }
-/*
-const deleteCart = async (req, res) => {
-    const { cartId } = req.params;
-    if (!mongoose.Types.ObjectId.isValid(cartId)) {
-        return res.status(404).json({error: 'Cart does not exist'});
-    }
-    const cart = await cartService.deletebyId(cartId);
 
-}*/
 module.exports = {
-    // createCart,
     getCart,
-    //updateCart,
     addToCart,
     checkoutCart,
     deleteFromCart,
     deleteAllFromCart,
-    //deleteCart,
 }
