@@ -12,6 +12,7 @@ import {FaPenFancy} from 'react-icons/fa';
 import {FaDog} from 'react-icons/fa';
 import {MdSportsFootball} from 'react-icons/md';
 import {MdSmartToy} from 'react-icons/md';
+import {GrClear} from 'react-icons/gr';
 
 import React, {useEffect, useState}from "react";
 import {Link} from "react-router-dom"
@@ -72,6 +73,8 @@ const SideNav = () => {
         {categoryOptions.map((category) => (
           <Link onClick={() => window.location.href="?cat_id=" + category.id}> <category.icon className="icon"/> {category.name}</Link>
         ))}
+        <br></br>
+        <Link onClick={() => { window.location = window.location.pathname}}> <GrClear className="icon"/> Clear Category</Link>
     </div>
   );
 }
