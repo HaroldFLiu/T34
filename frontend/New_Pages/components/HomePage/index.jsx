@@ -38,7 +38,7 @@ const HomePage = () => {
     const user = server_res.data.user_id;
     setUser(user);
 
-    await axios.get('/public')
+    await axios.get('/public', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 
@@ -86,7 +86,7 @@ const HomePage = () => {
   }
 
   const fetchPublicCategory = async () => {
-    await axios.get(`/public/category/${categoryId}`)
+    await axios.get(`/public/category/${categoryId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
         var tmp = res.data;
 
@@ -135,7 +135,6 @@ const HomePage = () => {
 
   if (!categoryId) {
     useEffect(() => {
-      
       fetchPublic();
     }, []);
   } else {

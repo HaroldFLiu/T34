@@ -1,6 +1,7 @@
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
-import Cookie from 'universal-cookie';
+import Cookies from 'universal-cookie';
+const coookie = new Cookies();
 import { useParams } from "react-router-dom";
 import ProductComponents from "../ProductComponents";
 import PageNext from "../PageNextBar/PageNext";
@@ -31,7 +32,7 @@ const SellPage = () => {
   
   if (!categoryId) {
     useEffect(() => {
-      axios.get(`/items/${sellerId}`)
+      axios.get(`/items/${sellerId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(res => {
           var tmp = res.data;
 
@@ -78,7 +79,7 @@ const SellPage = () => {
     }, [])
   } else {
     useEffect(() => {
-      axios.get(`/items/${sellerId}/${categoryId}`)
+      axios.get(`/items/${sellerId}/${categoryId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(res => {
           var tmp = res.data;
 

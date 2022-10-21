@@ -28,22 +28,22 @@ const itemService = require('../services/item');
 const router = express.Router();
 
 // GET all public items
-router.get('/public', getPublicItems);    
+router.get('/public', authenticate, getPublicItems);    
 
 // GET all public items in a category
-router.get('/public/category/:category_id', getCategoryItems);
+router.get('/public/category/:category_id', authenticate, getCategoryItems);
 
 // GET a single item
-router.get('/public/item/:item_id', getItem);
+router.get('/public/item/:item_id', authenticate, getItem);
 
 // GET a user's items
-router.get('/items/:user_id', getUserItems);
+router.get('/items/:user_id', authenticate, getUserItems);
 
 // GET a user's items by ctageory
-router.get('/items/:user_id/:category_id', getUserItemsWithCategory);
+router.get('/items/:user_id/:category_id', authenticate, getUserItemsWithCategory);
 
 // GET all sold items
-router.get('/sold', getSoldItems);
+router.get('/sold', authenticate, getSoldItems);
 
 // POST an item
 router.post('/public', authenticate, async (req, res) => {
@@ -64,7 +64,7 @@ router.post('/public', authenticate, async (req, res) => {
 
 
 // POST an image 
-router.post('/public/image', upload.single('file'), async (req, res) => {
+router.post('/public/image', authenticate, upload.single('file'), async (req, res) => {
     // handle images
     const image_urls = [];
     const file = req.file
@@ -83,10 +83,10 @@ router.post('/public/image', upload.single('file'), async (req, res) => {
 
 
 // DELETE an item
-router.delete('/public/:item_id', deleteItem);
+router.delete('/public/:item_id', authenticate, deleteItem);
 
 // UPDATE an item
-router.patch('/public/:item_id', async (req, res) => {
+router.patch('/public/:item_id', authenticate, async (req, res) => {
     const { item_id } = req.params;
     //console.log(item_id);
     //console.log(req.body);

@@ -15,7 +15,7 @@ const ProductComponents = ({data, userId}) => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    await axios.get(`/favourites/${user.user_id}`)
+    await axios.get(`/favourites/${user.user_id}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setWishlist(res.data.map((x) => x._id));
     })
@@ -40,7 +40,7 @@ const addWishlist = async item_id => {
   //let res = await axios.get("/cart/"+user.user_id, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
   //let items = res.data.items;
   //items.push(productId);
-  await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+  await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
   .then(window.location.reload())
 };
 
@@ -48,7 +48,7 @@ async function removeWishlist(item_id) {
   const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
   console.log(server_res);
   const user = server_res.data;
-  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
     window.location.reload()
   );
 };
@@ -61,7 +61,7 @@ async function removeWishlist(item_id) {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    await axios.delete(`/public/${itemId}`);
+    await axios.delete(`/public/${itemId}`, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     alert('Removed item successfully');
     location.pathname="/sell-page/"+user.user_id;
     setStatus('Delete successful');

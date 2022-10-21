@@ -18,7 +18,7 @@ const CheckoutPage = () => {
 
   // Define the function that fetches the data from API 
   const fetchData = async () => {
-    axios.get("/cart/"+ userId)
+    axios.get("/cart/"+ userId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       let tmp = res.data;
       //console.log(res);
@@ -38,7 +38,6 @@ const CheckoutPage = () => {
     });
   };
 
-    
   // Trigger the fetchData after the initial render by using the useEffect hook
   useEffect(() => {
     fetchData();

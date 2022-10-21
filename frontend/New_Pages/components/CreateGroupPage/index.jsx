@@ -74,6 +74,8 @@ const CreateGroupPage = () => {
       method: 'post',
       url: '/public/image',
       data: formData,
+      withCredentials:true, 
+      headers:{'Authorization':coookie.get("token")}
     })
     .then(function (res1) {
       if (res1.status=="200") {
@@ -81,7 +83,7 @@ const CreateGroupPage = () => {
         props.icon_url = res1.data.image_urls[0];
         //console.log(props);
 
-        axios.post('/groups', props)
+        axios.post('/groups', props, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(function (res2) {
           if (res2.status=="200") {
             //console.log('group details successful');
@@ -106,7 +108,7 @@ const CreateGroupPage = () => {
   {/* get number of groups */}
   const [groups, setGroups] = useState('');
   const getGroups = () => {
-    axios.get('/groups')
+    axios.get('/groups', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroups(res.data.length);
     }).catch(err => {

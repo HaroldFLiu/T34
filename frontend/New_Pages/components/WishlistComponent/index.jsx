@@ -15,7 +15,7 @@ async function removeWishlist(item_id) {
   const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
   console.log(server_res);
   const user = server_res.data;
-  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
+  await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
     window.location.reload()
   );
 };

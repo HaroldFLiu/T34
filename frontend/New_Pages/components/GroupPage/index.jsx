@@ -9,6 +9,7 @@ import SideNav from "../SideNavComponent";
 import NavBar from "../NavBarComponent";
 import SortByMembers from "../SortByMemberComponent";
 import Cookie from 'universal-cookie';
+var coookie = new Cookie();
 
 import { AiFillPlusCircle } from "react-icons/ai";
 
@@ -26,7 +27,7 @@ const GroupPage = () => {
   const {userId} = useParams();
   
   useEffect(() => {
-    axios.get(`/groups/other/${userId}`)
+    axios.get(`/groups/other/${userId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 

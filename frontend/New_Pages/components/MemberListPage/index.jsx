@@ -29,7 +29,7 @@ const MemberListPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    await axios.get(`/groups/group/${groupId}`)
+    await axios.get(`/groups/group/${groupId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroup(res.data);
 
@@ -44,7 +44,7 @@ const MemberListPage = () => {
   const searchBy = queryParams.get("searchBy");
 
   const fetchMembers = async () => {
-    await axios.get('/groups/members/'+groupId)
+    await axios.get('/groups/members/'+groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       //search filter logic
       var tmp = res.data.members;

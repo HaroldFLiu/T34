@@ -40,7 +40,7 @@ const GroupInfoPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    await axios.get(`/groups/group/${groupId}`)
+    await axios.get(`/groups/group/${groupId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroup(res.data);
       console.log(res.data);
@@ -60,7 +60,7 @@ const GroupInfoPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     console.log(server_res);
     const user = server_res.data;
-    await axios.patch('/groups/'+ groupId +'/add/' + user.user_id)
+    await axios.patch('/groups/'+ groupId +'/add/' + user.user_id, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("You have joined the group!");
       location.pathname="/my-groups-display/"+groupId;
@@ -75,7 +75,7 @@ const GroupInfoPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
    //console.log(server_res);
     const user = server_res.data;
-    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id)
+    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("You left the group!");
       location.pathname="/my-groups-page/"+user.user_id;
@@ -92,7 +92,7 @@ const GroupInfoPage = () => {
      const user = server_res.data;
 
     console.log("remove");
-    await axios.delete('/groups/'+ groupId)
+    await axios.delete('/groups/'+ groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("Group has been deleted!");
       location.pathname="/my-groups-page/"+user.user_id;

@@ -2,6 +2,8 @@ import logo from "../../dist/img/t34-logo.jpg";
 import React, {useEffect, useState}from "react";
 import axios from "../../api/axios";
 import {Link} from "react-router-dom"
+import Cookies from 'universal-cookie';
+const coookie = new Cookies();
 
 const SellComponent = ({data}) => {
 
@@ -11,16 +13,11 @@ const SellComponent = ({data}) => {
 // delete request here
 // below do on-click btn --> delete request 
 
-
-  {data.map((item) => {
-    console.log(item._id);
-  })};
-
   const [remove, setRemove] = useState([]);
 
 /* deletes an item function BUT DODGEY RELOAD TO DISPLAY  */
   async function deletePost(id) {
-    await axios.delete(`/public/${id}`);
+    await axios.delete(`/public/${id}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     alert('Removed item successfully');
     window.location.reload();
     setStatus('Delete successful');

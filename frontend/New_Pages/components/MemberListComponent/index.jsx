@@ -9,7 +9,7 @@ const MemberList = ({data, isAdmin, admins}) => {
   const coookie = new Cookies();
 
   async function removeMember(memberId) {
-    await axios.patch(`/groups/${groupId}/leave/${memberId}` , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.patch(`/groups/${groupId}/leave/${memberId}`, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(() => {
       alert('Removed user from group');
       window.location.reload()
@@ -18,7 +18,7 @@ const MemberList = ({data, isAdmin, admins}) => {
   };
   
   async function makeAdmin(memberId) {
-    await axios.patch(`/groups/${groupId}/admin/${memberId}` , {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    await axios.patch(`/groups/${groupId}/admin/${memberId}`, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(() => {
       alert('Made user an admin of group');
       window.location.reload()

@@ -17,6 +17,9 @@ import React, {useEffect, useState}from "react";
 import {Link} from "react-router-dom"
 import axios from "../../api/axios";
 
+import Cookies from 'universal-cookie';
+const coookie = new Cookies();
+
 const SideNav = () => {
     {/* options for category menu */}
   const icons = [
@@ -36,8 +39,8 @@ const SideNav = () => {
   ];
   const [categories, setCategories] = useState('');
 
-  const getCatergories = () => {
-    axios.get('/category')
+  const getCatergories = async () => {
+    await axios.get('/category', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setCategories(res.data);
     }).catch(err => {

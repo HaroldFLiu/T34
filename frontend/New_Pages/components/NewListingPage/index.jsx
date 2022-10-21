@@ -4,6 +4,7 @@ import axios from "../../api/axios";
 import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import NavBar from "../NavBarComponent"
 import Cookie from 'universal-cookie';
+var coookie = new Cookie();
 
 const NewListingPage = () => {
   const [firstRender, setFirstRender] = useState(false);
@@ -108,7 +109,7 @@ const NewListingPage = () => {
   const [categories, setCategories] = useState('');
   
   const getCatergories = async () => {
-    await axios.get('/category')
+    await axios.get('/category', {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setCategories(res.data);
     }).catch(err => {
@@ -132,7 +133,7 @@ const NewListingPage = () => {
   ];
 
   {/* options for group dropdown menu */}
-  var coookie = new Cookie();
+
   const [groups, setGroups] = useState('');
   const getGroups = async () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
@@ -140,7 +141,7 @@ const NewListingPage = () => {
 
     //console.log(user);
 
-    await axios.get(`/groups/user/${user}`)
+    await axios.get(`/groups/user/${user}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       //console.log(res);
       setGroups(res.data);
@@ -152,7 +153,7 @@ const NewListingPage = () => {
 
   const [sold, setSold] = useState('');
   const getSold = async () => {
-    await axios.get(`/sold`)
+    await axios.get(`/sold`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       //console.log('sold');
       setSold(res.data.length);

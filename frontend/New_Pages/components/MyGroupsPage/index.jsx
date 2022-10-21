@@ -9,7 +9,7 @@ import MyGroupComponents from "../MyGroupsComponent";
 import PageNext from "../PageNextBar/PageNext";
 
 import { AiFillPlusCircle } from "react-icons/ai";
-
+var coookie = new Cookie();
 import "./MyGroupsPage.css"
 const MyGroupsPage = () => {
   const [data, setData] = useState([])
@@ -25,7 +25,7 @@ const MyGroupsPage = () => {
   const {userId} = useParams();
 
   useEffect(() => {
-    axios.get(`/groups/user/${userId}`)
+    axios.get(`/groups/user/${userId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 

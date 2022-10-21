@@ -6,10 +6,10 @@ import uploadPlaceholder from "../../dist/img/upload-picture.jpg";
 import axios from "../../api/axios";
 import { useParams } from "react-router-dom";
 import Cookies from 'universal-cookie';
+const coookie = new Cookies();
 
 import { AiFillTag } from "react-icons/ai";
 
-const coookie = new Cookies();
 const ProductInformationPage = () => {
 
   const [added, setAdded] = useState(false);
@@ -31,7 +31,7 @@ const ProductInformationPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    axios.get(`/public/item/${productId}`)
+    axios.get(`/public/item/${productId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(async (res) => {
       setItems(res.data.item);
       setSeller(res.data.seller);
@@ -42,7 +42,7 @@ const ProductInformationPage = () => {
       if (res.data.item.category_ids) {
         //console.log("yes")
         
-        await axios.get(`/category/${res.data.item.category_ids[0]}`)
+        await axios.get(`/category/${res.data.item.category_ids[0]}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
         .then(res => {
           setCategory(res.data);
           //console.log(res.data.name);
@@ -65,7 +65,7 @@ const ProductInformationPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    await axios.get(`/cart/${user}`)
+    await axios.get(`/cart/${user}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       const cart = res.data.cart;
       //console.log(res);
@@ -99,10 +99,9 @@ const ProductInformationPage = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    await axios.delete(`/public/${itemId}`);
+    await axios.delete(`/public/${itemId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     alert('Removed item successfully');
     location.pathname="/sell-page/"+user.user_id;
-    setStatus('Delete successful');
   }
  
   return (

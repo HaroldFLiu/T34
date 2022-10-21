@@ -35,7 +35,7 @@ const MyGroupsDisplay = () => {
     const user = server_res.data.user_id;
     setUser(user);
 
-    await axios.get('/groups/items/' + groupId)
+    await axios.get('/groups/items/' + groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       var tmp = res.data;
 
@@ -83,7 +83,7 @@ const MyGroupsDisplay = () => {
   }
 
   const fetchGroupItemsWithCategory = async () => {
-    await axios.get(`/groups/items/${groupId}/category/${categoryId}`)
+    await axios.get(`/groups/items/${groupId}/category/${categoryId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
         const tmp = res.data;
         //console.log(res.data);
@@ -127,7 +127,7 @@ const MyGroupsDisplay = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
 
-    await axios.get(`/groups/group/${groupId}`)
+    await axios.get(`/groups/group/${groupId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(res => {
       setGroup(res.data);
       setIsAdmin(res.data.admins.includes(user));
@@ -140,7 +140,7 @@ const MyGroupsDisplay = () => {
     const user = server_res.data;
 
     console.log("remove");
-    await axios.delete('/groups/'+ groupId);
+    await axios.delete('/groups/'+ groupId, {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     alert("Group has been deleted!");
     location.pathname="/my-groups-page/"+user.user_id;
   };
@@ -149,7 +149,7 @@ const MyGroupsDisplay = () => {
     const server_res = await axios.get("/getuser", {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
    //console.log(server_res);
     const user = server_res.data;
-    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id)
+    await axios.patch('/groups/'+ groupId +'/leave/' + user.user_id, {}, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(function (response){
       alert("You left the group!");
       location.pathname="/my-groups-page/"+user.user_id;

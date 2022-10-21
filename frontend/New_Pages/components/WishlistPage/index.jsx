@@ -8,6 +8,8 @@ import NavBar from "../NavBarComponent";
 import SortBy from "../SortByComponent";
 import WishlistComponent from "../WishlistComponent";
 import "./Wishlist.css"
+
+const coookie = new Cookie();
 const SellPage = () => {
   // To hold the actual data
   const [data, setData] = useState([])
@@ -26,7 +28,7 @@ const SellPage = () => {
   //console.log(categoryId);
   
   useEffect(() => {
-    axios.get(`/favourites/${userId}`)
+    axios.get(`/favourites/${userId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
       .then(res => {
         var tmp = res.data;
 
