@@ -12963,16 +12963,12 @@ body {
 
 .status {
   text-align: center;
-  width: 60%;
   color: #fff;
-  background-color: #000;
-  margin-top: 10%;
-  margin-left: 20%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  background-color: #418ea6;
+  padding: 0 10px;
   font-family: Tienne, sans-serif;
   font-size: 25px;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .sold-label {

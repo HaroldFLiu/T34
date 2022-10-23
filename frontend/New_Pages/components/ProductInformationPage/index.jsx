@@ -180,6 +180,9 @@ const ProductInformationPage = () => {
               <a className="wishlist" onClick={() => removeWishlist(item._id)}>
                 <AiFillHeart className="heart-icon"/>
               </a>}
+
+            {isSeller && (item.sold == true) && <label className="status sold-label"> SOLD </label>}
+            {isSeller && (item.sold == false) && <label className="status"> LISTED </label>}
           </div>
           <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
           <hr />
@@ -199,11 +202,8 @@ const ProductInformationPage = () => {
           {/* different dislay depending on if you are seller or not, as well as if item is in cart or not*/}
           {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}
           {added && !isSeller && <button className="purchase-btn"> IN CART ALREADY</button>}
-          {isSeller && (item.sold == true) && <label className="status sold-label"> SOLD </label>}
-          {isSeller && (item.sold == false) && <label className="status"> LISTED </label>}
-          <div className="move-up-remove"> 
           {isSeller && <a href="#"> <p>
-            <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}</div>
+            <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
         </div>
       </div>  
     </div>

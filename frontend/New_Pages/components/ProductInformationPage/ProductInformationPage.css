@@ -110,15 +110,11 @@ body {
 
 .status {
   text-align: center;
-  width: 60%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  padding: 0 10px;
   font-size: 25px;
-  margin-left: 20%;
-  margin-top: 10%;
-  font-weight: bolder;
+  font-weight: bold;
   color: white;
-  background-color: black;
+  background-color: #418ea6;
   font-family: 'Tienne', sans-serif;
 }
 
