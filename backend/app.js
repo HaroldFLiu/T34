@@ -40,28 +40,24 @@ app.use(cors({
 
 // middleware
 app.use(express.json());
-app.use(cors());
+//app.use(cors());
 app.use(function (req, res, next) {
+    console.log(req.path, req.method);
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
     res.setHeader('Access-Control-Allow-Credentials', true);
-    /*
+    
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
     res.setHeader(
         'Access-Control-Allow-Headers',
         'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version, Authorization'
       );
     res.header('Access-Control-Allow-Methods', 'GET, OPTIONS, PUT, POST, PATCH, DELETE');
-    */
+    
     next();
 });
 app.use(
     express.urlencoded({ extended: true })
 );
-
-app.use((req, res, next) => {
-    console.log(req.path, req.method);
-    next();
-})
 
 app.use(bodyParser.json());
 app.use(cookieParser());
