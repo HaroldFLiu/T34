@@ -39,7 +39,7 @@ app.use(express.json());
 //app.use(cors());
 app.use(cors({
     methods: 'GET, OPTIONS, PUT, POST, PATCH, DELETE',
-    origin: false,
+    origin: 'https://t34home.vercel.app/',
     allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
     credentials: true,
 
