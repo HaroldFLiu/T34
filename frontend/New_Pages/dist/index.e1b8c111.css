@@ -12413,6 +12413,11 @@ textarea.form-control-lg {
   bottom: 5px;
 }
 
+.icon-nav {
+  position: relative;
+  bottom: 2px;
+}
+
 .icon-flipped {
   position: relative;
   bottom: 6px;
@@ -13113,7 +13118,7 @@ body {
 .payment-detail {
   float: right;
   border: solid #33532c;
-  border-radius: 30px;
+  border-radius: 15px;
   margin-top: 5%;
   margin-right: 15%;
   padding: 2% 2% 3%;

@@ -66,15 +66,15 @@ const NavBar = () => {
     return (
         <div className="navbar">
             <h1 className="website-title"> Market34</h1>
-            <NavLink to="/home-page"> <AiOutlineHome className="icon"/> Home</NavLink>
-            <NavLink to={`/sell-page/${user.user_id}`}><HiOutlineShoppingBag className="icon"/> Sell </NavLink>
-            <NavLink to={`/group-page/${user.user_id}`}> <AiOutlineUsergroupAdd className="icon"/> Groups</NavLink>
-            <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon"/> My Groups</NavLink>
-            <NavLink to={`/wishlist-page/${user.user_id}`}> <AiOutlineHeart className="icon"/> Wishlist </NavLink>
+            <NavLink to="/home-page"> <AiOutlineHome className="icon-nav"/> Home</NavLink>
+            <NavLink to={`/sell-page/${user.user_id}`}><HiOutlineShoppingBag className="icon-nav"/> Sell </NavLink>
+            <NavLink to={`/group-page/${user.user_id}`}> <AiOutlineUsergroupAdd className="icon-nav"/> Groups</NavLink>
+            <NavLink to={`/my-groups-page/${user.user_id}`}> <MdOutlineGroups className="icon-nav"/> My Groups</NavLink>
+            <NavLink to={`/wishlist-page/${user.user_id}`}> <AiOutlineHeart className="icon-nav"/> Wishlist </NavLink>
             <div className="nav-login">
-                <Link to="#" onClick={() => handleLogOut()}> <AiOutlineLock className="icon"/> Log Out </Link>
-                <a href="#"><RiBookOpenLine className="icon" /> Welcome: {user.first}</a>
-                <NavLink to={`/checkout-page/${user.user_id}`}> <BsCart2 className="icon"/> Cart</NavLink>
+                <Link to="#" onClick={() => handleLogOut()}> <AiOutlineLock className="icon-nav"/> Log Out </Link>
+                <a href="#"><RiBookOpenLine className="icon-nav" /> Welcome: {user.first}</a>
+                <NavLink to={`/checkout-page/${user.user_id}`}> <BsCart2 className="icon-nav"/> Cart</NavLink>
 
                  {/* search bar */}
                 <input 

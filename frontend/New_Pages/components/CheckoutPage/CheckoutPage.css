@@ -122,10 +122,10 @@
     padding-left: 2%;
     padding-right: 2%;
     padding-bottom: 3%;
-    border-radius: 30px;
+    border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-
   }
+
   /* text outline PAYMENT METHOD */
   .text-outline{
     color: #33532C;

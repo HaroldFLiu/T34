@@ -297,6 +297,11 @@
   bottom: 5px
 }
 
+.icon-nav{
+  position: relative;
+  bottom: 2px;
+}
+
 .icon-flipped{
   transform: scaleX(-1); 
   position: relative;
