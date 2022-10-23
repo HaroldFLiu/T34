@@ -29,7 +29,7 @@
   .Auth-form-title {
     text-align: center;
     margin-bottom: 1em;
-    font-size: 44px;
+    font-size: 40px;
     color: rgb(34, 34, 34);
     font-weight: 500;
   }
@@ -41,15 +41,13 @@
   }
 
   .slogan{
-    margin-top: -40px;
+    margin-top: -30px;
     font-size: 13px;
-    text-align: center;
+    margin-left: -10px;
   }
 
   .title{
-    font-size: 70px;
-    margin-bottom: 20px;
-    text-align: center;
+    font-size: 65px;
   }
 
   .submit {

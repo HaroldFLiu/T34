@@ -197,7 +197,8 @@ const ProductInformationPage = () => {
           <div className="info-text-centered-price"> <b>${item.price}</b></div>
           <hr />
           <div className="info-text-left"> <AiFillTag /><b>Categories: </b> {category.name} </div>
-          {isBought && <div className="info-text-left"> <br/><b>Sold To: </b> {buyer.first_name} {buyer.last_name} </div>}
+          {isBought && <div className="info-text-left"> <br/><b>Sold To: </b> {buyer.first_name} {buyer.last_name} 
+            </div>}
 
           {/* different dislay depending on if you are seller or not, as well as if item is in cart or not*/}
           {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}
