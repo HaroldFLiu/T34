@@ -31,7 +31,7 @@ const ProductInformationPage = () => {
 
     axios.get(`/public/item/${productId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(async (res) => {
-      console.log(res);
+      //console.log(res.data);
       setItems(res.data.item);
       setSeller(res.data.seller);
 
@@ -41,12 +41,8 @@ const ProductInformationPage = () => {
       }
 
       // since items don't have to have categories
-      if (res.data.item.category_ids) {
-        await axios.get(`/category/${res.data.item.category_ids[0]}`, 
-          {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-        .then(res => {
-          setCategory(res.data);
-        })
+      if (res.data.category) {
+        setCategory(res.data.category);
       }
 
       if (res.data.buyer) {

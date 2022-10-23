@@ -45,7 +45,7 @@ const addToCart = async (req, res) => {
     if (!cart) {
         return res.status(404).json({error: 'Failed to add item'});
     }
-    //res.status(200).json(cart);
+    res.status(200).json(cart);
 }
 
 const checkoutCart = async (req, res) => {
@@ -57,7 +57,7 @@ const checkoutCart = async (req, res) => {
     if (!cart) {
         return res.status(404).json({error: 'Cart does not exist'});
     }
-    //res.status(200).json(cart);
+    res.status(200).json(cart);
     
 }
 const deleteFromCart = async (req, res) => {
@@ -86,7 +86,7 @@ const deleteAllFromCart = async (req, res) => {
     if (!cart) {
         return res.status(404).json({error: 'Failed to delete all'});
     }
-    //res.status(200).json(cart);
+    res.status(200).json(cart);
 }
 
 module.exports = {

@@ -9,3 +9,9 @@
     margin-left: 22%;
     margin-right: 5%;
   }
+
+  .move-drop-btn-member {
+    float: right;
+    margin-top: -45px;
+    height: 30px;
+  }
