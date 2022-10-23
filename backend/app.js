@@ -26,12 +26,8 @@ const { applySpec } = require('ramda');
 
 const app = express();
 
-/*
-app.use(cors({
-    origin: ['http://localhost:1234','http://vercel.app','https://vercel.app','https://t34home.vercel.app','http://t34home.vercel.app'],
-    credentials:true,
-}));
-*/
+
+
 
 
 
@@ -41,9 +37,12 @@ app.use(cors({
 // middleware
 app.use(express.json());
 //app.use(cors());
+
 app.use(function (req, res, next) {
     console.log(req.path, req.method);
+    if (req.header.origin) {
     res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
+    }
     res.setHeader('Access-Control-Allow-Credentials', true);
     
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
