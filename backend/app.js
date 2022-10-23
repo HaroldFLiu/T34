@@ -40,9 +40,7 @@ app.use(express.json());
 
 app.use(function (req, res, next) {
     console.log(req.path, req.method);
-    if (req.header.origin) {
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin);
-    }
+    res.setHeader('Access-Control-Allow-Origin', 'https://t34home.vercel.app/');
     res.setHeader('Access-Control-Allow-Credentials', true);
     
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
