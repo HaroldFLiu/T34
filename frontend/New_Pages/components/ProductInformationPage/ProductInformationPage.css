@@ -174,3 +174,7 @@ body {
   margin-top: 3%;
   border: none;
 }
+
+.product-wishlist {
+  float: right;
+}

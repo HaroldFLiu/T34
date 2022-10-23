@@ -35,15 +35,18 @@ const ProductComponents = ({data, userId}) => {
 
   const [added, setAdded] = useState(false);
 
+  const [response, setResponse] = useState(null);
+
   // function to add item to wishlist if not already in wishlist
   const addWishlist = async item_id => {
     const server_res = await axios.get("/getuser", 
       {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {}, 
-      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-    .then(window.location.reload())
+    setResponse(await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}));
+
+    window.location.reload();
   };
 
   // function to remove item from wishlist if in wishlist
@@ -52,11 +55,10 @@ const ProductComponents = ({data, userId}) => {
       {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data;
 
-    await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {}, 
-      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
-    .then(
-      window.location.reload()
-    );
+    setResponse(await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}))
+    
+    window.location.reload();
   };
   
   const [remove, setRemove] = useState([]);
@@ -73,6 +75,8 @@ const ProductComponents = ({data, userId}) => {
     location.pathname="/sell-page/"+user.user_id;
     setStatus('Delete successful');
   }
+
+  useEffect(() => {}, [response]);
 
 return(
     <div className="products-wrapper">  

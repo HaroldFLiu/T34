@@ -9,6 +9,8 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 
 import { AiFillTag } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+import { AiOutlineHeart } from "react-icons/ai";
 
 const ProductInformationPage = () => {
 
@@ -22,12 +24,14 @@ const ProductInformationPage = () => {
   const [isBought, setIsBought] = useState(false);
   const [isSeller, setIsSeller] = useState(false);
   const [category, setCategory] = useState({});
+  const [userId, setUserId] = useState(null);
 
   // get item information
   const fetchItems = async () => {
     const server_res = await axios.get("/getuser", 
       {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
     const user = server_res.data.user_id;
+    setUserId(user);
 
     axios.get(`/public/item/${productId}`, {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
     .then(async (res) => {
@@ -102,6 +106,55 @@ const ProductInformationPage = () => {
     alert('Removed item successfully');
     location.pathname="/sell-page/"+user.user_id;
   }
+
+  // get if item is in wishlist
+  const [wishlist, setWishlist] = useState([])
+  const fetchWishlist = async () => {
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    await axios.get(`/favourites/${user.user_id}`, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}})
+    .then(res => {
+      setWishlist(res.data.map((x) => x._id));
+    })
+    .catch(() => {
+      alert('There are no items in your wishlist')
+    })
+  }
+
+  useEffect(() => {
+    fetchWishlist();
+  }, []);
+
+  const [response, setResponse] = useState(null);
+
+  // function to add item to wishlist if not already in wishlist
+  const addWishlist = async item_id => {
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    setResponse(await axios.patch("/favourites/"+user.user_id+"/add/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}));
+
+    window.location.reload();
+  };
+
+  // function to remove item from wishlist if in wishlist
+  async function removeWishlist(item_id) {
+    const server_res = await axios.get("/getuser", 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
+    const user = server_res.data;
+
+    setResponse(await axios.patch("/favourites/"+user.user_id+"/remove/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}))
+    
+    window.location.reload();
+  };
+
+  useEffect(() => {}, [response]);
  
   return (
     <div className="parent" >
@@ -116,6 +169,18 @@ const ProductInformationPage = () => {
 
         <div className="more-info-wrap">
           <div className="item-name-label"> {item.name}</div>
+          {/* wishlist button */}
+          <div className="product-wishlist">
+            {/* css for heart btn in home.css */}
+            {(item.seller_id != userId) && (!wishlist.includes(item._id)) && 
+              <a className="wishlist" onClick={() => addWishlist(item._id)}> 
+                <AiOutlineHeart className="heart-icon"/> 
+              </a>}
+            {(item.seller_id != userId) && (wishlist.includes(item._id)) && 
+              <a className="wishlist" onClick={() => removeWishlist(item._id)}>
+                <AiFillHeart className="heart-icon"/>
+              </a>}
+          </div>
           <div className="info-text"> <b>Seller:</b> {seller.first_name} {seller.last_name}</div> 
           <hr />
           <br/>

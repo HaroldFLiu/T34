@@ -6,17 +6,20 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 
 const CartComponents = ({data}) => {
+  const [response, setResponse] = useState(null);
 
+  useEffect(() => {}, [response]);
+  
   // function to remove a single item from a user's cart
   async function removeCart(item_id) {
     const server_res = await axios.get("/getuser", 
       {withCredentials:true, headers:{'Authorization':coookie.get("token")}});
-    console.log(server_res);
     const user = server_res.data;
-    await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {}, 
-      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
-      window.location.reload()
-    );
+
+    setResponse(await axios.patch("/cart/remove/"+user.user_id+"/"+item_id , {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}))
+    
+    window.location.reload();
   };
 
   return (

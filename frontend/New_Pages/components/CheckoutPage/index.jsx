@@ -30,14 +30,17 @@ const CheckoutPage = () => {
     })
   };
 
+  const [response, setResponse] = useState(null);
+
+  useEffect(() => {
+  }, [response]);
+
   // function that checks out user's cart
   const checkoutCart = async () => {
-    await axios.patch("/cart/checkout/"+userId, {}, 
-      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}).then(
-      window.location.reload()
-    ).catch(error => {
-      console.log("Error updating cart", error);
-    });
+    setResponse(await axios.patch("/cart/checkout/"+userId, {}, 
+      {withCredentials:true, headers:{'Authorization':coookie.get("token")}}))
+    
+    window.location.reload();
   };
 
   // trigger the fetchData after the initial render by using the useEffect hook
