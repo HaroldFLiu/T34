@@ -37,7 +37,16 @@ const app = express();
 // middleware
 app.use(express.json());
 //app.use(cors());
+app.use(cors({
+    methods: 'GET, OPTIONS, PUT, POST, PATCH, DELETE',
+    origin: false,
+    allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization'],
+    credentials: true,
 
+  }));
+  app.options('*', cors());
+
+  /*
 app.use(function (req, res, next) {
     console.log(req.path, req.method);
     res.setHeader('Access-Control-Allow-Origin', 'https://t34home.vercel.app/');
@@ -52,6 +61,7 @@ app.use(function (req, res, next) {
     
     next();
 });
+*/
 app.use(
     express.urlencoded({ extended: true })
 );
