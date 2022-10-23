@@ -45,6 +45,13 @@ const leaveGroup = async (groupId, userId) => {
       group.members.splice(index, 1);
     }
   }
+
+  if (group.admins.includes(userId)) {
+    const index = group.admins.indexOf(userId);
+    if (index > -1) {
+      group.admins.splice(index, 1);
+    }
+  }
   
   await group.save();
 
