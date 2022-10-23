@@ -12726,6 +12726,15 @@ input[type="asd"] {
 
 .dropbtn {
   color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  margin-top: -.5px;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.dropbtn-member {
+  color: #fff;
   height: 48px;
   background-color: #04aa6d;
   border: none;

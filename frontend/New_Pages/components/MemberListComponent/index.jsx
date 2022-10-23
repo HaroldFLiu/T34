@@ -48,7 +48,7 @@ return(
                     <div className="move-drop-btn-member">
                       {!admins.includes(member._id) &&
                         <div class="dropdown">
-                          <button class="dropbtn">...</button>
+                          <button class="dropbtn-member">...</button>
                           <div class="dropdown-content">
                             <a href='#' onClick={() => removeMember(member._id)}>Remove member</a>
                             <a href='#' onClick={() => makeAdmin(member._id)}>Add as an admin</a>

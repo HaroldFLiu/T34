@@ -1,6 +1,7 @@
 const { default: mongoose } = require('mongoose');
 const itemService = require('../services/item');
 const userService = require('../services/user');
+const categoryService = require('../services/category');
 
 const getPublicItems = async (req, res) => {
     const items = await itemService.readPublicItems();
@@ -29,27 +30,58 @@ const getItem = async (req, res) => {
 
     var data = null;
 
+    //console.log(item);
 
     if (item.buyer_id) {
         buyer = await userService.readById(item.buyer_id);
+        
+        if (item.category_ids[0]) {
+            category = await categoryService.readById(item.category_ids[0]);
 
-        data = {
-            item: item, 
-            seller: { 
-                first_name: seller.first_name, 
-                last_name: seller.last_name
-            },
-            buyer: { 
-                first_name: buyer.first_name, 
-                last_name: buyer.last_name
-            },
+            data = {
+                item: item, 
+                seller: { 
+                    first_name: seller.first_name, 
+                    last_name: seller.last_name
+                },
+                buyer: { 
+                    first_name: buyer.first_name, 
+                    last_name: buyer.last_name
+                },
+                category: category
+            }
+        } else {
+            data = {
+                item: item, 
+                seller: { 
+                    first_name: seller.first_name, 
+                    last_name: seller.last_name
+                },
+                buyer: { 
+                    first_name: buyer.first_name, 
+                    last_name: buyer.last_name
+                },
+            }
         }
     } else {
-        data = {
-            item: item, 
-            seller: { 
-                first_name: seller.first_name, 
-                last_name: seller.last_name
+        if (item.category_ids[0]) {
+            category = await categoryService.readById(item.category_ids[0]);
+
+            data = {
+                item: item, 
+                seller: { 
+                    first_name: seller.first_name, 
+                    last_name: seller.last_name
+                },
+                category: category
+            }
+        } else {
+            data = {
+                item: item, 
+                seller: { 
+                    first_name: seller.first_name, 
+                    last_name: seller.last_name
+                }
             }
         }
     }
