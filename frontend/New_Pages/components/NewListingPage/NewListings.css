@@ -135,8 +135,7 @@ input[type=asd]{
   border-width:1px;
   border-style:solid;
   border-color:black;
-
-  width: 25%;
+  width: 20%;
   float:left;
   margin-left: 45px;
 }
