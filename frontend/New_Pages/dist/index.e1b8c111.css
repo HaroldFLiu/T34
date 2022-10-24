@@ -13229,7 +13229,7 @@ body {
   float: right;
   font-size: 27px;
   position: fixed;
-  top: 80%;
+  top: 60%;
   right: 18%;
 }
 
@@ -13279,7 +13279,7 @@ body {
 .display-box {
   width: 70%;
   height: auto;
-  max-height: 80vh;
+  max-height: 110vh;
   background: #fff;
   margin: 0 auto;
   padding: 20px;

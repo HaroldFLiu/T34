@@ -7,6 +7,18 @@ import Cookie from 'universal-cookie';
 var coookie = new Cookie();
 
 const NewListingPage = () => {
+  useEffect(() => {
+    const initialValue = document.body.style.zoom;
+
+    // Change zoom level on mount
+    document.body.style.zoom = "80%";
+
+    return () => {
+      // Restore default value
+      document.body.style.zoom = initialValue;
+    };
+  }, []);
+
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",

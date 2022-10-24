@@ -7,6 +7,18 @@ import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
+  useEffect(() => {
+    const initialValue = document.body.style.zoom;
+
+    // Change zoom level on mount
+    document.body.style.zoom = "80%";
+
+    return () => {
+      // Restore default value
+      document.body.style.zoom = initialValue;
+    };
+  }, []);
+  
   var coookie = new Cookie();
 
   const [user, setUser] = useState([]);
