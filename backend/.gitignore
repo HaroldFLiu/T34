@@ -6,3 +6,4 @@
 .vscode/
 */coverage/
 *.mdb
+*/node_modules/
