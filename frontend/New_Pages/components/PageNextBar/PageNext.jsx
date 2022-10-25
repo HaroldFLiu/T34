@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./PageNext.css"
 
 const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
@@ -15,13 +15,26 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
         if(currentPage !== 1) setCurrentPage(currentPage - 1)
     }
 
+    // get url
+    const [url, setUrl] = useState(null);
+
+    useEffect(() => {
+        const currentUrl = window.location.href;
+
+        if (currentUrl[currentUrl.length - 1] == '#') {
+            setUrl(currentUrl);
+        } else {
+            setUrl(currentUrl + '#');
+        }
+    }, [])
+
     return (
         <nav className="center-next">
             <ul className='pagination justify-content-center'>
                 <li className="page-item">
                     <a className="page-link" 
                         onClick={prevPage} 
-                        href='#'>
+                        href={url}>
                         Back    
                     </a>
                 </li>
@@ -31,7 +44,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
 
                         <a onClick={() => setCurrentPage(pgNumber)}  
                             className='page-link' 
-                            href='#'>
+                            href={url}>
                             {pgNumber}
                         </a>
                     </li>
@@ -39,7 +52,7 @@ const Pagination = ({ nPages, currentPage, setCurrentPage }) => {
                 <li className="page-item">
                     <a className="page-link" 
                         onClick={nextPage}
-                        href='#'>
+                        href={url}>
                         Next
                     </a>
                 </li>
