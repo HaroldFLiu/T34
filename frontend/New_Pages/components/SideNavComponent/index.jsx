@@ -73,7 +73,7 @@ const SideNav = () => {
           Categories 
       </div>
       {categoryOptions.map((category) => (
-        <Link onClick={() => window.location.href="?cat_id=" + category.id}> 
+        <Link onClick={() => window.location.href = (window.location.pathname + "?cat_id=" + category.id)}> 
           <category.icon className="icon"/> {category.name}
         </Link>
       ))}
