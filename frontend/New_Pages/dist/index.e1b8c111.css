@@ -13164,12 +13164,12 @@ body {
   height: auto;
   max-height: 70vh;
   background: #fff;
-  border: 4px double #999;
   border-radius: 4px;
   margin: calc(15vh - 20px) auto 0;
   padding: 20px;
   position: relative;
   overflow: auto;
+  box-shadow: 0 4px 8px #0003;
 }
 
 .square-popup {
@@ -13312,8 +13312,8 @@ body {
   width: 15%;
   height: 15%;
   float: left;
-  border: thin solid;
   margin-right: 2%;
+  box-shadow: 0 4px 8px #0003;
 }
 
 .header-popup-display button {
@@ -13381,13 +13381,11 @@ body {
 }
 
 .left-box-mem {
-  max-width: 300px;
-  max-height: 300px;
-  height: 250px;
-  width: 250px;
+  width: 15%;
+  height: 15%;
   float: left;
-  border: thin solid;
   margin-right: 3%;
+  box-shadow: 0 4px 8px #0003;
 }
 
 .shift-title {

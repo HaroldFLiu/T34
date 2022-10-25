@@ -39,7 +39,7 @@
    
 /* wrap for img sqaure*/
 .display-square-popup{
-  border: solid thin;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   width: 15%;
   height: 15%;
   margin-right: 2%;
