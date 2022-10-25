@@ -42,6 +42,10 @@ const deleteItem = async(userId, itemId) => {
     cart.items = cart.items.filter((x) => (JSON.stringify(x._id) != JSON.stringify(itemId)));
     cart.subtotal -= item.price;
   }
+
+  if (cart.subtotal <= 0) {
+    cart.subtotal = 0;
+  }
   
   await cart.save();
   return cart;
