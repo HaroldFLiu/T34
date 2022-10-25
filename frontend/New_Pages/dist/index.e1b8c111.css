@@ -12409,9 +12409,14 @@ textarea.form-control-lg {
   display: inline-block;
 }
 
-.icon, .icon-nav {
+.icon {
   position: relative;
   bottom: 5px;
+}
+
+.icon-nav {
+  position: relative;
+  bottom: 3px;
 }
 
 .icon-flipped {
@@ -12480,8 +12485,7 @@ textarea.form-control-lg {
 }
 
 .Auth-form-container {
-  width: 100vw;
-  height: 100vh;
+  height: 125vh;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -12668,7 +12672,7 @@ body, html, .App, #root, .auth-wrapper {
 .container {
   background-color: #f2f2f2;
   border-radius: 5px;
-  margin-right: 2%;
+  margin-right: 5%;
   padding: 10px;
   font-family: Tienne, sans-serif;
 }
@@ -12779,7 +12783,7 @@ input[type="asd"] {
   width: 20%;
   float: left;
   border: 1px solid #000;
-  margin-left: 45px;
+  margin-left: 5%;
 }
 
 .square-pic {

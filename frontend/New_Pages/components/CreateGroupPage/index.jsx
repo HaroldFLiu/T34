@@ -7,17 +7,6 @@ import NavBar from "../NavBarComponent"
 
 
 const CreateGroupPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
   
   var coookie = new Cookie();
 
@@ -154,7 +143,8 @@ const CreateGroupPage = () => {
       <hr />
       <div className="number-listings"> {groups} groups online </div>
       <hr />
-
+      <br></br>
+      
       {/*Upload Image box and button handle uploading img*/}    
       <div class="left-box">
         <label for="item-name"> <div className="item-name">Group Icon*: </div></label>

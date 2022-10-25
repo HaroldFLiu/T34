@@ -13,17 +13,6 @@ import Cookies from 'universal-cookie';
 const coookie = new Cookies();
 
 const HomePage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
 
   // To hold the actual data
   const [data, setData] = useState([]);

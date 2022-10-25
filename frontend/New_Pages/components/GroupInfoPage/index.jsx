@@ -12,17 +12,6 @@ import {Link} from "react-router-dom";
 import ProductComponents from "../ProductComponents";
 
 const GroupInfoPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
   
   const [group, setGroup] = useState({});
   const [firstRender, setFirstRender] = useState(false);

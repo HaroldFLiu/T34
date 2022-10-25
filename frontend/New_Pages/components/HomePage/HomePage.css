@@ -5,7 +5,7 @@
   overflow: hidden;
   background-color: #5A896A;
   top: 0; /* Position the navbar at the top of the page */
-  left:0;
+  left: 0;
   right: 0;
   width: 100%; /* Full width */
   /* UNCOMMENT IF YOU WANT A FOLLOWING NAV BAR
@@ -300,7 +300,7 @@
 
 .icon-nav{
   position: relative;
-  bottom: 2px;
+  bottom: 3px;
 }
 
 .icon-flipped{

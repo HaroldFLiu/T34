@@ -10,17 +10,6 @@ import SortBy from "../SortByComponent";
 
 import "./MyGroupsDisplay.css"
 const MyGroupsDisplay = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
   
   var coookie = new Cookie();
 

@@ -10,17 +10,6 @@ import {Link} from "react-router-dom";
 import NavBar from "../NavBarComponent";
 
 const MemberListPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
   
   // get parameters
   const queryParams = new URLSearchParams(window.location.search);

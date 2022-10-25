@@ -7,18 +7,6 @@ import Cookie from 'universal-cookie';
 var coookie = new Cookie();
 
 const NewListingPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
-
   const [firstRender, setFirstRender] = useState(false);
   const [values, setValues] = useState({
     itemName: "",
@@ -210,6 +198,7 @@ const NewListingPage = () => {
       <div className="number-listings"> {sold} items sold on Market34!</div>
       
       <hr />
+      <br></br>
       
       {/*Upload Image box */}    
       <div class="left-box">

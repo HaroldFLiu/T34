@@ -7,18 +7,6 @@ import React, {useEffect, useState}from "react";
 const cookies = new Cookies();
 
 const LoginPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "100%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
-
   const [values, setValues] = useState({
     email: "",
     password: "",

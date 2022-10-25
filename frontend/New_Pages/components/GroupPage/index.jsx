@@ -14,17 +14,6 @@ var coookie = new Cookie();
 import { AiFillPlusCircle } from "react-icons/ai";
 
 const GroupPage = () => {
-  useEffect(() => {
-    const initialValue = document.body.style.zoom;
-
-    // Change zoom level on mount
-    document.body.style.zoom = "80%";
-
-    return () => {
-      // Restore default value
-      document.body.style.zoom = initialValue;
-    };
-  }, []);
   
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true);

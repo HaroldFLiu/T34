@@ -19,6 +19,18 @@ import MemberListPage from "./components/MemberListPage";
 import React, {useEffect, useState}from "react";
 
 function App() {
+  useEffect(() => {
+    const initialValue = document.body.style.zoom;
+
+    // Change zoom level on mount
+    document.body.style.zoom = "75%";
+
+    return () => {
+      // Restore default value
+      document.body.style.zoom = initialValue;
+    };
+  }, []);
+  
   return (
     <Router>
       <Switch>
