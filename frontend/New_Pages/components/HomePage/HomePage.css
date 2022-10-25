@@ -136,7 +136,7 @@
 
 /* CAP IMG SRC SIZE - removed:  border: 3px solid #555;*/
 .logo-position{
-  max-height: 150px;
+  max-height: 125px;
   max-width: 100%;
   object-fit: contain;
 }

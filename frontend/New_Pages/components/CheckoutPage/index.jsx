@@ -59,7 +59,7 @@ const CheckoutPage = () => {
 
       <div className="text-outline-bag">  <div className="check-header"> YOUR BAG</div> </div> 
         <br/>
-        <div className="total-items"> TOTAL ({items.length} items) <b> ${cart.subtotal}</b> </div>
+        <div className="total-items"> TOTAL ({items.length} items) <b> ${parseFloat(cart.subtotal).toFixed(2)}</b> </div>
         <br/>
         <div className="total-items"> Items inside your bag are not reserved - check out now to make them yours! </div>
         <hr/>
@@ -70,13 +70,13 @@ const CheckoutPage = () => {
           <br/>
 
           {items.map((item) => {
-            <div className="payment-detail-text"> ${item.price}</div> 
+            <div className="payment-detail-text"> ${parseFloat(item.price).toFixed(2)}</div> 
           })}
 
           <hr/>
 
           <b>TOTAL</b>
-          <div className="payment-detail-text">${cart.subtotal}</div> 
+          <div className="payment-detail-text">${parseFloat(cart.subtotal).toFixed(2)}</div> 
           <br/>
           <button className="checkout-btn" onClick={() => checkoutCart()}> <b> CHECKOUT</b></button>
         </div>

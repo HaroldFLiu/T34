@@ -44,7 +44,7 @@ const WishlistComponent = ({data}) => {
 
                     <div className="item-cart">
                       <div className="no-wrap"> <h5>{item.name}</h5></div>
-                      <a href="#"> <p>
+                      <a href={window.location.href + '#'}> <p>
                         <button onClick={() => removeWishlist(item._id)}>Remove from Wishlist</button>
                       </p></a>
                     </div>

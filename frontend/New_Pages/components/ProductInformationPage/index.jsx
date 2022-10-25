@@ -194,7 +194,7 @@ const ProductInformationPage = () => {
             <br />
           </div> 
           <br/>
-          <div className="info-text-centered-price"> <b>${item.price}</b></div>
+          <div className="info-text-centered-price"> <b>${parseFloat(item.price).toFixed(2)}</b></div>
           <hr />
           <div className="info-text-left"> <AiFillTag /><b>Categories: </b> {category.name} </div>
           {isBought && <div className="info-text-left"> <br/><b>Sold To: </b> {buyer.first_name} {buyer.last_name} 
@@ -203,7 +203,7 @@ const ProductInformationPage = () => {
           {/* different dislay depending on if you are seller or not, as well as if item is in cart or not*/}
           {!added && !isSeller && <button className="purchase-btn" onClick={() => addToCart()}> ADD TO CART </button>}
           {added && !isSeller && <button className="purchase-btn"> IN CART ALREADY</button>}
-          {isSeller && <a href="#"> <p>
+          {isSeller && <a href={window.location.href + '#'}> <p>
             <button className="purchase-btn" onClick={() => deletePost(item._id)}> Remove </button></p></a>}
         </div>
       </div>  

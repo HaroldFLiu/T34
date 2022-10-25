@@ -106,7 +106,7 @@ return(
                     </div>
 
                     <div className="content-posts">
-                      <p className="price"> ${item.price}</p>
+                      <p className="price"> ${parseFloat(item.price).toFixed(2)}</p>
                     </div>
 
                     <div className="item-cart">

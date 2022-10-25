@@ -47,7 +47,7 @@ const NewListingPage = () => {
     const props = {
       name: values.itemName,
       description: values.itemDescription,
-      price: values.itemPrice,
+      price: parseFloat(values.itemPrice).toFixed(2),
       public_visibility: values.itemVisbility,
       category_ids: [],
       group_ids: [],
