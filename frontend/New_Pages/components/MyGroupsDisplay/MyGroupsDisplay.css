@@ -18,16 +18,13 @@
 .group-title{
   font-family: 'Tienne', sans-serif;
   font-size: 40px;
-  margin-bottom: -10%;
   float: left;
-  width: 85%;
+  width: 83%;
 }
 
 .group-listing-info {
-  margin-top: 10%;
-  width: 96%;
+  width: 100%;
 }
-
    
 .display-box {
   position: relative;
@@ -43,8 +40,8 @@
 /* wrap for img sqaure*/
 .display-square-popup{
   border: solid thin;
-  width: 200px;
-  height: 200px;
+  width: 15%;
+  height: 15%;
   margin-right: 2%;
   float: left;
 }

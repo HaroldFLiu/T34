@@ -13288,15 +13288,13 @@ body {
 
 .group-title {
   float: left;
-  width: 85%;
-  margin-bottom: -10%;
+  width: 83%;
   font-family: Tienne, sans-serif;
   font-size: 40px;
 }
 
 .group-listing-info {
-  width: 96%;
-  margin-top: 10%;
+  width: 100%;
 }
 
 .display-box {
@@ -13311,8 +13309,8 @@ body {
 }
 
 .display-square-popup {
-  width: 200px;
-  height: 200px;
+  width: 15%;
+  height: 15%;
   float: left;
   border: thin solid;
   margin-right: 2%;
@@ -13401,7 +13399,7 @@ body {
 }
 
 .number-members {
-  margin-left: 15%;
+  margin-left: 19%;
 }
 
 .card-text {

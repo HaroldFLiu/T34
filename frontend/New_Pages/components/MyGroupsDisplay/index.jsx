@@ -199,23 +199,18 @@ const MyGroupsDisplay = () => {
             <hr />
             {isAdmin && <button className="group-btn" onClick={() => removeGroup()}> Remove Group</button>}
             {!isAdmin && <button className="group-btn" onClick={() => leaveGroup()}> Leave Group</button>}
-          </div>
-
-          <div className="group-listing-info">
-            <hr />
-            <div className="number-listings"> {data.length} listings 
-              <SortBy />
-            </div> 
-            <hr />
-          </div>
-          
+          </div>    
         </div>
 
-        <br/>
-        <br/>
-        
+        <div className="group-listing-info">
+          <hr />
+          <div className="number-listings"> {data.length} listings 
+            <SortBy />
+          </div> 
+          <hr />
+        </div>
 
-        <div className="wrapper-group" >
+        <div className="wrapper" >
           <div class="row2">
             <div class="column">
               <ProductComponents data={currentRecords} userId={user}/> 
