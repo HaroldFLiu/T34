@@ -170,7 +170,7 @@ const CreateGroupPage = () => {
       </div>
       
       {/* form to input new listing data*/}
-      <div class="container">
+      <div class="container-form">
         <form className="publish-form-group">
             
           {/* onChange event here to get data */}

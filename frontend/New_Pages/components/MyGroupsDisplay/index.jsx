@@ -182,43 +182,48 @@ const MyGroupsDisplay = () => {
   const indexOfLastRecord = currentPage * recordsPerPage;
   const indexOfFirstRecord = indexOfLastRecord - recordsPerPage;
   const currentRecords = data.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(data.length / recordsPerPage)
+  const nPages = Math.ceil(data.length / recordsPerPage);
 
   return (
     <div className="parent" > 
       <NavBar />
       <SideNav />
 
-      <div className="popup-box-display">
-        <div className="display-box">
+      <div className="main">
+        <div className="group-header">
           <div className="display-square-popup">
             <img src={group.icon_url} className="popup-img"></img> 
           </div>
-          <div className="popup-text"></div>
-          <div className="header-popup-display">{group.name} 
-            <button onClick={goMember}> Member's List</button>
-            {isAdmin && <button className="remove-leave" onClick={() => removeGroup()}> Remove Group</button>}
-            {!isAdmin && <button className="remove-leave" onClick={() => leaveGroup()}> Leave Group</button>}
-          </div> 
-          <hr className="hr-line"/>
-          <div className="number-group-listings"> 
+          <div className="group-title">{group.name}
+            <button className="group-btn" onClick={goMember}> Member's List</button>
             <hr />
-            {data.length} listings 
-            <SortBy/>
-            <hr />
-          </div> 
-          <br/>
+            {isAdmin && <button className="group-btn" onClick={() => removeGroup()}> Remove Group</button>}
+            {!isAdmin && <button className="group-btn" onClick={() => leaveGroup()}> Leave Group</button>}
+          </div>
 
-          <div className="wrapper" >
-            <div class="row2">
-              <div class="column">
-                <ProductComponents data={currentRecords} userId={user}/> 
-                <PageNext
-                nPages={nPages}
-                currentPage={currentPage}
-                setCurrentPage={setCurrentPage}
-                />
-              </div>
+          <div className="group-listing-info">
+            <hr />
+            <div className="number-listings"> {data.length} listings 
+              <SortBy />
+            </div> 
+            <hr />
+          </div>
+          
+        </div>
+
+        <br/>
+        <br/>
+        
+
+        <div className="wrapper-group" >
+          <div class="row2">
+            <div class="column">
+              <ProductComponents data={currentRecords} userId={user}/> 
+              <PageNext
+              nPages={nPages}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
+              />
             </div>
           </div>
         </div>

@@ -1,78 +1,82 @@
 /* Popup style */
 .popup-box-display {
-    position: fixed;
-    width: 110%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    margin-top: 6%;
-    display: flex;
-    margin-left: 1%;
-  }
+  position: fixed;
+  width: 110%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  margin-top: 6%;
+  display: flex;
+  margin-left: 1%;
+}
+
+.group-header {
+  width: 100%;
+  display: inline-block;
+}
+
+.group-title{
+  font-family: 'Tienne', sans-serif;
+  font-size: 40px;
+  margin-bottom: -10%;
+  float: left;
+  width: 85%;
+}
+
+.group-listing-info {
+  margin-top: 10%;
+  width: 96%;
+}
+
    
-  .display-box {
-    position: relative;
-    width: 70%;
-    margin: 0 auto;
-    height: auto;
-    max-height: 110vh;
-    background: #fff;
-    padding: 20px;
-    overflow: auto;
-  }
+.display-box {
+  position: relative;
+  width: 70%;
+  margin: 0 auto;
+  height: auto;
+  max-height: 100vh;
+  background: #fff;
+  padding: 20px;
+  overflow: auto;
+}
    
-  /* wrap for img sqaure*/
-  .display-square-popup{
-    border: solid thin;
-    width: 200px;
-    height: 200px;
-    margin-right: 10%;
-    margin-top: -0.5%;
-    margin-bottom: 1%;
-  }
-  
-  .header-popup-display button{
-    float:right;
-    font-size: 16px;
-    margin-top: -16%;
-  }
-  
-  /* line tag for popup */
-  .hr-line{
-    border: solid thin;
-    color: black;
-    margin-left: 20%;
-  }
-  
+/* wrap for img sqaure*/
+.display-square-popup{
+  border: solid thin;
+  width: 200px;
+  height: 200px;
+  margin-right: 2%;
+  float: left;
+}
+
+.header-popup-display button{
+  float:right;
+  font-size: 16px;
+  margin-top: -16%;
+}
+
+/* line tag for popup */
+.hr-line{
+  border: solid thin;
+  color: black;
+  margin-left: 20%;
+}
+
 .smaller{
-    font-size: 15px;
-    text-align: left;
+  font-size: 15px;
+  text-align: left;
 }
 
 .header-popup-display{
-    margin-top: -15%;
-    font-size: 40px;
-    margin-left: 20%;
-    text-align: left;
+  margin-top: -50%;
+  font-size: 40px;
+  margin-left: 20%;
+  text-align: left;
 }
 
-.component-display{
-    border: thin solid;
-    margin-top: 7%;
-}
-
-.number-group-listings {
-  margin-top: 150px;
-}
-
-.header-popup-display .remove-leave {
-  float:right;
+.group-btn {
+  float: right;
   font-size: 16px;
-  margin-top: -11%;
-}
-
-/* members list and remove group button */
-.header-popup-display button{
   background-color: #A4DF9A;
   color: black;
   border-radius: 12px;
@@ -84,7 +88,16 @@
   padding-right: 15px;
 }
 
-.header-popup-display button:hover {
+.component-display{
+    border: thin solid;
+    margin-top: 7%;
+}
+
+.number-group-listings {
+  margin-top: 150px;
+}
+
+.group-btn:hover {
   opacity: 1;
   background: #5A896A;
   color: white;

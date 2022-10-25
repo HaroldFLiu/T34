@@ -10,20 +10,22 @@
     font-size: 20px;
 }
 
-  /* Add a background color and some padding around the form
-  REMOVED BTN PADDOMG:     padding-bottom: 30%; */
-  .container {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 10px;
-    margin-right: 5%;
-    font-family: 'Tienne', sans-serif;
-  }
+/* Add a background color and some padding around the form
+REMOVED BTN PADDOMG:     padding-bottom: 30%; */
+.container-form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 10px;
+  font-family: 'Tienne', sans-serif;
+  margin-left: 30%;
+  margin-right: 5%;
+  width: 60%;
+}
 
 /* Number of listings  */
 .number-listings{
-    font-family: 'Tienne', sans-serif;
-    margin-left: 5%;
+  font-family: 'Tienne', sans-serif;
+  margin-left: 5%;
 }
 
 /* Publish Item button  */
@@ -128,7 +130,9 @@ input[type=asd]{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
 
-
+.create-form {
+  display: flex;
+}
 
 /* Left size div box to put content into*/
 .left-box{

@@ -12288,7 +12288,7 @@ textarea.form-control-lg {
   margin-top: -10px;
 }
 
-.wrapper {
+.wrapper, .wrapper-group {
   margin-top: 40px;
 }
 
@@ -12669,9 +12669,11 @@ body, html, .App, #root, .auth-wrapper {
   font-size: 20px;
 }
 
-.container {
+.container-form {
+  width: 60%;
   background-color: #f2f2f2;
   border-radius: 5px;
+  margin-left: 30%;
   margin-right: 5%;
   padding: 10px;
   font-family: Tienne, sans-serif;
@@ -12777,6 +12779,10 @@ input[type="asd"] {
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+.create-form {
+  display: flex;
 }
 
 .left-box {
@@ -13275,10 +13281,28 @@ body {
   left: 0;
 }
 
+.group-header {
+  width: 100%;
+  display: inline-block;
+}
+
+.group-title {
+  float: left;
+  width: 85%;
+  margin-bottom: -10%;
+  font-family: Tienne, sans-serif;
+  font-size: 40px;
+}
+
+.group-listing-info {
+  width: 96%;
+  margin-top: 10%;
+}
+
 .display-box {
   width: 70%;
   height: auto;
-  max-height: 110vh;
+  max-height: 100vh;
   background: #fff;
   margin: 0 auto;
   padding: 20px;
@@ -13289,10 +13313,9 @@ body {
 .display-square-popup {
   width: 200px;
   height: 200px;
+  float: left;
   border: thin solid;
-  margin-top: -.5%;
-  margin-bottom: 1%;
-  margin-right: 10%;
+  margin-right: 2%;
 }
 
 .header-popup-display button {
@@ -13314,9 +13337,20 @@ body {
 
 .header-popup-display {
   text-align: left;
-  margin-top: -15%;
+  margin-top: -50%;
   margin-left: 20%;
   font-size: 40px;
+}
+
+.group-btn {
+  float: right;
+  color: #000;
+  text-align: center;
+  background-color: #a4df9a;
+  border: none;
+  border-radius: 12px;
+  padding: 5px 15px;
+  font-size: 16px;
 }
 
 .component-display {
@@ -13328,22 +13362,7 @@ body {
   margin-top: 150px;
 }
 
-.header-popup-display .remove-leave {
-  float: right;
-  margin-top: -11%;
-  font-size: 16px;
-}
-
-.header-popup-display button {
-  color: #000;
-  text-align: center;
-  background-color: #a4df9a;
-  border: none;
-  border-radius: 12px;
-  padding: 5px 15px;
-}
-
-.header-popup-display button:hover {
+.group-btn:hover {
   opacity: 1;
   color: #fff;
   background: #5a896a;
@@ -13379,6 +13398,10 @@ body {
 
 .lines {
   margin-right: 3%;
+}
+
+.number-members {
+  margin-left: 15%;
 }
 
 .card-text {

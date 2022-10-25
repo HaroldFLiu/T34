@@ -103,8 +103,7 @@ const MemberListPage = () => {
         </div>
         <div className="shift-title"> <div className="home-title"> Members of <b> "{group.name}"</b></div></div>
         <hr className="lines"/>
-          {members.length} members
-          <br/>
+        <div className="number-members"> {members.length} members </div> 
         <hr className="lines"/>
       </div>
 

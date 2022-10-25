@@ -199,7 +199,6 @@ const NewListingPage = () => {
       
       <hr />
       <br></br>
-      
       {/*Upload Image box */}    
       <div class="left-box">
         <label for="item-image"> <div className="item-name">Item Image*: </div></label>
@@ -224,7 +223,7 @@ const NewListingPage = () => {
       </div>
     
       {/* form to input new listing data */}
-      <div class="container">
+      <div class="container-form">
         <form className="publish-form-item">
           {/* onChange event here to get data */}
           <label for="item-name"> 
