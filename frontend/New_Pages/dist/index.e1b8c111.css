@@ -12288,7 +12288,7 @@ textarea.form-control-lg {
   margin-top: -10px;
 }
 
-.wrapper {
+.wrapper, .wrapper-group {
   margin-top: 40px;
 }
 
@@ -12416,7 +12416,7 @@ textarea.form-control-lg {
 
 .icon-nav {
   position: relative;
-  bottom: 2px;
+  bottom: 3px;
 }
 
 .icon-flipped {
@@ -12438,6 +12438,12 @@ textarea.form-control-lg {
 
 .heart-icon {
   color: #33532c;
+  width: 30px;
+  height: 30px;
+}
+
+.heart-icon-white {
+  color: #fff;
   width: 30px;
   height: 30px;
 }
@@ -12969,7 +12975,7 @@ body {
   text-align: center;
   color: #fff;
   background-color: #418ea6;
-  padding: 0 10px;
+  padding: 2px 10px 0;
   font-family: Tienne, sans-serif;
   font-size: 25px;
   font-weight: bold;

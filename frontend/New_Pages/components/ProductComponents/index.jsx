@@ -102,7 +102,7 @@ return(
                         <a className="wishlist" onClick={() => removeWishlist(item._id)}>
                           <AiFillHeart className="heart-icon"/>
                         </a>}
-                      {(item.seller_id == userId) && <br></br>}
+                      {(item.seller_id == userId) && <AiFillHeart className="heart-icon-white"/>}
                     </div>
 
                     <div className="content-posts">

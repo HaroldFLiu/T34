@@ -331,6 +331,12 @@
   height: 30px;
 }
 
+.heart-icon-white{
+  color: white;
+  width: 30px;
+  height: 30px;
+}
+
 .heart-icon:hover {
   cursor: pointer;
   color: #5A896A;
